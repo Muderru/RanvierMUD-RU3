@@ -1,0 +1,257 @@
+- id: "rustysword"
+  name: "ржавый меч"
+  rname: "ржавого меча"
+  dname: "ржавому мечу"
+  vname: "ржавый меч"
+  tname: "ржавым мечом"
+  pname: "ржавом мече"
+  gender: "male"
+  type: WEAPON
+  roomDesc: "Ржавый меч"
+  keywords: [ "меч", "ржавый", "металлический", "древний" ]
+  description: "Вы видите древний ржавый меч длиной в человеческую руку. Кожаные ремешки на рукояти едва держатся. Это не самое надежное оружие."
+  metadata:
+    level: 1
+    slot: 'правая рука'
+    itemLevel: 1
+    quality: common
+    minDamage: 7
+    maxDamage: 15
+    speed: 2.8
+    stats:
+      critical: 1
+      cutting_damage: 1
+- id: "sliceofcheese"
+  name: "ломтик сыра"
+  rname: "ломтика сыра"
+  dname: "ломтику сыра"
+  vname: "ломтик сыра"
+  tname: "ломтиком сыра"
+  pname: "ломтике сыра"
+  gender: "male"
+  roomDesc: "Заплесневелый кусок сыра"
+  keywords: [ "ломтик", "сыр", "заплесневелый" ]
+  description: "Это кусок желтого заплесневелого сыра. Только крыса найдет его аппетитным."
+  behaviors:
+    decay:
+      duration: 240
+- id: "woodenchest"
+  type: CONTAINER
+  name: "деревянный сундук"
+  rname: "деревянного сундука"
+  dname: "деревянному сундуку"
+  vname: "деревянный сундук"
+  tname: "деревянным сундуком"
+  pname: "деревянном сундуке"
+  gender: "male"
+  roomDesc: "Деревянный сундук стоит в углу комнаты, его петли сильно заржавели."
+  keywords: [ "деревянный", "сундук" ]
+  description: "Время не пощадило этот сундук, он покрыт толстым слоем пыли и ржавчины."
+  items: [ "limbo:rustysword", "limbo:leathervest", "limbo:potionhealth1", "limbo:potionstrength1" ]
+  closed: true
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: "scraps"
+  name: "клочки"
+  rname: "клочков"
+  dname: "клочкам"
+  vname: "клочки"
+  tname: "клочками"
+  pname: "клочках"
+  gender: "plural"  
+  quality: poor
+  roomDesc: "Клочки от тренировочного манекена"
+  keywords: [ "клочки" ]
+  description: "Это обрывки и щепки от сломанного тренировочного манекена."
+  behaviors:
+    sellable:
+      value: 5
+      currency: золото
+- id: trainingsword
+  name: "тренировочный меч"
+  rname: "тренировочного меча"
+  dname: "тренировочному мечу"
+  vname: "тренировочный меч"
+  tname: "тренировочным мечом"
+  pname: "тренировочном мече"
+  gender: "male"  
+  type: WEAPON
+  roomDesc: "Тренировочный меч"
+  keywords: ["меч", "тренировочный", "железный"]
+  description: "Здоровенный железный меч, лезвие его затуплено и годится он только для тренировок."
+  metadata:
+    quality: rare
+    slot: "правая рука"
+    itemLevel: 10
+    level: 5
+    minDamage: 11
+    maxDamage: 20
+    speed: 2.8
+    stats:
+      strength: 2
+      stamina: 2
+      critical: -1
+  behaviors:
+    sellable:
+      value: 30
+      currency: золото
+- id: leathervest
+  name: "кожаный жилет"
+  rname: "кожаного жилета"
+  dname: "кожаному жилету"
+  vname: "кожаный жилет"
+  tname: "кожаным жилетом"
+  pname: "кожаном жилете"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Кожаный жилет"
+  keywords: ["кожаный", "жилет"]
+  description: "Вы видите дырявый кожаный жилет. Он практически не защитит ваше тело."
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 1
+    itemLevel: 1
+    stats:
+      armor: 2
+  behaviors:
+    sellable:
+      value: 30
+      currency: золото
+- id: potionhealth1
+  name: "исцеляющее зелье I"
+  rname: "исцеляющего зелья I"
+  dname: "исцеляющему зелью I"
+  vname: "исцеляющее зелье I"
+  tname: "исцеляющим зельем I"
+  pname: "исцеляющем зелье I"
+  gender: "neuter"  
+  roomDesc: "Исцеляющее зелье I"
+  keywords: [ "зелье", "исцеляющее" ]
+  type: POTION
+  metadata:
+    level: 1
+  behaviors:
+    # usable has two variants: spell, and effect
+    usable:
+      # this is the spell variant, you specify a skill of type SPELL
+      spell: "potion"
+      # charges/destroyOnDepleted lets you create consumable items
+      # without specifying charges the item can be used forever
+      charges: 5
+      destroyOnDepleted: true
+      # cooldown before item can be used again
+      cooldown: 30
+      # spell configuration, spell can access it via this.options
+      options:
+        restores: 30
+        stat: "health"
+- id: potionstrength1
+  name: "зелье силы I"
+  rname: "зелья силы I"
+  dname: "зелью силы I"
+  vname: "зелье силы I"
+  tname: "зельем силы I"
+  pname: "зелье силы I"
+  gender: "neuter"  
+  roomDesc: "Зелье силы I"
+  keywords: [ "зелье", "силы" ]
+  type: POTION
+  metadata:
+    level: 1
+  behaviors:
+    usable:
+      # this is the effect variant, you specify an effect name instead of a spell
+      effect: "potion.buff"
+      charges: 2
+      destroyOnDepleted: true
+      # effect config, see Effect docs. `name` is auto-populated with the item name
+      config:
+        description: "Увеличивает силу на <b>10</b> в течении <b>15</b> секунд."
+        duration: 15000
+      # effect state, see Effect docs
+      state:
+        magnitude: 10
+        stat: "strength"
+- id: bladeofranvier
+  name: "клинок Туора"
+  rname: "клинка Туора"
+  dname: "клинку Туора"
+  vname: "клинок Туора"
+  tname: "клинком Туора"
+  pname: "клинке Туора"
+  gender: "male"  
+  type: WEAPON
+  roomDesc: "Клинок Туора"
+  keywords: ["клинок", "меч", "туора"]
+  description: "Лезвие этого клинка сделано из драгоценного серебра. С таким оружием вам не страшен никакой враг."
+  script: "ranvier-blade"
+  metadata:
+    quality: epic
+    slot: "правая рука"
+    itemLevel: 15
+    level: 10
+    minDamage: 13
+    maxDamage: 26
+    speed: 2.8
+    specialEffects:
+      - "Эффект при ударе: исцеляет на 25% от нанесенного урона."
+    stats:
+      strength: 2
+      stamina: 2
+      critical: 3
+- id: woodenshield
+  name: "деревянный щит"
+  rname: "деревянного щита"
+  dname: "деревянному щиту"
+  vname: "деревянный щит"
+  tname: "деревянным щитом"
+  pname: "деревянном щите"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Деревянный щит"
+  keywords: ["щит", "деревянный"]
+  description: "Это самый обычный деревянный щит. Его металлические части сильно проржавели, а кожаные ручки едва держатся."
+  metadata:
+    quality: common
+    slot: "щит"
+    level: 1
+    itemLevel: 1
+    stats:
+      armor: 1
+  behaviors:
+    sellable:
+      value: 30
+      currency: золото
+- id: test_key
+  name: "странный ключ"
+  rname: "странного ключа"
+  dname: "странному ключу"
+  vname: "странный ключ"
+  tname: "странным ключом"
+  pname: "странном ключе"
+  gender: "male"  
+  keywords: ["ключ", "странный"]
+  roomDesc: "Странно выглядящий ключ"
+  description: "Этот ключ кажется очень сложным с многочисленными канавками."
+  metadata:
+    quality: common
+- id: locked_chest
+  type: CONTAINER
+  name: "запертый сундук"
+  rname: "запертого сундука"
+  dname: "запертому сундуку"
+  vname: "запертый сундук"
+  tname: "запертым сундуком"
+  pname: "запертом сундуке"
+  gender: "male"  
+  roomDesc: "Старый пыльный сундук стоит в углу помещения"
+  keywords: [ "запертый", "пыльный", "сундук" ]
+  items: [ "limbo:rustysword" ]
+  closed: true
+  locked: true
+  lockedBy: "limbo:test_key"
+  maxItems: 5
+  metadata:
+    noPickup: true

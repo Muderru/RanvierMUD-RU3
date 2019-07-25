@@ -1,0 +1,7 @@
+---
+plant_material:
+  title: Зеленый стебель
+  quality: common
+rose_petal:
+  title: Лепесток розы
+  quality: uncommon
