@@ -1,7 +1,7 @@
 'use strict';
 
 const { Broadcast } = require('ranvier');
-const ArgParser = require('../../bundle-example-lib/lib/ArgParser');
+const ArgParser = require('../../bundle-lib/lib/ArgParser');
 
 module.exports = {
   command: state => (arg, player) => {

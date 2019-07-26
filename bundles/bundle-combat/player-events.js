@@ -3,7 +3,7 @@
 const { Config, Broadcast: B } = require('ranvier');
 const Combat = require('./lib/Combat');
 const CombatErrors = require('./lib/CombatErrors');
-const LevelUtil = require('../bundle-example-lib/lib/LevelUtil');
+const LevelUtil = require('../bundle-lib/lib/LevelUtil');
 const WebsocketStream = require('../websocket-networking/lib/WebsocketStream');
 
 /**
