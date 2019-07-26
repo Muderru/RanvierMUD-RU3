@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./ranvier -v --save=10 --respawn=10",
-    "install-bundle": "node ./util/setup-bundles.js"
+    "install-bundle": "node setup-bundles.js"
   },
   "dependencies": {
     "commander": "^2.19.0",
