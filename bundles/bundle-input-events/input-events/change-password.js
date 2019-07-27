@@ -10,8 +10,8 @@ module.exports = {
     const say = EventUtil.genSay(socket);
     const write = EventUtil.genWrite(socket);
 
-    say("Your password must be at least 8 characters.");
-    write('<cyan>Enter your account password:</cyan> ');
+    say("В вашем пароле должно быть как минимум 8 символов.");
+    write('<cyan>Введите пароль для вашего аккаунта:</cyan> ');
 
     socket.command('toggleEcho');
     socket.once('data', pass => {
@@ -21,12 +21,12 @@ module.exports = {
       pass = pass.toString().trim();
 
       if (!pass) {
-        say('You must use a password.');
+        say('Вы должны использовать пароль.');
         return socket.emit('change-password', socket, args);
       }
 
       if (pass.length < 8) {
-        say('Your password is not long enough.');
+        say('Ваш пароль недостаточно длинный.');
         return socket.emit('change-password', socket, args);
       }
 

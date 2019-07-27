@@ -19,7 +19,7 @@ module.exports = {
     * Can create new (if less than 3 living chars)
     */
     say("\r\n------------------------------");
-    say("|      Choose your fate");
+    say("|      Выберите:");
     say("------------------------------");
 
     // This just gets their names.
@@ -31,7 +31,7 @@ module.exports = {
 
     // Configure account options menu
     options.push({
-      display: 'Change Password',
+      display: 'Поменять пароль',
       onSelect: () => {
         socket.emit('change-password', socket, { account, nextStage: 'choose-character' });
       },
@@ -39,7 +39,7 @@ module.exports = {
 
     if (canAddCharacter) {
       options.push({
-        display: 'Create New Character',
+        display: 'Создать нового персонажа',
         onSelect: () => {
           socket.emit('create-player', socket, { account });
         },
@@ -47,7 +47,7 @@ module.exports = {
     }
 
     if (characters.length) {
-      options.push({ display: "Login As:" });
+      options.push({ display: "Войти в игру как:" });
       characters.forEach(char => {
         options.push({
           display: char.username,
@@ -56,12 +56,12 @@ module.exports = {
             let existed = false;
             if (currentPlayer) {
               // kill old connection
-              Broadcast.at(currentPlayer, 'Connection taken over by another client. Goodbye.');
+              Broadcast.at(currentPlayer, 'Соединение перехвачено с другого клиента. Пока!');
               currentPlayer.socket.end();
 
               // link new socket
               currentPlayer.socket = socket;
-              Broadcast.at(currentPlayer, 'Taking over old connection. Welcome.');
+              Broadcast.at(currentPlayer, 'Восстановление соединения. Добро пожаловать!.');
               Broadcast.prompt(currentPlayer);
 
               currentPlayer.socket.emit('commands', currentPlayer);
@@ -80,7 +80,7 @@ module.exports = {
 
     if (characters.length) {
       options.push({
-        display: 'Delete a Character',
+        display: 'Удалить персонажа',
         onSelect: () => {
           socket.emit('delete-character', socket, args);
         },
@@ -88,34 +88,34 @@ module.exports = {
     }
 
     options.push({
-      display: 'Delete This Account',
+      display: 'Удалить аккаунт',
       onSelect: () => {
-        say('<bold>By deleting this account, all the characters will be also deleted.</bold>');
-        write(`<bold>Are you sure you want to delete this account? </bold> <cyan>[Y/n]</cyan> `);
+        say('<bold>Удалив аккаунт, вы также удалите всех персонажей на нем.</bold>');
+        write(`<bold>Вы уверены, что хотите удалить этот аккаунт? </bold> <cyan>[д/н]</cyan> `);
           socket.once('data', confirmation => {
             say('');
             confirmation = confirmation.toString().trim().toLowerCase();
 
-            if (!/[yn]/.test(confirmation)) {
-              say('<b>Invalid Option</b>');
+            if (!/[дн]/.test(confirmation)) {
+              say('<b>Недопустимая опция</b>');
               return socket.emit('choose-character', socket, args);
             }
 
-            if (confirmation === 'n') {
-              say('No one was deleted...');
+            if (confirmation === 'н') {
+              say('Никого не надо удалять...');
               return socket.emit('choose-character', socket, args);
             }
 
-            say(`Deleting account <b>${account.username}</b>`);
+            say(`Удаление аккаунта <b>${account.username}</b>`);
             account.deleteAccount();
-            say('Account deleted, it was a pleasure doing business with you.');
+            say('Аккаунт удален, спасибо за игру.');
             socket.end();
           });
       },
     });
 
     options.push({
-      display: 'Quit',
+      display: 'Выход',
       onSelect: () => socket.end(),
     });
 

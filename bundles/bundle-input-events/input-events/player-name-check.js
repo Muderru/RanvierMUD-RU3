@@ -10,21 +10,21 @@ module.exports = {
     const say = EventUtil.genSay(socket);
     const write  = EventUtil.genWrite(socket);
 
-    write(`<bold>${args.name} doesn't exist, would you like to create it?</bold> <cyan>[y/n]</cyan> `);
+    write(`<bold>${args.name} еще не существует, желаете создать?</bold> <cyan>[д/н]</cyan> `);
     socket.once('data', confirmation => {
       say('');
       confirmation = confirmation.toString().trim().toLowerCase();
 
-      if (!/[yn]/.test(confirmation)) {
+      if (!/[дн]/.test(confirmation)) {
         return socket.emit('player-name-check', socket, args);
       }
 
-      if (confirmation === 'n') {
-        say(`Let's try again...`);
+      if (confirmation === 'н') {
+        say(`Как-нибудь в другой раз...`);
         return socket.emit('create-player', socket, args);
       }
 
-      socket.emit('choose-class', socket, args);
+      socket.emit('create-rname', socket, args);
     });
   }
 };

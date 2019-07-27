@@ -6,7 +6,7 @@ const CommonFunctions = require('../lib/CommonFunctions');
 module.exports = {
   event: state => (socket, args) => {
     if (!args || !args.dontwelcome) {
-      socket.write('Welcome, what is your name? ');
+      socket.write('Привет, а какой ваш аккаунт? ');
     }
 
     socket.once('data', async name => {
@@ -33,13 +33,13 @@ module.exports = {
       }
 
       if (account.banned) {
-        socket.write('This account has been banned.\r\n');
+        socket.write('Этот аккаунт забанен.\r\n');
         socket.end();
         return;
       }
 
       if (account.deleted) {
-        socket.write('This account has been deleted.\r\n');
+        socket.write('Этот аккаунт удален.\r\n');
         socket.end();
         return;
       }

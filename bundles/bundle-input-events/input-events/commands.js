@@ -54,14 +54,14 @@ module.exports = {
             } catch (error) {
               switch (true) {
                 case error instanceof NoPartyError:
-                  B.sayAt(player, "You aren't in a group.");
+                  B.sayAt(player, "Вы не в группе.");
                   break;
                 case error instanceof NoRecipientError:
-                  B.sayAt(player, "Send the message to whom?");
+                  B.sayAt(player, "Кому вы хотите отправить сообщение?");
                   break;
                 case error instanceof NoMessageError:
-                  B.sayAt(player, `\r\nChannel: ${channel.name}`);
-                  B.sayAt(player, 'Syntax: ' + channel.getUsage());
+                  B.sayAt(player, `\r\nКанал: ${channel.name}`);
+                  B.sayAt(player, 'Синтаксис: ' + channel.getUsage());
                   if (channel.description) {
                     B.sayAt(player, channel.description);
                   }
@@ -92,12 +92,12 @@ module.exports = {
             if (roomCommands && roomCommands.includes(commandName)) {
               player.room.emit('command', player, commandName, args.join(' '));
             } else {
-              B.sayAt(player, "Huh?");
+              B.sayAt(player, "Что?");
               Logger.warn(`WARNING: Player tried non-existent command '${data}'`);
             }
             break;
           case error instanceof RestrictedCommandError:
-            B.sayAt(player, "You can't do that.");
+            B.sayAt(player, "Вы не можете сделать этого.");
             break;
           default:
             Logger.error(error);

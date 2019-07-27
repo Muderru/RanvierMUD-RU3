@@ -16,7 +16,7 @@ module.exports = {
     * Can select existing player
     * Can create new (if less than 3 living chars)
     */
-    say('  Pick your class');
+    say('  Выберите ваш класс');
     say(' --------------------------');
     let classes = PlayerClass.getClasses();
     classes = Object.entries(classes).map(([id, instance]) => {

@@ -11,14 +11,14 @@ module.exports = {
     const say = EventUtil.genSay(socket);
 
     let newAccount = null;
-    write(`<bold>Do you want your account's username to be ${name}?</bold> <cyan>[y/n]</cyan> `);
+    write(`<bold>Хотите чтобы название вашего аккаунта было ${name}?</bold> <cyan>[д/н]</cyan> `);
 
     socket.once('data', data => {
       data = data.toString('utf8').trim();
 
       data = data.toLowerCase();
-      if (data === 'y' || data === 'yes') {
-        say('Creating account...');
+      if (data === 'y' || data === 'yes' || data === 'да' || data === 'д') {
+        say('Создаем аккаунт...');
         newAccount = new Account({
           username: name
         });
@@ -27,8 +27,8 @@ module.exports = {
           account: newAccount,
           nextStage: 'create-player'
         });
-      } else if (data && data === 'n' || data === 'no') {
-        say("Let's try again!");
+      } else if (data && data === 'n' || data === 'no' || data === 'нет' || data === 'н') {
+        say("Попробуйте снова!");
 
         return socket.emit('login', socket);
       }
