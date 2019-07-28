@@ -16,14 +16,13 @@
 
 * git clone git://github.com/Muderru/RanvierMUD-RU3
 * cd ./ranviermud-ru3
-* git clone git://github.com/Muderru/core-ru3
-* sudo npm link
-* cd ./core-ru3
-* sudo npm link ranvier
-* cd ..
 * npm install
 * npm run install-bundle
-
+* git clone git://github.com/Muderru/core-ru3
+* cd ./core-ru3
+* sudo npm link
+* cd ..
+* sudo npm link ranvier
 
 ## Запуск
 
