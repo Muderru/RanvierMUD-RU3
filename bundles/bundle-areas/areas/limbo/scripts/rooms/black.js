@@ -6,7 +6,7 @@ module.exports = {
   listeners: {
     playerEnter: state => function (player) {
       Broadcast.sayAt(player);
-      Broadcast.sayAt(player, `<b><cyan>Hint: You can pick up items from the room listed in '<white>look</white>' with '<white>get</white>' followed by a reasonable keyword for the item e.g., '<white>get cheese</white>'. Some items, like the chest, may contain items; you can check by looking at the item.</cyan></b>`, 80);
+      Broadcast.sayAt(player, `<b><cyan>Подсказка: Вы можете подбирать вещи в комнате, увиденные командой '<white>смотреть</white>' с помощью команды '<white>взять</white>' с указанием нужного предмета, например: '<white>взять сыр</white>'. Некоторые объекты, например сундуки, могут также содержать предметы; узнать о них вы можете осмотрев объект.</cyan></b>`, 80);
     }
   }
 };

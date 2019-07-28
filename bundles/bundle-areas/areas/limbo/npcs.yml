@@ -1,8 +1,18 @@
 - id: rat
-  keywords: ['rat']
-  name: A Rat
+  keywords: ['крыса']
+  name: "крыса"
+  rname: "крысы"
+  dname: "крысе"
+  vname: "крысу"
+  tname: "крысой"
+  pname: "крысе"
+  gender: "female"
+  damageVerb: 'укусила'
+  NpcRace: "animal"
+  min_damage: 5
+  max_damage: 25
   level: 2
-  description: "The rat's beady red eyes dart frantically, its mouth foaming as it scampers about."
+  description: "Глаза крысы горят зловещим красным огнем. С ее пасти капает пена, а огромные когти царапают пол."
   script: 'rat'
   items: ['limbo:sliceofcheese']
   quests: ['limbo:onecheeseplease']
@@ -15,24 +25,50 @@
     health: 100
     energy: 100
 - id: wiseoldman
-  keywords: ["wise", "old", "man"]
-  name: "Wise Old Man"
+  keywords: ["мудрый", "старик", "старый"]
+  name: "мудрый старик"
+  rname: "мудрого старика"
+  dname: "мудрому старику"
+  vname: "мудрого старика"
+  tname: "мудрым стариком"
+  pname: "мудром старике"
+  gender: "male"
+  min_damage: 1500
+  max_damage: 3000
   level: 99
   script: 'old-man'
-  description: "A wise looking old man sits on the ground with legs crossed."
+  description: "На земле со скрещенными ногами сидит седой старик. В глазах его светится мудрость."
+  behaviors:
+    ranvier-sentient: true
 - id: puppy
-  keywords: ["puppy", "dog", "loyal", "wide", "eyed", "wide-eyed"]
-  name: A Puppy
-  description: "A wide-eyed puppy stares up at you."
+  keywords: ["щенок", "собака", "милый", "большеглазый"]
+  name: "щенок"
+  rname: "щенка"
+  dname: "щенку"
+  vname: "щенка"
+  tname: "щенком"
+  pname: "щенке"
+  gender: "male"
+  description: "Этот милый щенок внимательно наблюдает за вами огромными глазами."
   level: 1
   script: 'puppy'
 - id: trainingdummy
-  keywords: ["dummy", "target", "practice"]
+  keywords: ["манекен", "тренировочный"]
   level: 2
-  name: "Training Dummy"
+  name: "тренировочный манекен"
+  rname: "тренировочного манекена"
+  dname: "тренировочному манекену"
+  vname: "тренировочный манекен"
+  tname: "тренировочным манекеном"
+  pname: "тренировочном манекене"
+  gender: "male"
+  damageVerb: 'сокрушил'
+  min_damage: 10
+  max_damage: 20
   attributes:
     health: 100
     strength: 10
+    cutting_resistance: 1
   behaviors:
     combat: true
     lootable:
@@ -40,7 +76,7 @@
       # the currency key is arbitrary so if you want a new currency just add a new key
       # the key must be formatted_like_this though, for rendering/saving purposes
       currencies:
-        gold:
+        золото:
           min: 10
           max: 20
       # pools is a list of either a `"itemEntityReference": dropChance` or a name of a loot pool entry
@@ -51,16 +87,24 @@
         - "limbo:potions"
         - "limbo:sliceofcheese": 25
   description: >-
-    The training dummy is almost human shaped although slightly out of proportion. The material it's made of is hard to
-    discern; it seems to constantly change between metal, wood, cloth, and glass depending on the angle. There is a
-    large red and white bullseye painted on its chest. The dummy has no eyes and mindlessly meanders about the area.
+    Вы видите почти человекоподобную фигуру из непонятного материала. Похоже, что в мешковину 
+    натолкали всякий мусор: тряпки, щепки и куски металла. На груди манекена висит цель в виде
+    концентрических окружностей. Манекена ветром покачивает из стороны в сторону.
 - id: bossdummy
-  keywords: ["boss", "target", "dummy", "practice"]
-  name: "Boss Training Dummy"
-  level: 5
+  keywords: ["босс", "манекен", "тренировочный"]
+  name: "манекен босса"
+  rname: "манекена босса"
+  dname: "манекену босса"
+  vname: "манекен босса"
+  tname: "манекеном босса"
+  pname: "манекене босса"
+  gender: "male"  
+  level: 3
+  min_damage: 15
+  max_damage: 25
   description: >-
-    This dummy is significantly larger than the others. Bright red with a monstrous figure it lumbers around the area
-    with a great echoing stomp. Where the other target dummies have a bullseye this dummy has a yellow exclamation mark.
+    Этот манекен значительно больше, чем остальные в этой области. Он приводится в движение каким-то скрытым механизмом,
+    испускающим струи горячего пара. Там где у остальных манекенов висит цель, у этого знак в виде черепа с перекрещенными костями.
   attributes:
     health: 200
     strength: 15
@@ -68,7 +112,7 @@
     combat: true
     lootable:
       currencies:
-        gold:
+        золото:
           min: 50
           max: 100
       pools:
@@ -76,40 +120,54 @@
         - "limbo:trainingsword": 100
         - "limbo:bladeofranvier": 5
 - id: wallythewonderful
-  keywords: ["wally", "wonderful", "shop", "vendor"]
-  name: "Wally the Wonderful"
+  keywords: ["вэлл", "великолепный", "торговец", "цыган"]
+  name: "Великолепный Вэлл"
+  rname: "Великолепного Вэлла"
+  dname: "Великолепному Вэллу"
+  vname: "Великолепного Вэлла"
+  tname: "Великолепным Вэллом"
+  pname: "Великолепном Вэлле"
+  gender: "male"  
   description: >-
-    Moe's Shop has the best wares in town! Armor, weapons and potions, you name and we ... might have it!
+    Этот человек похож на цыгана. Он внимательно следит за вами бегающими хитрыми глазами. А губы скривились в нетерпеливой улыбке.
   level: 99
   metadata:
     vendor:
       items:
         "limbo:trainingsword":
           cost: 30
-          currency: gold
+          currency: золото
         "limbo:leathervest":
           cost: 30
-          currency: gold
+          currency: золото
         "limbo:woodenshield":
           cost: 30
-          currency: gold
+          currency: золото
         "limbo:potionhealth1":
           cost: 100
-          currency: gold
+          currency: золото
         "limbo:potionstrength1":
           cost: 150
-          currency: gold
+          currency: золото
         "limbo:bladeofranvier":
           cost: 99999
-          currency: gold
-      enterMessage: "Step right up! Get your wares at Moe's Shop!"
-      leaveMessage: "Come back soon!"
+          currency: золото
+      enterMessage: "Подходите! Покупайте великолепные товары!"
+      leaveMessage: "Возвращайтесь обратно!"
 - id: aggro-player-test
-  keywords: ["test", "aggro", "dummy"]
+  keywords: ["манекен", "агрессивный", "тренировочный"]
   level: 2
-  name: "Player-aggressive Training Dummy"
+  name: "агрессивный манекен"
+  rname: "агрессивного манекена"
+  dname: "агрессивному манекену"
+  vname: "агрессивный манекен"
+  tname: "агрессивным манекеном"
+  pname: "агрессивном манекене"
+  gender: "male"
+  min_damage: 12
+  max_damage: 22
   description: >-
-    This NPC is aggressive towards players but not other NPCs. Be careful.
+    Этот манекен атакует любого игрока, осмелившегося подойти близко. Поэтому соблюдайте осторожность!
   attributes:
     health: 120
     strength: 12
@@ -118,11 +176,19 @@
     ranvier-aggro:
       delay: 5
 - id: aggro-npc-test
-  keywords: ["test", "aggro", "dummy"]
+  keywords: ["манекен", "агрессивный", "тренировочный"]
   level: 2
-  name: "Self-hating Training Dummy"
+  name: "агрессивный манекен"
+  rname: "агрессивного манекена"
+  dname: "агрессивному манекену"
+  vname: "агрессивный манекен"
+  tname: "агрессивным манекеном"
+  pname: "агрессивном манекене"
+  gender: "male"
+  min_damage: 10
+  max_damage: 20
   description: >-
-    This NPC is aggressive towards other NPCs but not to the player.
+    Этот манекен атакует остальных мобов, но не игроков.
   attributes:
     health: 100
     strength: 15

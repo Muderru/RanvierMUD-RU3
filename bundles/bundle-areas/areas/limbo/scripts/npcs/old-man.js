@@ -9,8 +9,8 @@ module.exports = {
 
       const speak = state.EffectFactory.create('speak', {}, {
         messageList: [
-          "Welcome, %player%. The combat training area lies to the east.",
-          "To the west lies Wally's shop where you can stock up on potions.",
+           "Добро пожаловать, %player%. Боевая тренировочная площадка находится на востоке.",
+           "На западе ты найдешь магазинчик Вэлла, где можешь купить зелья.",
         ],
         outputFn: message => {
           message = message.replace(/%player%/, player.name);

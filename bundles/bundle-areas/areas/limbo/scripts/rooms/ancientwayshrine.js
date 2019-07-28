@@ -13,10 +13,10 @@ module.exports = {
         return;
       }
 
-      const downExit = this.getExits().find(exit => exit.direction === 'down');
+      const downExit = this.getExits().find(exit => exit.direction === 'вниз');
       const downRoom = state.RoomManager.getRoom(downExit.roomId);
 
-      Broadcast.sayAt(sender, "You have spoken 'friend', you may enter. The trap door opens with a *click*");
+      Broadcast.sayAt(sender, "Вы произнесли 'друг', теперь вы можете войти. Секретная дверь открылась с *щелчком*.");
       downRoom.unlockDoor(this);
       downRoom.openDoor(this);
     },

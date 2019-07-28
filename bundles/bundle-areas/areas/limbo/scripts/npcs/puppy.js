@@ -9,7 +9,7 @@ module.exports = {
         return;
       }
 
-      Broadcast.sayAt(player, 'The puppy lets out a happy bark and runs to your side.');
+      Broadcast.sayAt(player, 'Щенок заливается счастливым лаем и подбегает к вам.');
       this.follow(player);
     }
   }

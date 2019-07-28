@@ -1,36 +1,36 @@
 ---
 - id: journeybegins
-  title: "A Journey Begins"
+  title: "Начало приключения"
   level: 1
   autoComplete: true
   description: |-
-    A voice whispers to you: Welcome to the world, young one. This is a dangerous and deadly place, you should arm yourself.
-     - Open the chest with '<white>open chest</white>'
-     - Use '<white>get sword chest</white>' and '<white>get vest chest</white>' to get some gear
-     - Equip it using '<white>wield sword</white>' and '<white>wear vest</white>'
+    Голос шепчет вам: Добро пожаловать, странник. Это опасное место, тебе нужно вооружиться.
+     - Открой сундук командой '<white>открыть сундук</white>'
+     - Набери '<white>взять меч сундук</white>' и '<white>взять жилет сундук</white>', чтобы получить снаряжение
+     - Экипируйся '<white>вооружиться меч</white>' и '<white>одеть жилет</white>'
   completionMessage: |-
-    <b><cyan>Hint: You can use the '<white>tnl</white>' or '<white>level</white>' commands to see how much experience you need to level.</cyan></b>
-    <b><yellow>The rat looks like it is hungry, use '<white>quest list rat</white>' to see what aid you can offer. Use '<white>quest start rat 1</white>' to accept their task.</yellow></b>
-    <b><cyan>Hint: To move around the game type any of the exit names listed in <white>[Exits: ...]</white> when you use the '<white>look</white>' command.</cyan></b>
+    <b><cyan>Подсказка: Ты можешь использовать команды '<white>дсу</white>' или '<white>уровень</white>', чтобы узнать сколько нужно набрать опыта для получения нового уровня.</cyan></b>
+    <b><yellow>Крыса выглядит голодной, набери '<white>задание список крыса</white>', чтобы увидеть, что можно сделать. Набери '<white>задание начать крыса 1</white>', чтобы принять задание.</yellow></b>
+    <b><cyan>Подсказка: Чтобы перемещаться по миру набирай любые направления перечисленные в <white>[Выходы: ...]</white>, когда вы используете команду '<white>смотреть</white>'.</cyan></b>
   goals:
     - type: FetchGoal
       config:
-        title: Find a Weapon
+        title: Найти оружие
         count: 1
         item: 'limbo:rustysword'
     - type: FetchGoal
       config:
-        title: Find Some Armor
+        title: Найти доспех
         count: 1
         item: 'limbo:leathervest'
     - type: EquipGoal
       config:
-        title: Wield A Weapon
-        slot: wield
+        title: Вооружиться оружием
+        slot: правая рука
     - type: EquipGoal
       config:
-        title: Equip Some Armor
-        slot: chest
+        title: Надеть доспех
+        slot: тело
   rewards:
     - type: ExperienceReward
       config:
@@ -38,22 +38,22 @@
         leveledTo: QUEST
     - type: CurrencyReward
       config:
-        currency: gold
+        currency: золото
         amount: 10
 - id: onecheeseplease
-  title: One Cheese Please
+  title: Кусочек сыра, пожалуйста
   level: 1
   repeatable: true
   description: |-
-    A rat's squeaks seem to indicate it wants some cheese. You check around the area, maybe someone has left some lying around.
+    Поведение крысы показывает, что она хочет сыр. Исследуйте местность, может найдете кусочек.
     
-    Once you find some bring it back to the rat, use '<white>quest log</white>' to find the quest number, then complete the quest with '<white>quest complete #</white>'
+    Когда вы его найдете сыр, принесите его крысе и наберите '<white>задание журнал</white>', чтобы найти номер задания. Затем завершите его набрав '<white>задание завершить #</white>'
   completionMessage: |-
-    <b><cyan>Hint: NPCs with quests available have <white>[</white><yellow>!</yellow><white>]</white> in front of their name, <white>[</white><yellow>?</yellow><white>]</white> means you have a quest ready to turn in, and <white>[</white><yellow>%</yellow><white>]</white> means you have a quest in progress.</cyan>
+    <b><cyan>Подсказка: НПС с доступными заданиями имеют <white>[</white><yellow>!</yellow><white>]</white> перед именем, <white>[</white><yellow>?</yellow><white>]</white> - означает, что у вас есть задание готовое к завершению, <white>[</white><yellow>%</yellow><white>]</white> - значит, что задание сейчас выполняется.</cyan>
   goals:
     - type: FetchGoal
       config:
-        title: Found Cheese
+        title: Найти сыр
         count: 1
         item: 'limbo:sliceofcheese'
         removeItem: true
@@ -63,20 +63,20 @@
         amount: 3
         leveledTo: QUEST
 - id: selfdefense101
-  title: Self Defense 101
+  title: Самозащита 101
   level: 2
   requires: [ 'limbo:journeybegins' ]
   autoComplete: true
   description: |-
-    A voice whispers to you: It would be wise to practice protecting yourself. There are a number of training dummies in this area that, while not pushovers, will not be too difficult.
-    - Use '<white>attack dummy</white>' to start combat against the training dummy
-    - Once it's dead any loot it drops will be in its corpse on the ground. You can use '<white>look in corpse</white>' to check again or '<white>loot corpse</white>' to retrieve all your loot.
+    Голос шепчет вам: Нужно попрактиковаться в самозащите. Поблизости есть тренировочные манекены, отличная цель для тренировки.
+    - Наберите '<white>убить манекен</white>', чтобы начать бой против манекена.
+    - Когда он умрет, наберите '<white>смотреть труп</white>' и/или '<white>взять все труп</white>', чтобы получить добычу.
   completionMessage: |-
-    <b><cyan>Hint: You can get the loot from enemies with '<white>get <item> corpse</white>' but be quick about it, the corpse will decay after some time.</cyan>
+    <b><cyan>Подсказка: Вы можете брать вещи из трупа командой '<white>взять <вещь> труп</white>', но не стоит медлить, со временем труп исчезает.</cyan>
   goals:
     - type: KillGoal
       config:
-        title: Kill a Training Dummy
+        title: Убить тренировочный манекен
         npc: 'limbo:trainingdummy'
         count: 1
   rewards:

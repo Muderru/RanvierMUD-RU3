@@ -26,7 +26,7 @@ module.exports = {
 
         const heal = new Heal('health', amount, damage.attacker, this);
 
-        Broadcast.sayAt(damage.attacker, `<b><white>The Blade of Ranvier shines with a bright white light and you see wisps of ${target.name}'s soul flow into the blade.</white></b>`, 80);
+        Broadcast.sayAt(damage.attacker, `<b><white>Клинок Туора вспыхнул ярким белым светом и в него перетекла часть души ${target.rname}.</white></b>`, 80);
         heal.commit(damage.attacker);
       }
     }

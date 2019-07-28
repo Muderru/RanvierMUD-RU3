@@ -1,6 +1,6 @@
 - id: white
-  title: "White Room"
-  description: "A featureless white room. A pitch black void in the shape of archway can be seen on the east side of the room."
+  title: "Белая комната"
+  description: "Вы находитесь в ничем не примечательной комнате с белыми стенами. В восточной стене вы видите клубящуюся тьму в форме арки."
   npcs: ["limbo:rat" ]
   items:
     - id: "limbo:woodenchest"
@@ -9,20 +9,21 @@
   script: "white"
   exits:
     - roomId: "limbo:black"
-      direction: east
-      leaveMessage: " steps into the void and disappears."
+      direction: восток
+      leaveMessage: " входит во тьму и исчезает."
     - roomId: "limbo:ancientwayshrine"
-      direction: down
+      direction: вниз
     - roomId: "limbo:wallys"
-      direction: west
+      direction: запад
     - roomId: "mapped:start"
-      direction: north
+      direction: север
 - id: black
-  title: "Black Room"
+  title: "Черная комната"
   description: >-
-    A completely black room. Somehow all of the light that should be coming from the room to the west does not pass
-    through the archway. A single lightbulb hangs from the ceiling illuminating a small area. To the east you see a
-    large white dome. There is a sign above the entrance to the dome: "Training Area"
+    Вы зашли в комнату с черными отполированными стенами. С потолка свешивается маленький
+    светильник, освещающий небольшой пятачок в центре комнаты. На западе вы замечаете затянутую
+    тьмой аркой, через которую не проходит свет. А на востоке находится ярко освещенное
+    помещение, у входа в которое висит табличка "Тренировочная площадь".
   script: "black"
   items:
     - id: "limbo:sliceofcheese"
@@ -30,32 +31,33 @@
   npcs: ["limbo:wiseoldman", "limbo:puppy"]
   exits:
     - roomId: "limbo:white"
-      direction: west
-      leaveMessage: " steps into the light and disappears."
+      direction: запад
+      leaveMessage: " входит в свет и исчезает."
     - roomId: "limbo:training1"
-      direction: east
+      direction: восток
 - &trainingroom
   id: training1
-  title: "Training Room"
+  title: "Тренировочная площадь"
   script: "combat-training"
   description: >-
-    The entire area is covered by a large dome with a hexagonal grid surface. A beautiful blue sky reaches from horizon
-    to horizon, punctuated by the lines of the grid. The dome shimmers as virtual birds fly into and out of its surface.
-    The pure green grass is eerily undisturbed by you walking over it or by the simulated breeze.
+    Вы вышли на открытое пространство, над которым висит полупрозрачный купол из светящихся гексагональных
+    элементов. За куполом вы видите голубое небо, тянущееся от горизонта до горизонта. Когда к куполу
+    подлетают птицы, он начинает слабо светиться и птицы поворачивают назад. Внизу, под ногами, зеленеет
+    мягкая невысокая трава.
   npcs:
     - id: "limbo:trainingdummy"
       respawnChance: 25
       maxLoad: 3
   exits:
     - roomId: "limbo:black"
-      direction: west
+      direction: запад
     - roomId: "limbo:training2"
-      direction: north
+      direction: север
     - roomId: "limbo:training4"
-      direction: east
+      direction: восток
 - <<: *trainingroom
   id: training2
-  title: "Training Room 2"
+  title: "Тренировочная площадь 2"
   items:
     - id: "craft:greenplant"
       respawnChance: 30
@@ -68,25 +70,25 @@
       maxLoad: 1
   exits:
     - roomId: "limbo:training1"
-      direction: south
+      direction: юг
     - roomId: "limbo:training3"
-      direction: east
+      direction: восток
 - <<: *trainingroom
   id: training3
-  title: "Training Room 3"
+  title: "Тренировочная площадь 3"
   items:
     - id: "craft:redrose"
       respawnChance: 15
   exits:
     - roomId: "limbo:training2"
-      direction: west
+      direction: запад
     - roomId: "limbo:training4"
-      direction: south
+      direction: юг
     - roomId: "limbo:bosstraining"
-      direction: north
+      direction: север
 - <<: *trainingroom
   id: training4
-  title: "Training Room 4"
+  title: "Тренировочная площадь 4"
   npcs:
     - id: "limbo:trainingdummy"
       respawnChance: 25
@@ -96,73 +98,78 @@
       maxLoad: 2
   exits:
     - roomId: "limbo:training1"
-      direction: west
+      direction: запад
     - roomId: "limbo:training3"
-      direction: north
+      direction: север
 - id: bosstraining
-  title: "Boss Training Room"
+  title: "Тренировочная площадка с боссом"
   description: >-
-    The dome in this section is bright red, the pure green grass is replaced with a smooth white surface. The ground
-    beneath your feet has the word "Danger" in bright red letters tiled across the area.
+    Купол в этой части поля ярко красный, а зеленая трава заменена на гладкую белую поверхность,
+    напоминающую камень. Также на полу вы замечаете красные надписи: "Опасность". Тут царит
+    тревожная тишина.
   npcs:
     - id: "limbo:bossdummy"
       respawnChance: 50
   exits:
     - roomId: "limbo:training3"
-      direction: south
+      direction: юг
 - id: ancientwayshrine
-  title: "Ancient Wayshrine"
+  title: "Древнее дорожное святилище"
   description: >
-    A runed black obelisk towers in the center of this clearing, surrounded by a faerie ring. The runes pulse and glow with
-    a soft blue light. The grass immediately around the obelisk is immaculate in stark contrast to the dying former meadow
-    that makes up the clearing.
+    В центре этого помещения возвышается массивный черный обелиск, окруженный кольцом из светящихся рун. Они
+    пульсируют и мерцают таинственным голубым сиянием. Трава вокруг обелиска хилая и увядшая, хотя
+    в отдалении от него она буйно цветет и колосится до колена. Приложив руки к обелиску, вы понимаете,
+    что это <b><cyan>портал</cyan></b>.
   script: 'ancientwayshrine'
+  behaviors:
+    waypoint: true
   exits:
     - roomId: "limbo:white"
-      direction: up
+      direction: вверх
     - roomId: "limbo:context"
-      direction: down
+      direction: вниз
 - id: wallys
-  title: "Wally's Wonderful Wares (Shop)"
+  title: "Замечательные товары Вэлла"
   description: >- 
-    A very brightly colored shop stall stands in the middle of an otherwise desolate clearing. The stall is covered in
-    colorful cloth, shining gems, and battle gear of all varieties. A large sign sits next to the products:
-    "<b><yellow>Wally's Wonderful Wares</yellow></b> has the best products in town! Armor, weapons and potions, you name
-    and we... might have it!"
+    посреди пустыря стоит яркая, пестрая палатка. На прилавке лежат образцы дорогой ткани, блестящие
+    драгоценные камни и всевозможное боевое снаряжение. У палатки установлен деревянный знак с надписью
+    "<b><yellow>Замечательные товары Вэлла</yellow></b> готовы предложить вам лучшее по умеренной цене!
+    Доспехи, оружие, магические зелья - все это вы можете приобрести здесь!"
   npcs:
     - id: "limbo:wallythewonderful"
       respawnChance: 0
   exits:
     - roomId: "limbo:white"
-      direction: east
+      direction: восток
 - id: context
-  title: "Room Context Commands Test"
+  title: "Тестовая комната"
   script: 'context'
   description: >-
-    This room shows off commands that are only active in a particular room. Try out the <b><cyan>roomtest</cyan></b> command.
-  metadata:
+    Эта комната создана, чтобы продемонстрировать вам работу команд, привязанных к определенному месту.
+    Попробуйте набрать команду <b><cyan>roomtest</cyan></b>.
+  behaviors:
     commands: [ 'roomtest' ]
   items:
     - id: "limbo:test_key"
   exits:
     - roomId: "limbo:ancientwayshrine"
-      direction: up
+      direction: вверх
     - roomId: "limbo:locked"
-      direction: east
+      direction: восток
   doors:
     "limbo:ancientwayshrine":
-      locked: true
+      lockedWith: false
       closed: true
 - id: locked
-  title: "Locked room with key"
-  description: This room requires a key to get into
+  title: "Закрытая комната"
+  description: Эта комната ничем не примечательна, но чтобы попасть сюда, ее понадобится открыть ключом.
   items:
     - id: "limbo:locked_chest"
       respawnChance: 5
       replaceOnRespawn: true
   exits:
     - roomId: "limbo:context"
-      direction: west
+      direction: запад
   doors:
     "limbo:context":
       lockedBy: "limbo:test_key"

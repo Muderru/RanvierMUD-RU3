@@ -5,7 +5,7 @@ const { Broadcast, Logger } = require('ranvier');
 module.exports = {
   listeners: {
     spawn: state => function () {
-      Broadcast.sayAt(this.room, "A rat scurries into view.");
+      Broadcast.sayAt(this.room, "Рядом копошится крыса.");
       Logger.log(`Spawned rat into Room [${this.room.title}]`);
     },
 
@@ -23,13 +23,13 @@ module.exports = {
       // skills do both of these checks internally but I only want to send
       // this message when execute would definitely succeed
       if (!rend.onCooldown(this) && rend.hasEnoughResources(this)) {
-        Broadcast.sayAt(target, "The rat bears its fangs and leaps at your throat!");
+        Broadcast.sayAt(target, "Крыса обнажает клыки и бросается вам в горло!");
         rend.execute(null, this, target);
       }
     },
 
     deathblow: state => function (player) {
-      Broadcast.sayAt(player.room, `The rat seems to snicker evilly as ${player.name} drops dead from their wounds.`);
+      Broadcast.sayAt(player.room, `Крыса удовлетворенно шипит, когда ${player.name} умирает от ран.`);
     }
   }
 };
