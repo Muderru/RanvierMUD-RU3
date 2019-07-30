@@ -3,12 +3,12 @@
 const { Broadcast, PlayerRoles } = require('ranvier');
 
 module.exports = {
-  aliases: ['tp'],
+  aliases: ['tp', 'goto'],
   usage: 'teleport <player/room>',
   requiredRole: PlayerRoles.ADMIN,
   command: (state) => (args, player) => {
     if (!args || !args.length) {
-      return Broadcast.sayAt(player, 'Must specify a destination using an online player or room entity reference.');
+      return Broadcast.sayAt(player, 'Нужно установить место перемещения указав игрока или id комнаты.');
     }
 
     const target = args;
@@ -18,16 +18,16 @@ module.exports = {
     if (isRoom) {
       targetRoom = state.RoomManager.getRoom(target);
       if (!targetRoom) {
-        return Broadcast.sayAt(player, 'No such room entity reference exists.');
+        return Broadcast.sayAt(player, 'Такой комнаты не найдено.');
       } else if (targetRoom === player.room) {
-        return Broadcast.sayAt(player, 'You try really hard to teleport before realizing you\'re already at your destination.');
+        return Broadcast.sayAt(player, 'Вы уже тут.');
       }
     } else {
       const targetPlayer = state.PlayerManager.getPlayer(target);
       if (!targetPlayer) {
-        return Broadcast.sayAt(player, 'No such player online.');
+        return Broadcast.sayAt(player, 'Такого игрока сейчас нет в игре.');
       } else if (targetPlayer === player || targetPlayer.room === player.room) {
-        return Broadcast.sayAt(player, 'You try really hard to teleport before realizing you\'re already at your destination.');
+        return Broadcast.sayAt(player, 'Вы уже рядом с ним.');
       }
 
       targetRoom = targetPlayer.room;
@@ -36,7 +36,7 @@ module.exports = {
     player.followers.forEach(follower => {
       follower.unfollow();
       if (!follower.isNpc) {
-        Broadcast.sayAt(follower, `You stop following ${player.name}.`);
+        Broadcast.sayAt(follower, `Вы прекратили следовать за ${player.tname}.`);
       }
     });
 
@@ -47,11 +47,22 @@ module.exports = {
     const oldRoom = player.room;
 
     player.moveTo(targetRoom, () => {
-      Broadcast.sayAt(player, '<b><green>You snap your finger and instantly appear in a new room.</green></b>\r\n');
+      Broadcast.sayAt(player, '<b><green>Вы щёлкнули пальцами и оказались в другой комнате.</green></b>\r\n');
       state.CommandManager.get('look').execute('', player);
     });
 
-    Broadcast.sayAt(oldRoom, `${player.name} teleported away.`);
-    Broadcast.sayAtExcept(targetRoom, `${player.name} teleported here.`, player);
+    if (player.gender === 'male') {
+      Broadcast.sayAt(oldRoom, `${player.name} исчез в облаке дыма.`);
+      Broadcast.sayAtExcept(targetRoom, `${player.name} телепортировался сюда.`, player);
+    } else if (player.gender === 'female') {
+      Broadcast.sayAt(oldRoom, `${player.name} исчезла в облаке дыма.`);
+      Broadcast.sayAtExcept(targetRoom, `${player.name} телепортировалась сюда.`, player);
+    } else if (player.gender === 'plural') {
+      Broadcast.sayAt(oldRoom, `${player.name} исчезли в облаке дыма.`);
+      Broadcast.sayAtExcept(targetRoom, `${player.name} телепортировались сюда.`, player);
+    } else {
+      Broadcast.sayAt(oldRoom, `${player.name} исчезло в облаке дыма.`);
+      Broadcast.sayAtExcept(targetRoom, `${player.name} телепортировалось сюда.`, player);
+    }
   }
 };
