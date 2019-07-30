@@ -3,56 +3,56 @@
 const { Broadcast: B } = require('ranvier');
 
 module.exports = {
-  usage: 'config <set/list> [setting] [value]',
-  aliases: ['toggle', 'options', 'set'],
+  usage: 'конфиг <установить/список> [настройки] [значение]',
+  aliases: ['настройки', 'опции', 'конфиг'],
   command: (state) => (args, player) => {
     if (!args.length) {
-      B.sayAt(player, 'Configure what?');
+      B.sayAt(player, 'Настроить что?');
       return state.CommandManager.get('help').execute('config', player);
     }
 
-    const possibleCommands = ['set', 'list'];
+    const possibleCommands = ['установить', 'список'];
 
     const [command, configToSet, valueToSet ] = args.split(' ');
 
     if (!possibleCommands.includes(command)) {
-      B.sayAt(player, `<red>Invalid config command: ${command}</red>`);
+      B.sayAt(player, `<red>Неправильная команда: ${command}</red>`);
       return state.CommandManager.get('help').execute('config', player);
     }
 
-    if (command === 'list') {
-      B.sayAt(player, 'Current Settings:');
+    if (command === 'список') {
+      B.sayAt(player, 'Текущие настройки:');
       for (const key in player.metadata.config) {
-        const val = player.metadata.config[key] ? 'on' : 'off';
+        const val = player.metadata.config[key] ? 'вкл' : 'выкл';
         B.sayAt(player, `  ${key}: ${val}`);
       }
       return;
     }
 
     if (!configToSet) {
-      B.sayAt(player, 'Set what?');
+      B.sayAt(player, 'Установить что?');
       return state.CommandManager.get('help').execute('config', player);
     }
 
-    const possibleSettings = ['brief', 'autoloot', 'minimap'];
+    const possibleSettings = ['краткий', 'autoloot', 'миникарта'];
 
     if (!possibleSettings.includes(configToSet)) {
-      B.sayAt(player, `<red>Invalid setting: ${configToSet}. Possible settings: ${possibleSettings.join(', ')}`);
+      B.sayAt(player, `<red>Недопустимые настройки: ${configToSet}. Возможные настройки: ${possibleSettings.join(', ')}</red>`);
       return state.CommandManager.get('help').execute('config', player);
     }
 
     if (!valueToSet) {
-      B.sayAt(player, `<red>What value do you want to set for ${configToSet}?</red>`);
+      B.sayAt(player, `<red>Какое значение вы хотите установить для ${configToSet}?</red>`);
       return state.CommandManager.get('help').execute('config', player);
     }
 
     const possibleValues = {
-      on: true,
-      off: false
+      вкл: true,
+      выкл: false
     };
 
     if (possibleValues[valueToSet] === undefined) {
-      return B.sayAt(player, `<red>Value must be either: on / off</red>`);
+      return B.sayAt(player, `<red>Значения должны быть: вкл / выкл.</red>`);
     }
 
     if (!player.getMeta('config')) {
@@ -61,7 +61,7 @@ module.exports = {
 
     player.setMeta(`config.${configToSet}`, possibleValues[valueToSet]);
 
-    B.sayAt(player, 'Configuration value saved');
+    B.sayAt(player, 'Настройки сохранены.');
   }
 };
 

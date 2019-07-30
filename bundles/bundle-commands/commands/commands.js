@@ -53,11 +53,11 @@ function sayAtColumns (source, strings, numCols) {
 }
 
 module.exports = {
-  aliases: ['channels'],
+  aliases: ['каналы', 'команды'],
   command: (state) => (args, player) => {
 
     // print standard commands
-    Broadcast.sayAt(player, "<bold><white>                  Commands</bold></white>");
+    Broadcast.sayAt(player, "<bold><white>                  Команды</bold></white>");
     Broadcast.sayAt(player, "<bold><white>===============================================</bold></white>");
 
     let commands = [];
@@ -72,7 +72,7 @@ module.exports = {
 
     // channels
     Broadcast.sayAt(player);
-    Broadcast.sayAt(player, "<bold><white>                  Channels</bold></white>");
+    Broadcast.sayAt(player, "<bold><white>                  Каналы</bold></white>");
     Broadcast.sayAt(player, "<bold><white>===============================================</bold></white>");
 
     let i = 0;

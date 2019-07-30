@@ -5,33 +5,33 @@ const ArgParser = require('../../bundle-lib/lib/ArgParser');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  usage: 'get <item> [container]',
-  aliases: [ 'take', 'pick', 'loot' ],
+  usage: 'взять <предмет> [контейнер]',
+  aliases: [ 'взять', 'взятьвсе' ],
   command : (state) => (args, player, arg0) => {
     if (!args.length) {
-      return Broadcast.sayAt(player, 'Get what?');
+      return Broadcast.sayAt(player, 'Взять что?');
     }
 
     if (!player.room) {
-      return Broadcast.sayAt(player, 'You are floating in the nether, there is nothing to get.');
+      return Broadcast.sayAt(player, 'Вы зависли в нигде, здесь нечего взять.');
     }
 
     if (player.isInventoryFull()) {
-      return Broadcast.sayAt(player, "You can't hold any more items.");
+      return Broadcast.sayAt(player, "Вы не можете больше ничего взять.");
     }
 
     // 'loot' is an alias for 'get all'
-    if (arg0 === 'loot') {
-      args = ('all ' + args).trim();
+    if (arg0 === 'взятьвсе') {
+      args = ('все ' + args).trim();
     }
 
     // get 3.foo from bar -> get 3.foo bar
     let parts = args.split(' ').filter(arg => !arg.match(/from/));
 
     // pick up <item>
-    if (parts.length > 1 && parts[0] === 'up') {
-      parts = parts.slice(1);
-    }
+    //if (parts.length > 1 && parts[0] === 'up') {
+    //  parts = parts.slice(1);
+    //}
 
     let source = null, search = null, container = null;
     if (parts.length === 1) {
@@ -42,24 +42,24 @@ module.exports = {
     // most recent corpse. See issue #247.
       container = ArgParser.parseDot(parts[1], [...player.room.items].reverse());
       if (!container) {
-        return Broadcast.sayAt(player, "You don't see anything like that here.");
+        return Broadcast.sayAt(player, "Здесь нет ничего такого.");
       }
 
       if (container.type !== ItemType.CONTAINER) {
-        return Broadcast.sayAt(player, `${ItemUtil.display(container)} isn't a container.`);
+        return Broadcast.sayAt(player, `${ItemUtil.display(container)} не контейнер.`);
       }
 
       if (container.closed) {
-        return Broadcast.sayAt(player, `${ItemUtil.display(container)} is closed.`);
+        return Broadcast.sayAt(player, `${ItemUtil.display(container)}: закрыто.`);
       }
 
       search = parts[0];
       source = container.inventory;
     }
 
-    if (search === 'all') {
+    if (search === 'все') {
       if (!source || ![...source].length) {
-        return Broadcast.sayAt(player, "There isn't anything to take.");
+        return Broadcast.sayAt(player, "Здесь ничего нет.");
       }
 
       for (let item of source) {
@@ -69,7 +69,7 @@ module.exports = {
         }
 
         if (player.isInventoryFull()) {
-          return Broadcast.sayAt(player, "You can't carry any more.");
+          return Broadcast.sayAt(player, "Ваш инвентарь переполнен.");
         }
 
         pickup(item, container, player);
@@ -80,7 +80,7 @@ module.exports = {
 
     const item = ArgParser.parseDot(search, source);
     if (!item) {
-      return Broadcast.sayAt(player, "You don't see anything like that here.");
+      return Broadcast.sayAt(player, "Здесь ничего такого нет.");
     }
 
     pickup(item, container, player);
@@ -90,7 +90,7 @@ module.exports = {
 
 function pickup(item, container, player) {
   if (item.metadata.noPickup) {
-    return Broadcast.sayAt(player, `${ItemUtil.display(item)} can't be picked up.`);
+    return Broadcast.sayAt(player, `${ItemUtil.display(item)} - это нельзя подобрать.`);
   }
 
   if (container) {
@@ -100,7 +100,7 @@ function pickup(item, container, player) {
   }
   player.addItem(item);
 
-  Broadcast.sayAt(player, `<green>You receive loot: </green>${ItemUtil.display(item)}<green>.</green>`);
+  Broadcast.sayAt(player, `<green>Вы получили: </green>${ItemUtil.display(item)}<green>.</green>`);
 
   item.emit('get', player);
   player.emit('get', item);

@@ -3,9 +3,10 @@
 const { Broadcast: B } = require('ranvier');
 
 module.exports = {
-  usage: 'who',
+  usage: 'кто',
+  aliases: [ 'кто' ],
   command: (state) => (args, player) => {
-    B.sayAt(player, "<bold><red>                  Who's Online</bold></red>");
+    B.sayAt(player, "<bold><red>                  Сейчас в игре</bold></red>");
     B.sayAt(player, "<bold><red>===============================================</bold></red>");
     B.sayAt(player, '');
 
@@ -13,13 +14,13 @@ module.exports = {
       B.sayAt(player, ` *  ${otherPlayer.name} ${getRoleString(otherPlayer.role)}`);
     });
 
-    B.sayAt(player, state.PlayerManager.players.size + ' total');
+    B.sayAt(player, state.PlayerManager.players.size + ' всего');
 
     function getRoleString(role = 0) {
       return [
         '',
-        '<white>[Builder]</white>',
-        '<b><white>[Admin]</white></b>'
+        '<white>[Билдер]</white>',
+        '<b><white>[Администратор]</white></b>'
       ][role] || '';
     }
   }

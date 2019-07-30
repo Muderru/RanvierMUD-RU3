@@ -4,14 +4,14 @@ const { Broadcast } = require('ranvier');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  aliases: ['worn'],
-  usage: 'equipment',
+  aliases: ['экипировка', 'снаряжение'],
+  usage: 'экипировка',
   command: (state) => (args, player) => {
     if (!player.equipment.size) {
-      return Broadcast.sayAt(player, "You are completely naked!");
+      return Broadcast.sayAt(player, "На вас ничего не одето!");
     }
 
-    Broadcast.sayAt(player, "Currently Equipped:");
+    Broadcast.sayAt(player, "На вас надето:");
     for (const [slot, item] of player.equipment) {
       Broadcast.sayAt(player, `  <${slot}> ${ItemUtil.display(item)}`);
     }

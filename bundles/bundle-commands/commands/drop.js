@@ -5,22 +5,23 @@ const ArgParser = require('../../bundle-lib/lib/ArgParser');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  usage: 'drop <item>',
+  usage: 'бросить <предмет>',
+  aliases: ['бросить', 'выбросить'],
   command : (state) => (args, player) => {
     args = args.trim();
 
     if (!args.length) {
-      return Broadcast.sayAt(player, 'Drop what?');
+      return Broadcast.sayAt(player, 'Бросить что?');
     }
 
     if (!player.room) {
-      return Broadcast.sayAt(player, 'You are floating in the nether, it would disappear forever.');
+      return Broadcast.sayAt(player, 'Вы зависли в нигде, эта вещь может исчезнуть навсегда.');
     }
 
     const item = ArgParser.parseDot(args, player.inventory);
 
     if (!item) {
-      return Broadcast.sayAt(player, "You aren't carrying anything like that.");
+      return Broadcast.sayAt(player, "У вас ничего такого нет.");
     }
 
     player.removeItem(item);
@@ -32,6 +33,6 @@ module.exports = {
       npc.emit('playerDropItem', player, item);
     }
 
-    Broadcast.sayAt(player, `<green>You dropped: </green>${ItemUtil.display(item)}<green>.</green>`);
+    Broadcast.sayAt(player, `<green>Вы выбросили: </green>${ItemUtil.display(item)}<green>.</green>`);
   }
 };

@@ -3,11 +3,12 @@
 const { Broadcast: B } = require('ranvier');
 
 module.exports = {
-  usage: 'map',
+  usage: 'карта',
+  aliases: ['карта'],
   command: state => (args, player) => {
     const room = player.room;
     if (!room || !room.coordinates) {
-      return B.sayAt(player, "You can't see a map in this room.");
+      return B.sayAt(player, "Для этой комнаты нет карты.");
     }
 
     let size = parseInt(args, 10);

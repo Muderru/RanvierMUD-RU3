@@ -7,12 +7,12 @@ const { Broadcast } = require('ranvier');
  * View command queue
  */
 module.exports = {
-  aliases: [ 'pending' ],
-  usage: 'queue',
+  aliases: [ 'очередь', 'последовательность'],
+  usage: 'очередь',
   command : (state) => (args, player) => {
-    Broadcast.sayAt(player, '<bold><yellow>Command Queue:</yellow></bold>');
+    Broadcast.sayAt(player, '<bold><yellow>Очередь команд:</yellow></bold>');
     if (!player.commandQueue.hasPending) {
-      return Broadcast.sayAt(player, ' -) None.');
+      return Broadcast.sayAt(player, ' -) Нет.');
     }
 
     const commands = player.commandQueue.queue;
@@ -26,6 +26,6 @@ module.exports = {
       Broadcast.sayAt(player, buf);
     }
 
-    Broadcast.sayAt(player, '<bold><yellow>Use the "flush" command to flush the queue</yellow></bold>');
+    Broadcast.sayAt(player, '<bold><yellow>Используйте команду "очистить", чтобы удалить очередь команд.</yellow></bold>');
   }
 };

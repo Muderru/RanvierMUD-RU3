@@ -5,20 +5,20 @@ const ArgParser = require('../../bundle-lib/lib/ArgParser');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  aliases: [ 'unwield', 'unequip' ],
-  usage: 'remove <item>',
+  aliases: [ 'снять' ],
+  usage: 'снять <предмет>',
   command : state => (arg, player) => {
     if (!arg.length) {
-      return Broadcast.sayAt(player, 'Remove what?');
+      return Broadcast.sayAt(player, 'Что снять?');
     }
 
     const result = ArgParser.parseDot(arg, player.equipment, true);
     if (!result) {
-      return Broadcast.sayAt(player, "You aren't wearing anything like that.");
+      return Broadcast.sayAt(player, "На вас ничего такого не одето.");
     }
 
     const [slot, item] = result;
-    Broadcast.sayAt(player, `<green>You un-equip: </green>${ItemUtil.display(item)}<green>.</green>`);
+    Broadcast.sayAt(player, `<green>Вы сняли: </green>${ItemUtil.display(item)}<green>.</green>`);
     player.unequip(slot);
   }
 };

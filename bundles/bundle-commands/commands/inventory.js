@@ -4,13 +4,14 @@ const { Broadcast } = require('ranvier');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  usage: 'inventory',
+  usage: 'инвентарь',
+  aliases: ['инвентарь'],
   command : (state) => (args, player) => {
     if (!player.inventory || !player.inventory.size) {
-      return Broadcast.sayAt(player, "You aren't carrying anything.");
+      return Broadcast.sayAt(player, "У вас нет ничего.");
     }
 
-    Broadcast.at(player, "You are carrying");
+    Broadcast.at(player, "Вы несете");
     if (isFinite(player.inventory.getMax())) {
       Broadcast.at(player, ` (${player.inventory.size}/${player.inventory.getMax()})`);
     }

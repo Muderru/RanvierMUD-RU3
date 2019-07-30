@@ -6,23 +6,23 @@ const ArgParser = require('../../bundle-lib/lib/ArgParser');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  aliases: ['close', 'lock', 'unlock'],
-  usage: '[open/close/lock/unlock] <item> / [open/close/lock/unlock] <door direction>/ [open/close/lock/unlock] <door direction>',
+  aliases: ['закрыть', 'запереть', 'отпереть', 'открыть'],
+  usage: '[открыть/закрыть/запереть/отпереть] <предмет> / [открыть/закрыть/запереть/отпереть] <дверь направление>',
   command: state => (args, player, arg0) => {
     const action = arg0.toString().toLowerCase();
     let validTarget = false;
     if (!args || !args.length) {
-      return B.sayAt(player, `What do you want to ${action}?`);
+      return B.sayAt(player, `Что вы хотите ${action}?`);
     }
 
     if (!player.room) {
-      return B.sayAt(player, 'You are floating in the nether.');
+      return B.sayAt(player, 'Вы затеряны в нигде.');
     }
 
     const parts = args.split(' ');
 
     let exitDirection = parts[0];
-    if (parts[0] === 'door' && parts.length >= 2) {
+    if (parts[0] === 'дверь' && parts.length >= 2) {
       // Exit is in second parameter
       exitDirection = parts[1];
     }
@@ -51,68 +51,68 @@ module.exports = {
       return handleItem(player, item, action);
     }
 
-    return B.sayAt(player, `You don't see ${args} here.`);
+    return B.sayAt(player, `Кажется здесь нет ${args}.`);
   }
 };
 
 function handleDoor(player, doorRoom, targetRoom, door, action)
 {
   switch (action) {
-    case 'open': {
+    case 'открыть': {
       if (door.locked) {
-        return B.sayAt(player, "The door is locked.");
+        return B.sayAt(player, "Дверь заперта.");
       }
 
       if (door.closed) {
-        B.sayAt(player, "The door swings open.");
+        B.sayAt(player, "Дверь открывается.");
         return doorRoom.openDoor(targetRoom);
       }
 
-      return B.sayAt(player, "The door is not closed.");
+      return B.sayAt(player, "Дверь не закрыта.");
     }
 
-    case 'close': {
+    case 'закрыть': {
       if (door.locked || door.closed) {
-        return B.sayAt(player, "The door is already closed.");
+        return B.sayAt(player, "Дверь уже закрыта.");
       }
 
-      B.sayAt(player, "The door swings closed.");
+      B.sayAt(player, "Дверь закрывается.");
       return doorRoom.closeDoor(targetRoom);
     }
 
-    case 'lock': {
+    case 'запереть': {
       if (door.locked) {
-        return B.sayAt(player, "The door is already locked.");
+        return B.sayAt(player, "Дверь уже заперта.");
       }
 
       if (!door.lockedBy) {
-        return B.sayAt(player, "You can't lock that door.");
+        return B.sayAt(player, "Вы не можете запереть эту дверь.");
       }
 
       const playerKey = player.hasItem(door.lockedBy);
       if (!playerKey) {
-        return B.sayAt(player, "You don't have the key.");
+        return B.sayAt(player, "У вас нет ключа.");
       }
 
       doorRoom.lockDoor(targetRoom);
-      return B.sayAt(player, '*Click* The door locks.');
+      return B.sayAt(player, '*Щёлк* Дверь заперта.');
     }
 
-    case 'unlock': {
+    case 'отпереть': {
       if (!door.locked) {
-        return B.sayAt(player, "It is already unlocked.");
+        return B.sayAt(player, "Дверь не заперта.");
       }
 
       if (door.lockedBy) {
         if (player.hasItem(door.lockedBy)) {
-          B.sayAt(player, '*Click* The door unlocks.');
+          B.sayAt(player, '*Щёлк* Дверь отпирается.');
           return doorRoom.unlockDoor(targetRoom);
         }
 
-        return B.sayAt(player, `The door can only be unlocked with ${keyItem.name}.`);
+        return B.sayAt(player, `Эту дверь можно отпереть только с помощью ${keyItem.name}.`);
       }
 
-      return B.sayAt(player, "You can't unlock that door.");
+      return B.sayAt(player, "Эту дверь нельзя отпереть.");
     }
   }
 }
@@ -120,73 +120,73 @@ function handleDoor(player, doorRoom, targetRoom, door, action)
 function handleItem(player, item, action)
 {
   if (!item.closeable) {
-    return B.sayAt(player, `${ItemUtil.display(item)} is not a container.`)
+    return B.sayAt(player, `${ItemUtil.display(item)} - не контейнер.`)
   }
 
   switch (action) {
-    case 'open': {
+    case 'открыть': {
       if (item.locked) {
-        return B.sayAt(player, `${ItemUtil.display(item)} is locked.`);
+        return B.sayAt(player, `${ItemUtil.display(item)}: заперто.`);
       }
 
       if (item.closed) {
-        B.sayAt(player, `You open ${ItemUtil.display(item)}.`);
+        B.sayAt(player, `Вы открыли ${ItemUtil.display(item)}.`);
         return item.open();
       }
 
-      return B.sayAt(player, `${ItemUtil.display(item)} is already open, you can't open it any farther.`);
+      return B.sayAt(player, `${ItemUtil.display(item)} - тут уже открыто.`);
     }
 
-    case 'close': {
+    case 'закрыть': {
       if (item.locked || item.closed) {
-        return B.sayAt(player, "It's already closed.");
+        return B.sayAt(player, "Здесь уже закрыто.");
       }
 
-      B.sayAt(player, `You close ${ItemUtil.display(item)}.`);
+      B.sayAt(player, `Вы закрыли ${ItemUtil.display(item)}.`);
 
       return item.close();
     }
 
-    case 'lock': {
+    case 'запереть': {
       if (item.locked) {
-        return B.sayAt(player, "It's already locked.");
+        return B.sayAt(player, "Здесь уже заперто.");
       }
 
       if (!item.lockedBy) {
-        return B.sayAt(player, `You can't lock ${ItemUtil.display(item)}.`);
+        return B.sayAt(player, `Вы не можете запереть ${ItemUtil.display(item)}.`);
       }
 
       const playerKey = player.hasItem(item.lockedBy);
       if (playerKey) {
-        B.sayAt(player, `*click* You lock ${ItemUtil.display(item)}.`);
+        B.sayAt(player, `*Щёлк* Вы заперли ${ItemUtil.display(item)}.`);
 
         return item.lock();
       }
 
-      return B.sayAt(player, "The item is locked and you don't have the key.");
+      return B.sayAt(player, "Этот предмет заперт и у вас нет ключа.");
     }
 
-    case 'unlock': {
+    case 'отпереть': {
       if (!item.locked) {
-        return B.sayAt(player, `${ItemUtil.display(item)} isn't locked...`);
+        return B.sayAt(player, `${ItemUtil.display(item)} - а тут и не заперто...`);
       }
 
       if (!item.closed) {
-        return B.sayAt(player, `${ItemUtil.display(item)} isn't closed...`);
+        return B.sayAt(player, `${ItemUtil.display(item)} - а тут и не закрыто...`);
       }
 
       if (item.lockedBy) {
         const playerKey = player.hasItem(item.lockedBy);
         if (playerKey) {
-          B.sayAt(player, `*click* You unlock ${ItemUtil.display(item)} with ${ItemUtil.display(playerKey)}.`);
+          B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item)} с помощью ${ItemUtil.display(playerKey)}.`);
 
           return item.unlock();
         }
 
-        return B.sayAt(player, "The item is locked and you don't have the key.");
+        return B.sayAt(player, "Предмет заперт и у вас нет ключа.");
       }
 
-      B.sayAt(player, `*Click* You unlock ${ItemUtil.display(item)}.`);
+      B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item)}.`);
 
       return item.unlock();
     }

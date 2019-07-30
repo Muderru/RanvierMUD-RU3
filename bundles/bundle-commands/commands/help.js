@@ -4,7 +4,8 @@ const { Broadcast: B, Logger } = require('ranvier');
 
 
 module.exports = {
-  usage: 'help [search] [topic keyword]',
+  usage: 'помощь [искать] [раздел ключевое слово]',
+  aliases: ['помощь', '?', 'справка'],
   command: (state) => (args, player) => {
     if (!args.length) {
       // look at `help help` if they haven't specified a file
@@ -12,7 +13,7 @@ module.exports = {
     }
 
     // `help search`
-    if (args.indexOf('search') === 0) {
+    if (args.indexOf('искать') === 0) {
       return searchHelpfiles(args, player, state);
     }
 
@@ -20,14 +21,14 @@ module.exports = {
 
     if (!hfile) {
       Logger.error(`MISSING-HELP: [${args}]`);
-      return B.sayAt(player, "Sorry, I couldn't find an entry for that topic.");
+      return B.sayAt(player, "Ничего не найдено по вашему запросу.");
     }
     try {
       B.sayAt(player, render(state, hfile));
     } catch (e) {
       Logger.warn(`UNRENDERABLE-HELP: [${args}]`);
       Logger.warn(e);
-      B.sayAt(player, `Invalid help file for ${args}.`);
+      B.sayAt(player, `Не найден файл помощи для ${args}.`);
     }
   }
 };
@@ -45,18 +46,18 @@ function render(state, hfile) {
   if (hfile.command) {
     let actualCommand = state.CommandManager.get(hfile.command);
 
-    header += formatHeaderItem('Syntax', actualCommand.usage);
+    header += formatHeaderItem('Синтаксис', actualCommand.usage);
 
     if (actualCommand.aliases && actualCommand.aliases.length > 0){
-      header += formatHeaderItem('Aliases', actualCommand.aliases.join(', '));
+      header += formatHeaderItem('Синонимы', actualCommand.aliases.join(', '));
     }
   } else if (hfile.channel) {
-    header += formatHeaderItem('Syntax', state.ChannelManager.get(hfile.channel).getUsage());
+    header += formatHeaderItem('Синтаксис', state.ChannelManager.get(hfile.channel).getUsage());
   }
 
   let footer = bar;
   if (hfile.related.length) {
-    footer = B.center(width, 'RELATED', 'yellow', '-') + '\r\n';
+    footer = B.center(width, 'Связанные темы', 'yellow', '-') + '\r\n';
     const related = hfile.related.join(', ');
     footer += B.center(width, related) + '\r\n';
     footer += bar;
@@ -74,14 +75,14 @@ function searchHelpfiles(args, player, state) {
 
   const results = state.HelpManager.find(args);
   if (!results.size) {
-    return B.sayAt(player, "Sorry, no results were found for your search.");
+    return B.sayAt(player, "Ничего не найдено по вашему запросу.");
   }
   if (results.size === 1) {
     const [ _, hfile ] = [...results][0];
     return B.sayAt(player, render(state, hfile));
   }
   B.sayAt(player, "<yellow>---------------------------------------------------------------------------------</yellow>");
-  B.sayAt(player, "<white>Search Results:</white>");
+  B.sayAt(player, "<white>Результаты поиска:</white>");
   B.sayAt(player, "<yellow>---------------------------------------------------------------------------------</yellow>");
 
   for (const [name, help] of results) {

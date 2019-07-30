@@ -8,27 +8,27 @@ const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 const ArgParser = require('../../bundle-lib/lib/ArgParser');
 
 module.exports = {
-  aliases: [ 'wield' ],
-  usage: 'wear <item>',
+  aliases: [ 'одеть', 'надеть', 'вооружиться' ],
+  usage: 'надеть <предмет>',
   command : (state) => (arg, player) => {
     arg = arg.trim();
 
     if (!arg.length) {
-      return say(player, 'Wear what?');
+      return say(player, 'Надеть что?');
     }
 
     const item = ArgParser.parseDot(arg, player.inventory);
 
     if (!item) {
-      return say(player, "You aren't carrying anything like that.");
+      return say(player, "У вас ничего такого нет.");
     }
 
     if (!item.metadata.slot) {
-      return say(player, `You can't wear ${ItemUtil.display(item)}.`);
+      return say(player, `Вы не можете надеть ${ItemUtil.display(item)}.`);
     }
 
     if (item.level > player.level) {
-      return say(player, "You can't use that yet.");
+      return say(player, "Вы не можете использовать это еще.");
     }
 
     try {
@@ -36,12 +36,12 @@ module.exports = {
     } catch (err) {
       if (err instanceof EquipSlotTakenError) {
         const conflict = player.equipment.get(item.metadata.slot);
-        return say(player, `You will have to remove ${ItemUtil.display(conflict)} first.`);
+        return say(player, `Вам нужно сначала снять ${ItemUtil.display(conflict)}.`);
       }
 
       return Logger.error(err);
     }
 
-    say(player, `<green>You equip:</green> ${ItemUtil.display(item)}<green>.</green>`);
+    say(player, `<green>Вы надели:</green> ${ItemUtil.display(item)}<green>.</green>`);
   }
 };

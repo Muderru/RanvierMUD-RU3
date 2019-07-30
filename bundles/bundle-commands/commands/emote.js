@@ -4,13 +4,13 @@ const { Broadcast } = require('ranvier');
 const ArgParser = require('../../bundle-lib/lib/ArgParser');
 
 module.exports = {
-  usage: 'emote <message>',
-  aliases: [':'],
+  usage: 'эмоция <сообщение>',
+  aliases: [':', 'эмоция'],
   command: (state) => (args, player) => {
     args = args.trim();
 
     if (!args.length) {
-      return Broadcast.sayAt(player, 'Yes, but what do you want to emote?');
+      return Broadcast.sayAt(player, 'Да, но какую эмоцию вы сейчас испытываете?');
     }
 
     const FIND_TARGETS_REGEXP = /~((?:\d+\.)?[^\s.,!?"']+)/gi;
@@ -23,7 +23,7 @@ module.exports = {
       let targetNameFromInput = execResult[1];
       const target = findTarget(player, targetNameFromInput);
       if (!target) {
-        return Broadcast.sayAt(player, `I can not seem to find ${targetNameFromInput}`);
+        return Broadcast.sayAt(player, `Кажется, здесь нет ${targetNameFromInput}`);
       } else {
         matchedTargets.push(target);
       }
@@ -36,9 +36,9 @@ module.exports = {
 
     player.room.players.forEach(presentPlayer => {
       if (presentPlayer === player) {
-        Broadcast.sayAt(player, `You emote "${emoteMessage}"`);
+        Broadcast.sayAt(player, `Вы испытываете эмоцию "${emoteMessage}"`);
       } else {
-        Broadcast.sayAt(presentPlayer, emoteMessage.replace(presentPlayer.name, 'you'));
+        Broadcast.sayAt(presentPlayer, emoteMessage.replace(presentPlayer.name, 'вы'));
       }
     });
   }

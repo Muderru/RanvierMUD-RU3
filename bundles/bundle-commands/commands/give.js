@@ -6,10 +6,11 @@ const dot = ArgParser.parseDot;
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  usage: 'give <item> <target>',
+  usage: 'дать <предмет> <цель>',
+  aliases: ['дать', 'отдать'],
   command: state => (args, player) => {
     if (!args || !args.length) {
-      return B.sayAt(player, 'Give what to whom?');
+      return B.sayAt(player, 'Что кому дать?');
     }
 
     let [ targetItem, to, targetRecip ] = args.split(' ');
@@ -19,13 +20,13 @@ module.exports = {
     }
 
     if (!targetRecip) {
-      return B.sayAt(player, 'Who do you want to give it to?');
+      return B.sayAt(player, 'Кому вы хотите это отдать?');
     }
 
     targetItem = dot(targetItem, player.inventory);
 
     if (!targetItem) {
-      return B.sayAt(player, 'You don\'t have that.');
+      return B.sayAt(player, 'У вас нет этого.');
     }
 
     // prioritize players before npcs
@@ -36,29 +37,45 @@ module.exports = {
       if (target) {
         const accepts = target.getBehavior('accepts');
         if (!accepts || !accepts.includes(targetItem.entityReference)) {
-          return B.sayAt(player, 'They don\'t want that.');
+          return B.sayAt(player, '${target.name} не хочет брать это.');
         }
       } 
     }
 
     if (!target) {
-      return B.sayAt(player, 'They aren\'t here.');
+      return B.sayAt(player, 'Его здесь нет.');
     }
 
     if (target === player) {
-      return B.sayAt(player, `<green>You move ${ItemUtil.display(targetItem)} from one hand to the other. That was productive.</green>`);
+      return B.sayAt(player, `<green>Вы переложили ${ItemUtil.display(targetItem)} из одной руки в другую. Отличный трюк.</green>`);
     }
 
     if (target.isInventoryFull()) {
-      return B.sayAt(player, 'They can\'t carry any more.');
+      if (target.gender === 'male') {
+            return B.sayAt(player, 'Он не может нести больше.');
+      } else if (target.gender === 'female') {
+            return B.sayAt(player, 'Она не может нести больше.');
+      } else if (target.gender === 'plural') {
+            return B.sayAt(player, 'Они не могут нести больше.');
+      } else {
+            return B.sayAt(player, 'Оно не может нести больше.');
+      }
     }
 
     player.removeItem(targetItem);
     target.addItem(targetItem);
 
-    B.sayAt(player, `<green>You give <white>${target.name}</white>: ${ItemUtil.display(targetItem)}.</green>`);
+    B.sayAt(player, `<green>Вы дали <white>${target.dname}</white>: ${ItemUtil.display(targetItem)}.</green>`);
     if (!target.isNpc) {
-      B.sayAt(target, `<green>${player.name} gives you: ${ItemUtil.display(targetItem)}.</green>`);
+      if (player.gender === 'male') {
+        B.sayAt(target, `<green>${player.name} дал вам: ${ItemUtil.display(targetItem)}.</green>`);
+      } else if (player.gender === 'female') {
+        B.sayAt(target, `<green>${player.name} дала вам: ${ItemUtil.display(targetItem)}.</green>`);
+      } else if (player.gender === 'plural') {
+        B.sayAt(target, `<green>${player.name} дали вам: ${ItemUtil.display(targetItem)}.</green>`);
+      } else {
+        B.sayAt(target, `<green>${player.name} дало вам: ${ItemUtil.display(targetItem)}.</green>`);
+      }
     }
   }
 };
