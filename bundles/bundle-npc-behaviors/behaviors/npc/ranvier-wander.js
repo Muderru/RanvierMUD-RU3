@@ -63,7 +63,58 @@ module.exports = {
       }
 
       Logger.verbose(`NPC [${this.uuid}] wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
-      Broadcast.sayAt(this.room, `${this.name} wanders ${roomExit.direction}.`);
+      if (!this.travelVerb) {
+          if (this.gender === 'male') {
+              this.travelVerb = 'убежал';
+          } else if (this.gender === 'female') {
+              this.travelVerb = 'убежала';
+          } else if (this.gender === 'plural') {
+              this.travelVerb = 'убежали';
+          } else {
+              this.travelVerb = 'убежало';
+          }
+        }
+        
+      if (roomExit.direction === 'вверх' || roomExit.direction === 'вниз') {
+          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerb} ${roomExit.direction}.`);
+      } else {
+          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerb} на ${roomExit.direction}.`);
+      }
+      
+      let ending = '';
+      if (this.gender === 'male') {
+          ending = 'ся';
+      } else if (this.gender === 'female') {
+          ending = 'ась';
+      } else if (this.gender === 'plural') {
+          ending = 'ись';
+      } else {
+          ending = 'ось';
+      }
+      
+      switch(roomExit.direction) {
+          case 'восток':
+            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с запада.`);
+          break;
+          case 'запад':
+            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с востока.`);
+          break;
+          case 'юг':
+            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с севера.`);
+          break;
+          case 'север':
+            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с юга.`);
+          break;
+          case 'вверх':
+            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} снизу.`);
+          break;
+          case 'вниз':
+          Broadcast.sayAt(randomRoom, `${this.name} появил${ending} сверху.`);
+          break;
+          default:
+          Broadcast.sayAt(randomRoom, `${this.name} появил${ending} откуда-то.`);
+      }
+      
       this.moveTo(randomRoom);
     }
   }

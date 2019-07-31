@@ -51,19 +51,19 @@ exports.renderItem = function (state, item, player) {
 
   const props = item.metadata;
 
-  buf += sprintf('| %-36s |\r\n', item.type === ItemType.ARMOR ? 'Armor' : 'Weapon');
+  buf += sprintf('| %-36s |\r\n', item.type === ItemType.ARMOR ? 'Доспех' : 'Оружие');
 
   switch (item.type) {
     case ItemType.WEAPON:
-      buf += sprintf('| %-18s%18s |\r\n', `${props.minDamage} - ${props.maxDamage} Damage`, `Speed ${props.speed}`);
+      buf += sprintf('| %-18s%18s |\r\n', `Урон ${props.minDamage} - ${props.maxDamage}`, `скорость ${props.speed}`);
       const dps = ((props.minDamage + props.maxDamage) / 2) / props.speed;
-      buf += sprintf('| %-36s |\r\n', `(${dps.toPrecision(2)} damage per second)`);
+      buf += sprintf('| %-36s |\r\n', `(${dps.toPrecision(2)} урона в секунду)`);
       break;
     case ItemType.ARMOR:
       buf += sprintf('| %-36s |\r\n', item.metadata.slot[0].toUpperCase() + item.metadata.slot.slice(1));
       break;
     case ItemType.CONTAINER:
-      buf += sprintf('| %-36s |\r\n', `Holds ${item.maxItems} items`);
+      buf += sprintf('| %-36s |\r\n', `Содержится ${item.maxItems} предметов`);
       break;
   }
 
@@ -72,16 +72,97 @@ exports.renderItem = function (state, item, player) {
 
   // always show armor first
   if (stats.armor) {
-    buf += sprintf('| %-36s |\r\n', `${stats.armor} Armor`);
+    buf += sprintf('| %-36s |\r\n', `${stats.armor} брони`);
     delete stats.armor;
   }
 
   // non-armor stats
   for (const stat in stats) {
     const value = stats[stat];
+    let ru_stat = '';
+        switch(stat) {
+            case 'strength':
+               ru_stat = 'к силе'
+               break;
+            case 'agility':
+               ru_stat = 'к ловкости'
+               break;
+            case 'intellect':
+               ru_stat = 'к интеллекту'
+               break;
+            case 'stamina':
+               ru_stat = 'к выносливости'
+               break;
+            case 'armor':
+               ru_stat = 'к броне'
+               break;
+            case 'critical':
+               ru_stat = 'к крит.шансу'
+               break;
+            case 'cutting_damage':
+               ru_stat = 'режущего урона'
+               break;
+            case 'crushing_damage':
+               ru_stat = 'дробящего урона'
+               break;
+            case 'piercing_damage':
+               ru_stat = 'колющего урона'
+               break;
+            case 'fire_damage':
+               ru_stat = 'огненного урона'
+               break;
+            case 'cold_damage':
+               ru_stat = 'урона от холода'
+               break;
+            case 'lightning_damage':
+               ru_stat = 'урона от молнии'
+               break;
+            case 'earth_damage':
+               ru_stat = 'урона землей'
+               break;
+            case 'acid_damage':
+               ru_stat = 'урона кислотой'
+               break;               
+            case 'chaos_damage':
+               ru_stat = 'урона хаосом'
+               break;
+            case 'ether_damage':
+               ru_stat = 'урона эфиром'
+               break;
+            case 'cutting_resistance':
+               ru_stat = 'к сопротивлению режущему'
+               break;
+            case 'crushing_resistance':
+               ru_stat = 'к сопротивлению дробящему'
+               break;
+            case 'piercing_resistance':
+               ru_stat = 'к сопротивлению колющему'
+               break;
+            case 'fire_resistance':
+               ru_stat = 'к сопротивлению огню'
+               break;
+            case 'cold_resistance':
+               ru_stat = 'к сопротивлению холоду'
+               break;
+            case 'lightning_resistance':
+               ru_stat = 'к сопротивлению молнии'
+               break;
+            case 'earth_resistance':
+               ru_stat = 'к сопротивлению земле'
+               break;
+            case 'acid_resistance':
+               ru_stat = 'к сопротивлению кислоте'
+               break;               
+            case 'chaos_resistance':
+               ru_stat = 'к сопротивлению хаосу'
+               break;
+            case 'ether_resistance':
+               ru_stat = 'к сопротивлению эфиру'
+               break;               
+        }
     buf += sprintf(
       '| %-36s |\r\n',
-      (value > 0 ? '+' : '') + value + ' ' + stat[0].toUpperCase() + stat.slice(1)
+      (value > 0 ? '+' : '') + value + ' '  + ru_stat
     );
   }
 
@@ -97,7 +178,7 @@ exports.renderItem = function (state, item, player) {
 
   if (props.level) {
     const cantUse = props.level > player.level ? '<red>%-36s</red>' : '%-36s';
-    buf += sprintf(`| ${cantUse} |\r\n`, 'Requires Level ' + props.level);
+    buf += sprintf(`| ${cantUse} |\r\n`, 'Требуется уровень ' + props.level);
   }
   buf += qualityColorize(item, "'" + B.line(38) + "'") + '\r\n';
 
@@ -108,16 +189,16 @@ exports.renderItem = function (state, item, player) {
       const useSpell = state.SpellManager.get(usable.spell);
       if (useSpell) {
         useSpell.options = usable.options;
-        buf += B.wrap('<b>On Use</b>: ' + useSpell.info(player), 80) + '\r\n';
+        buf += B.wrap('<b>При использовании</b>: ' + useSpell.info(player), 80) + '\r\n';
       }
     }
 
     if (usable.effect && usable.config.description) {
-      buf += B.wrap('<b>Effect</b>: ' + usable.config.description, 80) + '\r\n';
+      buf += B.wrap('<b>Аффект</b>: ' + usable.config.description, 80) + '\r\n';
     }
 
     if (usable.charges) {
-      buf += B.wrap(`${usable.charges} Charges`, 80) + '\r\n';
+      buf += B.wrap(`${usable.charges} зарядов`, 80) + '\r\n';
     }
   }
 

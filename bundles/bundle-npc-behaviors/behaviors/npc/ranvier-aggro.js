@@ -51,8 +51,8 @@ module.exports = {
       // setup default configs
       config = Object.assign({
         delay: 5,
-        warnMessage: '%name% growls, warning you away.',
-        attackMessage: '%name% attacks you!',
+        warnMessage: '%name% угрожающе рычит.',
+        attackMessage: '%name% нападает на вас!',
         towards: {
           players: true,
           npcs: false

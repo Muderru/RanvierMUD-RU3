@@ -59,7 +59,18 @@ const LevelUtil = {
  * @param int level
  * @return int
  */
-  mobExp: level => 45 + (5 * level),
+  mobExp: level => 25 + (5 * level),
+
+  weightedMobExp(playerLevel, mobLevel) {
+    if (playerLevel - mobLevel > 5) {
+      return 1;
+    }
+    if (playerLevel - mobLevel > 2) {
+      return Math.ceil(LevelUtil.mobExp(mobLevel) / 2);
+    }
+
+    return LevelUtil.mobExp(mobLevel);
+  },
 
   /**
    * Helper to get the amount of experience a player needs to level
@@ -67,7 +78,7 @@ const LevelUtil = {
    * @return int
    * @memberof! LevelUtil
    */
-  expToLevel: level => Math.floor(((4 * level) + diff(level)) * LevelUtil.mobExp(level) * reduction(level)),
+  expToLevel: level => Math.floor((((level + 1) * level) + diff(level)) * LevelUtil.mobExp(level) * reduction(level)),
 };
 
 module.exports = LevelUtil;

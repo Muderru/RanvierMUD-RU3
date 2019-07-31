@@ -35,7 +35,7 @@ class CommandParser {
     // Kludge so that 'l' alone will always force a look,
     // instead of mixing it up with lock or list.
     // TODO: replace this a priority list
-    if (command === 'l') {
+    if (command === 'см') {
       return {
         type: CommandType.COMMAND,
         command: state.CommandManager.get('look'),
@@ -44,10 +44,28 @@ class CommandParser {
     }
 
     // Same with 'i' and inventory.
-    if (command === 'i') {
+    if (command === 'и' || command === 'инв') {
       return {
         type: CommandType.COMMAND,
         command: state.CommandManager.get('inventory'),
+        args: args
+      };
+    }
+
+    // Сокращения для экипировки.
+    if (command === 'э' || command === 'экип') {
+      return {
+        type: CommandType.COMMAND,
+        command: state.CommandManager.get('equipment'),
+        args: args
+      };
+    }
+    
+    // Сокращения для оглядеться.
+    if (command === 'огл') {
+      return {
+        type: CommandType.COMMAND,
+        command: state.CommandManager.get('scan'),
         args: args
       };
     }
@@ -118,7 +136,7 @@ class CommandParser {
    */
   static checkMovement(player, command)
   {
-    const primaryDirections = ['north', 'south', 'east', 'west', 'up', 'down'];
+    const primaryDirections = ['север', 'юг', 'восток', 'запад', 'вверх', 'вниз'];
 
     for (const direction of primaryDirections) {
       if (direction.indexOf(command) === 0) {
@@ -127,10 +145,10 @@ class CommandParser {
     }
 
     const secondaryDirections = [
-      { abbr: 'ne', name: 'northeast' },
-      { abbr: 'nw', name: 'northwest' },
-      { abbr: 'se', name: 'southeast' },
-      { abbr: 'sw', name: 'southwest' }
+      { abbr: 'св', name: 'северо-восток' },
+      { abbr: 'сз', name: 'северо-запад' },
+      { abbr: 'юв', name: 'юго-восток' },
+      { abbr: 'юз', name: 'юго-запад' }
     ];
 
     for (const direction of secondaryDirections) {
