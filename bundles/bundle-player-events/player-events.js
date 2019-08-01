@@ -14,11 +14,11 @@ module.exports = {
       const { roomExit } = movementCommand;
 
       if (!roomExit) {
-        return B.sayAt(this, "You can't go that way!");
+        return B.sayAt(this, "Вы не можете идти туда!");
       }
 
       if (this.isInCombat()) {
-        return B.sayAt(this, 'You are in the middle of a fight!');
+        return B.sayAt(this, 'Вы сейчас сражаетесь!');
       }
 
       const nextRoom = state.RoomManager.getRoom(roomExit.roomId);
@@ -28,11 +28,11 @@ module.exports = {
 
       if (door) {
         if (door.locked) {
-          return B.sayAt(this, "The door is locked.");
+          return B.sayAt(this, "Дверь заперта.");
         }
 
         if (door.closed) {
-          return B.sayAt(this, "The door is closed.");
+          return B.sayAt(this, "Дверь закрыта.");
         }
       }
 
@@ -40,8 +40,45 @@ module.exports = {
         state.CommandManager.get('look').execute('', this);
       });
 
-      B.sayAt(oldRoom, `${this.name} leaves.`);
-      B.sayAtExcept(nextRoom, `${this.name} enters.`, this);
+      let ending = '';
+      if (this.gender === 'male') {
+          ending = 'ёл';
+      } else if (this.gender === 'female') {
+          ending = 'ла';
+      } else if (this.gender === 'plural') {
+          ending = 'ли';
+      } else {
+          ending = 'ло';
+      }
+
+      if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
+          B.sayAt(oldRoom, `${this.name} уш${ending} ${roomExit.direction}.`);
+      } else {
+          B.sayAt(oldRoom, `${this.name} уш${ending} на ${roomExit.direction}.`);
+      }
+
+      switch(roomExit.direction) {
+          case 'восток':
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с запада.`, this);
+          break;
+          case 'запад':
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с востока.`, this);
+          break;
+          case 'юг':
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с севера.`, this);
+          break;
+          case 'север':
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с юга.`, this);
+          break;
+          case 'вверх':
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} снизу.`, this);
+          break;
+          case 'вниз':
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} сверху.`, this);
+          break;
+          default:
+            B.sayAtExcept(nextRoom, `${this.name} приш${ending} откуда-то.`, this);
+      }
 
       for (const follower of this.followers) {
         if (follower.room !== oldRoom) {
@@ -51,7 +88,11 @@ module.exports = {
         if (follower.isNpc) {
           follower.moveTo(nextRoom);
         } else {
-          B.sayAt(follower, `\r\nYou follow ${this.name} to ${nextRoom.title}.`);
+            if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
+                B.sayAt(follower, `\r\nВы последовали за ${this.tname} ${roomExit.direction}.\n`);
+            } else {
+                B.sayAt(follower, `\r\nВы последовали за ${this.tname} на ${roomExit.direction}.\n`);
+            }
           follower.emit('move', movementCommand);
         }
       }
@@ -82,8 +123,17 @@ module.exports = {
 
       if (timeSinceLastCommand > maxIdleTime && !this.isInCombat()) {
         this.save(() => {
-          B.sayAt(this, `You were kicked for being idle for more than ${maxIdleTime / 60000} minutes!`);
-          B.sayAtExcept(this.room, `${this.name} disappears.`, this);
+          B.sayAt(this, `Вы были удалены из игры за бездействие в течении ${maxIdleTime / 60000} минут!`);
+          if (this.gender === 'male') {
+            B.sayAtExcept(this.room, `${this.name} исчез.`, this);
+          } else if (this.gender === 'female') {
+            B.sayAtExcept(this.room, `${this.name} исчезла.`, this);
+          } else if (this.gender === 'plural') {
+            B.sayAtExcept(this.room, `${this.name} исчезли.`, this);
+          } else {
+            B.sayAtExcept(this.room, `${this.name} исчезло.`, this);
+          }
+          
           Logger.log(`Kicked ${this.name} for being idle.`);
           state.PlayerManager.removePlayer(this, true);
         });
@@ -95,13 +145,13 @@ module.exports = {
      * @param {number} amount Exp gained
      */
     experience: state => function (amount) {
-      B.sayAt(this, `<blue>You gained <bold>${amount}</bold> experience!</blue>`);
+      B.sayAt(this, `<blue>Вы получили <bold>${amount}</bold> опыта!</blue>`);
 
       const totalTnl = LevelUtil.expToLevel(this.level + 1);
 
       // level up, currently wraps experience if they gain more than needed for multiple levels
       if (this.experience + amount > totalTnl) {
-        B.sayAt(this, '                                   <bold><blue>!Level Up!</blue></bold>');
+        B.sayAt(this, '                                   <bold><blue>!Новый уровень!</blue></bold>');
         B.sayAt(this, B.progress(80, 100, "blue"));
 
         let nextTnl = totalTnl;
@@ -110,7 +160,7 @@ module.exports = {
           this.level++;
           this.experience = 0;
           nextTnl = LevelUtil.expToLevel(this.level + 1);
-          B.sayAt(this, `<blue>You are now level <bold>${this.level}</bold>!</blue>`);
+          B.sayAt(this, `<blue>Ваш уровень теперь <bold>${this.level}</bold>!</blue>`);
           this.emit('level');
         }
       }
