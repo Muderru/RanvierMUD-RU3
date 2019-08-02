@@ -63,56 +63,57 @@ module.exports = {
       }
 
       Logger.verbose(`NPC [${this.uuid}] wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
-      if (!this.travelVerb) {
+      if (!this.travelVerbOut) {
           if (this.gender === 'male') {
-              this.travelVerb = 'убежал';
+              this.travelVerbOut = 'убежал';
           } else if (this.gender === 'female') {
-              this.travelVerb = 'убежала';
+              this.travelVerbOut = 'убежала';
           } else if (this.gender === 'plural') {
-              this.travelVerb = 'убежали';
+              this.travelVerbOut = 'убежали';
           } else {
-              this.travelVerb = 'убежало';
+              this.travelVerbOut = 'убежало';
           }
         }
-        
+
       if (roomExit.direction === 'вверх' || roomExit.direction === 'вниз') {
-          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerb} ${roomExit.direction}.`);
+          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerbOut} ${roomExit.direction}.`);
       } else {
-          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerb} на ${roomExit.direction}.`);
+          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerbOut} на ${roomExit.direction}.`);
       }
       
-      let ending = '';
-      if (this.gender === 'male') {
-          ending = 'ся';
-      } else if (this.gender === 'female') {
-          ending = 'ась';
-      } else if (this.gender === 'plural') {
-          ending = 'ись';
-      } else {
-          ending = 'ось';
-      }
+      if (!this.travelVerbIn) {
+          if (this.gender === 'male') {
+              this.travelVerbIn = 'появился';
+          } else if (this.gender === 'female') {
+              this.travelVerbIn = 'появилась';
+          } else if (this.gender === 'plural') {
+              this.travelVerbIn = 'появились';
+          } else {
+              this.travelVerbIn = 'появилось';
+          }
+        }
       
       switch(roomExit.direction) {
           case 'восток':
-            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с запада.`);
+            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с запада.`);
           break;
           case 'запад':
-            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с востока.`);
+            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с востока.`);
           break;
           case 'юг':
-            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с севера.`);
+            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с севера.`);
           break;
           case 'север':
-            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} с юга.`);
+            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с юга.`);
           break;
           case 'вверх':
-            Broadcast.sayAt(randomRoom, `${this.name} появил${ending} снизу.`);
+            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} снизу.`);
           break;
           case 'вниз':
-          Broadcast.sayAt(randomRoom, `${this.name} появил${ending} сверху.`);
+          Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} сверху.`);
           break;
           default:
-          Broadcast.sayAt(randomRoom, `${this.name} появил${ending} откуда-то.`);
+          Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} откуда-то.`);
       }
       
       this.moveTo(randomRoom);

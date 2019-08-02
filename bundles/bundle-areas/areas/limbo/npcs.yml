@@ -8,6 +8,8 @@
   pname: "крысе"
   gender: "female"
   damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
   NpcRace: "animal"
   min_damage: 5
   max_damage: 25
