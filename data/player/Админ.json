@@ -121,6 +121,8 @@
   "tname": "Администратором",
   "pname": "Администраторе",
   "gender": "male",
+  "travelVerbIn": "пришёл",
+  "travelVerbOut": "ушёл",
   "room": "limbo:white",
   "effects": [
     {

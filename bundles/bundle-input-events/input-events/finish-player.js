@@ -23,6 +23,8 @@ module.exports = {
         tname: args.tname,
         pname: args.pname,
         gender: args.gender,
+        travelVerbIn: '',
+        travelVerbOut: '',
         account: args.account,
       });
 
@@ -75,6 +77,16 @@ module.exports = {
       // reload from manager so events are set
       player = await state.PlayerManager.loadPlayer(state, player.account, player.name);
       player.socket = socket;
+
+      if (player.gender === 'male') {
+          player.travelVerbIn = 'пришёл';
+          player.travelVerbOut = 'ушёл';
+      } else if (player.gender === 'female') {
+          player.travelVerbIn = 'пришла';
+          player.travelVerbOut = 'ушла';
+      } else {
+          Logger.error('Error in travelVerb for ${player.name}');
+      }
 
       socket.emit('done', socket, { player });
     };

@@ -40,44 +40,33 @@ module.exports = {
         state.CommandManager.get('look').execute('', this);
       });
 
-      let ending = '';
-      if (this.gender === 'male') {
-          ending = 'ёл';
-      } else if (this.gender === 'female') {
-          ending = 'ла';
-      } else if (this.gender === 'plural') {
-          ending = 'ли';
-      } else {
-          ending = 'ло';
-      }
-
       if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
-          B.sayAt(oldRoom, `${this.name} уш${ending} ${roomExit.direction}.`);
+          B.sayAt(oldRoom, `${this.name} ${this.travelVerbOut} ${roomExit.direction}.`);
       } else {
-          B.sayAt(oldRoom, `${this.name} уш${ending} на ${roomExit.direction}.`);
+          B.sayAt(oldRoom, `${this.name} ${this.travelVerbOut} на ${roomExit.direction}.`);
       }
 
       switch(roomExit.direction) {
           case 'восток':
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с запада.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с запада.`, this);
           break;
           case 'запад':
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с востока.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с востока.`, this);
           break;
           case 'юг':
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с севера.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с севера.`, this);
           break;
           case 'север':
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} с юга.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с юга.`, this);
           break;
           case 'вверх':
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} снизу.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} снизу.`, this);
           break;
           case 'вниз':
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} сверху.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} сверху.`, this);
           break;
           default:
-            B.sayAtExcept(nextRoom, `${this.name} приш${ending} откуда-то.`, this);
+            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} откуда-то.`, this);
       }
 
       for (const follower of this.followers) {
