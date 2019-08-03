@@ -8,47 +8,57 @@ const say = B.sayAt;
 const subcommands = new CommandManager();
 subcommands.add({
   name: 'create',
+  aliases: [ 'создать' ],
   command: state => (args, player) => {
     if (player.party) {
-      return say(player, "You're already in a group.");
+      return say(player, "Вы уже в группе.");
     }
 
     state.PartyManager.create(player);
-    say(player, "<b><green>You created a group, invite players with '<white>group invite <name></white>'</green></b>");
+    say(player, "<b><yellow>Вы создали группу, приглашайте в нее игроков командой '<white>группа пригласить <имя></white>'</yellow></b>");
   }
 });
 
 subcommands.add({
   name: 'invite',
+  aliases: [ 'пригласить' ],
   command: state => (args, player) => {
     if (!player.party) {
-      return say(player, "You don't have a group, create one with '<b>group create</b>'.");
+      return say(player, "Вы не в группе, создайте ее командой '<b>группа создать</b>'.");
     }
 
     if (player.party && player !== player.party.leader) {
-      return say(player, "You aren't the leader of the group.");
+      return say(player, "Вы не лидер группы.");
     }
 
     if (!args.length) {
-      return say(player, "Invite whom?");
+      return say(player, "Пригласить кого?");
     }
 
     const target = Parser.parseDot(args, player.room.players);
 
     if (target === player) {
-      return say(player, "You ask yourself if you want to join your own group. You humbly accept.");
+      return say(player, "Вы спрашиваете себя, вступили ли вы в свою собственную группу? Едва ли.");
     }
 
     if (!target) {
-      return say(player, "They aren't here.");
+      return say(player, "Тут никого с таким именем нет.");
     }
 
     if (target.party) {
-      return say(player, "They are already in a group.");
-    }
+         if (target.gender === 'male') {
+           return say(player, "Он уже в группе.");
+         } else if (target.gender === 'female') {
+           return say(player, "Она уже в группе.");
+         } else if (target.gender === 'plural') {
+           return say(player, "Они уже в группе.");
+         } else {
+           return say(player, "Оно уже в группе.");
+         }
+      }
 
-    say(target, `<b><green>${player.name} invited you to join their group. Join/decline with '<white>group join/decline ${player.name}</white>'</green></b>`);
-    say(player, `<b><green>You invite ${target.name} to join your group.</green></b>`);
+    say(target, `<b><yellow>${player.name} приглашает вас вступить в группу. Согласитесь/откажитесь командой '<white>группа вступить/отказаться ${player.name}</white>'</yellow></b>`);
+    say(player, `<b><yellow>Вы пригласили ${target.vname} присоединиться к группе.</yellow></b>`);
     player.party.invite(target);
     B.prompt(target);
   }
@@ -57,47 +67,59 @@ subcommands.add({
 
 subcommands.add({
   name: 'disband',
+  aliases: [ 'распустить' ],
   command: state => (args, player) => {
     if (!player.party) {
-      return say(player, "You aren't in a group.");
+      return say(player, "Вы не в группе.");
     }
 
     if (player !== player.party.leader) {
-      return say(player, "You aren't the leader of the group.");
+      return say(player, "Вы не лидер группы.");
     }
 
-    if (!args || args !== 'sure') {
-      return say(player, `<b><green>You have to confirm disbanding your group with '<white>group disband sure</white>'</green></b>`);
+    if (!args || args !== 'да') {
+      return say(player, `<b><yellow>Подтвердите роспуск группы командой '<white>группа распустить да</white>'</yellow></b>`);
     }
 
-    say(player.party, '<b><green>Your group was disbanded!</green></b>');
+    say(player.party, '<b><green>Группа распущена!</green></b>');
     state.PartyManager.disband(player.party);
   }
 });
 
 subcommands.add({
   name: 'join',
+  aliases: [ 'вступить' ],
   command: state => (args, player) => {
     if (!args.length) {
-      return say(player, "Join whose group?");
+      return say(player, "В какую группу вы хотите вступить?");
     }
 
     const target = Parser.parseDot(args, player.room.players);
 
     if (!target) {
-      return say(player, "They aren't here.");
+      return say(player, "Их здесь нет.");
     }
 
     if (!target.party || target !== target.party.leader) {
-      return say(player, "They aren't leading a group.");
+      return say(player, "Это не лидер группы.");
     }
 
     if (!target.party.isInvited(player)) {
-      return say(player, "They haven't invited you to join their group.");
+      return say(player, "Вас туда никто не приглашал.");
     }
 
-    say(player, `<b><green>You join ${target.name}'s group.</green></b>`);
-    say(target.party, `<b><green>${player.name} joined the group.</green></b>`);
+    say(player, `<b><yellow>Вы вступили в группу ${target.rname}.</yellow></b>`);
+    
+    if (player.gender === 'male') {
+        say(target.party, `<b><yellow>${player.name} присоединился к группе.</yellow></b>`);
+      } else if (player.gender === 'female') {
+        say(target.party, `<b><yellow>${player.name} присоединилась к группе.</yellow></b>`);
+      } else if (player.gender === 'plural') {
+        say(target.party, `<b><yellow>${player.name} присоединились к группе.</yellow></b>`);
+      } else {
+        say(target.party, `<b><yellow>${player.name} присоединилось к группе.</yellow></b>`);
+      }
+      
     target.party.add(player);
     player.follow(target);
   }
@@ -105,35 +127,47 @@ subcommands.add({
 
 subcommands.add({
   name: 'decline',
+  aliases: [ 'отказаться' ],
   command: state => (args, player) => {
     if (!args.length) {
-      return say(player, "Decline whose invite?");
+      return say(player, "Отказаться от чего приглашения?");
     }
 
     const target = Parser.parseDot(args, player.room.players);
 
     if (!target) {
-      return say(player, "They aren't here.");
+      return say(player, "Никого с таким именем тут нет.");
     }
 
-    say(player, `<b><green>You decline to join ${target.name}'s group.</green></b>`);
-    say(target, `<b><green>${player.name} declined to join your group.</green></b>`);
+    say(player, `<b><yellow>Вы отказались присоединяться к группе ${target.rname}.</yellow></b>`);
+
+    if (player.gender === 'male') {
+        say(target, `<b><yellow>${player.name} отказался присоединяться к группе.</yellow></b>`);
+      } else if (player.gender === 'female') {
+        say(target, `<b><yellow>${player.name} отказалась присоединяться к группе.</yellow></b>`);
+      } else if (player.gender === 'plural') {
+        say(target, `<b><yellow>${player.name} отказались присоединяться к группе.</yellow></b>`);
+      } else {
+        say(target, `<b><yellow>${player.name} отказалось присоединяться к группе.</yellow></b>`);
+      }
+
     target.party.removeInvite(player);
   }
 });
 
 subcommands.add({
   name: 'list',
+  aliases: [ 'список' ],
   command: state => (args, player) => {
     if (!player.party) {
-      return say(player, "You're not in a group.");
+      return say(player, "Вы не в группе.");
     }
 
     say(player, '<b>' + B.center(80, 'Group', 'green', '-') + '</b>');
     for (const member of player.party) {
       let tag = '   ';
       if (member === player.party.leader) {
-        tag = '[L]';
+        tag = '[Л]';
       }
       say(player, `<b><green>${tag} ${member.name}</green></b>`);
     }
@@ -142,9 +176,10 @@ subcommands.add({
 
 subcommands.add({
   name: 'leave',
+  aliases: [ 'покинуть' ],
   command: state => (args, player) => {
     if (!player.party) {
-      return say(player, "You're not in a group.");
+      return say(player, "Вы не в группе.");
     }
 
     if (player === player.party.leader) {
@@ -153,13 +188,23 @@ subcommands.add({
 
     const party = player.party;
     player.party.delete(player);
-    say(party, `<b><green>${player.name} left the group.</green></b>`);
-    say(player, '<b><green>You leave the group.</green></b>');
+
+    if (player.gender === 'male') {
+        say(party, `<b><yellow>${player.name} покинул группу.</yellow></b>`);
+      } else if (player.gender === 'female') {
+        say(party, `<b><yellow>${player.name} покинула группу.</yellow></b>`);
+      } else if (player.gender === 'plural') {
+        say(party, `<b><yellow>${player.name} покинули группу.</yellow></b>`);
+      } else {
+        say(party, `<b><yellow>${player.name} покинуло группу.</yellow></b>`);
+      }
+
+    say(player, '<b><yellow>Вы покинули группу.</yellow></b>');
   }
 });
 
 module.exports = {
-  aliases: [ 'party' ],
+  aliases: [ 'группа' ],
   command: state => (args, player) => {
 
     if (!args || !args.length) {
@@ -170,7 +215,7 @@ module.exports = {
     const subcommand = subcommands.find(command);
 
     if (!subcommand) {
-      return say(player, "Not a valid party command.");
+      return say(player, "Недопустимая команда.");
     }
 
     subcommand.command(state)(commandArgs.join(' '), player);

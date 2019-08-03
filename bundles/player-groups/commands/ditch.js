@@ -4,19 +4,38 @@ const { Broadcast } = require('ranvier');
 const ArgParser = require('../../bundle-lib/lib/ArgParser');
 
 module.exports = {
+  aliases: [ 'прогнать', 'выгнать' ],
   command: state => (arg, player) => {
     if (!arg || !arg.length) {
-      return Broadcast.sayAt(player, 'Ditch whom?');
+      return Broadcast.sayAt(player, 'Кого вы хотите прогнать?');
     }
 
     let target = ArgParser.parseDot(arg, player.followers);
 
     if (!target) {
-      return Broadcast.sayAt(player, "They aren't following you.");
+      return Broadcast.sayAt(player, "Он не следует за вами.");
     }
 
-    Broadcast.sayAt(player, `You ditch ${target.name} and they stop following you.`);
-    Broadcast.sayAt(target, `${player.name} ditches you and you stop following them.`);
+    if (target.gender === 'male') {
+        Broadcast.sayAt(player, `Вы прогнали ${target.vname} и он перестал следовать за вами.`);
+      } else if (target.gender === 'female') {
+        Broadcast.sayAt(player, `Вы прогнали ${target.vname} и она перестала следовать за вами.`);
+      } else if (target.gender === 'plural') {
+        Broadcast.sayAt(player, `Вы прогнали ${target.vname} и они перестали следовать за вами.`);
+      } else {
+        Broadcast.sayAt(player, `Вы прогнали ${target.vname} и оно перестало следовать за вами.`);
+      }
+
+      if (player.gender === 'male') {
+        Broadcast.sayAt(target, `${player.name} прогнал вас и вы перестали следовать за ним.`);
+      } else if (player.gender === 'female') {
+        Broadcast.sayAt(target, `${player.name} прогнала вас и вы перестали следовать за ней.`);
+      } else if (player.gender === 'plural') {
+        Broadcast.sayAt(target, `${player.name} прогнали вас и вы перестали следовать за ними.`);
+      } else {
+        Broadcast.sayAt(target, `${player.name} прогнало вас и вы перестали следовать за ним.`);
+      }
+
     target.unfollow();
   }
 };
