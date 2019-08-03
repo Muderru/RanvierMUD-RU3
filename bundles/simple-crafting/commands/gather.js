@@ -7,20 +7,21 @@ const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 const Crafting = require('../lib/Crafting');
 
 module.exports = {
+  aliases: [ 'собрать' ],
   command: state => (args, player) => {
     if (!args || !args.length) {
-      return B.sayAt(player, "Gather what?");
+      return B.sayAt(player, "Собрать что?");
     }
 
     let node = ArgParser.parseDot(args, player.room.items);
 
     if (!node) {
-      return B.sayAt(player, "You don't see anything like that here.");
+      return B.sayAt(player, "Здесь ничего такого нет.");
     }
 
     const resource = node.getMeta('resource');
     if (!resource) {
-      return B.sayAt(player, "You can't gather anything from that.");
+      return B.sayAt(player, "Вы не можете ничего собрать из этого.");
     }
 
     if (!player.getMeta('resources')) {
@@ -34,7 +35,7 @@ module.exports = {
         const resItem = Crafting.getResourceItem(material);
         const metaKey = `resources.${material}`;
         player.setMeta(metaKey, (player.getMeta(metaKey) || 0) + amount);
-        B.sayAt(player, `<green>You gather: ${ItemUtil.display(resItem)} x${amount}.`);
+        B.sayAt(player, `<green>Вы собрали: ${ItemUtil.display(resItem)} x${amount}.`);
       }
     }
 

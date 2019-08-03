@@ -5,15 +5,15 @@ const Crafting = require('../lib/Crafting');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
 
 module.exports = {
-  aliases: [ "materials" ],
+  aliases: [ 'ресурсы', 'материалы' ],
   command: state => (args, player) => {
     const playerResources = player.getMeta('resources');
 
     if (!playerResources) {
-      return B.sayAt(player, "You haven't gathered any resources.");
+      return B.sayAt(player, "У вас нет никаких ресурсов.");
     }
 
-    B.sayAt(player, '<b>Resources</b>');
+    B.sayAt(player, '<b>Ресурсы</b>');
     B.sayAt(player, B.line(40));
     let totalAmount = 0;
     for (const resourceKey in playerResources) {
@@ -25,7 +25,7 @@ module.exports = {
     }
 
     if (!totalAmount) {
-      return B.sayAt(player, "You haven't gathered any resources.");
+      return B.sayAt(player, "Вы не собрали никаких ресурсов.");
     }
   }
 };

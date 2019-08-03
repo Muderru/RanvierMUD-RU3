@@ -1,10 +1,10 @@
 {
   "plant_material": {
-    "title": "Plant Material",
+    "title": "Зеленый стебель",
     "quality": "common"
   },
   "rose_petal": {
-    "title": "Rose Petal",
+    "title": "Лепесток розы",
     "quality": "uncommon"
   }
 }
