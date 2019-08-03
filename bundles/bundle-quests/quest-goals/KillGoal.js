@@ -8,7 +8,7 @@ const { QuestGoal } = require('ranvier');
 module.exports = class KillGoal extends QuestGoal {
   constructor(quest, config, player) {
     config = Object.assign({
-      title: 'Kill Enemy',
+      title: 'Убить противника',
       npc: null,
       count: 1
     }, config);

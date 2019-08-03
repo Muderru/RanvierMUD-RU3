@@ -8,7 +8,7 @@ const { QuestGoal } = require('ranvier');
 module.exports = class FetchGoal extends QuestGoal {
   constructor(quest, config, player) {
     config = Object.assign({
-      title: 'Retrieve Item',
+      title: 'Добыть предмет',
       removeItem: false,
       count: 1,
       item: null

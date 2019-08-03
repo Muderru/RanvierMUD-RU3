@@ -5,7 +5,7 @@ const { Logger, QuestGoal } = require('ranvier');
 module.exports = class BountyGoal extends QuestGoal {
   constructor(quest, config, player) {
     config = Object.assign({
-      title: 'Locate NPC',
+      title: 'Обнаружить НПС',
       npc: null, // NPC ID to capture
       home: null // Area ID to return to
     }, config);
@@ -32,7 +32,7 @@ module.exports = class BountyGoal extends QuestGoal {
       percent += 50;
     }
 
-    const display = this.state.found ? 'Complete' : 'Not Complete';
+    const display = this.state.found ? 'завершено' : 'не завершено'
     return { percent, display };
   }
 

@@ -7,25 +7,26 @@ const ArgParser = require('../../bundle-lib/lib/ArgParser');
 const subcommands = new CommandManager();
 subcommands.add({
   name: 'list',
+  aliases: ['список'],
   command: state => (options, player) => {
     if (!options.length) {
-      return say(player, "List quests from whom? quest list <npc>");
+      return say(player, "Чьи задания вы хотите увидеть? задания список <нпс>");
     }
 
     const search = options[0];
     const npc = ArgParser.parseDot(search, player.room.npcs);
     if (!npc) {
-      return say(player, `No quest giver [${search}] found.`);
+      return say(player, `Персонажа [${search}] не найдено.`);
     }
 
     if (!npc.quests) {
-      return say(player, `${npc.name} has no quests.`);
+      return say(player, `${npc.name} не имеет для вас заданий.`);
     }
 
     let availableQuests = getAvailableQuests(state, player, npc);
 
     if (!availableQuests.length) {
-      return say(player, `${npc.name} has no quests.`);
+      return say(player, `${npc.name} не имеет для вас доступных заданий.`);
     }
 
     for (let i in availableQuests) {
@@ -45,10 +46,10 @@ subcommands.add({
 
 subcommands.add({
   name: 'start',
-  aliases: [ 'accept' ],
+  aliases: [ 'принять', 'начать' ],
   command: state => (options, player) => {
     if (options.length < 2) {
-      return say(player, "Start which quest from whom? 'quest start <npc> <number>'");
+      return say(player, "Какое задание вы хотите начать выполнять? 'задание начать <нпс> <номер>'");
     }
 
     let [search, questIndex] = options;
@@ -56,15 +57,15 @@ subcommands.add({
 
     const npc = ArgParser.parseDot(search, player.room.npcs);
     if (!npc) {
-      return say(player, `No quest giver [${search}] found.`);
+      return say(player, `Персонажа [${search}] не найдено.`);
     }
 
     if (!npc.quests || !npc.quests.length) {
-      return say(player, `${npc.name} has no quests.`);
+      return say(player, `У ${npc.rname} нет заданий.`);
     }
 
     if (isNaN(questIndex) || questIndex < 0 || questIndex > npc.quests.length) {
-      return say(player, `Invalid quest, use 'quest list ${search}' to see their quests.`);
+      return say(player, `Недопустимое задание, наберите 'задания список ${фраза}', чтобы увидеть доступные квесты.`);
     }
 
     let availableQuests = getAvailableQuests(state, player, npc);
@@ -72,7 +73,7 @@ subcommands.add({
     const targetQuest = availableQuests[questIndex - 1];
 
     if (player.questTracker.isActive(targetQuest)) {
-      return say(player, "You've already started that quest. Use 'quest log' to see your active quests.");
+      return say(player, "Вы уже начали выполнять это задание. Наберите 'задания журнал', чтобы увидеть активные квесты.");
     }
 
     const quest = state.QuestFactory.create(state, targetQuest, player);
@@ -83,10 +84,11 @@ subcommands.add({
 
 subcommands.add({
   name: 'log',
+  aliases: [ 'журнал', 'лог' ],
   command: state => (options, player) => {
     const active = [...player.questTracker.activeQuests];
     if (!active.length) {
-      return say(player, "You have no active quests.");
+      return say(player, "У вас нет активных заданий.");
     }
 
     for (let i in active) {
@@ -99,7 +101,7 @@ subcommands.add({
 
       if (quest.config.npc) {
         const npc = state.MobFactory.getDefinition(quest.config.npc);
-        say(player, `  <b><yellow>Questor: ${npc.name}</yellow></b>`);
+        say(player, `  <b><yellow>Задание дал: ${npc.name}</yellow></b>`);
       }
 
       say(player, '  ' + B.line(78));
@@ -113,7 +115,7 @@ subcommands.add({
 
       if (quest.config.rewards.length) {
         say(player);
-        say(player, '<b><yellow>' + B.center(80, 'Rewards') + '</yellow></b>');
+        say(player, '<b><yellow>' + B.center(80, 'Награды') + '</yellow></b>');
         say(player, '<b><yellow>' + B.center(80, '-------') + '</yellow></b>');
 
         for (const reward of quest.config.rewards) {
@@ -129,25 +131,26 @@ subcommands.add({
 
 subcommands.add({
   name: 'complete',
+  aliases: [ 'закончить', 'завершить' ],
   command: (state) => (options, player) => {
     const active = [...player.questTracker.activeQuests];
     let targetQuest = parseInt(options[0], 10);
     targetQuest = isNaN(targetQuest) ? -1 : targetQuest - 1;
     if (!active[targetQuest]) {
-      return say(player, "Invalid quest, use 'quest log' to see your active quests.");
+      return say(player, "Несуществующее задание, наберите 'задания журнал', чтобы увидеть активные квесты.");
     }
 
     const [, quest ] = active[targetQuest];
 
     if (quest.getProgress().percent < 100) {
-      say(player, `${quest.config.title} isn't complete yet.`);
+      say(player, `${quest.config.title} еще не завершен.`);
       quest.emit('progress', quest.getProgress());
       return;
     }
 
     if (quest.config.npc && ![...player.room.npcs].find((npc) => npc.entityReference === quest.config.npc)) {
       const npc = state.MobFactory.getDefinition(quest.config.npc);
-      return say(player, `The questor [${npc.name}] is not in this room.`);
+      return say(player, `Ваш работодатель [${npc.name}] не в этой комнате.`);
     }
 
     quest.complete();
@@ -156,17 +159,18 @@ subcommands.add({
 });
 
 module.exports = {
-  usage: 'quest <log/list/complete/start> [npc] [number]',
+  usage: 'задания <журнал/список/завершить/начать> [нпс] [номер]',
+  aliases: [ 'задания', 'задание' ],
   command : (state) => (args, player) => {
     if (!args.length) {
-      return say(player, "Missing command. See 'help quest'");
+      return say(player, "Отсутствует такая команда. Смотрите 'помощь задания'");
     }
 
     const [ command, ...options ] = args.split(' ');
 
     const subcommand = subcommands.find(command);
     if (!subcommand) {
-      return say(player, "Invalid command. See 'help quest'");
+      return say(player, "Недопустимая команда. Смотрите 'помощь задания'");
     }
 
     subcommand.command(state)(options, player);
