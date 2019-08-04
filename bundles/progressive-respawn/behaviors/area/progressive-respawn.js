@@ -1,6 +1,6 @@
 'use strict';
 
-const { Logger } = require('ranvier');
+const { Broadcast, Logger } = require('ranvier');
 const { Random } = require('rando-js');
 
 /**
@@ -60,6 +60,7 @@ function _respawnRoom(state) {
     if (Random.probability(defaultNpc.respawnChance)) {
       try {
         this.spawnNpc(state, defaultNpc.id);
+        Broadcast.sayAt(this, 'Тут кто-то появился.');
       } catch (err) {
         Logger.error(err.message);
       }
