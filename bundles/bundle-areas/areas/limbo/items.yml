@@ -64,7 +64,7 @@
   roomDesc: "Клочки от тренировочного манекена"
   keywords: [ "клочки" ]
   description: "Это обрывки и щепки от сломанного тренировочного манекена."
-  behaviors:
+  metadata:
     sellable:
       value: 5
       currency: золото
@@ -92,7 +92,6 @@
       strength: 2
       stamina: 2
       critical: -1
-  behaviors:
     sellable:
       value: 30
       currency: золото
@@ -115,7 +114,6 @@
     itemLevel: 1
     stats:
       armor: 2
-  behaviors:
     sellable:
       value: 30
       currency: золото
@@ -132,7 +130,6 @@
   type: POTION
   metadata:
     level: 1
-  behaviors:
     # usable has two variants: spell, and effect
     usable:
       # this is the spell variant, you specify a skill of type SPELL
@@ -160,7 +157,6 @@
   type: POTION
   metadata:
     level: 1
-  behaviors:
     usable:
       # this is the effect variant, you specify an effect name instead of a spell
       effect: "potion.buff"
@@ -220,7 +216,6 @@
     itemLevel: 1
     stats:
       armor: 1
-  behaviors:
     sellable:
       value: 30
       currency: золото

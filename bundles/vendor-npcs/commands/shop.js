@@ -10,6 +10,7 @@ const Parser = require('../../bundle-lib/lib/ArgParser');
 const subcommands = new CommandManager();
 subcommands.add({
   name: 'list',
+  aliases: [ 'список' ],
   command: state => (vendor, args, player) => {
     const vendorConfig = vendor.getMeta('vendor');
     const items = getVendorItems(state, vendorConfig.items);
@@ -19,37 +20,37 @@ subcommands.add({
     if (args) {
       const item = Parser.parseDot(args, items);
       if (!item) {
-        return tell("I don't carry that item and no, I won't check in back.");
+        return tell("У меня нет этой вещи.");
       }
 
       item.hydrate(state);
       const vendorItem = vendorConfig.items[item.entityReference];
 
       B.sayAt(player, ItemUtil.renderItem(state, item, player));
-      B.sayAt(player, `Cost: <b><white>[${friendlyCurrencyName(vendorItem.currency)}]</white></b> x ${vendorItem.cost}`);
+      B.sayAt(player, `Цена: <b><white>[${friendlyCurrencyName(vendorItem.currency)}]</white></b> x ${vendorItem.cost}`);
       return;
     }
 
     // group vendor's items by category then display them
     let itemCategories = {
       [ItemType.POTION]: {
-        title: 'Potions',
+        title: 'Зелья',
         items: [],
       },
       [ItemType.ARMOR]: {
-        title: 'Armor',
+        title: 'Доспехи',
         items: [],
       },
       [ItemType.WEAPON]: {
-        title: 'Weapons',
+        title: 'Оружие',
         items: [],
       },
       [ItemType.CONTAINER]: {
-        title: 'Containers',
+        title: 'Контейнеры',
         items: [],
       },
       [ItemType.OBJECT]: {
-        title: 'Miscellaneous',
+        title: 'Разное',
         items: [],
       },
     };
@@ -84,18 +85,19 @@ subcommands.add({
 
 subcommands.add({
   name: 'buy',
+  aliases: [ 'купить' ],
   command: state => (vendor, args, player) => {
     const vendorConfig = vendor.getMeta('vendor');
     const tell = genTell(state, vendor, player);
     if (!args || !args.length) {
-      return tell("Well, what do you want to buy?");
+      return tell("Отлично, что вы хотите купить?");
     }
 
     const items = getVendorItems(state, vendorConfig.items);
     const item = Parser.parseDot(args, items);
 
     if (!item) {
-      return tell("I don't carry that item and no, I won't check in back.");
+      return tell("У меня нет этой вещи.");
     }
 
     const vendorItem = vendorConfig.items[item.entityReference];
@@ -103,44 +105,45 @@ subcommands.add({
     const currencyKey = 'currencies.' + vendorItem.currency;
     const playerCurrency = player.getMeta(currencyKey);
     if (!playerCurrency || playerCurrency < vendorItem.cost) {
-      return tell(`You can't afford that, it costs ${vendorItem.cost} ${friendlyCurrencyName(vendorItem.currency)}.`);
+      return tell(`Вы не можете позволить себе это, оно стоит ${vendorItem.cost} ${friendlyCurrencyName(vendorItem.currency)}.`);
     }
 
     if (player.isInventoryFull()) {
-      return tell("I don't think you can carry any more.");
+      return tell("Вы не унесете больше.");
     }
 
     player.setMeta(currencyKey, playerCurrency - vendorItem.cost);
     item.hydrate(state);
     state.ItemManager.add(item);
     player.addItem(item);
-    say(player, `<green>You spend <b><white>${vendorItem.cost} ${friendlyCurrencyName(vendorItem.currency)}</white></b> to purchase ${ItemUtil.display(item)}.</green>`);
+    say(player, `<green>Вы потратили <b><white>${vendorItem.cost} ${friendlyCurrencyName(vendorItem.currency)}</white></b>, чтобы приобрести ${ItemUtil.display(item)}.</green>`);
     player.save();
   }
 });
 
 subcommands.add({
   name: 'sell',
+  aliases: [ 'продать' ],
   command: state => (vendor, args, player) => {
     const tell = genTell(state, vendor, player);
     const [ itemArg, confirm ] = args.split(' ');
 
     if (!args || !args.length) {
-      tell("What did you want to sell?");
+      tell("Что вы хотите продать?");
     }
 
     const item = Parser.parseDot(itemArg, player.inventory);
     if (!item) {
-      return say(player, "You don't have that.");
+      return say(player, "У вас этого нет.");
     }
 
     const sellable = item.getMeta('sellable');
     if (!sellable) {
-      return say(player, "You can't sell that item.");
+      return say(player, "Эту вещь нельзя продать.");
     }
 
-    if (!['poor', 'common'].includes(item.metadata.quality || 'common') && confirm !== 'sure') {
-      return say(player, "To sell higher quality items use '<b>sell <item> sure</b>'.");
+    if (!['poor', 'common'].includes(item.metadata.quality || 'common') && confirm !== 'да') {
+      return say(player, "Чтобы продать вещь высокого качества, наберите '<b>продать <вещь> да</b>'.");
     }
 
     const currencyKey = 'currencies.' + sellable.currency;
@@ -149,7 +152,7 @@ subcommands.add({
     }
     player.setMeta(currencyKey, (player.getMeta(currencyKey) || 0) + sellable.value);
 
-    say(player, `<green>You sell ${ItemUtil.display(item)} for <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b>.</green>`);
+    say(player, `<green>Вы продали ${ItemUtil.display(item)} за <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b>.</green>`);
     state.ItemManager.remove(item);
   }
 });
@@ -157,12 +160,12 @@ subcommands.add({
 // check sell value of an item
 subcommands.add({
   name: 'value',
-  aliases: [ 'appraise', 'offer' ],
+  aliases: [ 'цена', 'оценить', 'предложить' ],
   command: state => (vendor, args, player) => {
     const tell = genTell(state, vendor, player);
 
     if (!args || !args.length) {
-      return tell("What did you want me to appraise?");
+      return tell("Что нужно оценить?");
     }
 
     const [ itemArg, confirm ] = args.split(' ');
@@ -170,36 +173,36 @@ subcommands.add({
     const targetItem = Parser.parseDot(itemArg, player.inventory);
 
     if (!targetItem) {
-      return say(player, "You don't have that.");
+      return say(player, "У вас этого нет.");
     }
 
     const sellable = targetItem.getMeta('sellable');
     if (!sellable) {
-      return say(player, "You can't sell that item.");
+      return say(player, "Вы не можете продать эту вещь.");
     }
 
-    tell(`I could give you <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b> for ${ItemUtil.display(targetItem)}.</green>`);
+    tell(`Я могу предложить вам <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b> за ${ItemUtil.display(targetItem)}.</green>`);
   }
 });
 
 module.exports = {
-  aliases: [ 'vendor', 'list', 'buy', 'sell', 'value', 'appraise', 'offer' ],
-  usage: 'list [search], buy <item>, sell <item>, appraise <item>',
+  aliases: [ 'торговец', 'список', 'купить', 'продать', 'цена', 'предложить' ],
+  usage: 'список [поиск], купить <вещь>, продать <вещь>, цена <вещь>',
   command: state => (args, player, arg0) => {
     // if list/buy aliases were used then prepend that to the args
-    args = (!['vendor', 'shop'].includes(arg0) ? arg0 + ' ' : '') + args;
+    args = (!['торговец', 'магазин'].includes(arg0) ? arg0 + ' ' : '') + args;
 
     const vendor = Array.from(player.room.npcs).find(npc => npc.getMeta('vendor'));
 
     if (!vendor) {
-      return B.sayAt(player, "You aren't in a shop.");
+      return B.sayAt(player, "Здесь не торгуют.");
     }
 
     const [ command, ...commandArgs ] = args.split(' ');
     const subcommand = subcommands.find(command);
 
     if (!subcommand) {
-      return say(player, "Not a valid shop command. See '<b>help shops</b>'");
+      return say(player, "Не допустимая команда. Смотрите '<b>помощь магазины</b>'");
     }
 
     subcommand.command(state)(vendor, commandArgs.join(' '), player);
