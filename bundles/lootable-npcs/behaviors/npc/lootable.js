@@ -6,7 +6,7 @@ const { Player, Item, Logger } = require('ranvier');
 module.exports = {
   listeners: {
     killed: state => async function (config, killer) {
-      const { room, name, area, keywords } = this;
+      const { room, name, rname, dname, vname, tname, pname, gender, area, keywords } = this;
 
       const lootTable = new LootTable(state, config);
       const currencies = lootTable.currencies();
@@ -17,10 +17,16 @@ module.exports = {
 
       const corpse = new Item(area, {
         id: 'corpse',
-        name: `Corpse of ${name}`,
-        roomDesc: `Corpse of ${name}`,
-        description: `The rotting corpse of ${name}`,
-        keywords: keywords.concat(['corpse']),
+        name: `труп ${rname}`,
+        rname: `трупа ${rname}`,
+        dname: `трупу ${rname}`,
+        vname: `труп ${rname}`,
+        tname: `трупом ${rname}`,
+        pname: `трупе ${rname}`,
+        gender: 'male',
+        roomDesc: `Труп ${rname}`,
+        description: `Это гниющий труп ${rname}`,
+        keywords: keywords.concat(['труп']),
         type: 'CONTAINER',
         metadata: {
           noPickup: true,
@@ -42,6 +48,10 @@ module.exports = {
       });
       room.addItem(corpse);
       state.ItemManager.add(corpse);
+
+      if (killer.getMeta('config.autoloot') === true) {
+        state.CommandManager.get('get').execute(this.keywords[0] || 'труп', killer, 'взятьвсе');
+      }
 
       if (killer && killer instanceof Player) {
         if (currencies) {

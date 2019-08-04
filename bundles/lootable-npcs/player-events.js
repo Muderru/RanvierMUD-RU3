@@ -14,7 +14,7 @@ module.exports = {
       this.setMeta(key, (this.getMeta(key) || 0) + amount);
       this.save();
 
-      B.sayAt(this, `<green>You receive currency: <b><white>[${friendlyName}]</white></b> x${amount}.`);
+      B.sayAt(this, `<green>Вы получили деньги: <b><white>[${friendlyName}]</white></b> x${amount}.`);
     },
   },
 };

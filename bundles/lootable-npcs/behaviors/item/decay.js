@@ -23,12 +23,29 @@ module.exports = {
       if (belongsTo) {
         const owner = this.findOwner();
         if (owner) {
-          Broadcast.sayAt(owner, `Your ${this.name} has rotted away!`);
+            if (this.gender === 'male') {
+              Broadcast.sayAt(owner, `Ваш ${this.name} рассыпался в прах!`);
+            } else if (this.gender === 'female') {
+              Broadcast.sayAt(owner, `Ваша ${this.name} рассыпалась в прах!`);
+            } else if (this.gender === 'plural') {
+              Broadcast.sayAt(owner, `Ваши ${this.name} рассыпались в прах!`);
+            } else {
+              Broadcast.sayAt(owner, `Ваше ${this.name} рассыпалось в прах!`);
+          }
         }
       }
 
       if (room) {
-        Broadcast.sayAt(room, `${this.name} has rotted away!`);
+          if (this.gender === 'male') {
+            Broadcast.sayAt(room, `${this.name} рассыпался в прах!`);
+          } else if (this.gender === 'female') {
+            Broadcast.sayAt(room, `${this.name} рассыпалась в прах!`);
+          } else if (this.gender === 'plural') {
+            Broadcast.sayAt(room, `${this.name} рассыпались в прах!`);
+          } else {
+            Broadcast.sayAt(room, `${this.name} рассыпалось в прах!`);
+        }
+        
       }
 
       Logger.verbose(`${this.id} has decayed.`);

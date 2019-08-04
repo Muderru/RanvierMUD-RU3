@@ -83,6 +83,12 @@
       "config": {
         "path": "bundles/[BUNDLE]/help"
       }
+    },
+    "loot-pools": {
+      "source": "Yaml",
+      "config": {
+        "path": "bundles/[BUNDLE]/areas/[AREA]/loot-pools.yml"
+      }
     }
   },
   "maxAccountNameLength": 20,
