@@ -1,6 +1,6 @@
 <p align="center"><img class="readme-logo" src="https://raw.githubusercontent.com/RanvierMUD/docs/master/resources/logo.png"></p>
 
-# ranvier-ru3
+# RanvierMUD-RU3
 
 ## Движок для MUD на Node.js
 

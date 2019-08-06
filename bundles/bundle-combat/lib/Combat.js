@@ -95,18 +95,133 @@ class Combat {
    * @param {Character} target
    */
   static makeAttack(attacker, target) {
+    let addDamage = 0;
+      
+    if (attacker.hasAttribute('cutting_damage')) {
+      if (target.hasAttribute('cutting_resistance')) {
+        if (attacker.getAttribute('cutting_damage') > target.getAttribute('cutting_resistance')) {
+          addDamage += attacker.getAttribute('cutting_damage') - target.getAttribute('cutting_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('cutting_damage');
+      }
+    }
+      
+    if (attacker.hasAttribute('crushing_damage')) {
+      if (target.hasAttribute('crushing_resistance')) {
+        if (attacker.getAttribute('crushing_damage') > target.getAttribute('crushing_resistance')) {
+          addDamage += attacker.getAttribute('crushing_damage') - target.getAttribute('crushing_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('crushing_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('piercing_damage')) {
+      if (target.hasAttribute('piercing_resistance')) {
+        if (attacker.getAttribute('piercing_damage') > target.getAttribute('piercing_resistance')) {
+          addDamage += attacker.getAttribute('piercing_damage') - target.getAttribute('piercing_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('piercing_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('fire_damage')) {
+      if (target.hasAttribute('fire_resistance')) {
+        if (attacker.getAttribute('fire_damage') > target.getAttribute('fire_resistance')) {
+          addDamage += attacker.getAttribute('fire_damage') - target.getAttribute('fire_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('fire_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('cold_damage')) {
+      if (target.hasAttribute('cold_resistance')) {
+        if (attacker.getAttribute('cold_damage') > target.getAttribute('cold_resistance')) {
+          addDamage += attacker.getAttribute('cold_damage') - target.getAttribute('cold_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('cold_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('lightning_damage')) {
+      if (target.hasAttribute('lightning_resistance')) {
+        if (attacker.getAttribute('lightning_damage') > target.getAttribute('lightning_resistance')) {
+          addDamage += attacker.getAttribute('lightning_damage') - target.getAttribute('lightning_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('lightning_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('earth_damage')) {
+      if (target.hasAttribute('earth_resistance')) {
+        if (attacker.getAttribute('earth_damage') > target.getAttribute('earth_resistance')) {
+          addDamage += attacker.getAttribute('earth_damage') - target.getAttribute('earth_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('earth_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('acid_damage')) {
+      if (target.hasAttribute('acid_resistance')) {
+        if (attacker.getAttribute('acid_damage') > target.getAttribute('acid_resistance')) {
+          addDamage += attacker.getAttribute('acid_damage') - target.getAttribute('acid_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('acid_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('chaos_damage')) {
+      if (target.hasAttribute('chaos_resistance')) {
+        if (attacker.getAttribute('chaos_damage') > target.getAttribute('chaos_resistance')) {
+          addDamage += attacker.getAttribute('chaos_damage') - target.getAttribute('chaos_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('chaos_damage');
+      }
+    }
+    
+    if (attacker.hasAttribute('ether_damage')) {
+      if (target.hasAttribute('ether_resistance')) {
+        if (attacker.getAttribute('ether_damage') > target.getAttribute('ether_resistance')) {
+          addDamage += attacker.getAttribute('ether_damage') - target.getAttribute('ether_resistance');
+        }
+      } else {
+          addDamage += attacker.getAttribute('ether_damage');
+      }
+    }
+    
     let amount = this.calculateWeaponDamage(attacker);
     let critical = false;
+
+    if (attacker.isNpc) {
+        amount = Random.inRange(attacker.min_damage, attacker.max_damage);
+    }
+
+    if (target.hasAttribute('armor')) {
+      if (amount > target.getAttribute('armor')) {
+          amount = Math.floor(1 + ((amount - target.getAttribute('armor'))*(amount - target.getAttribute('armor'))/(amount + target.getAttribute('armor'))));
+      } else {
+          amount = 1;
+      }
+    }
 
     if (attacker.hasAttribute('critical')) {
       const critChance = Math.max(attacker.getMaxAttribute('critical') || 0, 0);
       critical = Random.probability(critChance);
       if (critical) {
-        amount = Math.ceil(amount * 1.5);
+        amount = Math.ceil((amount +addDamage) * 1.5);
       }
     }
 
-    const weapon = attacker.equipment.get('wield');
+    amount += addDamage;
+    const weapon = attacker.equipment.get('оружие');
     const damage = new Damage('health', amount, attacker, weapon || attacker, { critical });
     damage.commit(target);
 
@@ -173,19 +288,19 @@ class Combat {
     }
 
     if (target === attacker) {
-      throw new CombatErrors.CombatSelfError("You smack yourself in the face. Ouch!");
+      throw new CombatErrors.CombatSelfError("Вы ударили самого себя по лицу. Взбодрило!");
     }
 
     if (!target.hasBehavior('combat')) {
-      throw new CombatErrors.CombatPacifistError(`${target.name} is a pacifist and will not fight you.`, target);
+      throw new CombatErrors.CombatPacifistError(`${target.name} - пацифист и не будет сражаться с вами.`, target);
     }
 
     if (!target.hasAttribute('health')) {
-      throw new CombatErrors.CombatInvalidTargetError("You can't attack that target");
+      throw new CombatErrors.CombatInvalidTargetError("Вы не можете атаковать эту цель.");
     }
 
     if (!target.isNpc && !target.getMeta('pvp')) {
-      throw new CombatErrors.CombatNonPvpError(`${target.name} has not opted into PvP.`, target);
+      throw new CombatErrors.CombatNonPvpError(`${target.name} не в режиме ПвП.`, target);
     }
 
     return target;
@@ -200,12 +315,7 @@ class Combat {
   static calculateWeaponDamage(attacker, average = false) {
     let weaponDamage = this.getWeaponDamage(attacker);
     let amount = 0;
-    if (average) {
-      amount = (weaponDamage.min + weaponDamage.max) / 2;
-    } else {
-      amount = Random.inRange(weaponDamage.min, weaponDamage.max);
-    }
-
+    amount = Random.inRange(weaponDamage.min, weaponDamage.max);
     return this.normalizeWeaponDamage(attacker, amount);
   }
 
@@ -215,7 +325,7 @@ class Combat {
    * @return {{max: number, min: number}}
    */
   static getWeaponDamage(attacker) {
-    const weapon = attacker.equipment.get('wield');
+    const weapon = attacker.equipment.get('оружие');
     let min = 0, max = 0;
     if (weapon) {
       min = weapon.metadata.minDamage;
@@ -235,7 +345,7 @@ class Combat {
    */
   static getWeaponSpeed(attacker) {
     let speed = 2.0;
-    const weapon = attacker.equipment.get('wield');
+    const weapon = attacker.equipment.get('оружие');
     if (!attacker.isNpc && weapon) {
       speed = weapon.metadata.speed;
     }

@@ -5,10 +5,11 @@ const CombatErrors = require('../lib/CombatErrors');
 const { Broadcast: B, Logger } = require('ranvier');
 
 module.exports = {
-  usage: 'consider <target>',
+  usage: 'оценить <цель>',
+  aliases: ['оценить', 'сравнить'],
   command: state => (args, player) => {
     if (!args || !args.length) {
-      return B.sayAt(player, 'Who do you want to size up for a fight?');
+      return B.sayAt(player, 'Чью боевую мощь вы хотите оценить?');
     }
 
     let target = null;
@@ -28,25 +29,25 @@ module.exports = {
     }
 
     if (!target) {
-      return B.sayAt(player, 'They aren\'t here.');
+      return B.sayAt(player, 'Его здесь нет.');
     }
 
     let description = '';
     switch (true) {
-      case (player.level  - target.level > 4):
-        description = 'They are much weaker than you. You would have no trouble dealing with a few of them at once.';
+      case (player.level - target.level > 4):
+        description = 'Цель намного слабее вас. Вы можете победить нескольких таких.';
         break;
       case (target.level - player.level > 9):
-        description = 'They are <b>much</b> stronger than you. They will kill you and it will hurt the whole time you\'re dying.';
+        description = 'Цель <b>намного</b> сильнее вас. Он убьет вас и поиздевается над вашим трупом.';
         break;
       case (target.level - player.level > 5):
-        description = 'They are quite a bit more powerful than you. You would need to get lucky to defeat them.';
+        description = 'Цель немного сильнее вас. Вам понадобится удача в сражении с ним.';
         break;
       case (target.level - player.level > 3):
-        description = 'They are a bit stronger than you. You may survive but it would be hard won.';
+        description = 'Цель чуть сильнее вас. Победа дастся вам с трудом.';
         break;
       default:
-        description = 'You are nearly evenly matched. You should be wary fighting more than one at a time.';
+        description = 'Ваши силы примерно равны. Сложно предсказать результат битвы.';
         break;
     }
 

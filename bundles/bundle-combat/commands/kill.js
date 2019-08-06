@@ -8,12 +8,12 @@ const Combat = require('../lib/Combat');
 const CombatErrors = require('../lib/CombatErrors');
 
 module.exports = {
-  aliases: ['attack', 'slay'],
+  aliases: ['убить', 'атаковать'],
   command : (state) => (args, player) => {
     args = args.trim();
 
     if (!args.length) {
-      return B.sayAt(player, 'Kill whom?');
+      return B.sayAt(player, 'Чьей смерти вы желаете?');
     }
 
     let target = null;
@@ -33,15 +33,15 @@ module.exports = {
     }
 
     if (!target) {
-      return B.sayAt(player, "They aren't here.");
+      return B.sayAt(player, "Этого здесь нет.");
     }
 
-    B.sayAt(player, `You attack ${target.name}.`);
+    B.sayAt(player, `Вы атакуете ${target.vname}.`);
 
     player.initiateCombat(target);
-    B.sayAtExcept(player.room, `${player.name} attacks ${target.name}!`, [player, target]);
+    B.sayAtExcept(player.room, `${player.name} атакует ${target.vname}!`, [player, target]);
     if (!target.isNpc) {
-      B.sayAt(target, `${player.name} attacks you!`);
+      B.sayAt(target, `${player.name} атакует вас!`);
     }
   }
 };

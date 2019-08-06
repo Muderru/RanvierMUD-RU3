@@ -284,6 +284,6 @@ function lookEntity(state, player, args) {
 
 
 function getCombatantsDisplay(entity) {
-  const combatantsList = [...entity.combatants.values()].map(combatant => combatant.name);
-  return `, <red>fighting </red>${combatantsList.join("<red>,</red> ")}`;
+  const combatantsList = [...entity.combatants.values()].map(combatant => combatant.tname);
+  return `, <red>сражается с </red>${combatantsList.join("<red>,</red> ")}`;
 }
