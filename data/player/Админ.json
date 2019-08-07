@@ -108,7 +108,7 @@
       "delta": 0,
       "base": 0
     },
-    "energy": {
+    "mana": {
       "delta": 0,
       "base": 100
     }
@@ -156,9 +156,11 @@
   },
   "metadata": {
     "class": "warrior",
-    "attributePoints": 0
+    "attributePoints": 0,
+    "magicPoints": 1,
+    "skillPoints": 1
   },
-  "prompt": "[ %health.current%/%health.max% <b>hp</b> %energy.current%/%energy.max% <b>energy</b> ]",
+  "prompt": "[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]",
   "quests": {
     "completed": [],
     "active": []

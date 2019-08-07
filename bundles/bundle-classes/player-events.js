@@ -4,16 +4,17 @@ const humanize = (sec) => { return require('humanize-duration')(sec, { round: tr
 const { Broadcast: B, Logger, SkillErrors } = require('ranvier');
 const Combat = require('../bundle-combat/lib/Combat');
 const CombatErrors = require('../bundle-combat/lib/CombatErrors');
+const { Random } = require('rando-js');
 
 module.exports = {
   listeners: {
     useAbility: state => function (ability, args) {
       if (!this.playerClass.hasAbility(ability.id)) {
-        return B.sayAt(this, 'Your class cannot use that ability.');
+        return B.sayAt(this, 'Ваш класс не может использовать эту способность.');
       }
 
       if (!this.playerClass.canUseAbility(this, ability.id)) {
-        return B.sayAt(this, 'You have not yet learned that ability.');
+        return B.sayAt(this, 'Вы еще не выучили эту способность.');
       }
 
       let target = null;
@@ -45,7 +46,7 @@ module.exports = {
         }
 
         if (!target) {
-          return B.sayAt(this, `Use ${ability.name} on whom?`);
+          return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
         }
       }
 
@@ -54,21 +55,21 @@ module.exports = {
       } catch (e) {
         if (e instanceof SkillErrors.CooldownError) {
           if (ability.cooldownGroup) {
-            return B.sayAt(this, `Cannot use ${ability.name} while ${e.effect.skill.name} is on cooldown.`);
+            return B.sayAt(this, `Нельзя использовать способность ${ability.name} пока действует задержка ${e.effect.skill.name}.`);
           }
-          return B.sayAt(this, `${ability.name} is on cooldown. ${humanize(e.effect.remaining)} remaining.`);
+          return B.sayAt(this, `${ability.name} на задержке. ${humanize(e.effect.remaining)} осталось.`);
         }
 
         if (e instanceof SkillErrors.PassiveError) {
-          return B.sayAt(this, `That skill is passive.`);
+          return B.sayAt(this, `Это пассивное умение.`);
         }
 
         if (e instanceof SkillErrors.NotEnoughResourcesError) {
-          return B.sayAt(this, `You do not have enough resources.`);
+          return B.sayAt(this, `Недостаточно энергии.`);
         }
 
         Logger.error(e.message);
-        B.sayAt(this, 'Huh?');
+        B.sayAt(this, 'Как?');
       }
     },
 
@@ -77,21 +78,69 @@ module.exports = {
      */
     level: state => function () {
       const abilities = this.playerClass.abilityTable;
-      if (!(this.level in this.playerClass.abilityTable)) {
-        return;
+//      if (!(this.level in this.playerClass.abilityTable)) {
+//        return;
+//      }
+
+      const attributePoints = this.getMeta('attributePoints');
+      const magicPoints = this.getMeta('magicPoints');
+      const skillPoints = this.getMeta('skillPoints');
+      const hp = this.attributes.get('health');
+      let increment = 0;
+      increment += this.getBaseAttribute('stamina'); // or however much you want it to go up on leveling
+
+      if (hp) {
+          hp.setBase(hp.base + increment);
+//          B.sayAt(this, `<b>Leveling has boosted ${hp.name} to ${hp.base}!`);
+      }
+
+      switch (this.playerClass.id) {
+        case 'warrior':
+          if (Random.inRange(0, 100) <=80) {
+              this.setMeta('skillPoints', skillPoints + 1);
+          } else {
+              this.setMeta('magicPoints', magicPoints + 1);
+          }
+        break;
+        case 'mage':
+          if (Random.inRange(0, 100) <=80) {
+              this.setMeta('magicPoints', magicPoints + 1);
+          } else {
+              this.setMeta('skillPoints', skillPoints + 1);
+          }
+        break;
+        case 'paladin':
+          if (Random.inRange(0, 100) < 50) {
+              this.setMeta('magicPoints', magicPoints + 1);
+          } else {
+              this.setMeta('skillPoints', skillPoints + 1);
+          }
+        break;
+        default:
+          B.sayAt(this, `<bold><red>Произошла какая-то ошибка при добавлении очков умений и заклинаний.</red></bold>`);
+        break;
+    }
+
+      this.setMeta('attributePoints', attributePoints + 1);
+
+      if (this.hasAttribute('mana')) {
+          let mana = this.attributes.get('mana');
+          let mana_add = 0;
+          mana_add += this.getBaseAttribute('intellect');
+          mana.setBase(mana.base + mana_add);
       }
 
       const newSkills = abilities[this.level].skills || [];
       for (const abilityId of newSkills) {
         const skill = state.SkillManager.get(abilityId);
-        B.sayAt(this, `<bold><yellow>You can now use skill: ${skill.name}.</yellow></bold>`);
+        B.sayAt(this, `<bold><yellow>Теперь вы можете использовать умение: ${skill.name}.</yellow></bold>`);
         skill.activate(this);
       }
 
       const newSpells = abilities[this.level].spells || [];
       for (const abilityId of newSpells) {
         const spell = state.SpellManager.get(abilityId);
-        B.sayAt(this, `<bold><yellow>You can now use spell: ${spell.name}.</yellow></bold>`);
+        B.sayAt(this, `<bold><yellow>Теперь вы можете использовать заклинание: ${spell.name}.</yellow></bold>`);
       }
     }
   }

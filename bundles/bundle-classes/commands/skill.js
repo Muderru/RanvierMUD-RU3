@@ -3,12 +3,12 @@
 const { Broadcast: B, SkillFlag } = require('ranvier');
 
 module.exports = {
-  aliases: [ "spell" ],
+  aliases: [ 'умение', 'заклинание' ],
   command : state => (args, player) => {
     const say = (message, wrapWidth) => B.sayAt(player, message, wrapWidth);
 
     if (!args.length) {
-      return say("What skill or spell do you want to look up? Use 'skills' to view all skills/spells.");
+      return say("О каком умении или заклинании вы хотите узнать? Наберите 'умения', чтобы увидеть все умения и заклинания.");
     }
 
     let skill = state.SkillManager.find(args, true);
@@ -17,22 +17,22 @@ module.exports = {
     }
 
     if (!skill) {
-      return say("No such skill.");
+      return say("Вы не знаете такого умения.");
     }
 
     say('<b>' + B.center(80, skill.name, 'white', '-') + '</b>');
     if (skill.flags.includes(SkillFlag.PASSIVE)) {
-      say('<b>Passive</b>');
+      say('<b>Пассивное</b>');
     } else {
-      say(`<b>Usage</b>: ${skill.id}`);
+      say(`<b>Использование</b>: ${skill.id}`);
     }
 
     if (skill.resource && skill.resource.cost) {
-      say(`<b>Cost</b>: <b>${skill.resource.cost}</b> ${skill.resource.attribute}`);
+      say(`<b>Стоимость</b>: <b>${skill.resource.cost}</b> ${skill.resource.attribute}`);
     }
 
     if (skill.cooldownLength) {
-      say(`<b>Cooldown</b>: <b>${skill.cooldownLength}</b> seconds`);
+      say(`<b>Задержка</b>: <b>${skill.cooldownLength}</b> seconds`);
     }
     say(skill.info(player), 80);
     say('<b>' + B.line(80) + '</b>');

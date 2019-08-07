@@ -4,10 +4,10 @@ const sprintf = require('sprintf-js').sprintf;
 const { Broadcast: B, Logger } = require('ranvier');
 
 module.exports = {
-  aliases: ['abilities', 'spells'],
+  aliases: ['умения', 'заклинания', 'способности'],
   command: state => (args, player) => {
     const say = message => B.sayAt(player, message);
-    say("<b>" + B.center(80, 'Abilities', 'green'));
+    say("<b>" + B.center(80, 'Способности', 'green'));
     say("<b>" + B.line(80, '=', 'green'));
 
     for (const [ level, abilities ] of Object.entries(player.playerClass.abilityTable)) {
@@ -18,12 +18,12 @@ module.exports = {
         continue;
       }
 
-      say(`\r\n<bold>Level ${level}</bold>`);
+      say(`\r\n<bold>Уровень ${level}</bold>`);
       say(B.line(50));
 
       let i = 0;
       if (abilities.skills.length) {
-        say('\r\n<bold>Skills</bold>');
+        say('\r\n<bold>Умения</bold>');
       }
 
       for (let skillId of abilities.skills) {
@@ -46,7 +46,7 @@ module.exports = {
       }
 
       if (abilities.spells.length) {
-        say('\r\n<bold>Spells</bold>');
+        say('\r\n<bold>Заклинания</bold>');
       }
 
       for (let spellId of abilities.spells) {

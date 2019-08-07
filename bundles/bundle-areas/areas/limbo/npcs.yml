@@ -25,7 +25,7 @@
       restrictTo: ['limbo:white', 'limbo:black', 'limbo:training1']
   attributes:
     health: 100
-    energy: 100
+    mana: 100
 - id: wiseoldman
   keywords: ["мудрый", "старик", "старый"]
   name: "мудрый старик"

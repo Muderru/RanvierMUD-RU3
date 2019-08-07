@@ -26,7 +26,7 @@
     - type: EquipGoal
       config:
         title: Вооружиться оружием
-        slot: правая рука
+        slot: оружие
     - type: EquipGoal
       config:
         title: Надеть доспех

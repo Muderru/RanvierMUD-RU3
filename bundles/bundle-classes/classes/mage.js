@@ -4,15 +4,13 @@
  * See warrior.js for more on classes.
  */
 module.exports = {
-  name: 'Mage',
-  description: 'Mages spend years learning to harness arcane forces to impose their will on the world around them. As scholars, they tend to be less brawny than Warriors and less stout than Clerics. Their powerful spells keep them alive and allow them to wreak havoc... as long as they have the mana to cast them.',
-  abilityTable: {
-    5: { spells: ['fireball'] },
-  },
+  name: 'Маг',
+  description: 'Маги посвящают многие годы изучению тайных сил и их влиянию на мир. Они не привыкли полагаться на грубую силу. Чтобы выжить в этом враждебном мире, они используют разрушительные заклинания, пока им хватает маны.',
+  abilityTable: {},
 
   setupPlayer: (state, player) => {
     const mana = state.AttributeFactory.create('mana', 100);
     player.addAttribute(mana);
-    player.prompt = '[ %health.current%/%health.max% <b>hp</b> %mana.current%/%mana.max% <b>mana</b> ]';
+    player.prompt = '[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]';
   }
 };

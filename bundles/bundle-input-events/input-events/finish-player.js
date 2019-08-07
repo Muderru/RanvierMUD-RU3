@@ -69,6 +69,8 @@ module.exports = {
 
       player.setMeta('class', args.playerClass);
       player.setMeta('attributePoints', 0);
+      player.setMeta('magicPoints', 1);
+      player.setMeta('skillPoints', 1);
 
       const room = state.RoomManager.getRoom(startingRoomRef);
       player.room = room;

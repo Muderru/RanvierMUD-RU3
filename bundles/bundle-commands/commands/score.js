@@ -57,32 +57,12 @@ module.exports = {
     ));
 
     // class resource
-    switch (p.playerClass.id) {
-      case 'warrior':
-        const energy = {
-          current: p.getAttribute('energy'),
-          max: p.getMaxAttribute('energy')
-        };
-        B.at(p, sprintf(' %-9s: %12s', 'Бодрость', `${energy.current}/${energy.max}`));
-        break;
-      case 'mage':
-        const mana = {
-          current: p.getAttribute('mana'),
-          max: p.getMaxAttribute('mana')
-        };
-        B.at(p, sprintf(' %-9s: %12s', 'Мана', `${mana.current}/${mana.max}`));
-        break;
-      case 'paladin':
-        const favor = {
-          current: p.getAttribute('favor'),
-          max: p.getMaxAttribute('favor')
-        };
-        B.at(p, sprintf(' %-9s: %12s', 'Воля', `${favor.current}/${favor.max}`));
-        break;
-      default:
-        B.at(p, B.line(24, ' '));
-        break;
-    }
+    const mana = {
+      current: p.getAttribute('mana'),
+      max: p.getMaxAttribute('mana')
+    };
+    B.at(p, sprintf(' %-9s: %12s', 'Мана', `${mana.current}/${mana.max}`));
+
     say(sprintf('%35s', '.' + B.line(22)) + '.');
 
     B.at(p, sprintf('%37s', '|'));
@@ -240,5 +220,7 @@ module.exports = {
     say('.' + B.line(52) + '.');
     
     B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки характеристик', `</green></b>${p.getMeta('attributePoints')}`));
+    B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки магии', `</green></b>${p.getMeta('magicPoints')}`));
+    B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки умений', `</green></b>${p.getMeta('skillPoints')}`));
   }
 };
