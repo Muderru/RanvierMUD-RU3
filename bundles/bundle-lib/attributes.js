@@ -8,7 +8,16 @@ module.exports = [
   { name: 'intellect', base: 0 },
   { name: 'stamina', base: 0 },
   { name: 'armor', base: 0 },
-  { name: 'critical', base: 0 },
+  { 
+     name: 'critical', 
+     base: 0,
+     formula: {
+      requires: ['agility'],
+      fn: function (character, critical, agility) {
+        return critical + Math.floor((agility - 20) / 10);
+      },
+    },
+  },
   { name: 'cutting_resistance', base: 0 },
   { name: 'crushing_resistance', base: 0 },
   { name: 'piercing_resistance', base: 0 },
