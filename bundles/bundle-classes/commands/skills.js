@@ -7,69 +7,47 @@ module.exports = {
   aliases: ['умения', 'заклинания', 'способности'],
   command: state => (args, player) => {
     const say = message => B.sayAt(player, message);
-    say("<b>" + B.center(80, 'Способности', 'green'));
-    say("<b>" + B.line(80, '=', 'green'));
 
-    for (const [ level, abilities ] of Object.entries(player.playerClass.abilityTable)) {
-      abilities.skills = abilities.skills || [];
-      abilities.spells = abilities.spells || [];
+    let skill = [
+      "judge",
+      "lunge",
+      "rend",
+      "secondwind",
+      "shieldblock",
+      "smite",
+    ];
 
-      if (!abilities.skills.length && !abilities.spells.length) {
-        continue;
-      }
+    let spell = [
+      "fireball",
+      "heal",
+      "plea",
+    ];
 
-      say(`\r\n<bold>Уровень ${level}</bold>`);
-      say(B.line(50));
+    say("<b>" + B.center(40, 'Умения', 'green'));
+    say("<b>" + B.line(40, '=', 'green'));
 
-      let i = 0;
-      if (abilities.skills.length) {
-        say('\r\n<bold>Умения</bold>');
-      }
-
-      for (let skillId of abilities.skills) {
-        let skill = state.SkillManager.get(skillId);
-
-        if (!skill) {
-          Logger.error(`Invalid skill in ability table: ${player.playerClass.name}:${level}:${skillId}`);
-          continue;
+    for (let skillId of skill) {
+      let skillname = 'skill_' + skillId;
+        if (player.getMeta(skillname) > 0) {
+          let skillLearned = state.SkillManager.find(skillId);
+          say("<b>" + B.center(40, skillLearned.name));
         }
+    }
 
-        let name = sprintf("%-20s", skill.name);
-        if (player.level >= level) {
-          name = `<green>${name}</green>`;
+    say();
+
+    say("<b>" + B.center(40, 'Заклинания', 'green'));
+    say("<b>" + B.line(40, '=', 'green'));
+
+    for (let spellId of spell) {
+      let spellname = 'skill_' + spellId;
+        if (player.getMeta(spellname) > 0) {
+          let spellLearned = state.SpellManager.find(spellId);
+          say("<b>" + B.center(40, spellLearned.name));
         }
-        B.at(player, name);
-
-        if (++i % 3 === 0) {
-          say();
-        }
-      }
-
-      if (abilities.spells.length) {
-        say('\r\n<bold>Заклинания</bold>');
-      }
-
-      for (let spellId of abilities.spells) {
-        let spell = state.SpellManager.get(spellId);
-
-        if (!spell) {
-          Logger.error(`Invalid spell in ability table: ${player.playerClass.name}:${level}:${spellId}`);
-          continue;
-        }
-
-        let name = sprintf("%-20s", spell.name);
-        if (player.level >= level) {
-          name = `<green>${name}</green>`;
-        }
-        B.at(player, name);
-
-        if (++i % 3 === 0) {
-          say();
-        }
-      }
+    }
 
       // end with a line break
       say();
-    }
   }
 };
