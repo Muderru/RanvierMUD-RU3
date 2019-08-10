@@ -197,13 +197,16 @@ module.exports = {
         }
       }
 
-      if (damage.source !== damage.attacker) {
-        buf += ` <b>${damage.source.name}</b>`;
-      } else if (!damage.attacker) {
-        buf += "Что-то";
+      if (damage.attacker.name === damage.source.name) {
+          buf += ` ${damage.attacker.damageVerb} <b>Ваc</b>, нанося <b><red>${finalAmount}</red></b> урона.`;
+      } else {
+          buf = `Вы получили <b><red>${finalAmount}</red></b> урона `;
+          if (damage.source !== damage.attacker) {
+            buf += `(<b>${damage.source.name} от ${damage.attacker.rname}</b>).`;
+          } else if (!damage.attacker) {
+            buf += "от чего-то.";
+          }
       }
-
-      buf += ` ${damage.attacker.damageVerb} <b>Ваc</b>, нанося <b><red>${finalAmount}</red></b> урона.`;
 
       if (damage.metadata.critical) {
         buf += ' <red><b>(Критический урон)</b></red>';
@@ -260,9 +263,11 @@ module.exports = {
       }
 
       if (heal.attribute === 'health') {
-        buf = `${source}${attacker} вылечило вам <b><red>${finalAmount}</red></b>.`;
+        buf = `${source} восстановило вам <b><red>${finalAmount}</red></b> жизни.`;
+      } else if (heal.attribute === 'mana') {
+        buf = `${source} восстановило вам <b><red>${finalAmount}</red></b> маны.`;
       } else {
-        buf = `${source}${attacker} восстановило вам <b>${finalAmount}</b> ${heal.attribute}.`;
+        buf = `${source} восстановило вам ${heal.attribute} (<b>${finalAmount}</b>).`;
       }
       B.sayAt(this, buf);
 

@@ -3,7 +3,7 @@
 const { Broadcast, Heal } = require('ranvier');
 
 const healPercent = 20;
-const favorCost = 5;
+const manaCost = 5;
 const bonusThreshold = 30;
 const cooldown = 20;
 
@@ -11,13 +11,14 @@ const cooldown = 20;
  * Basic cleric spell
  */
 module.exports = {
-  name: 'Plea of Light',
+  aliases: ['милость света'],
+  name: 'Милость Света',
   initiatesCombat: false,
   requiresTarget: true,
   targetSelf: true,
   resource: {
-    attribute: 'favor',
-    cost: favorCost,
+    attribute: 'mana',
+    cost: manaCost,
   },
   cooldown,
 
@@ -31,18 +32,18 @@ module.exports = {
     const heal = new Heal('health', amount, player, this);
 
     if (target !== player) {
-      Broadcast.sayAt(player, `<b>You call upon to the light to heal ${target.name}'s wounds.</b>`);
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} calls upon to the light to heal ${target.name}'s wounds.</b>`, [target, player]);
-      Broadcast.sayAt(target, `<b>${player.name} calls upon to the light to heal your wounds.</b>`);
+      Broadcast.sayAt(player, `<b>Вы взываете к силам Света и лечите раны ${target.rname}.</b>`);
+      Broadcast.sayAtExcept(player.room, `<b>${player.name} взывает к силам Света и лечит раны ${target.rname}.</b>`, [target, player]);
+      Broadcast.sayAt(target, `<b>${player.name} взывает к силам Света и лечит ваши раны.</b>`);
     } else {
-      Broadcast.sayAt(player, "<b>You call upon to the light to heal your wounds.</b>");
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} calls upon to the light to heal their wounds.</b>`, [player, target]);
+      Broadcast.sayAt(player, "<b>Вы взываете к силам Света и лечите ваши раны.</b>");
+      Broadcast.sayAtExcept(player.room, `<b>${player.name} взывает к силам Света и лечит свои раны.</b>`, [player, target]);
     }
 
     heal.commit(target);
   },
 
   info: (player) => {
-    return `Call upon the light to heal <b>${healPercent}%</b> of your or your target's max health. If below ${bonusThreshold}% health, Plea of Light heals twice as much.`;
+    return `Воззвать к силам Света и вылечить <b>${healPercent}%</b> от максимального здоровья цели. Если здоровье цели меньше ${bonusThreshold}%, Милость Света излечивает в два раза больше.`;
   }
 };

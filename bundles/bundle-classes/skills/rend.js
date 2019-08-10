@@ -19,12 +19,13 @@ const totalDamage = player => {
  * DoT (Damage over time) skill
  */
 module.exports = {
-  name: 'Rend',
+  aliases: ['рваная рана', 'разорвать'],
+  name: 'Рваная рана',
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,
   resource: {
-    attribute: 'energy',
+    attribute: 'mana',
     cost,
   },
   cooldown,
@@ -45,16 +46,35 @@ module.exports = {
     effect.attacker = player;
 
     effect.on('effectDeactivated', _ => {
-      Broadcast.sayAt(player, `<red><b>${target.name}</b> stops bleeding.</red>`);
+      if (target.gender === 'male') {
+         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестал кровоточить.</red>`);
+      } else if (target.gender === 'female') {
+         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестала кровоточить.</red>`);
+      } else if (target.gender === 'plural') {
+         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестали кровоточить.</red>`);
+      } else {
+         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестало кровоточить.</red>`);
+      }
     });
 
-    Broadcast.sayAt(player, `<red>With a vicious attack you open a deep wound in <bold>${target.name}</bold>!</red>`);
-    Broadcast.sayAtExcept(player.room, `<red>${player.name} viciously rends ${target.name}.</red>`, [target, player]);
-    Broadcast.sayAt(target, `<red>${player.name} viciously rends you!</red>`);
+    Broadcast.sayAt(player, `<red>Подлой атакой вы нанесли рваную рану <bold>${target.dname}</bold>!</red>`);
+    if (player.gender === 'male') {
+      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанес рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанес вам рваную рану!</red>`);
+    } else if (player.gender === 'female') {
+      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанесла рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанесла вам рваную рану!</red>`);
+    } else if (player.gender === 'plural') {
+      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанесли рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанесли вам рваную рану!</red>`);
+    } else {
+      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанесло рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанесло вам рваную рану!</red>`);
+    }      
     target.addEffect(effect);
   },
 
   info: (player) => {
-    return `Tear a deep wound in your target's flesh dealing <bold>${damagePercent}%</bold> weapon damage over <bold>${duration / 1000}</bold> seconds.`;
+    return `Наносит цели рваную рану, наносящую <bold>${damagePercent}%</bold> оружейного урона в течении <bold>${duration / 1000}</bold> сек.`;
   }
 };

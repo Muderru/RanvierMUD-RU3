@@ -7,8 +7,8 @@ const { Broadcast, EffectFlag, Heal } = require('ranvier');
  */
 module.exports = {
   config: {
-    name: 'Judged',
-    description: 'Damage of your next attack is reduced.',
+    name: 'осуждение',
+    description: 'Урон вашей следующей атаки уменьшен.',
     type: 'skill:judge',
   },
   flags: [EffectFlag.DEBUFF],
@@ -28,11 +28,11 @@ module.exports = {
   },
   listeners: {
     effectActivated: function () {
-      Broadcast.sayAt(this.target, '<yellow>The holy judgement weakens you.</yellow>');
+      Broadcast.sayAt(this.target, '<yellow>Божественное осуждение ослабляет вас.</yellow>');
     },
 
     effectDeactivated: function () {
-      Broadcast.sayAt(this.target, '<yellow>You feel your strength return.</yellow>');
+      Broadcast.sayAt(this.target, '<yellow>Вы чувствуете, как ваши силы возвращаются.</yellow>');
     },
 
     hit: function () {

@@ -9,12 +9,10 @@ const { Random } = require('rando-js');
 module.exports = {
   listeners: {
     useAbility: state => function (ability, args) {
-      if (!this.playerClass.hasAbility(ability.id)) {
-        return B.sayAt(this, 'Ваш класс не может использовать эту способность.');
-      }
+      let skillname = 'skill_' + ability.id;
 
-      if (!this.playerClass.canUseAbility(this, ability.id)) {
-        return B.sayAt(this, 'Вы еще не выучили эту способность.');
+      if (!this.getMeta(skillname)) {
+          return B.sayAt(this, 'Вы еще не выучили эту способность.');
       }
 
       let target = null;
@@ -128,19 +126,6 @@ module.exports = {
           let mana_add = 0;
           mana_add += this.getBaseAttribute('intellect');
           mana.setBase(mana.base + mana_add);
-      }
-
-      const newSkills = abilities[this.level].skills || [];
-      for (const abilityId of newSkills) {
-        const skill = state.SkillManager.get(abilityId);
-        B.sayAt(this, `<bold><yellow>Теперь вы можете использовать умение: ${skill.name}.</yellow></bold>`);
-        skill.activate(this);
-      }
-
-      const newSpells = abilities[this.level].spells || [];
-      for (const abilityId of newSpells) {
-        const spell = state.SpellManager.get(abilityId);
-        B.sayAt(this, `<bold><yellow>Теперь вы можете использовать заклинание: ${spell.name}.</yellow></bold>`);
       }
     }
   }

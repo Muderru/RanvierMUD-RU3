@@ -10,7 +10,7 @@ const restorePercent = 50;
  * Basic warrior passive
  */
 module.exports = {
-  name: 'Second Wind',
+  name: 'Второе дыхание',
   type: SkillType.SKILL,
   flags: [SkillFlag.PASSIVE],
   effect: "skill.secondwind",
@@ -26,6 +26,6 @@ module.exports = {
   },
 
   info: function (player) {
-    return `Once every ${interval / 60} minutes, when dropping below ${threshold} energy, restore ${restorePercent}% of your max energy.`;
+    return `Каждые ${interval / 60} минут, когда энергия падает ниже ${threshold}, восстанавливает ${restorePercent}% от вашей максимальной энергии.`;
   }
 };

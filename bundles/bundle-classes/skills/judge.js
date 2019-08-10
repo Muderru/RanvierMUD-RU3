@@ -11,7 +11,8 @@ const reductionPercent = 30;
 
 
 module.exports = {
-  name: 'Judge',
+  aliases: ['осуждение'],
+  name: 'Осуждение',
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,
@@ -27,11 +28,9 @@ module.exports = {
       type: 'holy',
     });
 
-    const favorRestore = new Heal('favor', favorAmount, player, this);
-
-    Broadcast.sayAt(player, `<b><yellow>Concentrated holy energy slams into ${target.name}!</yellow></b>`);
-    Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} conjures concentrated holy energy and slams it into ${target.name}!</yellow></b>`, [target, player]);
-    Broadcast.sayAt(target, `<b><yellow>${player.name} conjures concentrated holy energy and slams it into you!</yellow></b>`);
+      Broadcast.sayAt(player, `<b><yellow>Поток священной силы сотрясает ${target.vname}!</yellow></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} сотрясает потоком священной энергии ${target.vname}!</yellow></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><yellow>${player.name} сотрясает вас потоком священной энергии!</yellow></b>`);
 
     damage.commit(target);
     target.addEffect(effect);
@@ -39,6 +38,6 @@ module.exports = {
   },
 
   info: (player) => {
-    return `Slam your target with holy power, dealing <b>${damagePercent}%</b> weapon damage and reducing damage of the target's next attack by <b>${reductionPercent}%</b>. Generates <b><yellow>${favorAmount}</yellow></b> Favor.`;
+      return `Поражает цель священной энергией и наносит <b>${damagePercent}%</b> оружейного урона, уменьшает следующую атаку цели на <b>${reductionPercent}%</b>.`;
   }
 };

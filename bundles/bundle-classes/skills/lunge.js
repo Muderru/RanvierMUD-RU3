@@ -4,7 +4,7 @@ const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../bundle-combat/lib/Combat');
 
 const damagePercent = 250;
-const energyCost = 20;
+const manaCost = 20;
 
 function getDamage(player) {
   return Combat.calculateWeaponDamage(player) * (damagePercent / 100);
@@ -14,13 +14,14 @@ function getDamage(player) {
  * Basic warrior attack
  */
 module.exports = {
-  name: 'Lunge',
+  aliases: ['выпад'],
+  name: 'Выпад',
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,
   resource: {
-    attribute: 'energy',
-    cost: energyCost,
+    attribute: 'mana',
+    cost: manaCost,
   },
   cooldown: 6,
 
@@ -29,15 +30,15 @@ module.exports = {
       type: 'physical',
     });
 
-    Broadcast.sayAt(player, '<red>You shift your feet and let loose a mighty attack!</red>');
-    Broadcast.sayAtExcept(player.room, `<red>${player.name} lets loose a lunging attack on ${target.name}!</red>`, [player, target]);
-    if (!target.isNpc) {
-      Broadcast.sayAt(target, `<red>${player.name} lunges at you with a fierce attack!</red>`);
+      Broadcast.sayAt(player, '<red>Вы упираетесь в землю и наносите мощный удар!</red>');
+      Broadcast.sayAtExcept(player.room, `<red>${player.name} упирается в землю и наносит мощный удар ${target.dname}!</red>`, [player, target]);
+      if (!target.isNpc) {
+        Broadcast.sayAt(target, `<red>${player.name} упирается в землю и наносит вам мощный удар!</red>`);
     }
     damage.commit(target);
   },
 
   info: (player) => {
-    return `Make a strong attack against your target dealing <bold>${damagePercent}%</bold> weapon damage.`;
+      return `Выполняет мощную атаку против вашего противника и наносит ему <bold>${damagePercent}%</bold> оружейного урона.`;
   }
 };

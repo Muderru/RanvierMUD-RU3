@@ -12,18 +12,19 @@ const duration = 20 * 1000;
  * Damage mitigation skill
  */
 module.exports = {
-  name: 'Shield Block',
+  aliases: ['блокировать'],
+  name: 'Блокирование щитом',
   type: SkillType.SKILL,
   requiresTarget: false,
   resource: {
-    attribute: 'energy',
+    attribute: 'mana',
     cost,
   },
   cooldown,
 
   run: state => function (args, player, target) {
-    if (!player.equipment.has('shield')) {
-      Broadcast.sayAt(player, "You aren't wearing a shield!");
+    if (!player.equipment.has('щит')) {
+      Broadcast.sayAt(player, "Вы не держите щит!");
       return false;
     }
 
@@ -39,12 +40,20 @@ module.exports = {
     );
     effect.skill = this;
 
-    Broadcast.sayAt(player, `<b>You raise your shield, bracing for incoming attacks!</b>`);
-    Broadcast.sayAtExcept(player.room, `<b>${player.name} raises their shield, bracing for incoming damage.</b>`, [player]);
+    Broadcast.sayAt(player, `<b>Вы подняли ваш щит, блокируя атаки врагов!</b>`);
+    if (player.gender === 'male') {
+      Broadcast.sayAtExcept(player.room, `<b>${player.name} поднял свой щит, блокируя атаки врагов.</b>`, [player]);
+    } else if (player.gender === 'female') {
+      Broadcast.sayAtExcept(player.room, `<b>${player.name} подняла свой щит, блокируя атаки врагов.</b>`, [player]);
+    } else if (player.gender === 'plural') {
+      Broadcast.sayAtExcept(player.room, `<b>${player.name} подняли свои щиты, блокируя атаки врагов.</b>`, [player]);
+    } else {
+      Broadcast.sayAtExcept(player.room, `<b>${player.name} подняло свой щит, блокируя атаки врагов.</b>`, [player]);
+    }
     player.addEffect(effect);
   },
 
   info: (player) => {
-    return `Raise your shield block damage up to <bold>${healthPercent}%</bold> of your maximum health for <bold>${duration / 1000}</bold> seconds. Requires a shield.`;
+    return `Поднимите ваш щит и блокируйте <bold>${healthPercent}%</bold> урона от вашего максимального здоровья в течении <bold>${duration / 1000}</bold> секунд. Требует щит.`;
   }
 };

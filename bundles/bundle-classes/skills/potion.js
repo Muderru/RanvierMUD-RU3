@@ -6,7 +6,7 @@ const { Broadcast, Heal, SkillType } = require('ranvier');
  * Health potion item spell
  */
 module.exports = {
-  name: 'Potion',
+  name: 'Зелье',
   type: SkillType.SPELL,
   requiresTarget: true,
   targetSelf: true,
@@ -16,11 +16,11 @@ module.exports = {
     const amount = Math.round(player.getMaxAttribute('health') * (this.options.restores / 100));
     const heal = new Heal(stat, amount, player, this);
 
-    Broadcast.sayAt(player, `<bold>You drink the potion and a warm feeling fills your body.</bold>`);
+    Broadcast.sayAt(player, `<bold>Вы выпиваете зелье и теплое чувство заполняет ваше тело.</bold>`);
     heal.commit(player);
   },
 
   info: function (player) {
-    return `Restores <b>${this.options.restores}%</b> of your total ${this.options.stat}.`;
+    return `Восстанавливает <b>${this.options.restores}%</b> от вашего ${this.options.stat}.`;
   }
 };

@@ -4,7 +4,7 @@ const { Broadcast, EffectFlag } = require('ranvier');
 
 module.exports = {
   config: {
-    name: 'Potion Buff',
+    name: 'зелье усиления',
     type: 'potion.buff',
     refreshes: true,
   },
@@ -25,15 +25,15 @@ module.exports = {
   listeners: {
     effectRefreshed: function (newEffect) {
       this.startedAt = Date.now();
-      Broadcast.sayAt(this.target, "You refresh the potion's magic.");
+      Broadcast.sayAt(this.target, "Вы обновили действие магического зелья.");
     },
 
     effectActivated: function () {
-      Broadcast.sayAt(this.target, "You drink down the potion and feel more powerful!");
+      Broadcast.sayAt(this.target, "Вы осушили бутылёк с зельем и почувствовали себя сильнее!");
     },
 
     effectDeactivated: function () {
-      Broadcast.sayAt(this.target, "You feel less powerful.");
+      Broadcast.sayAt(this.target, "Наполняющая вас сила иссякла.");
     }
   }
 };

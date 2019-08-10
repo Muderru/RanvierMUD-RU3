@@ -97,7 +97,7 @@ module.exports = {
     commandQueued: state => function (commandIndex) {
       const command = this.commandQueue.queue[commandIndex];
       const ttr = sprintf('%.1f', this.commandQueue.getTimeTilRun(commandIndex));
-      B.sayAt(this, `<bold><yellow>Executing</yellow> '<white>${command.label}</white>' <yellow>in</yellow> <white>${ttr}</white> <yellow>seconds.</yellow>`);
+//      B.sayAt(this, `<bold><yellow>Выполнение</yellow> '<white>${command.label}</white>' <yellow>через</yellow> <white>${ttr}</white> <yellow>секунд.</yellow>`);
     },
 
     updateTick: state => function () {

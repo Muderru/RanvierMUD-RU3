@@ -7,7 +7,7 @@ const { Broadcast, EffectFlag, Heal } = require('ranvier');
  */
 module.exports = {
   config: {
-    name: 'Second Wind',
+    name: 'второе дыхание',
     type: 'skill:secondwind'
   },
   flags: [EffectFlag.BUFF],
@@ -25,7 +25,7 @@ module.exports = {
         return;
       }
 
-      Broadcast.sayAt(this.target, "<bold><yellow>You catch a second wind!</bold></yellow>");
+      Broadcast.sayAt(this.target, "<bold><yellow>Вы ощутили второе дыхание!</bold></yellow>");
       const amount = Math.floor(this.target.getMaxAttribute('energy') * (this.state.restorePercent / 100));
       const heal = new Heal('energy', amount, this.target, this.skill);
       heal.commit(this.target);

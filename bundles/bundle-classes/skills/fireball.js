@@ -13,7 +13,8 @@ function getDamage(player) {
  * Basic mage spell
  */
 module.exports = {
-  name: 'Fireball',
+  aliases: ['огненный шар'],
+  name: 'Огненный шар',
   type: SkillType.SPELL,
   requiresTarget: true,
   initiatesCombat: true,
@@ -28,15 +29,15 @@ module.exports = {
       type: 'physical',
     });
 
-    Broadcast.sayAt(player, '<bold>With a wave of your hand, you unleash a <red>fire</red></bold><yellow>b<bold>all</bold></yellow> <bold>at your target!</bold>');
-    Broadcast.sayAtExcept(player.room, `<bold>With a wave of their hand, ${player.name} unleashes a <red>fire</red></bold><yellow>b<bold>all</bold></yellow> <bold>at ${target.name}!</bold>`, [player, target]);
+    Broadcast.sayAt(player, '<bold>Волна из ваших рук породила <red>огненный</red></bold><yellow> ш<bold>ар</bold></yellow> <bold>, устремившийся к вашей цели!</bold>');
+    Broadcast.sayAtExcept(player.room, `<bold>Волна из рук ${player.rname} породила <red>огненный</red></bold><yellow> ш<bold>ар</bold></yellow> <bold>, устремившийся к ${target.dname}!</bold>`, [player, target]);
     if (!target.isNpc) {
-      Broadcast.sayAt(target, `<bold>With a wave of their hand, ${player.name} unleashes a <red>fire</red></bold><yellow>b<bold>all</bold></yellow> <bold>at you!</bold>`);
+      Broadcast.sayAt(target, `<bold>Волна из рук ${player.rname} породила <red>огненный</red></bold><yellow> ш<bold>ар</bold></yellow> <bold>, устремившийся к Вам!</bold>`);
     }
     damage.commit(target);
   },
 
   info: (player) => {
-    return `Hurl a magical fireball at your target dealing ${damagePercent}% of your Intellect as Fire damage.`;
+    return `Создает огненный шар, наносящий урон в размере${damagePercent}% от вашего интеллекта.`;
   }
 };
