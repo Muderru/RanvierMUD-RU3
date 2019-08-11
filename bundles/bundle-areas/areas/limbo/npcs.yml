@@ -42,6 +42,10 @@
   description: "На земле со скрещенными ногами сидит седой старик. В глазах его светится мудрость."
   behaviors:
     ranvier-sentient: true
+  metadata:
+    trainer:
+      spell: "fireball"
+      cost: 1
 - id: puppy
   keywords: ["щенок", "собака", "милый", "большеглазый"]
   name: "щенок"
