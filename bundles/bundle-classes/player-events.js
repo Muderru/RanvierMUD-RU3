@@ -76,9 +76,6 @@ module.exports = {
      */
     level: state => function () {
       const abilities = this.playerClass.abilityTable;
-//      if (!(this.level in this.playerClass.abilityTable)) {
-//        return;
-//      }
 
       const attributePoints = this.getMeta('attributePoints');
       const magicPoints = this.getMeta('magicPoints');
@@ -89,44 +86,52 @@ module.exports = {
 
       if (hp) {
           hp.setBase(hp.base + increment);
-//          B.sayAt(this, `<b>Leveling has boosted ${hp.name} to ${hp.base}!`);
       }
 
-      switch (this.playerClass.id) {
-        case 'warrior':
-          if (Random.inRange(0, 100) <=80) {
-              this.setMeta('skillPoints', skillPoints + 1);
-          } else {
-              this.setMeta('magicPoints', magicPoints + 1);
-          }
-        break;
-        case 'mage':
-          if (Random.inRange(0, 100) <=80) {
-              this.setMeta('magicPoints', magicPoints + 1);
-          } else {
-              this.setMeta('skillPoints', skillPoints + 1);
-          }
-        break;
-        case 'paladin':
-          if (Random.inRange(0, 100) < 50) {
-              this.setMeta('magicPoints', magicPoints + 1);
-          } else {
-              this.setMeta('skillPoints', skillPoints + 1);
-          }
-        break;
-        default:
-          B.sayAt(this, `<bold><red>Произошла какая-то ошибка при добавлении очков умений и заклинаний.</red></bold>`);
-        break;
-    }
-
-      this.setMeta('attributePoints', attributePoints + 1);
+      B.sayAt(this, '<b><cyan>Вы получили ' + increment + ' жизни.</cyan></b>');
 
       if (this.hasAttribute('mana')) {
           let mana = this.attributes.get('mana');
           let mana_add = 0;
           mana_add += this.getBaseAttribute('intellect');
           mana.setBase(mana.base + mana_add);
+          B.sayAt(this, '<b><cyan>Вы получили ' + mana_add + ' маны.</cyan></b>');
       }
+
+      this.setMeta('attributePoints', attributePoints + 1);
+
+      switch (this.playerClass.id) {
+        case 'warrior':
+          if (Random.inRange(0, 100) <=80) {
+              this.setMeta('skillPoints', skillPoints + 1);
+              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
+          } else {
+              this.setMeta('magicPoints', magicPoints + 1);
+              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
+          }
+        break;
+        case 'mage':
+          if (Random.inRange(0, 100) <=80) {
+              this.setMeta('magicPoints', magicPoints + 1);
+              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
+          } else {
+              this.setMeta('skillPoints', skillPoints + 1);
+              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
+          }
+        break;
+        case 'paladin':
+          if (Random.inRange(0, 100) < 50) {
+              this.setMeta('magicPoints', magicPoints + 1);
+              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
+          } else {
+              this.setMeta('skillPoints', skillPoints + 1);
+              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
+          }
+        break;
+        default:
+          B.sayAt(this, `<bold><red>Произошла какая-то ошибка при добавлении очков умений и заклинаний.</red></bold>`);
+        break;
+    }
     }
   }
 };
