@@ -8,6 +8,8 @@ const { Broadcast, EffectFlag, Heal } = require('ranvier');
 module.exports = {
   config: {
     name: 'второе дыхание',
+    gender: 'neither',
+    damageVerb: 'окрыляет',
     type: 'skill:secondwind'
   },
   flags: [EffectFlag.BUFF],

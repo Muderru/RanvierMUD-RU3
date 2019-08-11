@@ -8,8 +8,10 @@ const damagePercent = 350;
 const manaCost = 5;
 
 module.exports = {
-  aliases: ['сокрушить'],
-  name: 'Сокрушить',
+  aliases: ['сокрушить', 'сокрушение'],
+  name: 'Сокрушение',
+  gender: 'neither',
+  damageVerb: 'травмирует',
   requiresTarget: true,
   initiatesCombat: true,
   resource: {

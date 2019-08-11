@@ -7,7 +7,9 @@ const { Broadcast, Damage, EffectFlag } = require('ranvier');
  */
 module.exports = {
   config: {
-    name: 'рваная рана',
+    name: 'порез',
+    gender: 'male',
+    damageVerb: 'ранит',
     type: 'skill:rend',
     maxStacks: 3,
   },

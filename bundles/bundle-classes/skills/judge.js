@@ -13,6 +13,8 @@ const reductionPercent = 30;
 module.exports = {
   aliases: ['осуждение'],
   name: 'Осуждение',
+  gender: 'neither',
+  damageVerb: 'мучает',
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,

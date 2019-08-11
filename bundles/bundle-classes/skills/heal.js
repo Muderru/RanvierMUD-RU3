@@ -15,6 +15,8 @@ function getHeal(player) {
 module.exports = {
   aliases: ['лечение'],
   name: 'Лечение',
+  gender: 'neither',
+  damageVerb: 'исцеляет',
   type: SkillType.SPELL,
   requiresTarget: true,
   initiatesCombat: false,

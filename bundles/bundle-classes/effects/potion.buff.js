@@ -5,6 +5,8 @@ const { Broadcast, EffectFlag } = require('ranvier');
 module.exports = {
   config: {
     name: 'зелье усиления',
+    gender: 'neither',
+    damageVerb: 'усиливает',
     type: 'potion.buff',
     refreshes: true,
   },

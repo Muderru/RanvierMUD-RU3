@@ -13,6 +13,8 @@ const cooldown = 20;
 module.exports = {
   aliases: ['милость света'],
   name: 'Милость Света',
+  gender: 'female',
+  damageVerb: 'окутывает',
   initiatesCombat: false,
   requiresTarget: true,
   targetSelf: true,

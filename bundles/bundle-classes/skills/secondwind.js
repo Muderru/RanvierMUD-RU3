@@ -11,6 +11,8 @@ const restorePercent = 50;
  */
 module.exports = {
   name: 'Второе дыхание',
+  gender: 'neither',
+  damageVerb: 'восстанавливает',
   type: SkillType.SKILL,
   flags: [SkillFlag.PASSIVE],
   effect: "skill.secondwind",

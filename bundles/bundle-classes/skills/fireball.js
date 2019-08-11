@@ -15,6 +15,8 @@ function getDamage(player) {
 module.exports = {
   aliases: ['огненный шар'],
   name: 'Огненный шар',
+  gender: 'male',
+  damageVerb: 'опалил',
   type: SkillType.SPELL,
   requiresTarget: true,
   initiatesCombat: true,

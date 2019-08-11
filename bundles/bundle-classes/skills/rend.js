@@ -19,8 +19,10 @@ const totalDamage = player => {
  * DoT (Damage over time) skill
  */
 module.exports = {
-  aliases: ['рваная рана', 'разорвать'],
-  name: 'Рваная рана',
+  aliases: ['порез', 'разрезать'],
+  name: 'Порез',
+  gender: 'male',
+  damageVerb: 'ранит',
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,

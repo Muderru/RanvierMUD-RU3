@@ -14,6 +14,8 @@ const duration = 20 * 1000;
 module.exports = {
   aliases: ['блокировать'],
   name: 'Блокирование щитом',
+  gender: 'neither',
+  damageVerb: 'защищает',
   type: SkillType.SKILL,
   requiresTarget: false,
   resource: {

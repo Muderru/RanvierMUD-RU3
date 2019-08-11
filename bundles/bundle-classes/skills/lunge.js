@@ -16,6 +16,8 @@ function getDamage(player) {
 module.exports = {
   aliases: ['выпад'],
   name: 'Выпад',
+  gender: 'male',
+  damageVerb: 'ранит',
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,
