@@ -4,8 +4,42 @@ const { Broadcast, Damage } = require('ranvier');
 const Combat = require('../../bundle-combat/lib/Combat');
 
 const cooldown = 10;
-const damagePercent = 350;
-const manaCost = 5;
+const manaCost = 20;
+
+function getAttr1(player, target) {
+  let addDamage = 0;
+  if (player.hasAttribute('crushing_damage')) {
+    if (target.hasAttribute('crushing_resistance')) {
+      if (player.getAttribute('crushing_damage') > target.getAttribute('crushing_resistance')) {
+        addDamage += player.getAttribute('crushing_damage') - target.getAttribute('crushing_resistance');
+      }
+    } else {
+        addDamage += player.getAttribute('crushing_damage');
+    }
+  }
+  addDamage = 1+addDamage*0.05;
+  return addDamage;
+}
+
+function getAttr2(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('strength')) {
+      addDamage += player.getAttribute('strength');
+  } else {
+      addDamage = 20;
+  }
+
+  addDamage = 1+addDamage*0.01;
+  return addDamage;
+}
+
+function getSkill(player) {
+  let addDamage = 0;
+  if (player.getMeta('skill_smite') > 0) {
+    addDamage = player.getMeta('skill_smite')*0.01;
+  }
+  return 1+addDamage;
+}
 
 module.exports = {
   aliases: ['сокрушить', 'сокрушение'],
@@ -25,7 +59,7 @@ module.exports = {
       return Broadcast.sayAt(player, "Вы не вооружены.");
     }
 
-    const amount = Combat.calculateWeaponDamage(player) * (damagePercent / 100);
+    const amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
 
     const damage = new Damage('health', amount, player, this, {
       type: 'holy',
@@ -47,9 +81,18 @@ module.exports = {
     }
 
     damage.commit(target);
+
+    if (!player.isNpc) {
+      let rnd = Math.floor((Math.random() * 100) + 1);
+      if (rnd > 95) {
+          let skillUp = player.getMeta('skill_smite');
+          player.setMeta('skill_smite', skillUp + 1);
+          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Сокрушение\'.</cyan></bold>');
+      }
+    }
   },
 
   info: (player) => {
-    return `Усильте ваше оружие святой энергией и бейте врага, нанося <b>${damagePercent}%</b> оружейного урона. Требует оружие.`;
+    return `Усильте ваше оружие святой энергией и бейте врага, нанося урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Требует оружие.`;
   }
 };

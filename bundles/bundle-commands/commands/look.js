@@ -1,6 +1,6 @@
 'use strict';
 
-const humanize = (sec) => { return require('humanize-duration')(sec, { round: true }); };
+const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
 const sprintf = require('sprintf-js').sprintf;
 const {
   Broadcast: B,

@@ -32,7 +32,7 @@ module.exports = {
     }
 
     if (skill.cooldownLength) {
-      say(`<b>Задержка</b>: <b>${skill.cooldownLength}</b> seconds`);
+      say(`<b>Задержка</b>: <b>${skill.cooldownLength}</b> секунд`);
     }
     say(skill.info(player), 80);
     say('<b>' + B.line(80) + '</b>');

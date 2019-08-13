@@ -2,11 +2,35 @@
 
 const { Broadcast: B, Heal, SkillType } = require('ranvier');
 
-const healPercent = 300;
-const manaCost = 40;
+const manaCost = 50;
 
-function getHeal(player) {
-  return player.getAttribute('intellect') * (healPercent / 100);
+function getAttr1(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('earth_damage')) {
+    addDamage += player.getAttribute('earth_damage');
+  }
+  addDamage = 1+addDamage*0.05;
+  return addDamage;
+}
+
+function getAttr2(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('intellect')) {
+      addDamage += player.getAttribute('intellect');
+  } else {
+      addDamage = 20;
+  }
+
+  addDamage = 1+addDamage*0.01;
+  return addDamage;
+}
+
+function getSkill(player) {
+  let addDamage = 0;
+  if (player.getMeta('skill_heal') > 0) {
+    addDamage = player.getMeta('skill_heal')*0.01;
+  }
+  return 1+addDamage;
 }
 
 /**
@@ -28,21 +52,31 @@ module.exports = {
   cooldown: 10,
 
   run: state => function (args, player, target) {
-    const heal = new Heal('health', getHeal(player), player, this);
+    const getHeal = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
+    const heal = new Heal('health', getHeal, player, this);
 
     if (target !== player) {
-      B.sayAt(player, `<b>Вы призываете силы света, чтобы они исцелили раны ${target.rname}.</b>`);
-      B.sayAtExcept(player.room, `<b>${player.name} призывает силы света, чтобы они исцелили раны ${target.rname}.</b>`, [target, player]);
-      B.sayAt(target, `<b>${player.name} призывает силы света, чтобы они исцелили ваши раны.</b>`);
+      B.sayAt(player, `<b>Вы призываете силы природы, чтобы они исцелили раны ${target.rname}.</b>`);
+      B.sayAtExcept(player.room, `<b>${player.name} призывает силы природы, чтобы они исцелили раны ${target.rname}.</b>`, [target, player]);
+      B.sayAt(target, `<b>${player.name} призывает силы природы, чтобы они исцелили ваши раны.</b>`);
     } else {
-      B.sayAt(player, "<b>Вы призываете силы света, чтобы они исцелили ваши раны.</b>");
-      B.sayAtExcept(player.room, `<b>${player.name} призывает силы света, чтобы они исцелили его раны.</b>`, [player, target]);
+      B.sayAt(player, "<b>Вы призываете силы природы, чтобы они исцелили ваши раны.</b>");
+      B.sayAtExcept(player.room, `<b>${player.name} призывает силы природы, чтобы они исцелили его раны.</b>`, [player, target]);
     }
 
     heal.commit(target);
+    
+    if (!player.isNpc) {
+      let rnd = Math.floor((Math.random() * 100) + 1);
+      if (rnd > 95) {
+          let skillUp = player.getMeta('skill_heal');
+          player.setMeta('skill_heal', skillUp + 1);
+          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Лечение\'.</cyan></bold>');
+      }
+    }
   },
 
   info: (player) => {
-    return `Призвать силы света, чтобы они исцелили раны цели в количестве ${healPercent}% процентов от вашего интеллекта.`;
+    return `Призвать силы света, чтобы они исцелили раны цели в количестве зависящем от урона оружия, интеллекта, бонусного урона землей и уровня владения умением заклинателя.`;
   }
 };

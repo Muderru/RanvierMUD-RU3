@@ -1,6 +1,6 @@
 'use strict';
 
-const humanize = (sec) => { return require('humanize-duration')(sec, { round: true }); };
+const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
 const { Broadcast, Logger, SkillErrors } = require('ranvier');
 const ArgParser = require('../../bundle-lib/lib/ArgParser');
 const ItemUtil = require('../../bundle-lib/lib/ItemUtil');

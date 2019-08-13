@@ -3,10 +3,27 @@
 const { Broadcast, SkillType } = require('ranvier');
 
 // config placed here just for easy configuration of this skill later on
-const cooldown = 45;
-const cost = 50;
-const healthPercent = 15;
-const duration = 20 * 1000;
+const cooldown = 60;
+const cost = 75;
+
+function getAttr2(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('armor')) {
+      addDamage += player.getAttribute('armor');
+  }
+
+  addDamage = 1+addDamage*0.5;
+  return addDamage;
+}
+
+function getSkill(player) {
+  let addDamage = 1;
+  if (player.getMeta('skill_shieldblock') > 0) {
+    addDamage = player.getMeta('skill_shieldblock');
+  }
+  return addDamage;
+}
+
 
 /**
  * Damage mitigation skill
@@ -30,6 +47,13 @@ module.exports = {
       return false;
     }
 
+    let duration = 1;
+    if (player.hasAttribute('agility')) {
+        duration += Math.floor(player.getAttribute('agility')/10);
+    } else {
+        duration += 2;
+    }
+
     const effect = state.EffectFactory.create(
       'skill.shieldblock',
       {
@@ -37,7 +61,7 @@ module.exports = {
         description: this.info(player),
       },
       {
-        magnitude: Math.round(player.getMaxAttribute('health') * (healthPercent / 100))
+        magnitude: Math.ceil(getAttr2(player) * getSkill(player))
       }
     );
     effect.skill = this;
@@ -53,9 +77,18 @@ module.exports = {
       Broadcast.sayAtExcept(player.room, `<b>${player.name} подняло свой щит, блокируя атаки врагов.</b>`, [player]);
     }
     player.addEffect(effect);
+
+    if (!player.isNpc) {
+      let rnd = Math.floor((Math.random() * 100) + 1);
+      if (rnd > 95) {
+          let skillUp = player.getMeta('skill_shieldblock');
+          player.setMeta('skill_shieldblock', skillUp + 1);
+          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Блокирование щитом\'.</cyan></bold>');
+      }
+    }
   },
 
   info: (player) => {
-    return `Поднимите ваш щит и блокируйте <bold>${healthPercent}%</bold> урона от вашего максимального здоровья в течении <bold>${duration / 1000}</bold> секунд. Требует щит.`;
+    return `Поднимите ваш щит и блокируйте урон, зависящий от вашего показателя брони. Длительность эффекта определяется вашей ловкостью. Требует щит.`;
   }
 };

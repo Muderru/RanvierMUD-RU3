@@ -1,6 +1,6 @@
 'use strict';
 
-const humanize = (sec) => { return require('humanize-duration')(sec, { round: true }); };
+const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
 const { Broadcast: B, EffectFlag } = require('ranvier');
 
 module.exports = {

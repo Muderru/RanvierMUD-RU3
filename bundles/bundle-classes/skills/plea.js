@@ -2,10 +2,38 @@
 
 const { Broadcast, Heal } = require('ranvier');
 
-const healPercent = 20;
-const manaCost = 5;
+const manaCost = 40;
 const bonusThreshold = 30;
-const cooldown = 20;
+const cooldown = 10;
+
+function getAttr1(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('ether_damage')) {
+    addDamage += player.getAttribute('ether_damage');
+  }
+  addDamage = 1+addDamage*0.05;
+  return addDamage;
+}
+
+function getAttr2(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('intellect')) {
+      addDamage += player.getAttribute('intellect');
+  } else {
+      addDamage = 20;
+  }
+
+  addDamage = 1+addDamage*0.01;
+  return addDamage;
+}
+
+function getSkill(player) {
+  let addDamage = 0;
+  if (player.getMeta('skill_plea') > 0) {
+    addDamage = player.getMeta('skill_plea')*0.01;
+  }
+  return 1+addDamage;
+}
 
 /**
  * Basic cleric spell
@@ -26,8 +54,8 @@ module.exports = {
 
   run: state => function (args, player, target) {
     const maxHealth = target.getMaxAttribute('health');
-    let amount = Math.round(maxHealth * (healPercent / 100));
-    if (target.getAttribute('health') < (maxHealth *  (bonusThreshold / 100))) {
+    let amount = Math.floor(0.8*Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
+    if (target.getAttribute('health') < (maxHealth * (bonusThreshold / 100))) {
       amount *= 2;
     }
 
@@ -43,9 +71,18 @@ module.exports = {
     }
 
     heal.commit(target);
+
+    if (!player.isNpc) {
+      let rnd = Math.floor((Math.random() * 100) + 1);
+      if (rnd > 95) {
+          let skillUp = player.getMeta('skill_plea');
+          player.setMeta('skill_plea', skillUp + 1);
+          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Милость Света\'.</cyan></bold>');
+      }
+    }
   },
 
   info: (player) => {
-    return `Воззвать к силам Света и вылечить <b>${healPercent}%</b> от максимального здоровья цели. Если здоровье цели меньше ${bonusThreshold}%, Милость Света излечивает в два раза больше.`;
+    return `Воззвать к силам Света и восстановить жизнь цели в количестве зависящем от урона оружия, интеллекта, бонусного урона эфиром и уровня владения умением заклинателя. Если здоровье цели меньше ${bonusThreshold}%, Милость Света излечивает в два раза больше.`;
   }
 };

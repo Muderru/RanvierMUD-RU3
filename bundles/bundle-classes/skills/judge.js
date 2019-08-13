@@ -4,11 +4,44 @@ const { Broadcast, Damage, Heal, SkillType } = require('ranvier');
 const Combat = require('../../bundle-combat/lib/Combat');
 
 // config placed here just for easy copy/paste of this skill later on
-const cooldown = 4;
-const damagePercent = 150;
-const favorAmount = 3;
-const reductionPercent = 30;
+const cooldown = 8;
+const manaCost = 60;
+const reductionPercent = 10;
 
+function getAttr1(player, target) {
+  let addDamage = 0;
+  if (player.hasAttribute('crushing_damage')) {
+    if (target.hasAttribute('crushing_resistance')) {
+      if (player.getAttribute('crushing_damage') > target.getAttribute('crushing_resistance')) {
+        addDamage += player.getAttribute('crushing_damage') - target.getAttribute('crushing_resistance');
+      }
+    } else {
+        addDamage += player.getAttribute('crushing_damage');
+    }
+  }
+  addDamage = 1+addDamage*0.05;
+  return addDamage;
+}
+
+function getAttr2(player) {
+  let addDamage = 0;
+  if (player.hasAttribute('strength')) {
+      addDamage += player.getAttribute('strength');
+  } else {
+      addDamage = 20;
+  }
+
+  addDamage = 1+addDamage*0.01;
+  return addDamage;
+}
+
+function getSkill(player) {
+  let addDamage = 0;
+  if (player.getMeta('skill_judge') > 0) {
+    addDamage = player.getMeta('skill_judge')*0.01;
+  }
+  return 1+addDamage;
+}
 
 module.exports = {
   aliases: ['осуждение'],
@@ -18,6 +51,10 @@ module.exports = {
   type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,
+  resource: {
+    attribute: 'mana',
+    cost: manaCost,
+  },
   cooldown,
 
   run: state => function (args, player, target) {
@@ -25,7 +62,7 @@ module.exports = {
     effect.skill = this;
     effect.attacker = player;
 
-    const amount = Combat.calculateWeaponDamage(player) * (damagePercent / 100);
+    const amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
     const damage = new Damage('health', amount, player, this, {
       type: 'holy',
     });
@@ -36,10 +73,18 @@ module.exports = {
 
     damage.commit(target);
     target.addEffect(effect);
-    favorRestore.commit(player);
+
+    if (!player.isNpc) {
+      let rnd = Math.floor((Math.random() * 100) + 1);
+      if (rnd > 95) {
+          let skillUp = player.getMeta('skill_judge');
+          player.setMeta('skill_judge', skillUp + 1);
+          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Осуждение\'.</cyan></bold>');
+      }
+    }
   },
 
   info: (player) => {
-      return `Поражает цель священной энергией и наносит <b>${damagePercent}%</b> оружейного урона, уменьшает следующую атаку цели на <b>${reductionPercent}%</b>.`;
+      return `Поражает цель священной энергией и наносит урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Также уменьшает урон от следующей атаки цели на <b>${reductionPercent}%</b>.`;
   }
 };

@@ -174,6 +174,27 @@ class CommandParser {
       return false;
     }
 
+    switch(direction) {
+      case 'з':
+        direction = 'запад';
+        break;
+      case 'с':
+        direction = 'север';
+        break;
+      case 'ю':
+        direction = 'юг';
+        break;
+      case 'в':
+        direction = 'восток';
+        break;
+      case 'вв':
+        direction = 'вверх';
+        break;
+      case 'вн':
+        direction = 'вниз';
+        break;
+    }
+
     return player.room.getExits().find(roomExit => roomExit.direction === direction) || false;
   }
 }
