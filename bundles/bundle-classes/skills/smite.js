@@ -55,8 +55,10 @@ module.exports = {
   cooldown,
 
   run: state => function (args, player, target) {
-    if (!player.equipment.has('оружие')) {
-      return Broadcast.sayAt(player, "Вы не вооружены.");
+    if (!player.isNpc) {
+      if (!player.equipment.has('оружие')) {
+        return Broadcast.sayAt(player, "Вы не вооружены.");
+      }
     }
 
     const amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
@@ -85,9 +87,11 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          let skillUp = player.getMeta('skill_smite');
-          player.setMeta('skill_smite', skillUp + 1);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Сокрушение\'.</cyan></bold>');
+          if (player.getMeta('skill_smite') < 100) {
+            let skillUp = player.getMeta('skill_smite');
+            player.setMeta('skill_smite', skillUp + 1);
+            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Сокрушение\'.</cyan></bold>');
+          }
       }
     }
   },

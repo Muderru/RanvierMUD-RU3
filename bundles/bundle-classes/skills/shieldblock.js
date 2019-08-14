@@ -42,9 +42,11 @@ module.exports = {
   cooldown,
 
   run: state => function (args, player, target) {
-    if (!player.equipment.has('щит')) {
-      Broadcast.sayAt(player, "Вы не держите щит!");
-      return false;
+    if (!player.isNpc) {
+      if (!player.equipment.has('щит')) {
+        Broadcast.sayAt(player, "Вы не держите щит!");
+        return false;
+      }
     }
 
     let duration = 1;
@@ -81,9 +83,11 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          let skillUp = player.getMeta('skill_shieldblock');
-          player.setMeta('skill_shieldblock', skillUp + 1);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Блокирование щитом\'.</cyan></bold>');
+          if (player.getMeta('skill_shieldblock') < 100) {
+            let skillUp = player.getMeta('skill_shieldblock');
+            player.setMeta('skill_shieldblock', skillUp + 1);
+            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Блокирование щитом\'.</cyan></bold>');
+          }
       }
     }
   },

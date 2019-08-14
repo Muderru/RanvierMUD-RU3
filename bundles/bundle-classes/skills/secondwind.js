@@ -34,9 +34,11 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          let skillUp = player.getMeta('skill_secondwind');
-          player.setMeta('skill_secondwind', skillUp + 1);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Второе дыхание\'.</cyan></bold>');
+          if (player.getMeta('skill_secondwind') < 100) {
+            let skillUp = player.getMeta('skill_secondwind');
+            player.setMeta('skill_secondwind', skillUp + 1);
+            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Второе дыхание\'.</cyan></bold>');
+          }
       }
     }
 

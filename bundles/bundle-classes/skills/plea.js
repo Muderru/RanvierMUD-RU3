@@ -75,9 +75,11 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          let skillUp = player.getMeta('skill_plea');
-          player.setMeta('skill_plea', skillUp + 1);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Милость Света\'.</cyan></bold>');
+          if (player.getMeta('skill_plea') < 100) {
+            let skillUp = player.getMeta('skill_plea');
+            player.setMeta('skill_plea', skillUp + 1);
+            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Милость Света\'.</cyan></bold>');
+          }
       }
     }
   },

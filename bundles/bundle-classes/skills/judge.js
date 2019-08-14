@@ -58,6 +58,12 @@ module.exports = {
   cooldown,
 
   run: state => function (args, player, target) {
+    if (!player.isNpc) {
+      if (!player.equipment.has('оружие')) {
+        return Broadcast.sayAt(player, "Вы не вооружены.");
+      }
+    }
+
     const effect = state.EffectFactory.create('skill.judge', {}, { reductionPercent });
     effect.skill = this;
     effect.attacker = player;
@@ -77,9 +83,11 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          let skillUp = player.getMeta('skill_judge');
-          player.setMeta('skill_judge', skillUp + 1);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Осуждение\'.</cyan></bold>');
+          if (player.getMeta('skill_judge') < 100) {
+            let skillUp = player.getMeta('skill_judge');
+            player.setMeta('skill_judge', skillUp + 1);
+            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Осуждение\'.</cyan></bold>');
+          }
       }
     }
   },
