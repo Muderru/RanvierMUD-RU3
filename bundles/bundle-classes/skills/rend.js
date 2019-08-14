@@ -87,11 +87,9 @@ module.exports = {
       type: 'physical',
     });
 
-    let duration = 1;
+    let duration = 3000;
     if (player.hasAttribute('agility')) {
-        duration += Math.floor(player.getAttribute('agility')/10);
-    } else {
-        duration += 2;
+        duration = 1000*(1 + Math.floor(player.getAttribute('agility')/10));
     }
 
     const effect = state.EffectFactory.create(
