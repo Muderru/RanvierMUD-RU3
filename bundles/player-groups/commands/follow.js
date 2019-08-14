@@ -1,7 +1,7 @@
 'use strict';
 
 const { Broadcast } = require('ranvier');
-const ArgParser = require('../../bundle-lib/lib/ArgParser');
+const ArgParser = require('../../lib/lib/ArgParser');
 
 module.exports = {
   aliases: [ 'следовать' ],

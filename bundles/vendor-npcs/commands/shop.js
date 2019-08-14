@@ -3,8 +3,8 @@
 const sprintf = require('sprintf-js').sprintf;
 const { Broadcast: B, CommandManager, ItemType } = require('ranvier');
 const say = B.sayAt;
-const ItemUtil = require('../../bundle-lib/lib/ItemUtil');
-const Parser = require('../../bundle-lib/lib/ArgParser');
+const ItemUtil = require('../../lib/lib/ItemUtil');
+const Parser = require('../../lib/lib/ArgParser');
 
 
 const subcommands = new CommandManager();
