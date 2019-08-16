@@ -23,6 +23,7 @@
     ranvier-wander:
       interval: 20
       restrictTo: ['limbo:white', 'limbo:black', 'limbo:training1']
+    wimpy:
   attributes:
     health: 100
     mana: 100
