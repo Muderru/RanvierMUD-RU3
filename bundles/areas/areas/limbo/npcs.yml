@@ -40,8 +40,6 @@
   level: 99
   script: 'old-man'
   description: "На земле со скрещенными ногами сидит седой старик. В глазах его светится мудрость."
-  behaviors:
-    ranvier-sentient: true
   metadata:
     trainer:
       spell: "fireball"

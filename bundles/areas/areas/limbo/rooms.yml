@@ -121,8 +121,6 @@
     в отдалении от него она буйно цветет и колосится до колена. Приложив руки к обелиску, вы понимаете,
     что это <b><cyan>портал</cyan></b>.
   script: 'ancientwayshrine'
-  behaviors:
-    waypoint: true
   exits:
     - roomId: "limbo:white"
       direction: вверх
