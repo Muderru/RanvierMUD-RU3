@@ -13,6 +13,6 @@
   level: 2
   description: "Это маленькое пушистое создание смотрит на вас любопытным взглядом. Хотя белка и не проявляет страха, но держится она на расстоянии."
   behaviors:
-    ranvier-wander:
+    wander:
       interval: 30
       areaRestricted: true

@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast, Logger } = require('ranvier');
+const { Broadcast, Logger, Config } = require('ranvier');
 const { Random } = require('rando-js');
 
 /**
@@ -15,13 +15,12 @@ const { Random } = require('rando-js');
 module.exports = {
   listeners: {
     updateTick: state => {
-      let lastRespawnTick = Date.now();
+      const tickFrequency = Config.get('entityTickFrequency', 100);
+      const serverStartTime = Math.trunc(Date.now() / tickFrequency);
       return function (config) {
-        // setup respawnTick to only happen every [interval] seconds
         const respawnInterval = config.interval || 30;
-        const sinceLastTick = Date.now() - lastRespawnTick;
-        if (sinceLastTick >= respawnInterval * 1000) {
-          lastRespawnTick = Date.now();
+        const upTime = Math.trunc(Date.now() / tickFrequency - serverStartTime);
+        if (upTime % (respawnInterval * (1000 / tickFrequency)) == 0) {
           for (const [id, room] of this.rooms) {
             room.emit('respawnTick', state);
           }

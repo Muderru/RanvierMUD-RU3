@@ -20,10 +20,11 @@
   quests: ['limbo:onecheeseplease']
   behaviors:
     combat: true
-    ranvier-wander:
+    wander:
       interval: 20
       restrictTo: ['limbo:white', 'limbo:black', 'limbo:training1']
-    wimpy:
+    wimpy: true
+    memory: true
   attributes:
     health: 100
     mana: 100
@@ -178,7 +179,7 @@
     strength: 12
   behaviors:
     combat: true
-    ranvier-aggro:
+    aggro:
       delay: 5
 - id: aggro-npc-test
   keywords: ["манекен", "агрессивный", "тренировочный"]
@@ -199,7 +200,7 @@
     strength: 15
   behaviors:
     combat: true
-    ranvier-aggro:
+    aggro:
       delay: 5
       towards:
         players: false
