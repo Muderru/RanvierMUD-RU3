@@ -1,14 +1,28 @@
 'use strict';
 
 const { Random } = require('rando-js');
-const { Broadcast } = require('ranvier');
+const { Broadcast, SkillType } = require('ranvier');
 const { CommandParser } = require('../..//lib/lib/CommandParser');
 const say = Broadcast.sayAt;
 
+const manaCost = 40;
+
+/**
+ * Команда переделана под умение, чтобы был лаг на применение
+ */
 module.exports = {
-  usage: 'бежать [направление]',
   aliases: ['бежать', 'убежать', 'сбежать'],
-  command: state => (direction, player) => {
+  name: 'Сбежать',
+  type: SkillType.SKILL,
+  requiresTarget: false,
+  initiatesCombat: false,
+  resource: {
+    attribute: 'mana',
+    cost: manaCost,
+  },
+  cooldown: 100,
+
+  run: state => (direction, player) => {
     if (!player.isInCombat()) {
       return say(player, "Вы вздрагиваете от вида собственной тени.");
     }
@@ -49,5 +63,9 @@ module.exports = {
     
     player.removeFromCombat();
     player.emit('move', { roomExit });
+  },
+
+  info: (player) => {
+      return `Вы пытаетесь спастись бегством.`;
   }
 };

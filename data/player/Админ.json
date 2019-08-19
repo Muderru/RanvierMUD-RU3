@@ -158,7 +158,8 @@
     "class": "warrior",
     "attributePoints": 0,
     "magicPoints": 1,
-    "skillPoints": 1
+    "skillPoints": 1,
+    "skill_flee": 1
   },
   "prompt": "[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]",
   "quests": {
