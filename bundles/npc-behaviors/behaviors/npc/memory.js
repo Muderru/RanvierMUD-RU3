@@ -1,8 +1,5 @@
 'use strict';
 
-const { Random } = require('rando-js');
-const { Broadcast, Logger } = require('ranvier');
-
 module.exports = {
   listeners: {
     updateTick: state => function () {
@@ -15,8 +12,6 @@ module.exports = {
           this.addEffect(effect);
           return;
       }
-
-      
     }
   }
 };

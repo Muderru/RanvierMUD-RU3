@@ -23,6 +23,8 @@ module.exports = () => {
        * @param {Character} killer
        */
       killed: state => function (config, killer) {
+        this.sourceRoom.removeNpc(this, true);
+        killer.room.removeNpc(this, true);
       },
 
       /**

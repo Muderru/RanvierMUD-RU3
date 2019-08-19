@@ -3,7 +3,7 @@
 const { Broadcast } = require('ranvier');
 
 /**
- * Dummy effect used to enforce skill cooldowns
+ * Накладываем эффект на моба с именем обидчика, если видим его, то атакуем
  */
 module.exports = {
   config: {
