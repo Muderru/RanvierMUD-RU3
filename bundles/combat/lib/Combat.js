@@ -252,6 +252,8 @@ class Combat {
 
     if (deadEntity.isNpc) {
       state.MobManager.removeMob(deadEntity);
+      deadEntity.sourceRoom.removeNpc(deadEntity, true);
+      killer.room.removeNpc(deadEntity, true);
     }
   }
 
