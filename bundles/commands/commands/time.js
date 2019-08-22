@@ -20,12 +20,16 @@ module.exports = {
             tmpGameTime -= yearDuration;
             year++;
           }
-      } else if (tmpGameTime >= monthDuration) {
+      }
+
+      if (tmpGameTime >= monthDuration) {
           while(tmpGameTime >= monthDuration) {
             tmpGameTime -= monthDuration;
             month++;
           }
-      } else if (tmpGameTime >= dayDuration) {
+      } 
+
+      if (tmpGameTime >= dayDuration) {
           while(tmpGameTime >= dayDuration) {
             tmpGameTime -= dayDuration;
             day++;

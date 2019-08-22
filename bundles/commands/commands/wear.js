@@ -13,6 +13,10 @@ module.exports = {
   command : (state) => (arg, player) => {
     arg = arg.trim();
 
+    if (player.equipment.size >= 10) {
+      return Broadcast.sayAt(player, "На вас больше нет свободного места.");
+    }
+
     if (!arg.length) {
       return say(player, 'Надеть что?');
     }
