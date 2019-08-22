@@ -299,24 +299,25 @@ module.exports = {
        return function (killer) {
         this.removePrompt('combat');
 
+        let othersDeathMessage = '';
+
         if (this.gender === 'male') {
-          let othersDeathMessage = killer ?
+          othersDeathMessage = killer ?
             `<b><red>${this.name} повалился на землю, убитый ${killer.tname}.</b></red>` :
             `<b><red>${this.name} повалился на землю замертво.</b></red>`;
-        } else if (this.gender === 'female') {
-          let othersDeathMessage = killer ?
+        }  else if (this.gender === 'female') {
+          othersDeathMessage = killer ?
             `<b><red>${this.name} повалилась на землю, убитая ${killer.tname}.</b></red>` :
             `<b><red>${this.name} повалилась на землю замертво.</b></red>`;
         } else if (this.gender === 'plural') {
-          let othersDeathMessage = killer ?
+          othersDeathMessage = killer ?
             `<b><red>${this.name} повалились на землю, убитые ${killer.tname}.</b></red>` :
             `<b><red>${this.name} повалились на землю замертво.</b></red>`;
         } else {
-          let othersDeathMessage = killer ?
+          othersDeathMessage = killer ?
             `<b><red>${this.name} повалилось на землю, убитое ${killer.tname}.</b></red>` :
             `<b><red>${this.name} повалилось на землю замертво.</b></red>`;
         }
-
 
         B.sayAtExcept(this.room, othersDeathMessage, (killer ? [killer, this] : this));
 
@@ -353,6 +354,7 @@ module.exports = {
           B.sayAt(this, `<red>Вы потеряли <b>${lostExp}</b> опыта!</red>`);
 
           B.prompt(this);
+          state.CommandManager.get('look').execute('', this);
         });
       };
     },
