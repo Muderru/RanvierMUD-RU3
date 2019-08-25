@@ -45,7 +45,7 @@ function getSkill(player) {
  */
 module.exports = {
   aliases: ['огненный шар'],
-  name: 'Огненный шар',
+  name: 'огненный шар',
   gender: 'male',
   damageVerb: 'опалил',
   type: SkillType.SPELL,

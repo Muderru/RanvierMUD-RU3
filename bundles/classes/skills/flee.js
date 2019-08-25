@@ -12,7 +12,7 @@ const manaCost = 40;
  */
 module.exports = {
   aliases: ['бежать', 'убежать', 'сбежать'],
-  name: 'Сбежать',
+  name: 'сбежать',
   type: SkillType.SKILL,
   requiresTarget: false,
   initiatesCombat: false,

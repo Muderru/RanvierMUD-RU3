@@ -22,7 +22,7 @@ module.exports = [
   new Channel({
     name: 'say',
     aliases: ['говорить'],
-    color: ['yellow'],
+    color: ['bold', 'green'],
     description: 'Оправить сообщение всем в комнате.',
     audience: new RoomAudience(),
     formatter: {
@@ -32,13 +32,13 @@ module.exports = [
 
       target: function (sender, target, message, colorify) {
         if (sender.gender === 'male') {
-            return colorify(`${sender.name} говорит: '${message}'`);
+            return colorify(`${sender.Name} говорит: '${message}'`);
         } else if (sender.gender === 'female') {
-            return colorify(`${sender.name} говорит: '${message}'`);
+            return colorify(`${sender.Name} говорит: '${message}'`);
         } else if (sender.gender === 'plural') {
-            return colorify(`${sender.name} говорят: '${message}'`);
+            return colorify(`${sender.Name} говорят: '${message}'`);
         } else {
-            return colorify(`${sender.name} говорит: '${message}'`);
+            return colorify(`${sender.Name} говорит: '${message}'`);
         }
       }
     }
@@ -57,13 +57,13 @@ module.exports = [
 
       target: function (sender, target, message, colorify) {
         if (sender.gender === 'male') {
-            return colorify(`${sender.name} сказал вам: '${message}'`);
+            return colorify(`${sender.Name} сказал вам: '${message}'`);
         } else if (sender.gender === 'female') {
-            return colorify(`${sender.name} сказала вам: '${message}'`);
+            return colorify(`${sender.Name} сказала вам: '${message}'`);
         } else if (sender.gender === 'plural') {
-            return colorify(`${sender.name} сказали вам: '${message}'`);
+            return colorify(`${sender.Name} сказали вам: '${message}'`);
         } else {
-            return colorify(`${sender.name} сказало вам: '${message}'`);
+            return colorify(`${sender.Name} сказало вам: '${message}'`);
         }
       }
     }
@@ -82,13 +82,13 @@ module.exports = [
 
       target: function (sender, target, message, colorify) {
         if (sender.gender === 'male') {
-            return colorify(`${sender.name} кричит: '${message}'`);
+            return colorify(`${sender.Name} кричит: '${message}'`);
         } else if (sender.gender === 'female') {
-            return colorify(`${sender.name} кричит: '${message}'`);
+            return colorify(`${sender.Name} кричит: '${message}'`);
         } else if (sender.gender === 'plural') {
-            return colorify(`${sender.name} кричат: '${message}'`);
+            return colorify(`${sender.Name} кричат: '${message}'`);
         } else {
-            return colorify(`${sender.name} кричит: '${message}'`);
+            return colorify(`${sender.Name} кричит: '${message}'`);
         }
       }
     }
@@ -107,13 +107,13 @@ module.exports = [
 
       target: function (sender, target, message, colorify) {
         if (sender.gender === 'male') {
-            return colorify(`${sender.name} говорит группе: '${message}'`);
+            return colorify(`${sender.Name} говорит группе: '${message}'`);
         } else if (sender.gender === 'female') {
-            return colorify(`${sender.name} говорит группе: '${message}'`);
+            return colorify(`${sender.Name} говорит группе: '${message}'`);
         } else if (sender.gender === 'plural') {
-            return colorify(`${sender.name} говорят группе: '${message}'`);
+            return colorify(`${sender.Name} говорят группе: '${message}'`);
         } else {
-            return colorify(`${sender.name} говорит группе: '${message}'`);
+            return colorify(`${sender.Name} говорит группе: '${message}'`);
         }
       }
     }

@@ -91,23 +91,23 @@ module.exports = {
         let buf = '';
         if (damage.source !== this) {
           if (damage.source.gender === 'male') {
-            buf = `<b>${damage.source.name}</b> ${this.rname} ударил`;
+            buf = `<b>${damage.source.Name}</b> ${this.rname} ударил`;
           } else if (damage.source.gender === 'female') {
-            buf = `<b>${damage.source.name}</b> ${this.rname} ударила`;
+            buf = `<b>${damage.source.Name}</b> ${this.rname} ударила`;
           } else if (damage.source.gender === 'plural') {
-            buf = `<b>${damage.source.name}</b> ${this.rname} ударили`;
+            buf = `<b>${damage.source.Name}</b> ${this.rname} ударили`;
           } else {
-            buf = `<b>${damage.source.name}</b> ${this.rname} ударило`;
+            buf = `<b>${damage.source.Name}</b> ${this.rname} ударило`;
           }
         } else {
           if (this.gender === 'male') {
-            buf = `${this.name} ударил`;
+            buf = `${this.Name} ударил`;
           } else if (this.gender === 'female') {
-            buf = `${this.name} ударила`;
+            buf = `${this.Name} ударила`;
           } else if (this.gender === 'plural') {
-            buf = `${this.name} ударили`;
+            buf = `${this.Name} ударили`;
           } else {
-            buf = `${this.name} ударило`;
+            buf = `${this.Name} ударило`;
           }
         }
 
@@ -158,16 +158,16 @@ module.exports = {
         let buf = '';
         if (heal.source !== this) {
           if (heal.source.gender === 'male') {
-            buf = `<b>${heal.source.name}</b> ${this.rname} вылечил`;
+            buf = `<b>${heal.source.Name}</b> ${this.rname} вылечил`;
           } else if (heal.source.gender === 'female') {
-            buf = `<b>${heal.source.name}</b> ${this.rname} вылечила`;
+            buf = `<b>${heal.source.Name}</b> ${this.rname} вылечила`;
           } else if (heal.source.gender === 'plural') {
-            buf = `<b>${heal.source.name}</b> ${this.rname} вылечила`;
+            buf = `<b>${heal.source.Name}</b> ${this.rname} вылечила`;
           } else {
-            buf = `<b>${heal.source.name}</b> ${this.rname} вылечило`;
+            buf = `<b>${heal.source.Name}</b> ${this.rname} вылечило`;
           }
         } else {
-          buf = `${this.name} вылечил`;
+          buf = `${this.Name} вылечил`;
         }
 
         buf += ` <b>${target.vname}</b>`;
@@ -183,7 +183,7 @@ module.exports = {
 
       let buf = '';
       if (damage.attacker) {
-        buf = `<b>${damage.attacker.name}</b>`;
+        buf = `<b>${damage.attacker.Name}</b>`;
           if (!damage.attacker.damageVerb) {
             if (damage.attacker.gender === 'male') {
                damage.attacker.damageVerb = 'поранил';
@@ -223,7 +223,7 @@ module.exports = {
 
           let buf = '';
           if (damage.attacker) {
-              buf = `${damage.attacker.name} ${damage.attacker.damageVerb}`;
+              buf = `${damage.attacker.Name} ${damage.attacker.damageVerb}`;
           }
 
           if (damage.source !== damage.attacker) {
@@ -412,7 +412,7 @@ function promptBuilder(promptee) {
   for (const target of promptee.combatants) {
     let currentPerc = Math.floor((target.getAttribute('health') / target.getMaxAttribute('health')) * 100);
     let progress = B.progress(progWidth, currentPerc, "red");
-    buf += `\r\n${formatProgressBar(target.name, progress, target)}`;
+    buf += `\r\n${formatProgressBar(target.Name, progress, target)}`;
   }
 
   return buf;

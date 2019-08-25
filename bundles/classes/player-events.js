@@ -55,7 +55,7 @@ module.exports = {
           if (ability.cooldownGroup) {
             return B.sayAt(this, `Нельзя использовать способность ${ability.name} пока действует задержка ${e.effect.skill.name}.`);
           }
-          return B.sayAt(this, `${ability.name} на задержке. ${humanize(e.effect.remaining)} осталось.`);
+          return B.sayAt(this, `Вы еще не можете использовать \'${ability.name}\'. ${humanize(e.effect.remaining)} осталось.`);
         }
 
         if (e instanceof SkillErrors.PassiveError) {

@@ -30,7 +30,7 @@ module.exports = {
       let skillname = 'skill_' + skillId;
         if (player.getMeta(skillname) > 0) {
           let skillLearned = state.SkillManager.find(skillId);
-          say("<b>" + B.center(40, skillLearned.name));
+          say("<b>" + B.center(40, skillLearned.name[0].toUpperCase() + skillLearned.name.slice(1)));
         }
     }
 
@@ -43,7 +43,7 @@ module.exports = {
       let spellname = 'skill_' + spellId;
         if (player.getMeta(spellname) > 0) {
           let spellLearned = state.SpellManager.find(spellId);
-          say("<b>" + B.center(40, spellLearned.name));
+          say("<b>" + B.center(40, spellLearned.name[0].toUpperCase() + spellLearned.name.slice(1)));
         }
     }
 

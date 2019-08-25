@@ -21,7 +21,7 @@ module.exports = {
           }
 
           this.initiateCombat(target, 150);
-          Broadcast.sayAt(this.room, `${this.name} бросается на помощь ${npc.dname}.`);
+          Broadcast.sayAt(this.room, `${this.Name} бросается на помощь ${npc.dname}.`);
 //          Logger.verbose(`NPC [${this.uuid}] assist [${npc.uuid}].`);
 
           return;

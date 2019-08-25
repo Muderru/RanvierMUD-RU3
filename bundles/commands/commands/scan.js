@@ -20,10 +20,10 @@ module.exports = {
       }
 
       for (const npc of room.npcs) {
-        B.sayAt(player, `  [НПС] ${npc.name}`);
+        B.sayAt(player, `  [НПС] ${npc.Name}`);
       }
       for (const pc of room.players) {
-        B.sayAt(player, `  [НПС] ${pc.name}`);
+        B.sayAt(player, `  [Игрок] ${pc.name}`);
       }
       B.sayAt(player);
     }

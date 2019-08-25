@@ -43,7 +43,7 @@ function getSkill(player) {
 
 module.exports = {
   aliases: ['сокрушить', 'сокрушение'],
-  name: 'Сокрушение',
+  name: 'сокрушение',
   gender: 'neither',
   damageVerb: 'травмирует',
   requiresTarget: true,

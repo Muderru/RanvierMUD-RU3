@@ -6,7 +6,7 @@ const { Broadcast, Heal, SkillType } = require('ranvier');
  * Health potion item spell
  */
 module.exports = {
-  name: 'Зелье',
+  name: 'зелье',
   gender: 'neither',
   damageVerb: 'восстанавливает',
   type: SkillType.SPELL,

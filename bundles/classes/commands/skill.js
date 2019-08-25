@@ -20,7 +20,7 @@ module.exports = {
       return say("Вы не знаете такого умения.");
     }
 
-    say('<b>' + B.center(80, skill.name, 'white', '-') + '</b>');
+    say('<b>' + B.center(80, skill.name[0].toUpperCase() + skill.name.slice(1), 'white', '-') + '</b>');
     if (skill.flags.includes(SkillFlag.PASSIVE)) {
       say('<b>Пассивное</b>');
     } else {

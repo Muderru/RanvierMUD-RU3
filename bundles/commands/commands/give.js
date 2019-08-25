@@ -37,7 +37,7 @@ module.exports = {
       if (target) {
         const accepts = target.getBehavior('accepts');
         if (!accepts || !accepts.includes(targetItem.entityReference)) {
-          return B.sayAt(player, '${target.name} не хочет брать это.');
+          return B.sayAt(player, '${target.Name} не хочет брать это.');
         }
       } 
     }

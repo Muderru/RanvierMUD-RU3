@@ -63,7 +63,7 @@ function totalDamage(player, target) {
  */
 module.exports = {
   aliases: ['порез', 'разрезать'],
-  name: 'Порез',
+  name: 'порез',
   gender: 'male',
   damageVerb: 'ранит',
   type: SkillType.SKILL,

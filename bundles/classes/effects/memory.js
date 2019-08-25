@@ -23,7 +23,7 @@ module.exports = {
       }
       
       if (this.owner.room === this.playertarget.room) {
-        Broadcast.sayAt(this.playertarget, this.owner.name + " набрасывается на вас!");
+        Broadcast.sayAt(this.playertarget, this.owner.Name + " набрасывается на вас!");
         this.owner.initiateCombat(this.playertarget);
       }
     },

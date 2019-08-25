@@ -294,7 +294,7 @@ class Combat {
     }
 
     if (!target.hasBehavior('combat')) {
-      throw new CombatErrors.CombatPacifistError(`${target.name} - пацифист и не будет сражаться с вами.`, target);
+      throw new CombatErrors.CombatPacifistError(`${target.Name} - пацифист и не будет сражаться с вами.`, target);
     }
 
     if (!target.hasAttribute('health')) {

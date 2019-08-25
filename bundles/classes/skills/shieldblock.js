@@ -30,7 +30,7 @@ function getSkill(player) {
  */
 module.exports = {
   aliases: ['блокировать'],
-  name: 'Блокирование щитом',
+  name: 'блокирование щитом',
   gender: 'neither',
   damageVerb: 'защищает',
   type: SkillType.SKILL,

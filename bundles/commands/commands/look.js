@@ -168,7 +168,7 @@ function lookRoom(state, player) {
         npcLabel = '<green>НПС</green>';
         break;
     }
-    B.sayAt(player, `[${npcLabel}] ` + npc.name + combatantsDisplay);
+    B.sayAt(player, `[${npcLabel}] ` + npc.Name + combatantsDisplay);
   });
 
   B.at(player, '[<yellow><b>Выходы</yellow></b>: ');

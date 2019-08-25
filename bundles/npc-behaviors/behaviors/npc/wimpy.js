@@ -37,13 +37,13 @@ module.exports = {
         }
 
         if (this.gender === 'male') {
-           Broadcast.sayAtExcept(this.room, `${this.name} сбежал из боя.`, this);
+           Broadcast.sayAtExcept(this.room, `${this.Name} сбежал из боя.`, this);
         } else if (this.gender === 'female') {
-           Broadcast.sayAtExcept(this.room, `${this.name} сбежала из боя.`, this);
+           Broadcast.sayAtExcept(this.room, `${this.Name} сбежала из боя.`, this);
         } else if (this.gender === 'plural') {
-           Broadcast.sayAtExcept(this.room, `${this.name} сбежали из боя.`, this);
+           Broadcast.sayAtExcept(this.room, `${this.Name} сбежали из боя.`, this);
         } else {
-           Broadcast.sayAtExcept(this.room, `${this.name} сбежало из боя.`, this);
+           Broadcast.sayAtExcept(this.room, `${this.Name} сбежало из боя.`, this);
         }
     
         this.removeFromCombat();

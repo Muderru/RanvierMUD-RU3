@@ -76,9 +76,9 @@ module.exports = {
         }
 
       if (roomExit.direction === 'вверх' || roomExit.direction === 'вниз') {
-          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerbOut} ${roomExit.direction}.`);
+          Broadcast.sayAt(this.room, `${this.Name} ${this.travelVerbOut} ${roomExit.direction}.`);
       } else {
-          Broadcast.sayAt(this.room, `${this.name} ${this.travelVerbOut} на ${roomExit.direction}.`);
+          Broadcast.sayAt(this.room, `${this.Name} ${this.travelVerbOut} на ${roomExit.direction}.`);
       }
       
       if (!this.travelVerbIn) {
@@ -95,25 +95,25 @@ module.exports = {
       
       switch(roomExit.direction) {
           case 'восток':
-            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с запада.`);
+            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с запада.`);
           break;
           case 'запад':
-            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с востока.`);
+            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с востока.`);
           break;
           case 'юг':
-            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с севера.`);
+            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с севера.`);
           break;
           case 'север':
-            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} с юга.`);
+            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с юга.`);
           break;
           case 'вверх':
-            Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} снизу.`);
+            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} снизу.`);
           break;
           case 'вниз':
-          Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} сверху.`);
+          Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} сверху.`);
           break;
           default:
-          Broadcast.sayAt(randomRoom, `${this.name} ${this.travelVerbIn} откуда-то.`);
+          Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} откуда-то.`);
       }
       
       this.moveTo(randomRoom);

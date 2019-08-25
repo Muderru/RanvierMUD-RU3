@@ -76,7 +76,7 @@ module.exports = {
         // attack
         if (sinceLastCheck >= delayLength) {
           if (!this._aggroTarget.isNpc) {
-            B.sayAt(this._aggroTarget, config.attackMessage.replace(/%name%/, this.name));
+            B.sayAt(this._aggroTarget, config.attackMessage.replace(/%name%/, this.Name));
           } else {
             Logger.verbose(`NPC [${this.uuid}/${this.entityReference}] attacks NPC [${this._aggroTarget.uuid}/${this._aggroTarget.entityReference}] in room ${this.room.entityReference}.`);
           }
@@ -88,7 +88,7 @@ module.exports = {
 
         // warn
         if (sinceLastCheck >= delayLength / 2 && !this._aggroTarget.isNpc && !this._aggroWarned) {
-          B.sayAt(this._aggroTarget, config.warnMessage.replace(/%name%/, this.name));
+          B.sayAt(this._aggroTarget, config.warnMessage.replace(/%name%/, this.Name));
           this._aggroWarned = true;
         }
 

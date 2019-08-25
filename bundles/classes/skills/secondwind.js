@@ -17,7 +17,7 @@ function restorePercent(player) {
  * Basic warrior passive
  */
 module.exports = {
-  name: 'Второе дыхание',
+  name: 'второе дыхание',
   gender: 'neither',
   damageVerb: 'восстанавливает',
   type: SkillType.SKILL,

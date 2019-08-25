@@ -37,13 +37,13 @@ module.exports = {
 
       if (room) {
           if (this.gender === 'male') {
-            Broadcast.sayAt(room, `${this.name} рассыпался в прах!`);
+            Broadcast.sayAt(room, `${this.Name} рассыпался в прах!`);
           } else if (this.gender === 'female') {
-            Broadcast.sayAt(room, `${this.name} рассыпалась в прах!`);
+            Broadcast.sayAt(room, `${this.Name} рассыпалась в прах!`);
           } else if (this.gender === 'plural') {
-            Broadcast.sayAt(room, `${this.name} рассыпались в прах!`);
+            Broadcast.sayAt(room, `${this.Name} рассыпались в прах!`);
           } else {
-            Broadcast.sayAt(room, `${this.name} рассыпалось в прах!`);
+            Broadcast.sayAt(room, `${this.Name} рассыпалось в прах!`);
         }
         
       }

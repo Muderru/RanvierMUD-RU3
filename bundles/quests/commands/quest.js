@@ -20,13 +20,13 @@ subcommands.add({
     }
 
     if (!npc.quests) {
-      return say(player, `${npc.name} не имеет для вас заданий.`);
+      return say(player, `${npc.Name} не имеет для вас заданий.`);
     }
 
     let availableQuests = getAvailableQuests(state, player, npc);
 
     if (!availableQuests.length) {
-      return say(player, `${npc.name} не имеет для вас доступных заданий.`);
+      return say(player, `${npc.Name} не имеет для вас доступных заданий.`);
     }
 
     for (let i in availableQuests) {

@@ -17,7 +17,7 @@ subcommands.add({
         B.sayAt(player, "<b>" + B.line(40, '=', 'green'));
         let spell = state.SpellManager.find(trainerConfig.spell);
         let ending = (trainerConfig.cost === 1) ? ' очко магии' : ' очка магии';
-        B.sayAt(player, spell.name + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending)));
+        B.sayAt(player, spell.name[0].toUpperCase() + spell.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending)));
     }
 
     if (!trainerConfig.skill) {
@@ -26,7 +26,7 @@ subcommands.add({
         B.sayAt(player, "<b>" + B.line(40, '=', 'green'));
         let skill = state.SkillManager.find(trainerConfig.skill);
         let ending = (trainerConfig.cost === 1) ? ' очко умений' : ' очка умений';
-        B.sayAt(player, skill.name + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending)));
+        B.sayAt(player, skill.name[0].toUpperCase() + skill.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending)));
     }
   }
 });
