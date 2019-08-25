@@ -10,8 +10,9 @@ module.exports = {
   listeners: {
     useAbility: state => function (ability, args) {
       let skillname = 'skill_' + ability.id;
+      let spellname = 'spell_' + ability.id;
 
-      if (!this.getMeta(skillname)) {
+      if (!this.getMeta(skillname) && !this.getMeta(spellname)) {
           return B.sayAt(this, 'Вы еще не выучили эту способность.');
       }
 

@@ -49,12 +49,13 @@ subcommands.add({
             return tell("Я не обучаю такому.");
         } else if (player.getMeta('magicPoints') < trainerConfig.cost) {
             return tell("У вас недостаточно очков магии.");
-        } else if (player.getMeta('skill_' + skill.id) > 0) {
+        } else if (player.getMeta('spell_' + skill.id) > 0) {
             return tell("Вы уже знаете это заклинание.");
         } else {
             let magicPoints = player.getMeta('magicPoints');
             player.setMeta('magicPoints', magicPoints - trainerConfig.cost);
-            player.setMeta('skill_' + skill.id, 1);
+            player.setMeta('spell_' + skill.id, 1);
+            player.save();
             return tell("Вы выучили заклинание \'" + skill.name + "\'.");
         }
     }
@@ -71,6 +72,7 @@ subcommands.add({
             let skillPoints = player.getMeta('skillPoints');
             player.setMeta('skillPoints', spellPoints - trainerConfig.cost);
             player.setMeta('skill_' + skill.id, 1);
+            player.save();
             return tell("Вы выучили умение \'" + skill.name + "\'.");
         }
     }

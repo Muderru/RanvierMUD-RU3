@@ -40,7 +40,7 @@ module.exports = {
     say("<b>" + B.line(40, '=', 'green'));
 
     for (let spellId of spell) {
-      let spellname = 'skill_' + spellId;
+      let spellname = 'spell_' + spellId;
         if (player.getMeta(spellname) > 0) {
           let spellLearned = state.SpellManager.find(spellId);
           say("<b>" + B.center(40, spellLearned.name[0].toUpperCase() + spellLearned.name.slice(1)));
