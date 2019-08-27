@@ -3,7 +3,7 @@
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
 
-const manaCost = 40;
+const manaCost = 60;
 
 function getAttr1(player, target) {
   let addDamage = 0;
@@ -58,7 +58,12 @@ module.exports = {
   cooldown: 5,
 
   run: state => function (args, player, target) {
-    const getDamage = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let getDamage = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+
+    if (player.isNpc) {
+      getDamage *= 2;
+    }
+
     const damage = new Damage('health', getDamage, player, this, {
       type: 'physical',
     });

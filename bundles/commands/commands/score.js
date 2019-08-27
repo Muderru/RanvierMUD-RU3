@@ -5,7 +5,7 @@ const { Broadcast: B } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
 
 module.exports = {
-  aliases: [ 'очки', 'характеристики', 'счет' ],
+  aliases: [ 'очки', 'характеристики', 'счет', 'счёт' ],
   command : (state) => (args, p) => {
     const say = message => B.sayAt(p, message);
 

@@ -61,7 +61,11 @@ module.exports = {
       }
     }
 
-    const amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+
+    if (player.isNpc) {
+      amount *= 2;
+    }
 
     const damage = new Damage('health', amount, player, this, {
       type: 'holy',
@@ -69,17 +73,17 @@ module.exports = {
 
     Broadcast.sayAt(player, `<b><yellow>Вы наполнили ваше оружие святой энергией и сокрушили им ${target.vname}!</yellow></b>`);
     if (player.gender === 'male') {
-      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} наполнил свое оружие святой энергией и сокрушил им ${target.vname}!</yellow></b>`, [target, player]);
-      Broadcast.sayAt(target, `<b><yellow>${player.name} наполнил свое оружие святой энергией и сокрушил им вас!</yellow></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} наполнил свое оружие святой энергией и сокрушил им ${target.vname}!</yellow></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><yellow>${player.Name} наполнил свое оружие святой энергией и сокрушил им вас!</yellow></b>`);
     } else if (player.gender === 'female') {
-      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} наполнила свое оружие святой энергией и сокрушила им ${target.vname}!</yellow></b>`, [target, player]);
-      Broadcast.sayAt(target, `<b><yellow>${player.name} наполнила свое оружие святой энергией и сокрушила им вас!</yellow></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} наполнила свое оружие святой энергией и сокрушила им ${target.vname}!</yellow></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><yellow>${player.Name} наполнила свое оружие святой энергией и сокрушила им вас!</yellow></b>`);
     } else if (player.gender === 'plural') {
-      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} наполнили свои оружия святой энергией и сокрушили им ${target.vname}!</yellow></b>`, [target, player]);
-      Broadcast.sayAt(target, `<b><yellow>${player.name} наполнили свои оружия святой энергией и сокрушили им вас!</yellow></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} наполнили свои оружия святой энергией и сокрушили им ${target.vname}!</yellow></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><yellow>${player.Name} наполнили свои оружия святой энергией и сокрушили им вас!</yellow></b>`);
     } else {
-      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} наполнило свое оружие святой энергией и сокрушило им ${target.vname}!</yellow></b>`, [target, player]);
-      Broadcast.sayAt(target, `<b><yellow>${player.name} наполнило свое оружие святой энергией и сокрушило им вас!</yellow></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} наполнило свое оружие святой энергией и сокрушило им ${target.vname}!</yellow></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><yellow>${player.Name} наполнило свое оружие святой энергией и сокрушило им вас!</yellow></b>`);
     }
 
     damage.commit(target);

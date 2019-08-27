@@ -64,15 +64,20 @@ module.exports = {
       }
     }
 
-    const getDamage = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let getDamage = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+
+    if (player.isNpc) {
+      getDamage *= 2;
+    }
+
     const damage = new Damage('health', getDamage, player, this, {
       type: 'physical',
     });
 
-      Broadcast.sayAt(player, '<red>Вы делаете обманный маневр и наносите мощный удар ${target.dname}!</red>');
-      Broadcast.sayAtExcept(player.room, `<red>${player.name} делает обманный маневр и наносит мощный удар ${target.dname}!</red>`, [player, target]);
+      Broadcast.sayAt(player, `<red>Вы делаете обманный маневр и наносите мощный удар <bold>${target.dname}</bold>!</red>`);
+      Broadcast.sayAtExcept(player.room, `<red>${player.Name} делает обманный маневр и наносит мощный удар ${target.dname}!</red>`, [player, target]);
       if (!target.isNpc) {
-        Broadcast.sayAt(target, `<red>${player.name} делает обманный маневр и наносит вам мощный удар!</red>`);
+        Broadcast.sayAt(target, `<red>${player.Name} делает обманный маневр и наносит вам мощный удар!</red>`);
     }
     damage.commit(target);
     

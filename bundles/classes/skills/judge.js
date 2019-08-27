@@ -68,14 +68,19 @@ module.exports = {
     effect.skill = this;
     effect.attacker = player;
 
-    const amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    
+    if (player.isNpc) {
+      amount *= 2;
+    }
+    
     const damage = new Damage('health', amount, player, this, {
       type: 'holy',
     });
 
       Broadcast.sayAt(player, `<b><yellow>Поток священной силы сотрясает ${target.vname}!</yellow></b>`);
-      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.name} сотрясает потоком священной энергии ${target.vname}!</yellow></b>`, [target, player]);
-      Broadcast.sayAt(target, `<b><yellow>${player.name} сотрясает вас потоком священной энергии!</yellow></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} сотрясает потоком священной энергии ${target.vname}!</yellow></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><yellow>${player.Name} сотрясает вас потоком священной энергии!</yellow></b>`);
 
     damage.commit(target);
     target.addEffect(effect);

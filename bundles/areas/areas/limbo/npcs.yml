@@ -73,10 +73,14 @@
   max_damage: 20
   attributes:
     health: 100
-    strength: 10
+    intellect: 20
     cutting_resistance: 1
+    mana: 200
   behaviors:
     combat: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ 'heal' ]
     lootable:
       # currencies is a list of currencies this npc can possibly drop and the amount range
       # the currency key is arbitrary so if you want a new currency just add a new key

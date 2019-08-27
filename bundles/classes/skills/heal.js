@@ -1,8 +1,9 @@
 'use strict';
 
 const { Broadcast: B, Heal, SkillType } = require('ranvier');
+const Combat = require('../../combat/lib/Combat');
 
-const manaCost = 50;
+const manaCost = 65;
 
 function getAttr1(player) {
   let addDamage = 0;
@@ -52,16 +53,21 @@ module.exports = {
   cooldown: 10,
 
   run: state => function (args, player, target) {
-    const getHeal = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
+    let getHeal = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
+
+    if (player.isNpc) {
+      getHeal *= 2;
+    }
+
     const heal = new Heal('health', getHeal, player, this);
 
     if (target !== player) {
       B.sayAt(player, `<b>Вы призываете силы природы, чтобы они исцелили раны ${target.rname}.</b>`);
-      B.sayAtExcept(player.room, `<b>${player.name} призывает силы природы, чтобы они исцелили раны ${target.rname}.</b>`, [target, player]);
-      B.sayAt(target, `<b>${player.name} призывает силы природы, чтобы они исцелили ваши раны.</b>`);
+      B.sayAtExcept(player.room, `<b>${player.Name} призывает силы природы, чтобы они исцелили раны ${target.rname}.</b>`, [target, player]);
+      B.sayAt(target, `<b>${player.Name} призывает силы природы, чтобы они исцелили ваши раны.</b>`);
     } else {
       B.sayAt(player, "<b>Вы призываете силы природы, чтобы они исцелили ваши раны.</b>");
-      B.sayAtExcept(player.room, `<b>${player.name} призывает силы природы, чтобы они исцелили его раны.</b>`, [player, target]);
+      B.sayAtExcept(player.room, `<b>${player.Name} призывает силы природы, чтобы они исцелили его раны.</b>`, [player, target]);
     }
 
     heal.commit(target);

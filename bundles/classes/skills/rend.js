@@ -82,7 +82,12 @@ module.exports = {
       }
     }
 
-    const getDamage = Math.floor(0.9*Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let getDamage = Math.floor(0.9*Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    
+    if (player.isNpc) {
+      getDamage *= 2;
+    }
+    
     const damage = new Damage('health', getDamage, player, this, {
       type: 'physical',
     });
@@ -108,29 +113,29 @@ module.exports = {
 
     effect.on('effectDeactivated', _ => {
       if (target.gender === 'male') {
-         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестал кровоточить.</red>`);
+         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестал кровоточить.</red>`);
       } else if (target.gender === 'female') {
-         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестала кровоточить.</red>`);
+         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестала кровоточить.</red>`);
       } else if (target.gender === 'plural') {
-         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестали кровоточить.</red>`);
+         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестали кровоточить.</red>`);
       } else {
-         Broadcast.sayAt(player, `<red><b>${target.name}</b> перестало кровоточить.</red>`);
+         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестало кровоточить.</red>`);
       }
     });
 
     Broadcast.sayAt(player, `<red>Подлой атакой вы нанесли рваную рану <bold>${target.dname}</bold>!</red>`);
     if (player.gender === 'male') {
-      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанес рваную рану ${target.dname}.</red>`, [target, player]);
-      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанес вам рваную рану!</red>`);
+      Broadcast.sayAtExcept(player.room, `<red>${player.Name} подлой атакой нанес рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.Name} подлой атакой нанес вам рваную рану!</red>`);
     } else if (player.gender === 'female') {
-      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанесла рваную рану ${target.dname}.</red>`, [target, player]);
-      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанесла вам рваную рану!</red>`);
+      Broadcast.sayAtExcept(player.room, `<red>${player.Name} подлой атакой нанесла рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.Name} подлой атакой нанесла вам рваную рану!</red>`);
     } else if (player.gender === 'plural') {
-      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанесли рваную рану ${target.dname}.</red>`, [target, player]);
-      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанесли вам рваную рану!</red>`);
+      Broadcast.sayAtExcept(player.room, `<red>${player.Name} подлой атакой нанесли рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.Name} подлой атакой нанесли вам рваную рану!</red>`);
     } else {
-      Broadcast.sayAtExcept(player.room, `<red>${player.name} подлой атакой нанесло рваную рану ${target.dname}.</red>`, [target, player]);
-      Broadcast.sayAt(target, `<red>${player.name} подлой атакой нанесло вам рваную рану!</red>`);
+      Broadcast.sayAtExcept(player.room, `<red>${player.Name} подлой атакой нанесло рваную рану ${target.dname}.</red>`, [target, player]);
+      Broadcast.sayAt(target, `<red>${player.Name} подлой атакой нанесло вам рваную рану!</red>`);
     }      
     damage.commit(target);
     target.addEffect(effect);

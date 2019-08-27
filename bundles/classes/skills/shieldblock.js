@@ -68,13 +68,13 @@ module.exports = {
 
     Broadcast.sayAt(player, `<b>Вы подняли ваш щит, блокируя атаки врагов!</b>`);
     if (player.gender === 'male') {
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} поднял свой щит, блокируя атаки врагов.</b>`, [player]);
+      Broadcast.sayAtExcept(player.room, `<b>${player.Name} поднял свой щит, блокируя атаки врагов.</b>`, [player]);
     } else if (player.gender === 'female') {
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} подняла свой щит, блокируя атаки врагов.</b>`, [player]);
+      Broadcast.sayAtExcept(player.room, `<b>${player.Name} подняла свой щит, блокируя атаки врагов.</b>`, [player]);
     } else if (player.gender === 'plural') {
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} подняли свои щиты, блокируя атаки врагов.</b>`, [player]);
+      Broadcast.sayAtExcept(player.room, `<b>${player.Name} подняли свои щиты, блокируя атаки врагов.</b>`, [player]);
     } else {
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} подняло свой щит, блокируя атаки врагов.</b>`, [player]);
+      Broadcast.sayAtExcept(player.room, `<b>${player.Name} подняло свой щит, блокируя атаки врагов.</b>`, [player]);
     }
     player.addEffect(effect);
 

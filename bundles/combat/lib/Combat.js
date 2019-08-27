@@ -1,7 +1,7 @@
 'use strict';
 
 const { Random } = require('rando-js');
-const { Damage, Logger } = require('ranvier');
+const { Damage, Logger, Broadcast } = require('ranvier');
 const Parser = require('../../lib/lib/ArgParser');
 const CombatErrors = require('./CombatErrors');
 
@@ -251,6 +251,16 @@ class Combat {
     deadEntity.emit('killed', killer);
 
     if (deadEntity.isNpc) {
+      if (deadEntity.gender === 'male') {
+        Broadcast.sayAt(deadEntity.room, `${deadEntity.Name} мертв.`);
+      } else if (deadEntity.gender === 'female') {
+        Broadcast.sayAt(deadEntity.room, `${deadEntity.Name} мертва.`);
+      } else if (deadEntity.gender === 'plural') {
+        Broadcast.sayAt(deadEntity.room, `${deadEntity.Name} мертвы.`);
+      } else {
+        Broadcast.sayAt(deadEntity.room, `${deadEntity.Name} мертво.`);
+      }
+      
       state.MobManager.removeMob(deadEntity);
       deadEntity.sourceRoom.removeNpc(deadEntity, true);
       killer.room.removeNpc(deadEntity, true);
@@ -329,6 +339,10 @@ class Combat {
   static getWeaponDamage(attacker) {
     const weapon = attacker.equipment.get('оружие');
     let min = 0, max = 0;
+    if (attacker.isNpc) {
+      min = attacker.min_damage;
+      max = attacker.max_damage;
+    }
     if (weapon) {
       min = weapon.metadata.minDamage;
       max = weapon.metadata.maxDamage;

@@ -10,7 +10,7 @@ module.exports = {
         return;
       }
 
-      if (Random.inRange(0, 100) <=97) {
+      if (Random.inRange(0, 100) <= 97) {
         return;
       }
 

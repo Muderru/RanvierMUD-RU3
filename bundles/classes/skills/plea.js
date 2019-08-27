@@ -2,7 +2,7 @@
 
 const { Broadcast, Heal } = require('ranvier');
 
-const manaCost = 40;
+const manaCost = 80;
 const bonusThreshold = 30;
 const cooldown = 10;
 
@@ -55,6 +55,11 @@ module.exports = {
   run: state => function (args, player, target) {
     const maxHealth = target.getMaxAttribute('health');
     let amount = Math.floor(0.8*Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
+
+    if (player.isNpc) {
+      amount *= 2;
+    }
+
     if (target.getAttribute('health') < (maxHealth * (bonusThreshold / 100))) {
       amount *= 2;
     }
@@ -63,11 +68,11 @@ module.exports = {
 
     if (target !== player) {
       Broadcast.sayAt(player, `<b>Вы взываете к силам Света и лечите раны ${target.rname}.</b>`);
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} взывает к силам Света и лечит раны ${target.rname}.</b>`, [target, player]);
-      Broadcast.sayAt(target, `<b>${player.name} взывает к силам Света и лечит ваши раны.</b>`);
+      Broadcast.sayAtExcept(player.room, `<b>${player.Name} взывает к силам Света и лечит раны ${target.rname}.</b>`, [target, player]);
+      Broadcast.sayAt(target, `<b>${player.Name} взывает к силам Света и лечит ваши раны.</b>`);
     } else {
       Broadcast.sayAt(player, "<b>Вы взываете к силам Света и лечите ваши раны.</b>");
-      Broadcast.sayAtExcept(player.room, `<b>${player.name} взывает к силам Света и лечит свои раны.</b>`, [player, target]);
+      Broadcast.sayAtExcept(player.room, `<b>${player.Name} взывает к силам Света и лечит свои раны.</b>`, [player, target]);
     }
 
     heal.commit(target);
