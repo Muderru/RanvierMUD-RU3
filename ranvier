@@ -13,9 +13,7 @@
 
 /* NPM Modules */
 const semver = require('semver');
-const net = require('net');
 const commander = require('commander');
-const argv = require('optimist').argv;
 const fs = require('fs');
 
 // for dev clone the github:ranviermud/core repo, and run npm link in that folder, then come
@@ -147,7 +145,7 @@ async function init(restartServer) {
 
     clearInterval(playerTickInterval);
     playerTickInterval = setInterval(() => {
-      GameState.PlayerManager.emit('updateTick');
+      GameState.PlayerManager.tickAll();
     }, Config.get('playerTickFrequency', 100));
   }
 }

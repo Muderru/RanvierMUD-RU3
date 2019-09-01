@@ -303,7 +303,7 @@ class Combat {
       throw new CombatErrors.CombatSelfError("Вы ударили самого себя по лицу. Взбодрило!");
     }
 
-    if (!target.hasBehavior('combat')) {
+    if (target.isNpc && !target.hasBehavior('combat')) {
       throw new CombatErrors.CombatPacifistError(`${target.Name} - пацифист и не будет сражаться с вами.`, target);
     }
 

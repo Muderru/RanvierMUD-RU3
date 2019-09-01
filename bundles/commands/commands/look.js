@@ -4,6 +4,7 @@ const humanize = (sec) => { return require('humanize-duration')(sec, { language:
 const sprintf = require('sprintf-js').sprintf;
 const {
   Broadcast: B,
+  Room,
   Item,
   ItemType,
   Logger,
@@ -16,8 +17,8 @@ module.exports = {
   usage: "смотреть [объект]",
   aliases: ['смотреть', 'осмотреть'],
   command: state => (args, player) => {
-    if (!player.room) {
-      Logger.error(player.getName() + ' is in limbo.');
+    if (!player.room || !(player.room instanceof Room)) {
+      Logger.error(player.name + ' is in limbo.');
       return B.sayAt(player, 'Вы находитесь в темной бесформенной бездне.');
     }
 
@@ -187,7 +188,7 @@ function lookRoom(state, player) {
 
   B.at(player, foundExits.map(exit => {
     const exitRoom = state.RoomManager.getRoom(exit.roomId);
-    const door = room.getDoor(exitRoom) || exitRoom.getDoor(room);
+    const door = room.getDoor(exitRoom) || (exitRoom && exitRoom.getDoor(room));
     if (door && (door.locked || door.closed)) {
       return '(' + exit.direction + ')';
     }

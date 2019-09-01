@@ -2,3 +2,4 @@
 title: Коридор
 info:
   respawnInterval: 60
+  instanced: player

@@ -29,7 +29,7 @@ module.exports = class KillGoal extends QuestGoal {
   }
 
   _targetKilled(target) {
-    if (target.entityReference !== this.config.npc || this.state.count > this.config.count) {
+    if (target.entityReference !== this.config.npc || this.state.count === this.config.count) {
       return;
     }
 

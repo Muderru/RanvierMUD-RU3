@@ -1,6 +1,6 @@
 'use strict';
 
-const { CommandType } = require('ranvier');
+const { CommandType, Room } = require('ranvier');
 
 /**
  * Interpreter.. you guessed it, interprets command input
@@ -136,6 +136,10 @@ class CommandParser {
    */
   static checkMovement(player, command)
   {
+    if (!player.room || !(player.room instanceof Room)) {
+      return null;
+    }
+
     const primaryDirections = ['север', 'юг', 'восток', 'запад', 'вверх', 'вниз'];
 
     for (const direction of primaryDirections) {
