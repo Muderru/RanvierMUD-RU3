@@ -46,6 +46,7 @@
     trainer:
       spell: "fireball"
       cost: 1
+      requirements: []
 - id: puppy
   keywords: ["щенок", "собака", "милый", "большеглазый"]
   name: "щенок"

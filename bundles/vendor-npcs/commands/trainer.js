@@ -43,6 +43,17 @@ subcommands.add({
       skill = state.SpellManager.find(args, true);
     }
 
+    const requirements = trainerConfig.requirements;
+    const requirementsNumber = requirements.length;
+
+    if (requirementsNumber > 0) {
+      for (let requirement of requirements) {
+        if (!player.getMeta(requirement)) {
+          return tell("Вы не соответствуете моим требованиям. Я не буду обучать вас.");
+        }
+      }
+    }
+
     if (!trainerConfig.spell) {
     } else {
         if (skill.id !== trainerConfig.spell) {
