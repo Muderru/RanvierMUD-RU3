@@ -15,6 +15,17 @@ module.exports = {
         tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
         tmpGameTime++;
         Data.saveFile('gameTime.json', { ingameTime: tmpGameTime });
+
+        const dayDuration = 24;
+        
+        if (tmpGameTime >= dayDuration) {
+          tmpGameTime = tmpGameTime % dayDuration;
+        }
+
+        for (const [key, area] of state.AreaManager.areas) {
+          area.time = tmpGameTime;
+//          Logger.verbose(`Area ${area.name} set time ${area.time}`)
+        }
       }, 264000);
     },
 

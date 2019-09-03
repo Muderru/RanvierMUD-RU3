@@ -10,10 +10,10 @@ module.exports = {
   command : (state) => (args, player) => {
       let tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
       let year = 1, month = 1, day = 1, hour = 1;
-      // день 60*24, месяц 60*24*30, год 60*24*30*12
-      const yearDuration = 518400;
-      const monthDuration = 43200;
-      const dayDuration = 1440;
+      // день 24, месяц 24*30, год 24*30*12
+      const yearDuration = 8640;
+      const monthDuration = 720;
+      const dayDuration = 24;
       
       if (tmpGameTime >= yearDuration) {
           while(tmpGameTime >= yearDuration) {
