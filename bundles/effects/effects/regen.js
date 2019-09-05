@@ -19,7 +19,6 @@ module.exports = {
       const regens = [
         { pool: 'health', modifier: this.target.isInCombat() ? 0 : 1 },
         // energy and mana recovers 50% faster than health
-        { pool: 'energy', modifier: this.target.isInCombat() ? 0.25 : 1.5 },
         { pool: 'mana', modifier: this.target.isInCombat() ? 0.25 : 1.5 },
       ];
 
@@ -34,19 +33,6 @@ module.exports = {
           hidden: true,
         });
         heal.commit(this.target);
-      }
-
-      // favor is treated specially in that it drains over time
-      if (this.target.hasAttribute('favor')) {
-        if (this.target.getAttribute('favor') < 1 || this.target.isInCombat()) {
-          return;
-        }
-
-        const amount = Math.ceil(this.target.getMaxAttribute('favor') / 10);
-        const drain = new Damage('favor', amount, this.target, this, {
-          hidden: true
-        });
-        drain.commit(this.target);
       }
     },
   }

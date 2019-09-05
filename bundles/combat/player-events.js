@@ -334,6 +334,11 @@ module.exports = {
         }
 
         this.setAttributeToMax('health');
+        this.setAttributeToMax('mana');
+        let helthDamaged = Math.floor(this.getMaxAttribute('health')*0.8);
+        let manaDamaged = Math.floor(this.getMaxAttribute('mana')*0.8);
+        this.lowerAttribute('health', helthDamaged);
+        this.lowerAttribute('mana', manaDamaged);
 
         let home = state.RoomManager.getRoom(this.getMeta('waypoint.home'));
         if (!home) {
@@ -355,6 +360,10 @@ module.exports = {
 
           B.prompt(this);
           state.CommandManager.get('look').execute('', this);
+
+          const effect = state.EffectFactory.create('deathgloom', {}, {});
+          effect.quantity = this.level;
+          this.addEffect(effect);
         });
       };
     },

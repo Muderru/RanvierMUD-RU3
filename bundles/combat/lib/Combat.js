@@ -260,10 +260,10 @@ class Combat {
       } else {
         Broadcast.sayAt(deadEntity.room, `${deadEntity.Name} мертво.`);
       }
-      
-      state.MobManager.removeMob(deadEntity);
+
       deadEntity.sourceRoom.removeNpc(deadEntity, true);
       killer.room.removeNpc(deadEntity, true);
+      state.MobManager.removeMob(deadEntity);
     }
   }
 

@@ -7,9 +7,9 @@ module.exports = {
           const target = [...this.combatants][0];
           
           const effect = state.EffectFactory.create('memory', {}, {});
-          effect.playertarget = target;
-          effect.owner = this;
-          this.addEffect(effect);
+
+          effect.enemy = this;
+          target.addEffect(effect);
           return;
       }
     }

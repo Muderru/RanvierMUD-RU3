@@ -11,22 +11,23 @@ module.exports = {
     description: 'Запоминается на некоторое время противник.',
     duration: 1000 * 60 * 15,
     hidden: true,
-    unique: false,
-    persists: false,
-    maxStacks: 5,
-    tickInterval: 1,
+    unique: true,
+    type: 'memory',
   },
   listeners: {
     updateTick: function () {
-      if (this.owner.isInCombat()) {
+      if (this.enemy.isInCombat()) {
           return;
       }
       
-      if (this.owner.room === this.playertarget.room) {
-        Broadcast.sayAt(this.playertarget, this.owner.Name + " набрасывается на вас!");
-        this.owner.initiateCombat(this.playertarget);
+      if (this.target.room === this.enemy.room) {
+        Broadcast.sayAt(this.target, this.enemy.Name + " набрасывается на вас!");
+        this.enemy.initiateCombat(this.target);
       }
     },
 
+    killed: function () {
+      this.remove();
+    }
   }
 };

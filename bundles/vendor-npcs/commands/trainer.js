@@ -10,14 +10,31 @@ subcommands.add({
   aliases: [ 'список' ],
   command: state => (trainer, args, player) => {
     const trainerConfig = trainer.getMeta('trainer');
-    
+
+    let ending = '';
+    switch(trainerConfig.cost) {
+      case 1:
+        ending = ' очко ';
+        break;
+      case 2:
+        ending = ' очка ';
+        break;
+      case 3:
+        ending = ' очка ';
+        break;
+      case 4:
+        ending = ' очка ';
+        break;
+      default:
+        ending = ' очков ';
+    }
+
     if (!trainerConfig.spell) {
     } else {
         B.sayAt(player, "<b>" + B.center(40, 'Заклинания', 'green'));
         B.sayAt(player, "<b>" + B.line(40, '=', 'green'));
         let spell = state.SpellManager.find(trainerConfig.spell);
-        let ending = (trainerConfig.cost === 1) ? ' очко магии' : ' очка магии';
-        B.sayAt(player, spell.name[0].toUpperCase() + spell.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending)));
+        B.sayAt(player, spell.name[0].toUpperCase() + spell.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending + 'магии')));
     }
 
     if (!trainerConfig.skill) {
@@ -25,8 +42,7 @@ subcommands.add({
         B.sayAt(player, "<b>" + B.center(40, 'Умения', 'green'));
         B.sayAt(player, "<b>" + B.line(40, '=', 'green'));
         let skill = state.SkillManager.find(trainerConfig.skill);
-        let ending = (trainerConfig.cost === 1) ? ' очко умений' : ' очка умений';
-        B.sayAt(player, skill.name[0].toUpperCase() + skill.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending)));
+        B.sayAt(player, skill.name[0].toUpperCase() + skill.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending + 'умений')));
     }
   }
 });

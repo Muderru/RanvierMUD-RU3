@@ -33,7 +33,7 @@ module.exports = {
       if (effect.duration === Infinity) {
         B.sayAt(player, "Постоянно");
       } else {
-        B.sayAt(player, ` ${humanize(effect.remaining)} remaining`);
+        B.sayAt(player, ` ${humanize(effect.remaining)} осталось`);
       }
       B.sayAt(player, "\t" + effect.description);
     }
