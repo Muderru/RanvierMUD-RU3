@@ -361,9 +361,9 @@ module.exports = {
           B.prompt(this);
           state.CommandManager.get('look').execute('', this);
 
-          const effect = state.EffectFactory.create('deathgloom', {}, {});
-          effect.quantity = this.level;
+          const effect = state.EffectFactory.create('deathgloom', {}, {quantity: this.level});
           this.addEffect(effect);
+          state.CommandManager.get('quit').execute('', this);
         });
       };
     },

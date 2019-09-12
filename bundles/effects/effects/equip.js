@@ -8,6 +8,7 @@ const { EffectFlag } = require('ranvier');
 module.exports = {
   config: {
     name: 'Equip',
+    persists: false,
     description: '',
     type: 'equip',
     hidden: true,
