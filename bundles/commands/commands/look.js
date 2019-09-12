@@ -163,7 +163,7 @@ function lookRoom(state, player) {
         npcLabel = '<red>НПС</red>';
         break;
       case (npc.level - player.level > 3):
-        npcLabel = '<yellow>НПС</red>';
+        npcLabel = '<yellow>НПС</yellow>';
         break;
       default:
         npcLabel = '<green>НПС</green>';
