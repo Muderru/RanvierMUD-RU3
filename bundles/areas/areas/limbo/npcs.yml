@@ -82,6 +82,8 @@
     capable:
       skills: [ 'lunge' ]
       spells: [ 'heal' ]
+    block:
+      exits: [ 'запад' ]
     lootable:
       # currencies is a list of currencies this npc can possibly drop and the amount range
       # the currency key is arbitrary so if you want a new currency just add a new key

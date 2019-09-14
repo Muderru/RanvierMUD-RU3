@@ -21,6 +21,19 @@ module.exports = {
         return B.sayAt(this, 'Вы сейчас сражаетесь!');
       }
 
+    for (const npc of this.room.npcs) {
+      if (npc.hasBehavior('block')) {
+        const block = npc.getBehavior('block');
+        const blockExits = block.exits;
+
+        for (let blockExit of blockExits) {
+          if (blockExit === roomExit.direction) {
+            return B.sayAt(this, npc.Name + ' не дает вам туда пройти!');
+          }
+        }
+      }
+    }
+
       const nextRoom = state.RoomManager.getRoom(roomExit.roomId);
       const oldRoom = this.room;
 
