@@ -109,7 +109,7 @@ function handleDoor(player, doorRoom, targetRoom, door, action)
           return doorRoom.unlockDoor(targetRoom);
         }
 
-        return B.sayAt(player, `Эту дверь можно отпереть только с помощью ${keyItem.name}.`);
+        return B.sayAt(player, `У вас нет нужного ключа.`);
       }
 
       return B.sayAt(player, "Эту дверь нельзя отпереть.");
