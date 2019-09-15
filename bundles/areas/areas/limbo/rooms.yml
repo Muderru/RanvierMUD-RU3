@@ -145,7 +145,7 @@
   description: >-
     Эта комната создана, чтобы продемонстрировать вам работу команд, привязанных к определенному месту.
     Попробуйте набрать команду <b><cyan>roomtest</cyan></b>.
-  behaviors:
+  metadata:
     commands: [ 'roomtest' ]
   items:
     - id: "limbo:test_key"
