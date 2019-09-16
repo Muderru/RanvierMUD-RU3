@@ -226,5 +226,6 @@ function friendlyCurrencyName(currency) {
   return currency
     .replace('_', ' ')
     .replace(/\b\w/g, l => l.toUpperCase())
+    .replace(/(золото)/g, 'золота')
   ;
 }
