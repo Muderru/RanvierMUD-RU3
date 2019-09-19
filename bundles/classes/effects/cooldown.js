@@ -7,7 +7,7 @@ const { Broadcast } = require('ranvier');
  */
 module.exports = {
   config: {
-    name: 'Cooldown',
+    name: 'Задержка',
     description: 'Задержка между применениями умений и заклинаний.',
     unique: false,
     type: 'cooldown',

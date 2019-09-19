@@ -38,4 +38,10 @@ module.exports = [
   { name: 'acid_damage', base: 0 },
   { name: 'chaos_damage', base: 0 },
   { name: 'ether_damage', base: 0 },
+  { name: 'light', base: 0 },
+  { name: 'invisibility', base: 0 },
+  { name: 'detect_invisibility', base: 0 },
+  { name: 'hide', base: 0 },
+  { name: 'detect_hide', base: 0 },
+  { name: 'freedom', base: 0 },
 ];

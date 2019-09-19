@@ -28,8 +28,8 @@ function getAttr2(player) {
 
 function getSkill(player) {
   let addDamage = 0;
-  if (player.getMeta('skill_heal') > 0) {
-    addDamage = player.getMeta('skill_heal')*0.01;
+  if (player.getMeta('spell_heal') > 0) {
+    addDamage = player.getMeta('spell_heal')*0.01;
   }
   return 1+addDamage;
 }
@@ -75,9 +75,9 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          if (player.getMeta('skill_heal') < 100) {
-            let skillUp = player.getMeta('skill_heal');
-            player.setMeta('skill_heal', skillUp + 1);
+          if (player.getMeta('spell_heal') < 100) {
+            let skillUp = player.getMeta('spell_heal');
+            player.setMeta('spell_heal', skillUp + 1);
             Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Лечение\'.</cyan></bold>');
           }
       }

@@ -2,7 +2,11 @@
   "attributes": {
     "health": {
       "delta": 0,
-      "base": 100
+      "base": 1000
+    },
+    "mana": {
+      "delta": 0,
+      "base": 1000
     },
     "strength": {
       "delta": 0,
@@ -108,9 +112,29 @@
       "delta": 0,
       "base": 0
     },
-    "mana": {
+    "light": {
       "delta": 0,
-      "base": 100
+      "base": 0
+    },
+    "invisibility": {
+      "delta": 0,
+      "base": 0
+    },
+    "detect_invisibility": {
+      "delta": 0,
+      "base": 0
+    },
+    "hide": {
+      "delta": 0,
+      "base": 0
+    },
+    "detect_hide": {
+      "delta": 0,
+      "base": 0
+    },
+    "freedom": {
+      "delta": 0,
+      "base": 0
     }
   },
   "level": 1,

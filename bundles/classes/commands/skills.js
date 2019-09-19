@@ -15,12 +15,16 @@ module.exports = {
       "secondwind",
       "shieldblock",
       "smite",
+      "hide",
+      "detect_hide",
     ];
 
     let spell = [
       "fireball",
       "heal",
       "plea",
+      "invisibility",
+      "detect_invisibility",
     ];
 
     say("<b>" + B.center(40, 'Умения', 'green'));

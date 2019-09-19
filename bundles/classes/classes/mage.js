@@ -9,8 +9,6 @@ module.exports = {
   abilityTable: {},
 
   setupPlayer: (state, player) => {
-    const mana = state.AttributeFactory.create('mana', 100);
-    player.addAttribute(mana);
     player.prompt = '[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]';
   }
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast, Heal } = require('ranvier');
+const { Broadcast, Heal, SkillType } = require('ranvier');
 
 const manaCost = 80;
 const bonusThreshold = 30;
@@ -29,8 +29,8 @@ function getAttr2(player) {
 
 function getSkill(player) {
   let addDamage = 0;
-  if (player.getMeta('skill_plea') > 0) {
-    addDamage = player.getMeta('skill_plea')*0.01;
+  if (player.getMeta('spell_plea') > 0) {
+    addDamage = player.getMeta('spell_plea')*0.01;
   }
   return 1+addDamage;
 }
@@ -43,6 +43,7 @@ module.exports = {
   name: 'Милость Света',
   gender: 'female',
   damageVerb: 'окутывает',
+  type: SkillType.SPELL,
   initiatesCombat: false,
   requiresTarget: true,
   targetSelf: true,
@@ -80,9 +81,9 @@ module.exports = {
     if (!player.isNpc) {
       let rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          if (player.getMeta('skill_plea') < 100) {
-            let skillUp = player.getMeta('skill_plea');
-            player.setMeta('skill_plea', skillUp + 1);
+          if (player.getMeta('spell_plea') < 100) {
+            let skillUp = player.getMeta('spell_plea');
+            player.setMeta('spell_plea', skillUp + 1);
             Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Милость Света\'.</cyan></bold>');
           }
       }

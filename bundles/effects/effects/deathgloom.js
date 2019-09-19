@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast } = require('ranvier');
+const { Broadcast, EffectFlag } = require('ranvier');
 
 /**
  * Аффект снижения характеристик после смерти
@@ -16,6 +16,7 @@ module.exports = {
     maxStacks: 5,
     tickInterval: 1,
   },
+  flags: [EffectFlag.DEBUFF],
   modifiers: {
     attributes: {
       cutting_resistance: function (current) {

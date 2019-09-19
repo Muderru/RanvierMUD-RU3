@@ -32,6 +32,7 @@ module.exports = {
       // TIP:DefaultAttributes: This is where you can change the default attributes for players
       const defaultAttributes = {
         health: 100,
+        mana: 100,
         strength: 20,
         agility: 20,
         intellect: 20,
@@ -57,7 +58,13 @@ module.exports = {
         earth_damage: 0,
         acid_damage: 0,
         chaos_damage: 0,
-        ether_damage: 0
+        ether_damage: 0,
+        light: 0,
+        invisibility: 0,
+        detect_invisibility: 0,
+        hide: 0,
+        detect_hide: 0,
+        freedom: 0,
       };
 
       for (const attr in defaultAttributes) {
