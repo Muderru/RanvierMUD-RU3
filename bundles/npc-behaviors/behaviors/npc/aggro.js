@@ -70,6 +70,27 @@ module.exports = {
           return;
         }
 
+      let detectInvis = 0;
+      let detectHide = 0;
+
+      if (this.hasAttribute('detect_invisibility')) {
+        detectInvis = this.getAttribute('detect_invisibility');
+      }
+
+      if (this.hasAttribute('detect_hide')) {
+        detectHide = this.getAttribute('detect_hide');
+      }
+
+      if (this._aggroTarget.hasAttribute('invisibility') && this._aggroTarget.getAttribute('invisibility') > detectInvis) {
+        this._aggroTarget = null;
+        this._aggroWarned = false;
+        return;
+      } else if (this._aggroTarget.hasAttribute('hide') && this._aggroTarget.getAttribute('hide') > detectHide) {
+        this._aggroTarget = null;
+        this._aggroWarned = false;
+        return;
+      }
+
         const sinceLastCheck = Date.now() - this._aggroTimer;
         const delayLength = config.delay * 1000;
 

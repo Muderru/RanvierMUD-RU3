@@ -25,10 +25,26 @@ module.exports = {
       if (npc.hasBehavior('block')) {
         const block = npc.getBehavior('block');
         const blockExits = block.exits;
+        let detectInvis = 0;
+        let detectHide = 0;
+
+        if (npc.hasAttribute('detect_invisibility')) {
+          detectInvis = npc.getAttribute('detect_invisibility');
+        }
+
+        if (npc.hasAttribute('detect_hide')) {
+          detectHide = npc.getAttribute('detect_hide');
+        }
 
         for (let blockExit of blockExits) {
           if (blockExit === roomExit.direction) {
-            return B.sayAt(this, npc.Name + ' не дает вам туда пройти!');
+            if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > detectInvis) {
+              continue;
+            } else if (this.hasAttribute('hide') && this.getAttribute('hide') > detectHide) {
+              continue;
+            } else {
+              return B.sayAt(this, npc.Name + ' не дает вам туда пройти!');
+            }
           }
         }
       }
@@ -53,33 +69,53 @@ module.exports = {
         state.CommandManager.get('look').execute('', this);
       });
 
-      if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
-          B.sayAt(oldRoom, `${this.name} ${this.travelVerbOut} ${roomExit.direction}.`);
-      } else {
-          B.sayAt(oldRoom, `${this.name} ${this.travelVerbOut} на ${roomExit.direction}.`);
+      let blindPlayers = [];
+      for (const pc of oldRoom.players) {
+        let counter = 0;
+        if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
+          blindPlayers[counter] = pc;
+          counter++;
+        } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
+          blindPlayers[counter] = pc;
+          counter++;
+        }
       }
 
-      switch(roomExit.direction) {
-          case 'восток':
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с запада.`, this);
-          break;
-          case 'запад':
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с востока.`, this);
-          break;
-          case 'юг':
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с севера.`, this);
-          break;
-          case 'север':
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} с юга.`, this);
-          break;
-          case 'вверх':
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} снизу.`, this);
-          break;
-          case 'вниз':
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} сверху.`, this);
-          break;
-          default:
-            B.sayAtExcept(nextRoom, `${this.name} ${this.travelVerbIn} откуда-то.`, this);
+      if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
+          B.sayAtExcept(oldRoom, `${this.name} ${this.travelVerbOut} ${roomExit.direction}.`, blindPlayers);
+      } else {
+          B.sayAtExcept(oldRoom, `${this.name} ${this.travelVerbOut} на ${roomExit.direction}.`, blindPlayers);
+      }
+
+      for (const pc of nextRoom.players) {
+        if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
+          continue;
+        } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
+          continue;
+        } else {
+          switch(roomExit.direction) {
+            case 'восток':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с запада.`, this);
+            break;
+            case 'запад':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с востока.`, this);
+            break;
+            case 'юг':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с севера.`, this);
+            break;
+            case 'север':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с юга.`, this);
+            break;
+            case 'вверх':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} снизу.`, this);
+            break;
+            case 'вниз':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} сверху.`, this);
+            break;
+            default:
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} откуда-то.`, this);
+          }
+        }
       }
 
       for (const follower of this.followers) {

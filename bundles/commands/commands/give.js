@@ -32,6 +32,12 @@ module.exports = {
     // prioritize players before npcs
     let target = dot(targetRecip, player.room.players);
 
+    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+      return B.sayAt(player, 'Кому?');
+    } else if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
+      return B.sayAt(player, 'Кому?');
+    }
+
     if (!target) {
       target = dot(targetRecip, player.room.npcs);
       if (target) {
@@ -43,7 +49,7 @@ module.exports = {
     }
 
     if (!target) {
-      return B.sayAt(player, 'Его здесь нет.');
+      return B.sayAt(player, 'Кому?');
     }
 
     if (target === player) {

@@ -12,6 +12,12 @@ module.exports = {
 
     let target = ArgParser.parseDot(arg, player.room.players);
 
+    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+      return Broadcast.sayAt(player, "Никого с таким именем здесь нет.");
+    } else if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
+      return Broadcast.sayAt(player, "Никого с таким именем здесь нет.");
+    }
+
     if (!target) {
       if (arg === 'self') {
         target = player;

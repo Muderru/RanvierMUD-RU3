@@ -38,7 +38,13 @@ module.exports = {
       if (presentPlayer === player) {
         Broadcast.sayAt(player, `Вы испытываете эмоцию "${emoteMessage}"`);
       } else {
-        Broadcast.sayAt(presentPlayer, emoteMessage.replace(presentPlayer.name, 'вы'));
+        if (player.hasAttribute('invisibility') && player.getAttribute('invisibility') > presentPlayer.getAttribute('detect_invisibility')) {
+            Broadcast.sayAt(presentPlayer, emoteMessage.replace(player.name, 'Кто-то'));
+        } else if (player.hasAttribute('hide') && player.getAttribute('hide') > presentPlayer.getAttribute('detect_hide')) {
+            Broadcast.sayAt(presentPlayer, emoteMessage.replace(player.name, 'Кто-то'));
+        } else {
+            Broadcast.sayAt(presentPlayer, emoteMessage.replace(presentPlayer.name, 'вы'));
+        }
       }
     });
   }

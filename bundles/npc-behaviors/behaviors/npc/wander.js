@@ -18,6 +18,11 @@ module.exports = {
         return;
       }
 
+      let playersCount = state.PlayerManager.players.size;
+      if (playersCount === 0) {
+        return;
+      }
+
       if (config === true) {
         config = {};
       }
@@ -50,7 +55,7 @@ module.exports = {
       if (randomRoom && door && (door.locked || door.closed)) {
         // maybe a possible feature where it could be configured that they can open doors
         // or even if they have the key they can unlock the doors
-        Logger.verbose(`NPC [${this.uuid}] wander blocked by door.`);
+//        Logger.verbose(`NPC [${this.uuid}] wander blocked by door.`);
         return;
       }
 
@@ -62,7 +67,7 @@ module.exports = {
         return;
       }
 
-      Logger.verbose(`NPC [${this.uuid}] wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
+//      Logger.verbose(`NPC [${this.uuid}] wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
       if (!this.travelVerbOut) {
           if (this.gender === 'male') {
               this.travelVerbOut = 'убежал';

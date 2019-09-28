@@ -108,6 +108,9 @@ function lookRoom(state, player) {
     if (otherPlayer.hasAttribute('invisibility') && otherPlayer.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
       return;
     }
+    if (otherPlayer.hasAttribute('hide') && otherPlayer.getAttribute('hide') > player.getAttribute('detect_hide')) {
+      return;
+    }
     let combatantsDisplay = '';
     if (otherPlayer.isInCombat()) {
       combatantsDisplay = getCombatantsDisplay(otherPlayer);

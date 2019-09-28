@@ -20,9 +20,21 @@ module.exports = {
       }
 
       for (const npc of room.npcs) {
+        if (npc.hasAttribute('invisibility') && npc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+          continue;
+        }
+        if (npc.hasAttribute('hide') && npc.getAttribute('hide') > player.getAttribute('detect_hide')) {
+          continue;
+        }
         B.sayAt(player, `  [НПС] ${npc.Name}`);
       }
       for (const pc of room.players) {
+        if (pc.hasAttribute('invisibility') && pc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+          continue;
+        }
+        if (pc.hasAttribute('hide') && pc.getAttribute('hide') > player.getAttribute('detect_hide')) {
+          continue;
+        }
         B.sayAt(player, `  [Игрок] ${pc.name}`);
       }
       B.sayAt(player);

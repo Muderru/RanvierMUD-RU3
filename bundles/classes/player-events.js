@@ -5,6 +5,8 @@ const { Broadcast: B, Logger, SkillErrors } = require('ranvier');
 const Combat = require('../combat/lib/Combat');
 const CombatErrors = require('../combat/lib/CombatErrors');
 const { Random } = require('rando-js');
+const ArgParser = require('../lib/lib/ArgParser');
+const dot = ArgParser.parseDot;
 
 module.exports = {
   listeners: {
@@ -29,7 +31,16 @@ module.exports = {
         } else {
           try {
             const targetSearch = args.split(' ').pop();
-            target = Combat.findCombatant(this, targetSearch);
+            target = dot(targetSearch, this.room.players);
+            if (!target) {
+              target = dot(targetSearch, this.room.npcs);
+            }
+            if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > this.getAttribute('detect_invisibility')) {
+              return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
+            }
+            if (target.hasAttribute('hide') && target.getAttribute('hide') > this.getAttribute('detect_hide')) {
+              return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
+            }
           } catch (e) {
             if (
               e instanceof CombatErrors.CombatSelfError ||
