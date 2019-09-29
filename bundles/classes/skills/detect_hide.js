@@ -50,7 +50,7 @@ module.exports = {
           if (player.getMeta('skill_detect_hide') < 100) {
             let skillUp = player.getMeta('skill_detect_hide');
             player.setMeta('skill_detect_hide', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Чувствовать жизнь\'.</cyan></bold>');
+            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Чувствовать жизнь\'.</cyan></bold>');
           }
       }
     }

@@ -57,7 +57,7 @@ module.exports = {
           if (player.getMeta('spell_detect_invisibility') < 100) {
             let skillUp = player.getMeta('spell_detect_invisibility');
             player.setMeta('spell_detect_invisibility', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Видеть невидимое\'.</cyan></bold>');
+            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Видеть невидимое\'.</cyan></bold>');
           }
       }
     }

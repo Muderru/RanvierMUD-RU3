@@ -129,6 +129,12 @@ function lookRoom(state, player) {
 
   // show all npcs
   room.npcs.forEach(npc => {
+    if (npc.hasAttribute('invisibility') && npc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+      return;
+    }
+    if (npc.hasAttribute('hide') && npc.getAttribute('hide') > player.getAttribute('detect_hide')) {
+      return;
+    }
     // show quest state as [!], [%], [?] for available, in progress, ready to complete respectively
     let hasNewQuest, hasActiveQuest, hasReadyQuest;
     if (npc.quests) {

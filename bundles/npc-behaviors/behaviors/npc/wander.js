@@ -80,10 +80,23 @@ module.exports = {
           }
         }
 
+      let blindPlayers = [];
+      for (const pc of this.room.players) {
+        let counter = 0;
+        if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
+          blindPlayers[counter] = pc;
+          counter++;
+        } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
+          blindPlayers[counter] = pc;
+          counter++;
+        }
+      }
+
+
       if (roomExit.direction === 'вверх' || roomExit.direction === 'вниз') {
-          Broadcast.sayAt(this.room, `${this.Name} ${this.travelVerbOut} ${roomExit.direction}.`);
+          Broadcast.sayAtExcept(this.room, `${this.Name} ${this.travelVerbOut} ${roomExit.direction}.`, blindPlayers);
       } else {
-          Broadcast.sayAt(this.room, `${this.Name} ${this.travelVerbOut} на ${roomExit.direction}.`);
+          Broadcast.sayAtExcept(this.room, `${this.Name} ${this.travelVerbOut} на ${roomExit.direction}.`, blindPlayers);
       }
       
       if (!this.travelVerbIn) {
@@ -97,30 +110,37 @@ module.exports = {
               this.travelVerbIn = 'появилось';
           }
         }
-      
-      switch(roomExit.direction) {
-          case 'восток':
-            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с запада.`);
-          break;
-          case 'запад':
-            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с востока.`);
-          break;
-          case 'юг':
-            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с севера.`);
-          break;
-          case 'север':
-            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} с юга.`);
-          break;
-          case 'вверх':
-            Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} снизу.`);
-          break;
-          case 'вниз':
-          Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} сверху.`);
-          break;
-          default:
-          Broadcast.sayAt(randomRoom, `${this.Name} ${this.travelVerbIn} откуда-то.`);
+
+      for (const pc of randomRoom.players) {
+        if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
+          continue;
+        } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
+          continue;
+        } else {
+           switch(roomExit.direction) {
+            case 'восток':
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с запада.`);
+            break;
+            case 'запад':
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с востока.`);
+            break;
+            case 'юг':
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с севера.`);
+            break;
+            case 'север':
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с юга.`);
+            break;
+            case 'вверх':
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} снизу.`);
+            break;
+            case 'вниз':
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} сверху.`);
+            break;
+            default:
+              Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} откуда-то.`);
+           }
+        }
       }
-      
       this.moveTo(randomRoom);
     }
   }
