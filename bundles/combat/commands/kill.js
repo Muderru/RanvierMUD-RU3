@@ -32,6 +32,13 @@ module.exports = {
       Logger.error(e.message);
     }
 
+    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+      return B.sayAt(player, "Этого здесь нет.");
+    }
+    if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
+      return B.sayAt(player, "Этого здесь нет.");
+    }
+
     if (!target) {
       return B.sayAt(player, "Этого здесь нет.");
     }
