@@ -12,6 +12,7 @@ module.exports = {
     damageVerb: 'ранит',
     type: 'skill:rend',
     maxStacks: 3,
+    tickInterval: 3,
   },
   flags: [EffectFlag.DEBUFF],
   listeners: {
