@@ -96,107 +96,23 @@ class Combat {
    */
   static makeAttack(attacker, target) {
     let addDamage = 0;
-      
-    if (attacker.hasAttribute('cutting_damage')) {
-      if (target.hasAttribute('cutting_resistance')) {
-        if (attacker.getAttribute('cutting_damage') > target.getAttribute('cutting_resistance')) {
-          addDamage += attacker.getAttribute('cutting_damage') - target.getAttribute('cutting_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('cutting_damage');
-      }
-    }
-      
-    if (attacker.hasAttribute('crushing_damage')) {
-      if (target.hasAttribute('crushing_resistance')) {
-        if (attacker.getAttribute('crushing_damage') > target.getAttribute('crushing_resistance')) {
-          addDamage += attacker.getAttribute('crushing_damage') - target.getAttribute('crushing_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('crushing_damage');
-      }
-    }
+    let combatAttributes = [ 'cutting', 'crushing', 'piercing', 'fire', 'cold', 
+                             'lightning', 'earth', 'acid', 'chaos', 'ether' ];
     
-    if (attacker.hasAttribute('piercing_damage')) {
-      if (target.hasAttribute('piercing_resistance')) {
-        if (attacker.getAttribute('piercing_damage') > target.getAttribute('piercing_resistance')) {
-          addDamage += attacker.getAttribute('piercing_damage') - target.getAttribute('piercing_resistance');
+    for (let combatAttribute of combatAttributes) {
+      let attackAttribute = combatAttribute + '_damage';
+      let defenceAttribute = combatAttribute + '_resistance';
+      if (attacker.hasAttribute(attackAttribute)) {
+        if (target.hasAttribute(defenceAttribute)) {
+          if (attacker.getAttribute(attackAttribute) > target.getAttribute(defenceAttribute)) {
+            addDamage += attacker.getAttribute(attackAttribute) - target.getAttribute(defenceAttribute);
+          }
+        } else {
+            addDamage += attacker.getAttribute(attackAttribute);
         }
-      } else {
-          addDamage += attacker.getAttribute('piercing_damage');
       }
     }
-    
-    if (attacker.hasAttribute('fire_damage')) {
-      if (target.hasAttribute('fire_resistance')) {
-        if (attacker.getAttribute('fire_damage') > target.getAttribute('fire_resistance')) {
-          addDamage += attacker.getAttribute('fire_damage') - target.getAttribute('fire_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('fire_damage');
-      }
-    }
-    
-    if (attacker.hasAttribute('cold_damage')) {
-      if (target.hasAttribute('cold_resistance')) {
-        if (attacker.getAttribute('cold_damage') > target.getAttribute('cold_resistance')) {
-          addDamage += attacker.getAttribute('cold_damage') - target.getAttribute('cold_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('cold_damage');
-      }
-    }
-    
-    if (attacker.hasAttribute('lightning_damage')) {
-      if (target.hasAttribute('lightning_resistance')) {
-        if (attacker.getAttribute('lightning_damage') > target.getAttribute('lightning_resistance')) {
-          addDamage += attacker.getAttribute('lightning_damage') - target.getAttribute('lightning_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('lightning_damage');
-      }
-    }
-    
-    if (attacker.hasAttribute('earth_damage')) {
-      if (target.hasAttribute('earth_resistance')) {
-        if (attacker.getAttribute('earth_damage') > target.getAttribute('earth_resistance')) {
-          addDamage += attacker.getAttribute('earth_damage') - target.getAttribute('earth_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('earth_damage');
-      }
-    }
-    
-    if (attacker.hasAttribute('acid_damage')) {
-      if (target.hasAttribute('acid_resistance')) {
-        if (attacker.getAttribute('acid_damage') > target.getAttribute('acid_resistance')) {
-          addDamage += attacker.getAttribute('acid_damage') - target.getAttribute('acid_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('acid_damage');
-      }
-    }
-    
-    if (attacker.hasAttribute('chaos_damage')) {
-      if (target.hasAttribute('chaos_resistance')) {
-        if (attacker.getAttribute('chaos_damage') > target.getAttribute('chaos_resistance')) {
-          addDamage += attacker.getAttribute('chaos_damage') - target.getAttribute('chaos_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('chaos_damage');
-      }
-    }
-    
-    if (attacker.hasAttribute('ether_damage')) {
-      if (target.hasAttribute('ether_resistance')) {
-        if (attacker.getAttribute('ether_damage') > target.getAttribute('ether_resistance')) {
-          addDamage += attacker.getAttribute('ether_damage') - target.getAttribute('ether_resistance');
-        }
-      } else {
-          addDamage += attacker.getAttribute('ether_damage');
-      }
-    }
-    
+
     let amount = this.calculateWeaponDamage(attacker);
     let critical = false;
 
@@ -212,18 +128,38 @@ class Combat {
       }
     }
 
+//    Logger.verbose(`addDamage ${addDamage}`);
+    amount += addDamage;
     if (attacker.hasAttribute('critical')) {
       const critChance = Math.max(attacker.getMaxAttribute('critical') || 0, 0);
       critical = Random.probability(critChance);
       if (critical) {
-        amount = Math.ceil((amount +addDamage) * 1.5);
+        amount = Math.ceil(amount * 1.5);
       }
     }
 
-    amount += addDamage;
     const weapon = attacker.equipment.get('оружие');
     const damage = new Damage('health', amount, attacker, weapon || attacker, { critical });
-    damage.commit(target);
+    let detectInvis = 0;
+    let detectHide = 0;
+
+    if (attacker.hasAttribute('detect_invisibility')) {
+      detectInvis = attacker.getAttribute('detect_invisibility');
+    }
+
+    if (attacker.hasAttribute('detect_hide')) {
+      detectHide = attacker.getAttribute('detect_hide');
+    }
+
+    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > detectInvis) {
+      Broadcast.sayAt(target, `${attacker.Name} не видит вас и не может по вам попасть.`);
+      Broadcast.sayAtExcept(target.room, `${attacker.Name} не видит ${target.vname} и не наносит урона.`, target);
+    } else if (target.hasAttribute('hide') && target.getAttribute('hide') > detectHide) {
+      Broadcast.sayAt(target, `${attacker.Name} не замечает вас и не может по вам попасть.`);
+      Broadcast.sayAtExcept(target.room, `${attacker.Name} не замечает ${target.vname} и не наносит урона.`, target);
+    } else {
+      damage.commit(target);
+    }
 
     // currently lag is really simple, the character's weapon speed = lag
     attacker.combatData.lag = this.getWeaponSpeed(attacker) * 1000;
