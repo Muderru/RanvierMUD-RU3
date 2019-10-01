@@ -151,11 +151,15 @@ class Combat {
       detectHide = attacker.getAttribute('detect_hide');
     }
 
-    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > detectInvis) {
+    if (attacker.hasAttribute('freedom') && attacker.getAttribute('freedom') < 0) {
+      Broadcast.sayAt(attacker, `<b><red>Ваши мышцы вялы и вы не можете двигаться!</red></b>`);
+    } else if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > detectInvis) {
       Broadcast.sayAt(target, `${attacker.Name} не видит вас и не может по вам попасть.`);
+      Broadcast.sayAt(attacker, `Вы не видите ${attacker.vname} и не можете нанести урона.`);
       Broadcast.sayAtExcept(target.room, `${attacker.Name} не видит ${target.vname} и не наносит урона.`, target);
     } else if (target.hasAttribute('hide') && target.getAttribute('hide') > detectHide) {
       Broadcast.sayAt(target, `${attacker.Name} не замечает вас и не может по вам попасть.`);
+      Broadcast.sayAt(attacker, `Вы не видите ${attacker.vname} и не можете нанести урона.`);
       Broadcast.sayAtExcept(target.room, `${attacker.Name} не замечает ${target.vname} и не наносит урона.`, target);
     } else {
       damage.commit(target);

@@ -11,6 +11,11 @@ module.exports = {
   listeners: {
     updateTick: state => function () {
 
+    if (this.hasAttribute('freedom') && this.getAttribute('freedom') < 0) {
+      return;
+    }
+
+
     if (Random.inRange(0, 100) <= 97) {
       return;
     }

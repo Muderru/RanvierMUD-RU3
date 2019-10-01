@@ -1,6 +1,6 @@
 'use strict';
 
-const { CommandType, Room } = require('ranvier');
+const { CommandType, Room, Broadcast, PlayerRoles } = require('ranvier');
 
 /**
  * Interpreter.. you guessed it, interprets command input
@@ -21,6 +21,10 @@ class CommandParser {
    * }}
    */
   static parse(state, data, player) {
+    if (player.hasAttribute('freedom') && player.getAttribute('freedom') < 0 && player.role !== PlayerRoles.ADMIN) {
+      return Broadcast.sayAt(player, `<b><red>Ваши мышцы вялы и вы не можете двигаться!</red></b>`);
+    }
+
     data = data.trim();
 
     const parts = data.split(' ');

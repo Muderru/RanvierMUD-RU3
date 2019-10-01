@@ -44,6 +44,10 @@ module.exports = {
         return;
       }
 
+      if (this.hasAttribute('freedom') && this.getAttribute('freedom') < 0) {
+        return;
+      }
+
       if (typeof config !== 'object') {
         config = {};
       }

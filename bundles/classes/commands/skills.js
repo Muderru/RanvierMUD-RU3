@@ -8,7 +8,7 @@ module.exports = {
   command: state => (args, player) => {
     const say = message => B.sayAt(player, message);
 
-    let skill = [
+    const skill = [
       "judge",
       "lunge",
       "rend",
@@ -19,12 +19,13 @@ module.exports = {
       "detect_hide",
     ];
 
-    let spell = [
+    const spell = [
       "fireball",
       "heal",
       "plea",
       "invisibility",
       "detect_invisibility",
+      "paralysis",
     ];
 
     say("<b>" + B.center(40, 'Умения', 'green'));

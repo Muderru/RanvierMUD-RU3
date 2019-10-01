@@ -18,6 +18,10 @@ module.exports = {
         return;
       }
 
+      if (this.hasAttribute('freedom') && this.getAttribute('freedom') < 0) {
+        return;
+      }
+
       let playersCount = state.PlayerManager.players.size;
       if (playersCount === 0) {
         return;

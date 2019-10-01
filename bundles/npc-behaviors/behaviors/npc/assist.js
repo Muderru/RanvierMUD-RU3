@@ -12,6 +12,11 @@ module.exports = {
         return;
       }
 
+      if (this.hasAttribute('freedom') && this.getAttribute('freedom') < 0) {
+        return;
+      }
+
+
       for (const npc of this.room.npcs) {
         if (npc.isInCombat()) {
           const target = [...npc.combatants][0];
