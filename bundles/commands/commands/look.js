@@ -8,6 +8,7 @@ const {
   Item,
   ItemType,
   Logger,
+  Data,
   Player
 } = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
@@ -77,20 +78,57 @@ function getCompass(player) {
 function lookRoom(state, player) {
   const room = player.room;
 
-  if (player.room.coordinates) {
-    B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + '</b></yellow>');
-    B.sayAt(player, B.line(60));
-  } else {
-    const [ line1, line2, line3 ] = getCompass(player);
+  let currentTime = room.area.time;
+  let currentLight = room.light;
+  if (currentTime === 0) {
+    let tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
+    const dayDuration = 24;
+    if (tmpGameTime >= dayDuration) {
+      tmpGameTime = tmpGameTime % dayDuration;
+    }
+    currentTime = tmpGameTime;
+  }
 
-    // map is 15 characters wide, room is formatted to 80 character width
-    B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + line1 + '</b></yellow>');
-    B.sayAt(player, B.line(60) + B.line(5, ' ') + line2);
-    B.sayAt(player, B.line(65, ' ') + '<yellow><b>' + line3 + '</b></yellow>');
+  currentLight += currentTime * 2 + 2;
+  for (const pc of room.players) {
+    if (pc.hasAttribute('light')) {
+      currentLight += pc.getAttribute('light');
+    }
+  }
+
+  for (const npc of room.npcs) {
+    if (npc.hasAttribute('light')) {
+      currentLight += npc.getAttribute('light');
+    }
+  }
+
+  for (const roomItem of room.items) {
+    currentLight += roomItem.light;
+  }
+
+  if (currentLight >= 20) {
+    if (player.room.coordinates) {
+      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + '</b></yellow>');
+      B.sayAt(player, B.line(60));
+    } else {
+      const [ line1, line2, line3 ] = getCompass(player);
+
+      // map is 15 characters wide, room is formatted to 80 character width
+      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + line1 + '</b></yellow>');
+      B.sayAt(player, B.line(60) + B.line(5, ' ') + line2);
+      B.sayAt(player, B.line(65, ' ') + '<yellow><b>' + line3 + '</b></yellow>');
+    }
+  } else {
+    B.sayAt(player, '<yellow><b>' + sprintf('%-65s', 'Во тьме') + '</b></yellow>');
+    B.sayAt(player, B.line(60));
   }
 
   if (!player.getMeta('config.краткий')) {
-    B.sayAt(player, room.description, 80);
+    if (currentLight >= 30) {
+      B.sayAt(player, room.description, 80);
+    } else {
+      B.sayAt(player, 'Вокруг не видно ничего. Темно, хоть глаз выколи.', 80);
+    }
   }
 
   if (player.getMeta('config.миникарта')) {
@@ -101,88 +139,94 @@ function lookRoom(state, player) {
   B.sayAt(player, '');
 
   // show all players
-  room.players.forEach(otherPlayer => {
-    if (otherPlayer === player) {
-      return;
-    }
-    if (otherPlayer.hasAttribute('invisibility') && otherPlayer.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
-      return;
-    }
-    if (otherPlayer.hasAttribute('hide') && otherPlayer.getAttribute('hide') > player.getAttribute('detect_hide')) {
-      return;
-    }
-    let combatantsDisplay = '';
-    if (otherPlayer.isInCombat()) {
-      combatantsDisplay = getCombatantsDisplay(otherPlayer);
-    }
+  if (currentLight >= 50) {
+    room.players.forEach(otherPlayer => {
+      if (otherPlayer === player) {
+        return;
+      }
+      if (otherPlayer.hasAttribute('invisibility') && otherPlayer.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+        return;
+      }
+      if (otherPlayer.hasAttribute('hide') && otherPlayer.getAttribute('hide') > player.getAttribute('detect_hide')) {
+        return;
+      }
+      let combatantsDisplay = '';
+      if (otherPlayer.isInCombat()) {
+        combatantsDisplay = getCombatantsDisplay(otherPlayer);
+      }
     B.sayAt(player, '[Игрок] ' + otherPlayer.name + combatantsDisplay);
-  });
+    });
+  }
 
-  // show all the items in the rom
-  room.items.forEach(item => {
-    if (item.hasBehavior('resource')) {
-      B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Ресурс')}] <green>${item.roomDesc}</green>`);
-    } else {
-      B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Предмет')}] <green>${item.roomDesc}</green>`);
-    }
-  });
+  // show all the items in the room
+  if (currentLight >= 75) {
+    room.items.forEach(item => {
+      if (item.hasBehavior('resource')) {
+        B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Ресурс')}] <green>${item.roomDesc}</green>`);
+      } else {
+        B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Предмет')}] <green>${item.roomDesc}</green>`);
+      }
+    });
+  }
 
   // show all npcs
-  room.npcs.forEach(npc => {
-    if (npc.hasAttribute('invisibility') && npc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
-      return;
-    }
-    if (npc.hasAttribute('hide') && npc.getAttribute('hide') > player.getAttribute('detect_hide')) {
-      return;
-    }
-    // show quest state as [!], [%], [?] for available, in progress, ready to complete respectively
-    let hasNewQuest, hasActiveQuest, hasReadyQuest;
-    if (npc.quests) {
-      hasNewQuest = npc.quests.find(questRef => state.QuestFactory.canStart(player, questRef));
-      hasReadyQuest = npc.quests.find(questRef => {
-          return player.questTracker.isActive(questRef) &&
-            player.questTracker.get(questRef).getProgress().percent >= 100;
-      });
-      hasActiveQuest = npc.quests.find(questRef => {
-          return player.questTracker.isActive(questRef) &&
-            player.questTracker.get(questRef).getProgress().percent < 100;
-      });
-
-      let questString = '';
-      if (hasNewQuest || hasActiveQuest || hasReadyQuest) {
-        questString += hasNewQuest ? '[<b><yellow>!</yellow></b>]' : '';
-        questString += hasActiveQuest ? '[<b><yellow>%</yellow></b>]' : '';
-        questString += hasReadyQuest ? '[<b><yellow>?</yellow></b>]' : '';
-        B.at(player, questString + ' ');
+  if (currentLight >= 75) {
+    room.npcs.forEach(npc => {
+      if (npc.hasAttribute('invisibility') && npc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+        return;
       }
-    }
+      if (npc.hasAttribute('hide') && npc.getAttribute('hide') > player.getAttribute('detect_hide')) {
+        return;
+      }
+      // show quest state as [!], [%], [?] for available, in progress, ready to complete respectively
+      let hasNewQuest, hasActiveQuest, hasReadyQuest;
+      if (npc.quests) {
+        hasNewQuest = npc.quests.find(questRef => state.QuestFactory.canStart(player, questRef));
+        hasReadyQuest = npc.quests.find(questRef => {
+            return player.questTracker.isActive(questRef) &&
+              player.questTracker.get(questRef).getProgress().percent >= 100;
+        });
+        hasActiveQuest = npc.quests.find(questRef => {
+            return player.questTracker.isActive(questRef) &&
+              player.questTracker.get(questRef).getProgress().percent < 100;
+        });
 
-    let combatantsDisplay = '';
-    if (npc.isInCombat()) {
-      combatantsDisplay = getCombatantsDisplay(npc);
-    }
+        let questString = '';
+        if (hasNewQuest || hasActiveQuest || hasReadyQuest) {
+          questString += hasNewQuest ? '[<b><yellow>!</yellow></b>]' : '';
+          questString += hasActiveQuest ? '[<b><yellow>%</yellow></b>]' : '';
+          questString += hasReadyQuest ? '[<b><yellow>?</yellow></b>]' : '';
+          B.at(player, questString + ' ');
+        }
+      }
 
-    // color NPC label by difficulty
-    let npcLabel = 'НПС';
-    switch (true) {
-      case (player.level  - npc.level > 4):
-        npcLabel = '<cyan>НПС</cyan>';
-        break;
-      case (npc.level - player.level > 9):
-        npcLabel = '<b><black>НПС</black></b>';
-        break;
-      case (npc.level - player.level > 5):
-        npcLabel = '<red>НПС</red>';
-        break;
-      case (npc.level - player.level > 3):
-        npcLabel = '<yellow>НПС</yellow>';
-        break;
-      default:
-        npcLabel = '<green>НПС</green>';
-        break;
-    }
-    B.sayAt(player, `[${npcLabel}] ` + npc.Name + combatantsDisplay);
-  });
+      let combatantsDisplay = '';
+      if (npc.isInCombat()) {
+        combatantsDisplay = getCombatantsDisplay(npc);
+      }
+
+      // color NPC label by difficulty
+      let npcLabel = 'НПС';
+      switch (true) {
+        case (player.level  - npc.level > 4):
+          npcLabel = '<cyan>НПС</cyan>';
+          break;
+        case (npc.level - player.level > 9):
+          npcLabel = '<b><black>НПС</black></b>';
+          break;
+        case (npc.level - player.level > 5):
+          npcLabel = '<red>НПС</red>';
+          break;
+        case (npc.level - player.level > 3):
+          npcLabel = '<yellow>НПС</yellow>';
+          break;
+        default:
+          npcLabel = '<green>НПС</green>';
+          break;
+      }
+      B.sayAt(player, `[${npcLabel}] ` + npc.Name + combatantsDisplay);
+    });
+  }
 
   B.at(player, '[<yellow><b>Выходы</yellow></b>: ');
 
