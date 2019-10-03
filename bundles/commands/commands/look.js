@@ -103,7 +103,9 @@ function lookRoom(state, player) {
   }
 
   for (const roomItem of room.items) {
-    currentLight += roomItem.light;
+    if (roomItem.metadata.light) {
+      currentLight += roomItem.metadata.light;
+    }
   }
 
   if (currentLight >= 20) {

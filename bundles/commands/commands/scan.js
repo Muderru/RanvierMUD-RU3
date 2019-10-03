@@ -36,7 +36,9 @@ module.exports = {
       }
 
       for (const roomItem of room.items) {
-        currentLight += roomItem.light;
+        if (roomItem.metadata.light) {
+          currentLight += roomItem.metadata.light;
+        }
       }
 
 

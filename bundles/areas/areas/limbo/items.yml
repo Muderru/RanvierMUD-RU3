@@ -53,6 +53,7 @@
   maxItems: 5
   metadata:
     noPickup: true
+    light: 10
 - id: "scraps"
   name: "клочки"
   rname: "клочков"
