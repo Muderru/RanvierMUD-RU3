@@ -29,10 +29,9 @@ function getSkill(player) {
  * Damage mitigation skill
  */
 module.exports = {
-  aliases: ['блокировать'],
-  name: 'блокирование щитом',
+  aliases: ['блокировать', 'блокирование'],
+  name: 'блокирование',
   gender: 'neither',
-  damageVerb: 'защищает',
   type: SkillType.SKILL,
   requiresTarget: false,
   resource: {

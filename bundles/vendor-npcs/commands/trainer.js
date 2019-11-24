@@ -97,7 +97,7 @@ subcommands.add({
             return tell("Вы уже знаете это умение.");
         } else {
             let skillPoints = player.getMeta('skillPoints');
-            player.setMeta('skillPoints', spellPoints - trainerConfig.cost);
+            player.setMeta('skillPoints', skillPoints - trainerConfig.cost);
             player.setMeta('skill_' + skill.id, 1);
             player.save();
             return tell("Вы выучили умение \'" + skill.name + "\'.");

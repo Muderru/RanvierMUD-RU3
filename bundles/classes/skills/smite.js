@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast, Damage } = require('ranvier');
+const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
 
 const cooldown = 10;
@@ -46,6 +46,7 @@ module.exports = {
   name: 'сокрушение',
   gender: 'neither',
   damageVerb: 'травмирует',
+  type: SkillType.SKILL,
   requiresTarget: true,
   initiatesCombat: true,
   resource: {
