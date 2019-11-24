@@ -39,7 +39,7 @@ function getSkill(player) {
  * Basic cleric spell
  */
 module.exports = {
-  aliases: ['милость света'],
+  aliases: ['милость света', 'Милость Света'],
   name: 'Милость Света',
   gender: 'female',
   damageVerb: 'окутывает',

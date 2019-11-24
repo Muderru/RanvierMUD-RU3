@@ -17,6 +17,7 @@ function restorePercent(player) {
  * Basic warrior passive
  */
 module.exports = {
+  aliases: ['второе дыхание'],
   name: 'второе дыхание',
   gender: 'neither',
   damageVerb: 'восстанавливает',

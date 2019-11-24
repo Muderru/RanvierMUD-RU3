@@ -8,7 +8,6 @@ const { Broadcast, Heal, SkillType } = require('ranvier');
 module.exports = {
   name: 'зелье',
   gender: 'neither',
-  damageVerb: 'восстанавливает',
   type: SkillType.SPELL,
   requiresTarget: true,
   targetSelf: true,
