@@ -65,6 +65,8 @@ module.exports = {
         hide: 0,
         detect_hide: 0,
         freedom: 0,
+        health_regeneration: 1,
+        mana_regeneration: 1,
       };
 
       for (const attr in defaultAttributes) {

@@ -135,6 +135,14 @@
     "freedom": {
       "delta": 0,
       "base": 0
+    },
+    "health_regeneration": {
+      "delta": 0,
+      "base": 1
+    },
+    "mana_regeneration": {
+      "delta": 0,
+      "base": 1
     }
   },
   "level": 1,

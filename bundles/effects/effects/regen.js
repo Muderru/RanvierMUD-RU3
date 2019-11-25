@@ -17,9 +17,9 @@ module.exports = {
     updateTick: function () {
       // pools that regenerate over time
       const regens = [
-        { pool: 'health', modifier: this.target.isInCombat() ? 0 : 1 },
+        { pool: 'health', modifier: this.target.hasAttribute('health_regeneration') ? 0.01*this.target.getAttribute('health_regeneration') : 1 },
         // energy and mana recovers 50% faster than health
-        { pool: 'mana', modifier: this.target.isInCombat() ? 0.25 : 1.5 },
+        { pool: 'mana', modifier: this.target.hasAttribute('mana_regeneration') ? 0.01*this.target.getAttribute('mana_regeneration') : 1.5 },
       ];
 
       for (const regen of regens) {

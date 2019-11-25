@@ -44,4 +44,24 @@ module.exports = [
   { name: 'hide', base: 0 },
   { name: 'detect_hide', base: 0 },
   { name: 'freedom', base: 0 },
+  { 
+     name: 'health_regeneration', 
+     base: 0,
+     formula: {
+      requires: ['stamina'],
+      fn: function (character, health_regeneration, stamina) {
+        return health_regeneration + Math.floor((stamina - 10) / 10);
+      },
+    },
+  },
+  { 
+     name: 'mana_regeneration', 
+     base: 0,
+     formula: {
+      requires: ['intellect'],
+      fn: function (character, mana_regeneration, intellect) {
+        return mana_regeneration + Math.floor((intellect - 10) / 10);
+      },
+    },
+  },
 ];
