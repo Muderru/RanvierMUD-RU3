@@ -1,7 +1,7 @@
 'use strict';
 
 const sprintf = require('sprintf-js').sprintf;
-const { Broadcast: B, Logger } = require('ranvier');
+const { Broadcast: B, Logger, SkillFlag } = require('ranvier');
 
 module.exports = {
   aliases: ['умения', 'заклинания', 'способности'],
@@ -26,17 +26,21 @@ module.exports = {
       "invisibility",
       "detect_invisibility",
       "paralysis",
+      "light",
+      "recall",
     ];
 
     say("<b>" + B.center(40, 'Умения', 'green'));
     say("<b>" + B.line(40, '=', 'green'));
 
     for (let skillId of skill) {
+      let skillLearned = state.SkillManager.find(skillId, true);
       let skillname = 'skill_' + skillId;
+      if (!skillLearned.flags.includes(SkillFlag.PASSIVE)) {
         if (player.getMeta(skillname) > 0) {
-          let skillLearned = state.SkillManager.find(skillId);
           say("<b>" + B.center(40, skillLearned.name[0].toUpperCase() + skillLearned.name.slice(1) + ' (' + player.getMeta(skillname) + ' %)'));
         }
+      }
     }
 
     say();
@@ -52,7 +56,21 @@ module.exports = {
         }
     }
 
-      // end with a line break
-      say();
+    say();
+
+    say("<b>" + B.center(40, 'Пассивные', 'green'));
+    say("<b>" + B.line(40, '=', 'green'));
+
+    for (let skillId of skill) {
+      let skillLearned = state.SkillManager.find(skillId, true);
+      let skillname = 'skill_' + skillId;
+        if (skillLearned.flags.includes(SkillFlag.PASSIVE)) {
+          if (player.getMeta(skillname) > 0) {
+            say("<b>" + B.center(40, skillLearned.name[0].toUpperCase() + skillLearned.name.slice(1)));
+          }
+        }
+    }
+
+    say();
   }
 };

@@ -257,17 +257,41 @@ module.exports = {
 
       if (heal.source !== heal.attacker) {
         attacker = " " + `${attacker.rname}`;
-        source = `<b>${heal.source.name}</b>`;
+        source = `<b>${heal.source.name[0].toUpperCase()+heal.source.name.slice(1)}</b>`;
       } else if (!heal.attacker) {
         source = "Что-то";
       }
 
       if (heal.attribute === 'health') {
-        buf = `${source} восстановило вам <b><red>${finalAmount}</red></b> жизни.`;
+        if (heal.source.gender === 'male') {
+          buf = `${source} восстановил вам <b><red>${finalAmount}</red></b> жизни.`;
+        } else if (heal.source.gender === 'female') {
+          buf = `${source} восстановила вам <b><red>${finalAmount}</red></b> жизни.`;
+        } else if (heal.source.gender === 'plural') {
+          buf = `${source} восстановили вам <b><red>${finalAmount}</red></b> жизни.`;
+        } else {
+          buf = `${source} восстановило вам <b><red>${finalAmount}</red></b> жизни.`;
+        }
       } else if (heal.attribute === 'mana') {
-        buf = `${source} восстановило вам <b><red>${finalAmount}</red></b> маны.`;
+        if (heal.source.gender === 'male') {
+          buf = `${source} восстановил вам <b><red>${finalAmount}</red></b> маны.`;
+        } else if (heal.source.gender === 'female') {
+          buf = `${source} восстановила вам <b><red>${finalAmount}</red></b> маны.`;
+        } else if (heal.source.gender === 'plural') {
+          buf = `${source} восстановили вам <b><red>${finalAmount}</red></b> маны.`;
+        } else {
+          buf = `${source} восстановило вам <b><red>${finalAmount}</red></b> маны.`;
+        }
       } else {
-        buf = `${source} восстановило вам ${heal.attribute} (<b>${finalAmount}</b>).`;
+        if (heal.source.gender === 'male') {
+          buf = `${source} восстановил вам параметр ${heal.attribute} (<b>${finalAmount}</b> единиц).`;
+        } else if (heal.source.gender === 'female') {
+          buf = `${source} восстановила вам параметр ${heal.attribute} (<b>${finalAmount}</b> единиц).`;
+        } else if (heal.source.gender === 'plural') {
+          buf = `${source} восстановили вам параметр ${heal.attribute} (<b>${finalAmount}</b> единиц).`;
+        } else {
+          buf = `${source} восстановило вам параметр ${heal.attribute} (<b>${finalAmount}</b> единиц).`;
+        }
       }
       B.sayAt(this, buf);
 
