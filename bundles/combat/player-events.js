@@ -364,7 +364,7 @@ module.exports = {
         this.lowerAttribute('health', helthDamaged);
         this.lowerAttribute('mana', manaDamaged);
 
-        let home = state.RoomManager.getRoom(this.getMeta('waypoint.home'));
+        let home = state.RoomManager.getRoom(this.getMeta('home'));
         if (!home) {
           home = state.RoomManager.getRoom(startingRoomRef);
         }

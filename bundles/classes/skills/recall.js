@@ -43,7 +43,7 @@ module.exports = {
       Logger.error('No startingRoom defined in ranvier.json');
     }
 
-    let home = state.RoomManager.getRoom(target.getMeta('waypoint.home'));
+    let home = state.RoomManager.getRoom(target.getMeta('home'));
     if (!home) {
       home = state.RoomManager.getRoom(startingRoomRef);
     }
