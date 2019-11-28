@@ -108,15 +108,24 @@ function lookRoom(state, player) {
     }
   }
 
+  let lightVerb = '';
+  if (currentLight >= 75) {
+    lightVerb = ' (светло)';
+  } else if (currentLight >= 50) {
+    lightVerb = ' (полумрак)';
+  } else {
+    lightVerb = ' (темно)';
+  }
+
   if (currentLight >= 20) {
     if (player.room.coordinates) {
-      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + '</b></yellow>');
+      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title + lightVerb) + '</b></yellow>');
       B.sayAt(player, B.line(60));
     } else {
       const [ line1, line2, line3 ] = getCompass(player);
 
       // map is 15 characters wide, room is formatted to 80 character width
-      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + line1 + '</b></yellow>');
+      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title + lightVerb) + line1 + '</b></yellow>');
       B.sayAt(player, B.line(60) + B.line(5, ' ') + line2);
       B.sayAt(player, B.line(65, ' ') + '<yellow><b>' + line3 + '</b></yellow>');
     }
@@ -169,10 +178,12 @@ function lookRoom(state, player) {
         B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Предмет')}] <green>${item.roomDesc}</green>`);
       }
     });
+  } else {
+    B.sayAt(player, `Тут что-то есть.`);
   }
 
   // show all npcs
-  if (currentLight >= 75) {
+  if (currentLight >= 50) {
     room.npcs.forEach(npc => {
       if (npc.hasAttribute('invisibility') && npc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
         return;
@@ -228,6 +239,8 @@ function lookRoom(state, player) {
       }
       B.sayAt(player, `[${npcLabel}] ` + npc.Name + combatantsDisplay);
     });
+  } else {
+    B.sayAt(player, `Тут кто-то есть.`);
   }
 
   B.at(player, '[<yellow><b>Выходы</yellow></b>: ');
