@@ -167,6 +167,8 @@ function lookRoom(state, player) {
       }
     B.sayAt(player, '[Игрок] ' + otherPlayer.name + combatantsDisplay);
     });
+  } else if (room.players.size > 1) {
+    B.sayAt(player, `Тут есть другие игроки.`);
   }
 
   // show all the items in the room
@@ -178,7 +180,7 @@ function lookRoom(state, player) {
         B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Предмет')}] <green>${item.roomDesc}</green>`);
       }
     });
-  } else {
+  } else if (room.items.size > 0) {
     B.sayAt(player, `Тут что-то есть.`);
   }
 
@@ -239,7 +241,7 @@ function lookRoom(state, player) {
       }
       B.sayAt(player, `[${npcLabel}] ` + npc.Name + combatantsDisplay);
     });
-  } else {
+  } else if (room.npcs.size > 0) {
     B.sayAt(player, `Тут кто-то есть.`);
   }
 
