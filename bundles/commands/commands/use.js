@@ -24,7 +24,7 @@ module.exports = {
       return say("У вас ничего такого нет.");
     }
 
-    const usable = item.getBehavior('usable');
+    const usable = item.metadata.usable;
     if (!usable) {
       return say("Вы не можете использовать это.");
     }

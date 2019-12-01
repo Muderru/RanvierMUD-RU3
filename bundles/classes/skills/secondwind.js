@@ -20,7 +20,6 @@ module.exports = {
   aliases: ['второе дыхание'],
   name: 'второе дыхание',
   gender: 'neither',
-  damageVerb: 'восстанавливает',
   type: SkillType.SKILL,
   flags: [SkillFlag.PASSIVE],
   effect: "skill.secondwind",
