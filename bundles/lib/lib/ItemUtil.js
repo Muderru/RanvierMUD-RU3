@@ -53,6 +53,17 @@ exports.renderItem = function (state, item, player) {
 
   buf += sprintf('| %-36s |\r\n', item.type === ItemType.ARMOR ? 'Доспех' : 'Оружие');
 
+  const requirements = item.metadata.requirements;
+  if (requirements) {
+    const requiredSkills = item.metadata.requirements.skills;
+    if (requiredSkills) {
+      for (const requiredSkill of requiredSkills) {
+        let skill = state.SkillManager.find(requiredSkill, true);
+        buf += sprintf('| %-36s |\r\n', '(' + skill.name + ')');
+      }
+    }
+  }
+
   switch (item.type) {
     case ItemType.WEAPON:
       buf += sprintf('| %-18s%18s |\r\n', `Урон ${props.minDamage} - ${props.maxDamage}`, `скорость ${props.speed}`);
@@ -122,7 +133,7 @@ exports.renderItem = function (state, item, player) {
                break;
             case 'acid_damage':
                ru_stat = 'урона кислотой'
-               break;               
+               break;
             case 'chaos_damage':
                ru_stat = 'урона хаосом'
                break;
@@ -152,13 +163,43 @@ exports.renderItem = function (state, item, player) {
                break;
             case 'acid_resistance':
                ru_stat = 'к сопротивлению кислоте'
-               break;               
+               break;
             case 'chaos_resistance':
                ru_stat = 'к сопротивлению хаосу'
                break;
             case 'ether_resistance':
                ru_stat = 'к сопротивлению эфиру'
-               break;               
+               break;
+            case 'light':
+               ru_stat = 'к радиусу освещения'
+               break;
+            case 'invisibility':
+               ru_stat = 'к невидимости'
+               break;
+            case 'detect_invisibility':
+               ru_stat = 'к определению невидимости'
+               break;
+            case 'hide':
+               ru_stat = 'к маскировке'
+               break;
+            case 'detect_hide':
+               ru_stat = 'к определению маскировки'
+               break;
+            case 'freedom':
+               ru_stat = 'к свободе движений'
+               break;
+            case 'health_regeneration':
+               ru_stat = 'к регенерации жизни'
+               break;
+            case 'mana_regeneration':
+               ru_stat = 'к регенерации маны'
+               break;
+            case 'health':
+               ru_stat = 'к жизни'
+               break;
+            case 'mana':
+               ru_stat = 'к мане'
+               break;
         }
     buf += sprintf(
       '| %-36s |\r\n',
