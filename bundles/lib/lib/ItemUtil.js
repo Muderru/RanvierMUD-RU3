@@ -35,8 +35,29 @@ exports.qualityColorize = qualityColorize;
 /**
  * Friendly display colorized by quality
  */
-exports.display = function (item) {
-  return qualityColorize(item, `[${item.name}]`);
+exports.display = function (item, caseword = 'name') {
+  switch(caseword) {
+    case 'name':
+      return qualityColorize(item, `[${item.name}]`);
+      break;
+    case 'rname':
+      return qualityColorize(item, `${item.rname}`);
+      break;
+    case 'dname':
+      return qualityColorize(item, `${item.dname}`);
+      break;
+    case 'vname':
+      return qualityColorize(item, `${item.vname}`);
+      break;
+    case 'tname':
+      return qualityColorize(item, `${item.tname}`);
+      break;
+    case 'pname':
+      return qualityColorize(item, `${item.pname}`);
+      break;
+    default:
+      return qualityColorize(item, `[${item.name}]`);
+  }
 };
 
 /**

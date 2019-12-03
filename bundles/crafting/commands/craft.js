@@ -113,7 +113,7 @@ subcommands.add({
 
     state.ItemManager.add(item.item);
     player.addItem(item.item);
-    say(player, `<b><green>Вы создали: ${ItemUtil.display(item.item)}.</green></b>`);
+    say(player, `<b><green>Вы создали ${ItemUtil.display(item.item, 'vname')}.</green></b>`);
     player.save();
   }
 });

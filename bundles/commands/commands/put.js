@@ -53,7 +53,7 @@ module.exports = {
     player.removeItem(item);
     toContainer.addItem(item);
 
-    B.sayAt(player, `<green>Вы положили </green>${ItemUtil.display(item)}<green> в </green>${ItemUtil.display(toContainer)}<green>.</green>`);
+    B.sayAt(player, `<green>Вы положили </green>${ItemUtil.display(item, 'vname')}<green> в </green>${ItemUtil.display(toContainer, 'vname')}<green>.</green>`);
 
     item.emit('put', player, toContainer);
     player.emit('put', item, toContainer);

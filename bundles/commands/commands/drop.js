@@ -33,6 +33,6 @@ module.exports = {
       npc.emit('playerDropItem', player, item);
     }
 
-    Broadcast.sayAt(player, `<green>Вы выбросили: </green>${ItemUtil.display(item)}<green>.</green>`);
+    Broadcast.sayAt(player, `<green>Вы выбросили </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
   }
 };

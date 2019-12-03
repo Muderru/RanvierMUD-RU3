@@ -18,7 +18,7 @@ module.exports = {
     }
 
     const [slot, item] = result;
-    Broadcast.sayAt(player, `<green>Вы сняли: </green>${ItemUtil.display(item)}<green>.</green>`);
+    Broadcast.sayAt(player, `<green>Вы сняли </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
     player.unequip(slot);
   }
 };

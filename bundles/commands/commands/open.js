@@ -130,7 +130,7 @@ function handleItem(player, item, action)
       }
 
       if (item.closed) {
-        B.sayAt(player, `Вы открыли ${ItemUtil.display(item)}.`);
+        B.sayAt(player, `Вы открыли ${ItemUtil.display(item, 'vname')}.`);
         return item.open();
       }
 
@@ -142,7 +142,7 @@ function handleItem(player, item, action)
         return B.sayAt(player, "Здесь уже закрыто.");
       }
 
-      B.sayAt(player, `Вы закрыли ${ItemUtil.display(item)}.`);
+      B.sayAt(player, `Вы закрыли ${ItemUtil.display(item, 'vname')}.`);
 
       return item.close();
     }
@@ -153,12 +153,12 @@ function handleItem(player, item, action)
       }
 
       if (!item.lockedBy) {
-        return B.sayAt(player, `Вы не можете запереть ${ItemUtil.display(item)}.`);
+        return B.sayAt(player, `Вы не можете запереть ${ItemUtil.display(item, 'vname')}.`);
       }
 
       const playerKey = player.hasItem(item.lockedBy);
       if (playerKey) {
-        B.sayAt(player, `*Щёлк* Вы заперли ${ItemUtil.display(item)}.`);
+        B.sayAt(player, `*Щёлк* Вы заперли ${ItemUtil.display(item, 'vname')}.`);
 
         return item.lock();
       }
@@ -178,7 +178,7 @@ function handleItem(player, item, action)
       if (item.lockedBy) {
         const playerKey = player.hasItem(item.lockedBy);
         if (playerKey) {
-          B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item)} с помощью ${ItemUtil.display(playerKey)}.`);
+          B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')} с помощью ${ItemUtil.display(playerKey)}.`);
 
           return item.unlock();
         }
@@ -186,7 +186,7 @@ function handleItem(player, item, action)
         return B.sayAt(player, "Предмет заперт и у вас нет ключа.");
       }
 
-      B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item)}.`);
+      B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')}.`);
 
       return item.unlock();
     }

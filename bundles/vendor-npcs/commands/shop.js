@@ -116,7 +116,7 @@ subcommands.add({
     item.hydrate(state);
     state.ItemManager.add(item);
     player.addItem(item);
-    say(player, `<green>Вы потратили <b><white>${vendorItem.cost} ${friendlyCurrencyName(vendorItem.currency)}</white></b>, чтобы приобрести ${ItemUtil.display(item)}.</green>`);
+    say(player, `<green>Вы потратили <b><white>${vendorItem.cost} ${friendlyCurrencyName(vendorItem.currency)}</white></b>, чтобы приобрести ${ItemUtil.display(item, 'vname')}.</green>`);
     player.save();
   }
 });
@@ -152,7 +152,7 @@ subcommands.add({
     }
     player.setMeta(currencyKey, (player.getMeta(currencyKey) || 0) + sellable.value);
 
-    say(player, `<green>Вы продали ${ItemUtil.display(item)} за <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b>.</green>`);
+    say(player, `<green>Вы продали ${ItemUtil.display(item, 'vname')} за <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b>.</green>`);
     state.ItemManager.remove(item);
   }
 });
@@ -181,7 +181,7 @@ subcommands.add({
       return say(player, "Вы не можете продать эту вещь.");
     }
 
-    tell(`Я могу предложить вам <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b> за ${ItemUtil.display(targetItem)}.</green>`);
+    tell(`Я могу предложить вам <b><white>${sellable.value} ${friendlyCurrencyName(sellable.currency)}</white></b> за ${ItemUtil.display(targetItem, 'vname')}.</green>`);
   }
 });
 

@@ -30,7 +30,7 @@ module.exports = {
     }
 
     if ('charges' in usable && usable.charges <= 0) {
-      return say(`Вы израсходовали всю магию в  ${ItemUtil.display(item)}.`);
+      return say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')}.`);
     }
 
     if (usable.spell) {
@@ -91,13 +91,13 @@ module.exports = {
 
     if (usable.destroyOnDepleted && usable.charges <= 0) {
       if (item.gender === 'male') {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item)} и он исчез в облаке дыма.`);
+         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и он исчез в облаке дыма.`);
        } else if (item.gender === 'female') {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item)} и она исчезла в облаке дыма.`);
+         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и она исчезла в облаке дыма.`);
        } else if (item.gender === 'plural') {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item)} и они исчезли в облаке дыма.`);
+         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и они исчезли в облаке дыма.`);
        } else {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item)} и оно исчезло в облаке дыма.`);
+         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и оно исчезло в облаке дыма.`);
        }
       state.ItemManager.remove(item);
     }

@@ -79,7 +79,7 @@ module.exports = {
     }
 
     if (!item.metadata.slot) {
-      return say(player, `Вы не можете надеть ${ItemUtil.display(item)}.`);
+      return say(player, `Вы не можете надеть ${ItemUtil.display(item, 'vname')}.`);
     }
 
     if (item.level > player.level) {
@@ -91,12 +91,12 @@ module.exports = {
     } catch (err) {
       if (err instanceof EquipSlotTakenError) {
         const conflict = player.equipment.get(item.metadata.slot);
-        return say(player, `Вам нужно сначала снять ${ItemUtil.display(conflict)}.`);
+        return say(player, `Вам нужно сначала снять ${ItemUtil.display(conflict, 'vname')}.`);
       }
 
       return Logger.error(err);
     }
 
-    say(player, `<green>Вы надели:</green> ${ItemUtil.display(item)}<green>.</green>`);
+    say(player, `<green>Вы надели</green> ${ItemUtil.display(item, 'vname')}<green>.</green>`);
   }
 };

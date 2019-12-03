@@ -100,7 +100,7 @@ function pickup(item, container, player) {
   }
   player.addItem(item);
 
-  Broadcast.sayAt(player, `<green>Вы получили: </green>${ItemUtil.display(item)}<green>.</green>`);
+  Broadcast.sayAt(player, `<green>Вы взяли </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
 
   item.emit('get', player);
   player.emit('get', item);
