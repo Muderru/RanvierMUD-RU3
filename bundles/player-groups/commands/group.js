@@ -4,6 +4,7 @@ const Ranvier = require('ranvier');
 const { Broadcast: B, CommandManager } = require('ranvier');
 const Parser = require('../../lib/lib/ArgParser');
 const say = B.sayAt;
+const sprintf = require('sprintf-js').sprintf;
 
 const subcommands = new CommandManager();
 subcommands.add({
@@ -163,13 +164,21 @@ subcommands.add({
       return say(player, "Вы не в группе.");
     }
 
-    say(player, '<b>' + B.center(80, 'Group', 'green', '-') + '</b>');
+    say(player, '<b>' + B.center(80, 'Группа', 'green', '-') + '</b>');
+    say(player, sprintf(' %27s', 'Жизнь') + sprintf(' %30s', 'Мана'));
+    say(player, '<b>' + B.line(80, '-', 'green') + '</b>');
     for (const member of player.party) {
       let tag = '   ';
       if (member === player.party.leader) {
         tag = '[Л]';
       }
-      say(player, `<b><green>${tag} ${member.name}</green></b>`);
+      let health = member.getAttribute('health');
+      let maxhealth = member.getMaxAttribute('health');
+      let mana = member.getAttribute('mana');
+      let maxmana = member.getMaxAttribute('mana');
+      say(player, `<b><green>${tag} ${member.name}</green></b>` + 
+          sprintf(' %20s', health + '/' + maxhealth) +
+          sprintf(' %30s', mana + '/' + maxmana));
     }
   }
 });
@@ -183,7 +192,7 @@ subcommands.add({
     }
 
     if (player === player.party.leader) {
-      return say(player, "You have to disband if you want to leave the group.");
+      return say(player, "Вам нужно сначала расформировать группу.");
     }
 
     const party = player.party;

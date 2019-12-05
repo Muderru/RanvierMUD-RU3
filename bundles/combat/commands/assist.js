@@ -11,11 +11,25 @@ module.exports = {
   command : (state) => (args, player) => {
     args = args.trim();
 
-    if (!args || !args.length) {
-      return B.sayAt(player, 'Кому вы хотите помочь?');
+    let target = null;
+    if (!player.party) {
+      if (!args || !args.length) {
+        return B.sayAt(player, 'Кому вы хотите помочь?');
+      } else {
+        target = dot(args, player.room.players);
+      }
+    } else {
+      //если в группе, то команда без аргумента ищет сражающегося согрупника
+      if (!args || !args.length) {
+        for (const member of player.party) {
+          if (member.isInCombat()) {
+            target = member;
+          }
+        }
+      } else {
+        target = dot(args, player.room.players);
+      }
     }
-
-    let target = dot(args, player.room.players);
 
     if (target) {
       if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
