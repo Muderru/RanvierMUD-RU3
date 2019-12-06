@@ -165,7 +165,8 @@ subcommands.add({
     }
 
     say(player, '<b>' + B.center(80, 'Группа', 'green', '-') + '</b>');
-    say(player, sprintf(' %27s', 'Жизнь') + sprintf(' %30s', 'Мана'));
+    say(player, sprintf(' %27s', 'Жизнь') + sprintf(' %20s', 'Мана') + 
+        sprintf(' %23s', 'Рядом'));
     say(player, '<b>' + B.line(80, '-', 'green') + '</b>');
     for (const member of player.party) {
       let tag = '   ';
@@ -176,9 +177,14 @@ subcommands.add({
       let maxhealth = member.getMaxAttribute('health');
       let mana = member.getAttribute('mana');
       let maxmana = member.getMaxAttribute('mana');
+      let groupRoom = 'нет';
+      if (member.room === player.room) {
+        groupRoom = 'да';
+      }
       say(player, `<b><green>${tag} ${member.name}</green></b>` + 
           sprintf(' %20s', health + '/' + maxhealth) +
-          sprintf(' %30s', mana + '/' + maxmana));
+          sprintf(' %20s', mana + '/' + maxmana) +
+          sprintf(' %20s', groupRoom));
     }
   }
 });
