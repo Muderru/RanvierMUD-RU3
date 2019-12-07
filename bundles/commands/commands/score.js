@@ -9,8 +9,8 @@ module.exports = {
   command : (state) => (args, p) => {
     const say = message => B.sayAt(p, message);
 
-    say('<b>' + B.center(60, `${p.name}, уровень ${p.level} ${p.playerClass.config.name}`, 'green'));
-    say('<b>' + B.line(60, '-', 'green'));
+    say('<b>' + B.center(70, `${p.name}, уровень ${p.level} ${p.playerClass.config.name}`, 'green'));
+    say('<b>' + B.line(70, '-', 'green'));
 
     let stats = {
       strength: 0,
@@ -40,6 +40,14 @@ module.exports = {
       acid_damage: 0,
       chaos_damage: 0,
       ether_damage: 0,
+      invisibility: 0,
+      detect_invisibility: 0,
+      hide: 0,
+      detect_hide: 0,
+      freedom: 0,
+      light: 0,
+      health_regeneration: 0,
+      mana_regeneration: 0,
     };
 
     for (const stat in stats) {
@@ -79,7 +87,7 @@ module.exports = {
       '%-24s',
       ' Характеристики'
     ) + '</green></b>');
-    say('.' + B.line(25) + '.');
+    say('.' + B.line(33) + '.');
 
 
     const printStat = (stat, newline = true) => {
@@ -128,7 +136,7 @@ module.exports = {
              break;
           case 'acid_resistance':
              ru_stat = 'Кислота'
-             break;               
+             break;
           case 'chaos_resistance':
              ru_stat = 'Хаос'
              break;
@@ -164,10 +172,34 @@ module.exports = {
              break;
           case 'ether_damage':
              ru_stat = 'Эфир'
-             break;               
+             break;
+          case 'invisibility':
+             ru_stat = 'Невидимость'
+             break;
+          case 'detect_invisibility':
+             ru_stat = 'Видеть невидимое'
+             break;
+          case 'hide':
+             ru_stat = 'Маскировка'
+             break;
+          case 'detect_hide':
+             ru_stat = 'Видеть маскировку'
+             break;
+          case 'freedom':
+             ru_stat = 'Свобода движений'
+             break;
+          case 'health_regeneration':
+             ru_stat = 'Регенерация жизни'
+             break;
+          case 'mana_regeneration':
+             ru_stat = 'Регенерация маны'
+             break;
+          case 'light':
+             ru_stat = 'Радиус освещения'
+             break;
         }
         const str = sprintf(
-          `| %-12s : <b><${statColor}>%8s</${statColor}></b> |`,
+          `| %-20s : <b><${statColor}>%8s</${statColor}></b> |`,
           ru_stat,
           val.current
         );
@@ -188,15 +220,15 @@ module.exports = {
     printStat('stamina', false); // left
     say(sprintf('%33s', "'" + B.line(12) + "'")); // right
 
-    say(':' + B.line(25) + ':');
+    say(':' + B.line(33) + ':');
     printStat('armor');
     printStat('critical');
-    say("'" + B.line(25) + "'");
+    say("'" + B.line(33) + "'");
     say('<b><green>' + sprintf(
       '%-24s',
-      ' Доп. урон                   Сопротивления'
+      ' Доп. урон                           Сопротивления'
     ) + '</green></b>');
-    say('.' + B.line(52) + '.');      
+    say('.' + B.line(68) + '.');      
     printStat('cutting_damage', false);
     printStat('cutting_resistance');
     printStat('crushing_damage', false);
@@ -217,10 +249,18 @@ module.exports = {
     printStat('chaos_resistance');
     printStat('ether_damage', false);
     printStat('ether_resistance');
-    say('.' + B.line(52) + '.');
+    printStat('invisibility', false);
+    printStat('detect_invisibility');
+    printStat('hide', false);
+    printStat('detect_hide');
+    printStat('health_regeneration', false);
+    printStat('mana_regeneration');
+    printStat('light', false);
+    printStat('freedom');
+    say('.' + B.line(68) + '.');
     
     B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки характеристик', `</green></b>${p.getMeta('attributePoints')}`));
-    B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки магии', `</green></b>${p.getMeta('magicPoints')}`));
-    B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки умений', `</green></b>${p.getMeta('skillPoints')}`));
+    B.at(p, sprintf(' %-9s: %2s', '<b><green>    Очки магии', `</green></b>${p.getMeta('magicPoints')}`));
+    B.at(p, sprintf(' %-9s: %2s', '<b><green>    Очки умений', `</green></b>${p.getMeta('skillPoints')}`));
   }
 };
