@@ -53,9 +53,9 @@ module.exports = {
     B.sayAt(player, `Вы бросаетесь на помощь ${target.dname}.`);
 
     player.initiateCombat(enemy);
-    B.sayAtExcept(player.room, `${player.name} бросается на помощь ${target.dname}!`, [player, target]);
+    B.sayAtExcept(player.room, `${player.Name} бросается на помощь ${target.dname}!`, [player, target]);
     if (!target.isNpc) {
-      B.sayAt(target, `<b>${player.name} бросается ВАМ на помощь!</b>`);
+      B.sayAt(target, `<b>${player.Name} бросается ВАМ на помощь!</b>`);
     }
   }
 };
