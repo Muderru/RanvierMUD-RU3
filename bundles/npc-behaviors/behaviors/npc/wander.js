@@ -106,16 +106,16 @@ module.exports = {
       }
       
       if (!this.travelVerbIn) {
-          if (this.gender === 'male') {
-              this.travelVerbIn = 'появился';
-          } else if (this.gender === 'female') {
-              this.travelVerbIn = 'появилась';
-          } else if (this.gender === 'plural') {
-              this.travelVerbIn = 'появились';
-          } else {
-              this.travelVerbIn = 'появилось';
-          }
+        if (this.gender === 'male') {
+          this.travelVerbIn = 'появился';
+        } else if (this.gender === 'female') {
+          this.travelVerbIn = 'появилась';
+        } else if (this.gender === 'plural') {
+          this.travelVerbIn = 'появились';
+        } else {
+          this.travelVerbIn = 'появилось';
         }
+      }
 
       if (RoomLight(randomRoom) >= 50) {
         for (const pc of randomRoom.players) {

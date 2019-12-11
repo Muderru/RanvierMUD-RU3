@@ -124,7 +124,33 @@ module.exports = {
         }
 
         if (follower.isNpc) {
+          let ending = '';
+          if (follower.gender === 'male') {
+            ending = '';
+          } else if (follower.gender === 'female') {
+            ending = 'а';
+          } else if (follower.gender === 'plural') {
+            ending = 'и';
+          } else {
+            ending = 'о';
+          }
+          if (!follower.travelVerbOut) {
+            follower.travelVerbOut = 'убежал' + ending;
+          }
+          if (!follower.travelVerbIn) {
+            follower.travelVerbIn = 'прибежал' + ending;
+          }
+          B.sayAtExcept(oldRoom, `${follower.Name} ${follower.travelVerbOut} за ${this.tname}.`, blindPlayers);
           follower.moveTo(nextRoom);
+          for (const pc of nextRoom.players) {
+            if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
+              continue;
+            } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
+              continue;
+            } else {
+              B.sayAtExcept(pc, `${follower.Name} ${follower.travelVerbIn} вместе с ${this.tname}.`, this);
+            }
+          }
         } else {
             if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
                 B.sayAt(follower, `\r\nВы последовали за ${this.tname} ${roomExit.direction}.\n`);
