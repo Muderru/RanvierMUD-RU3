@@ -227,9 +227,20 @@ module.exports = {
           }
 
           if (damage.source !== damage.attacker) {
-            buf += ` <b>${damage.source.name}</b>`;
+            let damageVerb = '';
+            if (!damage.source.damageVerb) {
+              if (damage.source.gender === 'plural') {
+                damageVerb = 'ранят';
+              } else {
+                damageVerb = 'ранит';
+              }
+            } else {
+              damageVerb = damage.source.damageVerb;
+            }
+            let damageSourceName = damage.source.name[0].toUpperCase() + damage.source.name.slice(1);
+            buf = `<b>${damageSourceName} ${damage.attacker.rname} ${damageVerb}</b>`;
           } else if (!damage.attacker) {
-            buf += "Что-то ударило";
+            buf += "Что-то поранило";
           }
 
           buf += ` <b>${this.vname}</b> на <b><red>${finalAmount}</red></b> урона.`;
