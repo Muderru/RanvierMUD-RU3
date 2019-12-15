@@ -27,6 +27,7 @@ module.exports = {
       "staves",
       "swords",
       "various_weapons",
+      "rescue",
     ];
 
     const spell = [
@@ -38,6 +39,8 @@ module.exports = {
       "paralysis",
       "light",
       "recall",
+      "petty_demon",
+      "ice_peak",
     ];
 
     say("<b>" + B.center(40, 'Умения', 'green'));
