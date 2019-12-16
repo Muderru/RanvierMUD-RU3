@@ -26,7 +26,7 @@ module.exports = {
     },
 
     effectDeactivated: function () {
-      Broadcast.sayAt(this.target, '<cyan>Ваши конечности перестали коченеть.</cyan>');
+      Broadcast.sayAt(this.target, '<blue>Ваши конечности перестали коченеть.</blue>');
     },
 
   }
