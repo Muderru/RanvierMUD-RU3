@@ -31,7 +31,7 @@ function getSkill(player) {
 module.exports = {
   aliases: ['блокировать', 'блокирование'],
   name: 'блокирование',
-  gender: 'neither',
+  gender: 'neuter',
   type: SkillType.SKILL,
   requiresTarget: false,
   resource: {

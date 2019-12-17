@@ -8,7 +8,7 @@ const { SkillFlag, SkillType } = require('ranvier');
 module.exports = {
   aliases: ['разнообразное оружие'],
   name: 'разнообразное оружие',
-  gender: 'neither',
+  gender: 'neuter',
   type: SkillType.SKILL,
   flags: [SkillFlag.PASSIVE],
 

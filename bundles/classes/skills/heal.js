@@ -40,7 +40,7 @@ function getSkill(player) {
 module.exports = {
   aliases: ['лечение'],
   name: 'лечение',
-  gender: 'neither',
+  gender: 'neuter',
   damageVerb: 'исцеляет',
   type: SkillType.SPELL,
   requiresTarget: true,

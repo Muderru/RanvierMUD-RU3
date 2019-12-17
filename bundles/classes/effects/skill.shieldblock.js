@@ -5,7 +5,7 @@ const { Broadcast, EffectFlag, Heal, Player } = require('ranvier');
 module.exports = {
   config: {
     name: 'блокирование щитом',
-    gender: 'neither',
+    gender: 'neuter',
     damageVerb: 'защищает',
     description: "Вы блокируете входящие атаки щитом!",
     type: 'skill:shieldblock',

@@ -11,6 +11,11 @@ module.exports = {
       return Broadcast.sayAt(player, "Название заклинания должно быть заключено в скобки 'fireball' ЦЕЛЬ ЗАКЛИНАНИЯ.");
     }
 
+    if (player.hasEffectType('silence')) {
+      return Broadcast.sayAt(player, `<b>Вы сейчас не можете колдовать!</b>`);
+    }
+
+
     const [ , , spellName, targetArgs] = match;
     const spell = state.SpellManager.find(spellName);
 

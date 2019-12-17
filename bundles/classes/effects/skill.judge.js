@@ -8,7 +8,7 @@ const { Broadcast, EffectFlag, Heal } = require('ranvier');
 module.exports = {
   config: {
     name: 'осуждение',
-    gender: 'neither',
+    gender: 'neuter',
     damageVerb: 'мучает',
     description: 'Урон вашей следующей атаки уменьшен.',
     type: 'skill:judge',

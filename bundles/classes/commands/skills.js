@@ -17,7 +17,7 @@ module.exports = {
 
     const spell = [
       "fireball", "heal", "plea","invisibility", "detect_invisibility", "paralysis", 
-      "light", "recall", "petty_demon", "ice_peak", "lightning", "acid", 
+      "light", "recall", "petty_demon", "ice_peak", "lightning", "acid", "silence",
     ];
 
     say("<b>" + B.center(40, 'Умения', 'green'));

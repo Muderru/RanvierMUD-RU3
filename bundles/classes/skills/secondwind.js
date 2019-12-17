@@ -19,7 +19,7 @@ function restorePercent(player) {
 module.exports = {
   aliases: ['второе дыхание'],
   name: 'второе дыхание',
-  gender: 'neither',
+  gender: 'neuter',
   type: SkillType.SKILL,
   flags: [SkillFlag.PASSIVE],
   effect: "skill.secondwind",

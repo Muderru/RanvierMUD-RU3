@@ -35,10 +35,10 @@ module.exports = {
             if (!target) {
               target = dot(targetSearch, this.room.npcs);
             }
-            if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > this.getAttribute('detect_invisibility')) {
+            if (target && target.hasAttribute('invisibility') && target.getAttribute('invisibility') > this.getAttribute('detect_invisibility')) {
               return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
             }
-            if (target.hasAttribute('hide') && target.getAttribute('hide') > this.getAttribute('detect_hide')) {
+            if (target && target.hasAttribute('hide') && target.getAttribute('hide') > this.getAttribute('detect_hide')) {
               return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
             }
           } catch (e) {

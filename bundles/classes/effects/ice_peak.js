@@ -8,7 +8,7 @@ const { Broadcast, EffectFlag } = require('ranvier');
 module.exports = {
   config: {
     name: 'окоченение',
-    gender: 'neither',
+    gender: 'neuter',
     description: 'Ваши конечности окоченели и онемели.',
     type: 'ice_peak',
   },
