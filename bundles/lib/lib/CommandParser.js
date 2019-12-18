@@ -21,10 +21,6 @@ class CommandParser {
    * }}
    */
   static parse(state, data, player) {
-    if (player.hasAttribute('freedom') && player.getAttribute('freedom') < 0 && player.role !== PlayerRoles.ADMIN) {
-      return Broadcast.sayAt(player, `<b><red>Ваши мышцы вялы и вы не можете двигаться!</red></b>`);
-    }
-
     data = data.trim();
 
     const parts = data.split(' ');
@@ -35,6 +31,10 @@ class CommandParser {
     }
 
     const args = parts.join(' ');
+
+    if (player.hasAttribute('freedom') && player.getAttribute('freedom') < 0 && player.role !== PlayerRoles.ADMIN) {
+      throw new RestrictedCommandError();
+    }
 
     // Kludge so that 'l' alone will always force a look,
     // instead of mixing it up with lock or list.

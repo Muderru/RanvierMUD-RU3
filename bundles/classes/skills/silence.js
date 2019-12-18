@@ -40,6 +40,14 @@ module.exports = {
     }
 
     if (!player.isNpc) {
+      let rnd = Math.floor(Math.random() * 101);
+      if (rnd > 95) {
+        if (player.getMeta('spell_silence') < 100) {
+          let skillUp = player.getMeta('spell_silence');
+          player.setMeta('spell_silence', skillUp + 1);
+          B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Молчание\'.</cyan></bold>');
+        }
+      }
       let chance = Math.floor(Math.random()*101);
       if (chance >= getSkill(player)) {
         return B.sayAt(player, 'Вам не удалось замолчать ${target.vname}.');
@@ -50,20 +58,8 @@ module.exports = {
     B.sayAtExcept(player.room, `<b>${player.Name} сжимает руки в кулаки, заставляя ${target.vname} замолчать.</b>`, [target, player]);
     B.sayAt(target, `<b>${player.Name} сжимает руки в кулаки, заставляя вас замолчать.</b>`);
 
-
     const effect = state.EffectFactory.create('silence', {duration});
     target.addEffect(effect);
-
-    if (!player.isNpc) {
-      let rnd = Math.floor(Math.random() * 101);
-      if (rnd > 95) {
-          if (player.getMeta('spell_silence') < 100) {
-            let skillUp = player.getMeta('spell_silence');
-            player.setMeta('spell_silence', skillUp + 1);
-            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Молчание\'.</cyan></bold>');
-          }
-      }
-    }
   },
 
   info: (player) => {
