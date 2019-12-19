@@ -25,6 +25,9 @@
       restrictTo: ['limbo:white', 'limbo:black', 'limbo:training1']
     wimpy: true
     memory: true
+    # всё, что не прописано в attributes выставляем в 0, чтобы работали 
+    # всякие эффекты от умений и т.д.
+    allattributes: 0
   attributes:
     health: 100
     mana: 100
