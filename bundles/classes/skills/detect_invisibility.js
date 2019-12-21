@@ -30,6 +30,10 @@ module.exports = {
   cooldown: 60,
 
   run: state => function (args, player, target) {
+    if (!target.hasAttribute('detect_invisibility')) {
+      return B.sayAt(player, `<b>На ${target.vname} это заклинание не подействует.</b>`);
+    }
+
     let duration = 0;
     if (player.hasAttribute('agility')) {
         duration += 3000*(1 + Math.floor(player.getAttribute('agility')/10));
