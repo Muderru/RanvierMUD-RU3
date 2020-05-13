@@ -14,14 +14,15 @@
     "install-bundle": "node setup-bundles.js"
   },
   "dependencies": {
-    "commander": "^2.19.0",
-    "optimist": "",
-    "ranvier": "^3.0.5",
+    "commander": "^2.20.3",
+    "minimist": "^1.2.5",
+    "yargs": "^15.3.1",
+    "ranvier": "^3.0.6",
     "ranvier-datasource-file": "^1.0.3",
-    "semver": "^5.6.0",
+    "semver": "^5.7.1",
     "sprintf-js": "^1.0.3",
     "sty": "",
-    "uuid": "^3.3.2",
+    "uuid": "^3.4.0",
     "winston": "^2.4.4"
   },
   "devDependencies": {
