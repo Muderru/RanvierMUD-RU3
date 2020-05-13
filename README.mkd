@@ -12,11 +12,11 @@
 
 * [Node.js](https://nodejs.org) >= v10.12.0
 
-## Установка
+## Установка на WSL в Windows 10
 
 * git clone git://github.com/Muderru/RanvierMUD-RU3
 * cd ./ranviermud-ru3
-* npm install
+* sudo npm install
 * npm run install-bundle
 * git clone git://github.com/Muderru/core-ru3
 * cd ./core-ru3
