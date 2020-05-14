@@ -131,10 +131,20 @@ class Combat {
 //    Logger.verbose(`addDamage ${addDamage}`);
     amount += addDamage;
     if (attacker.hasAttribute('critical')) {
-      const critChance = Math.max(attacker.getMaxAttribute('critical') || 0, 0);
-      critical = Random.probability(critChance);
-      if (critical) {
-        amount = Math.ceil(amount * 1.5);
+      let critChance = Math.max(attacker.getMaxAttribute('critical') || 0, 0);
+      if (target.hasAttribute('armor')) {
+        critChance -= 0.2*target.getAttribute('armor');
+      }
+
+      if (critChance > 90) {
+        critChance = 90;
+      }
+
+      if (critChance > 0) { 
+        critical = Random.probability(critChance);
+        if (critical) {
+          amount = Math.ceil(amount * 2.5);
+        }
       }
     }
 
