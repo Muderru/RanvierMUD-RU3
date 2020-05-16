@@ -145,6 +145,7 @@
   description: >-
     Эта комната создана, чтобы продемонстрировать вам работу команд, привязанных к определенному месту.
     Попробуйте набрать команду <b><cyan>roomtest</cyan></b>.
+  light: 80
   metadata:
     commands: [ 'roomtest' ]
   items:
@@ -156,11 +157,13 @@
       direction: восток
   doors:
     "limbo:ancientwayshrine":
-      lockedWith: false
+      locked: false
       closed: true
+      name: "люк"
 - id: locked
   title: "Закрытая комната"
   description: Эта комната ничем не примечательна, но чтобы попасть сюда, ее понадобится открыть ключом.
+  light: 80
   items:
     - id: "limbo:locked_chest"
       respawnChance: 5

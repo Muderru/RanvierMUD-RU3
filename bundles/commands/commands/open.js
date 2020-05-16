@@ -55,38 +55,41 @@ module.exports = {
   }
 };
 
-function handleDoor(player, doorRoom, targetRoom, door, action)
-{
+function handleDoor(player, doorRoom, targetRoom, door, action) {
+  if (!door.name) {
+    door.name = 'дверь';
+  }
+
   switch (action) {
     case 'открыть': {
       if (door.locked) {
-        return B.sayAt(player, "Дверь заперта.");
+        return B.sayAt(player, "Заперто.");
       }
 
       if (door.closed) {
-        B.sayAt(player, "Дверь открывается.");
+        B.sayAt(player, "Вы открыли " + door.name + ".");
         return doorRoom.openDoor(targetRoom);
       }
 
-      return B.sayAt(player, "Дверь не закрыта.");
+      return B.sayAt(player, "Тут не закрыто.");
     }
 
     case 'закрыть': {
       if (door.locked || door.closed) {
-        return B.sayAt(player, "Дверь уже закрыта.");
+        return B.sayAt(player, "Тут уже закрыто.");
       }
 
-      B.sayAt(player, "Дверь закрывается.");
+      B.sayAt(player, "Вы закрыли " + door.name + ".");
       return doorRoom.closeDoor(targetRoom);
     }
 
     case 'запереть': {
       if (door.locked) {
-        return B.sayAt(player, "Дверь уже заперта.");
+        return B.sayAt(player, "Тут уже заперто.");
       }
 
       if (!door.lockedBy) {
-        return B.sayAt(player, "Вы не можете запереть эту дверь.");
+        return B.sayAt(player, "Вы не можете это запереть.");
       }
 
       const playerKey = player.hasItem(door.lockedBy);
@@ -95,17 +98,17 @@ function handleDoor(player, doorRoom, targetRoom, door, action)
       }
 
       doorRoom.lockDoor(targetRoom);
-      return B.sayAt(player, '*Щёлк* Дверь заперта.');
+      return B.sayAt(player, '*Щёлк* Вы заперли ' + door.name + '.');
     }
 
     case 'отпереть': {
       if (!door.locked) {
-        return B.sayAt(player, "Дверь не заперта.");
+        return B.sayAt(player, "Тут не заперто.");
       }
 
       if (door.lockedBy) {
         if (player.hasItem(door.lockedBy)) {
-          B.sayAt(player, '*Щёлк* Дверь отпирается.');
+          B.sayAt(player, '*Щёлк* Вы отпираете ' + door.name + '.');
           return doorRoom.unlockDoor(targetRoom);
         }
 
