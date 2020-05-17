@@ -33,6 +33,17 @@ module.exports = {
       npc.emit('playerDropItem', player, item);
     }
 
+  let ending = '';
+  if (player.gender === 'male') {
+    ending = '';
+  } else if (player.gender === 'female') {
+    ending = 'а';
+  } else if (player.gender === 'plural') {
+    ending = 'и';
+  } else {
+    ending = 'о';
+  }
+    Broadcast.sayAtExcept(player.room, player.Name + ` выбросил` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
     Broadcast.sayAt(player, `<green>Вы выбросили </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
   }
 };

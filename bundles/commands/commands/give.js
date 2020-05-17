@@ -71,16 +71,20 @@ module.exports = {
     player.removeItem(targetItem);
     target.addItem(targetItem);
 
-    B.sayAt(player, `<green>Вы дали <white>${target.dname}</white>: ${ItemUtil.display(targetItem)}.</green>`);
+    B.sayAt(player, `<green>Вы дали <white>${target.dname}</white> ${ItemUtil.display(targetItem, 'vname')}.</green>`);
     if (!target.isNpc) {
       if (player.gender === 'male') {
-        B.sayAt(target, `<green>${player.name} дал вам: ${ItemUtil.display(targetItem)}.</green>`);
+        B.sayAt(target, `<green>${player.Name} дал вам ${ItemUtil.display(targetItem, 'vname')}.</green>`);
+        B.sayAtExcept(player.room, player.Name + ` дал ` + target.Dname + ` ${ItemUtil.display(targetItem, 'vname')}.`, [player, target]);
       } else if (player.gender === 'female') {
-        B.sayAt(target, `<green>${player.name} дала вам: ${ItemUtil.display(targetItem)}.</green>`);
+        B.sayAt(target, `<green>${player.Name} дала вам ${ItemUtil.display(targetItem, 'vname')}.</green>`);
+        B.sayAtExcept(player.room, player.Name + ` дала ` + target.Dname + ` ${ItemUtil.display(targetItem, 'vname')}.`, [player, target]);
       } else if (player.gender === 'plural') {
-        B.sayAt(target, `<green>${player.name} дали вам: ${ItemUtil.display(targetItem)}.</green>`);
+        B.sayAt(target, `<green>${player.Name} дали вам ${ItemUtil.display(targetItem, 'vname')}.</green>`);
+        B.sayAtExcept(player.room, player.Name + ` дали ` + target.Dname + ` ${ItemUtil.display(targetItem, 'vname')}.`, [player, target]);
       } else {
-        B.sayAt(target, `<green>${player.name} дало вам: ${ItemUtil.display(targetItem)}.</green>`);
+        B.sayAt(target, `<green>${player.Name} дало вам ${ItemUtil.display(targetItem, 'vname')}.</green>`);
+        B.sayAtExcept(player.room, player.Name + ` дало ` + target.Dname + ` ${ItemUtil.display(targetItem, 'vname')}.`, [player, target]);
       }
     }
   }

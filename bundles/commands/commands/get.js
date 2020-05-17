@@ -100,6 +100,18 @@ function pickup(item, container, player) {
   }
   player.addItem(item);
 
+  let ending = '';
+  if (player.gender === 'male') {
+    ending = '';
+  } else if (player.gender === 'female') {
+    ending = 'а';
+  } else if (player.gender === 'plural') {
+    ending = 'и';
+  } else {
+    ending = 'о';
+  }
+
+  Broadcast.sayAtExcept(player.room, player.Name + ` взял` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
   Broadcast.sayAt(player, `<green>Вы взяли </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
 
   item.emit('get', player);

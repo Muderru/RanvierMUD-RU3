@@ -60,6 +60,17 @@ function handleDoor(player, doorRoom, targetRoom, door, action) {
     door.name = 'дверь';
   }
 
+  let ending = '';
+  if (player.gender === 'male') {
+    ending = '';
+  } else if (player.gender === 'female') {
+    ending = 'а';
+  } else if (player.gender === 'plural') {
+    ending = 'и';
+  } else {
+    ending = 'о';
+  }
+
   switch (action) {
     case 'открыть': {
       if (door.locked) {
@@ -68,6 +79,7 @@ function handleDoor(player, doorRoom, targetRoom, door, action) {
 
       if (door.closed) {
         B.sayAt(player, "Вы открыли " + door.name + ".");
+        B.sayAtExcept(player.room, player.Name + ' открыл' + ending + ' ' + door.name + '.', player);
         return doorRoom.openDoor(targetRoom);
       }
 
@@ -80,6 +92,7 @@ function handleDoor(player, doorRoom, targetRoom, door, action) {
       }
 
       B.sayAt(player, "Вы закрыли " + door.name + ".");
+      B.sayAtExcept(player.room, player.Name + ' закрыл' + ending + ' ' + door.name + '.', player);
       return doorRoom.closeDoor(targetRoom);
     }
 
@@ -98,6 +111,7 @@ function handleDoor(player, doorRoom, targetRoom, door, action) {
       }
 
       doorRoom.lockDoor(targetRoom);
+      B.sayAtExcept(player.room, player.Name + ' запирает ' + door.name + '.', player);
       return B.sayAt(player, '*Щёлк* Вы заперли ' + door.name + '.');
     }
 
@@ -109,6 +123,7 @@ function handleDoor(player, doorRoom, targetRoom, door, action) {
       if (door.lockedBy) {
         if (player.hasItem(door.lockedBy)) {
           B.sayAt(player, '*Щёлк* Вы отпираете ' + door.name + '.');
+          B.sayAtExcept(player.room, player.Name + ' отпирает ' + door.name + '.', player);
           return doorRoom.unlockDoor(targetRoom);
         }
 
@@ -126,6 +141,17 @@ function handleItem(player, item, action)
     return B.sayAt(player, `${ItemUtil.display(item)} - не контейнер.`)
   }
 
+  let ending = '';
+  if (player.gender === 'male') {
+    ending = '';
+  } else if (player.gender === 'female') {
+    ending = 'а';
+  } else if (player.gender === 'plural') {
+    ending = 'и';
+  } else {
+    ending = 'о';
+  }
+
   switch (action) {
     case 'открыть': {
       if (item.locked) {
@@ -134,6 +160,7 @@ function handleItem(player, item, action)
 
       if (item.closed) {
         B.sayAt(player, `Вы открыли ${ItemUtil.display(item, 'vname')}.`);
+        B.sayAtExcept(player.room, player.Name + ` открыл` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
         return item.open();
       }
 
@@ -146,6 +173,7 @@ function handleItem(player, item, action)
       }
 
       B.sayAt(player, `Вы закрыли ${ItemUtil.display(item, 'vname')}.`);
+      B.sayAtExcept(player.room, player.Name + ` закрыл` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
 
       return item.close();
     }
@@ -162,6 +190,7 @@ function handleItem(player, item, action)
       const playerKey = player.hasItem(item.lockedBy);
       if (playerKey) {
         B.sayAt(player, `*Щёлк* Вы заперли ${ItemUtil.display(item, 'vname')}.`);
+        B.sayAtExcept(player.room, player.Name + ` запирает ${ItemUtil.display(item, 'vname')}.`, player);
 
         return item.lock();
       }
@@ -181,7 +210,8 @@ function handleItem(player, item, action)
       if (item.lockedBy) {
         const playerKey = player.hasItem(item.lockedBy);
         if (playerKey) {
-          B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')} с помощью ${ItemUtil.display(playerKey)}.`);
+          B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')} с помощью ${ItemUtil.display(playerKey, 'rname')}.`);
+          B.sayAtExcept(player.room, player.Name + ` отпирает ${ItemUtil.display(item, 'vname')} с помощью ${ItemUtil.display(playerKey, 'rname')}.`, player);
 
           return item.unlock();
         }
@@ -190,6 +220,7 @@ function handleItem(player, item, action)
       }
 
       B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')}.`);
+      B.sayAtExcept(player.room, player.Name + ` отпирает ${ItemUtil.display(item, 'vname')}.`, player);
 
       return item.unlock();
     }

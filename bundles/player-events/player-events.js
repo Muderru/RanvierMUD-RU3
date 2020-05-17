@@ -112,6 +112,18 @@ module.exports = {
             case 'вниз':
               B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} сверху.`, this);
             break;
+            case 'северо-запад':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с юго-востока.`, this);
+            break;
+            case 'северо-восток':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с юго-запада.`, this);
+            break;
+            case 'юго-запад':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с северо-востока.`, this);
+            break;
+            case 'юго-восток':
+              B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} с северо-запада.`, this);
+            break;
             default:
               B.sayAtExcept(pc, `${this.name} ${this.travelVerbIn} откуда-то.`, this);
           }

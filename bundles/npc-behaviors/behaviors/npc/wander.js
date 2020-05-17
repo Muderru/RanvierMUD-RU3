@@ -143,6 +143,18 @@ module.exports = {
               case 'вниз':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} сверху.`);
               break;
+              case 'северо-запад':
+                Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с юго-востока.`);
+              break;
+              case 'северо-восток':
+                Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с юго-запада.`);
+              break;
+              case 'юго-запад':
+                Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с северо-востока.`);
+              break;
+              case 'юго-восток':
+                Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с северо-запада.`);
+              break;
               default:
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} откуда-то.`);
              }
