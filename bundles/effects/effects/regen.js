@@ -1,10 +1,11 @@
 'use strict';
 
-const { Damage, EffectFlag, Heal } = require('ranvier');
+const { EffectFlag, Heal } = require('ranvier');
 
 module.exports = {
   config: {
     name: 'Регенерация',
+    persists: false,
     description: "Ваши раны затягиваются сами по себе.",
     type: 'regen',
     tickInterval: 3
@@ -17,9 +18,9 @@ module.exports = {
     updateTick: function () {
       // pools that regenerate over time
       const regens = [
-        { pool: 'health', modifier: this.target.hasAttribute('health_regeneration') ? 0.01*this.target.getAttribute('health_regeneration') : 1 },
-        // energy and mana recovers 50% faster than health
-        { pool: 'mana', modifier: this.target.hasAttribute('mana_regeneration') ? 0.01*this.target.getAttribute('mana_regeneration') : 1.5 },
+        { pool: 'health', modifier: this.target.hasAttribute('health_regeneration') ? this.target.getAttribute('health_regeneration') : 1 },
+        // energy and mana recovers 100% faster than health
+        { pool: 'mana', modifier: this.target.hasAttribute('mana_regeneration') ? this.target.getAttribute('mana_regeneration') : 2 },
       ];
 
       for (const regen of regens) {
@@ -28,7 +29,7 @@ module.exports = {
         }
 
         const poolMax = this.target.getMaxAttribute(regen.pool);
-        const amount = Math.round((poolMax / 10) * regen.modifier);
+        const amount = regen.modifier;
         const heal = new Heal(regen.pool, amount, this.target, this, {
           hidden: true,
         });
