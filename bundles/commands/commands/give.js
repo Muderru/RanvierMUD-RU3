@@ -32,23 +32,23 @@ module.exports = {
     // prioritize players before npcs
     let target = dot(targetRecip, player.room.players);
 
-    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
-      return B.sayAt(player, 'Кому?');
-    } else if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
-      return B.sayAt(player, 'Кому?');
-    }
-
     if (!target) {
       target = dot(targetRecip, player.room.npcs);
       if (target) {
-        const accepts = target.getBehavior('accepts');
+        const accepts = target.getMeta('accepts');
         if (!accepts || !accepts.includes(targetItem.entityReference)) {
-          return B.sayAt(player, '${target.Name} не хочет брать это.');
+          return B.sayAt(player, target.Name + ' не хочет брать это.');
         }
-      } 
+      }
     }
 
     if (!target) {
+      return B.sayAt(player, 'Кому?');
+    }
+
+    if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
+      return B.sayAt(player, 'Кому?');
+    } else if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
       return B.sayAt(player, 'Кому?');
     }
 
@@ -87,5 +87,8 @@ module.exports = {
         B.sayAtExcept(player.room, player.Name + ` дало ` + target.Dname + ` ${ItemUtil.display(targetItem, 'vname')}.`, [player, target]);
       }
     }
+
+    target.emit('take', player, targetItem);
+    player.emit('give', target, targetItem);
   }
 };

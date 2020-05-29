@@ -34,7 +34,7 @@ subcommands.add({
     // group vendor's items by category then display them
     let itemCategories = {
       [ItemType.POTION]: {
-        title: 'Зелья',
+        title: 'Зелья, еда и напитки',
         items: [],
       },
       [ItemType.ARMOR]: {
@@ -109,7 +109,7 @@ subcommands.add({
     }
 
     if (player.isInventoryFull()) {
-      return tell("Вы не унесете больше.");
+      return tell("Вы не унесете больше вещей.");
     }
 
     player.setMeta(currencyKey, playerCurrency - vendorItem.cost);

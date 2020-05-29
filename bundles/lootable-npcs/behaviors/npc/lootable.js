@@ -49,7 +49,7 @@ module.exports = {
       room.addItem(corpse);
       state.ItemManager.add(corpse);
 
-      if (killer.getMeta('config.autoloot') === true) {
+      if (killer.getMeta('config.автосбор') === true) {
         state.CommandManager.get('get').execute(this.keywords[0] || 'труп', killer, 'взятьвсе');
       }
 

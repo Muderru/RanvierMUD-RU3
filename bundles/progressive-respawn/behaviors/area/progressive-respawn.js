@@ -24,6 +24,9 @@ module.exports = {
           for (const [id, room] of this.rooms) {
             room.emit('respawnTick', state);
           }
+          this.npcs.forEach(npc => {
+            npc.emit('respawnTick');
+          });
         }
       };
     },

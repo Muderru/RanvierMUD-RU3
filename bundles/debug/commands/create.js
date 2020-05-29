@@ -18,6 +18,7 @@ module.exports = {
     if (isItem) {
       targetItem = player.room.spawnItem(state, target);
       player.addItem(targetItem);
+      player.room.removeItem(targetItem);
       Broadcast.sayAt(player, `Вы создали ${targetItem.name}.`);
     } else {
       Broadcast.sayAt(player, 'Неверный формат id предмета.');

@@ -197,6 +197,7 @@ module.exports = {
         }
       }
 
+      if (damage.attacker) {
       if (damage.attacker.name === damage.source.name) {
           buf += ` ${damage.attacker.damageVerb} <b>Ваc</b>, нанося <b><red>${finalAmount}</red></b> урона.`;
       } else {
@@ -206,6 +207,7 @@ module.exports = {
           } else if (!damage.attacker) {
             buf += "от чего-то.";
           }
+      }
       }
 
       if (damage.metadata.critical) {

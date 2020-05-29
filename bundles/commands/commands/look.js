@@ -72,7 +72,12 @@ function getCompass(player) {
   const line2 = `<yellow><b>${З}</b></yellow> <-${ВВ}-(@)-${ВН}-> <yellow><b>${В}</b></yellow>`;
   const line3 = `${ЮЗ}     ${Ю}     ${ЮВ}\r\n`;
 
-  return [line1, line2, line3];
+  if (player.getMeta('config.миникарта')) {
+    return [line1, line2, line3];
+  } else {
+    return ['', '', ''];
+  }
+  
 }
 
 function lookRoom(state, player) {
@@ -142,10 +147,11 @@ function lookRoom(state, player) {
     }
   }
 
-  if (player.getMeta('config.миникарта')) {
-    B.sayAt(player, '');
-    state.CommandManager.get('map').execute(4, player);
-  }
+//Какая-то непонятная хрень, отключу пока
+//  if (player.getMeta('config.миникарта')) {
+//    B.sayAt(player, '');
+//    state.CommandManager.get('map').execute(4, player);
+//  }
 
   B.sayAt(player, '');
 

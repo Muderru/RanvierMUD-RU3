@@ -34,7 +34,7 @@ module.exports = {
       return state.CommandManager.get('help').execute('config', player);
     }
 
-    const possibleSettings = ['краткий', 'autoloot', 'миникарта'];
+    const possibleSettings = ['краткий', 'автосбор', 'миникарта'];
 
     if (!possibleSettings.includes(configToSet)) {
       B.sayAt(player, `<red>Недопустимые настройки: ${configToSet}. Возможные настройки: ${possibleSettings.join(', ')}</red>`);

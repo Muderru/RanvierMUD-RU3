@@ -83,7 +83,7 @@ module.exports = {
     }
 
     if (item.level > player.level) {
-      return say(player, "Вы не можете использовать это еще.");
+      return say(player, `Вы пока не можете использовать ${ItemUtil.display(item, 'vname')}.`);
     }
 
     try {
