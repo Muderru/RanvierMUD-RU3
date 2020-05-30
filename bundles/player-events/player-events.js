@@ -2,7 +2,7 @@
 
 const sprintf = require('sprintf-js').sprintf;
 const LevelUtil = require('../lib/lib/LevelUtil');
-const { Broadcast: B, Config, Logger } = require('ranvier');
+const { Broadcast: B, Config, Logger, PlayerRoles } = require('ranvier');
 
 module.exports = {
   listeners: {
@@ -197,7 +197,7 @@ module.exports = {
       const timeSinceLastCommand = Date.now() - lastCommandTime;
       const maxIdleTime = (Math.abs(Config.get('maxIdleTime')) * 60000) || Infinity;
 
-      if (timeSinceLastCommand > maxIdleTime && !this.isInCombat()) {
+      if (timeSinceLastCommand > maxIdleTime && !this.isInCombat() && this.role === PlayerRoles.PLAYER) {
         this.save(() => {
           B.sayAt(this, `Вы были удалены из игры за бездействие в течении ${maxIdleTime / 60000} минут!`);
           if (this.gender === 'male') {

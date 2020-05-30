@@ -65,6 +65,12 @@ subcommands.add({
     if (requirementsNumber > 0) {
       for (let requirement of requirements) {
         if (!player.getMeta(requirement)) {
+          let requirementName = requirement.slice(6);
+          let skillReq = state.SkillManager.find(requirementName, true);
+          if (!skillReq) {
+            skillReq = state.SpellManager.find(requirementName, true);
+          }
+          tell('Вы должны сначала выучить \'' + skillReq.name[0].toUpperCase() + skillReq.name.slice(1) + '\'.');
           return tell("Вы не соответствуете моим требованиям. Я не буду обучать вас.");
         }
       }
