@@ -8,7 +8,7 @@ module.exports = {
   listeners: {
     respawnTick: state => function () {
       if (!this.room) {
-        this.sourceRoom.spawnNpc(state, this.id);
+        this.sourceRoom.spawnNpc(state, this.entityReference);
         Logger.verbose(`${this.id} has persisted.`);
       }
     }
