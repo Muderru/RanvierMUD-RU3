@@ -6,9 +6,15 @@ module.exports = {
   aliases: [ "колдовать" ],
   command : state => (args, player) => {
     // match cast "fireball" target
-    const match = args.match(/^(['"])([^\1]+)+\1(?:$|\s+(.+)$)/);
+    let magSymbol = player.getMeta('config.магсимвол');
+    if (!magSymbol) {
+      magSymbol = '\'';
+    }
+
+    let re = new RegExp(regexpVal(magSymbol));
+    const match = args.match(re);
     if (!match) {
-      return Broadcast.sayAt(player, "Название заклинания должно быть заключено в скобки 'fireball' ЦЕЛЬ ЗАКЛИНАНИЯ.");
+      return Broadcast.sayAt(player, "Название заклинания должно быть заключено в скобки из символов " + magSymbol + ".");
     }
 
     if (player.hasEffectType('silence')) {
@@ -21,6 +27,11 @@ module.exports = {
 
     if (!spell) {
       return Broadcast.sayAt(player, "Вы не знаете такого заклинания.");
+    }
+
+    function regexpVal(magSymbol) {
+      const val = '^([' + magSymbol + '])([^\\1]+)+\\1(?:$|\\s+(.+)$)';
+      return val;
     }
 
     player.queueCommand({
