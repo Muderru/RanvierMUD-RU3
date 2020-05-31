@@ -1,4 +1,7 @@
 ---
 title: Ремесла
+metadata:
+  author: "Туор"
+  hidden: true
 info:
   respawnInterval: 300
