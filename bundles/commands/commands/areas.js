@@ -22,8 +22,13 @@ module.exports = {
         area.metadata.maxlevel = 100;
       }
       if (!area.metadata.hidden) {
-        B.sayAt(p, sprintf('%-40s %16s', '  ' + area.title + ' (' + area.metadata.minlevel + ' - ' + area.metadata.maxlevel +')', 
+        if (p.room.area == area) {
+          B.sayAt(p, sprintf('%-40s %31s', '  <green>' + area.title + ' (' + area.metadata.minlevel + ' - ' + area.metadata.maxlevel +')</green>', 
                                 area.metadata.author));
+        } else {
+          B.sayAt(p, sprintf('%-40s %16s', '  ' + area.title + ' (' + area.metadata.minlevel + ' - ' + area.metadata.maxlevel +')', 
+                                area.metadata.author));
+        }
       }
     }
 
