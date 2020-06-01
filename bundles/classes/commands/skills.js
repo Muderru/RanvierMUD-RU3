@@ -12,7 +12,7 @@ module.exports = {
       "judge", "lunge", "rend", "secondwind", "shieldblock", "smite", 
       "hide", "detect_hide", "axes", "bows", "light_armor", "medium_armor", 
       "heavy_armor", "maces", "polearms", "staves", "swords", "various_weapons", 
-      "rescue", 
+      "rescue", "daggers",
     ];
 
     const spell = [

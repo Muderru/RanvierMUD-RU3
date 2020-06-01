@@ -23,7 +23,7 @@ module.exports = {
       }
       if (!area.metadata.hidden) {
         if (p.room.area == area) {
-          B.sayAt(p, sprintf('%-40s %31s', '  <green>' + area.title + ' (' + area.metadata.minlevel + ' - ' + area.metadata.maxlevel +')</green>', 
+          B.sayAt(p, sprintf('%-40s %31s', ' <green>*' + area.title + ' (' + area.metadata.minlevel + ' - ' + area.metadata.maxlevel +')</green>', 
                                 area.metadata.author));
         } else {
           B.sayAt(p, sprintf('%-40s %16s', '  ' + area.title + ' (' + area.metadata.minlevel + ' - ' + area.metadata.maxlevel +')', 
