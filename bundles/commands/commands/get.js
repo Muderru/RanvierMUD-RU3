@@ -26,12 +26,7 @@ module.exports = {
     }
 
     // get 3.foo from bar -> get 3.foo bar
-    let parts = args.split(' ').filter(arg => !arg.match(/from/));
-
-    // pick up <item>
-    //if (parts.length > 1 && parts[0] === 'up') {
-    //  parts = parts.slice(1);
-    //}
+    let parts = args.split(' ').filter(arg => !arg.match(/из/));
 
     let source = null, search = null, container = null;
     if (parts.length === 1) {
@@ -40,9 +35,11 @@ module.exports = {
     } else {
     //Newest containers should go first, so that if you type get all corpse you get from the 
     // most recent corpse. See issue #247.
-      container = ArgParser.parseDot(parts[1], [...player.room.items].reverse());
-      if (!container) {
-        return Broadcast.sayAt(player, "Здесь нет ничего такого.");
+      container = ArgParser.parseDot(parts[1], [...player.room.items].reverse()) ||
+                  ArgParser.parseDot(parts[1], [...player.inventory]) ||
+                  ArgParser.parseDot(parts[1], [...player.equipment]);
+        if (!container) {
+          return Broadcast.sayAt(player, "Здесь нет ничего такого.");
       }
 
       if (container.type !== ItemType.CONTAINER) {

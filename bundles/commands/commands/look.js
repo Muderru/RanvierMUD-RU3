@@ -297,6 +297,7 @@ function lookEntity(state, player, args) {
   entity = entity || ArgParser.parseDot(search, room.players);
   entity = entity || ArgParser.parseDot(search, room.npcs);
   entity = entity || ArgParser.parseDot(search, player.inventory);
+  entity = entity || ArgParser.parseDot(search, player.equipment);
 
   if (!entity) {
     return B.sayAt(player, "Здесь нет ничего такого.");
