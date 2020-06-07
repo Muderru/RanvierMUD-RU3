@@ -81,6 +81,7 @@ module.exports = {
         }
       }
 
+      blindPlayers.push(this);
       if (roomExit.direction === 'вниз' || roomExit.direction === 'вверх') {
           B.sayAtExcept(oldRoom, `${this.name} ${this.travelVerbOut} ${roomExit.direction}.`, blindPlayers);
       } else {

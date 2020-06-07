@@ -33,7 +33,7 @@ subcommands.add({
     } else {
         B.sayAt(player, "<b>" + B.center(40, 'Заклинания', 'green'));
         B.sayAt(player, "<b>" + B.line(40, '=', 'green'));
-        let spell = state.SpellManager.find(trainerConfig.spell);
+        let spell = state.SpellManager.find(trainerConfig.spell, true);
         B.sayAt(player, spell.name[0].toUpperCase() + spell.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending + 'магии')));
     }
 
@@ -41,7 +41,7 @@ subcommands.add({
     } else {
         B.sayAt(player, "<b>" + B.center(40, 'Умения', 'green'));
         B.sayAt(player, "<b>" + B.line(40, '=', 'green'));
-        let skill = state.SkillManager.find(trainerConfig.skill);
+        let skill = state.SkillManager.find(trainerConfig.skill, true);
         B.sayAt(player, skill.name[0].toUpperCase() + skill.name.slice(1) + sprintf(' %-40s', B.center(40, trainerConfig.cost + ending + 'умений')));
     }
   }
