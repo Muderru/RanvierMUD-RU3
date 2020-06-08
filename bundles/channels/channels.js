@@ -56,6 +56,7 @@ module.exports = [
       },
 
       target: function (sender, target, message, colorify) {
+        target.setMeta('interlocutor', sender.name);
         if (sender.gender === 'male') {
             return colorify(`${sender.Name} сказал вам: '${message}'`);
         } else if (sender.gender === 'female') {

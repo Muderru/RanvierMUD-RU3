@@ -13,11 +13,7 @@ module.exports = {
       return B.sayAt(player, 'Что кому дать?');
     }
 
-    let [ targetItem, to, targetRecip ] = args.split(' ');
-    // give foo to bar
-    if (to !== 'to' || !targetRecip) {
-      targetRecip = to;
-    }
+    let [ targetItem, targetRecip ] = args.split(' ');
 
     if (!targetRecip) {
       return B.sayAt(player, 'Кому вы хотите это отдать?');

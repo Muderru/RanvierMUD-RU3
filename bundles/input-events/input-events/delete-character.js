@@ -20,7 +20,7 @@ module.exports = {
     let options = [];
     characters.forEach(char => {
       options.push({
-        display: `Delete <b>${char.username}</b>`,
+        display: `Удалить <b>${char.username}</b>`,
         onSelect: () => {
           write(`<bold>Вы уверены, что хотите удалить <b>${char.username}</b>?</bold> <cyan>[д/н]</cyan> `);
           socket.once('data', confirmation => {
@@ -37,7 +37,7 @@ module.exports = {
               return socket.emit('choose-character', socket, args);
             }
 
-            say(`Deleting ${char.username}`);
+            say(`Удаление ${char.username}`);
             account.deleteCharacter(char.username);
             say('Персонаж удален.');
             return socket.emit('choose-character', socket, args);
