@@ -188,6 +188,20 @@ module.exports = {
 //      B.sayAt(this, `<bold><yellow>Выполнение</yellow> '<white>${command.label}</white>' <yellow>через</yellow> <white>${ttr}</white> <yellow>секунд.</yellow>`);
     },
 
+    login: state => function () {
+      let ending = '';
+      if (this.gender === 'male') {
+        ending = '';
+      } else if (this.gender === 'female') {
+        ending = 'а';
+      } else if (this.gender === 'plural') {
+        ending = 'и';
+      } else {
+        ending = 'о';
+      }
+      B.sayAtExcept(this.room, `<bold>${this.Name} вступил${ending} в игру.</bold>`, this);
+    },
+
     updateTick: state => function () {
       if (this.commandQueue.hasPending && this.commandQueue.lagRemaining <= 0) {
         B.sayAt(this);

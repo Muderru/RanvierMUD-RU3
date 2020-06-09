@@ -304,8 +304,27 @@ function lookEntity(state, player, args) {
   }
 
   if (entity instanceof Player) {
-    // TODO: Show player equipment?
-    B.sayAt(player, `Вы видите игрока ${entity.vname}.`);
+    //Show player equipment
+    B.sayAt(player, `Вы видите ${entity.playerClass.config.name.toLowerCase()}а ${entity.vname}.`);
+    let pronoun = '';
+    if (entity.gender === 'male') {
+      pronoun = 'нём';
+    } else if (entity.gender === 'female') {
+      pronoun = 'ней';
+    } else if (entity.gender === 'plural') {
+      pronoun = 'них';
+    } else {
+      pronoun = 'нём';
+    }
+
+    if (!entity.equipment.size) {
+      return B.sayAt(player, `На ${pronoun} ничего не одето!`);
+    }
+
+    B.sayAt(player, `На ${pronoun} надето:`);
+    for (const [slot, item] of entity.equipment) {
+      B.sayAt(player, `  <${slot}> ${ItemUtil.display(item)}`);
+    }
     return;
   }
 
