@@ -40,6 +40,11 @@ const { Broadcast: B, Logger } = require('ranvier');
 module.exports = {
   listeners: {
     updateTick: state => function (config) {
+      let playersCount = state.PlayerManager.players.size;
+      if (playersCount === 0) {
+        return;
+      }
+
       if (!this.room) {
         return;
       }

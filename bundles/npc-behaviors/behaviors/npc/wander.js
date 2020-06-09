@@ -14,16 +14,16 @@ const { Broadcast, Data, Logger } = require('ranvier');
 module.exports = {
   listeners: {
     updateTick: state => function (config) {
+      let playersCount = state.PlayerManager.players.size;
+      if (playersCount === 0) {
+        return;
+      }
+
       if (this.isInCombat() || !this.room || this.following) {
         return;
       }
 
       if (this.hasAttribute('freedom') && this.getAttribute('freedom') < 0) {
-        return;
-      }
-
-      let playersCount = state.PlayerManager.players.size;
-      if (playersCount === 0) {
         return;
       }
 
@@ -55,6 +55,14 @@ module.exports = {
       const roomExit = Random.fromArray(exits);
       const randomRoom = state.RoomManager.getRoom(roomExit.roomId);
       let oldRoom = this.room;
+
+      //проверка на флаг комнаты nomob
+      if (randomRoom) {
+        let nomob = randomRoom.getMeta('nomob');
+        if (nomob) {
+          return;
+        }
+      }
 
       const door = this.room.getDoor(randomRoom) || (randomRoom && randomRoom.getDoor(this.room));
       if (randomRoom && door && (door.locked || door.closed)) {
