@@ -96,106 +96,106 @@ module.exports = {
       let ru_stat = '';
       switch(stat) {
           case 'strength':
-             ru_stat = 'Сила'
+             ru_stat = 'Сила';
              break;
           case 'agility':
-             ru_stat = 'Ловкость'
+             ru_stat = 'Ловкость';
              break;
           case 'intellect':
-             ru_stat = 'Интеллект'
+             ru_stat = 'Интеллект';
              break;
           case 'stamina':
-             ru_stat = 'Выносливость'
+             ru_stat = 'Выносливость';
              break;
           case 'armor':
-             ru_stat = 'Броня'
+             ru_stat = 'Броня';
              break;
           case 'critical':
-             ru_stat = 'Крит.шанс'
+             ru_stat = 'Крит.шанс';
              break;
           case 'cutting_resistance':
-             ru_stat = 'Режущее'
+             ru_stat = 'Режущее';
              break;
           case 'crushing_resistance':
-             ru_stat = 'Дробящее'
+             ru_stat = 'Дробящее';
              break;
           case 'piercing_resistance':
-             ru_stat = 'Колющее'
+             ru_stat = 'Колющее';
              break;
           case 'fire_resistance':
-             ru_stat = 'Огонь'
+             ru_stat = 'Огонь';
              break;
           case 'cold_resistance':
-             ru_stat = 'Холод'
+             ru_stat = 'Холод';
              break;
           case 'lightning_resistance':
-             ru_stat = 'Молния'
+             ru_stat = 'Молния';
              break;
           case 'earth_resistance':
-             ru_stat = 'Земля'
+             ru_stat = 'Земля';
              break;
           case 'acid_resistance':
-             ru_stat = 'Кислота'
+             ru_stat = 'Кислота';
              break;
           case 'chaos_resistance':
-             ru_stat = 'Хаос'
+             ru_stat = 'Хаос';
              break;
           case 'ether_resistance':
-             ru_stat = 'Эфир'
+             ru_stat = 'Эфир';
              break;
           case 'cutting_damage':
-             ru_stat = 'Режущий'
+             ru_stat = 'Режущий';
              break;
           case 'crushing_damage':
-             ru_stat = 'Дробящий'
+             ru_stat = 'Дробящий';
              break;
           case 'piercing_damage':
-             ru_stat = 'Колющий'
+             ru_stat = 'Колющий';
              break;
           case 'fire_damage':
-             ru_stat = 'Огонь'
+             ru_stat = 'Огонь';
              break;
           case 'cold_damage':
-             ru_stat = 'Холод'
+             ru_stat = 'Холод';
              break;
           case 'lightning_damage':
-             ru_stat = 'Молния'
+             ru_stat = 'Молния';
              break;
           case 'earth_damage':
-             ru_stat = 'Земля'
+             ru_stat = 'Земля';
              break;
           case 'acid_damage':
-             ru_stat = 'Кислота'
-             break;               
+             ru_stat = 'Кислота';
+             break;
           case 'chaos_damage':
-             ru_stat = 'Хаос'
+             ru_stat = 'Хаос';
              break;
           case 'ether_damage':
-             ru_stat = 'Эфир'
+             ru_stat = 'Эфир';
              break;
           case 'invisibility':
-             ru_stat = 'Невидимость'
+             ru_stat = 'Невидимость';
              break;
           case 'detect_invisibility':
-             ru_stat = 'Видеть невидимое'
+             ru_stat = 'Видеть невидимое';
              break;
           case 'hide':
-             ru_stat = 'Маскировка'
+             ru_stat = 'Маскировка';
              break;
           case 'detect_hide':
-             ru_stat = 'Видеть маскировку'
+             ru_stat = 'Видеть маскировку';
              break;
           case 'freedom':
-             ru_stat = 'Свобода движений'
+             ru_stat = 'Свобода движений';
              break;
           case 'health_regeneration':
-             ru_stat = 'Регенерация жизни'
+             ru_stat = 'Регенерация жизни';
              break;
           case 'mana_regeneration':
-             ru_stat = 'Регенерация маны'
+             ru_stat = 'Регенерация маны';
              break;
           case 'light':
-             ru_stat = 'Радиус освещения'
+             ru_stat = 'Радиус освещения';
              break;
         }
         const str = sprintf(
