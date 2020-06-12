@@ -14,7 +14,7 @@ const qualityColors = {
   rare: ['bold', 'blue'],
   epic: ['bold', 'magenta'],
   legendary: ['bold', 'red'],
-  artifact: ['yellow'],
+  artifact: ['bold', 'yellow'],
 };
 exports.qualityColors = qualityColors;
 
@@ -67,12 +67,18 @@ exports.display = function (item, caseword = 'name') {
  * @param {Player}    player
  */
 exports.renderItem = function (state, item, player) {
-  let buf = qualityColorize(item, '.' + B.line(38) + '.') + '\r\n';
-  buf += '| ' + qualityColorize(item, sprintf('%-36s', item.name)) + ' |\r\n';
+  let buf = qualityColorize(item, sprintf('%-36s', item.name)) + '\r\n';
+  buf += qualityColorize(item, '.' + B.line(38) + '.') + '\r\n';
 
   const props = item.metadata;
 
-  buf += sprintf('| %-36s |\r\n', item.type === ItemType.ARMOR ? 'Доспех' : 'Оружие');
+  if (item.type === ItemType.ARMOR) {
+    buf += sprintf('| %-36s |\r\n', 'Одежда');
+  } else if (item.type === ItemType.WEAPON) {
+    buf += sprintf('| %-36s |\r\n', 'Оружие');
+  } else if (item.type === ItemType.CONTAINER) {
+    buf += sprintf('| %-36s |\r\n', 'Контейнер');
+  }
 
   const requirements = item.metadata.requirements;
   if (requirements) {
@@ -95,7 +101,8 @@ exports.renderItem = function (state, item, player) {
       buf += sprintf('| %-36s |\r\n', item.metadata.slot[0].toUpperCase() + item.metadata.slot.slice(1));
       break;
     case ItemType.CONTAINER:
-      buf += sprintf('| %-36s |\r\n', `Содержится ${item.maxItems} предметов`);
+      buf += sprintf('| %-36s |\r\n', item.metadata.slot[0].toUpperCase() + item.metadata.slot.slice(1));
+      buf += sprintf('| %-36s |\r\n', `Поместится ${item.maxItems} предметов`);
       break;
   }
 

@@ -82,7 +82,7 @@ module.exports = {
       return say(player, `Вы не можете надеть ${ItemUtil.display(item, 'vname')}.`);
     }
 
-    if (item.level > player.level) {
+    if (item.metadata.level > player.level) {
       return say(player, `Вы пока не можете использовать ${ItemUtil.display(item, 'vname')}.`);
     }
 

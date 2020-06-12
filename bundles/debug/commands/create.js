@@ -1,6 +1,7 @@
 'use strict';
 
 const { Broadcast, PlayerRoles } = require('ranvier');
+const EnhanceItem = require('../../lib/lib/EnhanceItem');
 
 module.exports = {
   aliases: ['создать'],
@@ -17,6 +18,7 @@ module.exports = {
 
     if (isItem) {
       targetItem = player.room.spawnItem(state, target);
+//      player.addItem(EnhanceItem.enhance(targetItem, 'artifact'));
       player.addItem(targetItem);
       player.room.removeItem(targetItem);
       Broadcast.sayAt(player, `Вы создали ${targetItem.name}.`);

@@ -2,6 +2,7 @@
 
 const LootTable = require('../../lib/LootTable');
 const { Player, Item, Logger } = require('ranvier');
+const EnhanceItem = require('../../../lib/lib/EnhanceItem');
 
 module.exports = {
   listeners: {
@@ -42,8 +43,25 @@ module.exports = {
 
       Logger.log(`Generated corpse: ${corpse.uuid}`);
 
+      const uncommonChance = 5;
+      const rareChance = 1;
+      const epicChance = 0.5;
+      const legendaryChance = 0.1;
+      const artifactChance = 0.01;
       items.forEach(item => {
         item.hydrate(state);
+        let chance = Math.random()*100;
+        if (chance <= artifactChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
+          item = EnhanceItem.enhance(item, 'artifact');
+        } else if (chance <= legendaryChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
+          item = EnhanceItem.enhance(item, 'legendary');
+        }  else if (chance <= epicChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
+          item = EnhanceItem.enhance(item, 'epic');
+        } else if (chance <= rareChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
+          item = EnhanceItem.enhance(item, 'rare');
+        } else if (chance <= uncommonChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
+          item = EnhanceItem.enhance(item, 'uncommon');
+        }
         corpse.addItem(item);
       });
       room.addItem(corpse);

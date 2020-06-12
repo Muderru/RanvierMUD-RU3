@@ -359,6 +359,10 @@ function lookEntity(state, player, args) {
       case ItemType.ARMOR:
         return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
       case ItemType.CONTAINER: {
+        let slot = entity.getMeta('slot');
+        if (slot) {
+          B.sayAt(player, ItemUtil.renderItem(state, entity, player));
+        }
         if (!entity.inventory || !entity.inventory.size) {
           return B.sayAt(player, `В ${entity.dname} пусто.`);
         }
