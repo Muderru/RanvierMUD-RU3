@@ -81,6 +81,8 @@ module.exports = {
       player.setMeta('magicPoints', 1);
       player.setMeta('skillPoints', 1);
       player.setMeta('skill_flee', 1);
+      player.setMeta('currencies', {});
+      player.setMeta('currencies.золото', 0);
 
       const room = state.RoomManager.getRoom(startingRoomRef);
       player.room = room;
