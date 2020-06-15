@@ -24,6 +24,10 @@ module.exports = {
       return Broadcast.sayAt(player, "У вас ничего такого нет.");
     }
 
+    if (item.getMeta('forSell') > 0) {
+      item.setMeta('forSell', 0);
+    }
+
     player.removeItem(item);
     player.room.addItem(item);
     player.emit('drop', item);

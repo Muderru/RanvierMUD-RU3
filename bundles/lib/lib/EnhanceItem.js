@@ -685,7 +685,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.vname = randomStatPrefix(item, stat)[3] + ' ' + item.vname;
       item.tname = randomStatPrefix(item, stat)[4] + ' ' + item.tname;
       item.pname = randomStatPrefix(item, stat)[5] + ' ' + item.pname;
-      item.keywords.push(stat);
+      item.keywords.push(randomStatPrefix(item, stat)[0]);
       lvl = item.getMeta('level');
       lvl < 99 ? item.setMeta('level', lvl + 1) : item.setMeta('level', 99);
       item.setMeta('quality', 'uncommon');
@@ -704,7 +704,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.vname = randomStatPrefix(item, stat)[3] + ' ' + item.vname;
       item.tname = randomStatPrefix(item, stat)[4] + ' ' + item.tname;
       item.pname = randomStatPrefix(item, stat)[5] + ' ' + item.pname;
-      item.keywords.push(stat);
+      item.keywords.push(randomStatPrefix(item, stat)[0]);
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
       } else {
@@ -736,7 +736,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.vname = randomStatPrefix(item, stat)[3] + ' ' + item.vname;
       item.tname = randomStatPrefix(item, stat)[4] + ' ' + item.tname;
       item.pname = randomStatPrefix(item, stat)[5] + ' ' + item.pname;
-      item.keywords.push(stat);
+      item.keywords.push(randomStatPrefix(item, stat)[0]);
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
       } else {
@@ -745,11 +745,11 @@ exports.enhance = function (item, quality = 'uncommon') {
       }
       stat = randomStat();
       item.name = item.name + ' ' + randomStatSuffix(item, stat) + '★';
-      item.rname = item.rname + ' ' + randomStatSuffix(item, stat);
-      item.dname = item.dname + ' ' + randomStatSuffix(item, stat);
-      item.vname = item.vname + ' ' + randomStatSuffix(item, stat);
-      item.tname = item.tname + ' ' + randomStatSuffix(item, stat);
-      item.pname = item.pname + ' ' + randomStatSuffix(item, stat);
+      item.rname = item.rname + ' ' + randomStatSuffix(item, stat) + '★';
+      item.dname = item.dname + ' ' + randomStatSuffix(item, stat) + '★';
+      item.vname = item.vname + ' ' + randomStatSuffix(item, stat) + '★';
+      item.tname = item.tname + ' ' + randomStatSuffix(item, stat) + '★';
+      item.pname = item.pname + ' ' + randomStatSuffix(item, stat) + '★';
       lvl = item.getMeta('level');
       lvl < 97 ? item.setMeta('level', lvl + 3) : item.setMeta('level', 99);
       item.setMeta('quality', 'epic');
@@ -780,7 +780,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.vname = randomStatPrefix(item, stat)[3] + ' ' + item.vname;
       item.tname = randomStatPrefix(item, stat)[4] + ' ' + item.tname;
       item.pname = randomStatPrefix(item, stat)[5] + ' ' + item.pname;
-      item.keywords.push(stat);
+      item.keywords.push(randomStatPrefix(item, stat)[0]);
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
       } else {
@@ -789,11 +789,11 @@ exports.enhance = function (item, quality = 'uncommon') {
       }
       stat = randomStat();
       item.name = item.name + ' ' + randomStatSuffix(item, stat) + '★★';
-      item.rname = item.rname + ' ' + randomStatSuffix(item, stat);
-      item.dname = item.dname + ' ' + randomStatSuffix(item, stat);
-      item.vname = item.vname + ' ' + randomStatSuffix(item, stat);
-      item.tname = item.tname + ' ' + randomStatSuffix(item, stat);
-      item.pname = item.pname + ' ' + randomStatSuffix(item, stat);
+      item.rname = item.rname + ' ' + randomStatSuffix(item, stat) + '★★';
+      item.dname = item.dname + ' ' + randomStatSuffix(item, stat) + '★★';
+      item.vname = item.vname + ' ' + randomStatSuffix(item, stat) + '★★';
+      item.tname = item.tname + ' ' + randomStatSuffix(item, stat) + '★★';
+      item.pname = item.pname + ' ' + randomStatSuffix(item, stat) + '★★';
       lvl = item.getMeta('level');
       lvl < 96 ? item.setMeta('level', lvl + 4) : item.setMeta('level', 99);
       item.setMeta('quality', 'legendary');
@@ -824,7 +824,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.vname = randomStatPrefix(item, stat)[3] + ' ' + item.vname;
       item.tname = randomStatPrefix(item, stat)[4] + ' ' + item.tname;
       item.pname = randomStatPrefix(item, stat)[5] + ' ' + item.pname;
-      item.keywords.push(stat);
+      item.keywords.push(randomStatPrefix(item, stat)[0]);
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
       } else {
@@ -833,11 +833,11 @@ exports.enhance = function (item, quality = 'uncommon') {
       }
       stat = randomStat();
       item.name = item.name + ' ' + randomStatSuffix(item, stat) + '★★★';
-      item.rname = item.rname + ' ' + randomStatSuffix(item, stat);
-      item.dname = item.dname + ' ' + randomStatSuffix(item, stat);
-      item.vname = item.vname + ' ' + randomStatSuffix(item, stat);
-      item.tname = item.tname + ' ' + randomStatSuffix(item, stat);
-      item.pname = item.pname + ' ' + randomStatSuffix(item, stat);
+      item.rname = item.rname + ' ' + randomStatSuffix(item, stat) + '★★★';
+      item.dname = item.dname + ' ' + randomStatSuffix(item, stat) + '★★★';
+      item.vname = item.vname + ' ' + randomStatSuffix(item, stat) + '★★★';
+      item.tname = item.tname + ' ' + randomStatSuffix(item, stat) + '★★★';
+      item.pname = item.pname + ' ' + randomStatSuffix(item, stat) + '★★★';
       lvl = item.getMeta('level');
       lvl < 95 ? item.setMeta('level', lvl + 5) : item.setMeta('level', 99);
       item.setMeta('quality', 'artifact');

@@ -64,6 +64,10 @@ module.exports = {
       }
     }
 
+    if (targetItem.getMeta('forSell') > 0) {
+      targetItem.setMeta('forSell', 0);
+    }
+
     player.removeItem(targetItem);
     target.addItem(targetItem);
 

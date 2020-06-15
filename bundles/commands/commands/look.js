@@ -167,11 +167,22 @@ function lookRoom(state, player) {
       if (otherPlayer.hasAttribute('hide') && otherPlayer.getAttribute('hide') > player.getAttribute('detect_hide')) {
         return;
       }
+      let trader = false;
+      for (const [, item ] of otherPlayer.inventory) {
+        if (item.getMeta('forSell') > 0) {
+          trader = true;
+        }
+      }
       let combatantsDisplay = '';
       if (otherPlayer.isInCombat()) {
         combatantsDisplay = getCombatantsDisplay(otherPlayer);
+        trader = false;
       }
-    B.sayAt(player, '[Игрок] ' + otherPlayer.name + combatantsDisplay);
+      if (trader) {
+        B.sayAt(player, '[Игрок] ' + otherPlayer.name + ' (торгует)');
+      } else {
+        B.sayAt(player, '[Игрок] ' + otherPlayer.name + combatantsDisplay);
+      }
     });
   } else if (room.players.size > 1) {
     B.sayAt(player, `Тут есть другие игроки.`);

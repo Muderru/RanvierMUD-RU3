@@ -19,7 +19,11 @@ module.exports = {
 
     // TODO: Implement grouping
     for (const [, item ] of player.inventory) {
-      Broadcast.sayAt(player, ItemUtil.display(item));
+      if (item.getMeta('forSell') > 0) {
+        Broadcast.sayAt(player, ItemUtil.display(item) + ` (продается за ${item.getMeta('forSell')} золота)`);
+      } else {
+        Broadcast.sayAt(player, ItemUtil.display(item));
+      }
     }
   }
 };
