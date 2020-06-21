@@ -47,7 +47,7 @@ module.exports = {
       }
 
       if (container.closed) {
-        return Broadcast.sayAt(player, `${ItemUtil.display(container)}: закрыто.`);
+        return Broadcast.sayAt(player, `${container.Name} - закрыто.`);
       }
 
       search = parts[0];
@@ -108,7 +108,7 @@ function pickup(item, container, player) {
     ending = 'о';
   }
 
-  Broadcast.sayAtExcept(player.room, player.Name + ` взял` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
+  Broadcast.sayAtExcept(player.room, player.Name + ` взял${ending} ${ItemUtil.display(item, 'vname')}.`, player);
   Broadcast.sayAt(player, `<green>Вы взяли </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
 
   item.emit('get', player);

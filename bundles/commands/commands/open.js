@@ -155,7 +155,7 @@ function handleItem(player, item, action)
   switch (action) {
     case 'открыть': {
       if (item.locked) {
-        return B.sayAt(player, `${item.Name} заперт${ending}.`);
+        return B.sayAt(player, `${item.Name} - заперто.`);
       }
 
       if (item.closed) {

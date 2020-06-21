@@ -116,10 +116,20 @@ module.exports = {
           case error instanceof InvalidCommandError:
             if (player.room && player.room instanceof Room) {
               // check to see if room has a matching context-specific command
-              const roomCommands = player.room.getMeta('commands');
+              let roomCommands = player.room.getMeta('commands') || [];
+              // добавляем команды с предметов в инвентаре
+              for (const [, item ] of player.inventory) {
+                if (item.getMeta('commands')) {
+                  const addCommands = item.getMeta('commands');
+                  roomCommands = roomCommands.concat(addCommands);
+                }
+              }
               const [commandName, ...args] = data.split(' ');
                 if (roomCommands && roomCommands.includes(commandName)) {
                   player.room.emit('command', player, commandName, args.join(' '));
+                  for (const [, item ] of player.inventory) {
+                    item.emit('command', player, commandName, args.join(' '));
+                  }
                   break;
                 }
             }
