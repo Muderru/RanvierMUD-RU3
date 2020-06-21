@@ -17,7 +17,7 @@ module.exports = {
 
       const playerGold = player.getMeta('currencies.золото');
       player.setMeta('currencies.золото', playerGold + money);
-      Broadcast.sayAt(player, `Вы получили ${money} монет.`);
+      Broadcast.sayAt(player, `Вы получили ${money} золота.`);
 
       Logger.verbose(`${player.name} has receive ${money} gold.`);
       state.ItemManager.remove(this);

@@ -15,7 +15,7 @@ module.exports = {
       return state.CommandManager.get('help').execute('торговать', player);
     }
 
-    const possibleCommands = ['купить', 'список', 'предмет'];
+    const possibleCommands = ['купить', 'список', 'предмет', 'посмотреть'];
 
     let [command, itemToSell, playerOrPrice ] = args.split(' ');
 
@@ -161,6 +161,27 @@ module.exports = {
       player.setMeta('currencies.золото', playerGold - cost);
       const targetGold = target.getMeta('currencies.золото');
       target.setMeta('currencies.золото', targetGold + cost);
+    }
+
+    if (command === 'посмотреть') {
+      let target = dot(playerOrPrice, player.room.players);
+      if (!target) {
+        return B.sayAt(player, 'Посмотреть у кого?');
+      }
+      if (!target.inventory || !target.inventory.size) {
+        return B.sayAt(player, `${target.Name} ничего не продает.`);
+      }
+
+      let item = dot(itemToSell, target.inventory);
+      if (!item) {
+        return B.sayAt(player, 'Что вы хотите посмотреть?');
+      }
+
+      if (!item.getMeta('forSell') || item.getMeta('forSell') < 1) {
+        return B.sayAt(player, 'Что вы хотите посмотреть?');
+      }
+
+      return B.sayAt(player, ItemUtil.renderItem(state, item, player));
     }
 
     function friendlyCurrencyName(currency) {

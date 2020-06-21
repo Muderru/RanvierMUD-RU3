@@ -212,7 +212,14 @@ module.exports = {
       const timeSinceLastCommand = Date.now() - lastCommandTime;
       const maxIdleTime = (Math.abs(Config.get('maxIdleTime')) * 60000) || Infinity;
 
-      if (timeSinceLastCommand > maxIdleTime && !this.isInCombat() && this.role === PlayerRoles.PLAYER) {
+      let trader = false;
+      for (const [, item ] of this.inventory) {
+        if (item.getMeta('forSell') > 0) {
+          trader = true;
+        }
+      }
+
+      if (timeSinceLastCommand > maxIdleTime && !this.isInCombat() && this.role === PlayerRoles.PLAYER && !trader) {
         this.save(() => {
           B.sayAt(this, `Вы были удалены из игры за бездействие в течении ${maxIdleTime / 60000} минут!`);
           if (this.gender === 'male') {

@@ -98,5 +98,8 @@ module.exports = {
     }
 
     say(player, `<green>Вы надели</green> ${ItemUtil.display(item, 'vname')}<green>.</green>`);
+    if (item.getMeta('forSell') > 0) {
+      item.setMeta('forSell', 0);
+    }
   }
 };
