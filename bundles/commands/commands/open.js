@@ -155,16 +155,16 @@ function handleItem(player, item, action)
   switch (action) {
     case 'открыть': {
       if (item.locked) {
-        return B.sayAt(player, `${ItemUtil.display(item)}: заперто.`);
+        return B.sayAt(player, `${item.Name} заперт${ending}.`);
       }
 
       if (item.closed) {
-        B.sayAt(player, `Вы открыли ${ItemUtil.display(item, 'vname')}.`);
-        B.sayAtExcept(player.room, player.Name + ` открыл` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
+        B.sayAt(player, `Вы открыли ${item.vname}.`);
+        B.sayAtExcept(player.room, player.Name + ` открыл${ending} ${item.vname}.`, player);
         return item.open();
       }
 
-      return B.sayAt(player, `${ItemUtil.display(item)} - тут уже открыто.`);
+      return B.sayAt(player, `${item.Name} - тут уже открыто.`);
     }
 
     case 'закрыть': {
@@ -172,8 +172,8 @@ function handleItem(player, item, action)
         return B.sayAt(player, "Здесь уже закрыто.");
       }
 
-      B.sayAt(player, `Вы закрыли ${ItemUtil.display(item, 'vname')}.`);
-      B.sayAtExcept(player.room, player.Name + ` закрыл` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
+      B.sayAt(player, `Вы закрыли ${item.vname}.`);
+      B.sayAtExcept(player.room, player.Name + ` закрыл${ending} ${item.vname}.`, player);
 
       return item.close();
     }
@@ -184,13 +184,13 @@ function handleItem(player, item, action)
       }
 
       if (!item.lockedBy) {
-        return B.sayAt(player, `Вы не можете запереть ${ItemUtil.display(item, 'vname')}.`);
+        return B.sayAt(player, `Вы не можете запереть ${item.vname}.`);
       }
 
       const playerKey = player.hasItem(item.lockedBy);
       if (playerKey) {
-        B.sayAt(player, `*Щёлк* Вы заперли ${ItemUtil.display(item, 'vname')}.`);
-        B.sayAtExcept(player.room, player.Name + ` запирает ${ItemUtil.display(item, 'vname')}.`, player);
+        B.sayAt(player, `*Щёлк* Вы заперли ${item.vname}.`);
+        B.sayAtExcept(player.room, player.Name + ` запирает ${item.vname}.`, player);
 
         return item.lock();
       }
@@ -200,18 +200,18 @@ function handleItem(player, item, action)
 
     case 'отпереть': {
       if (!item.locked) {
-        return B.sayAt(player, `${ItemUtil.display(item)} - а тут и не заперто...`);
+        return B.sayAt(player, `${item.Name} - а тут и не заперто...`);
       }
 
       if (!item.closed) {
-        return B.sayAt(player, `${ItemUtil.display(item)} - а тут и не закрыто...`);
+        return B.sayAt(player, `${item.Name} - а тут и не закрыто...`);
       }
 
       if (item.lockedBy) {
         const playerKey = player.hasItem(item.lockedBy);
         if (playerKey) {
-          B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')} с помощью ${ItemUtil.display(playerKey, 'rname')}.`);
-          B.sayAtExcept(player.room, player.Name + ` отпирает ${ItemUtil.display(item, 'vname')} с помощью ${ItemUtil.display(playerKey, 'rname')}.`, player);
+          B.sayAt(player, `*Щёлк* Вы отперли ${item.vname} с помощью ${ItemUtil.display(playerKey, 'rname')}.`);
+          B.sayAtExcept(player.room, player.Name + ` отпирает ${item.vname} с помощью ${ItemUtil.display(playerKey, 'rname')}.`, player);
 
           return item.unlock();
         }
@@ -219,8 +219,8 @@ function handleItem(player, item, action)
         return B.sayAt(player, "Предмет заперт и у вас нет ключа.");
       }
 
-      B.sayAt(player, `*Щёлк* Вы отперли ${ItemUtil.display(item, 'vname')}.`);
-      B.sayAtExcept(player.room, player.Name + ` отпирает ${ItemUtil.display(item, 'vname')}.`, player);
+      B.sayAt(player, `*Щёлк* Вы отперли ${item.vname}.`);
+      B.sayAtExcept(player.room, player.Name + ` отпирает ${item.vname}.`, player);
 
       return item.unlock();
     }
