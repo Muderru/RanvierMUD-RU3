@@ -10,7 +10,7 @@ const ItemUtil = require('../../lib/lib/ItemUtil');
  * example behavior implementation
  */
 module.exports = {
-  aliases: [ 'осушить', 'зачитать', 'использовать' ],
+  aliases: [ 'осушить', 'использовать' ],
   command: state => (args, player) => {
     const say = message => Broadcast.sayAt(player, message);
 
@@ -62,7 +62,7 @@ module.exports = {
         }
 
         Logger.error(e.message);
-        B.sayAt(this, 'Чего?');
+        say('Чего?');
       }
     }
 

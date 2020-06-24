@@ -369,6 +369,8 @@ function lookEntity(state, player, args) {
       case ItemType.WEAPON:
       case ItemType.ARMOR:
         return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
+      case ItemType.SCROLL:
+        return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
       case ItemType.CONTAINER: {
         let slot = entity.getMeta('slot');
         if (slot) {

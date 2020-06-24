@@ -2,7 +2,7 @@
 
 const { Broadcast: B, SkillType, Config, Logger, Heal } = require('ranvier');
 
-const manaCost = 300;
+const manaCost = 100;
 
 function getSkill(player) {
   let spellStrength = 1;

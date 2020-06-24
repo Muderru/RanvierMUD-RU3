@@ -53,6 +53,10 @@ subcommands.add({
         title: 'Разное',
         items: [],
       },
+      [ItemType.SCROLL]: {
+        title: 'Свитки',
+        items: [],
+      },
     };
 
     for (const item of items) {

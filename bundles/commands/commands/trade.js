@@ -60,6 +60,10 @@ module.exports = {
           title: 'Разное',
           items: [],
         },
+        [ItemType.SCROLL]: {
+          title: 'Свитки',
+          items: [],
+        },
       };
 
       let counter = 0;

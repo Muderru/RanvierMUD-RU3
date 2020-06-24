@@ -78,6 +78,8 @@ exports.renderItem = function (state, item, player) {
     buf += sprintf('| %-36s |\r\n', 'Оружие');
   } else if (item.type === ItemType.CONTAINER) {
     buf += sprintf('| %-36s |\r\n', 'Контейнер');
+  } else if (item.type === ItemType.SCROLL) {
+    buf += sprintf('| %-36s |\r\n', 'Свиток');
   }
 
   const requirements = item.metadata.requirements;
@@ -103,6 +105,11 @@ exports.renderItem = function (state, item, player) {
     case ItemType.CONTAINER:
       buf += sprintf('| %-36s |\r\n', item.metadata.slot[0].toUpperCase() + item.metadata.slot.slice(1));
       buf += sprintf('| %-36s |\r\n', `Поместится ${item.maxItems} предметов`);
+      break;
+    case ItemType.SCROLL:
+      let scrollSpell = state.SpellManager.find(item.metadata.spell);
+      buf += sprintf('| %-36s |\r\n', `Заклинание '` + scrollSpell.name[0].toUpperCase() + scrollSpell.name.slice(1) + `'.`);
+      buf += sprintf('| %-36s |\r\n', `Использует ${scrollSpell.resource.cost} маны.`);
       break;
   }
 
