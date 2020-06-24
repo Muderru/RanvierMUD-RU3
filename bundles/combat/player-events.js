@@ -51,6 +51,18 @@ module.exports = {
         return;
       }
 
+      if (!damage.source.damageVerb) {
+        if (damage.source.gender === 'male') {
+          damage.source.damageVerb = 'травмировал';
+        } else if (damage.source.gender === 'female') {
+          damage.source.damageVerb = 'травмировала';
+        } else if (damage.source.gender === 'plural') {
+          damage.source.damageVerb = 'травмировали';
+        } else {
+          damage.source.damageVerb = 'травмировало';
+        }
+      }
+
       let buf = '';
       if (damage.source !== this) {
           if (damage.source.gender === 'male') {

@@ -213,9 +213,11 @@ module.exports = {
       const maxIdleTime = (Math.abs(Config.get('maxIdleTime')) * 60000) || Infinity;
 
       let trader = false;
-      for (const [, item ] of this.inventory) {
-        if (item.getMeta('forSell') > 0) {
-          trader = true;
+      if (this.inventory) {
+        for (const [, item ] of this.inventory) {
+          if (item.getMeta('forSell') > 0) {
+            trader = true;
+          }
         }
       }
 
