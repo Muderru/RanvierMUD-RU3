@@ -12,6 +12,8 @@ module.exports = {
     damageVerb: 'мучает',
     description: 'Урон вашей следующей атаки уменьшен.',
     type: 'skill:judge',
+    unique: true,
+    persists: false,
   },
   flags: [EffectFlag.DEBUFF],
   state: {

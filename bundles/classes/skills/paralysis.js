@@ -1,16 +1,9 @@
 'use strict';
 
 const { Broadcast: B, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 185;
-
-function getSkill(player) {
-  let spellStrength = 1;
-  if (player.getMeta('spell_paralysis') > 0) {
-    spellStrength = player.getMeta('spell_paralysis');
-  }
-  return spellStrength;
-}
 
 /**
  * Паралич
@@ -27,40 +20,25 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 60,
+  cooldown: 90,
 
   run: state => function (args, player, target) {
-    let duration = 0;
-    if (player.hasAttribute('agility')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('agility')/10));
-    }
-
-    if (player.hasAttribute('intellect')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('intellect')/10));
-    }
-
-      B.sayAt(player, `<b>Вы сжимаете руку в кулак, заставляя мышцы ${target.rname} деревенеть.</b>`);
-      B.sayAtExcept(player.room, `<b>${player.Name} сжимает руку в кулак, заставляя мышцы ${target.rname} деревенеть.</b>`, [target, player]);
-      if (!target.isNpc) {
-        B.sayAt(target, `<b>${player.Name} сжимает руку в кулак, заставляя ваши мышцы деревенеть.</b>`);
-      }
-
     if (!target.hasAttribute('freedom')) {
-      target.addAttribute(state.AttributeFactory.create('freedom', 0));
+      return B.sayAt(player, `<b>На ${target.vname} это заклинание не подействует.</b>`);
     }
-    const effect = state.EffectFactory.create('paralysis', {duration}, {spellStrength: getSkill(player)});
+
+    let duration = SkillUtil.effectDuration(player);
+
+    B.sayAt(player, `<b><magenta>Вы пристально смотрите в глаза ${target.rname}, приказывая замереть.</magenta></b>`);
+    B.sayAtExcept(player.room, `<b><magenta>${player.Name} пристально смотрит в глаза ${target.rname}, приказывая замереть.</magenta></b>`, [target, player]);
+    if (!target.isNpc) {
+      B.sayAt(target, `<b><magenta>${player.Name} пристально смотрит в ваши глаза, приказывая замереть.</magenta></b>`);
+    }
+
+    const effect = state.EffectFactory.create('paralysis', {duration}, {spellStrength: SkillUtil.getBuff(player, 'spell_paralysis')});
     target.addEffect(effect);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('spell_paralysis') < 100) {
-            let skillUp = player.getMeta('spell_paralysis');
-            player.setMeta('spell_paralysis', skillUp + 1);
-            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Паралич\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'spell_invisibility');
   },
 
   info: (player) => {

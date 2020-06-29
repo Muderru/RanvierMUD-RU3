@@ -274,7 +274,7 @@ class Combat {
    * @param {boolean} average Whether to find the average or a random between min/max
    * @return {number}
    */
-  static calculateWeaponDamage(attacker, average = false) {
+  static calculateWeaponDamage(attacker) {
     let weaponDamage = this.getWeaponDamage(attacker);
     let amount = 0;
     amount = Random.inRange(weaponDamage.min, weaponDamage.max);

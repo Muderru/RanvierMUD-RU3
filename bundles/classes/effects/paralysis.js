@@ -11,7 +11,9 @@ module.exports = {
     gender: 'male',
     description: 'Ваши мышцы менее подвижны.',
     type: 'paralysis',
-    maxStacks: 1,
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.DEBUFF],
   modifiers: {

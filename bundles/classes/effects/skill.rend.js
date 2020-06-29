@@ -11,8 +11,9 @@ module.exports = {
     gender: 'male',
     damageVerb: 'ранит',
     type: 'skill:rend',
-    maxStacks: 3,
-    tickInterval: 3,
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.DEBUFF],
   listeners: {

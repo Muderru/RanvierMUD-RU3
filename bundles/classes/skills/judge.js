@@ -1,47 +1,13 @@
 'use strict';
 
-const { Broadcast, Damage, Heal, SkillType } = require('ranvier');
+const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const SkillUtil = require('../lib/SkillUtil');
 
-// config placed here just for easy copy/paste of this skill later on
-const cooldown = 8;
+const cooldown = 20;
 const manaCost = 60;
-const reductionPercent = 10;
-
-function getAttr1(player, target) {
-  let addDamage = 0;
-  if (player.hasAttribute('crushing_damage')) {
-    if (target.hasAttribute('crushing_resistance')) {
-      if (player.getAttribute('crushing_damage') > target.getAttribute('crushing_resistance')) {
-        addDamage += player.getAttribute('crushing_damage') - target.getAttribute('crushing_resistance');
-      }
-    } else {
-        addDamage += player.getAttribute('crushing_damage');
-    }
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('strength')) {
-      addDamage += player.getAttribute('strength');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('skill_judge') > 0) {
-    addDamage = player.getMeta('skill_judge')*0.01;
-  }
-  return 1+addDamage;
-}
+const reductionPercent = 50; //debaff %
+const ddMod = 0.9; //direct damage coefficient
 
 module.exports = {
   aliases: ['осуждение'],
@@ -68,36 +34,21 @@ module.exports = {
     effect.skill = this;
     effect.attacker = player;
 
-    let amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
-    
-    if (player.isNpc) {
-      amount *= 2;
-    }
-    
-    const damage = new Damage('health', amount, player, this, {
-      type: 'holy',
-    });
+    let amount = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'judge') * ddMod);
 
-      Broadcast.sayAt(player, `<b><yellow>Поток священной силы сотрясает ${target.vname}!</yellow></b>`);
-      Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} сотрясает потоком священной энергии ${target.vname}!</yellow></b>`, [target, player]);
-      Broadcast.sayAt(target, `<b><yellow>${player.Name} сотрясает вас потоком священной энергии!</yellow></b>`);
+    const damage = new Damage('health', amount, player, this);
+
+    Broadcast.sayAt(player, `<b><yellow>Поток священной силы сотрясает ${target.vname}!</yellow></b>`);
+    Broadcast.sayAtExcept(player.room, `<b><yellow>${player.Name} сотрясает потоком священной энергии ${target.vname}!</yellow></b>`, [target, player]);
+    Broadcast.sayAt(target, `<b><yellow>${player.Name} сотрясает вас потоком священной энергии!</yellow></b>`);
 
     damage.commit(target);
     target.addEffect(effect);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_judge') < 100) {
-            let skillUp = player.getMeta('skill_judge');
-            player.setMeta('skill_judge', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Осуждение\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'skill_judge');
   },
 
   info: (player) => {
-      return `Поражает цель священной энергией и наносит урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Также уменьшает урон от следующей атаки цели на <b>${reductionPercent}%</b>.`;
+    return `Поражает цель священной энергией и наносит урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Также уменьшает урон от следующей атаки цели на <b>${reductionPercent}%</b>.`;
   }
 };

@@ -23,8 +23,8 @@ module.exports = {
     say("<b>" + B.center(40, 'Умения', 'green'));
     say("<b>" + B.line(40, '=', 'green'));
 
-    for (let skillId of skill) {
-      let skillLearned = state.SkillManager.find(skillId, true);
+    for (const skillId of skill) {
+      const skillLearned = state.SkillManager.find(skillId, true);
       let skillname = 'skill_' + skillId;
       if (!skillLearned.flags.includes(SkillFlag.PASSIVE)) {
         if (player.getMeta(skillname) > 0) {
@@ -38,7 +38,7 @@ module.exports = {
     say("<b>" + B.center(40, 'Заклинания', 'green'));
     say("<b>" + B.line(40, '=', 'green'));
 
-    for (let spellId of spell) {
+    for (const spellId of spell) {
       let spellname = 'spell_' + spellId;
         if (player.getMeta(spellname) > 0) {
           let spellLearned = state.SpellManager.find(spellId);
@@ -51,8 +51,8 @@ module.exports = {
     say("<b>" + B.center(40, 'Пассивные', 'green'));
     say("<b>" + B.line(40, '=', 'green'));
 
-    for (let skillId of skill) {
-      let skillLearned = state.SkillManager.find(skillId, true);
+    for (const skillId of skill) {
+      const skillLearned = state.SkillManager.find(skillId, true);
       let skillname = 'skill_' + skillId;
         if (skillLearned.flags.includes(SkillFlag.PASSIVE)) {
           if (player.getMeta(skillname) > 0) {

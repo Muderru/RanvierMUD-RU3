@@ -8,98 +8,98 @@ module.exports = {
       if (!config) {
         config = 0;
       }
-      if (!this.hasAttribute('strength')) {
-        this.addAttribute(state.AttributeFactory.create('strength', config));
+      if (this.getAttribute('strength') === 0) {
+        this.attributes.get('strength').setBase(20 + config);
       }
-      if (!this.hasAttribute('agility')) {
-        this.addAttribute(state.AttributeFactory.create('agility', config));
+      if (this.getAttribute('agility') === 0) {
+        this.attributes.get('agility').setBase(20 + config);
       }
-      if (!this.hasAttribute('intellect')) {
-        this.addAttribute(state.AttributeFactory.create('intellect', config));
+      if (this.getAttribute('intellect') === 0) {
+        this.attributes.get('intellect').setBase(20 + config);
       }
-      if (!this.hasAttribute('stamina')) {
-        this.addAttribute(state.AttributeFactory.create('stamina', config));
+      if (this.getAttribute('stamina') === 0) {
+        this.attributes.get('stamina').setBase(20 + config);
       }
-      if (!this.hasAttribute('armor')) {
-        this.addAttribute(state.AttributeFactory.create('armor', config));
+      if (this.getAttribute('armor') === 0) {
+        this.attributes.get('armor').setBase(config);
       }
-      if (!this.hasAttribute('critical')) {
-        this.addAttribute(state.AttributeFactory.create('critical', config));
+      if (this.getAttribute('critical') === 0) {
+        this.attributes.get('critical').setBase(config);
       }
-      if (!this.hasAttribute('cutting_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('cutting_resistance', config));
+      if (this.getAttribute('cutting_resistance') === 0) {
+        this.attributes.get('cutting_resistance').setBase(config);
       }
-      if (!this.hasAttribute('crushing_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('crushing_resistance', config));
+      if (this.getAttribute('crushing_resistance') === 0) {
+        this.attributes.get('crushing_resistance').setBase(config);
       }
-      if (!this.hasAttribute('piercing_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('piercing_resistance', config));
+      if (this.getAttribute('piercing_resistance') === 0) {
+        this.attributes.get('piercing_resistance').setBase(config);
       }
-      if (!this.hasAttribute('fire_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('fire_resistance', config));
+      if (this.getAttribute('fire_resistance') === 0) {
+        this.attributes.get('fire_resistance').setBase(config);
       }
-      if (!this.hasAttribute('cold_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('cold_resistance', config));
+      if (this.getAttribute('cold_resistance') === 0) {
+        this.attributes.get('cold_resistance').setBase(config);
       }
-      if (!this.hasAttribute('lightning_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('lightning_resistance', config));
+      if (this.getAttribute('lightning_resistance') === 0) {
+        this.attributes.get('lightning_resistance').setBase(config);
       }
-      if (!this.hasAttribute('earth_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('earth_resistance', config));
+      if (this.getAttribute('earth_resistance') === 0) {
+        this.attributes.get('earth_resistance').setBase(config);
       }
-      if (!this.hasAttribute('acid_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('acid_resistance', config));
+      if (this.getAttribute('acid_resistance') === 0) {
+        this.attributes.get('acid_resistance').setBase(config);
       }
-      if (!this.hasAttribute('chaos_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('chaos_resistance', config));
+      if (this.getAttribute('chaos_resistance') === 0) {
+        this.attributes.get('chaos_resistance').setBase(config);
       }
-      if (!this.hasAttribute('ether_resistance')) {
-        this.addAttribute(state.AttributeFactory.create('ether_resistance', config));
+      if (this.getAttribute('ether_resistance') === 0) {
+        this.attributes.get('ether_resistance').setBase(config);
       }
-      if (!this.hasAttribute('cutting_damage')) {
-        this.addAttribute(state.AttributeFactory.create('cutting_damage', config));
+      if (this.getAttribute('cutting_damage') === 0) {
+        this.attributes.get('cutting_damage').setBase(config);
       }
-      if (!this.hasAttribute('crushing_damage')) {
-        this.addAttribute(state.AttributeFactory.create('crushing_damage', config));
+      if (this.getAttribute('crushing_damage') === 0) {
+        this.attributes.get('crushing_damage').setBase(config);
       }
-      if (!this.hasAttribute('piercing_damage')) {
-        this.addAttribute(state.AttributeFactory.create('piercing_damage', config));
+      if (this.getAttribute('piercing_damage') === 0) {
+        this.attributes.get('piercing_damage').setBase(config);
       }
-      if (!this.hasAttribute('fire_damage')) {
-        this.addAttribute(state.AttributeFactory.create('fire_damage', config));
+      if (this.getAttribute('fire_damage') === 0) {
+        this.attributes.get('fire_damage').setBase(config);
       }
-      if (!this.hasAttribute('cold_damage')) {
-        this.addAttribute(state.AttributeFactory.create('cold_damage', config));
+      if (this.getAttribute('cold_damage') === 0) {
+        this.attributes.get('cold_damage').setBase(config);
       }
-      if (!this.hasAttribute('lightning_damage')) {
-        this.addAttribute(state.AttributeFactory.create('lightning_damage', config));
+      if (this.getAttribute('lightning_damage') === 0) {
+        this.attributes.get('lightning_damage').setBase(config);
       }
-      if (!this.hasAttribute('earth_damage')) {
-        this.addAttribute(state.AttributeFactory.create('earth_damage', config));
+      if (this.getAttribute('earth_damage') === 0) {
+        this.attributes.get('earth_damage').setBase(config);
       }
-      if (!this.hasAttribute('acid_damage')) {
-        this.addAttribute(state.AttributeFactory.create('acid_damage', config));
+      if (this.getAttribute('acid_damage') === 0) {
+        this.attributes.get('acid_damage').setBase(config);
       }
-      if (!this.hasAttribute('chaos_damage')) {
-        this.addAttribute(state.AttributeFactory.create('chaos_damage', config));
+      if (this.getAttribute('chaos_damage') === 0) {
+        this.attributes.get('chaos_damage').setBase(config);
       }
-      if (!this.hasAttribute('ether_damage')) {
-        this.addAttribute(state.AttributeFactory.create('ether_damage', config));
+      if (this.getAttribute('ether_damage') === 0) {
+        this.attributes.get('ether_damage').setBase(config);
       }
-      if (!this.hasAttribute('detect_invisibility')) {
-        this.addAttribute(state.AttributeFactory.create('detect_invisibility', config));
+      if (this.getAttribute('detect_invisibility') === 0) {
+        this.attributes.get('detect_invisibility').setBase(config);
       }
-      if (!this.hasAttribute('detect_hide')) {
-        this.addAttribute(state.AttributeFactory.create('detect_hide', config));
+      if (this.getAttribute('detect_hide') === 0) {
+        this.attributes.get('detect_hide').setBase(config);
       }
-      if (!this.hasAttribute('freedom')) {
-        this.addAttribute(state.AttributeFactory.create('freedom', config));
+      if (this.getAttribute('freedom') === 0) {
+        this.attributes.get('freedom').setBase(config);
       }
-      if (!this.hasAttribute('health_regeneration')) {
-        this.addAttribute(state.AttributeFactory.create('health_regeneration', config));
+      if (this.getAttribute('health_regeneration') === 0) {
+        this.attributes.get('health_regeneration').setBase(5 + config);
       }
-      if (!this.hasAttribute('mana_regeneration')) {
-        this.addAttribute(state.AttributeFactory.create('mana_regeneration', config));
+      if (this.getAttribute('mana_regeneration') === 0) {
+        this.attributes.get('mana_regeneration').setBase(5 + config);
       }
     }
   }

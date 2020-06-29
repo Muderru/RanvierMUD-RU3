@@ -24,7 +24,7 @@ module.exports = {
     if (skill.flags.includes(SkillFlag.PASSIVE)) {
       say('<b>Пассивное</b>');
     } else {
-      say(`<b>Использование</b>: ${skill.id}`);
+      say(`<b>Использование</b>: ${skill.id}, ${skill.aliases[0]}`);
     }
 
     if (skill.resource && skill.resource.cost) {

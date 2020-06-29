@@ -1,17 +1,11 @@
 'use strict';
 
 const { SkillFlag, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
 const interval = 5 * 60;
 const threshold = 30;
-
-function restorePercent(player) {
-  let addDamage = 1;
-  if (player.getMeta('skill_secondwind') > 0) {
-    addDamage = player.getMeta('skill_secondwind')*0.5;
-  }
-  return Math.ceil(addDamage);
-}
+const buffMod = 2; //сила баффа
 
 /**
  * Basic warrior passive
@@ -28,19 +22,10 @@ module.exports = {
   configureEffect: effect => {
     effect.state = Object.assign(effect.state, {
       threshold: threshold,
-      restorePercent: restorePercent(player),
+      restorePercent: Math.floor(SkillUtil.getBuff(player, 'skill_secondwind') * buffMod),
     });
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_secondwind') < 100) {
-            let skillUp = player.getMeta('skill_secondwind');
-            player.setMeta('skill_secondwind', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Второе дыхание\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'skill_secondwind');
 
     return effect;
   },

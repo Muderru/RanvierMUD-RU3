@@ -1,16 +1,9 @@
 'use strict';
 
 const { Broadcast: B, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 80;
-
-function getSkill(player) {
-  let spellStrength = 1;
-  if (player.getMeta('spell_light') > 0) {
-    spellStrength = player.getMeta('spell_light');
-  }
-  return spellStrength;
-}
 
 /**
  * Свет
@@ -27,17 +20,14 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 50,
+  cooldown: 20,
 
   run: state => function (args, player, target) {
-    let duration = 0;
-    if (player.hasAttribute('agility')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('agility')/10));
+    if (!target.hasAttribute('light')) {
+      return B.sayAt(player, `<b>На ${target.vname} это заклинание не подействует.</b>`);
     }
 
-    if (player.hasAttribute('intellect')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('intellect')/10));
-    }
+    let duration = SkillUtil.effectDuration(player);
 
     if (target !== player) {
       B.sayAt(player, `<b>Вы вздымаете руки к небесам и ${target.name} начинает светиться.</b>`);
@@ -48,19 +38,10 @@ module.exports = {
       B.sayAtExcept(player.room, `<b>${player.Name} вздымает руки к небесам и вы начинает светиться.</b>`, [player, target]);
     }
 
-    const effect = state.EffectFactory.create('light', {duration}, {spellStrength: getSkill(player)});
+    const effect = state.EffectFactory.create('light', {duration}, {spellStrength: SkillUtil.getBuff(player, 'spell_light')});
     target.addEffect(effect);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('spell_light') < 100) {
-            let skillUp = player.getMeta('spell_light');
-            player.setMeta('spell_light', skillUp + 1);
-            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Свет\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'spell_light');
   },
 
   info: (player) => {

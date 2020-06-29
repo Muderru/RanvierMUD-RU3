@@ -2,43 +2,10 @@
 
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 60;
-
-function getAttr1(player, target) {
-  let addDamage = 0;
-  if (player.hasAttribute('fire_damage')) {
-    if (target.hasAttribute('fire_resistance')) {
-      if (player.getAttribute('fire_damage') > target.getAttribute('fire_resistance')) {
-        addDamage += player.getAttribute('fire_damage') - target.getAttribute('fire_resistance');
-      }
-    } else {
-        addDamage += player.getAttribute('fire_damage');
-    }
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('intellect')) {
-      addDamage += player.getAttribute('intellect');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('spell_fireball') > 0) {
-    addDamage = player.getMeta('spell_fireball')*0.01;
-  }
-  return 1+addDamage;
-}
+const ddMod = 1; //direct damage coefficient
 
 /**
  * Basic mage spell
@@ -58,33 +25,18 @@ module.exports = {
   cooldown: 5,
 
   run: state => function (args, player, target) {
-    let getDamage = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'fire', 'fireball') * ddMod);
 
-    if (player.isNpc) {
-      getDamage *= 2;
-    }
+    const damage = new Damage('health', getDamage, player, this);
 
-    const damage = new Damage('health', getDamage, player, this, {
-      type: 'physical',
-    });
-
-    Broadcast.sayAt(player, '<bold>Волна из ваших рук породила <red>огненный</red></bold><yellow> ш<bold>ар</bold></yellow> <bold>, устремившийся к вашей цели!</bold>');
-    Broadcast.sayAtExcept(player.room, `<bold>Волна из рук ${player.rname} породила <red>огненный</red></bold><yellow> ш<bold>ар</bold></yellow> <bold>, устремившийся к ${target.dname}!</bold>`, [player, target]);
+    Broadcast.sayAt(player, `<bold><red>Огненная волна из ваших рук породила шар, устремившийся к ${target.dname}!</red></bold>`);
+    Broadcast.sayAtExcept(player.room, `<bold><red>Огненная волна из рук ${player.rname} породила шар, устремившийся к ${target.dname}!</red></bold>`, [player, target]);
     if (!target.isNpc) {
-      Broadcast.sayAt(target, `<bold>Волна из рук ${player.rname} породила <red>огненный</red></bold><yellow> ш<bold>ар</bold></yellow> <bold>, устремившийся к Вам!</bold>`);
+      Broadcast.sayAt(target, `<bold><red>Огненная волна из рук ${player.rname} породила шар, устремившийся к Вам!</red></bold>`);
     }
     damage.commit(target);
-    
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('spell_fireball') < 100) {
-            let skillUp = player.getMeta('spell_fireball');
-            player.setMeta('spell_fireball', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Огненный шар\'.</cyan></bold>');
-          }
-      }
-    }
+
+    SkillUtil.skillUp(state, player, 'spell_fireball');
   },
 
   info: (player) => {

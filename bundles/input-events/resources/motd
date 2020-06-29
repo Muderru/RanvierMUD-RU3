@@ -1,5 +1,5 @@
 <white>Ranvier MUD engine - Version 3.0.0 - https://ranviermud.com
-Russification - Tuor, 2019 
+Created by Tuor, 2019 - 2020, https://wintermud.github.io/
 <bold><cyan>
        _    _ _       _           ___  ____   _______ 
       | |  | (_)     | |          |  \/  | | | |  _  \
@@ -9,5 +9,5 @@ Russification - Tuor, 2019
        \/  \/|_|_| |_|\__\___|_|  \_|  |_/\___/|___/  
                                                 
 </cyan></bold>
-(encoding UTF-8)
+(encoding is UTF-8)
 

@@ -11,6 +11,9 @@ module.exports = {
     gender: 'neuter',
     description: 'Вы не можете колдовать.',
     type: 'silence',
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.DEBUFF],
   modifiers: {

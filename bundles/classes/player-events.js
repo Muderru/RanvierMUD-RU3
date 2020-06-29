@@ -93,8 +93,7 @@ module.exports = {
       const magicPoints = this.getMeta('magicPoints');
       const skillPoints = this.getMeta('skillPoints');
       const hp = this.attributes.get('health');
-      let increment = 0;
-      increment += this.getBaseAttribute('stamina'); // or however much you want it to go up on leveling
+      const increment = 20; //столько получаем единиц жизни при повышении уровня
 
       if (hp) {
           hp.setBase(hp.base + increment);
@@ -104,8 +103,7 @@ module.exports = {
 
       if (this.hasAttribute('mana')) {
           let mana = this.attributes.get('mana');
-          let mana_add = 0;
-          mana_add += this.getBaseAttribute('intellect');
+          const mana_add = 20; //столько получаем единиц маны при повышении уровня
           mana.setBase(mana.base + mana_add);
           B.sayAt(this, '<b><cyan>Вы получили ' + mana_add + ' маны.</cyan></b>');
       }

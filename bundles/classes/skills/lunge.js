@@ -2,43 +2,10 @@
 
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 40;
-
-function getAttr1(player, target) {
-  let addDamage = 0;
-  if (player.hasAttribute('piercing_damage')) {
-    if (target.hasAttribute('piercing_resistance')) {
-      if (player.getAttribute('piercing_damage') > target.getAttribute('piercing_resistance')) {
-        addDamage += player.getAttribute('piercing_damage') - target.getAttribute('piercing_resistance');
-      }
-    } else {
-        addDamage += player.getAttribute('piercing_damage');
-    }
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('strength')) {
-      addDamage += player.getAttribute('strength');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('skill_lunge') > 0) {
-    addDamage = player.getMeta('skill_lunge')*0.01;
-  }
-  return 1+addDamage;
-}
+const ddMod = 1; //direct damage coefficient
 
 /**
  * Basic warrior attack
@@ -64,36 +31,21 @@ module.exports = {
       }
     }
 
-    let getDamage = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let getDamage = Math.floor(SkillUtil.directSkillDamage(player, target, 'piercing', 'lunge') * ddMod);
 
-    if (player.isNpc) {
-      getDamage *= 2;
-    }
+    const damage = new Damage('health', getDamage, player, this);
 
-    const damage = new Damage('health', getDamage, player, this, {
-      type: 'physical',
-    });
-
-      Broadcast.sayAt(player, `<red>Вы делаете обманный маневр и наносите мощный удар <bold>${target.dname}</bold>!</red>`);
-      Broadcast.sayAtExcept(player.room, `<red>${player.Name} делает обманный маневр и наносит мощный удар ${target.dname}!</red>`, [player, target]);
+      Broadcast.sayAt(player, `<red>Вы делаете обманный маневр и пронзаете точным выпадом <bold>${target.vname}</bold>!</red>`);
+      Broadcast.sayAtExcept(player.room, `<red>${player.Name} делает обманный маневр и пронзает ${target.vname} точным выпадом!</red>`, [player, target]);
       if (!target.isNpc) {
-        Broadcast.sayAt(target, `<red>${player.Name} делает обманный маневр и наносит вам мощный удар!</red>`);
+        Broadcast.sayAt(target, `<red>${player.Name} делает обманный маневр и пронзает вас точным выпадом!</red>`);
     }
     damage.commit(target);
-    
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_lunge') < 100) {
-            let skillUp = player.getMeta('skill_lunge');
-            player.setMeta('skill_lunge', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Выпад\'.</cyan></bold>');
-          }
-      }
-    }
+
+    SkillUtil.skillUp(state, player, 'skill_lunge');
   },
 
   info: (player) => {
-      return `Выполняет мощную атаку против вашего противника и наносит ему урон зависящий от урона вашего оружия, силы, вашего бонусного пронзающего урона, уровня владения умением и сопротивляемости пронзающему урону цели.`;
+      return `Выполняет точную атаку против вашего противника и наносит ему урон зависящий от урона вашего оружия, силы, вашего бонусного пронзающего урона, уровня владения умением и сопротивляемости пронзающему урону цели.`;
   }
 };

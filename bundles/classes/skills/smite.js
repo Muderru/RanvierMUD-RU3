@@ -2,44 +2,11 @@
 
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 10;
-const manaCost = 20;
-
-function getAttr1(player, target) {
-  let addDamage = 0;
-  if (player.hasAttribute('crushing_damage')) {
-    if (target.hasAttribute('crushing_resistance')) {
-      if (player.getAttribute('crushing_damage') > target.getAttribute('crushing_resistance')) {
-        addDamage += player.getAttribute('crushing_damage') - target.getAttribute('crushing_resistance');
-      }
-    } else {
-        addDamage += player.getAttribute('crushing_damage');
-    }
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('strength')) {
-      addDamage += player.getAttribute('strength');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('skill_smite') > 0) {
-    addDamage = player.getMeta('skill_smite')*0.01;
-  }
-  return 1+addDamage;
-}
+const manaCost = 50;
+const ddMod = 1.5; //direct damage coefficient
 
 module.exports = {
   aliases: ['сокрушить', 'сокрушение'],
@@ -62,15 +29,9 @@ module.exports = {
       }
     }
 
-    let amount = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
+    let amount = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'smite') * ddMod);
 
-    if (player.isNpc) {
-      amount *= 2;
-    }
-
-    const damage = new Damage('health', amount, player, this, {
-      type: 'holy',
-    });
+    const damage = new Damage('health', amount, player, this);
 
     Broadcast.sayAt(player, `<b><yellow>Вы наполнили ваше оружие святой энергией и сокрушили им ${target.vname}!</yellow></b>`);
     if (player.gender === 'male') {
@@ -89,16 +50,7 @@ module.exports = {
 
     damage.commit(target);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_smite') < 100) {
-            let skillUp = player.getMeta('skill_smite');
-            player.setMeta('skill_smite', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Сокрушение\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'skill_smite');
   },
 
   info: (player) => {

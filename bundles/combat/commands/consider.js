@@ -42,25 +42,34 @@ module.exports = {
       return B.sayAt(player, "Этого здесь нет.");
     }
 
-    let description = '';
-    switch (true) {
-      case (player.level - target.level > 4):
-        description = 'Цель намного слабее вас. Вы можете победить нескольких таких.';
-        break;
-      case (target.level - player.level > 9):
-        description = 'Цель <b>намного</b> сильнее вас. Он убьет вас и поиздевается над вашим трупом.';
-        break;
-      case (target.level - player.level > 5):
-        description = 'Цель немного сильнее вас. Вам понадобится удача в сражении с ним.';
-        break;
-      case (target.level - player.level > 3):
-        description = 'Цель чуть сильнее вас. Победа дастся вам с трудом.';
-        break;
-      default:
-        description = 'Ваши силы примерно равны. Сложно предсказать результат битвы.';
-        break;
+    if (!target.hasAttribute('health')) {
+      return B.sayAt(player, "Это не противник.");
     }
 
+    let description = '';
+    let targetPower = 0;
+    let playerPower = 0;
+    const avg1 = (target.max_damage + target.min_damage) / 2;
+    const weaponDamage = Combat.getWeaponDamage(player);
+    const max = Combat.normalizeWeaponDamage(player, weaponDamage.max);
+    const min = Combat.normalizeWeaponDamage(player, weaponDamage.min);
+    const avg2 = (max + min) / 2;
+    targetPower = target.getAttribute('health') * (1 + target.getAttribute('armor')) * avg1;
+    playerPower = player.getAttribute('health') * (1 + player.getAttribute('armor')) * avg2;
+    const ratio = targetPower/playerPower;
+    if (ratio < 0.5) {
+      description = 'Цель намного слабее вас. Вы должны победить без проблем.';
+    } else if (ratio >= 0.5 && ratio < 0.8) {
+      description = 'Цель немного слабее вас, вам нужно соблюдать осторожность.';
+    } else if (ratio >= 1.2 && ratio < 1.5) {
+      description = 'Цель немного сильнее вас. Вам понадобится удача в сражении с ней.';
+    } else if (ratio >= 1.5) {
+      description = 'Цель намного сильнее вас. Вам не победить в одиночку.';
+    } else {
+      description = 'Ваши силы примерно равны. Сложно предсказать результат битвы.';
+    }
+
+//    B.sayAt(player, `${ratio}`);
     B.sayAt(player, description);
   }
 };

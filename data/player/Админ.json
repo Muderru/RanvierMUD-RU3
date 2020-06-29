@@ -143,6 +143,70 @@
     "mana_regeneration": {
       "delta": 0,
       "base": 1
+    },
+    "health_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "mana_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "armor_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "critical_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "critical_damage_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "critical_damage_reduction_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "skill_damage_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "spell_damage_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "out_heal_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "in_heal_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "dot_damage_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "dot_duration_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "dot_duration_reduction_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "effect_duration_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "unfreedom_duration_reduction_percent": {
+      "delta": 0,
+      "base": 0
+    },
+    "swift": {
+      "delta": 0,
+      "base": 0
     }
   },
   "level": 1,
@@ -191,7 +255,11 @@
     "attributePoints": 0,
     "magicPoints": 1,
     "skillPoints": 1,
-    "skill_flee": 1
+    "skill_flee": 1,
+    "skill_retreat": 1,
+    "currencies": {
+      "золото": 0
+    }
   },
   "prompt": "[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]",
   "quests": {

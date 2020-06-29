@@ -1,16 +1,9 @@
 'use strict';
 
 const { Broadcast: B, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 180;
-
-function getSkill(player) {
-  let spellStrength = 1;
-  if (player.getMeta('spell_silence') > 0) {
-    spellStrength = player.getMeta('spell_silence');
-  }
-  return spellStrength;
-}
 
 /**
  * Молчание
@@ -30,26 +23,12 @@ module.exports = {
   cooldown: 60,
 
   run: state => function (args, player, target) {
-    let duration = 0;
-    if (player.hasAttribute('agility')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('agility')/10));
-    }
+    let duration = SkillUtil.effectDuration(player);
 
-    if (player.hasAttribute('intellect')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('intellect')/10));
-    }
-
+    SkillUtil.skillUp(state, player, 'spell_silence');
     if (!player.isNpc) {
-      let rnd = Math.floor(Math.random() * 101);
-      if (rnd > 95) {
-        if (player.getMeta('spell_silence') < 100) {
-          let skillUp = player.getMeta('spell_silence');
-          player.setMeta('spell_silence', skillUp + 1);
-          B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Молчание\'.</cyan></bold>');
-        }
-      }
       let chance = Math.floor(Math.random()*101);
-      if (chance >= getSkill(player)) {
+      if (chance >= SkillUtil.getBuff(player, 'spell_silence')) {
         return B.sayAt(player, 'Вам не удалось замолчать ${target.vname}.');
       }
     }

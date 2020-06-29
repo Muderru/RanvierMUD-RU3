@@ -11,6 +11,9 @@ module.exports = {
     gender: 'female',
     description: 'Вы невидимы.',
     type: 'invisibility',
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.BUFF],
   modifiers: {

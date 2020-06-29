@@ -15,7 +15,7 @@ module.exports = {
   flags: [EffectFlag.BUFF],
   listeners: {
     damaged: function (damage) {
-      if (damage.attribute !== 'energy') {
+      if (damage.attribute !== 'mana') {
         return;
       }
 
@@ -23,13 +23,13 @@ module.exports = {
         return;
       }
 
-      if ((this.target.getAttribute('energy') / this.target.getMaxAttribute('energy')) * 100 > this.state.threshold) {
+      if ((this.target.getAttribute('mana') / this.target.getMaxAttribute('mana')) * 100 > this.state.threshold) {
         return;
       }
 
       Broadcast.sayAt(this.target, "<bold><yellow>Вы ощутили второе дыхание!</bold></yellow>");
-      const amount = Math.floor(this.target.getMaxAttribute('energy') * (this.state.restorePercent / 100));
-      const heal = new Heal('energy', amount, this.target, this.skill);
+      const amount = Math.floor(this.target.getMaxAttribute('mana') * (this.state.restorePercent / 100));
+      const heal = new Heal('mana', amount, this.target, this.skill);
       heal.commit(this.target);
 
       this.skill.cooldown(this.target);

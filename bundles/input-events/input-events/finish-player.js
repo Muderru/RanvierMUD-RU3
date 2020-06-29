@@ -67,6 +67,22 @@ module.exports = {
         freedom: 0,
         health_regeneration: 1,
         mana_regeneration: 1,
+        health_percent: 0,
+        mana_percent: 0,
+        armor_percent: 0,
+        critical_percent: 0,
+        critical_damage_percent: 0,
+        critical_damage_reduction_percent: 0,
+        skill_damage_percent: 0,
+        spell_damage_percent: 0,
+        out_heal_percent: 0,
+        in_heal_percent: 0,
+        dot_damage_percent: 0,
+        dot_duration_percent: 0,
+        dot_duration_reduction_percent: 0,
+        effect_duration_percent: 0,
+        unfreedom_duration_reduction_percent: 0,
+        swift: 0,
       };
 
       for (const attr in defaultAttributes) {
@@ -81,6 +97,7 @@ module.exports = {
       player.setMeta('magicPoints', 1);
       player.setMeta('skillPoints', 1);
       player.setMeta('skill_flee', 1);
+      player.setMeta('skill_retreat', 1);
       player.setMeta('currencies', {});
       player.setMeta('currencies.золото', 0);
 

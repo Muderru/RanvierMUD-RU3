@@ -9,6 +9,9 @@ module.exports = {
     damageVerb: 'защищает',
     description: "Вы блокируете входящие атаки щитом!",
     type: 'skill:shieldblock',
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.BUFF],
   state: {

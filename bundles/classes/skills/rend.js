@@ -2,61 +2,13 @@
 
 const { Broadcast, SkillType, Damage } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const SkillUtil = require('../lib/SkillUtil');
 
-// config placed here just for easy copy/paste of this skill later on
 const cooldown = 10;
 const cost = 60;
-const tickInterval = 1;
-
-function getAttr1(player, target) {
-  let addDamage = 0;
-  if (player.hasAttribute('cutting_damage')) {
-    if (target.hasAttribute('cutting_resistance')) {
-      if (player.getAttribute('cutting_damage') > target.getAttribute('cutting_resistance')) {
-        addDamage += player.getAttribute('cutting_damage') - target.getAttribute('cutting_resistance');
-      }
-    } else {
-        addDamage += player.getAttribute('cutting_damage');
-    }
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('strength')) {
-      addDamage += player.getAttribute('strength');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('skill_rend') > 0) {
-    addDamage = player.getMeta('skill_rend')*0.01;
-  }
-  return 1+addDamage;
-}
-
-function totalDamage(player, target) {
-  let addDamage = 1;
-  if (player.hasAttribute('cutting_damage')) {
-    if (target.hasAttribute('cutting_resistance')) {
-      if (player.getAttribute('cutting_damage') > target.getAttribute('cutting_resistance')) {
-        addDamage = player.getAttribute('cutting_damage') - target.getAttribute('cutting_resistance');
-      }
-    } else {
-        addDamage = player.getAttribute('cutting_damage');
-    }
-  }
-  return addDamage;
-};
-
+const tickInterval = 2;
+const ddMod = 0.8; //direct damage coefficient
+const dotMod = 0.1; //damage over time coefficient
 
 /**
  * DoT (Damage over time) skill
@@ -82,20 +34,11 @@ module.exports = {
       }
     }
 
-    let getDamage = Math.floor(0.9*Combat.calculateWeaponDamage(player)*getAttr1(player, target)*getAttr2(player)*getSkill(player));
-    
-    if (player.isNpc) {
-      getDamage *= 2;
-    }
-    
-    const damage = new Damage('health', getDamage, player, this, {
-      type: 'physical',
-    });
+    let getDamage = Math.floor(SkillUtil.directSkillDamage(player, target, 'cutting', 'rend') * ddMod);
 
-    let duration = 3000;
-    if (player.hasAttribute('agility')) {
-        duration = 1000*(1 + Math.floor(player.getAttribute('agility')/10));
-    }
+    const damage = new Damage('health', getDamage, player, this);
+
+    let duration = SkillUtil.dotDuration(player, target);
 
     const effect = state.EffectFactory.create(
       'skill.rend',
@@ -105,7 +48,7 @@ module.exports = {
         tickInterval,
       },
       {
-        totalDamage: totalDamage(player, target),
+        totalDamage: Math.floor(SkillUtil.dotSkillDamage(player, target, 'cutting', 'rend') * dotMod),
       }
     );
     effect.skill = this;
@@ -136,20 +79,12 @@ module.exports = {
     } else {
       Broadcast.sayAtExcept(player.room, `<red>${player.Name} подлой атакой нанесло рваную рану ${target.dname}.</red>`, [target, player]);
       Broadcast.sayAt(target, `<red>${player.Name} подлой атакой нанесло вам рваную рану!</red>`);
-    }      
+    }
+
     damage.commit(target);
     target.addEffect(effect);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_rend') < 100) {
-            let skillUp = player.getMeta('skill_rend');
-            player.setMeta('skill_rend', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Порез\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'skill_rend');
   },
 
   info: (player) => {

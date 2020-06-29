@@ -1,29 +1,11 @@
 'use strict';
 
 const { Broadcast, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
-// config placed here just for easy configuration of this skill later on
-const cooldown = 60;
-const cost = 75;
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('armor')) {
-      addDamage += player.getAttribute('armor');
-  }
-
-  addDamage = 1+addDamage*0.5;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 1;
-  if (player.getMeta('skill_shieldblock') > 0) {
-    addDamage = player.getMeta('skill_shieldblock');
-  }
-  return addDamage;
-}
-
+const cooldown = 10;
+const cost = 45;
+const buffMod = 0.25; //buff strength
 
 /**
  * Damage mitigation skill
@@ -48,10 +30,7 @@ module.exports = {
       }
     }
 
-    let duration = 3000;
-    if (player.hasAttribute('agility')) {
-        duration = 1000*(1 + Math.floor(player.getAttribute('agility')/10));
-    }
+    let duration = SkillUtil.effectDuration(player);
 
     const effect = state.EffectFactory.create(
       'skill.shieldblock',
@@ -60,7 +39,7 @@ module.exports = {
         description: this.info(player),
       },
       {
-        magnitude: Math.ceil(getAttr2(player) * getSkill(player))
+        magnitude: Math.ceil(SkillUtil.getBuff(player, 'skill_shieldblock') * player.getAttribute('armor') * buffMod)
       }
     );
     effect.skill = this;
@@ -77,16 +56,7 @@ module.exports = {
     }
     player.addEffect(effect);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_shieldblock') < 100) {
-            let skillUp = player.getMeta('skill_shieldblock');
-            player.setMeta('skill_shieldblock', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Блокирование щитом\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'skill_shieldblock');
   },
 
   info: (player) => {

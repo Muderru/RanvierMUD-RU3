@@ -11,6 +11,9 @@ module.exports = {
     gender: 'male',
     description: 'Вы светитесь.',
     type: 'light',
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.BUFF],
   modifiers: {
@@ -22,11 +25,11 @@ module.exports = {
   },
   listeners: {
     effectActivated: function () {
-      Broadcast.sayAt(this.target, '<b>Вы начинаете светиться.</b>');
+      Broadcast.sayAt(this.target, '<b><yellow>Вы начинаете светиться.</yellow></b>');
     },
 
     effectDeactivated: function () {
-      Broadcast.sayAt(this.target, '<b>Вы перестаете светиться.</b>');
+      Broadcast.sayAt(this.target, '<b><yellow>Вы перестаете светиться.</yellow></b>');
     },
 
   }

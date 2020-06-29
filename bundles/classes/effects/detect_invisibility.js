@@ -11,6 +11,9 @@ module.exports = {
     gender: 'neuter',
     description: 'Вы видите невидимое.',
     type: 'detect_invisibility',
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.BUFF],
   modifiers: {

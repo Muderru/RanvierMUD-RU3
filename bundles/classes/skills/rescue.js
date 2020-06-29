@@ -1,10 +1,11 @@
 'use strict';
 
 const { Broadcast, SkillType, Damage } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
-// config placed here just for easy copy/paste of this skill later on
 const cooldown = 30;
 const cost = 120;
+const maxChance = 95;
 
 function getAttr(player) {
   let addDamage = 0;
@@ -49,14 +50,14 @@ module.exports = {
 
     let chance = 0;
     chance = 20 + getAttr(player) + getSkill(player);
-    if (chance > 95) {
-      chance = 95;
+    if (chance > maxChance) {
+      chance = maxChance;
     }
     if (player.isNpc) {
-      chance = 95;
+      chance = maxChance;
     }
 
-    let random = Math.floor(Math.random()*101);
+    let random = Math.floor(Math.random()*100 + 1);
     if (random < chance) {
       const enemy = [...target.combatants][0];
       target.removeFromCombat();
@@ -81,16 +82,7 @@ module.exports = {
       Broadcast.sayAt(target, `${player.Dname} не удается спасти <bold>ВАС.</bold>`);
     }
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('skill_rescue') < 100) {
-            let skillUp = player.getMeta('skill_rescue');
-            player.setMeta('skill_rescue', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'Спасти\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'skill_rescue');
   },
 
   info: (player) => {

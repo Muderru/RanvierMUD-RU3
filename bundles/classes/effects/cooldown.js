@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast } = require('ranvier');
+const { Broadcast, SkillType } = require('ranvier');
 
 /**
  * Dummy effect used to enforce skill cooldowns
@@ -17,7 +17,11 @@ module.exports = {
   },
   listeners: {
     effectDeactivated: function () {
-      Broadcast.sayAt(this.target, `Вы снова можете использовать \'<bold>${this.skill.name}</bold>\'.`);
+      if (this.skill.type === SkillType.SKILL) {
+        Broadcast.sayAt(this.target, `Вы снова можете использовать умение \'<bold>${this.skill.name[0].toUpperCase()}${this.skill.name.slice(1)}</bold>\'.`);
+      } else {
+        Broadcast.sayAt(this.target, `Вы снова можете использовать заклинание \'<bold>${this.skill.name[0].toUpperCase()}${this.skill.name.slice(1)}</bold>\'.`);
+      }
     }
   }
 };

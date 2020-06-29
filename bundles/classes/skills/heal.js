@@ -2,37 +2,10 @@
 
 const { Broadcast: B, Heal, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 65;
-
-function getAttr1(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('earth_damage')) {
-    addDamage += player.getAttribute('earth_damage');
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('intellect')) {
-      addDamage += player.getAttribute('intellect');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('spell_heal') > 0) {
-    addDamage = player.getMeta('spell_heal')*0.01;
-  }
-  return 1+addDamage;
-}
+const ddMod = 1; //direct heal coefficient
 
 /**
  * Basic cleric spell
@@ -53,11 +26,7 @@ module.exports = {
   cooldown: 10,
 
   run: state => function (args, player, target) {
-    let getHeal = Math.floor(Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
-
-    if (player.isNpc) {
-      getHeal *= 2;
-    }
+    let getHeal = Math.floor(SkillUtil.directHealAmount(player, target, 'earth', 'heal') * ddMod);
 
     const heal = new Heal('health', getHeal, player, this);
 
@@ -71,17 +40,8 @@ module.exports = {
     }
 
     heal.commit(target);
-    
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('spell_heal') < 100) {
-            let skillUp = player.getMeta('spell_heal');
-            player.setMeta('spell_heal', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Лечение\'.</cyan></bold>');
-          }
-      }
-    }
+
+    SkillUtil.skillUp(state, player, 'spell_heal');
   },
 
   info: (player) => {

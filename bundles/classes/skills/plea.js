@@ -1,46 +1,19 @@
 'use strict';
 
 const { Broadcast, Heal, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 80;
-const bonusThreshold = 30;
+const bonusThreshold = 50;
 const cooldown = 10;
-
-function getAttr1(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('ether_damage')) {
-    addDamage += player.getAttribute('ether_damage');
-  }
-  addDamage = 1+addDamage*0.05;
-  return addDamage;
-}
-
-function getAttr2(player) {
-  let addDamage = 0;
-  if (player.hasAttribute('intellect')) {
-      addDamage += player.getAttribute('intellect');
-  } else {
-      addDamage = 20;
-  }
-
-  addDamage = 1+addDamage*0.01;
-  return addDamage;
-}
-
-function getSkill(player) {
-  let addDamage = 0;
-  if (player.getMeta('spell_plea') > 0) {
-    addDamage = player.getMeta('spell_plea')*0.01;
-  }
-  return 1+addDamage;
-}
+const ddMod = 0.8; //direct heal coefficient
 
 /**
  * Basic cleric spell
  */
 module.exports = {
-  aliases: ['милость света', 'Милость Света'],
-  name: 'Милость Света',
+  aliases: [ 'благодать' ],
+  name: 'благодать',
   gender: 'female',
   damageVerb: 'окутывает',
   type: SkillType.SPELL,
@@ -55,11 +28,7 @@ module.exports = {
 
   run: state => function (args, player, target) {
     const maxHealth = target.getMaxAttribute('health');
-    let amount = Math.floor(0.8*Combat.calculateWeaponDamage(player)*getAttr1(player)*getAttr2(player)*getSkill(player));
-
-    if (player.isNpc) {
-      amount *= 2;
-    }
+    let amount = Math.floor(SkillUtil.directHealAmount(player, target, 'ether', 'plea') * ddMod);
 
     if (target.getAttribute('health') < (maxHealth * (bonusThreshold / 100))) {
       amount *= 2;
@@ -68,26 +37,17 @@ module.exports = {
     const heal = new Heal('health', amount, player, this);
 
     if (target !== player) {
-      Broadcast.sayAt(player, `<b>Вы взываете к силам Света и лечите раны ${target.rname}.</b>`);
-      Broadcast.sayAtExcept(player.room, `<b>${player.Name} взывает к силам Света и лечит раны ${target.rname}.</b>`, [target, player]);
-      Broadcast.sayAt(target, `<b>${player.Name} взывает к силам Света и лечит ваши раны.</b>`);
+      Broadcast.sayAt(player, `<b><green>Вы взываете к силам Света и лечите раны ${target.rname}.</green></b>`);
+      Broadcast.sayAtExcept(player.room, `<b><green>${player.Name} взывает к силам Света и лечит раны ${target.rname}.</green></b>`, [target, player]);
+      Broadcast.sayAt(target, `<b><green>${player.Name} взывает к силам Света и лечит ваши раны.</green></b>`);
     } else {
-      Broadcast.sayAt(player, "<b>Вы взываете к силам Света и лечите ваши раны.</b>");
-      Broadcast.sayAtExcept(player.room, `<b>${player.Name} взывает к силам Света и лечит свои раны.</b>`, [player, target]);
+      Broadcast.sayAt(player, "<b><green>Вы взываете к силам Света и лечите ваши раны.</green></b>");
+      Broadcast.sayAtExcept(player.room, `<b><green>${player.Name} взывает к силам Света и лечит свои раны.</green></b>`, [player, target]);
     }
 
     heal.commit(target);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('spell_plea') < 100) {
-            let skillUp = player.getMeta('spell_plea');
-            player.setMeta('spell_plea', skillUp + 1);
-            Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Милость Света\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'spell_plea');
   },
 
   info: (player) => {

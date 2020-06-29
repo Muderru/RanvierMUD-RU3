@@ -10,7 +10,7 @@
   gender: "male"
   min_damage: 8
   max_damage: 28
-  damageVerb: 'оцарапал'
+  damageVerb: 'боднул'
   travelVerbIn: "припрыгал"
   travelVerbOut: "упрыгал"
   description: >-
@@ -24,7 +24,7 @@
     intellect: 22
     stamina: 22
     armor: 2
-    critical: 0
+    critical: 2
     cutting_resistance: 0
     crushing_resistance: 0
     piercing_resistance: 0
@@ -43,7 +43,7 @@
     lightning_damage: 0
     earth_damage: 0
     acid_damage: 0
-    chaos_damage: 1
+    chaos_damage: 2
     ether_damage: 0
     light: 0
     invisibility: 0
@@ -53,5 +53,21 @@
     freedom: 0
     health_regeneration: 5
     mana_regeneration: 5
+    health_percent: 0
+    mana_percent: 0
+    armor_percent: 0
+    critical_percent: 0
+    critical_damage_percent: 0
+    critical_damage_reduction_percent: 0
+    skill_damage_percent: 0
+    spell_damage_percent: 0
+    out_heal_percent: 0
+    in_heal_percent: 0
+    dot_damage_percent: 0
+    dot_duration_percent: 0
+    dot_duration_reduction_percent: 0
+    effect_duration_percent: 0
+    unfreedom_duration_reduction_percent: 0
+    swift: 0
   behaviors:
     combat: true

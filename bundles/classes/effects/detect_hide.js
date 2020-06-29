@@ -10,6 +10,9 @@ module.exports = {
     name: 'чувствовать жизнь',
     description: 'Вы замечаете спрятавшихся.',
     type: 'detect_hide',
+    unique: true,
+    persists: false,
+    refreshes: true,
   },
   flags: [EffectFlag.BUFF],
   modifiers: {

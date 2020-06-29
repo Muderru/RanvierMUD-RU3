@@ -1,16 +1,9 @@
 'use strict';
 
 const { Broadcast: B, SkillType } = require('ranvier');
+const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 105;
-
-function getSkill(player) {
-  let spellStrength = 1;
-  if (player.getMeta('spell_detect_invisibility') > 0) {
-    spellStrength = player.getMeta('spell_detect_invisibility');
-  }
-  return spellStrength;
-}
 
 /**
  * Невидимость
@@ -27,21 +20,14 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 60,
+  cooldown: 30,
 
   run: state => function (args, player, target) {
     if (!target.hasAttribute('detect_invisibility')) {
       return B.sayAt(player, `<b>На ${target.vname} это заклинание не подействует.</b>`);
     }
 
-    let duration = 0;
-    if (player.hasAttribute('agility')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('agility')/10));
-    }
-
-    if (player.hasAttribute('intellect')) {
-        duration += 3000*(1 + Math.floor(player.getAttribute('intellect')/10));
-    }
+    let duration = SkillUtil.effectDuration(player);
 
     if (target !== player) {
       B.sayAt(player, `<b>Вы касаетесь лба ${target.rname} и его глаза вспыхивают ярким светом.</b>`);
@@ -52,19 +38,10 @@ module.exports = {
       B.sayAtExcept(player.room, `<b>${player.Name} касается своего лба и его глаза вспыхивают ярким светом.</b>`, [player, target]);
     }
 
-    const effect = state.EffectFactory.create('detect_invisibility', {duration}, {spellStrength: getSkill(player)});
+    const effect = state.EffectFactory.create('detect_invisibility', {duration}, {spellStrength: SkillUtil.getBuff(player, 'spell_detect_invisibility')});
     target.addEffect(effect);
 
-    if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
-      if (rnd > 95) {
-          if (player.getMeta('spell_detect_invisibility') < 100) {
-            let skillUp = player.getMeta('spell_detect_invisibility');
-            player.setMeta('spell_detect_invisibility', skillUp + 1);
-            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Видеть невидимое\'.</cyan></bold>');
-          }
-      }
-    }
+    SkillUtil.skillUp(state, player, 'spell_detect_invisibility');
   },
 
   info: (player) => {
