@@ -54,8 +54,8 @@ module.exports = {
     const max = Combat.normalizeWeaponDamage(player, weaponDamage.max);
     const min = Combat.normalizeWeaponDamage(player, weaponDamage.min);
     const avg2 = (max + min) / 2;
-    targetPower = target.getAttribute('health') * (1 + target.getAttribute('armor')) * avg1;
-    playerPower = player.getAttribute('health') * (1 + player.getAttribute('armor')) * avg2;
+    targetPower = target.getAttribute('health') * Math.sqrt(1 + target.getAttribute('armor')) * avg1;
+    playerPower = player.getAttribute('health') * Math.sqrt(1 + player.getAttribute('armor')) * avg2;
     const ratio = targetPower/playerPower;
     if (ratio < 0.5) {
       description = 'Цель намного слабее вас. Вы должны победить без проблем.';

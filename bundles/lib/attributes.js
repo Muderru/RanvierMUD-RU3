@@ -124,7 +124,19 @@ module.exports = [
   { name: 'armor_percent', base: 0 }, //увеличение брони на %
   { name: 'critical_percent', base: 0 }, //увеличение крит.шанса на %
   { name: 'critical_damage_percent', base: 0 }, //увеличение крит.урона на %
-  { name: 'critical_damage_reduction_percent', base: 0 }, //уменьшение крит.урона на %
+  { name: 'critical_damage_reduction_percent',
+    base: 0,
+    formula: {
+      requires: [],
+      fn: function (character, critical_damage_reduction_percent) {
+        if (critical_damage_reduction_percent > 90) {
+          return 90;
+        } else {
+          return critical_damage_reduction_percent;
+        }
+      },
+    },
+  }, //уменьшение крит.урона на %
   { name: 'skill_damage_percent', base: 0 }, //увеличение урона от умений на %
   { name: 'spell_damage_percent', base: 0 }, //увеличение урона от заклинаний на %
   { name: 'out_heal_percent', base: 0 }, //увеличение эффективности исходящего лечения на %
@@ -136,8 +148,8 @@ module.exports = [
     formula: {
       requires: [],
       fn: function (character, dot_duration_reduction_percent) {
-        if (dot_duration_reduction_percent > 95) {
-          return 95;
+        if (dot_duration_reduction_percent > 90) {
+          return 90;
         } else {
           return dot_duration_reduction_percent;
         }
