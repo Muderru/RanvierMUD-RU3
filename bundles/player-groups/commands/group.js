@@ -47,16 +47,16 @@ subcommands.add({
     }
 
     if (target.party) {
-         if (target.gender === 'male') {
-           return say(player, "Он уже в группе.");
-         } else if (target.gender === 'female') {
-           return say(player, "Она уже в группе.");
-         } else if (target.gender === 'plural') {
-           return say(player, "Они уже в группе.");
-         } else {
-           return say(player, "Оно уже в группе.");
-         }
+      if (target.gender === 'male') {
+        return say(player, "Он уже в группе.");
+      } else if (target.gender === 'female') {
+        return say(player, "Она уже в группе.");
+      } else if (target.gender === 'plural') {
+        return say(player, "Они уже в группе.");
+      } else {
+        return say(player, "Оно уже в группе.");
       }
+    }
 
     say(target, `<b><yellow>${player.name} приглашает вас вступить в группу. Согласитесь/откажитесь командой '<white>группа вступить/отказаться ${player.name}</white>'</yellow></b>`);
     say(player, `<b><yellow>Вы пригласили ${target.vname} присоединиться к группе.</yellow></b>`);
@@ -112,15 +112,15 @@ subcommands.add({
     say(player, `<b><yellow>Вы вступили в группу ${target.rname}.</yellow></b>`);
     
     if (player.gender === 'male') {
-        say(target.party, `<b><yellow>${player.name} присоединился к группе.</yellow></b>`);
-      } else if (player.gender === 'female') {
-        say(target.party, `<b><yellow>${player.name} присоединилась к группе.</yellow></b>`);
-      } else if (player.gender === 'plural') {
-        say(target.party, `<b><yellow>${player.name} присоединились к группе.</yellow></b>`);
-      } else {
-        say(target.party, `<b><yellow>${player.name} присоединилось к группе.</yellow></b>`);
-      }
-      
+      say(target.party, `<b><yellow>${player.name} присоединился к группе.</yellow></b>`);
+    } else if (player.gender === 'female') {
+      say(target.party, `<b><yellow>${player.name} присоединилась к группе.</yellow></b>`);
+    } else if (player.gender === 'plural') {
+      say(target.party, `<b><yellow>${player.name} присоединились к группе.</yellow></b>`);
+    } else {
+      say(target.party, `<b><yellow>${player.name} присоединилось к группе.</yellow></b>`);
+    }
+
     target.party.add(player);
     player.follow(target);
   }
@@ -143,14 +143,14 @@ subcommands.add({
     say(player, `<b><yellow>Вы отказались присоединяться к группе ${target.rname}.</yellow></b>`);
 
     if (player.gender === 'male') {
-        say(target, `<b><yellow>${player.name} отказался присоединяться к группе.</yellow></b>`);
-      } else if (player.gender === 'female') {
-        say(target, `<b><yellow>${player.name} отказалась присоединяться к группе.</yellow></b>`);
-      } else if (player.gender === 'plural') {
-        say(target, `<b><yellow>${player.name} отказались присоединяться к группе.</yellow></b>`);
-      } else {
-        say(target, `<b><yellow>${player.name} отказалось присоединяться к группе.</yellow></b>`);
-      }
+      say(target, `<b><yellow>${player.name} отказался присоединяться к группе.</yellow></b>`);
+    } else if (player.gender === 'female') {
+      say(target, `<b><yellow>${player.name} отказалась присоединяться к группе.</yellow></b>`);
+    } else if (player.gender === 'plural') {
+      say(target, `<b><yellow>${player.name} отказались присоединяться к группе.</yellow></b>`);
+    } else {
+      say(target, `<b><yellow>${player.name} отказалось присоединяться к группе.</yellow></b>`);
+    }
 
     target.party.removeInvite(player);
   }
@@ -205,14 +205,14 @@ subcommands.add({
     player.party.delete(player);
 
     if (player.gender === 'male') {
-        say(party, `<b><yellow>${player.name} покинул группу.</yellow></b>`);
-      } else if (player.gender === 'female') {
-        say(party, `<b><yellow>${player.name} покинула группу.</yellow></b>`);
-      } else if (player.gender === 'plural') {
-        say(party, `<b><yellow>${player.name} покинули группу.</yellow></b>`);
-      } else {
-        say(party, `<b><yellow>${player.name} покинуло группу.</yellow></b>`);
-      }
+      say(party, `<b><yellow>${player.name} покинул группу.</yellow></b>`);
+    } else if (player.gender === 'female') {
+      say(party, `<b><yellow>${player.name} покинула группу.</yellow></b>`);
+    } else if (player.gender === 'plural') {
+      say(party, `<b><yellow>${player.name} покинули группу.</yellow></b>`);
+    } else {
+      say(party, `<b><yellow>${player.name} покинуло группу.</yellow></b>`);
+    }
 
     say(player, '<b><yellow>Вы покинули группу.</yellow></b>');
   }
