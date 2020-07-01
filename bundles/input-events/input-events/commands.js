@@ -118,10 +118,12 @@ module.exports = {
               // check to see if room has a matching context-specific command
               let roomCommands = player.room.getMeta('commands') || [];
               // добавляем команды с предметов в инвентаре
-              for (const [, item ] of player.inventory) {
-                if (item.getMeta('commands')) {
-                  const addCommands = item.getMeta('commands');
-                  roomCommands = roomCommands.concat(addCommands);
+              if (player.inventory) {
+                for (const [, item ] of player.inventory) {
+                  if (item.getMeta('commands')) {
+                    const addCommands = item.getMeta('commands');
+                    roomCommands = roomCommands.concat(addCommands);
+                  }
                 }
               }
               const [commandName, ...args] = data.split(' ');
