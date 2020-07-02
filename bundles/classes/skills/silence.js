@@ -28,8 +28,8 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'spell_silence');
     if (!player.isNpc) {
       let chance = Math.floor(Math.random()*101);
-      if (chance >= SkillUtil.getBuff(player, 'spell_silence')) {
-        return B.sayAt(player, 'Вам не удалось замолчать ${target.vname}.');
+      if (chance >= (50 + (SkillUtil.getBuff(player, 'spell_silence')/2))) {
+        return B.sayAt(player, `Вам не удалось замолчать ${target.vname}.`);
       }
     }
 

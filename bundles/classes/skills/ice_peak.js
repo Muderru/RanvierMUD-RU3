@@ -4,7 +4,7 @@ const { Broadcast, Damage, SkillType } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
-const manaCost = 80;
+const manaCost = 85;
 const ddMod = 0.9; //direct damage coefficient
 const dbMod = 0.05; //debaff coefficient
 

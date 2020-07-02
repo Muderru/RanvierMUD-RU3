@@ -158,5 +158,17 @@ module.exports = [
   },
   { name: 'effect_duration_percent', base: 0 }, //увеличение длительности вызываемых эффектов на %
   { name: 'unfreedom_duration_reduction_percent', base: 0 }, //уменьшение длительности обездвиживания на %
-  { name: 'swift', base: 0 }, //увеличение скорости атаки на %
+  { name: 'swift', //увеличение скорости атаки на %
+    base: 0,
+    formula: {
+      requires: [],
+      fn: function (character, swift) {
+        if (swift > 50) {
+          return 50;
+        } else {
+          return swift;
+        }
+      },
+    },
+  },
 ];
