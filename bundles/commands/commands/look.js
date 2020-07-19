@@ -46,7 +46,7 @@ function getCompass(player) {
   exitMap.set('северо-запад', 'СЗ');
   exitMap.set('северо-восток', 'СВ');
 
-  const directionsAvailable = room.exits.map(exit => exitMap.get(exit.direction));
+  const directionsAvailable = room.exits.map(exit => (!exit.hidden) ? exitMap.get(exit.direction):null);
 
   const exits = Array.from(exitMap.values()).map(exit => {
     if (directionsAvailable.includes(exit)) {
@@ -273,7 +273,9 @@ function lookRoom(state, player) {
       continue;
     }
 
-    foundExits.push(exit);
+    if (!exit.hidden) {
+      foundExits.push(exit);
+    }
   }
 
   B.at(player, foundExits.map(exit => {

@@ -28,7 +28,7 @@ function getSkill(player) {
 }
 
 /**
- * Спасти
+ * Спасти, для мобов пока не работает
  */
 module.exports = {
   aliases: ['спасти'],

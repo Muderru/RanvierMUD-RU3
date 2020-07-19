@@ -85,7 +85,7 @@ module.exports = {
 
       }
     
-          for (let skill of skills) {
+      for (let skill of skills) {
         let currentSkill = state.SkillManager.get(skill);
 
         if (!currentSkill) {

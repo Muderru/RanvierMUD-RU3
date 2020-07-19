@@ -129,8 +129,10 @@ module.exports = {
               const [commandName, ...args] = data.split(' ');
                 if (roomCommands && roomCommands.includes(commandName)) {
                   player.room.emit('command', player, commandName, args.join(' '));
-                  for (const [, item ] of player.inventory) {
-                    item.emit('command', player, commandName, args.join(' '));
+                  if (player.inventory) {
+                    for (const [, item ] of player.inventory) {
+                      item.emit('command', player, commandName, args.join(' '));
+                    }
                   }
                   break;
                 }
