@@ -116,7 +116,6 @@ async function init(restartServer) {
     DataLoader: Ranvier.Data,
     EntityLoaderRegistry: new Ranvier.EntityLoaderRegistry(),
     DataSourceRegistry: new Ranvier.DataSourceRegistry(),
-    Config,
   };
 
   // setup entity loaders

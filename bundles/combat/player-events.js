@@ -395,7 +395,7 @@ module.exports = {
         }
 
         this.moveTo(home, _ => {
-          state.CommandManager.get('look').execute(null, this);
+//          state.CommandManager.get('look').execute(null, this);
 
           B.sayAt(this, '<b><red>Ой, вот незадача!</red></b>');
           if (killer && killer !== this) {
@@ -404,14 +404,14 @@ module.exports = {
           // player loses 20% exp gained this level on death
           const lostExp = Math.floor(this.experience * 0.2);
           this.experience -= lostExp;
-          this.save();
           B.sayAt(this, `<red>Вы потеряли <b>${lostExp}</b> опыта!</red>`);
 
-          B.prompt(this);
-          state.CommandManager.get('look').execute('', this);
+//          B.prompt(this);
+//          state.CommandManager.get('look').execute('', this);
 
           const effect = state.EffectFactory.create('deathgloom', {}, {quantity: this.level});
           this.addEffect(effect);
+          this.save();
           state.CommandManager.get('quit').execute('', this);
         });
       };

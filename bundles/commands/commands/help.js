@@ -9,7 +9,7 @@ module.exports = {
   command: (state) => (args, player) => {
     if (!args.length) {
       // look at `help help` if they haven't specified a file
-      return state.CommandManager.get('help').execute('help', player);
+      return state.CommandManager.get('help').execute('справка', player);
     }
 
     // `help search`
