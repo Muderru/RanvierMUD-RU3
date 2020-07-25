@@ -39,22 +39,16 @@ exports.display = function (item, caseword = 'name') {
   switch(caseword) {
     case 'name':
       return qualityColorize(item, `[${item.name}]`);
-      break;
     case 'rname':
       return qualityColorize(item, `${item.rname}`);
-      break;
     case 'dname':
       return qualityColorize(item, `${item.dname}`);
-      break;
     case 'vname':
       return qualityColorize(item, `${item.vname}`);
-      break;
     case 'tname':
       return qualityColorize(item, `${item.tname}`);
-      break;
     case 'pname':
       return qualityColorize(item, `${item.pname}`);
-      break;
     default:
       return qualityColorize(item, `[${item.name}]`);
   }
@@ -128,112 +122,112 @@ exports.renderItem = function (state, item, player) {
     let ru_stat = '';
         switch(stat) {
             case 'strength':
-               ru_stat = 'к силе'
+               ru_stat = 'к силе';
                break;
             case 'agility':
-               ru_stat = 'к ловкости'
+               ru_stat = 'к ловкости';
                break;
             case 'intellect':
-               ru_stat = 'к интеллекту'
+               ru_stat = 'к интеллекту';
                break;
             case 'stamina':
-               ru_stat = 'к выносливости'
+               ru_stat = 'к выносливости';
                break;
             case 'armor':
-               ru_stat = 'к броне'
+               ru_stat = 'к броне';
                break;
             case 'critical':
-               ru_stat = 'к крит.шансу'
+               ru_stat = 'к крит.шансу';
                break;
             case 'cutting_damage':
-               ru_stat = 'режущего урона'
+               ru_stat = 'режущего урона';
                break;
             case 'crushing_damage':
-               ru_stat = 'дробящего урона'
+               ru_stat = 'дробящего урона';
                break;
             case 'piercing_damage':
-               ru_stat = 'колющего урона'
+               ru_stat = 'колющего урона';
                break;
             case 'fire_damage':
-               ru_stat = 'огненного урона'
+               ru_stat = 'огненного урона';
                break;
             case 'cold_damage':
-               ru_stat = 'урона от холода'
+               ru_stat = 'урона от холода';
                break;
             case 'lightning_damage':
-               ru_stat = 'урона от молнии'
+               ru_stat = 'урона от молнии';
                break;
             case 'earth_damage':
-               ru_stat = 'урона землей'
+               ru_stat = 'урона землей';
                break;
             case 'acid_damage':
-               ru_stat = 'урона кислотой'
+               ru_stat = 'урона кислотой';
                break;
             case 'chaos_damage':
-               ru_stat = 'урона хаосом'
+               ru_stat = 'урона хаосом';
                break;
             case 'ether_damage':
-               ru_stat = 'урона эфиром'
+               ru_stat = 'урона эфиром';
                break;
             case 'cutting_resistance':
-               ru_stat = 'к сопротивлению режущему'
+               ru_stat = 'к сопротивлению режущему';
                break;
             case 'crushing_resistance':
-               ru_stat = 'к сопротивлению дробящему'
+               ru_stat = 'к сопротивлению дробящему';
                break;
             case 'piercing_resistance':
-               ru_stat = 'к сопротивлению колющему'
+               ru_stat = 'к сопротивлению колющему';
                break;
             case 'fire_resistance':
-               ru_stat = 'к сопротивлению огню'
+               ru_stat = 'к сопротивлению огню';
                break;
             case 'cold_resistance':
-               ru_stat = 'к сопротивлению холоду'
+               ru_stat = 'к сопротивлению холоду';
                break;
             case 'lightning_resistance':
-               ru_stat = 'к сопротивлению молнии'
+               ru_stat = 'к сопротивлению молнии';
                break;
             case 'earth_resistance':
-               ru_stat = 'к сопротивлению земле'
+               ru_stat = 'к сопротивлению земле';
                break;
             case 'acid_resistance':
-               ru_stat = 'к сопротивлению кислоте'
+               ru_stat = 'к сопротивлению кислоте';
                break;
             case 'chaos_resistance':
-               ru_stat = 'к сопротивлению хаосу'
+               ru_stat = 'к сопротивлению хаосу';
                break;
             case 'ether_resistance':
-               ru_stat = 'к сопротивлению эфиру'
+               ru_stat = 'к сопротивлению эфиру';
                break;
             case 'light':
-               ru_stat = 'к радиусу освещения'
+               ru_stat = 'к радиусу освещения';
                break;
             case 'invisibility':
-               ru_stat = 'к невидимости'
+               ru_stat = 'к невидимости';
                break;
             case 'detect_invisibility':
-               ru_stat = 'к определению невидимости'
+               ru_stat = 'к определению невидимости';
                break;
             case 'hide':
-               ru_stat = 'к маскировке'
+               ru_stat = 'к маскировке';
                break;
             case 'detect_hide':
-               ru_stat = 'к определению маскировки'
+               ru_stat = 'к определению маскировки';
                break;
             case 'freedom':
-               ru_stat = 'к свободе движений'
+               ru_stat = 'к свободе движений';
                break;
             case 'health_regeneration':
-               ru_stat = 'к регенерации жизни'
+               ru_stat = 'к регенерации жизни';
                break;
             case 'mana_regeneration':
-               ru_stat = 'к регенерации маны'
+               ru_stat = 'к регенерации маны';
                break;
             case 'health':
-               ru_stat = 'к жизни'
+               ru_stat = 'к жизни';
                break;
             case 'mana':
-               ru_stat = 'к мане'
+               ru_stat = 'к мане';
                break;
         }
     buf += sprintf(

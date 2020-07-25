@@ -1,6 +1,6 @@
 'use strict';
 
-const { Config, Player } = require('ranvier');
+const { Config, Player, Logger } = require('ranvier');
 const PlayerClass = require('../../classes/lib/PlayerClass');
 
 /**

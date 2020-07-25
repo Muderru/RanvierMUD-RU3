@@ -14,7 +14,7 @@ module.exports = {
     }
 
     if (!args || !args.length) {
-      return B.sayAt(player, 'Что вы хотите ответить?');
+      return Broadcast.sayAt(player, 'Что вы хотите ответить?');
     }
 
     const tell = state.ChannelManager.get('tell');

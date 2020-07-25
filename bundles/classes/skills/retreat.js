@@ -1,6 +1,6 @@
 'use strict';
 
-const { Broadcast, SkillType, Config } = require('ranvier');
+const { Broadcast, SkillType, Config, Logger } = require('ranvier');
 const say = Broadcast.sayAt;
 
 const manaCost = 10;

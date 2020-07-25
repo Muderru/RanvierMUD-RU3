@@ -65,7 +65,7 @@ subcommands.add({
     }
 
     if (isNaN(questIndex) || questIndex < 0 || questIndex > npc.quests.length) {
-      return say(player, `Недопустимое задание, наберите 'задания список ${фраза}', чтобы увидеть доступные квесты.`);
+      return say(player, `Недопустимое задание, наберите 'задания список ${search}', чтобы увидеть доступные квесты.`);
     }
 
     let availableQuests = getAvailableQuests(state, player, npc);

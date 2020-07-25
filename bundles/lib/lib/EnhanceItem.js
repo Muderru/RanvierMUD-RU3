@@ -687,7 +687,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.pname = randomStatPrefix(item, stat)[5] + ' ' + item.pname;
       item.keywords.push(randomStatPrefix(item, stat)[0]);
       lvl = item.getMeta('level');
-      lvl < 99 ? item.setMeta('level', lvl + 1) : item.setMeta('level', 99);
+      (lvl < 99) ? item.setMeta('level', lvl + 1) : item.setMeta('level', 99);
       item.setMeta('quality', 'uncommon');
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
@@ -719,7 +719,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.tname = item.tname + ' ' + randomStatSuffix(item, stat);
       item.pname = item.pname + ' ' + randomStatSuffix(item, stat);
       lvl = item.getMeta('level');
-      lvl < 98 ? item.setMeta('level', lvl + 2) : item.setMeta('level', 99);
+      (lvl < 98) ? item.setMeta('level', lvl + 2) : item.setMeta('level', 99);
       item.setMeta('quality', 'rare');
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
@@ -751,7 +751,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.tname = item.tname + ' ' + randomStatSuffix(item, stat) + '★';
       item.pname = item.pname + ' ' + randomStatSuffix(item, stat) + '★';
       lvl = item.getMeta('level');
-      lvl < 97 ? item.setMeta('level', lvl + 3) : item.setMeta('level', 99);
+      (lvl < 97) ? item.setMeta('level', lvl + 3) : item.setMeta('level', 99);
       item.setMeta('quality', 'epic');
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
@@ -795,7 +795,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.tname = item.tname + ' ' + randomStatSuffix(item, stat) + '★★';
       item.pname = item.pname + ' ' + randomStatSuffix(item, stat) + '★★';
       lvl = item.getMeta('level');
-      lvl < 96 ? item.setMeta('level', lvl + 4) : item.setMeta('level', 99);
+      (lvl < 96) ? item.setMeta('level', lvl + 4) : item.setMeta('level', 99);
       item.setMeta('quality', 'legendary');
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));
@@ -839,7 +839,7 @@ exports.enhance = function (item, quality = 'uncommon') {
       item.tname = item.tname + ' ' + randomStatSuffix(item, stat) + '★★★';
       item.pname = item.pname + ' ' + randomStatSuffix(item, stat) + '★★★';
       lvl = item.getMeta('level');
-      lvl < 95 ? item.setMeta('level', lvl + 5) : item.setMeta('level', 99);
+      (lvl < 95) ? item.setMeta('level', lvl + 5) : item.setMeta('level', 99);
       item.setMeta('quality', 'artifact');
       if (!item.getMeta(`stats.${stat}`)) {
         item.setMeta(`stats.${stat}`, randomStatValue(item, stat));

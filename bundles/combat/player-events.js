@@ -1,6 +1,6 @@
 'use strict';
 
-const { Config, Broadcast: B } = require('ranvier');
+const { Config, Broadcast: B, Logger } = require('ranvier');
 const Combat = require('./lib/Combat');
 const CombatErrors = require('./lib/CombatErrors');
 const LevelUtil = require('../lib/lib/LevelUtil');
@@ -132,7 +132,7 @@ module.exports = {
      * @param {Heal} heal
      * @param {Character} target
      */
-    heal: state => function (heal, target) {
+    heal: state => function (heal, target, finalAmount) {
       if (heal.metadata.hidden) {
         return;
       }
@@ -459,7 +459,7 @@ function promptBuilder(promptee) {
   const formatProgressBar = (name, progress, entity) => {
     const pad = B.line(nameWidth - name.length, ' ');
     return `<b>${name}${pad}</b>: ${progress} <b>${entity.getAttribute('health')}/${entity.getMaxAttribute('health')}</b>`;
-  }
+  };
 
   // Build player health bar.
   let currentPerc = getHealthPercentage(promptee);

@@ -45,7 +45,13 @@ module.exports = {
       }
     }
 
-    const item = ArgParser.parseDot(args, [ ...player.inventory, ...player.room.items ]);
+    let item = null;
+
+    if (player.inventory) {
+      item = ArgParser.parseDot(args, [ ...player.inventory, ...player.room.items ]);
+    } else {
+      item = ArgParser.parseDot(args, [ ...player.room.items ]);
+    }
 
     if (item) {
       return handleItem(player, item, action);
@@ -69,7 +75,7 @@ function handleDoor(player, doorRoom, targetRoom, door, action) {
     ending = 'и';
   } else {
     ending = 'о';
-  }
+  };
 
   switch (action) {
     case 'открыть': {

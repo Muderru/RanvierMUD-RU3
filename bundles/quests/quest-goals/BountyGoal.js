@@ -32,7 +32,7 @@ module.exports = class BountyGoal extends QuestGoal {
       percent += 50;
     }
 
-    const display = this.state.found ? 'завершено' : 'не завершено'
+    const display = this.state.found ? 'завершено' : 'не завершено';
     return { percent, display };
   }
 

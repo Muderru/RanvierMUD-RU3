@@ -143,9 +143,9 @@ class Combat {
       if (critChance > 0) { 
         critical = Random.probability(critChance);
         if (critical) {
-          amount = Math.ceil(amount * 2.5 
-                                    * (1 + (attacker.getAttribute('critical_damage_percent')/100))
-                                    * (1 - (target.getAttribute('critical_damage_reduction_percent')/100))
+          amount = Math.ceil(amount * 2.5 * 
+                                    (1 + (attacker.getAttribute('critical_damage_percent')/100)) * 
+                                    (1 - (target.getAttribute('critical_damage_reduction_percent')/100))
           );
         }
       }
