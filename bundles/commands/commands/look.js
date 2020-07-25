@@ -379,7 +379,7 @@ function lookEntity(state, player, args) {
           B.sayAt(player, ItemUtil.renderItem(state, entity, player));
         }
         if (!entity.inventory || !entity.inventory.size) {
-          return B.sayAt(player, `В ${entity.dname} пусто.`);
+          return B.sayAt(player, `В ${entity.pname} пусто.`);
         }
 
         if (entity.closed) {
