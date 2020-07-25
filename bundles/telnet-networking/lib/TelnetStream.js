@@ -1,25 +1,22 @@
-'use strict';
-
 const { Sequences } = require('ranvier-telnet');
 const { TransportStream } = require('ranvier');
 
 /**
  * Thin wrapper around a ranvier-telnet `TelnetSocket`
  */
-class TelnetStream extends TransportStream
-{
+class TelnetStream extends TransportStream {
   attach(socket) {
     super.attach(socket);
 
-    socket.on('data', message => {
+    socket.on('data', (message) => {
       this.emit('data', message);
     });
 
-    socket.on('error', err => {
+    socket.on('error', (err) => {
       this.emit('error', err);
     });
 
-    this.socket.on('DO', opt => {
+    this.socket.on('DO', (opt) => {
       this.socket.telnetCommand(Sequences.WONT, opt);
     });
   }
