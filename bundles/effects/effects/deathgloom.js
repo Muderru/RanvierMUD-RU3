@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, EffectFlag } = require('ranvier');
 
 /**
@@ -19,76 +17,76 @@ module.exports = {
   flags: [EffectFlag.DEBUFF],
   modifiers: {
     attributes: {
-      cutting_resistance: function (current) {
+      cutting_resistance(current) {
         return current - this.state.quantity;
       },
-      crushing_resistance: function (current) {
+      crushing_resistance(current) {
         return current - this.state.quantity;
       },
-      piercing_resistance: function (current) {
+      piercing_resistance(current) {
         return current - this.state.quantity;
       },
-      fire_resistance: function (current) {
+      fire_resistance(current) {
         return current - this.state.quantity;
       },
-      cold_resistance: function (current) {
+      cold_resistance(current) {
         return current - this.state.quantity;
       },
-      lightning_resistance: function (current) {
+      lightning_resistance(current) {
         return current - this.state.quantity;
       },
-      earth_resistance: function (current) {
+      earth_resistance(current) {
         return current - this.state.quantity;
       },
-      acid_resistance: function (current) {
+      acid_resistance(current) {
         return current - this.state.quantity;
       },
-      chaos_resistance: function (current) {
+      chaos_resistance(current) {
         return current - this.state.quantity;
       },
-      ether_resistance: function (current) {
+      ether_resistance(current) {
         return current - this.state.quantity;
       },
-      cutting_damage: function (current) {
+      cutting_damage(current) {
         return current - this.state.quantity;
       },
-      crushing_damage: function (current) {
+      crushing_damage(current) {
         return current - this.state.quantity;
       },
-      piercing_damage: function (current) {
+      piercing_damage(current) {
         return current - this.state.quantity;
       },
-      fire_damage: function (current) {
+      fire_damage(current) {
         return current - this.state.quantity;
       },
-      cold_damage: function (current) {
+      cold_damage(current) {
         return current - this.state.quantity;
       },
-      lightning_damage: function (current) {
+      lightning_damage(current) {
         return current - this.state.quantity;
       },
-      earth_damage: function (current) {
+      earth_damage(current) {
         return current - this.state.quantity;
       },
-      acid_damage: function (current) {
+      acid_damage(current) {
         return current - this.state.quantity;
       },
-      chaos_damage: function (current) {
+      chaos_damage(current) {
         return current - this.state.quantity;
       },
-      ether_damage: function (current) {
+      ether_damage(current) {
         return current - this.state.quantity;
-      }
-    }
+      },
+    },
   },
   listeners: {
-    effectActivated: function () {
-      Broadcast.sayAt(this.target, "<bold><red>Вы чувствуете слабость после смерти.</red></bold>");
+    effectActivated() {
+      Broadcast.sayAt(this.target, '<bold><red>Вы чувствуете слабость после смерти.</red></bold>');
     },
 
-    effectDeactivated: function () {
-      Broadcast.sayAt(this.target, "Вы больше не чувствуете слабость после смерти.");
+    effectDeactivated() {
+      Broadcast.sayAt(this.target, 'Вы больше не чувствуете слабость после смерти.');
     },
 
-  }
+  },
 };

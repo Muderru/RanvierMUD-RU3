@@ -1,5 +1,3 @@
-'use strict';
-
 const { EffectFlag } = require('ranvier');
 
 /**
@@ -16,22 +14,22 @@ module.exports = {
   flags: [EffectFlag.BUFF],
   state: {
     slot: null,
-    stats: {}
+    stats: {},
   },
   modifiers: {
-    attributes: function (attribute, current) {
+    attributes(attribute, current) {
       if (!(attribute in this.state.stats)) {
         return current;
       }
 
       return current + this.state.stats[attribute];
-    }
+    },
   },
   listeners: {
-    unequip: function (slot, item) {
+    unequip(slot, item) {
       if (slot === this.state.slot) {
         this.remove();
       }
     },
-  }
+  },
 };

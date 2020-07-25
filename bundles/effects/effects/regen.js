@@ -1,21 +1,19 @@
-'use strict';
-
 const { EffectFlag, Heal } = require('ranvier');
 
 module.exports = {
   config: {
     name: 'Регенерация',
     persists: false,
-    description: "Ваши раны затягиваются сами по себе.",
+    description: 'Ваши раны затягиваются сами по себе.',
     type: 'regen',
-    tickInterval: 3
+    tickInterval: 3,
   },
   flags: [EffectFlag.BUFF],
   state: {
     magnitude: 10,
   },
   listeners: {
-    updateTick: function () {
+    updateTick() {
       // pools that regenerate over time
       const regens = [
         { pool: 'health', modifier: this.target.hasAttribute('health_regeneration') ? this.target.getAttribute('health_regeneration') : 1 },
@@ -28,7 +26,6 @@ module.exports = {
           continue;
         }
 
-        const poolMax = this.target.getMaxAttribute(regen.pool);
         const amount = regen.modifier;
         const heal = new Heal(regen.pool, amount, this.target, this, {
           hidden: true,
@@ -36,5 +33,5 @@ module.exports = {
         heal.commit(this.target);
       }
     },
-  }
+  },
 };

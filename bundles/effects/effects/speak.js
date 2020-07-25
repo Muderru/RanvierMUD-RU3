@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Have an NPC speak phrases over time
  */
@@ -8,15 +6,15 @@ module.exports = {
     name: 'Speaking',
     type: 'speaking',
     tickInterval: 3,
-    persists: false
+    persists: false,
   },
   state: {
     messageList: [],
     remainingMessages: [],
-    outputFn: null
+    outputFn: null,
   },
   listeners: {
-    effectActivated: function () {
+    effectActivated() {
       if (typeof this.state.outputFn !== 'function') {
         throw new Error('Speak effect has no outputFn configured');
       }
@@ -25,7 +23,7 @@ module.exports = {
       this.state.remainingMessages = this.state.messageList.concat([]);
     },
 
-    updateTick: function () {
+    updateTick() {
       if (!this.state.remainingMessages.length) {
         return this.remove();
       }
@@ -33,5 +31,5 @@ module.exports = {
       const message = this.state.remainingMessages.shift();
       this.state.outputFn(message);
     },
-  }
+  },
 };

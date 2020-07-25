@@ -1,19 +1,15 @@
-'use strict';
-
-const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
+const humanize = (sec) => require('humanize-duration')(sec, { language: 'ru', round: true });
 const { Broadcast: B, EffectFlag } = require('ranvier');
 
 module.exports = {
-  aliases: [ 'аффекты', 'эффекты' ],
-  command : (state) => (args, player) => {
-    B.sayAt(player, "Текущие аффекты:");
+  aliases: ['аффекты', 'эффекты'],
+  command: (state) => (args, player) => {
+    B.sayAt(player, 'Текущие аффекты:');
 
-    const effects = player.effects.entries().filter(effect => {
-      return !effect.config.hidden;
-    });
+    const effects = player.effects.entries().filter((effect) => !effect.config.hidden);
 
     if (!effects.length) {
-      return B.sayAt(player, "  Нет.");
+      return B.sayAt(player, '  Нет.');
     }
 
     for (const effect of effects) {
@@ -31,11 +27,11 @@ module.exports = {
       B.at(player, ':');
 
       if (effect.duration === Infinity) {
-        B.sayAt(player, "Постоянно");
+        B.sayAt(player, 'Постоянно');
       } else {
         B.sayAt(player, ` ${humanize(effect.remaining)} осталось`);
       }
-      B.sayAt(player, "\t" + effect.description);
+      B.sayAt(player, `\t${effect.description}`);
     }
-  }
+  },
 };
