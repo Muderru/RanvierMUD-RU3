@@ -1,9 +1,4 @@
-'use strict';
-
-const {
-  Broadcast,
-  Logger
-} = require('ranvier');
+const { Broadcast } = require('ranvier');
 
 /**
  * Накладываем эффект на моба с именем обидчика, если видим его, то атакуем
@@ -18,10 +13,10 @@ module.exports = {
     type: 'memory',
   },
   state: {
-    enemyName: ''
+    enemyName: '',
   },
   listeners: {
-    updateTick: function () {
+    updateTick() {
       if (this.target.isInCombat()) {
         return;
       }
@@ -40,18 +35,18 @@ module.exports = {
           }
 
           if (pc.hasAttribute('invisibility') && pc.getAttribute('invisibility') <= detectInvis) {
-            Broadcast.sayAt(pc, this.target.Name + " набрасывается на вас!");
+            Broadcast.sayAt(pc, `${this.target.Name} набрасывается на вас!`);
             this.target.initiateCombat(pc);
           } else if (pc.hasAttribute('hide') && pc.getAttribute('hide') <= detectHide) {
-            Broadcast.sayAt(pc, this.target.Name + " набрасывается на вас!");
+            Broadcast.sayAt(pc, `${this.target.Name} набрасывается на вас!`);
             this.target.initiateCombat(pc);
           }
         }
       }
     },
 
-    killed: function () {
+    killed() {
       this.remove();
-    }
-  }
+    },
+  },
 };

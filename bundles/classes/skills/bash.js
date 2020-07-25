@@ -1,12 +1,9 @@
-'use strict';
-
 const { Broadcast, Damage, SkillType } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 80;
-const ddMod = 0.7; //direct damage coefficient
-const dbMod = 0.1; //debaff coefficient
+const ddMod = 0.7; // direct damage coefficient
+const dbMod = 0.1; // debaff coefficient
 
 /**
  * Bash
@@ -25,22 +22,21 @@ module.exports = {
   },
   cooldown: 20,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (!player.isNpc) {
       if (!player.equipment.has('щит')) {
-        return Broadcast.sayAt(player, "У вас нет щита.");
+        return Broadcast.sayAt(player, 'У вас нет щита.');
       }
     }
 
-    let getDamage = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'bash') * ddMod);
+    const getDamage = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'bash') * ddMod);
 
     const damage = new Damage('health', getDamage, player, this);
 
-    let duration = SkillUtil.effectDuration(player);
+    const duration = SkillUtil.effectDuration(player);
 
-    const effect = state.EffectFactory.create('bash', {duration}, {spellStrength: Math.floor(getDamage * dbMod)});
+    const effect = state.EffectFactory.create('bash', { duration }, { spellStrength: Math.floor(getDamage * dbMod) });
     target.addEffect(effect);
-
 
     Broadcast.sayAt(player, `<bold><red>Вы нанесли сильный удар ${target.dname}, сбивая с ног!</red></bold>`);
     Broadcast.sayAtExcept(player.room, `<bold><red>${player.Name} наносит сильный удар ${target.dname}, сбивая с ног!</red></bold>`, [player, target]);
@@ -52,7 +48,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'skill_bash');
   },
 
-  info: (player) => {
-    return 'Наносит сильный удар противнику и сбивает его с ног. Наносит урон зависящий от урона вашего оружия, силы, вашего дополнительного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Может обездвижить противника. Необходим щит.';
-  }
+  info: (player) => 'Наносит сильный удар противнику и сбивает его с ног. Наносит урон зависящий от урона вашего оружия, силы, вашего дополнительного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Может обездвижить противника. Необходим щит.',
 };

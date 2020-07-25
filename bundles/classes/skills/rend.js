@@ -1,14 +1,11 @@
-'use strict';
-
 const { Broadcast, SkillType, Damage } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 10;
 const cost = 60;
 const tickInterval = 2;
-const ddMod = 0.8; //direct damage coefficient
-const dotMod = 0.1; //damage over time coefficient
+const ddMod = 0.8; // direct damage coefficient
+const dotMod = 0.1; // damage over time coefficient
 
 /**
  * DoT (Damage over time) skill
@@ -27,18 +24,18 @@ module.exports = {
   },
   cooldown,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (!player.isNpc) {
       if (!player.equipment.has('оружие')) {
-        return Broadcast.sayAt(player, "Вы не вооружены.");
+        return Broadcast.sayAt(player, 'Вы не вооружены.');
       }
     }
 
-    let getDamage = Math.floor(SkillUtil.directSkillDamage(player, target, 'cutting', 'rend') * ddMod);
+    const getDamage = Math.floor(SkillUtil.directSkillDamage(player, target, 'cutting', 'rend') * ddMod);
 
     const damage = new Damage('health', getDamage, player, this);
 
-    let duration = SkillUtil.dotDuration(player, target);
+    const duration = SkillUtil.dotDuration(player, target);
 
     const effect = state.EffectFactory.create(
       'skill.rend',
@@ -49,20 +46,20 @@ module.exports = {
       },
       {
         totalDamage: Math.floor(SkillUtil.dotSkillDamage(player, target, 'cutting', 'rend') * dotMod),
-      }
+      },
     );
     effect.skill = this;
     effect.attacker = player;
 
-    effect.on('effectDeactivated', _ => {
+    effect.on('effectDeactivated', () => {
       if (target.gender === 'male') {
-         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестал кровоточить.</red>`);
+        Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестал кровоточить.</red>`);
       } else if (target.gender === 'female') {
-         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестала кровоточить.</red>`);
+        Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестала кровоточить.</red>`);
       } else if (target.gender === 'plural') {
-         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестали кровоточить.</red>`);
+        Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестали кровоточить.</red>`);
       } else {
-         Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестало кровоточить.</red>`);
+        Broadcast.sayAt(player, `<red><b>${target.Name}</b> перестало кровоточить.</red>`);
       }
     });
 
@@ -87,7 +84,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'skill_rend');
   },
 
-  info: (player) => {
-    return `Наносит цели рваную рану, наносящую урон зависящий от урона вашего оружия, силы, вашего бонусного режущего урона, уровня владения умением и сопротивляемости режущему урону цели. Длительность кровотечения зависит от ловкости атакующего.`;
-  }
+  info: (player) => 'Наносит цели рваную рану, наносящую урон зависящий от урона вашего оружия, силы, вашего бонусного режущего урона, уровня владения умением и сопротивляемости режущему урону цели. Длительность кровотечения зависит от ловкости атакующего.',
 };

@@ -1,6 +1,7 @@
-'use strict';
+const {
+  Broadcast, SkillType, Config, Logger,
+} = require('ranvier');
 
-const { Broadcast, SkillType, Config, Logger } = require('ranvier');
 const say = Broadcast.sayAt;
 
 const manaCost = 10;
@@ -9,7 +10,7 @@ const manaCost = 10;
  * Бесплатный реколл
  */
 module.exports = {
-  aliases: [ 'вернуться' ],
+  aliases: ['вернуться'],
   name: 'вернуться',
   type: SkillType.SKILL,
   requiresTarget: false,
@@ -20,9 +21,9 @@ module.exports = {
   },
   cooldown: 3600,
 
-  run: state => (args, player, target) => {
+  run: (state) => (args, player, target) => {
     if (player.isInCombat()) {
-      return say(player, "Сейчас вы сражаетесь и не можете вернуться домой.");
+      return say(player, 'Сейчас вы сражаетесь и не можете вернуться домой.');
     }
 
     const startingRoomRef = Config.get('startingRoom');
@@ -35,7 +36,7 @@ module.exports = {
       home = state.RoomManager.getRoom(startingRoomRef);
     }
 
-    say(player, `<b><cyan>Вы молитесь богам о скором возвращении домой. Боги снисходят до вас и переносят домой.</cyan></b>`);
+    say(player, '<b><cyan>Вы молитесь богам о скором возвращении домой. Боги снисходят до вас и переносят домой.</cyan></b>');
     Broadcast.sayAtExcept(player.room, `<b><cyan>Божественной силой ${player.Name} переносится домой.</cyan></b>`, player);
 
     player.moveTo(home);
@@ -43,7 +44,5 @@ module.exports = {
     player.save();
   },
 
-  info: (player) => {
-      return `Раз в час вы можете вернуться домой (начальную комнату или комнату ренты).`;
-  }
+  info: (player) => 'Раз в час вы можете вернуться домой (начальную комнату или комнату ренты).',
 };

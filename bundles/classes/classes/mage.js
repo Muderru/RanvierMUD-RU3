@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * See warrior.js for more on classes.
  */
@@ -10,5 +8,5 @@ module.exports = {
 
   setupPlayer: (state, player) => {
     player.prompt = '[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]';
-  }
+  },
 };

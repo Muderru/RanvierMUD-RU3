@@ -1,12 +1,9 @@
-'use strict';
-
 const { Broadcast, Damage, SkillType } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 85;
-const ddMod = 0.9; //direct damage coefficient
-const dbMod = 0.05; //debaff coefficient
+const ddMod = 0.9; // direct damage coefficient
+const dbMod = 0.05; // debaff coefficient
 
 /**
  * Basic mage spell
@@ -25,16 +22,15 @@ module.exports = {
   },
   cooldown: 15,
 
-  run: state => function (args, player, target) {
-    let getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'cold', 'ice_peak') * ddMod);
+  run: (state) => function (args, player, target) {
+    const getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'cold', 'ice_peak') * ddMod);
 
     const damage = new Damage('health', getDamage, player, this);
 
-    let duration = SkillUtil.effectDuration(player);
+    const duration = SkillUtil.effectDuration(player);
 
-    const effect = state.EffectFactory.create('ice_peak', {duration}, {spellStrength: Math.floor(getDamage * dbMod)});
+    const effect = state.EffectFactory.create('ice_peak', { duration }, { spellStrength: Math.floor(getDamage * dbMod) });
     target.addEffect(effect);
-
 
     Broadcast.sayAt(player, `<bold><blue>Воздух между ваших рук замерз, принимая форму сосульки, которая поражает ${target.vname}!</blue></bold>`);
     Broadcast.sayAtExcept(player.room, `<bold><blue>Воздух между рук ${player.rname} замерз, принимая форму сосульки, которая поражает ${target.vname}!</blue></bold>`, [player, target]);
@@ -46,7 +42,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'spell_ice_peak');
   },
 
-  info: (player) => {
-    return `Создает ледяную сосульку, наносящую урон зависящий от урона вашего оружия, интеллекта, вашего бонусного урона холодом, уровня владения умением и сопротивляемости холоду цели. Может заморозить противника.`;
-  }
+  info: (player) => 'Создает ледяную сосульку, наносящую урон зависящий от урона вашего оружия, интеллекта, вашего бонусного урона холодом, уровня владения умением и сопротивляемости холоду цели. Может заморозить противника.',
 };

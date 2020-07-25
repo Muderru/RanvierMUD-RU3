@@ -1,5 +1,3 @@
-'use strict';
-
 const { SkillFlag, SkillType } = require('ranvier');
 
 /**
@@ -12,7 +10,7 @@ module.exports = {
   type: SkillType.SKILL,
   flags: [SkillFlag.PASSIVE],
 
-  info: function (player) {
-    return `Позволяет вам использовать одноручные и двуручные топоры.`;
-  }
+  info(player) {
+    return 'Позволяет вам использовать одноручные и двуручные топоры.';
+  },
 };

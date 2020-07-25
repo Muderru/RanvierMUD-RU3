@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 
@@ -76,9 +74,7 @@ class PlayerClass {
   }
 
   get abilityList() {
-    return Object.entries(this.abilityTable).reduce((acc, [ , abilities ]) => {
-      return acc.concat(abilities.skills || []).concat(abilities.spells || []);
-    }, []);
+    return Object.entries(this.abilityTable).reduce((acc, [, abilities]) => acc.concat(abilities.skills || []).concat(abilities.spells || []), []);
   }
 
   /**

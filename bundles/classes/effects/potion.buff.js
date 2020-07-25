@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, EffectFlag } = require('ranvier');
 
 module.exports = {
@@ -12,31 +10,30 @@ module.exports = {
   },
   flags: [EffectFlag.BUFF],
   state: {
-    stat: "strength",
-    magnitude: 1
+    stat: 'strength',
+    magnitude: 1,
   },
   modifiers: {
-    attributes: function (attribute, current) {
+    attributes(attribute, current) {
       if (attribute !== this.state.stat) {
         return current;
       }
 
       return current + this.state.magnitude;
-    }
+    },
   },
   listeners: {
-    effectRefreshed: function (newEffect) {
+    effectRefreshed(newEffect) {
       this.startedAt = Date.now();
-      Broadcast.sayAt(this.target, "Вы обновили действие магического зелья.");
+      Broadcast.sayAt(this.target, 'Вы обновили действие магического зелья.');
     },
 
-    effectActivated: function () {
-      Broadcast.sayAt(this.target, "Вы осушили бутылёк с зельем и почувствовали себя сильнее!");
+    effectActivated() {
+      Broadcast.sayAt(this.target, 'Вы осушили бутылёк с зельем и почувствовали себя сильнее!');
     },
 
-    effectDeactivated: function () {
-      Broadcast.sayAt(this.target, "Наполняющая вас сила иссякла.");
-    }
-  }
+    effectDeactivated() {
+      Broadcast.sayAt(this.target, 'Наполняющая вас сила иссякла.');
+    },
+  },
 };
-

@@ -1,52 +1,50 @@
-'use strict';
-
 const { Broadcast } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
 
 function attrMod(player, target, skillAttr) {
   let addDamage = 0;
-  const damageAttr = skillAttr + '_damage';
-  const resistanceAttr = skillAttr + '_resistance';
+  const damageAttr = `${skillAttr}_damage`;
+  const resistanceAttr = `${skillAttr}_resistance`;
   if (player.hasAttribute(damageAttr)) {
     if (target.hasAttribute(resistanceAttr)) {
       if (player.getAttribute(damageAttr) > target.getAttribute(resistanceAttr)) {
         addDamage += player.getAttribute(damageAttr) - target.getAttribute(resistanceAttr);
       }
     } else {
-        addDamage += player.getAttribute(damageAttr);
+      addDamage += player.getAttribute(damageAttr);
     }
   }
-  addDamage = 1+addDamage*0.1;
+  addDamage = 1 + addDamage * 0.1;
   return addDamage;
 }
 
 function statMod(player, stat) {
   let addDamage = 0;
   if (player.hasAttribute(stat)) {
-      addDamage += player.getAttribute(stat);
+    addDamage += player.getAttribute(stat);
   } else {
-      addDamage = 20;
+    addDamage = 20;
   }
 
-  addDamage = 1+addDamage*0.05;
+  addDamage = 1 + addDamage * 0.05;
   return addDamage;
 }
 
 function abilityMod(player, ability) {
   let addDamage = 0;
   if (player.getMeta(ability) > 0) {
-    addDamage = player.getMeta(ability)*0.01;
+    addDamage = player.getMeta(ability) * 0.01;
   }
-  return 1+addDamage;
+  return 1 + addDamage;
 }
 
 function attrModHeal(player, skillAttr) {
   let addDamage = 0;
-  const damageAttr = skillAttr + '_damage';
+  const damageAttr = `${skillAttr}_damage`;
   if (player.hasAttribute(damageAttr)) {
     addDamage += player.getAttribute(damageAttr);
   }
-  addDamage = 1+addDamage*0.05;
+  addDamage = 1 + addDamage * 0.05;
   return addDamage;
 }
 
@@ -55,18 +53,16 @@ function attrModHeal(player, skillAttr) {
  */
 exports.directSkillDamage = function (player, target, skillAttr, skillName) {
   let getDamage = 0;
-  if (!player.isNpc) { //прямой урон игрока
+  if (!player.isNpc) { // прямой урон игрока
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * attrMod(player, target, skillAttr)
                             * statMod(player, 'strength')
-                            * abilityMod(player, 'skill_' + skillName)
-                            * (1 + (player.getAttribute('skill_damage_percent') / 100))
-    );
-  } else { //прямой урон моба, его формула проще т.к. у него может не быть многих атрибутов
+                            * abilityMod(player, `skill_${skillName}`)
+                            * (1 + (player.getAttribute('skill_damage_percent') / 100)));
+  } else { // прямой урон моба, его формула проще т.к. у него может не быть многих атрибутов
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * (1 + (player.level / 100))
-                            * (1.5 + (player.getAttribute('skill_damage_percent') / 100))
-    );
+                            * (1.5 + (player.getAttribute('skill_damage_percent') / 100)));
   }
   return getDamage;
 };
@@ -76,18 +72,16 @@ exports.directSkillDamage = function (player, target, skillAttr, skillName) {
  */
 exports.directSpellDamage = function (player, target, skillAttr, skillName) {
   let getDamage = 0;
-  if (!player.isNpc) { //прямой урон игрока
+  if (!player.isNpc) { // прямой урон игрока
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * attrMod(player, target, skillAttr)
                             * statMod(player, 'intellect')
-                            * abilityMod(player, 'spell_' + skillName)
-                            * (1 + (player.getAttribute('spell_damage_percent') / 100))
-    );
-  } else { //прямой урон моба, его формула проще т.к. у него может не быть многих атрибутов
+                            * abilityMod(player, `spell_${skillName}`)
+                            * (1 + (player.getAttribute('spell_damage_percent') / 100)));
+  } else { // прямой урон моба, его формула проще т.к. у него может не быть многих атрибутов
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * (1 + (player.level / 100))
-                            * (1.5 + (player.getAttribute('spell_damage_percent') / 100))
-    );
+                            * (1.5 + (player.getAttribute('spell_damage_percent') / 100)));
   }
   return getDamage;
 };
@@ -97,20 +91,18 @@ exports.directSpellDamage = function (player, target, skillAttr, skillName) {
  */
 exports.directHealAmount = function (player, target, skillAttr, skillName) {
   let getDamage = 0;
-  if (!player.isNpc) { //прямой урон игрока
+  if (!player.isNpc) { // прямой урон игрока
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * attrModHeal(player, skillAttr)
                             * statMod(player, 'intellect')
-                            * abilityMod(player, 'spell_' + skillName)
+                            * abilityMod(player, `spell_${skillName}`)
                             * (1 + (player.getAttribute('out_heal_percent') / 100))
-                            * (1 + (target.getAttribute('in_heal_percent') / 100))
-    );
-  } else { //прямой урон моба, его формула проще т.к. у него может не быть многих атрибутов
+                            * (1 + (target.getAttribute('in_heal_percent') / 100)));
+  } else { // прямой урон моба, его формула проще т.к. у него может не быть многих атрибутов
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * (1 + (player.level / 100))
                             * (1.5 + (player.getAttribute('out_heal_percent') / 100))
-                            * (1.5 + (target.getAttribute('in_heal_percent') / 100))
-    );
+                            * (1.5 + (target.getAttribute('in_heal_percent') / 100)));
   }
   return getDamage;
 };
@@ -121,7 +113,7 @@ exports.directHealAmount = function (player, target, skillAttr, skillName) {
 exports.effectDuration = function (player) {
   let duration = 6000;
   if (player.hasAttribute('agility')) {
-    duration = 3000 * (1 + Math.floor(player.getAttribute('agility')/5))
+    duration = 3000 * (1 + Math.floor(player.getAttribute('agility') / 5))
                     * (1 + (player.getAttribute('effect_duration_percent') / 100));
   }
   return duration;
@@ -133,7 +125,7 @@ exports.effectDuration = function (player) {
 exports.dotDuration = function (player, target) {
   let duration = 6000;
   if (player.hasAttribute('agility')) {
-    duration = 3000 * (1 + Math.floor(player.getAttribute('agility')/5))
+    duration = 3000 * (1 + Math.floor(player.getAttribute('agility') / 5))
                     * (1 + (player.getAttribute('dot_duration_percent') / 100))
                     * (1 - (target.getAttribute('dot_duration_reduction_percent') / 100));
   }
@@ -145,20 +137,18 @@ exports.dotDuration = function (player, target) {
  */
 exports.dotSpellDamage = function (player, target, skillAttr, skillName) {
   let getDamage = 0;
-  if (!player.isNpc) { //периодический урон игрока
+  if (!player.isNpc) { // периодический урон игрока
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * attrMod(player, target, skillAttr)
                             * statMod(player, 'intellect')
-                            * abilityMod(player, 'spell_' + skillName)
+                            * abilityMod(player, `spell_${skillName}`)
                             * (1 + (player.getAttribute('spell_damage_percent') / 100))
-                            * (1 + (player.getAttribute('dot_damage_percent') / 100))
-    );
-  } else { //периодический урон моба, его формула проще т.к. у него может не быть многих атрибутов
+                            * (1 + (player.getAttribute('dot_damage_percent') / 100)));
+  } else { // периодический урон моба, его формула проще т.к. у него может не быть многих атрибутов
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * (1 + (player.level / 100))
                             * (1.5 + (player.getAttribute('spell_damage_percent') / 100))
-                            * (1 + (player.getAttribute('dot_damage_percent') / 100))
-    );
+                            * (1 + (player.getAttribute('dot_damage_percent') / 100)));
   }
   return getDamage;
 };
@@ -168,20 +158,18 @@ exports.dotSpellDamage = function (player, target, skillAttr, skillName) {
  */
 exports.dotSkillDamage = function (player, target, skillAttr, skillName) {
   let getDamage = 0;
-  if (!player.isNpc) { //периодический урон игрока
+  if (!player.isNpc) { // периодический урон игрока
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * attrMod(player, target, skillAttr)
                             * statMod(player, 'strength')
-                            * abilityMod(player, 'skill_' + skillName)
+                            * abilityMod(player, `skill_${skillName}`)
                             * (1 + (player.getAttribute('skill_damage_percent') / 100))
-                            * (1 + (player.getAttribute('dot_damage_percent') / 100))
-    );
-  } else { //периодический урон моба, его формула проще т.к. у него может не быть многих атрибутов
+                            * (1 + (player.getAttribute('dot_damage_percent') / 100)));
+  } else { // периодический урон моба, его формула проще т.к. у него может не быть многих атрибутов
     getDamage = Math.floor(Combat.calculateWeaponDamage(player)
                             * (1 + (player.level / 100))
                             * (1.5 + (player.getAttribute('spell_damage_percent') / 100))
-                            * (1 + (player.getAttribute('dot_damage_percent') / 100))
-    );
+                            * (1 + (player.getAttribute('dot_damage_percent') / 100)));
   }
   return getDamage;
 };
@@ -225,18 +213,18 @@ exports.skillUp = function (state, player, skillStat) {
     const rnd = Math.floor((Math.random() * 100) + 1);
     if (rnd < skillUpChance) {
       if (player.getMeta(skillStat) < 100) {
-        let ability = player.getMeta(skillStat);
-        const [ prefix, skillId ] = skillStat.split('_');
+        const ability = player.getMeta(skillStat);
+        const [prefix, skillId] = skillStat.split('_');
         let skill = null;
         if (prefix === 'skill') {
           skill = state.SkillManager.find(skillId);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в умении \'' + skill.name[0].toUpperCase() + skill.name.slice(1) + '\'.</cyan></bold>');
+          Broadcast.sayAt(player, `<bold><cyan>Вы почувствовали себя увереннее в умении '${skill.name[0].toUpperCase()}${skill.name.slice(1)}'.</cyan></bold>`);
         } else {
           skill = state.SpellManager.find(skillId);
-          Broadcast.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'' + skill.name[0].toUpperCase() + skill.name.slice(1) + '\'.</cyan></bold>');
+          Broadcast.sayAt(player, `<bold><cyan>Вы почувствовали себя увереннее в заклинании '${skill.name[0].toUpperCase()}${skill.name.slice(1)}'.</cyan></bold>`);
         }
         return player.setMeta(skillStat, ability + 1);
       }
     }
   }
-}
+};

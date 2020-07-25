@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * This example definition of a class file is a guideline. The class system is
  * left intentionally vague so as to not be too opinionated. Class files are
@@ -15,5 +13,5 @@ module.exports = {
 
   setupPlayer: (state, player) => {
     player.prompt = '[ %health.current%/%health.max% <b>жизни</b> %mana.current%/%mana.max% <b>энергии</b> ]';
-  }
+  },
 };

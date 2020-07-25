@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, EffectFlag } = require('ranvier');
 
 /**
@@ -18,19 +16,19 @@ module.exports = {
   flags: [EffectFlag.BUFF],
   modifiers: {
     attributes: {
-      invisibility: function (current) {
+      invisibility(current) {
         return current + this.state.spellStrength;
-      }
-    }
+      },
+    },
   },
   listeners: {
-    effectActivated: function () {
+    effectActivated() {
       Broadcast.sayAt(this.target, '<cyan>Вы растворяетесь в воздухе.</cyan>');
     },
 
-    effectDeactivated: function () {
+    effectDeactivated() {
       Broadcast.sayAt(this.target, '<cyan>Вы вновь видимы.</cyan>');
     },
 
-  }
+  },
 };

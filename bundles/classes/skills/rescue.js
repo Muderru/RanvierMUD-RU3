@@ -1,6 +1,4 @@
-'use strict';
-
-const { Broadcast, SkillType, Damage } = require('ranvier');
+const { Broadcast, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 30;
@@ -10,12 +8,12 @@ const maxChance = 95;
 function getAttr(player) {
   let addDamage = 0;
   if (player.hasAttribute('agility')) {
-      addDamage += player.getAttribute('agility');
+    addDamage += player.getAttribute('agility');
   } else {
-      addDamage = 20;
+    addDamage = 20;
   }
 
-  addDamage = addDamage/2;
+  addDamage /= 2;
   return addDamage;
 }
 
@@ -24,7 +22,7 @@ function getSkill(player) {
   if (player.getMeta('skill_rescue') > 0) {
     addDamage += player.getMeta('skill_rescue');
   }
-  return addDamage/2;
+  return addDamage / 2;
 }
 
 /**
@@ -43,7 +41,7 @@ module.exports = {
   },
   cooldown,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (!target.isInCombat()) {
       return Broadcast.sayAt(player, `${target.name} не нуждается в спасении.`);
     }
@@ -57,7 +55,7 @@ module.exports = {
       chance = maxChance;
     }
 
-    let random = Math.floor(Math.random()*100 + 1);
+    const random = Math.floor(Math.random() * 100 + 1);
     if (random < chance) {
       const enemy = [...target.combatants][0];
       target.removeFromCombat();
@@ -85,7 +83,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'skill_rescue');
   },
 
-  info: (player) => {
-    return `Позволяет вам спасти цель от битвы, привлекая внимание врагов на себя.`;
-  }
+  info: (player) => 'Позволяет вам спасти цель от битвы, привлекая внимание врагов на себя.',
 };

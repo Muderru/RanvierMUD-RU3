@@ -1,11 +1,8 @@
-'use strict';
-
 const { Broadcast, Damage, SkillType } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 60;
-const ddMod = 1; //direct damage coefficient
+const ddMod = 1; // direct damage coefficient
 
 /**
  * Basic mage spell
@@ -24,8 +21,8 @@ module.exports = {
   },
   cooldown: 5,
 
-  run: state => function (args, player, target) {
-    let getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'fire', 'fireball') * ddMod);
+  run: (state) => function (args, player, target) {
+    const getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'fire', 'fireball') * ddMod);
 
     const damage = new Damage('health', getDamage, player, this);
 
@@ -39,7 +36,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'spell_fireball');
   },
 
-  info: (player) => {
-    return `Создает огненный шар, наносящий урон зависящий от урона вашего оружия, интеллекта, вашего бонусного урона огнем, уровня владения умением и сопротивляемости огню цели.`;
-  }
+  info: (player) => 'Создает огненный шар, наносящий урон зависящий от урона вашего оружия, интеллекта, вашего бонусного урона огнем, уровня владения умением и сопротивляемости огню цели.',
 };

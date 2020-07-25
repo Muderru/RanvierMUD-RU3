@@ -1,21 +1,19 @@
-'use strict';
-
-const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
+const humanize = (sec) => require('humanize-duration')(sec, { language: 'ru', round: true });
 const { Broadcast: B, Logger, SkillErrors } = require('ranvier');
-const Combat = require('../combat/lib/Combat');
-const CombatErrors = require('../combat/lib/CombatErrors');
 const { Random } = require('rando-js');
+const CombatErrors = require('../combat/lib/CombatErrors');
 const ArgParser = require('../lib/lib/ArgParser');
+
 const dot = ArgParser.parseDot;
 
 module.exports = {
   listeners: {
-    useAbility: state => function (ability, args) {
-      let skillname = 'skill_' + ability.id;
-      let spellname = 'spell_' + ability.id;
+    useAbility: (state) => function (ability, args) {
+      const skillname = `skill_${ability.id}`;
+      const spellname = `spell_${ability.id}`;
 
       if (!this.getMeta(skillname) && !this.getMeta(spellname)) {
-          return B.sayAt(this, 'Вы еще не выучили эту способность.');
+        return B.sayAt(this, 'Вы еще не выучили эту способность.');
       }
 
       let target = null;
@@ -43,10 +41,10 @@ module.exports = {
             }
           } catch (e) {
             if (
-              e instanceof CombatErrors.CombatSelfError ||
-              e instanceof CombatErrors.CombatNonPvpError ||
-              e instanceof CombatErrors.CombatInvalidTargetError ||
-              e instanceof CombatErrors.CombatPacifistError
+              e instanceof CombatErrors.CombatSelfError
+              || e instanceof CombatErrors.CombatNonPvpError
+              || e instanceof CombatErrors.CombatInvalidTargetError
+              || e instanceof CombatErrors.CombatPacifistError
             ) {
               return B.sayAt(this, e.message);
             }
@@ -67,15 +65,15 @@ module.exports = {
           if (ability.cooldownGroup) {
             return B.sayAt(this, `Нельзя использовать способность ${ability.name} пока действует задержка ${e.effect.skill.name}.`);
           }
-          return B.sayAt(this, `Вы еще не можете использовать \'${ability.name}\'. ${humanize(e.effect.remaining)} осталось.`);
+          return B.sayAt(this, `Вы еще не можете использовать '${ability.name}'. ${humanize(e.effect.remaining)} осталось.`);
         }
 
         if (e instanceof SkillErrors.PassiveError) {
-          return B.sayAt(this, `Это пассивное умение.`);
+          return B.sayAt(this, 'Это пассивное умение.');
         }
 
         if (e instanceof SkillErrors.NotEnoughResourcesError) {
-          return B.sayAt(this, `Недостаточно энергии.`);
+          return B.sayAt(this, 'Недостаточно энергии.');
         }
 
         Logger.error(e.message);
@@ -86,62 +84,60 @@ module.exports = {
     /**
      * Handle player leveling up
      */
-    level: state => function () {
-      const abilities = this.playerClass.abilityTable;
-
+    level: (state) => function () {
       const attributePoints = this.getMeta('attributePoints');
       const magicPoints = this.getMeta('magicPoints');
       const skillPoints = this.getMeta('skillPoints');
       const hp = this.attributes.get('health');
-      const increment = 20; //столько получаем единиц жизни при повышении уровня
+      const increment = 20; // столько получаем единиц жизни при повышении уровня
 
       if (hp) {
-          hp.setBase(hp.base + increment);
+        hp.setBase(hp.base + increment);
       }
 
-      B.sayAt(this, '<b><cyan>Вы получили ' + increment + ' жизни.</cyan></b>');
+      B.sayAt(this, `<b><cyan>Вы получили ${increment} жизни.</cyan></b>`);
 
       if (this.hasAttribute('mana')) {
-          let mana = this.attributes.get('mana');
-          const mana_add = 20; //столько получаем единиц маны при повышении уровня
-          mana.setBase(mana.base + mana_add);
-          B.sayAt(this, '<b><cyan>Вы получили ' + mana_add + ' маны.</cyan></b>');
+        const mana = this.attributes.get('mana');
+        const manaAdd = 20; // столько получаем единиц маны при повышении уровня
+        mana.setBase(mana.base + manaAdd);
+        B.sayAt(this, `<b><cyan>Вы получили ${manaAdd} маны.</cyan></b>`);
       }
 
       this.setMeta('attributePoints', attributePoints + 1);
 
       switch (this.playerClass.id) {
         case 'warrior':
-          if (Random.inRange(0, 100) <=80) {
-              this.setMeta('skillPoints', skillPoints + 1);
-              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
+          if (Random.inRange(0, 100) <= 80) {
+            this.setMeta('skillPoints', skillPoints + 1);
+            B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
           } else {
-              this.setMeta('magicPoints', magicPoints + 1);
-              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
+            this.setMeta('magicPoints', magicPoints + 1);
+            B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
           }
-        break;
+          break;
         case 'mage':
-          if (Random.inRange(0, 100) <=80) {
-              this.setMeta('magicPoints', magicPoints + 1);
-              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
+          if (Random.inRange(0, 100) <= 80) {
+            this.setMeta('magicPoints', magicPoints + 1);
+            B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
           } else {
-              this.setMeta('skillPoints', skillPoints + 1);
-              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
+            this.setMeta('skillPoints', skillPoints + 1);
+            B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
           }
-        break;
+          break;
         case 'paladin':
           if (Random.inRange(0, 100) < 50) {
-              this.setMeta('magicPoints', magicPoints + 1);
-              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
+            this.setMeta('magicPoints', magicPoints + 1);
+            B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко магии.</cyan></b>');
           } else {
-              this.setMeta('skillPoints', skillPoints + 1);
-              B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
+            this.setMeta('skillPoints', skillPoints + 1);
+            B.sayAt(this, '<b><cyan>Вы получили 1 очко характеристик и 1 очко умений.</cyan></b>');
           }
-        break;
+          break;
         default:
-          B.sayAt(this, `<bold><red>Произошла какая-то ошибка при добавлении очков умений и заклинаний.</red></bold>`);
-        break;
-    }
-    }
-  }
+          B.sayAt(this, '<bold><red>Произошла какая-то ошибка при добавлении очков умений и заклинаний.</red></bold>');
+          break;
+      }
+    },
+  },
 };

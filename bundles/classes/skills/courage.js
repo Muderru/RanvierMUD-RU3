@@ -1,7 +1,4 @@
-'use strict';
-
 const { Broadcast: B, SkillType } = require('ranvier');
-const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 100;
 
@@ -22,12 +19,12 @@ module.exports = {
   },
   cooldown: 60,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (!player.hasEffectType('death_debuff')) {
-      return B.sayAt(player, `Вы сейчас не чувствуюте уныния.`);
+      return B.sayAt(player, 'Вы сейчас не чувствуюте уныния.');
     }
 
-    let deathEffect = target.effects.getByType('death_debuff');
+    const deathEffect = target.effects.getByType('death_debuff');
     let ending = '';
     if (player.gender === 'male') {
       ending = '';
@@ -44,14 +41,12 @@ module.exports = {
       B.sayAtExcept(player.room, `<b>${player.Name} шепчет в ухо ${target.rname} слова одобрения, теперь он${ending} более счастлив${ending}.</b>`, [target, player]);
       B.sayAt(target, `<b>${player.Name} шепчет вам ухо слова одобрения, вы чувствуете себя счастливее.</b>`);
     } else {
-      B.sayAt(player, `<b>Вы собираете волю в кулак, теперь вы чувствуюте себя счастливее.</b>`);
+      B.sayAt(player, '<b>Вы собираете волю в кулак, теперь вы чувствуюте себя счастливее.</b>');
       B.sayAtExcept(player.room, `<b>${player.Name} собирает волю в кулак, теперь он${ending} чувствует себя счастливее.</b>`, player);
     }
 
     deathEffect.remove();
   },
 
-  info: (player) => {
-    return `Снимает с цели заклинания дебафф от смерти.`;
-  }
+  info: (player) => 'Снимает с цели заклинания дебафф от смерти.',
 };

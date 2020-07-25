@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast: B, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
@@ -22,13 +20,13 @@ module.exports = {
   },
   cooldown: 60,
 
-  run: state => function (args, player, target) {
-    let duration = SkillUtil.effectDuration(player);
+  run: (state) => function (args, player, target) {
+    const duration = SkillUtil.effectDuration(player);
 
     SkillUtil.skillUp(state, player, 'spell_silence');
     if (!player.isNpc) {
-      let chance = Math.floor(Math.random()*101);
-      if (chance >= (50 + (SkillUtil.getBuff(player, 'spell_silence')/2))) {
+      const chance = Math.floor(Math.random() * 101);
+      if (chance >= (50 + (SkillUtil.getBuff(player, 'spell_silence') / 2))) {
         return B.sayAt(player, `Вам не удалось замолчать ${target.vname}.`);
       }
     }
@@ -37,11 +35,9 @@ module.exports = {
     B.sayAtExcept(player.room, `<b>${player.Name} сжимает руки в кулаки, заставляя ${target.vname} замолчать.</b>`, [target, player]);
     B.sayAt(target, `<b>${player.Name} сжимает руки в кулаки, заставляя вас замолчать.</b>`);
 
-    const effect = state.EffectFactory.create('silence', {duration});
+    const effect = state.EffectFactory.create('silence', { duration });
     target.addEffect(effect);
   },
 
-  info: (player) => {
-    return `Делает противника немым, как рыба. Шанс срабатывания зависит от раскачки умения.`;
-  }
+  info: (player) => 'Делает противника немым, как рыба. Шанс срабатывания зависит от раскачки умения.',
 };

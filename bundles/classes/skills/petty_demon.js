@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast: B, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
@@ -22,14 +20,14 @@ module.exports = {
   },
   cooldown: 180,
 
-  run: state => function (args, player) {
+  run: (state) => function (args, player) {
     for (const follower of player.followers) {
       if (follower.id === 'petty_demon') {
-        return B.sayAt(player, `Он уже следует за вами!`);
+        return B.sayAt(player, 'Он уже следует за вами!');
       }
     }
 
-    B.sayAt(player, `<b>Вы чертите на земле кровавую пентаграмму в центре которой появляется мелкий бес.</b>`);
+    B.sayAt(player, '<b>Вы чертите на земле кровавую пентаграмму в центре которой появляется мелкий бес.</b>');
     B.sayAtExcept(player.room, `<b>${player.Name} чертит на земле кровавую пентаграмму в центре которой появляется мелкий бес.</b>`, player);
 
     let minion = player.room.spawnNpc(state, 'pets:petty_demon');
@@ -39,7 +37,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'spell_petty_demon');
   },
 
-  info: (player) => {
-    return `Призовите себе помощника из самих глубин ада.`;
-  }
+  info: (player) => 'Призовите себе помощника из самих глубин ада.',
 };

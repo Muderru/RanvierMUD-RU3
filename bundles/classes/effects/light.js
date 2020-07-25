@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, EffectFlag } = require('ranvier');
 
 /**
@@ -18,19 +16,19 @@ module.exports = {
   flags: [EffectFlag.BUFF],
   modifiers: {
     attributes: {
-      light: function (current) {
+      light(current) {
         return current + this.state.spellStrength;
-      }
-    }
+      },
+    },
   },
   listeners: {
-    effectActivated: function () {
+    effectActivated() {
       Broadcast.sayAt(this.target, '<b><yellow>Вы начинаете светиться.</yellow></b>');
     },
 
-    effectDeactivated: function () {
+    effectDeactivated() {
       Broadcast.sayAt(this.target, '<b><yellow>Вы перестаете светиться.</yellow></b>');
     },
 
-  }
+  },
 };

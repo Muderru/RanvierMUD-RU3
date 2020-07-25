@@ -1,13 +1,13 @@
-'use strict';
-
-const { Broadcast, EffectFlag, Heal, Player } = require('ranvier');
+const {
+  Broadcast, EffectFlag, Heal, Player,
+} = require('ranvier');
 
 module.exports = {
   config: {
     name: 'блокирование щитом',
     gender: 'neuter',
     damageVerb: 'защищает',
-    description: "Вы блокируете входящие атаки щитом!",
+    description: 'Вы блокируете входящие атаки щитом!',
     type: 'skill:shieldblock',
     unique: true,
     persists: false,
@@ -16,11 +16,11 @@ module.exports = {
   flags: [EffectFlag.BUFF],
   state: {
     magnitude: 1,
-    type: "physical"
+    type: 'physical',
   },
   modifiers: {
     outgoingDamage: (damage, current) => current,
-    incomingDamage: function (damage, currentAmount) {
+    incomingDamage(damage, currentAmount) {
       if (damage instanceof Heal || damage.attribute !== 'health') {
         return currentAmount;
       }
@@ -36,26 +36,26 @@ module.exports = {
       }
 
       return currentAmount;
-    }
+    },
   },
   listeners: {
-    effectActivated: function () {
+    effectActivated() {
       this.state.remaining = this.state.magnitude;
 
       if (this.target instanceof Player) {
         this.target.addPrompt('shieldblock', () => {
-          const width = 60 - "Щит ".length;
+          const width = 60 - 'Щит '.length;
           const remaining = `<b>${this.state.remaining}/${this.state.magnitude}</b>`;
-          return "<b>Щит</b> " + Broadcast.progress(width, (this.state.remaining / this.state.magnitude) * 100, "white") + ` ${remaining}`;
+          return `<b>Щит</b> ${Broadcast.progress(width, (this.state.remaining / this.state.magnitude) * 100, 'white')} ${remaining}`;
         });
       }
     },
 
-    effectDeactivated: function () {
+    effectDeactivated() {
       Broadcast.sayAt(this.target, 'Вы опустили щит и больше не блокируете атаки.');
       if (this.target instanceof Player) {
         this.target.removePrompt('shieldblock');
       }
-    }
-  }
+    },
+  },
 };

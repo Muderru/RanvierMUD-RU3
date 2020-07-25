@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, EffectFlag, Heal } = require('ranvier');
 
 /**
@@ -10,11 +8,11 @@ module.exports = {
     name: 'второе дыхание',
     gender: 'neuter',
     damageVerb: 'окрыляет',
-    type: 'skill:secondwind'
+    type: 'skill:secondwind',
   },
   flags: [EffectFlag.BUFF],
   listeners: {
-    damaged: function (damage) {
+    damaged(damage) {
       if (damage.attribute !== 'mana') {
         return;
       }
@@ -27,12 +25,12 @@ module.exports = {
         return;
       }
 
-      Broadcast.sayAt(this.target, "<bold><yellow>Вы ощутили второе дыхание!</bold></yellow>");
+      Broadcast.sayAt(this.target, '<bold><yellow>Вы ощутили второе дыхание!</bold></yellow>');
       const amount = Math.floor(this.target.getMaxAttribute('mana') * (this.state.restorePercent / 100));
       const heal = new Heal('mana', amount, this.target, this.skill);
       heal.commit(this.target);
 
       this.skill.cooldown(this.target);
-    }
-  }
+    },
+  },
 };

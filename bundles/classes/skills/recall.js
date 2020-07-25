@@ -1,6 +1,6 @@
-'use strict';
-
-const { Broadcast: B, SkillType, Config, Logger, Heal } = require('ranvier');
+const {
+  Broadcast: B, SkillType, Config, Logger, Heal,
+} = require('ranvier');
 
 const manaCost = 100;
 
@@ -29,13 +29,13 @@ module.exports = {
   },
   cooldown: 50,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (target.isNpc) {
-      return B.sayAt(player, "Целью может быть только игрок.");
+      return B.sayAt(player, 'Целью может быть только игрок.');
     }
 
-    if (target != player && !target.party) {
-      return B.sayAt(player, "Он не в вашей группе.");
+    if (target !== player && !target.party) {
+      return B.sayAt(player, 'Он не в вашей группе.');
     }
 
     const startingRoomRef = Config.get('startingRoom');
@@ -53,7 +53,7 @@ module.exports = {
       B.sayAtExcept(player.room, `<b><red>В открытый ${player.tname} портал засасывает ${target.vname}.</red></b>`, [target, player]);
       B.sayAt(target, `<b><red>Вас засасывает в открытый ${player.tname} портал.</red></b>`);
     } else {
-      B.sayAt(player, `<b><red>Вы заходите в открытый вами портал.</red></b>`);
+      B.sayAt(player, '<b><red>Вы заходите в открытый вами портал.</red></b>');
       B.sayAtExcept(player.room, `<b><red>${player.Name} заходит в открытый им портал.</red></b>`, [player, target]);
     }
 
@@ -62,23 +62,21 @@ module.exports = {
     target.save();
 
     const heal = new Heal('mana', getSkill(player), player, this, {
-          hidden: true,
-        });
+      hidden: true,
+    });
     heal.commit(player);
 
     if (!player.isNpc) {
-      let rnd = Math.floor((Math.random() * 100) + 1);
+      const rnd = Math.floor((Math.random() * 100) + 1);
       if (rnd > 95) {
-          if (player.getMeta('spell_recall') < 100) {
-            let skillUp = player.getMeta('spell_recall');
-            player.setMeta('spell_recall', skillUp + 1);
-            B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Возврат\'.</cyan></bold>');
-          }
+        if (player.getMeta('spell_recall') < 100) {
+          const skillUp = player.getMeta('spell_recall');
+          player.setMeta('spell_recall', skillUp + 1);
+          B.sayAt(player, '<bold><cyan>Вы почувствовали себя увереннее в заклинании \'Возврат\'.</cyan></bold>');
+        }
       }
     }
   },
 
-  info: (player) => {
-    return `Отправьте себя или члена вашей группы домой. От владения заклинанием зависит количество потраченной на него маны.`;
-  }
+  info: (player) => 'Отправьте себя или члена вашей группы домой. От владения заклинанием зависит количество потраченной на него маны.',
 };

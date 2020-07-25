@@ -1,13 +1,10 @@
-'use strict';
-
 const { Broadcast, Damage, SkillType } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 20;
 const manaCost = 60;
-const reductionPercent = 50; //debaff %
-const ddMod = 0.9; //direct damage coefficient
+const reductionPercent = 50; // debaff %
+const ddMod = 0.9; // direct damage coefficient
 
 module.exports = {
   aliases: ['осуждение'],
@@ -23,10 +20,10 @@ module.exports = {
   },
   cooldown,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (!player.isNpc) {
       if (!player.equipment.has('оружие')) {
-        return Broadcast.sayAt(player, "Вы не вооружены.");
+        return Broadcast.sayAt(player, 'Вы не вооружены.');
       }
     }
 
@@ -34,7 +31,7 @@ module.exports = {
     effect.skill = this;
     effect.attacker = player;
 
-    let amount = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'judge') * ddMod);
+    const amount = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'judge') * ddMod);
 
     const damage = new Damage('health', amount, player, this);
 
@@ -48,7 +45,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'skill_judge');
   },
 
-  info: (player) => {
-    return `Поражает цель священной энергией и наносит урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Также уменьшает урон от следующей атаки цели на <b>${reductionPercent}%</b>.`;
-  }
+  info: (player) => `Поражает цель священной энергией и наносит урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Также уменьшает урон от следующей атаки цели на <b>${reductionPercent}%</b>.`,
 };

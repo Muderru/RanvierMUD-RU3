@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, EffectFlag, Heal } = require('ranvier');
 
 /**
@@ -17,11 +15,11 @@ module.exports = {
   },
   flags: [EffectFlag.DEBUFF],
   state: {
-    reductionPercent: 0
+    reductionPercent: 0,
   },
   modifiers: {
     incomingDamage: (damage, current) => current,
-    outgoingDamage: function (damage, currentAmount) {
+    outgoingDamage(damage, currentAmount) {
       if (damage instanceof Heal || damage.attribute !== 'health') {
         return currentAmount;
       }
@@ -31,16 +29,16 @@ module.exports = {
     },
   },
   listeners: {
-    effectActivated: function () {
+    effectActivated() {
       Broadcast.sayAt(this.target, '<yellow>Божественное осуждение ослабляет вас.</yellow>');
     },
 
-    effectDeactivated: function () {
+    effectDeactivated() {
       Broadcast.sayAt(this.target, '<yellow>Вы чувствуете, как ваши силы возвращаются.</yellow>');
     },
 
-    hit: function () {
+    hit() {
       this.remove();
-    }
-  }
+    },
+  },
 };

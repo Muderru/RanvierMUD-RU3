@@ -1,12 +1,9 @@
-'use strict';
-
 const { Broadcast, Damage, SkillType } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 10;
 const manaCost = 50;
-const ddMod = 1.5; //direct damage coefficient
+const ddMod = 1.5; // direct damage coefficient
 
 module.exports = {
   aliases: ['сокрушить', 'сокрушение'],
@@ -22,14 +19,14 @@ module.exports = {
   },
   cooldown,
 
-  run: state => function (args, player, target) {
+  run: (state) => function (args, player, target) {
     if (!player.isNpc) {
       if (!player.equipment.has('оружие')) {
-        return Broadcast.sayAt(player, "Вы не вооружены.");
+        return Broadcast.sayAt(player, 'Вы не вооружены.');
       }
     }
 
-    let amount = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'smite') * ddMod);
+    const amount = Math.floor(SkillUtil.directSkillDamage(player, target, 'crushing', 'smite') * ddMod);
 
     const damage = new Damage('health', amount, player, this);
 
@@ -53,7 +50,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'skill_smite');
   },
 
-  info: (player) => {
-    return `Усильте ваше оружие святой энергией и бейте врага, нанося урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Требует оружие.`;
-  }
+  info: (player) => 'Усильте ваше оружие святой энергией и бейте врага, нанося урон зависящий от урона вашего оружия, силы, вашего бонусного дробящего урона, уровня владения умением и сопротивляемости дробящему урону цели. Требует оружие.',
 };

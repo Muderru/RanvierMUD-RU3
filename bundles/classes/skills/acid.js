@@ -1,12 +1,9 @@
-'use strict';
-
 const { Broadcast, Damage, SkillType } = require('ranvier');
-const Combat = require('../../combat/lib/Combat');
 const SkillUtil = require('../lib/SkillUtil');
 
 const manaCost = 80;
-const ddMod = 0.9; //direct damage coefficient
-const dbMod = 0.075; //debaff coefficient
+const ddMod = 0.9; // direct damage coefficient
+const dbMod = 0.075; // debaff coefficient
 
 /**
  * Basic mage spell
@@ -25,15 +22,15 @@ module.exports = {
   },
   cooldown: 60,
 
-  run: state => function (args, player, target) {
-    let getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'acid', 'acid') * ddMod);
+  run: (state) => function (args, player, target) {
+    const getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'acid', 'acid') * ddMod);
 
     const damage = new Damage('health', getDamage, player, this);
 
-    let duration = SkillUtil.effectDuration(player);
+    const duration = SkillUtil.effectDuration(player);
 
     if (target.hasAttribute('armor')) {
-      const effect = state.EffectFactory.create('acid', {duration}, {spellStrength: Math.floor(getDamage * dbMod)});
+      const effect = state.EffectFactory.create('acid', { duration }, { spellStrength: Math.floor(getDamage * dbMod) });
       target.addEffect(effect);
     }
 
@@ -47,7 +44,5 @@ module.exports = {
     SkillUtil.skillUp(state, player, 'spell_acid');
   },
 
-  info: (player) => {
-    return `Создает поток кислоты, наносящую урон зависящий от урона вашего оружия, интеллекта, вашего бонусного урона кислотой, уровня владения умением и сопротивляемости кислоте цели. Уменьшает броню противника.`;
-  }
+  info: (player) => 'Создает поток кислоты, наносящую урон зависящий от урона вашего оружия, интеллекта, вашего бонусного урона кислотой, уровня владения умением и сопротивляемости кислоте цели. Уменьшает броню противника.',
 };

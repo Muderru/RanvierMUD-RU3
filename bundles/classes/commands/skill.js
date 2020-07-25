@@ -1,10 +1,8 @@
-'use strict';
-
 const { Broadcast: B, SkillFlag } = require('ranvier');
 
 module.exports = {
-  aliases: [ 'умение', 'заклинание' ],
-  command : state => (args, player) => {
+  aliases: ['умение', 'заклинание'],
+  command: (state) => (args, player) => {
     const say = (message, wrapWidth) => B.sayAt(player, message, wrapWidth);
 
     if (!args.length) {
@@ -17,10 +15,10 @@ module.exports = {
     }
 
     if (!skill) {
-      return say("Вы не знаете такого умения.");
+      return say('Вы не знаете такого умения.');
     }
 
-    say('<b>' + B.center(80, skill.name[0].toUpperCase() + skill.name.slice(1), 'white', '-') + '</b>');
+    say(`<b>${B.center(80, skill.name[0].toUpperCase() + skill.name.slice(1), 'white', '-')}</b>`);
     if (skill.flags.includes(SkillFlag.PASSIVE)) {
       say('<b>Пассивное</b>');
     } else {
@@ -35,6 +33,6 @@ module.exports = {
       say(`<b>Задержка</b>: <b>${skill.cooldownLength}</b> секунд`);
     }
     say(skill.info(player), 80);
-    say('<b>' + B.line(80) + '</b>');
-  }
+    say(`<b>${B.line(80)}</b>`);
+  },
 };

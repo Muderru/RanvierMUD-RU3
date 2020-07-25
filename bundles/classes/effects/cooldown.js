@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, SkillType } = require('ranvier');
 
 /**
@@ -13,15 +11,15 @@ module.exports = {
     type: 'cooldown',
   },
   state: {
-    cooldownId: null
+    cooldownId: null,
   },
   listeners: {
-    effectDeactivated: function () {
+    effectDeactivated() {
       if (this.skill.type === SkillType.SKILL) {
-        Broadcast.sayAt(this.target, `Вы снова можете использовать умение \'<bold>${this.skill.name[0].toUpperCase()}${this.skill.name.slice(1)}</bold>\'.`);
+        Broadcast.sayAt(this.target, `Вы снова можете использовать умение '<bold>${this.skill.name[0].toUpperCase()}${this.skill.name.slice(1)}</bold>'.`);
       } else {
-        Broadcast.sayAt(this.target, `Вы снова можете использовать заклинание \'<bold>${this.skill.name[0].toUpperCase()}${this.skill.name.slice(1)}</bold>\'.`);
+        Broadcast.sayAt(this.target, `Вы снова можете использовать заклинание '<bold>${this.skill.name[0].toUpperCase()}${this.skill.name.slice(1)}</bold>'.`);
       }
-    }
-  }
+    },
+  },
 };
