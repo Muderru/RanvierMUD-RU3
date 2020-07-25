@@ -1,17 +1,14 @@
-'use strict';
-
 const { TransportStream } = require('ranvier');
 
 /**
  * Essentially we want to look at the methods of WebSocket and match them to the appropriate methods on TransportStream
  */
-class WebsocketStream extends TransportStream
-{
+class WebsocketStream extends TransportStream {
   attach(socket) {
     super.attach(socket);
 
     // websocket uses 'message' instead of the 'data' event net.Socket uses
-    socket.on('message', message => {
+    socket.on('message', (message) => {
       this.emit('data', message);
     });
   }
@@ -53,7 +50,7 @@ class WebsocketStream extends TransportStream
     this.socket.send(JSON.stringify({
       type: 'data',
       group,
-      data
+      data,
     }));
   }
 }
