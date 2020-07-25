@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Error used when a target tries to attack themselves
  * @extends Error

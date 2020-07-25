@@ -1,13 +1,11 @@
-'use strict';
-
+const { Broadcast: B, Logger } = require('ranvier');
 const Combat = require('../lib/Combat');
 const CombatErrors = require('../lib/CombatErrors');
-const { Broadcast: B, Logger } = require('ranvier');
 
 module.exports = {
   usage: 'оценить <цель>',
   aliases: ['оценить', 'сравнить'],
-  command: state => (args, player) => {
+  command: (state) => (args, player) => {
     if (!args || !args.length) {
       return B.sayAt(player, 'Чью боевую мощь вы хотите оценить?');
     }
@@ -17,10 +15,10 @@ module.exports = {
       target = Combat.findCombatant(player, args);
     } catch (e) {
       if (
-        e instanceof CombatErrors.CombatSelfError ||
-        e instanceof CombatErrors.CombatNonPvpError ||
-        e instanceof CombatErrors.CombatInvalidTargetError ||
-        e instanceof CombatErrors.CombatPacifistError
+        e instanceof CombatErrors.CombatSelfError
+        || e instanceof CombatErrors.CombatNonPvpError
+        || e instanceof CombatErrors.CombatInvalidTargetError
+        || e instanceof CombatErrors.CombatPacifistError
       ) {
         return B.sayAt(player, e.message);
       }
@@ -30,20 +28,19 @@ module.exports = {
 
     if (target) {
       if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
-        return B.sayAt(player, "Этого здесь нет.");
+        return B.sayAt(player, 'Этого здесь нет.');
       }
       if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
-        return B.sayAt(player, "Этого здесь нет.");
+        return B.sayAt(player, 'Этого здесь нет.');
       }
     }
 
-
     if (!target) {
-      return B.sayAt(player, "Этого здесь нет.");
+      return B.sayAt(player, 'Этого здесь нет.');
     }
 
     if (!target.hasAttribute('health')) {
-      return B.sayAt(player, "Это не противник.");
+      return B.sayAt(player, 'Это не противник.');
     }
 
     let description = '';
@@ -56,7 +53,7 @@ module.exports = {
     const avg2 = (max + min) / 2;
     targetPower = target.getAttribute('health') * Math.sqrt(1 + target.getAttribute('armor')) * avg1;
     playerPower = player.getAttribute('health') * Math.sqrt(1 + player.getAttribute('armor')) * avg2;
-    const ratio = targetPower/playerPower;
+    const ratio = targetPower / playerPower;
     if (ratio < 0.5) {
       description = 'Цель намного слабее вас. Вы должны победить без проблем.';
     } else if (ratio >= 0.5 && ratio < 0.8) {
@@ -69,7 +66,7 @@ module.exports = {
       description = 'Ваши силы примерно равны. Сложно предсказать результат битвы.';
     }
 
-//    B.sayAt(player, `${ratio}`);
+    //    B.sayAt(player, `${ratio}`);
     B.sayAt(player, description);
-  }
+  },
 };

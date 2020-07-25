@@ -1,5 +1,3 @@
-'use strict';
-
 const { Random } = require('rando-js');
 const { Damage, Logger, Broadcast } = require('ranvier');
 const Parser = require('../../lib/lib/ArgParser');
@@ -29,7 +27,7 @@ class Combat {
       return false;
     }
 
-    let lastRoundStarted = attacker.combatData.roundStarted;
+    const lastRoundStarted = attacker.combatData.roundStarted;
     attacker.combatData.roundStarted = Date.now();
 
     // cancel if the attacker's combat lag hasn't expired yet
@@ -96,19 +94,19 @@ class Combat {
    */
   static makeAttack(attacker, target) {
     let addDamage = 0;
-    let combatAttributes = [ 'cutting', 'crushing', 'piercing', 'fire', 'cold', 
-                             'lightning', 'earth', 'acid', 'chaos', 'ether' ];
-    
-    for (let combatAttribute of combatAttributes) {
-      let attackAttribute = combatAttribute + '_damage';
-      let defenceAttribute = combatAttribute + '_resistance';
+    const combatAttributes = ['cutting', 'crushing', 'piercing', 'fire', 'cold',
+      'lightning', 'earth', 'acid', 'chaos', 'ether'];
+
+    for (const combatAttribute of combatAttributes) {
+      const attackAttribute = `${combatAttribute}_damage`;
+      const defenceAttribute = `${combatAttribute}_resistance`;
       if (attacker.hasAttribute(attackAttribute)) {
         if (target.hasAttribute(defenceAttribute)) {
           if (attacker.getAttribute(attackAttribute) > target.getAttribute(defenceAttribute)) {
             addDamage += attacker.getAttribute(attackAttribute) - target.getAttribute(defenceAttribute);
           }
         } else {
-            addDamage += attacker.getAttribute(attackAttribute);
+          addDamage += attacker.getAttribute(attackAttribute);
         }
       }
     }
@@ -117,36 +115,35 @@ class Combat {
     let critical = false;
 
     if (attacker.isNpc) {
-        amount = Random.inRange(attacker.min_damage, attacker.max_damage);
+      amount = Random.inRange(attacker.min_damage, attacker.max_damage);
     }
 
     if (target.hasAttribute('armor')) {
       if (amount > target.getAttribute('armor')) {
-          amount = Math.floor(1 + ((amount - target.getAttribute('armor'))*(amount - target.getAttribute('armor'))/(amount + target.getAttribute('armor'))));
+        amount = Math.floor(1 + ((amount - target.getAttribute('armor')) * (amount - target.getAttribute('armor')) / (amount + target.getAttribute('armor'))));
       } else {
-          amount = 1;
+        amount = 1;
       }
     }
 
-//    Logger.verbose(`addDamage ${addDamage}`);
+    //    Logger.verbose(`addDamage ${addDamage}`);
     amount += addDamage;
     if (attacker.hasAttribute('critical')) {
       let critChance = Math.max(attacker.getMaxAttribute('critical') || 0, 0);
       if (target.hasAttribute('armor')) {
-        critChance -= 0.2*target.getAttribute('armor');
+        critChance -= 0.2 * target.getAttribute('armor');
       }
 
       if (critChance > 90) {
         critChance = 90;
       }
 
-      if (critChance > 0) { 
+      if (critChance > 0) {
         critical = Random.probability(critChance);
         if (critical) {
-          amount = Math.ceil(amount * 2.5 * 
-                                    (1 + (attacker.getAttribute('critical_damage_percent')/100)) * 
-                                    (1 - (target.getAttribute('critical_damage_reduction_percent')/100))
-          );
+          amount = Math.ceil(amount * 2.5
+                                    * (1 + (attacker.getAttribute('critical_damage_percent') / 100))
+                                    * (1 - (target.getAttribute('critical_damage_reduction_percent') / 100)));
         }
       }
     }
@@ -165,7 +162,7 @@ class Combat {
     }
 
     if (attacker.hasAttribute('freedom') && attacker.getAttribute('freedom') < 0) {
-      Broadcast.sayAt(attacker, `<b><red>Ваши мышцы вялы и вы не можете двигаться!</red></b>`);
+      Broadcast.sayAt(attacker, '<b><red>Ваши мышцы вялы и вы не можете двигаться!</red></b>');
     } else if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > detectInvis) {
       Broadcast.sayAt(target, `${attacker.Name} не видит вас и не может по вам попасть.`);
       Broadcast.sayAt(attacker, `Вы не видите ${target.vname} и не можете нанести урона.`);
@@ -225,7 +222,7 @@ class Combat {
       return;
     }
 
-    let regenEffect = state.EffectFactory.create('regen', { hidden: true }, { magnitude: 15 });
+    const regenEffect = state.EffectFactory.create('regen', { hidden: true }, { magnitude: 15 });
     if (entity.addEffect(regenEffect)) {
       regenEffect.activate();
     }
@@ -253,7 +250,7 @@ class Combat {
     }
 
     if (target === attacker) {
-      throw new CombatErrors.CombatSelfError("Вы ударили самого себя по лицу. Взбодрило!");
+      throw new CombatErrors.CombatSelfError('Вы ударили самого себя по лицу. Взбодрило!');
     }
 
     if (target.isNpc && !target.hasBehavior('combat')) {
@@ -261,7 +258,7 @@ class Combat {
     }
 
     if (!target.hasAttribute('health')) {
-      throw new CombatErrors.CombatInvalidTargetError("Вы не можете атаковать эту цель.");
+      throw new CombatErrors.CombatInvalidTargetError('Вы не можете атаковать эту цель.');
     }
 
     if (!target.isNpc && !target.getMeta('pvp')) {
@@ -278,7 +275,7 @@ class Combat {
    * @return {number}
    */
   static calculateWeaponDamage(attacker) {
-    let weaponDamage = this.getWeaponDamage(attacker);
+    const weaponDamage = this.getWeaponDamage(attacker);
     let amount = 0;
     amount = Random.inRange(weaponDamage.min, weaponDamage.max);
     return this.normalizeWeaponDamage(attacker, amount);
@@ -291,7 +288,8 @@ class Combat {
    */
   static getWeaponDamage(attacker) {
     const weapon = attacker.equipment.get('оружие');
-    let min = 0, max = 0;
+    let min = 0; let
+      max = 0;
     if (attacker.isNpc) {
       min = attacker.min_damage;
       max = attacker.max_damage;
@@ -303,7 +301,7 @@ class Combat {
 
     return {
       max,
-      min
+      min,
     };
   }
 
@@ -319,7 +317,7 @@ class Combat {
       speed = weapon.metadata.speed;
     }
 
-    return speed * (1 - (attacker.getAttribute('swift')/100));
+    return speed * (1 - (attacker.getAttribute('swift') / 100));
   }
 
   /**
@@ -329,7 +327,7 @@ class Combat {
    * @return {number}
    */
   static normalizeWeaponDamage(attacker, amount) {
-    let speed = this.getWeaponSpeed(attacker);
+    const speed = this.getWeaponSpeed(attacker);
     amount += attacker.hasAttribute('strength') ? attacker.getAttribute('strength') : attacker.level;
     return Math.round(amount / 3.5 * speed);
   }
