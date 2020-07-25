@@ -1,7 +1,4 @@
-'use strict';
-
 const { Broadcast: B, Logger } = require('ranvier');
-
 
 module.exports = {
   usage: 'помощь [искать] [раздел ключевое слово]',
@@ -21,7 +18,7 @@ module.exports = {
 
     if (!hfile) {
       Logger.error(`MISSING-HELP: [${args}]`);
-      return B.sayAt(player, "Ничего не найдено по вашему запросу.");
+      return B.sayAt(player, 'Ничего не найдено по вашему запросу.');
     }
     try {
       B.sayAt(player, render(state, hfile));
@@ -30,25 +27,25 @@ module.exports = {
       Logger.warn(e);
       B.sayAt(player, `Не найден файл помощи для ${args}.`);
     }
-  }
+  },
 };
 
 function render(state, hfile) {
-  let body = hfile.body;
-  const name = hfile.name;
+  const { body } = hfile;
+  const { name } = hfile;
 
   const width = 80;
-  const bar = B.line(width, '-', 'yellow') + '\r\n';
+  const bar = `${B.line(width, '-', 'yellow')}\r\n`;
 
-  let header = bar + B.center(width, name, 'white') + '\r\n' + bar;
+  let header = `${bar + B.center(width, name, 'white')}\r\n${bar}`;
 
   const formatHeaderItem = (item, value) => `${item}: ${value}\r\n\r\n`;
   if (hfile.command) {
-    let actualCommand = state.CommandManager.get(hfile.command);
+    const actualCommand = state.CommandManager.get(hfile.command);
 
     header += formatHeaderItem('Синтаксис', actualCommand.usage);
 
-    if (actualCommand.aliases && actualCommand.aliases.length > 0){
+    if (actualCommand.aliases && actualCommand.aliases.length > 0) {
       header += formatHeaderItem('Синонимы', actualCommand.aliases.join(', '));
     }
   } else if (hfile.channel) {
@@ -57,9 +54,9 @@ function render(state, hfile) {
 
   let footer = bar;
   if (hfile.related.length) {
-    footer = B.center(width, 'Связанные темы', 'yellow', '-') + '\r\n';
+    footer = `${B.center(width, 'Связанные темы', 'yellow', '-')}\r\n`;
     const related = hfile.related.join(', ');
-    footer += B.center(width, related) + '\r\n';
+    footer += `${B.center(width, related)}\r\n`;
     footer += bar;
   }
 
@@ -75,15 +72,15 @@ function searchHelpfiles(args, player, state) {
 
   const results = state.HelpManager.find(args);
   if (!results.size) {
-    return B.sayAt(player, "Ничего не найдено по вашему запросу.");
+    return B.sayAt(player, 'Ничего не найдено по вашему запросу.');
   }
   if (results.size === 1) {
-    const [ _, hfile ] = [...results][0];
+    const [_, hfile] = [...results][0];
     return B.sayAt(player, render(state, hfile));
   }
-  B.sayAt(player, "<yellow>---------------------------------------------------------------------------------</yellow>");
-  B.sayAt(player, "<white>Результаты поиска:</white>");
-  B.sayAt(player, "<yellow>---------------------------------------------------------------------------------</yellow>");
+  B.sayAt(player, '<yellow>---------------------------------------------------------------------------------</yellow>');
+  B.sayAt(player, '<white>Результаты поиска:</white>');
+  B.sayAt(player, '<yellow>---------------------------------------------------------------------------------</yellow>');
 
   for (const [name, help] of results) {
     B.sayAt(player, `<cyan>${name}</cyan>`);

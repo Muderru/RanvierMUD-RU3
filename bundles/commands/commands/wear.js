@@ -1,6 +1,5 @@
-'use strict';
-
 const Ranvier = require('ranvier');
+
 const { Broadcast, Logger } = Ranvier;
 const { EquipSlotTakenError } = Ranvier.EquipErrors;
 const say = Broadcast.sayAt;
@@ -8,13 +7,13 @@ const ItemUtil = require('../../lib/lib/ItemUtil');
 const ArgParser = require('../../lib/lib/ArgParser');
 
 module.exports = {
-  aliases: [ 'одеть', 'надеть', 'вооружиться' ],
+  aliases: ['одеть', 'надеть', 'вооружиться'],
   usage: 'надеть <предмет>',
-  command : (state) => (arg, player) => {
+  command: (state) => (arg, player) => {
     arg = arg.trim();
 
     if (player.equipment.size >= 10) {
-      return Broadcast.sayAt(player, "На вас больше нет свободного места.");
+      return Broadcast.sayAt(player, 'На вас больше нет свободного места.');
     }
 
     if (!arg.length) {
@@ -24,17 +23,17 @@ module.exports = {
     const item = ArgParser.parseDot(arg, player.inventory);
 
     if (!item) {
-      return say(player, "У вас ничего такого нет.");
+      return say(player, 'У вас ничего такого нет.');
     }
 
-//Начало проверок requirements
-    const requirements = item.metadata.requirements;
+    // Начало проверок requirements
+    const { requirements } = item.metadata;
     if (requirements) {
       if (!requirements.strength) {
       } else if (player.hasAttribute('strength')) {
         if (player.getAttribute('strength') < requirements.strength) {
-          let diff = requirements.strength - player.getAttribute('strength');
-          return say(player, 'Вам не хватает ' + diff + ' силы.');
+          const diff = requirements.strength - player.getAttribute('strength');
+          return say(player, `Вам не хватает ${diff} силы.`);
         }
       } else {
         return Logger.verbose('${player.name}: ошибка в атрибутах игрока.');
@@ -42,8 +41,8 @@ module.exports = {
       if (!requirements.agility) {
       } else if (player.hasAttribute('agility')) {
         if (player.getAttribute('agility') < requirements.agility) {
-          let diff = requirements.agility - player.getAttribute('agility');
-          return say(player, 'Вам не хватает ' + diff + ' ловкости.');
+          const diff = requirements.agility - player.getAttribute('agility');
+          return say(player, `Вам не хватает ${diff} ловкости.`);
         }
       } else {
         return Logger.verbose('${player.name}: ошибка в атрибутах игрока.');
@@ -51,8 +50,8 @@ module.exports = {
       if (!requirements.intellect) {
       } else if (player.hasAttribute('intellect')) {
         if (player.getAttribute('intellect') < requirements.intellect) {
-          let diff = requirements.intellect - player.getAttribute('intellect');
-          return say(player, 'Вам не хватает ' + diff + ' интеллекта.');
+          const diff = requirements.intellect - player.getAttribute('intellect');
+          return say(player, `Вам не хватает ${diff} интеллекта.`);
         }
       } else {
         return Logger.verbose('${player.name}: ошибка в атрибутах игрока.');
@@ -60,20 +59,19 @@ module.exports = {
       if (!requirements.stamina) {
       } else if (player.hasAttribute('stamina')) {
         if (player.getAttribute('stamina') < requirements.stamina) {
-          let diff = requirements.stamina - player.getAttribute('stamina');
-          return say(player, 'Вам не хватает ' + diff + ' выносливости.');
+          const diff = requirements.stamina - player.getAttribute('stamina');
+          return say(player, `Вам не хватает ${diff} выносливости.`);
         }
       } else {
         return Logger.verbose('${player.name}: ошибка в атрибутах игрока.');
       }
 
-
       const requiredSkills = item.metadata.requirements.skills;
       for (const requiredSkill of requiredSkills) {
-        let requirement = 'skill_' + requiredSkill;
+        const requirement = `skill_${requiredSkill}`;
         if (!player.getMeta(requirement)) {
-          let skill = state.SkillManager.find(requiredSkill, true);
-          return say(player, 'Вам необходимо владеть умением: \'' + skill.name + '\'.');
+          const skill = state.SkillManager.find(requiredSkill, true);
+          return say(player, `Вам необходимо владеть умением: '${skill.name}'.`);
         }
       }
     }
@@ -101,5 +99,5 @@ module.exports = {
     if (item.getMeta('forSell') > 0) {
       item.setMeta('forSell', 0);
     }
-  }
+  },
 };

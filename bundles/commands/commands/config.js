@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast: B } = require('ranvier');
 
 module.exports = {
@@ -13,7 +11,7 @@ module.exports = {
 
     const possibleCommands = ['установить', 'список'];
 
-    const [command, configToSet, valueToSet ] = args.split(' ');
+    const [command, configToSet, valueToSet] = args.split(' ');
 
     if (!possibleCommands.includes(command)) {
       B.sayAt(player, `<red>Неправильная команда: ${command}</red>`);
@@ -53,15 +51,15 @@ module.exports = {
 
     const possibleValues = {
       вкл: true,
-      выкл: false
+      выкл: false,
     };
 
     if (configToSet !== 'магсимвол') {
       if (possibleValues[valueToSet] === undefined) {
-        return B.sayAt(player, `<red>Значения должны быть: вкл / выкл.</red>`);
+        return B.sayAt(player, '<red>Значения должны быть: вкл / выкл.</red>');
       }
     } else if (valueToSet.length > 1) {
-      return B.sayAt(player, `<red>Символ должен быть только один.</red>`);
+      return B.sayAt(player, '<red>Символ должен быть только один.</red>');
     }
 
     if (!player.getMeta('config')) {
@@ -75,6 +73,5 @@ module.exports = {
     }
 
     B.sayAt(player, 'Настройки сохранены.');
-  }
+  },
 };
-

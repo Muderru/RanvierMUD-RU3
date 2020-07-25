@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast: B, Data } = require('ranvier');
 
 /**
@@ -7,8 +5,8 @@ const { Broadcast: B, Data } = require('ranvier');
  */
 module.exports = {
   usage: 'оглядеться',
-  aliases: [ 'оглядеться' ],
-  command: state => (args, player) => {
+  aliases: ['оглядеться'],
+  command: (state) => (args, player) => {
     B.sayAt(player, 'Вы оглядываетесь по сторонам и видите:');
     for (const exit of player.room.exits) {
       if (!exit.hidden) {
@@ -19,7 +17,7 @@ module.exports = {
           let tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
           const dayDuration = 24;
           if (tmpGameTime >= dayDuration) {
-            tmpGameTime = tmpGameTime % dayDuration;
+            tmpGameTime %= dayDuration;
           }
           currentTime = tmpGameTime;
         }
@@ -42,7 +40,6 @@ module.exports = {
             currentLight += roomItem.metadata.light;
           }
         }
-
 
         B.at(player, `(${exit.direction}) ${room.title}`);
         if (room.npcs.size || room.players.size) {
@@ -71,10 +68,10 @@ module.exports = {
             B.sayAt(player, `  [Игрок] ${pc.name}`);
           }
         } else {
-          B.sayAt(player, `  Слишком темно`);
+          B.sayAt(player, '  Слишком темно');
         }
         B.sayAt(player);
       }
     }
-  }
+  },
 };

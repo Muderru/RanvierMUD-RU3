@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   listeners: {
     /**
@@ -7,14 +5,14 @@ module.exports = {
      * @param {string} slot
      * @param {Item} item
      */
-    equip: state => function (slot, item) {
+    equip: (state) => function (slot, item) {
       if (!item.metadata.stats) {
         return;
       }
 
       const config = {
-        name: 'Equip: ' + slot,
-        type: 'equip.' + slot
+        name: `Equip: ${slot}`,
+        type: `equip.${slot}`,
       };
 
       const effectState = {
@@ -25,8 +23,8 @@ module.exports = {
       this.addEffect(state.EffectFactory.create(
         'equip',
         config,
-        effectState
+        effectState,
       ));
-    }
-  }
+    },
+  },
 };

@@ -1,10 +1,8 @@
-'use strict';
-
-const sprintf = require('sprintf-js').sprintf;
+const { sprintf } = require('sprintf-js');
 const { Broadcast } = require('ranvier');
 
-function sayAtColumns (source, strings, numCols) {
-  //Build a 2D map of strings by col/row
+function sayAtColumns(source, strings, numCols) {
+  // Build a 2D map of strings by col/row
   let col = 0;
   const perCol = Math.ceil(strings.length / numCols);
   let rowCount = 0;
@@ -27,19 +25,16 @@ function sayAtColumns (source, strings, numCols) {
 
   col = 0;
   let row = 0;
-  let i = 0;
   const said = [];
-  while(said.length < strings.length) {
+  while (said.length < strings.length) {
     if (columnedStrings[col] && columnedStrings[col][row]) {
       const string = columnedStrings[col][row];
       said.push(string);
-      Broadcast.at(source, sprintf("%-" + colWidth + "s", string));
+      Broadcast.at(source, sprintf(`%-${colWidth}s`, string));
     }
-    i++;
-
 
     col++;
-    if (col == numCols) {
+    if (col === numCols) {
       Broadcast.sayAt(source);
       col = 0;
       row++;
@@ -55,13 +50,12 @@ function sayAtColumns (source, strings, numCols) {
 module.exports = {
   aliases: ['каналы', 'команды'],
   command: (state) => (args, player) => {
-
     // print standard commands
-    Broadcast.sayAt(player, "<bold><white>                  Команды</bold></white>");
-    Broadcast.sayAt(player, "<bold><white>===============================================</bold></white>");
+    Broadcast.sayAt(player, '<bold><white>                  Команды</bold></white>');
+    Broadcast.sayAt(player, '<bold><white>===============================================</bold></white>');
 
-    let commands = [];
-    for (let [ name, command ] of state.CommandManager.commands) {
+    const commands = [];
+    for (const [name, command] of state.CommandManager.commands) {
       if (player.role >= command.requiredRole) {
         commands.push(name);
       }
@@ -72,20 +66,18 @@ module.exports = {
 
     // channels
     Broadcast.sayAt(player);
-    Broadcast.sayAt(player, "<bold><white>                  Каналы</bold></white>");
-    Broadcast.sayAt(player, "<bold><white>===============================================</bold></white>");
+    Broadcast.sayAt(player, '<bold><white>                  Каналы</bold></white>');
+    Broadcast.sayAt(player, '<bold><white>===============================================</bold></white>');
 
-    let i = 0;
-    let channelCommands = [];
-    for (let [ name ] of state.ChannelManager.channels) {
-        channelCommands.push(name);
+    const channelCommands = [];
+    for (const [name] of state.ChannelManager.channels) {
+      channelCommands.push(name);
     }
 
     channelCommands.sort();
     sayAtColumns(player, channelCommands, 4);
 
-
     // end with a line break
     Broadcast.sayAt(player, '');
-  }
+  },
 };

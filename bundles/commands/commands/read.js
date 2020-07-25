@@ -1,51 +1,51 @@
-'use strict';
-
-const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
-const { Broadcast, Logger, SkillErrors, ItemType } = require('ranvier');
+const humanize = (sec) => require('humanize-duration')(sec, { language: 'ru', round: true });
+const {
+  Broadcast, Logger, SkillErrors, ItemType,
+} = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
 const CombatErrors = require('../../combat/lib/CombatErrors');
+
 const dot = ArgParser.parseDot;
 
 /**
- * Command for items with `usable` behavior. See bundles/ranvier-areas/areas/limbo/items.yml for
- * example behavior implementation
+ * Команда для использования свитка
  */
 module.exports = {
-  aliases: [ 'зачитать' ],
-  command: state => (args, player) => {
-    const say = message => Broadcast.sayAt(player, message);
+  aliases: ['зачитать'],
+  command: (state) => (args, player) => {
+    const say = (message) => Broadcast.sayAt(player, message);
 
     if (!args.length) {
-      return say("Что вы хотите зачитать?");
+      return say('Что вы хотите зачитать?');
     }
 
-    let [ targetItem, spellTarget ] = args.split(' ');
+    const [targetItem, spellTarget] = args.split(' ');
     const item = ArgParser.parseDot(targetItem, player.inventory);
 
     if (!item) {
-      return say("У вас ничего такого нет.");
+      return say('У вас ничего такого нет.');
     }
 
     if (item.type !== ItemType.SCROLL) {
-      return say("Вы не можете использовать это.");
+      return say('Вы не можете использовать это.');
     }
 
     if (player.hasEffectType('silence')) {
-      return say(`<b>Вы сейчас не можете зачитывать свитки!</b>`);
+      return say('<b>Вы сейчас не можете зачитывать свитки!</b>');
     }
 
     if (!item.getMeta('spell')) {
-      return say("Вы не можете прочитать заклинание на этом свитке.");
+      return say('Вы не можете прочитать заклинание на этом свитке.');
     }
 
     if (item.getMeta('level') && player.level < item.getMeta('level')) {
-      return say("Вы пока не можете прочитать заклинание на этом свитке.");
+      return say('Вы пока не можете прочитать заклинание на этом свитке.');
     }
 
     const spell = state.SpellManager.find(item.getMeta('spell'));
     if (!spell) {
-      return say("Такого заклинания не существует.");
+      return say('Такого заклинания не существует.');
     }
 
     let target = null;
@@ -72,10 +72,10 @@ module.exports = {
           }
         } catch (e) {
           if (
-            e instanceof CombatErrors.CombatSelfError ||
-            e instanceof CombatErrors.CombatNonPvpError ||
-            e instanceof CombatErrors.CombatInvalidTargetError ||
-            e instanceof CombatErrors.CombatPacifistError
+            e instanceof CombatErrors.CombatSelfError
+            || e instanceof CombatErrors.CombatNonPvpError
+            || e instanceof CombatErrors.CombatInvalidTargetError
+            || e instanceof CombatErrors.CombatPacifistError
           ) {
             return say(e.message);
           }
@@ -84,34 +84,34 @@ module.exports = {
         }
       }
 
-        if (!target) {
-          return say(`Использовать заклинание ${spell.name} на ком?`);
+      if (!target) {
+        return say(`Использовать заклинание ${spell.name} на ком?`);
+      }
+    }
+
+    try {
+      spell.execute(args, player, target);
+    } catch (e) {
+      if (e instanceof SkillErrors.CooldownError) {
+        if (spell.cooldownGroup) {
+          return say(`Нельзя использовать заклинание ${spell.name} пока действует задержка ${e.effect.skill.name}.`);
         }
+        return say(`Вы еще не можете использовать \'${spell.name}\'. ${humanize(e.effect.remaining)} осталось.`);
       }
 
-      try {
-        spell.execute(args, player, target);
-      } catch (e) {
-        if (e instanceof SkillErrors.CooldownError) {
-          if (spell.cooldownGroup) {
-            return say(`Нельзя использовать заклинание ${spell.name} пока действует задержка ${e.effect.skill.name}.`);
-          }
-          return say(`Вы еще не можете использовать \'${spell.name}\'. ${humanize(e.effect.remaining)} осталось.`);
-        }
-
-        if (e instanceof SkillErrors.PassiveError) {
-          return say(`Это пассивное умение.`);
-        }
-
-        if (e instanceof SkillErrors.NotEnoughResourcesError) {
-          return say(`Недостаточно энергии.`);
-        }
-
-        Logger.error(e.message);
-        say('Как?');
+      if (e instanceof SkillErrors.PassiveError) {
+        return say('Это пассивное умение.');
       }
+
+      if (e instanceof SkillErrors.NotEnoughResourcesError) {
+        return say('Недостаточно энергии.');
+      }
+
+      Logger.error(e.message);
+      say('Как?');
+    }
 
     state.ItemManager.remove(item);
-    say("Ваш свиток исчезает в облаке дыма.");
-  }
+    say('Ваш свиток исчезает в облаке дыма.');
+  },
 };

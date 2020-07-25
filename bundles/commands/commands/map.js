@@ -1,14 +1,12 @@
-'use strict';
-
 const { Broadcast: B } = require('ranvier');
 
 module.exports = {
   usage: 'карта',
   aliases: ['карта'],
-  command: state => (args, player) => {
-    const room = player.room;
+  command: (state) => (args, player) => {
+    const { room } = player;
     if (!room || !room.coordinates) {
-      return B.sayAt(player, "Для этой комнаты нет карты.");
+      return B.sayAt(player, 'Для этой комнаты нет карты.');
     }
 
     let size = parseInt(args, 10);
@@ -23,11 +21,11 @@ module.exports = {
     }
 
     const coords = room.coordinates;
-    let map = '.' + ('-'.repeat(xSize * 2 + 1)) + '.\r\n';
+    let map = `.${'-'.repeat(xSize * 2 + 1)}.\r\n`;
 
-    for (var y = coords.y + size; y >= coords.y - size; y--) {
+    for (let y = coords.y + size; y >= coords.y - size; y--) {
       map += '|';
-      for (var x = coords.x - xSize; x <= coords.x + xSize; x++) {
+      for (let x = coords.x - xSize; x <= coords.x + xSize; x++) {
         if (x === coords.x && y === coords.y) {
           map += '<b><yellow>@</yellow></b>';
         } else if (room.area.getRoomAtCoordinates(x, y, coords.z)) {
@@ -50,8 +48,8 @@ module.exports = {
       map += '|\r\n';
     }
 
-    map += "'" + ('-'.repeat(xSize * 2 + 1)) + "'";
+    map += `'${'-'.repeat(xSize * 2 + 1)}'`;
 
     B.sayAt(player, map);
-  }
+  },
 };

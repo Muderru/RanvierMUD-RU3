@@ -1,13 +1,11 @@
-'use strict';
-
 const { Broadcast, ItemType } = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
 
 module.exports = {
   usage: 'взять <предмет> [контейнер]',
-  aliases: [ 'взять', 'взятьвсе' ],
-  command : (state) => (args, player, arg0) => {
+  aliases: ['взять', 'взятьвсе'],
+  command: (state) => (args, player, arg0) => {
     if (!args.length) {
       return Broadcast.sayAt(player, 'Взять что?');
     }
@@ -17,29 +15,30 @@ module.exports = {
     }
 
     if (player.isInventoryFull()) {
-      return Broadcast.sayAt(player, "Вы не можете больше ничего взять.");
+      return Broadcast.sayAt(player, 'Вы не можете больше ничего взять.');
     }
 
     // 'loot' is an alias for 'get all'
     if (arg0 === 'взятьвсе') {
-      args = ('все ' + args).trim();
+      args = (`все ${args}`).trim();
     }
 
     // get 3.foo from bar -> get 3.foo bar
-    let parts = args.split(' ').filter(arg => !arg.match(/из/));
+    const parts = args.split(' ').filter((arg) => !arg.match(/из/));
 
-    let source = null, search = null, container = null;
+    let source = null; let search = null; let
+      container = null;
     if (parts.length === 1) {
       search = parts[0];
       source = player.room.items;
     } else {
-    //Newest containers should go first, so that if you type get all corpse you get from the 
+    // Newest containers should go first, so that if you type get all corpse you get from the
     // most recent corpse. See issue #247.
-      container = ArgParser.parseDot(parts[1], [...player.room.items].reverse()) ||
-                  ArgParser.parseDot(parts[1], [...player.inventory]) ||
-                  ArgParser.parseDot(parts[1], [...player.equipment]);
-        if (!container) {
-          return Broadcast.sayAt(player, "Здесь нет ничего такого.");
+      container = ArgParser.parseDot(parts[1], [...player.room.items].reverse())
+                  || ArgParser.parseDot(parts[1], [...player.inventory])
+                  || ArgParser.parseDot(parts[1], [...player.equipment]);
+      if (!container) {
+        return Broadcast.sayAt(player, 'Здесь нет ничего такого.');
       }
 
       if (container.type !== ItemType.CONTAINER) {
@@ -56,7 +55,7 @@ module.exports = {
 
     if (search === 'все') {
       if (!source || ![...source].length) {
-        return Broadcast.sayAt(player, "Здесь ничего нет.");
+        return Broadcast.sayAt(player, 'Здесь ничего нет.');
       }
 
       for (let item of source) {
@@ -66,7 +65,7 @@ module.exports = {
         }
 
         if (player.isInventoryFull()) {
-          return Broadcast.sayAt(player, "Ваш инвентарь переполнен.");
+          return Broadcast.sayAt(player, 'Ваш инвентарь переполнен.');
         }
 
         pickup(item, container, player);
@@ -77,13 +76,12 @@ module.exports = {
 
     const item = ArgParser.parseDot(search, source);
     if (!item) {
-      return Broadcast.sayAt(player, "Здесь ничего такого нет.");
+      return Broadcast.sayAt(player, 'Здесь ничего такого нет.');
     }
 
     pickup(item, container, player);
-  }
+  },
 };
-
 
 function pickup(item, container, player) {
   if (item.metadata.noPickup) {
@@ -108,7 +106,7 @@ function pickup(item, container, player) {
     ending = 'о';
   }
 
-  Broadcast.sayAtExcept(player.room, player.Name + ` взял${ending} ${ItemUtil.display(item, 'vname')}.`, player);
+  Broadcast.sayAtExcept(player.room, `${player.Name} взял${ending} ${ItemUtil.display(item, 'vname')}.`, player);
   Broadcast.sayAt(player, `<green>Вы взяли </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
 
   item.emit('get', player);

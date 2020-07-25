@@ -1,14 +1,13 @@
-'use strict';
-
 const { Broadcast: B, ItemType } = require('ranvier');
+const { sprintf } = require('sprintf-js');
 const ArgParser = require('../../lib/lib/ArgParser');
+
 const dot = ArgParser.parseDot;
 const ItemUtil = require('../../lib/lib/ItemUtil');
-const sprintf = require('sprintf-js').sprintf;
 
 module.exports = {
   usage: 'торговать <купить/список/предмет> [предмет в инвентаре] [стоимость/игрок]',
-  aliases: [ 'торговать', 'торговля' ],
+  aliases: ['торговать', 'торговля'],
   command: (state) => (args, player) => {
     if (!args.length) {
       B.sayAt(player, 'Как?');
@@ -17,7 +16,7 @@ module.exports = {
 
     const possibleCommands = ['купить', 'список', 'предмет', 'посмотреть'];
 
-    let [command, itemToSell, playerOrPrice ] = args.split(' ');
+    let [command, itemToSell, playerOrPrice] = args.split(' ');
 
     if (!itemToSell) {
       B.sayAt(player, 'Как?');
@@ -30,7 +29,7 @@ module.exports = {
     }
 
     if (command === 'список') {
-      let target = dot(itemToSell, player.room.players);
+      const target = dot(itemToSell, player.room.players);
       if (!target) {
         return B.sayAt(player, 'Чей?');
       }
@@ -39,7 +38,7 @@ module.exports = {
         return B.sayAt(player, `${target.Name} ничего не продает.`);
       }
 
-      let itemCategories = {
+      const itemCategories = {
         [ItemType.POTION]: {
           title: 'Зелья, еда и напитки',
           items: [],
@@ -67,7 +66,7 @@ module.exports = {
       };
 
       let counter = 0;
-      for (const [, item ] of target.inventory) {
+      for (const [, item] of target.inventory) {
         if (item.getMeta('forSell') && item.getMeta('forSell') > 0) {
           itemCategories[item.type].items.push(item);
           counter++;
@@ -75,55 +74,53 @@ module.exports = {
       }
       if (counter === 0) {
         return B.sayAt(player, `${target.Name} ничего не продает.`);
-      } else {
-        for (const [, itemCategory] of Object.entries(ItemType)) {
-          const category = itemCategories[itemCategory];
-          if (!category || !category.items.length) {
-            continue;
-          }
-
-          B.sayAt(player, '.' + B.center(78, category.title, 'yellow', '-') + '.');
-          for (const item of category.items) {
-            B.sayAt(player,
-              '<yellow>|</yellow> ' +
-              ItemUtil.qualityColorize(item, sprintf('%-48s', `[${item.name}]`)) +
-              sprintf(' <yellow>|</yellow> <b>%-26s</b>', B.center(26, friendlyCurrencyName('золото') + ' x ' + item.getMeta('forSell'))) +
-              '<yellow>|</yellow> '
-            );
-          }
-
-          B.sayAt(player, "'" + B.line(78, '-', 'yellow') + "'");
-          B.sayAt(player);
-        }
       }
+      for (const [, itemCategory] of Object.entries(ItemType)) {
+        const category = itemCategories[itemCategory];
+        if (!category || !category.items.length) {
+          continue;
+        }
+
+        B.sayAt(player, `.${B.center(78, category.title, 'yellow', '-')}.`);
+        for (const item of category.items) {
+          B.sayAt(player,
+            `<yellow>|</yellow> ${
+              ItemUtil.qualityColorize(item, sprintf('%-48s', `[${item.name}]`))
+            }${sprintf(' <yellow>|</yellow> <b>%-26s</b>', B.center(26, `${friendlyCurrencyName('золото')} x ${item.getMeta('forSell')}`))
+            }<yellow>|</yellow> `);
+        }
+
+        B.sayAt(player, `'${B.line(78, '-', 'yellow')}'`);
+        B.sayAt(player);
+      }
+
       return;
     }
 
     if (command === 'предмет') {
       if (!player.inventory || !player.inventory.size) {
-        return B.sayAt(player, `У вас ничего нет.`);
+        return B.sayAt(player, 'У вас ничего нет.');
       }
 
-      let item = dot(itemToSell, player.inventory);
+      const item = dot(itemToSell, player.inventory);
       if (!item) {
         return B.sayAt(player, 'Чем вы хотите торговать?');
       }
 
       if (!isFinite(playerOrPrice)) {
-        return B.sayAt(player, `Нужно указать стоимость предмета.`);
+        return B.sayAt(player, 'Нужно указать стоимость предмета.');
       }
 
       playerOrPrice = parseInt(playerOrPrice, 10);
       item.setMeta('forSell', playerOrPrice);
       if (playerOrPrice === 0) {
         return B.sayAt(player, `Вы сняли с продажи ${ItemUtil.display(item, 'vname')}.`);
-      } else {
-        return B.sayAt(player, `Вы выставили на продажу ${ItemUtil.display(item)} по цене ${playerOrPrice}.`);
       }
+      return B.sayAt(player, `Вы выставили на продажу ${ItemUtil.display(item)} по цене ${playerOrPrice}.`);
     }
 
     if (command === 'купить') {
-      let target = dot(playerOrPrice, player.room.players);
+      const target = dot(playerOrPrice, player.room.players);
       if (!target) {
         return B.sayAt(player, 'Купить у кого?');
       }
@@ -131,7 +128,7 @@ module.exports = {
         return B.sayAt(player, `${target.Name} ничего не продает.`);
       }
 
-      let item = dot(itemToSell, target.inventory);
+      const item = dot(itemToSell, target.inventory);
       if (!item) {
         return B.sayAt(player, 'Что вы хотите купить?');
       }
@@ -168,7 +165,7 @@ module.exports = {
     }
 
     if (command === 'посмотреть') {
-      let target = dot(playerOrPrice, player.room.players);
+      const target = dot(playerOrPrice, player.room.players);
       if (!target) {
         return B.sayAt(player, 'Посмотреть у кого?');
       }
@@ -176,7 +173,7 @@ module.exports = {
         return B.sayAt(player, `${target.Name} ничего не продает.`);
       }
 
-      let item = dot(itemToSell, target.inventory);
+      const item = dot(itemToSell, target.inventory);
       if (!item) {
         return B.sayAt(player, 'Что вы хотите посмотреть?');
       }
@@ -191,10 +188,8 @@ module.exports = {
     function friendlyCurrencyName(currency) {
       return currency
         .replace('_', ' ')
-        .replace(/\b\w/g, l => l.toUpperCase())
-        .replace(/(золото)/g, 'золота')
-      ;
+        .replace(/\b\w/g, (l) => l.toUpperCase())
+        .replace(/(золото)/g, 'золота');
     }
-  }
+  },
 };
-

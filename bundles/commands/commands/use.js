@@ -1,6 +1,4 @@
-'use strict';
-
-const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
+const humanize = (sec) => require('humanize-duration')(sec, { language: 'ru', round: true });
 const { Broadcast, Logger, SkillErrors } = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
@@ -10,23 +8,23 @@ const ItemUtil = require('../../lib/lib/ItemUtil');
  * example behavior implementation
  */
 module.exports = {
-  aliases: [ 'осушить', 'использовать' ],
-  command: state => (args, player) => {
-    const say = message => Broadcast.sayAt(player, message);
+  aliases: ['осушить', 'использовать'],
+  command: (state) => (args, player) => {
+    const say = (message) => Broadcast.sayAt(player, message);
 
     if (!args.length) {
-      return say("Что вы хотите использовать?");
+      return say('Что вы хотите использовать?');
     }
 
     const item = ArgParser.parseDot(args, player.inventory);
 
     if (!item) {
-      return say("У вас ничего такого нет.");
+      return say('У вас ничего такого нет.');
     }
 
-    const usable = item.metadata.usable;
+    const { usable } = item.metadata;
     if (!usable) {
-      return say("Вы не можете использовать это.");
+      return say('Вы не можете использовать это.');
     }
 
     if ('charges' in usable && usable.charges <= 0) {
@@ -38,7 +36,7 @@ module.exports = {
 
       if (!useSpell) {
         Logger.error(`Item: ${item.entityReference} has invalid usable configuration.`);
-        return say("Вы не можете использовать это.");
+        return say('Вы не можете использовать это.');
       }
 
       useSpell.options = usable.options;
@@ -54,11 +52,11 @@ module.exports = {
         }
 
         if (e instanceof SkillErrors.PassiveError) {
-          return say(`Это пассивное умение.`);
+          return say('Это пассивное умение.');
         }
 
         if (e instanceof SkillErrors.NotEnoughResourcesError) {
-          return say(`У вас недостаточно сил.`);
+          return say('У вас недостаточно сил.');
         }
 
         Logger.error(e.message);
@@ -67,19 +65,17 @@ module.exports = {
     }
 
     if (usable.effect) {
-      const effectConfig = Object.assign({
-        name: item.name
-      }, usable.config || {});
+      const effectConfig = { name: item.name, ...usable.config || {} };
       const effectState = usable.state || {};
 
-      let useEffect = state.EffectFactory.create(usable.effect, effectConfig, effectState);
+      const useEffect = state.EffectFactory.create(usable.effect, effectConfig, effectState);
       if (!useEffect) {
         Logger.error(`Item: ${item.entityReference} has invalid usable configuration.`);
-        return say("Вы не можете использовать это.");
+        return say('Вы не можете использовать это.');
       }
 
       if (!player.addEffect(useEffect)) {
-        return say("Ничего не случилось.");
+        return say('Ничего не случилось.');
       }
     }
 
@@ -91,15 +87,15 @@ module.exports = {
 
     if (usable.destroyOnDepleted && usable.charges <= 0) {
       if (item.gender === 'male') {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и он исчез в облаке дыма.`);
-       } else if (item.gender === 'female') {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и она исчезла в облаке дыма.`);
-       } else if (item.gender === 'plural') {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и они исчезли в облаке дыма.`);
-       } else {
-         say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и оно исчезло в облаке дыма.`);
-       }
+        say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и он исчез в облаке дыма.`);
+      } else if (item.gender === 'female') {
+        say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и она исчезла в облаке дыма.`);
+      } else if (item.gender === 'plural') {
+        say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и они исчезли в облаке дыма.`);
+      } else {
+        say(`Вы израсходовали всю магию в ${ItemUtil.display(item, 'pname')} и оно исчезло в облаке дыма.`);
+      }
       state.ItemManager.remove(item);
     }
-  }
+  },
 };

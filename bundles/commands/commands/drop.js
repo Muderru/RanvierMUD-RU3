@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast } = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
@@ -7,7 +5,7 @@ const ItemUtil = require('../../lib/lib/ItemUtil');
 module.exports = {
   usage: 'бросить <предмет>',
   aliases: ['бросить', 'выбросить'],
-  command : (state) => (args, player) => {
+  command: (state) => (args, player) => {
     args = args.trim();
 
     if (!args.length) {
@@ -21,7 +19,7 @@ module.exports = {
     const item = ArgParser.parseDot(args, player.inventory);
 
     if (!item) {
-      return Broadcast.sayAt(player, "У вас ничего такого нет.");
+      return Broadcast.sayAt(player, 'У вас ничего такого нет.');
     }
 
     if (item.getMeta('forSell') > 0) {
@@ -37,17 +35,17 @@ module.exports = {
       npc.emit('playerDropItem', player, item);
     }
 
-  let ending = '';
-  if (player.gender === 'male') {
-    ending = '';
-  } else if (player.gender === 'female') {
-    ending = 'а';
-  } else if (player.gender === 'plural') {
-    ending = 'и';
-  } else {
-    ending = 'о';
-  }
-    Broadcast.sayAtExcept(player.room, player.Name + ` выбросил` + ending + ` ${ItemUtil.display(item, 'vname')}.`, player);
+    let ending = '';
+    if (player.gender === 'male') {
+      ending = '';
+    } else if (player.gender === 'female') {
+      ending = 'а';
+    } else if (player.gender === 'plural') {
+      ending = 'и';
+    } else {
+      ending = 'о';
+    }
+    Broadcast.sayAtExcept(player.room, `${player.Name} выбросил${ending} ${ItemUtil.display(item, 'vname')}.`, player);
     Broadcast.sayAt(player, `<green>Вы выбросили </green>${ItemUtil.display(item, 'vname')}<green>.</green>`);
-  }
+  },
 };

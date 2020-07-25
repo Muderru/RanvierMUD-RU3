@@ -1,7 +1,5 @@
-'use strict';
-
-const humanize = (sec) => { return require('humanize-duration')(sec, { language: 'ru', round: true }); };
-const sprintf = require('sprintf-js').sprintf;
+const humanize = (sec) => require('humanize-duration')(sec, { language: 'ru', round: true });
+const { sprintf } = require('sprintf-js');
 const {
   Broadcast: B,
   Room,
@@ -9,17 +7,17 @@ const {
   ItemType,
   Logger,
   Data,
-  Player
+  Player,
 } = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
 
 module.exports = {
-  usage: "смотреть [объект]",
+  usage: 'смотреть [объект]',
   aliases: ['смотреть', 'осмотреть'],
-  command: state => (args, player) => {
+  command: (state) => (args, player) => {
     if (!player.room || !(player.room instanceof Room)) {
-      Logger.error(player.name + ' is in limbo.');
+      Logger.error(`${player.name} is in limbo.`);
       return B.sayAt(player, 'Вы находитесь в темной бесформенной бездне.');
     }
 
@@ -28,11 +26,11 @@ module.exports = {
     }
 
     lookRoom(state, player);
-  }
+  },
 };
 
 function getCompass(player) {
-  const room = player.room;
+  const { room } = player;
 
   const exitMap = new Map();
   exitMap.set('восток', 'В');
@@ -46,18 +44,18 @@ function getCompass(player) {
   exitMap.set('северо-запад', 'СЗ');
   exitMap.set('северо-восток', 'СВ');
 
-  const directionsAvailable = room.exits.map(exit => (!exit.hidden) ? exitMap.get(exit.direction):null);
+  const directionsAvailable = room.exits.map((exit) => ((!exit.hidden) ? exitMap.get(exit.direction) : null));
 
-  const exits = Array.from(exitMap.values()).map(exit => {
+  const exits = Array.from(exitMap.values()).map((exit) => {
     if (directionsAvailable.includes(exit)) {
       return exit;
     }
-    //If we are either SE or NE, pre-pad
+    // If we are either SE or NE, pre-pad
     if (exit.length === 2 && exit.includes('В')) {
       return ' -';
     }
 
-    //If we are either SW or NW, post-pad
+    // If we are either SW or NW, post-pad
     if (exit.length === 2 && exit.includes('З')) {
       return '- ';
     }
@@ -74,14 +72,12 @@ function getCompass(player) {
 
   if (player.getMeta('config.миникарта')) {
     return [line1, line2, line3];
-  } else {
-    return ['', '', ''];
   }
-  
+  return ['', '', ''];
 }
 
 function lookRoom(state, player) {
-  const room = player.room;
+  const { room } = player;
 
   let currentTime = room.area.time;
   let currentLight = room.light;
@@ -89,7 +85,7 @@ function lookRoom(state, player) {
     let tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
     const dayDuration = 24;
     if (tmpGameTime >= dayDuration) {
-      tmpGameTime = tmpGameTime % dayDuration;
+      tmpGameTime %= dayDuration;
     }
     currentTime = tmpGameTime;
   }
@@ -124,18 +120,18 @@ function lookRoom(state, player) {
 
   if (currentLight >= 20) {
     if (player.room.coordinates) {
-      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title + lightVerb) + '</b></yellow>');
+      B.sayAt(player, `<yellow><b>${sprintf('%-65s', room.title + lightVerb)}</b></yellow>`);
       B.sayAt(player, B.line(60));
     } else {
-      const [ line1, line2, line3 ] = getCompass(player);
+      const [line1, line2, line3] = getCompass(player);
 
       // map is 15 characters wide, room is formatted to 80 character width
-      B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title + lightVerb) + line1 + '</b></yellow>');
+      B.sayAt(player, `<yellow><b>${sprintf('%-65s', room.title + lightVerb)}${line1}</b></yellow>`);
       B.sayAt(player, B.line(60) + B.line(5, ' ') + line2);
-      B.sayAt(player, B.line(65, ' ') + '<yellow><b>' + line3 + '</b></yellow>');
+      B.sayAt(player, `${B.line(65, ' ')}<yellow><b>${line3}</b></yellow>`);
     }
   } else {
-    B.sayAt(player, '<yellow><b>' + sprintf('%-65s', 'Во тьме') + '</b></yellow>');
+    B.sayAt(player, `<yellow><b>${sprintf('%-65s', 'Во тьме')}</b></yellow>`);
     B.sayAt(player, B.line(60));
   }
 
@@ -147,17 +143,17 @@ function lookRoom(state, player) {
     }
   }
 
-//Какая-то непонятная хрень, отключу пока
-//  if (player.getMeta('config.миникарта')) {
-//    B.sayAt(player, '');
-//    state.CommandManager.get('map').execute(4, player);
-//  }
+  // Какая-то непонятная хрень, отключу пока
+  //  if (player.getMeta('config.миникарта')) {
+  //    B.sayAt(player, '');
+  //    state.CommandManager.get('map').execute(4, player);
+  //  }
 
   B.sayAt(player, '');
 
   // show all players
   if (currentLight >= 50) {
-    room.players.forEach(otherPlayer => {
+    room.players.forEach((otherPlayer) => {
       if (otherPlayer === player) {
         return;
       }
@@ -168,7 +164,7 @@ function lookRoom(state, player) {
         return;
       }
       let trader = false;
-      for (const [, item ] of otherPlayer.inventory) {
+      for (const [, item] of otherPlayer.inventory) {
         if (item.getMeta('forSell') > 0) {
           trader = true;
         }
@@ -179,18 +175,18 @@ function lookRoom(state, player) {
         trader = false;
       }
       if (trader) {
-        B.sayAt(player, '[Игрок] ' + otherPlayer.name + ' (торгует)');
+        B.sayAt(player, `[Игрок] ${otherPlayer.name} (торгует)`);
       } else {
-        B.sayAt(player, '[Игрок] ' + otherPlayer.name + combatantsDisplay);
+        B.sayAt(player, `[Игрок] ${otherPlayer.name}${combatantsDisplay}`);
       }
     });
   } else if (room.players.size > 1) {
-    B.sayAt(player, `Тут есть другие игроки.`);
+    B.sayAt(player, 'Тут есть другие игроки.');
   }
 
   // show all the items in the room
   if (currentLight >= 75) {
-    room.items.forEach(item => {
+    room.items.forEach((item) => {
       if (item.hasBehavior('resource')) {
         B.sayAt(player, `[${ItemUtil.qualityColorize(item, 'Ресурс')}] <green>${item.roomDesc}</green>`);
       } else {
@@ -198,12 +194,12 @@ function lookRoom(state, player) {
       }
     });
   } else if (room.items.size > 0) {
-    B.sayAt(player, `Тут что-то есть.`);
+    B.sayAt(player, 'Тут что-то есть.');
   }
 
   // show all npcs
   if (currentLight >= 50) {
-    room.npcs.forEach(npc => {
+    room.npcs.forEach((npc) => {
       if (npc.hasAttribute('invisibility') && npc.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
         return;
       }
@@ -211,24 +207,21 @@ function lookRoom(state, player) {
         return;
       }
       // show quest state as [!], [%], [?] for available, in progress, ready to complete respectively
-      let hasNewQuest, hasActiveQuest, hasReadyQuest;
+      let hasNewQuest; let hasActiveQuest; let
+        hasReadyQuest;
       if (npc.quests) {
-        hasNewQuest = npc.quests.find(questRef => state.QuestFactory.canStart(player, questRef));
-        hasReadyQuest = npc.quests.find(questRef => {
-            return player.questTracker.isActive(questRef) &&
-              player.questTracker.get(questRef).getProgress().percent >= 100;
-        });
-        hasActiveQuest = npc.quests.find(questRef => {
-            return player.questTracker.isActive(questRef) &&
-              player.questTracker.get(questRef).getProgress().percent < 100;
-        });
+        hasNewQuest = npc.quests.find((questRef) => state.QuestFactory.canStart(player, questRef));
+        hasReadyQuest = npc.quests.find((questRef) => player.questTracker.isActive(questRef)
+              && player.questTracker.get(questRef).getProgress().percent >= 100);
+        hasActiveQuest = npc.quests.find((questRef) => player.questTracker.isActive(questRef)
+              && player.questTracker.get(questRef).getProgress().percent < 100);
 
         let questString = '';
         if (hasNewQuest || hasActiveQuest || hasReadyQuest) {
           questString += hasNewQuest ? '[<b><yellow>!</yellow></b>]' : '';
           questString += hasActiveQuest ? '[<b><yellow>%</yellow></b>]' : '';
           questString += hasReadyQuest ? '[<b><yellow>?</yellow></b>]' : '';
-          B.at(player, questString + ' ');
+          B.at(player, `${questString} `);
         }
       }
 
@@ -240,7 +233,7 @@ function lookRoom(state, player) {
       // color NPC label by difficulty
       let npcLabel = 'НПС';
       switch (true) {
-        case (player.level  - npc.level > 4):
+        case (player.level - npc.level > 4):
           npcLabel = '<cyan>НПС</cyan>';
           break;
         case (npc.level - player.level > 9):
@@ -256,10 +249,10 @@ function lookRoom(state, player) {
           npcLabel = '<green>НПС</green>';
           break;
       }
-      B.sayAt(player, `[${npcLabel}] ` + npc.Name + combatantsDisplay);
+      B.sayAt(player, `[${npcLabel}] ${npc.Name}${combatantsDisplay}`);
     });
   } else if (room.npcs.size > 0) {
-    B.sayAt(player, `Тут кто-то есть.`);
+    B.sayAt(player, 'Тут кто-то есть.');
   }
 
   B.at(player, '[<yellow><b>Выходы</yellow></b>: ');
@@ -269,7 +262,7 @@ function lookRoom(state, player) {
 
   // prioritize explicit over inferred exits with the same name
   for (const exit of exits) {
-    if (foundExits.find(fe => fe.direction === exit.direction)) {
+    if (foundExits.find((fe) => fe.direction === exit.direction)) {
       continue;
     }
 
@@ -278,11 +271,11 @@ function lookRoom(state, player) {
     }
   }
 
-  B.at(player, foundExits.map(exit => {
+  B.at(player, foundExits.map((exit) => {
     const exitRoom = state.RoomManager.getRoom(exit.roomId);
     const door = room.getDoor(exitRoom) || (exitRoom && exitRoom.getDoor(room));
     if (door && (door.locked || door.closed)) {
-      return '(' + exit.direction + ')';
+      return `(${exit.direction})`;
     }
 
     return exit.direction;
@@ -295,7 +288,7 @@ function lookRoom(state, player) {
 }
 
 function lookEntity(state, player, args) {
-  const room = player.room;
+  const { room } = player;
 
   args = args.split(' ');
   let search = null;
@@ -313,11 +306,11 @@ function lookEntity(state, player, args) {
   entity = entity || ArgParser.parseDot(search, player.equipment);
 
   if (!entity) {
-    return B.sayAt(player, "Здесь нет ничего такого.");
+    return B.sayAt(player, 'Здесь нет ничего такого.');
   }
 
   if (entity instanceof Player) {
-    //Show player equipment
+    // Show player equipment
     B.sayAt(player, `Вы видите ${entity.playerClass.config.name.toLowerCase()}а ${entity.vname}.`);
     let pronoun = '';
     if (entity.gender === 'male') {
@@ -374,7 +367,7 @@ function lookEntity(state, player, args) {
       case ItemType.SCROLL:
         return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
       case ItemType.CONTAINER: {
-        let slot = entity.getMeta('slot');
+        const slot = entity.getMeta('slot');
         if (slot) {
           B.sayAt(player, ItemUtil.renderItem(state, entity, player));
         }
@@ -383,7 +376,7 @@ function lookEntity(state, player, args) {
         }
 
         if (entity.closed) {
-          return B.sayAt(player, `Закрыто.`);
+          return B.sayAt(player, 'Закрыто.');
         }
 
         B.at(player, 'Содержимое');
@@ -392,8 +385,8 @@ function lookEntity(state, player, args) {
         }
         B.sayAt(player, ':');
 
-        for (const [, item ] of entity.inventory) {
-          B.sayAt(player, '  ' + ItemUtil.display(item));
+        for (const [, item] of entity.inventory) {
+          B.sayAt(player, `  ${ItemUtil.display(item)}`);
         }
         break;
       }
@@ -401,8 +394,7 @@ function lookEntity(state, player, args) {
   }
 }
 
-
 function getCombatantsDisplay(entity) {
-  const combatantsList = [...entity.combatants.values()].map(combatant => combatant.tname);
-  return `, <red>сражается с </red>${combatantsList.join("<red>,</red> ")}`;
+  const combatantsList = [...entity.combatants.values()].map((combatant) => combatant.tname);
+  return `, <red>сражается с </red>${combatantsList.join('<red>,</red> ')}`;
 }

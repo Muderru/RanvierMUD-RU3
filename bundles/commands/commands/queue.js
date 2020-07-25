@@ -1,22 +1,20 @@
-'use strict';
-
-const sprintf = require('sprintf-js').sprintf;
+const { sprintf } = require('sprintf-js');
 const { Broadcast } = require('ranvier');
 
 /**
  * View command queue
  */
 module.exports = {
-  aliases: [ 'очередь', 'последовательность'],
+  aliases: ['очередь', 'последовательность'],
   usage: 'очередь',
-  command : (state) => (args, player) => {
+  command: (state) => (args, player) => {
     Broadcast.sayAt(player, '<bold><yellow>Очередь команд:</yellow></bold>');
     if (!player.commandQueue.hasPending) {
       return Broadcast.sayAt(player, ' -) Нет.');
     }
 
     const commands = player.commandQueue.queue;
-    const indexToken =  '%' + ((commands.length + 1) + '').length + 's';
+    const indexToken = `%${(`${commands.length + 1}`).length}s`;
     for (let i = 0; i < commands.length; i++) {
       const command = commands[i];
       const index = sprintf(indexToken, i + 1);
@@ -27,5 +25,5 @@ module.exports = {
     }
 
     Broadcast.sayAt(player, '<bold><yellow>Используйте команду "очистить", чтобы удалить очередь команд.</yellow></bold>');
-  }
+  },
 };
