@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, Logger, Config } = require('ranvier');
 const { Random } = require('rando-js');
 
@@ -14,24 +12,24 @@ const { Random } = require('rando-js');
  */
 module.exports = {
   listeners: {
-    updateTick: state => {
+    updateTick: (state) => {
       const tickFrequency = Config.get('entityTickFrequency', 100);
       const serverStartTime = Math.trunc(Date.now() / tickFrequency);
       return function (config) {
         const respawnInterval = config.interval || 30;
         const upTime = Math.trunc(Date.now() / tickFrequency - serverStartTime);
-        if (upTime % (respawnInterval * (1000 / tickFrequency)) == 0) {
+        if (upTime % (respawnInterval * (1000 / tickFrequency)) === 0) {
           for (const [id, room] of this.rooms) {
             room.emit('respawnTick', state);
           }
-          this.npcs.forEach(npc => {
+          this.npcs.forEach((npc) => {
             npc.emit('respawnTick');
           });
         }
       };
     },
 
-    roomAdded: state => function (config, room) {
+    roomAdded: (state) => function (config, room) {
       room.on('respawnTick', _respawnRoom.bind(room));
     },
   },
@@ -41,18 +39,19 @@ function _respawnRoom(state) {
   // relock/close doors
   this.doors = new Map(Object.entries(JSON.parse(JSON.stringify(this.defaultDoors || {}))));
 
-  this.defaultNpcs.forEach(defaultNpc => {
+  this.defaultNpcs.forEach((defaultNpc) => {
     if (typeof defaultNpc === 'string') {
       defaultNpc = { id: defaultNpc };
     }
 
-    defaultNpc = Object.assign({
+    defaultNpc = {
       respawnChance: 100,
       maxLoad: 1,
-      replaceOnRespawn: false
-    }, defaultNpc);
+      replaceOnRespawn: false,
+      ...defaultNpc,
+    };
 
-    const npcCount = [...this.spawnedNpcs].filter(npc => npc.entityReference === defaultNpc.id).length;
+    const npcCount = [...this.spawnedNpcs].filter((npc) => npc.entityReference === defaultNpc.id).length;
     const needsRespawn = npcCount < defaultNpc.maxLoad;
 
     if (!needsRespawn) {
@@ -69,18 +68,19 @@ function _respawnRoom(state) {
     }
   });
 
-  this.defaultItems.forEach(defaultItem => {
+  this.defaultItems.forEach((defaultItem) => {
     if (typeof defaultItem === 'string') {
       defaultItem = { id: defaultItem };
     }
 
-    defaultItem = Object.assign({
+    defaultItem = {
       respawnChance: 100,
       maxLoad: 1,
-      replaceOnRespawn: false
-    }, defaultItem);
+      replaceOnRespawn: false,
+      ...defaultItem,
+    };
 
-    const itemCount = [...this.items].filter(item => item.entityReference === defaultItem.id).length;
+    const itemCount = [...this.items].filter((item) => item.entityReference === defaultItem.id).length;
     const needsRespawn = itemCount < defaultItem.maxLoad;
 
     if (!needsRespawn && !defaultItem.replaceOnRespawn) {
@@ -89,7 +89,7 @@ function _respawnRoom(state) {
 
     if (Random.probability(defaultItem.respawnChance)) {
       if (defaultItem.replaceOnRespawn) {
-        this.items.forEach(item => {
+        this.items.forEach((item) => {
           if (item.entityReference === defaultItem.id) {
             state.ItemManager.remove(item);
           }
