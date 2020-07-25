@@ -1,19 +1,19 @@
-'use strict';
-
-const LootTable = require('../../lib/LootTable');
 const { Player, Item, Logger } = require('ranvier');
+const LootTable = require('../../lib/LootTable');
 const EnhanceItem = require('../../../lib/lib/EnhanceItem');
 
 module.exports = {
   listeners: {
-    killed: state => async function (config, killer) {
-      const { room, name, rname, dname, vname, tname, pname, gender, area, keywords } = this;
+    killed: (state) => async function (config, killer) {
+      const {
+        room, name, rname, dname, vname, tname, pname, gender, area, keywords,
+      } = this;
 
       const lootTable = new LootTable(state, config);
       const currencies = lootTable.currencies();
       const roll = await lootTable.roll();
       const items = roll.map(
-        item => state.ItemFactory.create(state.AreaManager.getAreaByReference(item), item)
+        (item) => state.ItemFactory.create(state.AreaManager.getAreaByReference(item), item),
       );
 
       const corpse = new Item(area, {
@@ -35,8 +35,8 @@ module.exports = {
         maxItems: items.length,
         behaviors: {
           decay: {
-            duration: 180
-          }
+            duration: 180,
+          },
         },
       });
       corpse.hydrate(state);
@@ -48,14 +48,14 @@ module.exports = {
       const epicChance = 0.5;
       const legendaryChance = 0.1;
       const artifactChance = 0.01;
-      items.forEach(item => {
+      items.forEach((item) => {
         item.hydrate(state);
-        let chance = Math.random()*100;
+        const chance = Math.random() * 100;
         if (chance <= artifactChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
           item = EnhanceItem.enhance(item, 'artifact');
         } else if (chance <= legendaryChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
           item = EnhanceItem.enhance(item, 'legendary');
-        }  else if (chance <= epicChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
+        } else if (chance <= epicChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
           item = EnhanceItem.enhance(item, 'epic');
         } else if (chance <= rareChance && item.getMeta('slot') && item.getMeta('quality') === 'common') {
           item = EnhanceItem.enhance(item, 'rare');
@@ -73,11 +73,9 @@ module.exports = {
 
       if (killer && killer instanceof Player) {
         if (currencies) {
-          currencies.forEach(currency => {
+          currencies.forEach((currency) => {
             // distribute currency among group members in the same room
-            const recipients = (killer.party ? [...killer.party] : [killer]).filter(recipient => {
-              return recipient.room === killer.room;
-            });
+            const recipients = (killer.party ? [...killer.party] : [killer]).filter((recipient) => recipient.room === killer.room);
 
             let remaining = currency.amount;
             for (const recipient of recipients) {
@@ -92,6 +90,6 @@ module.exports = {
           });
         }
       }
-    }
-  }
+    },
+  },
 };

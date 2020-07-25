@@ -1,10 +1,8 @@
-'use strict';
-
 const { Broadcast, Logger } = require('ranvier');
 
 module.exports = {
   listeners: {
-    get: state => function (config, player) {
+    get: (state) => function (config, player) {
       let money = 0;
       const getMoney = this.getBehavior('money');
       const minMoney = getMoney.min;
@@ -21,6 +19,6 @@ module.exports = {
 
       Logger.verbose(`${player.name} has receive ${money} gold.`);
       state.ItemManager.remove(this);
-    }
-  }
+    },
+  },
 };

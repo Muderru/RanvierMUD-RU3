@@ -1,11 +1,9 @@
-'use strict';
-
 const { Broadcast: B } = require('ranvier');
 
 module.exports = {
   listeners: {
-    currency: state => function (currency, amount) {
-      const friendlyName = currency.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
+    currency: (state) => function (currency, amount) {
+      const friendlyName = currency.replace('_', ' ').replace(/\b\w/g, (l) => l.toUpperCase());
       const key = `currencies.${currency}`;
 
       if (!this.getMeta('currencies')) {

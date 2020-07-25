@@ -1,9 +1,7 @@
-'use strict';
-
 const { Random } = require('rando-js');
 const { Logger } = require('ranvier');
 
-let loadedPools = {};
+const loadedPools = {};
 
 /**
  * A loot table is made up of one or more loot pools. The `roll()` method will
@@ -18,9 +16,7 @@ class LootTable {
     this.pools = config.pools || [];
     this.currencyRanges = config.currencies || null;
 
-    this.options = Object.assign({
-      maxItems: 5
-    }, config.options || {});
+    this.options = { maxItems: 5, ...config.options || {} };
 
     this._loading = this.load(state);
   }
@@ -36,7 +32,7 @@ class LootTable {
 
   async roll() {
     await this._loading;
-    let items = [];
+    const items = [];
     for (const pool of this.pools) {
       if (!(pool instanceof Map)) {
         continue;
@@ -69,14 +65,14 @@ class LootTable {
       return null;
     }
 
-    let result = [];
+    const result = [];
     for (const currency in this.currencyRanges) {
       const entry = this.currencyRanges[currency];
       const amount = Random.inRange(entry.min, entry.max);
       if (amount) {
         result.push({
           name: currency,
-          amount
+          amount,
         });
       }
     }
@@ -107,7 +103,7 @@ class LootTable {
         return Logger.error(`Area has no pools definition: ${pool}`);
       }
     }
-    let availablePools = loadedPools[poolArea.name];
+    const availablePools = loadedPools[poolArea.name];
 
     const [, poolName] = pool.split(':');
 
@@ -127,8 +123,7 @@ class LootTable {
       }
 
       // resolved pool is a meta pool (pool of pools) so recursively resolve it
-      pool = nestedResolved.reduce((acc, val) => acc.concat(val), [])
-      ;
+      pool = nestedResolved.reduce((acc, val) => acc.concat(val), []);
     }
 
     return Array.isArray(pool) ? pool : [new Map(Object.entries(pool))];
