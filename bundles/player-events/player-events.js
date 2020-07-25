@@ -22,9 +22,8 @@ module.exports = {
       }
 
     for (const npc of this.room.npcs) {
-      if (npc.hasBehavior('block')) {
-        const block = npc.getBehavior('block');
-        const blockExits = block.exits;
+      if (npc.getMeta('block')) {
+        const blockExits = npc.getMeta('block.exits');
         let detectInvis = 0;
         let detectHide = 0;
 

@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast: B, Logger } = require('ranvier');
 
 /**
@@ -39,8 +37,8 @@ const { Broadcast: B, Logger } = require('ranvier');
  */
 module.exports = {
   listeners: {
-    updateTick: state => function (config) {
-      let playersCount = state.PlayerManager.players.size;
+    updateTick: (state) => function (config) {
+      const playersCount = state.PlayerManager.players.size;
       if (playersCount === 0) {
         return;
       }
@@ -58,15 +56,16 @@ module.exports = {
       }
 
       // setup default configs
-      config = Object.assign({
+      config = {
         delay: 5,
         warnMessage: '%name% угрожающе рычит.',
         attackMessage: '%name% нападает на вас!',
         towards: {
           players: true,
-          npcs: false
-        }
-      }, config);
+          npcs: false,
+        },
+        ...config,
+      };
 
       if (this.isInCombat()) {
         return;
@@ -79,26 +78,26 @@ module.exports = {
           return;
         }
 
-      let detectInvis = 0;
-      let detectHide = 0;
+        let detectInvis = 0;
+        let detectHide = 0;
 
-      if (this.hasAttribute('detect_invisibility')) {
-        detectInvis = this.getAttribute('detect_invisibility');
-      }
+        if (this.hasAttribute('detect_invisibility')) {
+          detectInvis = this.getAttribute('detect_invisibility');
+        }
 
-      if (this.hasAttribute('detect_hide')) {
-        detectHide = this.getAttribute('detect_hide');
-      }
+        if (this.hasAttribute('detect_hide')) {
+          detectHide = this.getAttribute('detect_hide');
+        }
 
-      if (this._aggroTarget.hasAttribute('invisibility') && this._aggroTarget.getAttribute('invisibility') > detectInvis) {
-        this._aggroTarget = null;
-        this._aggroWarned = false;
-        return;
-      } else if (this._aggroTarget.hasAttribute('hide') && this._aggroTarget.getAttribute('hide') > detectHide) {
-        this._aggroTarget = null;
-        this._aggroWarned = false;
-        return;
-      }
+        if (this._aggroTarget.hasAttribute('invisibility') && this._aggroTarget.getAttribute('invisibility') > detectInvis) {
+          this._aggroTarget = null;
+          this._aggroWarned = false;
+          return;
+        } if (this._aggroTarget.hasAttribute('hide') && this._aggroTarget.getAttribute('hide') > detectHide) {
+          this._aggroTarget = null;
+          this._aggroWarned = false;
+          return;
+        }
 
         const sinceLastCheck = Date.now() - this._aggroTimer;
         const delayLength = config.delay * 1000;
@@ -139,8 +138,8 @@ module.exports = {
           }
 
           if (
-            config.towards.npcs === true ||
-            (Array.isArray(config.towards.npcs) && config.towards.npcs.includes(npc.entityReference))
+            config.towards.npcs === true
+            || (Array.isArray(config.towards.npcs) && config.towards.npcs.includes(npc.entityReference))
           ) {
             this._aggroTarget = npc;
             this._aggroTimer = Date.now();
@@ -148,6 +147,6 @@ module.exports = {
           }
         }
       }
-    }
-  }
+    },
+  },
 };

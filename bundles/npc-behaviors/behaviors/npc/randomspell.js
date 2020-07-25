@@ -1,5 +1,3 @@
-'use strict';
-
 let rndSpell = null;
 
 /**
@@ -7,21 +5,21 @@ let rndSpell = null;
  */
 module.exports = {
   listeners: {
-    spawn: state => function () {
+    spawn: (state) => function () {
       const spell = [
-        "fireball", "heal", "plea","invisibility", "detect_invisibility", "paralysis", 
-        "ice_peak", "lightning", "acid", "silence" ];
+        'fireball', 'heal', 'plea', 'invisibility', 'detect_invisibility', 'paralysis',
+        'ice_peak', 'lightning', 'acid', 'silence'];
 
       const randomSpell = spell[Math.floor(Math.random() * spell.length)];
       rndSpell = state.SpellManager.get(randomSpell);
     },
 
-    updateTick: state => function () {
+    updateTick: (state) => function () {
       if (!this.isInCombat()) {
         return;
       }
 
-      if ((this.getAttribute('health') / this.getMaxAttribute('health')) > 0.8 ) {
+      if ((this.getAttribute('health') / this.getMaxAttribute('health')) > 0.8) {
         return;
       }
 
@@ -34,6 +32,6 @@ module.exports = {
           rndSpell.execute(null, this, this);
         }
       }
-    }
-  }
+    },
+  },
 };

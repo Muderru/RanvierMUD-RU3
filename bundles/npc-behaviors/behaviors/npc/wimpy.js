@@ -1,11 +1,9 @@
-'use strict';
-
 const { Random } = require('rando-js');
-const { Broadcast, Logger } = require('ranvier');
+const { Broadcast } = require('ranvier');
 
 module.exports = {
   listeners: {
-    updateTick: state => function () {
+    updateTick: (state) => function () {
       if (!this.isInCombat()) {
         return;
       }
@@ -18,10 +16,10 @@ module.exports = {
         return;
       }
 
-      let healthCurrent = this.getAttribute('health');
-      let healthMax = this.getMaxAttribute('health');
+      const healthCurrent = this.getAttribute('health');
+      const healthMax = this.getMaxAttribute('health');
 
-      if ((healthCurrent/healthMax) < 0.35) {
+      if ((healthCurrent / healthMax) < 0.35) {
         const exits = this.room.getExits();
         if (!exits.length) {
           return;
@@ -35,24 +33,24 @@ module.exports = {
           return;
         }
 
-        //Надо добавить проверку на ограничение комнат, по которым может перемещаться моб
+        // Надо добавить проверку на ограничение комнат, по которым может перемещаться моб
         if (randomRoom.area !== this.area) {
-            return;
+          return;
         }
 
         if (this.gender === 'male') {
-           Broadcast.sayAtExcept(this.room, `${this.Name} сбежал из боя.`, this);
+          Broadcast.sayAtExcept(this.room, `${this.Name} сбежал из боя.`, this);
         } else if (this.gender === 'female') {
-           Broadcast.sayAtExcept(this.room, `${this.Name} сбежала из боя.`, this);
+          Broadcast.sayAtExcept(this.room, `${this.Name} сбежала из боя.`, this);
         } else if (this.gender === 'plural') {
-           Broadcast.sayAtExcept(this.room, `${this.Name} сбежали из боя.`, this);
+          Broadcast.sayAtExcept(this.room, `${this.Name} сбежали из боя.`, this);
         } else {
-           Broadcast.sayAtExcept(this.room, `${this.Name} сбежало из боя.`, this);
+          Broadcast.sayAtExcept(this.room, `${this.Name} сбежало из боя.`, this);
         }
-    
+
         this.removeFromCombat();
         this.moveTo(randomRoom);
       }
-    }
-  }
+    },
+  },
 };

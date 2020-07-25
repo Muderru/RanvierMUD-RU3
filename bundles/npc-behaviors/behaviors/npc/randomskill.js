@@ -1,5 +1,3 @@
-'use strict';
-
 let rndSkill = null;
 
 /**
@@ -7,21 +5,21 @@ let rndSkill = null;
  */
 module.exports = {
   listeners: {
-    spawn: state => function () {
+    spawn: (state) => function () {
       const skill = [
-        "judge", "lunge", "rend", "shieldblock", "smite", "hide", 
-        "detect_hide", "bash" ];
+        'judge', 'lunge', 'rend', 'shieldblock', 'smite', 'hide',
+        'detect_hide', 'bash'];
 
       const randomSkill = skill[Math.floor(Math.random() * skill.length)];
       rndSkill = state.SkillManager.get(randomSkill);
     },
 
-    updateTick: state => function () {
+    updateTick: (state) => function () {
       if (!this.isInCombat()) {
         return;
       }
 
-      if ((this.getAttribute('health') / this.getMaxAttribute('health')) > 0.8 ) {
+      if ((this.getAttribute('health') / this.getMaxAttribute('health')) > 0.8) {
         return;
       }
 
@@ -34,6 +32,6 @@ module.exports = {
           rndSkill.execute(null, this, this);
         }
       }
-    }
-  }
+    },
+  },
 };

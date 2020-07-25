@@ -1,10 +1,6 @@
-'use strict';
-
-const { Logger } = require('ranvier');
-
 module.exports = {
   listeners: {
-    spawn: state => function (config) {
+    spawn: (state) => function (config) {
       if (!config) {
         config = 0;
       }
@@ -101,6 +97,6 @@ module.exports = {
       if (this.getAttribute('mana_regeneration') === 0) {
         this.attributes.get('mana_regeneration').setBase(5 + config);
       }
-    }
-  }
+    },
+  },
 };

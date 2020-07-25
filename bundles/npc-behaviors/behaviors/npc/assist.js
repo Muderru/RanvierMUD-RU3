@@ -1,5 +1,3 @@
-'use strict';
-
 const { Broadcast, Logger } = require('ranvier');
 
 /**
@@ -7,7 +5,7 @@ const { Broadcast, Logger } = require('ranvier');
  */
 module.exports = {
   listeners: {
-    updateTick: state => function () {
+    updateTick: (state) => function () {
       if (this.isInCombat() || !this.room) {
         return;
       }
@@ -26,10 +24,10 @@ module.exports = {
 
           this.initiateCombat(target, 150);
           Broadcast.sayAt(this.room, `${this.Name} бросается на помощь ${npc.dname}.`);
-//          Logger.verbose(`NPC [${this.uuid}] assist [${npc.uuid}].`);
+          Logger.info(`NPC [${this.uuid}] assist [${npc.uuid}].`);
           return;
         }
       }
-    }
-  }
+    },
+  },
 };

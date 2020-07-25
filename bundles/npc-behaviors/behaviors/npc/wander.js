@@ -1,7 +1,5 @@
-'use strict';
-
 const { Random } = require('rando-js');
-const { Broadcast, Data, Logger } = require('ranvier');
+const { Broadcast, Data } = require('ranvier');
 
 /**
  * An example behavior that causes an NPC to wander around an area when not in combat
@@ -13,8 +11,8 @@ const { Broadcast, Data, Logger } = require('ranvier');
  */
 module.exports = {
   listeners: {
-    updateTick: state => function (config) {
-      let playersCount = state.PlayerManager.players.size;
+    updateTick: (state) => function (config) {
+      const playersCount = state.PlayerManager.players.size;
       if (playersCount === 0) {
         return;
       }
@@ -31,11 +29,12 @@ module.exports = {
         config = {};
       }
 
-      config = Object.assign({
+      config = {
         areaRestricted: false,
         restrictTo: null,
         interval: 20,
-      }, config);
+        ...config,
+      };
 
       if (!this._lastWanderTime) {
         this._lastWanderTime = Date.now();
@@ -54,11 +53,11 @@ module.exports = {
 
       const roomExit = Random.fromArray(exits);
       const randomRoom = state.RoomManager.getRoom(roomExit.roomId);
-      let oldRoom = this.room;
+      const oldRoom = this.room;
 
-      //проверка на флаг комнаты nomob
+      // проверка на флаг комнаты nomob
       if (randomRoom) {
-        let nomob = randomRoom.getMeta('nomob');
+        const nomob = randomRoom.getMeta('nomob');
         if (nomob) {
           return;
         }
@@ -68,32 +67,30 @@ module.exports = {
       if (randomRoom && door && (door.locked || door.closed)) {
         // maybe a possible feature where it could be configured that they can open doors
         // or even if they have the key they can unlock the doors
-//        Logger.verbose(`NPC [${this.uuid}] wander blocked by door.`);
         return;
       }
 
       if (
-        !randomRoom ||
-        (config.restrictTo && !config.restrictTo.includes(randomRoom.entityReference)) ||
-        (config.areaRestricted && randomRoom.area !== this.area)
+        !randomRoom
+        || (config.restrictTo && !config.restrictTo.includes(randomRoom.entityReference))
+        || (config.areaRestricted && randomRoom.area !== this.area)
       ) {
         return;
       }
 
-//      Logger.verbose(`NPC [${this.uuid}] wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
       if (!this.travelVerbOut) {
-          if (this.gender === 'male') {
-              this.travelVerbOut = 'убежал';
-          } else if (this.gender === 'female') {
-              this.travelVerbOut = 'убежала';
-          } else if (this.gender === 'plural') {
-              this.travelVerbOut = 'убежали';
-          } else {
-              this.travelVerbOut = 'убежало';
-          }
+        if (this.gender === 'male') {
+          this.travelVerbOut = 'убежал';
+        } else if (this.gender === 'female') {
+          this.travelVerbOut = 'убежала';
+        } else if (this.gender === 'plural') {
+          this.travelVerbOut = 'убежали';
+        } else {
+          this.travelVerbOut = 'убежало';
         }
+      }
 
-      let blindPlayers = [];
+      const blindPlayers = [];
       for (const pc of this.room.players) {
         let counter = 0;
         if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
@@ -112,7 +109,7 @@ module.exports = {
           Broadcast.sayAtExcept(this.room, `${this.Name} ${this.travelVerbOut} на ${roomExit.direction}.`, blindPlayers);
         }
       }
-      
+
       if (!this.travelVerbIn) {
         if (this.gender === 'male') {
           this.travelVerbIn = 'появился';
@@ -132,40 +129,40 @@ module.exports = {
           } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
             continue;
           } else {
-            switch(roomExit.direction) {
+            switch (roomExit.direction) {
               case 'восток':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с запада.`);
-              break;
+                break;
               case 'запад':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с востока.`);
-              break;
+                break;
               case 'юг':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с севера.`);
-              break;
+                break;
               case 'север':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с юга.`);
-              break;
+                break;
               case 'вверх':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} снизу.`);
-              break;
+                break;
               case 'вниз':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} сверху.`);
-              break;
+                break;
               case 'северо-запад':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с юго-востока.`);
-              break;
+                break;
               case 'северо-восток':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с юго-запада.`);
-              break;
+                break;
               case 'юго-запад':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с северо-востока.`);
-              break;
+                break;
               case 'юго-восток':
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} с северо-запада.`);
-              break;
+                break;
               default:
                 Broadcast.sayAt(pc, `${this.Name} ${this.travelVerbIn} откуда-то.`);
-             }
+            }
           }
         }
       }
@@ -175,13 +172,13 @@ module.exports = {
         let ending = '';
         if (RoomLight(oldRoom) >= 50) {
           if (follower.gender === 'male') {
-              ending = '';
+            ending = '';
           } else if (follower.gender === 'female') {
-              ending = 'а';
+            ending = 'а';
           } else if (follower.gender === 'plural') {
-              ending = 'и';
+            ending = 'и';
           } else {
-              ending = 'о';
+            ending = 'о';
           }
           for (const pc of oldRoom.players) {
             if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
@@ -189,49 +186,47 @@ module.exports = {
             } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
               continue;
             } else {
-              Broadcast.sayAt(pc, `${follower.Name} последовал` + ending + ` за ${this.tname}.`);
+              Broadcast.sayAt(pc, `${follower.Name} последовал${ending} за ${this.tname}.`);
             }
           }
         }
         if (RoomLight(randomRoom) >= 50) {
           if (follower.gender === 'male') {
-              ending = 'ёл';
+            ending = 'ёл';
           } else if (follower.gender === 'female') {
-              ending = 'ла';
+            ending = 'ла';
           } else if (follower.gender === 'plural') {
-              ending = 'ли';
+            ending = 'ли';
           } else {
-              ending = 'ло';
+            ending = 'ло';
           }
           for (const pc of randomRoom.players) {
             if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > pc.getAttribute('detect_invisibility')) {
               continue;
             } else if (this.hasAttribute('hide') && this.getAttribute('hide') > pc.getAttribute('detect_hide')) {
               continue;
+            } else if (!follower.travelVerbIn) {
+              Broadcast.sayAt(pc, `${follower.Name} приш${ending} вместе с ${this.tname}.`);
             } else {
-              if (!follower.travelVerbIn) {
-                Broadcast.sayAt(pc, `${follower.Name} приш` + ending + ` вместе с ${this.tname}.`);
-              } else {
-                Broadcast.sayAt(pc, `${follower.Name} ${follower.travelVerbIn} вместе с ${this.tname}.`);
-              }
+              Broadcast.sayAt(pc, `${follower.Name} ${follower.travelVerbIn} вместе с ${this.tname}.`);
             }
           }
         }
       }
-    }
-  }
+    },
+  },
 };
 
 function RoomLight(currentRoom) {
   let currentTime = currentRoom.area.time;
   let currentRoomLight = currentRoom.light;
   if (currentTime === 0) {
-  let tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
-  const dayDuration = 24;
+    let tmpGameTime = Data.parseFile('gameTime.json').ingameTime;
+    const dayDuration = 24;
     if (tmpGameTime >= dayDuration) {
-      tmpGameTime = tmpGameTime % dayDuration;
+      tmpGameTime %= dayDuration;
     }
-  currentTime = tmpGameTime;
+    currentTime = tmpGameTime;
   }
 
   currentRoomLight += currentTime * 2 + 2;
