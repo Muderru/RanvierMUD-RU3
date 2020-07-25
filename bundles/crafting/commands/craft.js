@@ -1,18 +1,17 @@
-'use strict';
-
-const sprintf = require('sprintf-js').sprintf;
+const { sprintf } = require('sprintf-js');
 const { Broadcast: B, CommandManager, ItemType } = require('ranvier');
 const Crafting = require('../lib/Crafting');
+
 const say = B.sayAt;
 const ItemUtil = require('../../lib/lib/ItemUtil');
 
 const subcommands = new CommandManager();
 
-/** LIST **/
+/** LIST * */
 subcommands.add({
   name: 'list',
-  aliases: [ 'список' ],
-  command: state => (args, player) => {
+  aliases: ['список'],
+  command: (state) => (args, player) => {
     const craftingCategories = getCraftingCategories(state);
 
     // list categories
@@ -30,7 +29,7 @@ subcommands.add({
     itemCategory = parseInt(itemCategory, 10) - 1;
     const category = craftingCategories[itemCategory];
     if (!category) {
-      return say(player, "Недопустимая категория.");
+      return say(player, 'Недопустимая категория.');
     }
 
     // list items within a category
@@ -39,7 +38,7 @@ subcommands.add({
       say(player, B.line(40));
 
       if (!category.items.length) {
-        return say(player, B.center(40, "Нет рецептов."));
+        return say(player, B.center(40, 'Нет рецептов.'));
       }
 
       return category.items.forEach((categoryEntry, index) => {
@@ -50,7 +49,7 @@ subcommands.add({
     itemNumber = parseInt(itemNumber, 10) - 1;
     const item = category.items[itemNumber];
     if (!item) {
-      return say(player, "Недопустимый предмет.");
+      return say(player, 'Недопустимый предмет.');
     }
 
     say(player, ItemUtil.renderItem(state, item.item, player));
@@ -59,20 +58,19 @@ subcommands.add({
       const ingredient = Crafting.getResourceItem(resource);
       say(player, `  ${ItemUtil.display(ingredient)} x ${amount}`);
     }
-  }
+  },
 });
 
-/** CREATE **/
+/** CREATE * */
 subcommands.add({
   name: 'create',
-  aliases: [ 'создать' ],
-  command: state => (args, player) => {
+  aliases: ['создать'],
+  command: (state) => (args, player) => {
     if (!args || !args.length) {
       return say(player, "Создать что? Например, 'ремесло создать 1 1");
     }
 
-    const isInvalidSelection = categoryList => category =>
-      isNaN(category) || category < 0 || category > categoryList.length;
+    const isInvalidSelection = (categoryList) => (category) => isNaN(category) || category < 0 || category > categoryList.length;
 
     const craftingCategories = getCraftingCategories(state);
     const isInvalidCraftingCategory = isInvalidSelection(craftingCategories);
@@ -81,14 +79,14 @@ subcommands.add({
 
     itemCategory = parseInt(itemCategory, 10) - 1;
     if (isInvalidCraftingCategory(itemCategory)) {
-      return say(player, "Недопустимая категория.");
+      return say(player, 'Недопустимая категория.');
     }
 
     const category = craftingCategories[itemCategory];
     const isInvalidCraftableItem = isInvalidSelection(category.items);
     itemNumber = parseInt(itemNumber, 10) - 1;
     if (isInvalidCraftableItem(itemNumber)) {
-      return say(player, "Недопустимый предмет.");
+      return say(player, 'Недопустимый предмет.');
     }
 
     const item = category.items[itemNumber];
@@ -101,7 +99,7 @@ subcommands.add({
     }
 
     if (player.isInventoryFull()) {
-      return say(player, "Вы не можете держать больше вещей.");
+      return say(player, 'Вы не можете держать больше вещей.');
     }
 
     // deduct resources
@@ -115,44 +113,44 @@ subcommands.add({
     player.addItem(item.item);
     say(player, `<b><green>Вы создали ${ItemUtil.display(item.item, 'vname')}.</green></b>`);
     player.save();
-  }
+  },
 });
 
 module.exports = {
   usage: 'ремесло <список/создать> [категория #] [предмет #]',
   aliases: ['крафтинг', 'ремесло'],
-  command: state => (args, player) => {
+  command: (state) => (args, player) => {
     if (!args.length) {
       return say(player, "Отсутствует команда ремесла. Смотрите 'помощь ремесло'");
     }
 
-    const [ command, ...subArgs ] = args.split(' ');
+    const [command, ...subArgs] = args.split(' ');
 
     const subcommand = subcommands.find(command);
     if (!subcommand) {
-      return say(player, "Недопустимая команда. Используйте ремесло список или ремесло создать.");
+      return say(player, 'Недопустимая команда. Используйте ремесло список или ремесло создать.');
     }
 
     subcommand.command(state)(subArgs.join(' '), player);
-  }
+  },
 };
 
 function getCraftingCategories(state) {
-  let craftingCategories = [
+  const craftingCategories = [
     {
       type: ItemType.POTION,
-      title: "Зелье",
-      items: []
+      title: 'Зелье',
+      items: [],
     },
     {
       type: ItemType.WEAPON,
-      title: "Оружие",
-      items: []
+      title: 'Оружие',
+      items: [],
     },
     {
       type: ItemType.ARMOR,
-      title: "Доспех",
-      items: []
+      title: 'Доспех',
+      items: [],
     },
   ];
 
@@ -160,21 +158,19 @@ function getCraftingCategories(state) {
   for (const recipe of recipes) {
     const recipeItem = state.ItemFactory.create(
       state.AreaManager.getAreaByReference(recipe.item),
-      recipe.item
+      recipe.item,
     );
 
-    const catIndex = craftingCategories.findIndex(cat => {
-      return cat.type === recipeItem.type;
-    });
+    const catIndex = craftingCategories.findIndex((cat) => cat.type === recipeItem.type);
 
     if (catIndex === -1) {
       continue;
     }
 
-  recipeItem.hydrate(state);
+    recipeItem.hydrate(state);
     craftingCategories[catIndex].items.push({
       item: recipeItem,
-      recipe: recipe.recipe
+      recipe: recipe.recipe,
     });
   }
 

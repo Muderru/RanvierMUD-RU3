@@ -1,10 +1,8 @@
-'use strict';
-
 const { Item } = require('ranvier');
 
-const dataPath = __dirname + '/../data/';
-const _loadedResources = require(dataPath + 'resources.json');
-const _loadedRecipes = require(dataPath + 'recipes.json');
+const dataPath = `${__dirname}/../data/`;
+const _loadedResources = require(`${dataPath}resources.json`);
+const _loadedRecipes = require(`${dataPath}recipes.json`);
 
 class Crafting {
   static getResource(resourceKey) {
@@ -20,7 +18,7 @@ class Crafting {
         quality: resourceDef.quality,
       },
       keywords: resourceKey,
-      id: 1
+      id: 1,
     });
   }
 

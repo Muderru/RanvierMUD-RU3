@@ -1,16 +1,14 @@
-'use strict';
-
 const { Broadcast: B } = require('ranvier');
 const Crafting = require('../lib/Crafting');
 const ItemUtil = require('../../lib/lib/ItemUtil');
 
 module.exports = {
-  aliases: [ 'ресурсы', 'материалы' ],
-  command: state => (args, player) => {
+  aliases: ['ресурсы', 'материалы'],
+  command: (state) => (args, player) => {
     const playerResources = player.getMeta('resources');
 
     if (!playerResources) {
-      return B.sayAt(player, "У вас нет никаких ресурсов.");
+      return B.sayAt(player, 'У вас нет никаких ресурсов.');
     }
 
     B.sayAt(player, '<b>Ресурсы</b>');
@@ -25,7 +23,7 @@ module.exports = {
     }
 
     if (!totalAmount) {
-      return B.sayAt(player, "Вы не собрали никаких ресурсов.");
+      return B.sayAt(player, 'Вы не собрали никаких ресурсов.');
     }
-  }
+  },
 };
