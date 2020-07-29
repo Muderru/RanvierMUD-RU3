@@ -1,4 +1,5 @@
-'use strict';
+//Замедление набора опыта для повышения уровня, чем больше значение тем больше надо опыта
+const expDifficulty = 5;
 
 /**
 * These formulas are stolen straight from WoW.
@@ -78,7 +79,7 @@ const LevelUtil = {
    * @return int
    * @memberof! LevelUtil
    */
-  expToLevel: level => Math.floor((((level + 1) * level) + diff(level)) * LevelUtil.mobExp(level) * reduction(level)),
+  expToLevel: level => Math.floor((((level + 1) * level) + diff(level)) * LevelUtil.mobExp(level) * reduction(level) * expDifficulty),
 };
 
 module.exports = LevelUtil;

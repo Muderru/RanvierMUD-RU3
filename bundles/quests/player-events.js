@@ -30,7 +30,7 @@ module.exports = {
     },
 
     questTurnInReady: state => function (quest) {
-      B.sayAt(this, `<bold><yellow>Задание ${quest.config.title} готово к сдаче!</yellow></bold>`);
+      B.sayAt(this, `<bold><yellow>Задание '${quest.config.title}' готово к сдаче!</yellow></bold>`);
     },
 
     questComplete: state => function (quest) {
