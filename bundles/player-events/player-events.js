@@ -56,11 +56,11 @@ module.exports = {
 
       if (door) {
         if (door.locked) {
-          return B.sayAt(this, "Дверь заперта.");
+          return B.sayAt(this, "Заперто.");
         }
 
         if (door.closed) {
-          return B.sayAt(this, "Дверь закрыта.");
+          return B.sayAt(this, "Закрыто.");
         }
       }
 
