@@ -47,6 +47,9 @@ module.exports = {
           }
         }
       }
+      if (npc.getMeta('vendor.leaveMessage')) {
+        state.ChannelManager.get('tell').send(state, npc, `${this.name} ${npc.getMeta('vendor.leaveMessage')}`);
+      }
     }
 
       const nextRoom = state.RoomManager.getRoom(roomExit.roomId);
@@ -67,6 +70,12 @@ module.exports = {
       this.moveTo(nextRoom, _ => {
         state.CommandManager.get('look').execute('', this);
       });
+
+      for (const npc of this.room.npcs) {
+        if (npc.getMeta('vendor.enterMessage')) {
+          state.ChannelManager.get('tell').send(state, npc, `${this.name} ${npc.getMeta('vendor.enterMessage')}`);
+        }
+      }
 
       let blindPlayers = [];
       for (const pc of oldRoom.players) {
