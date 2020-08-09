@@ -1,4 +1,4 @@
-const { Broadcast, Logger } = require('ranvier');
+const { Broadcast } = require('ranvier');
 
 /**
  * Поведение для помощи другим мобам
@@ -24,7 +24,6 @@ module.exports = {
 
           this.initiateCombat(target, 150);
           Broadcast.sayAt(this.room, `${this.Name} бросается на помощь ${npc.dname}.`);
-          Logger.info(`NPC [${this.uuid}] assist [${npc.uuid}].`);
           return;
         }
       }

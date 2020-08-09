@@ -92,10 +92,23 @@ module.exports = {
 
           if (currentSkill.targetSelf === false) {
             if (!currentSkill.onCooldown(this) && currentSkill.hasEnoughResources(this)) {
-              if (Random.inRange(0, 100) <= 40) {
-                return currentSkill.execute(null, this, target1);
+              //умение 'спасти' не вписывается в общие правила, для него отдельные правила
+              if (currentSkill.name === 'спасти') {
+                if (assistTarget !== this) {
+                  if (![...this.combatants].includes(assistTarget)) {
+                    return currentSkill.execute(null, this, assistTarget);
+                  } else {
+                    return;
+                  }
+                } else {
+                  return;
+                }
+              } else {
+                if (Random.inRange(0, 100) <= 40) {
+                  return currentSkill.execute(null, this, target1);
+                }
+                return currentSkill.execute(null, this, target2);
               }
-              return currentSkill.execute(null, this, target2);
             }
           } else if ((assistTarget.getAttribute('health') / assistTarget.getMaxAttribute('health')) < 0.8) {
             if (!currentSkill.onCooldown(this) && currentSkill.hasEnoughResources(this)) {
