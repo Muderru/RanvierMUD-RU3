@@ -1,4 +1,4 @@
-const { EffectFlag, Heal } = require('ranvier');
+const { EffectFlag, Heal, Damage } = require('ranvier');
 
 module.exports = {
   config: {
@@ -27,10 +27,17 @@ module.exports = {
         }
 
         const amount = regen.modifier;
-        const heal = new Heal(regen.pool, amount, this.target, this, {
-          hidden: true,
-        });
-        heal.commit(this.target);
+        if (amount > 0) {
+          const heal = new Heal(regen.pool, amount, this.target, this, {
+            hidden: true,
+          });
+          heal.commit(this.target);
+        } else if (amount < 0) {
+          const damage = new Damage(regen.pool, -amount, this.target, this, {
+            hidden: true,
+          });
+          damage.commit(this.target);
+        }
       }
     },
   },
