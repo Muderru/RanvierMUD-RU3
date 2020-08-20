@@ -207,7 +207,7 @@ exports.minionBuff = function (player, minion, skillStat) {
  * Skill up probability
  */
 exports.skillUp = function (state, player, skillStat) {
-  const skillUpChance = 95;
+  const skillUpChance = 5;
 
   if (!player.isNpc) {
     const rnd = Math.floor((Math.random() * 100) + 1);

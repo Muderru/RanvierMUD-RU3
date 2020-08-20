@@ -14,7 +14,7 @@ module.exports = {
   type: SkillType.SPELL,
   requiresTarget: true,
   initiatesCombat: true,
-  targetSelf: true,
+  targetSelf: false,
   resource: {
     attribute: 'mana',
     cost: manaCost,
