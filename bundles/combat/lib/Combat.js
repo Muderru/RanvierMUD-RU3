@@ -120,7 +120,7 @@ class Combat {
 
     if (target.hasAttribute('armor')) {
       if (amount > target.getAttribute('armor')) {
-        amount = Math.floor(1 + ((amount - target.getAttribute('armor')) * (amount - target.getAttribute('armor')) / (amount + target.getAttribute('armor'))));
+        amount = Math.floor(1 + ((amount - target.getAttribute('armor')) * (amount - target.getAttribute('armor')) / (1 + Math.abs(amount + target.getAttribute('armor')))));
       } else {
         amount = 1;
       }

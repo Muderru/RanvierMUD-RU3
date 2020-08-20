@@ -207,15 +207,21 @@ exports.minionBuff = function (player, minion, skillStat) {
  * Skill up probability
  */
 exports.skillUp = function (state, player, skillStat) {
-  const skillUpChance = 5;
+  const skillUpChance = 95;
 
   if (!player.isNpc) {
     const rnd = Math.floor((Math.random() * 100) + 1);
     if (rnd < skillUpChance) {
       if (player.getMeta(skillStat) < 100) {
         const ability = player.getMeta(skillStat);
-        const [prefix, skillId] = skillStat.split('_');
+        const [prefix, skillId1, skillId2] = skillStat.split('_');
+
         let skill = null;
+        let skillId = skillId1;
+        if (skillId2) {
+          skillId = `${skillId1}_${skillId2}`;
+        }
+
         if (prefix === 'skill') {
           skill = state.SkillManager.find(skillId);
           Broadcast.sayAt(player, `<bold><cyan>Вы почувствовали себя увереннее в умении '${skill.name[0].toUpperCase()}${skill.name.slice(1)}'.</cyan></bold>`);

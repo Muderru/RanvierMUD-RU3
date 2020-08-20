@@ -36,7 +36,7 @@ module.exports = {
     const effect = state.EffectFactory.create('paralysis', { duration }, { spellStrength: SkillUtil.getBuff(player, 'spell_paralysis') });
     target.addEffect(effect);
 
-    SkillUtil.skillUp(state, player, 'spell_invisibility');
+    SkillUtil.skillUp(state, player, 'spell_paralysis');
   },
 
   info: (player) => 'Тело противника деревенеет и теряет способность к движению. Длительность эффекта зависит от вашего интеллекта и ловкости.',

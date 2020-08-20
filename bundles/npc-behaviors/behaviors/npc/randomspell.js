@@ -8,7 +8,7 @@ module.exports = {
     spawn: (state) => function () {
       const spell = [
         'fireball', 'heal', 'plea', 'invisibility', 'detect_invisibility', 'paralysis',
-        'ice_peak', 'lightning', 'acid', 'silence', 'poison'];
+        'ice_peak', 'lightning', 'acid', 'silence', 'poison', 'defense', 'defense_curse'];
 
       const randomSpell = spell[Math.floor(Math.random() * spell.length)];
       rndSpell = state.SpellManager.get(randomSpell);
