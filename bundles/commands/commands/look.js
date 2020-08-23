@@ -207,8 +207,7 @@ function lookRoom(state, player) {
         return;
       }
       // show quest state as [!], [%], [?] for available, in progress, ready to complete respectively
-      let hasNewQuest; let hasActiveQuest; let
-        hasReadyQuest;
+      let hasNewQuest; let hasActiveQuest; let hasReadyQuest;
       if (npc.quests) {
         hasNewQuest = npc.quests.find((questRef) => state.QuestFactory.canStart(player, questRef));
         hasReadyQuest = npc.quests.find((questRef) => player.questTracker.isActive(questRef)
@@ -249,7 +248,13 @@ function lookRoom(state, player) {
           npcLabel = '<green>НПС</green>';
           break;
       }
-      B.sayAt(player, `[${npcLabel}] ${npc.Name}${combatantsDisplay}`);
+
+      //учителя
+      let trainerLabel = '';
+      if (npc.getMeta('trainer')) {
+        trainerLabel = ' (учитель)';
+      }
+      B.sayAt(player, `[${npcLabel}] ${npc.Name}${combatantsDisplay}${trainerLabel}`);
     });
   } else if (room.npcs.size > 0) {
     B.sayAt(player, 'Тут кто-то есть.');

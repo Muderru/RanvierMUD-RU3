@@ -60,7 +60,7 @@ const LevelUtil = {
  * @param int level
  * @return int
  */
-  mobExp: level => 25 + (5 * level),
+  mobExp: level => Math.floor((25 + (5 * level)) * (Math.random() * 0.2 + 0.9)),
 
   weightedMobExp(playerLevel, mobLevel) {
     if (playerLevel - mobLevel > 5) {
