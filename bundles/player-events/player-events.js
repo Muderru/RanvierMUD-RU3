@@ -21,36 +21,47 @@ module.exports = {
         return B.sayAt(this, 'Вы сейчас сражаетесь!');
       }
 
-    for (const npc of this.room.npcs) {
-      if (npc.getMeta('block')) {
-        const blockExits = npc.getMeta('block.exits');
-        let detectInvis = 0;
-        let detectHide = 0;
+      for (const npc of this.room.npcs) {
+        if (npc.getMeta('block')) {
+          const blockExits = npc.getMeta('block.exits');
+          let detectInvis = 0;
+          let detectHide = 0;
 
-        if (npc.hasAttribute('detect_invisibility')) {
-          detectInvis = npc.getAttribute('detect_invisibility');
+          if (npc.hasAttribute('detect_invisibility')) {
+            detectInvis = npc.getAttribute('detect_invisibility');
+          }
+
+          if (npc.hasAttribute('detect_hide')) {
+            detectHide = npc.getAttribute('detect_hide');
+          }
+
+          for (let blockExit of blockExits) {
+            if (blockExit === roomExit.direction) {
+              if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > detectInvis) {
+                continue;
+              } else if (this.hasAttribute('hide') && this.getAttribute('hide') > detectHide) {
+                continue;
+              } else {
+                return B.sayAt(this, `${npc.Name} не дает вам туда пройти!`);
+              }
+            }
+          }
         }
-
-        if (npc.hasAttribute('detect_hide')) {
-          detectHide = npc.getAttribute('detect_hide');
+        if (npc.getMeta('vendor.leaveMessage')) {
+          state.ChannelManager.get('tell').send(state, npc, `${this.name} ${npc.getMeta('vendor.leaveMessage')}`);
         }
+      }
 
-        for (let blockExit of blockExits) {
-          if (blockExit === roomExit.direction) {
-            if (this.hasAttribute('invisibility') && this.getAttribute('invisibility') > detectInvis) {
-              continue;
-            } else if (this.hasAttribute('hide') && this.getAttribute('hide') > detectHide) {
-              continue;
-            } else {
-              return B.sayAt(this, npc.Name + ' не дает вам туда пройти!');
+      for (const item of this.room.items) {
+        if (item.getMeta('block')) {
+          const blockExits = item.getMeta('block.exits');
+          for (let blockExit of blockExits) {
+            if (blockExit === roomExit.direction) {
+              return B.sayAt(this, `${item.Name} не дает вам туда пройти!`);
             }
           }
         }
       }
-      if (npc.getMeta('vendor.leaveMessage')) {
-        state.ChannelManager.get('tell').send(state, npc, `${this.name} ${npc.getMeta('vendor.leaveMessage')}`);
-      }
-    }
 
       const nextRoom = state.RoomManager.getRoom(roomExit.roomId);
       const oldRoom = this.room;
