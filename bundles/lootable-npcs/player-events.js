@@ -14,7 +14,7 @@ module.exports = {
       this.setMeta(key, (this.getMeta(key) || 0) + amount);
       this.save();
 
-      B.sayAt(this, `<green>Вы получили деньги: <b><white>[${friendlyName}]</white></b> x${amount}.</green>`);
+      B.sayAt(this, `<b>Вы получили деньги: <yellow>[${friendlyName}] x${amount}.</yellow></b>`);
     },
 
     itemReward: (state) => function (item, quality) {

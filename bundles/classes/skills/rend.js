@@ -11,7 +11,7 @@ const dotMod = 0.1; // damage over time coefficient
  * DoT (Damage over time) skill
  */
 module.exports = {
-  aliases: ['порез', 'разрезать'],
+  aliases: ['порез'],
   name: 'порез',
   gender: 'male',
   damageVerb: 'ранит',
