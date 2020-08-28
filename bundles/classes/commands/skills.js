@@ -10,13 +10,13 @@ module.exports = {
       'judge', 'lunge', 'rend', 'secondwind', 'shieldblock', 'smite',
       'hide', 'detect_hide', 'axes', 'bows', 'light_armor', 'medium_armor',
       'heavy_armor', 'maces', 'polearms', 'staves', 'swords', 'various_weapons',
-      'rescue', 'daggers', 'bash', 'parry',
+      'rescue', 'daggers', 'bash', 'parry', 'stab',
     ];
 
     const spell = [
       'fireball', 'heal', 'plea', 'invisibility', 'detect_invisibility', 'paralysis',
       'light', 'recall', 'petty_demon', 'ice_peak', 'lightning', 'acid', 'silence',
-      'poison', 'defense', 'defense_curse',
+      'poison', 'defense', 'defense_curse', 'blind',
     ];
 
     say(`<b>${B.center(40, 'Умения', 'green')}`);

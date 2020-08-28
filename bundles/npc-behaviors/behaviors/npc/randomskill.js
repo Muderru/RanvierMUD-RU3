@@ -10,7 +10,7 @@ module.exports = {
     spawn: (state) => function () {
       const skill = [
         'judge', 'lunge', 'rend', 'shieldblock', 'smite', 'hide',
-        'detect_hide', 'bash', 'parry'];
+        'detect_hide', 'bash', 'parry', 'stab',];
 
       const randomSkill = skill[Math.floor(Math.random() * skill.length)];
       rndSkill = state.SkillManager.get(randomSkill);

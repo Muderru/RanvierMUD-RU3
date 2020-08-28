@@ -5,7 +5,7 @@ module.exports = [
     name: 'health', 
     base: 100,
     formula: {
-      requires: [ 'stamina', 'health_percent' ],
+      requires: ['stamina', 'health_percent'],
       fn: function (character, health, stamina, health_percent) {
         if (!character.isNpc) {
           const modifier = (1 + (health_percent / 100));
@@ -20,7 +20,7 @@ module.exports = [
     name: 'mana',
     base: 100,
     formula: {
-      requires: [ 'intellect', 'mana_percent' ],
+      requires: ['intellect', 'mana_percent'],
       fn: function (character, mana, intellect, mana_percent) {
         if (!character.isNpc) {
           const modifier = (1 + (mana_percent / 100));
@@ -38,13 +38,13 @@ module.exports = [
   { name: 'armor',
     base: 0, 
     formula: {
-      requires: [ 'armor_percent' ],
+      requires: ['armor_percent'],
       fn: function (character, armor, armor_percent) {
-        if (!character.isNpc) {
+        if (armor >= 0) {
           const modifier = (1 + (armor_percent / 100));
           return Math.floor(armor * modifier); 
         } else {
-          return armor;
+          return 0;
         }
       },
     },
@@ -53,7 +53,7 @@ module.exports = [
      name: 'critical', 
      base: 0,
      formula: {
-      requires: [ 'agility', 'critical_percent' ],
+      requires: ['agility', 'critical_percent'],
       fn: function (character, critical, agility, critical_percent) {
         if (!character.isNpc) {
           const modifier = (1 + (critical_percent / 100));
