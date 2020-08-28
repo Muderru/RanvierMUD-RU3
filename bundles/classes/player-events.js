@@ -22,7 +22,11 @@ module.exports = {
           if (ability.targetSelf) {
             target = this;
           } else if (this.isInCombat()) {
-            target = [...this.combatants][0];
+            let combatant = [...this.combatants][0];
+            if (this.getAttribute('detect_invisibility') >= combatant.getAttribute('invisibility') &&
+                this.getAttribute('detect_hide') >= combatant.getAttribute('hide')) {
+              target = combatant;
+            }
           } else {
             target = null;
           }

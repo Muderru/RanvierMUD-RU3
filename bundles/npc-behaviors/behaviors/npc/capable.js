@@ -68,7 +68,15 @@ module.exports = {
           if (currentSpell.targetSelf === false) {
             if (!currentSpell.onCooldown(this) && currentSpell.hasEnoughResources(this)) {
               if (Random.inRange(0, 100) <= 40) {
+                if (this.getAttribute('detect_invisibility') <= target1.getAttribute('invisibility') ||
+                    this.getAttribute('detect_hide') <= target1.getAttribute('hide')) {
+                  return;
+                }
                 return currentSpell.execute(null, this, target1);
+              }
+              if (this.getAttribute('detect_invisibility') <= target2.getAttribute('invisibility') ||
+                  this.getAttribute('detect_hide') <= target2.getAttribute('hide')) {
+                return;
               }
               return currentSpell.execute(null, this, target2);
             }
@@ -105,7 +113,15 @@ module.exports = {
                 }
               } else {
                 if (Random.inRange(0, 100) <= 40) {
+                  if (this.getAttribute('detect_invisibility') <= target1.getAttribute('invisibility') ||
+                      this.getAttribute('detect_hide') <= target1.getAttribute('hide')) {
+                    return;
+                  }
                   return currentSkill.execute(null, this, target1);
+                }
+                if (this.getAttribute('detect_invisibility') <= target2.getAttribute('invisibility') ||
+                    this.getAttribute('detect_hide') <= target2.getAttribute('hide')) {
+                  return;
                 }
                 return currentSkill.execute(null, this, target2);
               }
@@ -117,8 +133,6 @@ module.exports = {
           }
         }
       }
-
-      //    Logger.verbose(`NPC [${this.name}] have ${skillsNumber} skills and ${spellsNumber} spells.`);
     },
   },
 };

@@ -7,7 +7,7 @@ module.exports = {
   config: {
     name: 'слепота',
     gender: 'neuter',
-    description: 'Вы хуже замечаете  замаскировавшихся и невидимых существ.',
+    description: 'Вы хуже замечаете замаскировавшихся и невидимых существ.',
     type: 'blind',
     unique: true,
     persists: false,
