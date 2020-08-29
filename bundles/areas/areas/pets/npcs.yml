@@ -71,3 +71,67 @@
     swift: 0
   behaviors:
     combat: true
+- id: balance_bot1
+  keywords: [ "балансный", "бот" ]
+  level: 20
+  name: "балансный бот I"
+  rname: "балансного бота I"
+  dname: "балансному боту I"
+  vname: "балансного бота I"
+  tname: "балансным ботом I"
+  pname: "балансном боте I"
+  gender: "male"
+  min_damage: 50
+  max_damage: 100
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Бот для тестирования умений.
+  script: 'bot1'
+  attributes:
+    health: 20000
+    mana: 10000
+    strength: 30
+    agility: 30
+    intellect: 30
+    stamina: 30
+    armor: 20
+  behaviors:
+    combat: true
+    allattributes: 4
+    capable:
+      skills: ['lunge']
+      spells: []
+- id: balance_bot2
+  keywords: [ "балансный", "бот" ]
+  level: 20
+  name: "балансный бот II"
+  rname: "балансного бота II"
+  dname: "балансному боту II"
+  vname: "балансного бота II"
+  tname: "балансным ботом II"
+  pname: "балансном боте II"
+  gender: "male"
+  min_damage: 50
+  max_damage: 100
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Бот для тестирования умений.
+  script: 'bot2'
+  attributes:
+    health: 20000
+    mana: 10000
+    strength: 30
+    agility: 30
+    intellect: 30
+    stamina: 30
+    armor: 20
+  behaviors:
+    combat: true
+    allattributes: 4
+    capable:
+      skills: []
+      spells: ['ice_peak']

@@ -43,11 +43,11 @@ module.exports = {
 
       Logger.log(`Generated corpse: ${corpse.uuid}`);
 
-      const uncommonChance = 5;
-      const rareChance = 1;
-      const epicChance = 0.5;
-      const legendaryChance = 0.1;
-      const artifactChance = 0.01;
+      const uncommonChance = 15;
+      const rareChance = 5;
+      const epicChance = 1.5;
+      const legendaryChance = 0.5;
+      const artifactChance = 0.1;
       items.forEach((item) => {
         item.hydrate(state);
         const chance = Math.random() * 100;

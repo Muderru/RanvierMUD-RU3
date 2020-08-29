@@ -1,10 +1,10 @@
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
-const cooldown = 20;
+const cooldown = 7;
 const manaCost = 60;
-const reductionPercent = 50; // debaff %
-const ddMod = 0.9; // direct damage coefficient
+const reductionPercent = 75; // debaff %
+const ddMod = 1.0; // direct damage coefficient
 
 module.exports = {
   aliases: ['осуждение'],

@@ -1,8 +1,9 @@
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
+const cooldown = 6;
 const manaCost = 60;
-const ddMod = 0.9; // direct damage coefficient
+const ddMod = 0.95; // direct damage coefficient
 const dbMod = 0.1; // debaff coefficient
 
 /**
@@ -20,7 +21,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 5,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     const getDamage = Math.floor(SkillUtil.directSpellDamage(player, target, 'lightning', 'lightning') * ddMod);

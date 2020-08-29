@@ -182,7 +182,11 @@ exports.getBuff = function (player, skillStat) {
   if (player.getMeta(skillStat) > 0) {
     buffStrength = player.getMeta(skillStat);
   }
-  return buffStrength;
+  if (!player.isNpc) {
+    return buffStrength;
+  } else {
+    return player.level;
+  }
 };
 
 /**
@@ -207,7 +211,7 @@ exports.minionBuff = function (player, minion, skillStat) {
  * Skill up probability
  */
 exports.skillUp = function (state, player, skillStat) {
-  const skillUpChance = 5;
+  const skillUpChance = 10;
 
   if (!player.isNpc) {
     const rnd = Math.floor((Math.random() * 100) + 1);

@@ -1,6 +1,7 @@
 const { Broadcast: B, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
+const cooldown = 30;
 const manaCost = 185;
 
 /**
@@ -18,7 +19,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 90,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     if (!target.hasAttribute('freedom')) {

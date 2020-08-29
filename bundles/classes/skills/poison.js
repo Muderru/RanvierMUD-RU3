@@ -5,7 +5,7 @@ const cooldown = 30;
 const cost = 120;
 const tickInterval = 2;
 const ddMod = 0.4; // direct damage coefficient
-const dotMod = 0.3; // damage over time coefficient
+const dotMod = 0.35; // damage over time coefficient
 
 /**
  * DoT (Damage over time) skill

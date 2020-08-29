@@ -4,8 +4,8 @@ const SkillUtil = require('../lib/SkillUtil');
 const cooldown = 10;
 const cost = 60;
 const tickInterval = 2;
-const ddMod = 0.8; // direct damage coefficient
-const dotMod = 0.1; // damage over time coefficient
+const ddMod = 0.85; // direct damage coefficient
+const dotMod = 0.15; // damage over time coefficient
 
 /**
  * DoT (Damage over time) skill

@@ -1,6 +1,7 @@
 const { Broadcast: B, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
+const cooldown = 25;
 const manaCost = 150;
 const debuffMod = 0.25; // debuff strength coefficient
 
@@ -19,7 +20,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 30,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     if (!target.hasAttribute('armor')) {

@@ -3,7 +3,7 @@ const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 10;
 const cost = 45;
-const buffMod = 0.25; // buff strength
+const buffMod = 0.8; // buff strength
 
 /**
  * Damage mitigation skill

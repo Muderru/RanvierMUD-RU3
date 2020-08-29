@@ -1,14 +1,12 @@
-'use strict';
-
-const { Broadcast, Logger } = require('ranvier');
+const { Broadcast } = require('ranvier');
 
 module.exports = {
   listeners: {
-    spawn: state => function () {
-      Broadcast.sayAt(this.room, "Мелкий демон появился из облака серы.");
+    spawn: (state) => function () {
+      Broadcast.sayAt(this.room, 'Мелкий демон появился из облака серы.');
     },
 
-    updateTick: state => function () {
+    updateTick: (state) => function () {
       if (this.isInCombat()) {
         return;
       }
@@ -18,12 +16,12 @@ module.exports = {
       }
     },
 
-    unfollowed: state => function () {
-      Broadcast.sayAt(this.room, "Мелкий демон растворился в облаке серы.");
+    unfollowed: (state) => function () {
+      Broadcast.sayAt(this.room, 'Мелкий демон растворился в облаке серы.');
       this.room.removeNpc(this, true);
     },
 
-    hit: state => function (damage, target, finalAmount) {
+    hit: (state) => function (damage, target, finalAmount) {
       if (this.following && this.isNpc) {
         let buf = '';
         if (damage.source !== this) {
@@ -52,6 +50,5 @@ module.exports = {
         }
       }
     },
-
-  }
+  },
 };

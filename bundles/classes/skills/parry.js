@@ -3,8 +3,8 @@ const SkillUtil = require('../lib/SkillUtil');
 
 const cooldown = 5;
 const cost = 60;
-const buffMod = 0.1; // buff strength
-const ddMod = 0.8; // direct damage coefficient
+const buffMod = 0.3; // buff strength
+const ddMod = 0.9; // direct damage coefficient
 
 /**
  * Damage mitigation skill

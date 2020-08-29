@@ -1,8 +1,9 @@
 const { Broadcast: B, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
-const manaCost = 130;
-const debuffMod = 0.15; // debuff strength coefficient
+const cooldown = 30;
+const manaCost = 150;
+const debuffMod = 0.1; // debuff strength coefficient
 
 /**
  * Слепота
@@ -19,7 +20,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 25,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     const getAmount = Math.floor(SkillUtil.directSpellDamage(player, target, 'chaos', 'blind') * debuffMod);

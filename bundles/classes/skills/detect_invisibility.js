@@ -1,6 +1,7 @@
 const { Broadcast: B, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
+const cooldown = 20;
 const manaCost = 105;
 
 /**
@@ -18,7 +19,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 30,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     if (!target.hasAttribute('detect_invisibility')) {

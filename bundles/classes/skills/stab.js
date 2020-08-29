@@ -1,8 +1,9 @@
 const { Broadcast, Damage, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
+const cooldown = 6;
 const manaCost = 65;
-const ddMod = 0.8; // direct damage coefficient
+const ddMod = 0.9; // direct damage coefficient
 const stabBonus = 2; // бонус из невидимости или хайда
 
 /**
@@ -20,7 +21,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 7,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     if (!player.isNpc) {

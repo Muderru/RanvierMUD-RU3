@@ -59,6 +59,10 @@ module.exports = {
         }
 
         for (const spell of spells) {
+          if (this.hasEffectType('silence')) {
+            return;
+          }
+
           const currentSpell = state.SpellManager.get(spell);
 
           if (!currentSpell) {

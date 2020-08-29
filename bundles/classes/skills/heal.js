@@ -1,8 +1,9 @@
 const { Broadcast: B, Heal, SkillType } = require('ranvier');
 const SkillUtil = require('../lib/SkillUtil');
 
+const cooldown = 10;
 const manaCost = 65;
-const ddMod = 1; // direct heal coefficient
+const ddMod = 1.2; // direct heal coefficient
 
 /**
  * Basic cleric spell
@@ -20,7 +21,7 @@ module.exports = {
     attribute: 'mana',
     cost: manaCost,
   },
-  cooldown: 10,
+  cooldown,
 
   run: (state) => function (args, player, target) {
     const getHeal = Math.floor(SkillUtil.directHealAmount(player, target, 'earth', 'heal') * ddMod);
