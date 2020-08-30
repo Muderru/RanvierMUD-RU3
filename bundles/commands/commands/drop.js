@@ -26,6 +26,11 @@ module.exports = {
       item.setMeta('forSell', 0);
     }
 
+    if (!item.hasBehavior('decay')) {
+      const delayBehavior = state.ItemBehaviorManager.get('decay');
+      delayBehavior.attach(item, {duration: 1500});
+    }
+
     player.removeItem(item);
     player.room.addItem(item);
     player.emit('drop', item);
