@@ -1,5 +1,8 @@
 const { Broadcast, Logger, Config } = require('ranvier');
 const { Random } = require('rando-js');
+const EnhanceMob = require('../../../lib/lib/EnhanceMob');
+
+const bossChance = 5; //шанс лоада босса
 
 /**
  * Behavior for having a constant respawn tick happening every [interval]
@@ -60,7 +63,19 @@ function _respawnRoom(state) {
 
     if (Random.probability(defaultNpc.respawnChance)) {
       try {
-        this.spawnNpc(state, defaultNpc.id);
+        let mob = this.spawnNpc(state, defaultNpc.id);
+        if (mob.hasBehavior('aggro')) {
+          if (Random.inRange(0, 100) <= bossChance) {
+            EnhanceMob.enhance(state, mob);
+            if (Random.inRange(0, 100) <= 25) { //шанс добавления второй особенности босса
+              EnhanceMob.enhance(state, mob);
+            }
+            if (Random.inRange(0, 100) <= 25) { //шанс добавления третьей особенности босса
+              EnhanceMob.enhance(state, mob);
+            }
+            Logger.verbose(`BOSS added ${mob.entityReference}`);
+          }
+        }
         Broadcast.sayAt(this, 'Тут кто-то появился.');
       } catch (err) {
         Logger.error(err.message);

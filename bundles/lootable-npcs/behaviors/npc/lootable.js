@@ -35,7 +35,7 @@ module.exports = {
         maxItems: items.length,
         behaviors: {
           decay: {
-            duration: 180,
+            duration: 300,
           },
         },
       });
@@ -43,11 +43,23 @@ module.exports = {
 
       Logger.log(`Generated corpse: ${corpse.uuid}`);
 
-      const uncommonChance = 15;
-      const rareChance = 5;
-      const epicChance = 1.5;
-      const legendaryChance = 0.5;
-      const artifactChance = 0.1;
+      let uncommonChance = 10;
+      let rareChance = 4.5;
+      let epicChance = 1.5;
+      let legendaryChance = 0.5;
+      let artifactChance = 0.1;
+      let increaseChance = 1;
+      //увеличенный шанс лоада улучшенных вещей для боссов
+      if (this.getMeta('boss')) {
+        Logger.log(`Boss loot drop chance increased: ${this.entityReference}`);
+        const difficulty = this.getMeta('boss').length;
+        increaseChance = difficulty * 10;
+        uncommonChance *= increaseChance;
+        rareChance *= increaseChance;
+        epicChance *= increaseChance;
+        legendaryChance *= increaseChance;
+        artifactChance *= increaseChance;
+      }
       items.forEach((item) => {
         item.hydrate(state);
         const chance = Math.random() * 100;
@@ -84,7 +96,7 @@ module.exports = {
               const amount = Math.floor(remaining / recipients.length) + (remaining % recipients.length);
               remaining -= amount;
 
-              recipient.emit('currency', currency.name, amount);
+              recipient.emit('currency', currency.name, amount * increaseChance);
               state.CommandManager.get('look').execute(corpse.uuid, recipient);
             }
           });

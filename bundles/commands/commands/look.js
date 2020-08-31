@@ -11,6 +11,7 @@ const {
 } = require('ranvier');
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
+const EnhanceMob = require('../../lib/lib/EnhanceMob');
 
 module.exports = {
   usage: 'смотреть [объект]',
@@ -251,10 +252,23 @@ function lookRoom(state, player) {
 
       //учителя
       let trainerLabel = '';
+      let bossLabel = '';
       if (npc.getMeta('trainer')) {
         trainerLabel = ' (учитель)';
       }
-      B.sayAt(player, `[${npcLabel}] ${npc.Name}${combatantsDisplay}${trainerLabel}`);
+      if (npc.getMeta('boss')) {
+        bossLabel = ' (';
+        const last = npc.getMeta('boss').length - 1;
+        for (const label of npc.getMeta('boss')) {
+          if (label === npc.getMeta('boss')[last]) {
+            bossLabel += `${EnhanceMob.bossLabel(npc, label)}`;
+          } else {
+            bossLabel += `${EnhanceMob.bossLabel(npc, label)}, `;
+          }
+        }
+        bossLabel += ')';
+      }
+      B.sayAt(player, `[${npcLabel}] ${npc.Name}${combatantsDisplay}${trainerLabel}${bossLabel}`);
     });
   } else if (room.npcs.size > 0) {
     B.sayAt(player, 'Тут кто-то есть.');
