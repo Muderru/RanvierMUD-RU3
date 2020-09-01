@@ -418,7 +418,11 @@ module.exports = {
      * @param {Character} target
      */
     deathblow: (state) => function (target, skipParty) {
-      const xp = LevelUtil.mobExp(target.level);
+      let xp = LevelUtil.mobExp(target.level);
+      if (target.getMeta('boss')) {
+        const difficulty = target.getMeta('boss').length;
+        xp *= 10 * difficulty;
+      }
       if (this.party && !skipParty) {
         // if they're in a party proxy the deathblow to all members of the party in the same room.
         // this will make sure party members get quest credit trigger anything else listening for deathblow

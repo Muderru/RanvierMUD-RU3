@@ -26,8 +26,18 @@ function hunterAttack(state, mob) {
       if (target.isInCombat()) {
         return;
       }
-      Broadcast.sayAt(target, `<b><red>${mob.Name} бросил цепь с крюком и притянул вас к себе!</red></b>`);
-      Broadcast.sayAtExcept(room, `<b><red>${mob.Name} бросил цепь с крюком и притянул ${target.vname} к себе!</red></b>`, target);
+      let ending = '';
+      if (mob.gender === 'male') {
+        ending = '';
+      } else if (mob.gender === 'female') {
+        ending = 'а';
+      } else if (mob.gender === 'plural') {
+        ending = 'и';
+      } else {
+        ending = 'о';
+      }
+      Broadcast.sayAt(target, `<b><red>${mob.Name} бросил${ending} цепь с крюком и притянул${ending} вас к себе!</red></b>`);
+      Broadcast.sayAtExcept(room, `<b><red>${mob.Name} бросил${ending} цепь с крюком и притянул${ending} ${target.vname} к себе!</red></b>`, target);
       target.moveTo(mob.room);
       mob.initiateCombat(target);
     }
