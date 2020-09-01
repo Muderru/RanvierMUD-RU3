@@ -126,7 +126,7 @@ module.exports = {
 
       // try to find a player to be aggressive towards first
       if (config.towards.players && this.room.players.size) {
-        this._aggroTarget = [...this.room.players][0];
+        this._aggroTarget = [...this.room.players][Math.floor(Math.random() * this.room.players.size)];
         this._aggroTimer = Date.now();
         return;
       }
