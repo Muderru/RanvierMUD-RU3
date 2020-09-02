@@ -9,6 +9,7 @@ module.exports = {
       const spell = [
         'fireball', 'heal', 'plea', 'invisibility', 'detect_invisibility', 'paralysis',
         'ice_peak', 'lightning', 'acid', 'silence', 'poison', 'defense', 'defense_curse', 'blind',
+        'weakness', 'bless',
         ];
 
       const randomSpell = spell[Math.floor(Math.random() * spell.length)];

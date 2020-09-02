@@ -13,7 +13,7 @@ module.exports = {
     persists: false,
     refreshes: true,
   },
-  flags: [EffectFlag.BUFF],
+  flags: [EffectFlag.DEBUFF],
   modifiers: {
     attributes: {
       armor(current) {
