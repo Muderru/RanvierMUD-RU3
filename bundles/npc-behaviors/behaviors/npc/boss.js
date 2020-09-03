@@ -1,4 +1,4 @@
-const { Logger, Broadcast } = require('ranvier');
+const { Logger, Broadcast, Damage } = require('ranvier');
 const { Random } = require('rando-js');
 const Combat = require('../../../combat/lib/Combat');
 
@@ -44,6 +44,29 @@ function hunterAttack(state, mob) {
   }
 }
 
+function executionerAttack(state, mob) {
+  for (const pc of mob.room.players) {
+    const healthCurrent = pc.getAttribute('health');
+    const healthMax = pc.getMaxAttribute('health');
+    if ((healthCurrent / healthMax) < 0.3) {
+      let tmp = '';
+      if (pc.gender === 'male') {
+        tmp = 'его';
+      } else if (pc.gender === 'female') {
+        tmp = 'её';
+      } else if (pc.gender === 'plural') {
+        tmp = 'их';
+      } else {
+        tmp = 'его';
+      }
+      Broadcast.sayAt(pc, `${mob.Name} прекращает ваши мучения, одним ударом отрубая голову.`);
+      Broadcast.sayAtExcept(pc.room, `${mob.Name} прекращает мучения ${pc.rname}, одним ударом отрубая ${tmp} голову.`, pc);
+      const damage = new Damage('health', healthCurrent, null, mob);
+      return damage.commit(pc);
+    }
+  }
+}
+
 /**
  * Специальные атаки и поведение боссов
  */
@@ -79,6 +102,11 @@ module.exports = {
           return;
         }
         return hunterAttack(state, this);
+      } else if (specialAttack === 'executioner') {
+        if (!this.isInCombat()) {
+          return;
+        }
+        return executionerAttack(state, this);
       }
 
     },

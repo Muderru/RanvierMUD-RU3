@@ -1,7 +1,7 @@
 const { Logger } = require('ranvier');
 
 function randomType() {
-  let types = ['poison', 'glacial', 'hunter'];
+  let types = ['poison', 'glacial', 'hunter', 'executioner'];
   return types[Math.floor(Math.random() * types.length)];
 }
 
@@ -40,6 +40,9 @@ exports.bossLabel = function (mob, bossType) {
       } else {
         ruType = 'охотник';
       }
+      break;
+    case 'executioner':
+      ruType = 'палач';
       break;
     default:
       if (mob.gender === 'male') {
