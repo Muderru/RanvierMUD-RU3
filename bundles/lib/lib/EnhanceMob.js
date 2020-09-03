@@ -96,19 +96,16 @@ exports.enhance = function (state, mob) {
     mob.setMeta('boss', add);
   }
 
+  const effectDurationPercent = mob.attributes.get('effect_duration_percent');
+  const swift = mob.attributes.get('swift');
   switch(bossType) {
     case 'poison':
-      const dotDamagePercent = mob.attributes.get('dot_damage_percent');
-      const dotDurationPercent = mob.attributes.get('dot_duration_percent');
-      dotDamagePercent.setBase(mob.level);
-      dotDurationPercent.setBase(mob.level);
+      effectDurationPercent.setBase(mob.level);
     break;
     case 'glacial':
-      const effectDurationPercent = mob.attributes.get('effect_duration_percent');
       effectDurationPercent.setBase(mob.level);
     break;
     case 'hunter':
-      const swift = mob.attributes.get('swift');
       swift.setBase(mob.level);
     break;
   }
