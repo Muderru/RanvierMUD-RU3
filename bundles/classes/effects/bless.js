@@ -1,7 +1,7 @@
 const { Broadcast, EffectFlag } = require('ranvier');
 
 /**
- * Эффект уменьшения урона.
+ * Эффект увеличения урона.
  */
 module.exports = {
   config: {

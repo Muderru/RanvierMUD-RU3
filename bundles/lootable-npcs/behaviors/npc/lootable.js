@@ -59,6 +59,34 @@ module.exports = {
         epicChance *= increaseChance;
         legendaryChance *= increaseChance;
         artifactChance *= increaseChance;
+        const chance = Math.random() * 100;
+        //добавляем в труп боссов материалы для крафта
+        if (chance <= artifactChance) {
+          const goldGem = state.ItemFactory.create(state.AreaManager.getArea('craft'), 'craft:goldessence');
+          goldGem.hydrate(state);
+          corpse.maxItems += 1;
+          corpse.addItem(goldGem);
+        } else if (chance <= legendaryChance) {
+          const redGem = state.ItemFactory.create(state.AreaManager.getArea('craft'), 'craft:redessence');
+          redGem.hydrate(state);
+          corpse.maxItems += 1;
+          corpse.addItem(redGem);
+        } else if (chance <= epicChance) {
+          const magentaGem = state.ItemFactory.create(state.AreaManager.getArea('craft'), 'craft:magentaessence');
+          magentaGem.hydrate(state);
+          corpse.maxItems += 1;
+          corpse.addItem(magentaGem);
+        } else if (chance <= rareChance) {
+          const blueGem = state.ItemFactory.create(state.AreaManager.getArea('craft'), 'craft:blueessence');
+          blueGem.hydrate(state);
+          corpse.maxItems += 1;
+          corpse.addItem(blueGem);
+        } else if (chance <= uncommonChance) {
+          const greenGem = state.ItemFactory.create(state.AreaManager.getArea('craft'), 'craft:greenessence');
+          greenGem.hydrate(state);
+          corpse.maxItems += 1;
+          corpse.addItem(greenGem);
+        }
       }
       items.forEach((item) => {
         item.hydrate(state);

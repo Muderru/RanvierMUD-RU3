@@ -12,6 +12,7 @@ const {
 const ArgParser = require('../../lib/lib/ArgParser');
 const ItemUtil = require('../../lib/lib/ItemUtil');
 const EnhanceMob = require('../../lib/lib/EnhanceMob');
+const MaterialsUtil = require('../../crafting/lib/MaterialsUtil');
 
 module.exports = {
   usage: 'смотреть [объект]',
@@ -379,11 +380,29 @@ function lookEntity(state, player, args) {
   }
 
   if (entity instanceof Item) {
+    let craftDesc = 'Для улучшения вам понадобятся: ';
     switch (entity.type) {
       case ItemType.WEAPON:
+        for (const stat in entity.metadata.stats) {
+          craftDesc += `<b>${MaterialsUtil.material(stat)}</b>, `;
+        }
+        craftDesc = craftDesc.slice(0, -2);
+        if (player.getMeta('spell_transmutation')) {
+          B.sayAt(player, craftDesc + '.');
+        }
+        return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
       case ItemType.ARMOR:
+        for (const stat in entity.metadata.stats) {
+          craftDesc += `<b>${MaterialsUtil.material(stat)}</b>, `;
+        }
+        craftDesc = craftDesc.slice(0, -2);
+        if (player.getMeta('spell_transmutation')) {
+          B.sayAt(player, craftDesc + '.');
+        }
         return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
       case ItemType.SCROLL:
+        return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
+      case ItemType.RESOURCE:
         return B.sayAt(player, ItemUtil.renderItem(state, entity, player));
       case ItemType.CONTAINER: {
         const slot = entity.getMeta('slot');

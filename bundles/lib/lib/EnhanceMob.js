@@ -73,9 +73,15 @@ exports.enhance = function (state, mob) {
   if (!mob.getMeta('boss')) {
     mob.setMeta('boss', []);
   }
+
   if (!mob.hasBehavior('boss')) {
     const capableBehavior = state.MobBehaviorManager.get('boss');
     capableBehavior.attach(mob, true);
+  }
+
+  if (!mob.hasBehavior('lootable')) {
+    const lootableBehavior = state.MobBehaviorManager.get('lootable');
+    lootableBehavior.attach(mob, {});
   }
 
   const bossType = randomType();

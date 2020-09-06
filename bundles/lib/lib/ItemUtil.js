@@ -74,6 +74,8 @@ exports.renderItem = function (state, item, player) {
     buf += sprintf('| %-36s |\r\n', 'Контейнер');
   } else if (item.type === ItemType.SCROLL) {
     buf += sprintf('| %-36s |\r\n', 'Свиток');
+  } else if (item.type === ItemType.RESOURCE) {
+    buf += sprintf('| %-36s |\r\n', 'Ресурс');
   }
 
   const requirements = item.metadata.requirements;
@@ -104,6 +106,19 @@ exports.renderItem = function (state, item, player) {
       let scrollSpell = state.SpellManager.find(item.metadata.spell);
       buf += sprintf('| %-36s |\r\n', `Заклинание '` + scrollSpell.name[0].toUpperCase() + scrollSpell.name.slice(1) + `'.`);
       buf += sprintf('| %-36s |\r\n', `Использует ${scrollSpell.resource.cost} маны.`);
+      break;
+    case ItemType.RESOURCE:
+      buf += sprintf('| %-36s |\r\n', 'Содержит:');
+      let materials = '';
+      const materialsNumber = item.materials.length - 1;
+      for (const material of item.materials) {
+        if (material === item.materials[materialsNumber]) {
+          materials += ` ${material}`;
+        } else {
+          materials += ` ${material},`;
+        }
+      }
+      buf += sprintf('| %-36s |\r\n', `${materials}`);
       break;
   }
 
