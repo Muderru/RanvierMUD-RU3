@@ -39,7 +39,7 @@ module.exports = {
 
     // destroy node, will be respawned
     state.ItemManager.remove(node);
-    B.sayAt(player, `${ItemUtil.display(node)} ${resource.depletedMessage}`);
+    B.sayAt(player, `${node.Name} ${resource.depletedMessage}`);
     node = null;
   },
 };

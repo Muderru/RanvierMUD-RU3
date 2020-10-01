@@ -1,0 +1,858 @@
+- id: potion_health
+  name: "зелье лечения"
+  rname: "зелья лечения"
+  dname: "зелью лечения"
+  vname: "зелье лечения"
+  tname: "зельем лечения"
+  pname: "зелье лечения"
+  gender: "neuter"
+  roomDesc: "Зелье лечения выбросил тут кто-то."
+  keywords: ["зелье", "исцеляющее", "лечения"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 30
+      options:
+        restores: 50
+        stat: "health"
+- id: potion_mana
+  name: "зелье маны"
+  rname: "зелья маны"
+  dname: "зелью маны"
+  vname: "зелье маны"
+  tname: "зельем маны"
+  pname: "зелье маны"
+  gender: "neuter"
+  roomDesc: "Зелье маны выбросил тут кто-то."
+  keywords: ["зелье", "маны"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 30
+      options:
+        restores: 50
+        stat: "mana"
+- id: potion_strength
+  name: "зелье силы"
+  rname: "зелья силы"
+  dname: "зелью силы"
+  vname: "зелье силы"
+  tname: "зельем силы"
+  pname: "зелье силы"
+  gender: "neuter"
+  roomDesc: "Зелье силы выбросил тут кто-то."
+  keywords: ["зелье", "силы"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает силу"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "strength"
+- id: potion_agility
+  name: "зелье ловкости"
+  rname: "зелья ловкости"
+  dname: "зелью ловкости"
+  vname: "зелье ловкости"
+  tname: "зельем ловкости"
+  pname: "зелье ловкости"
+  gender: "neuter"
+  roomDesc: "Зелье ловкости выбросил тут кто-то."
+  keywords: ["зелье", "ловкости"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает ловкость"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "agility"
+- id: potion_intellect
+  name: "зелье интеллекта"
+  rname: "зелья интеллекта"
+  dname: "зелью интеллекта"
+  vname: "зелье интеллекта"
+  tname: "зельем интеллекта"
+  pname: "зелье интеллекта"
+  gender: "neuter"
+  roomDesc: "Зелье интеллекта выбросил тут кто-то."
+  keywords: ["зелье", "интеллекта"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает интеллект"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "intellect"
+- id: potion_stamina
+  name: "зелье выносливости"
+  rname: "зелья выносливости"
+  dname: "зелью выносливости"
+  vname: "зелье выносливости"
+  tname: "зельем выносливости"
+  pname: "зелье выносливости"
+  gender: "neuter"
+  roomDesc: "Зелье выносливости выбросил тут кто-то."
+  keywords: ["зелье", "выносливости"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает выносливость"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "stamina"
+- id: potion_armor
+  name: "зелье дубовой кожи"
+  rname: "зелья дубовой кожи"
+  dname: "зелью дубовой кожи"
+  vname: "зелье дубовой кожи"
+  tname: "зельем дубовой кожи"
+  pname: "зелье дубовой кожи"
+  gender: "neuter"
+  roomDesc: "Зелье дубовой кожи выбросил тут кто-то."
+  keywords: ["зелье", "брони", "дубовой"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает броню"
+        duration: 30000
+      state:
+        magnitude: 100
+        stat: "armor"
+- id: potion_critical
+  name: "зелье берсерка"
+  rname: "зелья берсерка"
+  dname: "зелью берсерка"
+  vname: "зелье берсерка"
+  tname: "зельем берсерка"
+  pname: "зелье берсерка"
+  gender: "neuter"
+  roomDesc: "Зелье берсерка выбросил тут кто-то."
+  keywords: ["зелье", "берсерка"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает критический рейтинг"
+        duration: 30000
+      state:
+        magnitude: 25
+        stat: "critical"
+- id: potion_cutting_resistance
+  name: "зелье твёрдости"
+  rname: "зелья твёрдости"
+  dname: "зелью твёрдости"
+  vname: "зелье твёрдости"
+  tname: "зельем твёрдости"
+  pname: "зелье твёрдости"
+  gender: "neuter"
+  roomDesc: "Зелье твёрдости выбросил тут кто-то."
+  keywords: ["зелье", "твёрдости", "твердости"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость режущему урону"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "cutting_resistance"
+- id: potion_crushing_resistance
+  name: "зелье мягкости"
+  rname: "зелья мягкости"
+  dname: "зелью мягкости"
+  vname: "зелье мягкости"
+  tname: "зельем мягкости"
+  pname: "зелье мягкости"
+  gender: "neuter"
+  roomDesc: "Зелье мягкости выбросил тут кто-то."
+  keywords: ["зелье", "мягкости"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость дробящему урону"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "crushing_resistance"
+- id: potion_piercing_resistance
+  name: "зелье стойкости"
+  rname: "зелья стойкости"
+  dname: "зелью стойкости"
+  vname: "зелье стойкости"
+  tname: "зельем стойкости"
+  pname: "зелье стойкости"
+  gender: "neuter"
+  roomDesc: "Зелье стойкости выбросил тут кто-то."
+  keywords: ["зелье", "стойкости"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость проникающему урону"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "piercing_resistance"
+- id: potion_fire_resistance
+  name: "зелье огнестойкости"
+  rname: "зелья огнестойкости"
+  dname: "зелью огнестойкости"
+  vname: "зелье огнестойкости"
+  tname: "зельем огнестойкости"
+  pname: "зелье огнестойкости"
+  gender: "neuter"
+  roomDesc: "Зелье огнестойкости выбросил тут кто-то."
+  keywords: ["зелье", "огнестойкости"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость огню"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "fire_resistance"
+- id: potion_cold_resistance
+  name: "согревающее зелье"
+  rname: "согревающего зелья"
+  dname: "согревающему зелью"
+  vname: "согревающее зелье"
+  tname: "согревающим зельем"
+  pname: "согревающем зелье"
+  gender: "neuter"
+  roomDesc: "Согревающее зелье выбросил тут кто-то."
+  keywords: ["зелье", "согревающее"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость холоду"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "cold_resistance"
+- id: potion_lightning_resistance
+  name: "заземляющее зелье"
+  rname: "заземляющего зелья"
+  dname: "заземляющему зелью"
+  vname: "заземляющее зелье"
+  tname: "заземляющим зельем"
+  pname: "заземляющем зелье"
+  gender: "neuter"
+  roomDesc: "Заземляющее зелье выбросил тут кто-то."
+  keywords: ["зелье", "заземляющее"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость молнии"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "lightning_resistance"
+- id: potion_earth_resistance
+  name: "мутное зелье"
+  rname: "мутного зелья"
+  dname: "мутному зелью"
+  vname: "мутное зелье"
+  tname: "мутным зельем"
+  pname: "мутном зелье"
+  gender: "neuter"
+  roomDesc: "Мутное зелье выбросил тут кто-то."
+  keywords: ["зелье", "мутное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость земле"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "earth_resistance"
+- id: potion_acid_resistance
+  name: "зелье противоядия"
+  rname: "зелья противоядия"
+  dname: "зелью противоядия"
+  vname: "зелье противоядия"
+  tname: "зельем противоядия"
+  pname: "зелье противоядия"
+  gender: "neuter"
+  roomDesc: "Зелье противоядия выбросил тут кто-то."
+  keywords: ["зелье", "противоядие"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость кислоте и яду"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "acid_resistance"
+- id: potion_chaos_resistance
+  name: "зелье порядка"
+  rname: "зелья порядка"
+  dname: "зелью порядка"
+  vname: "зелье порядка"
+  tname: "зельем порядка"
+  pname: "зелье порядка"
+  gender: "neuter"
+  roomDesc: "Зелье порядка выбросил тут кто-то."
+  keywords: ["зелье", "противоядие"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость хаосу"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "chaos_resistance"
+- id: potion_ether_resistance
+  name: "зелье невмешательства"
+  rname: "зелья невмешательства"
+  dname: "зелью невмешательства"
+  vname: "зелье невмешательства"
+  tname: "зельем невмешательства"
+  pname: "зелье невмешательства"
+  gender: "neuter"
+  roomDesc: "Зелье невмешательства выбросил тут кто-то."
+  keywords: ["зелье", "невмешательства"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает сопротивляемость эфиру"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "ether_resistance"
+- id: potion_cutting_damage
+  name: "бритвенное зелье"
+  rname: "бритвенного зелья"
+  dname: "бритвенному зелью"
+  vname: "бритвенное зелье"
+  tname: "бритвенным зельем"
+  pname: "бритвенном зелье"
+  gender: "neuter"
+  roomDesc: "Бритвенное зелье выбросил тут кто-то."
+  keywords: ["зелье", "бритвенное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает режущий урон"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "cutting_damage"
+- id: potion_crushing_damage
+  name: "зелье тяжести"
+  rname: "зелья тяжести"
+  dname: "зелью тяжести"
+  vname: "зелье тяжести"
+  tname: "зельем тяжести"
+  pname: "зелье тяжести"
+  gender: "neuter"
+  roomDesc: "Зелье тяжести выбросил тут кто-то."
+  keywords: ["зелье", "тяжести"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает дробящий урон"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "crushing_damage"
+- id: potion_piercing_damage
+  name: "зелье точности"
+  rname: "зелья точности"
+  dname: "зелью точности"
+  vname: "зелье точности"
+  tname: "зельем точности"
+  pname: "зелье точности"
+  gender: "neuter"
+  roomDesc: "Зелье точности выбросил тут кто-то."
+  keywords: ["зелье", "точности"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает проникающий урон"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "piercing_damage"
+- id: potion_fire_damage
+  name: "огненное зелье"
+  rname: "огненного зелья"
+  dname: "огненному зелью"
+  vname: "огненное зелье"
+  tname: "огненным зельем"
+  pname: "огненном зелье"
+  gender: "neuter"
+  roomDesc: "Огненное зелье выбросил тут кто-то."
+  keywords: ["зелье", "огненное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон огнём"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "fire_damage"
+- id: potion_cold_damage
+  name: "ледяное зелье"
+  rname: "ледяного зелья"
+  dname: "ледяному зелью"
+  vname: "ледяное зелье"
+  tname: "ледяным зельем"
+  pname: "ледяном зелье"
+  gender: "neuter"
+  roomDesc: "Ледяное зелье выбросил тут кто-то."
+  keywords: ["зелье", "ледяное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон холодом"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "cold_damage"
+- id: potion_lightning_damage
+  name: "потрескивающее зелье"
+  rname: "потрескивающего зелья"
+  dname: "потрескивающему зелью"
+  vname: "потрескивающее зелье"
+  tname: "потрескивающим зельем"
+  pname: "потрескивающем зелье"
+  gender: "neuter"
+  roomDesc: "Потрескивающее зелье выбросил тут кто-то."
+  keywords: ["зелье", "потрескивающее"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон молнией"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "lightning_damage"
+- id: potion_earth_damage
+  name: "живое зелье"
+  rname: "живого зелья"
+  dname: "живому зелью"
+  vname: "живое зелье"
+  tname: "живым зельем"
+  pname: "живом зелье"
+  gender: "neuter"
+  roomDesc: "Живое зелье выбросил тут кто-то."
+  keywords: ["зелье", "живое"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон землей"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "earth_damage"
+- id: potion_acid_damage
+  name: "кислое зелье"
+  rname: "кислого зелья"
+  dname: "кислому зелью"
+  vname: "кислое зелье"
+  tname: "кислым зельем"
+  pname: "кислом зелье"
+  gender: "neuter"
+  roomDesc: "Кислое зелье выбросил тут кто-то."
+  keywords: ["зелье", "кислое"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон кислотой и ядом"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "acid_damage"
+- id: potion_chaos_damage
+  name: "адское зелье"
+  rname: "адского зелья"
+  dname: "адскому зелью"
+  vname: "адское зелье"
+  tname: "адским зельем"
+  pname: "адском зелье"
+  gender: "neuter"
+  roomDesc: "Адское зелье выбросил тут кто-то."
+  keywords: ["зелье", "адское"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон хаосом"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "chaos_damage"
+- id: potion_ether_damage
+  name: "небесное зелье"
+  rname: "небесного зелья"
+  dname: "небесному зелью"
+  vname: "небесное зелье"
+  tname: "небесным зельем"
+  pname: "небесном зелье"
+  gender: "neuter"
+  roomDesc: "Небесное зелье выбросил тут кто-то."
+  keywords: ["зелье", "небесное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает урон эфиром"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "ether_damage"
+- id: potion_light
+  name: "светящееся зелье"
+  rname: "светящегося зелья"
+  dname: "светящемуся зелью"
+  vname: "светящееся зелье"
+  tname: "светящимся зельем"
+  pname: "светящемся зелье"
+  gender: "neuter"
+  roomDesc: "Светящееся зелье выбросил тут кто-то."
+  keywords: ["зелье", "светящееся"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает радиус света"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "light"
+- id: potion_invisibility
+  name: "прозрачное зелье"
+  rname: "прозрачного зелья"
+  dname: "прозрачному зелью"
+  vname: "прозрачное зелье"
+  tname: "прозрачным зельем"
+  pname: "прозрачном зелье"
+  gender: "neuter"
+  roomDesc: "Прозрачное зелье выбросил тут кто-то."
+  keywords: ["зелье", "прозрачное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает невидимость"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "invisibility"
+- id: potion_detect_invisibility
+  name: "антипризрачное зелье"
+  rname: "антипризрачного зелья"
+  dname: "антипризрачному зелью"
+  vname: "антипризрачное зелье"
+  tname: "антипризрачным зельем"
+  pname: "антипризрачном зелье"
+  gender: "neuter"
+  roomDesc: "Антипризрачное зелье выбросил тут кто-то."
+  keywords: ["зелье", "антипризрачное"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает определение невидимости"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "detect_invisibility"
+- id: potion_hide
+  name: "зелье маскировки"
+  rname: "зелья маскировки"
+  dname: "зелью маскировки"
+  vname: "зелье маскировки"
+  tname: "зельем маскировки"
+  pname: "зелье маскировки"
+  gender: "neuter"
+  roomDesc: "Зелье маскировки выбросил тут кто-то."
+  keywords: ["зелье", "маскировки"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает маскировку"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "hide"
+- id: potion_detect_hide
+  name: "зелье орлиного глаза"
+  rname: "зелья орлиного глаза"
+  dname: "зелью орлиного глаза"
+  vname: "зелье орлиного глаза"
+  tname: "зельем орлиного глаза"
+  pname: "зелье орлиного глаза"
+  gender: "neuter"
+  roomDesc: "Зелье орлиного глаза выбросил тут кто-то."
+  keywords: ["зелье", "орлиного"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает определение спрятанного"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "detect_hide"
+- id: potion_freedom
+  name: "зелье свободы"
+  rname: "зелья свободы"
+  dname: "зелью свободы"
+  vname: "зелье свободы"
+  tname: "зельем свободы"
+  pname: "зелье свободы"
+  gender: "neuter"
+  roomDesc: "Зелье свободы выбросил тут кто-то."
+  keywords: ["зелье", "свободы"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает свободу движений"
+        duration: 30000
+      state:
+        magnitude: 20
+        stat: "freedom"
+- id: potion_health_regeneration
+  name: "зелье метаболизма"
+  rname: "зелья метаболизма"
+  dname: "зелью метаболизма"
+  vname: "зелье метаболизма"
+  tname: "зельем метаболизма"
+  pname: "зелье метаболизма"
+  gender: "neuter"
+  roomDesc: "Зелье метаболизма выбросил тут кто-то."
+  keywords: ["зелье", "метаболизма"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает регенерацию здоровья"
+        duration: 30000
+      state:
+        magnitude: 50
+        stat: "health_regeneration"
+- id: potion_mana_regeneration
+  name: "зелье могущества"
+  rname: "зелья могущества"
+  dname: "зелью могущества"
+  vname: "зелье могущества"
+  tname: "зельем могущества"
+  pname: "зелье могущества"
+  gender: "neuter"
+  roomDesc: "Зелье могущества выбросил тут кто-то."
+  keywords: ["зелье", "могущества"]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 60
+      config:
+        description: "Увеличивает регенерацию маны"
+        duration: 30000
+      state:
+        magnitude: 30
+        stat: "mana_regeneration"

@@ -5,5 +5,264 @@
       "plant_material": 3,
       "rose_petal": 1
     }
+  },
+  {
+    "item": "potions:potion_health",
+    "recipe": {
+      "anise_fruit": 3,
+      "cane_leaves": 1
+    }
+  },
+  {
+    "item": "potions:potion_mana",
+    "recipe": {
+      "valerian_root": 1,
+      "cranberries": 3
+    }
+  },
+  {
+    "item": "potions:potion_strength",
+    "recipe": {
+      "verbena_leaves": 3,
+      "iris_root": 1
+    }
+  },
+  {
+    "item": "potions:potion_agility",
+    "recipe": {
+      "inflorescence_cloves": 2,
+      "sundew_slime": 2
+    }
+  },
+  {
+    "item": "potions:potion_intellect",
+    "recipe": {
+      "tutsan_flower": 3,
+      "porous_substance": 1
+    }
+  },
+  {
+    "item": "potions:potion_stamina",
+    "recipe": {
+      "clover_nectar": 1,
+      "moss_extract": 3
+    }
+  },
+  {
+    "item": "potions:potion_armor",
+    "recipe": {
+      "lavender_flowers": 3,
+      "luminous_substance": 3
+    }
+  },
+  {
+    "item": "potions:potion_critical",
+    "recipe": {
+      "flax_seeds": 2,
+      "sticky_leaf": 2
+    }
+  },
+  {
+    "item": "potions:potion_cutting_resistance",
+    "recipe": {
+      "mandrake_root": 1,
+      "bright_red_slime": 3
+    }
+  },
+  {
+    "item": "potions:potion_crushing_resistance",
+    "recipe": {
+      "heather_flower": 3,
+      "organic_sulfur": 1
+    }
+  },
+  {
+    "item": "potions:potion_piercing_resistance",
+    "recipe": {
+      "honeysuckle_berries": 2,
+      "false_gold": 2
+    }
+  },
+  {
+    "item": "potions:potion_fire_resistance",
+    "recipe": {
+      "juniper_cone": 3,
+      "wriggling_mycelium": 1
+    }
+  },
+  {
+    "item": "potions:potion_cold_resistance",
+    "recipe": {
+      "fern_flower": 2,
+      "white_moss": 2
+    }
+  },
+  {
+    "item": "potions:potion_cold_resistance",
+    "recipe": {
+      "fern_flower": 2,
+      "white_moss": 2
+    }
+  },
+  {
+    "item": "potions:potion_lightning_resistance",
+    "recipe": {
+      "thistle_thorns": 3,
+      "bearberry_leaves": 1
+    }
+  },
+  {
+    "item": "potions:potion_earth_resistance",
+    "recipe": {
+      "hemlock_leaves": 3,
+      "cloudberry_berries": 1
+    }
+  },
+  {
+    "item": "potions:potion_acid_resistance",
+    "recipe": {
+      "amanita_cap": 1,
+      "blueberry_root": 1
+    }
+  },
+  {
+    "item": "potions:potion_chaos_resistance",
+    "recipe": {
+      "hawthorn_berries": 3,
+      "arcticberry_leaves": 1
+    }
+  },
+  {
+    "item": "potions:potion_ether_resistance",
+    "recipe": {
+      "barberry_bark": 3,
+      "crowberry_berries": 1
+    }
+  },
+  {
+    "item": "potions:potion_cutting_damage",
+    "recipe": {
+      "gentian_root": 1,
+      "cottongrass_flowers": 3
+    }
+  },
+  {
+    "item": "potions:potion_crushing_damage",
+    "recipe": {
+      "fireweed_leaves": 2,
+      "ledum_sprouts": 2
+    }
+  },
+  {
+    "item": "potions:potion_piercing_damage",
+    "recipe": {
+      "ginseng_root": 1,
+      "sagebrush_leaves": 3
+    }
+  },
+  {
+    "item": "potions:potion_fire_damage",
+    "recipe": {
+      "edelweiss_flower": 1,
+      "adonis_flower": 1
+    }
+  },
+  {
+    "item": "potions:potion_cold_damage",
+    "recipe": {
+      "rhododendron_bark": 2,
+      "mimosa_leaves": 2
+    }
+  },
+  {
+    "item": "potions:potion_lightning_damage",
+    "recipe": {
+      "azalea_seeds": 1,
+      "basil_leaves": 3
+    }
+  },
+  {
+    "item": "potions:potion_earth_damage",
+    "recipe": {
+      "lotus_root": 1,
+      "vetiver_root": 1
+    }
+  },
+  {
+    "item": "potions:potion_acid_damage",
+    "recipe": {
+      "calamus_root": 1,
+      "geranium_flowers": 2
+    }
+  },
+  {
+    "item": "potions:potion_chaos_damage",
+    "recipe": {
+      "duckweed_flowers": 3,
+      "cumin_seeds": 1
+    }
+  },
+  {
+    "item": "potions:potion_ether_damage",
+    "recipe": {
+      "waterlily_root": 2,
+      "sage_flowers": 2
+    }
+  },
+  {
+    "item": "potions:potion_light",
+    "recipe": {
+      "hornwort_fruit": 3,
+      "aloe_leaves": 1
+    }
+  },
+  {
+    "item": "potions:potion_invisibility",
+    "recipe": {
+      "calla_root": 1,
+      "cactus_seed": 1
+    }
+  },
+  {
+    "item": "potions:potion_detect_invisibility",
+    "recipe": {
+      "hyacinth_petals": 3,
+      "myrrh_resin": 1
+    }
+  },
+  {
+    "item": "potions:potion_hide",
+    "recipe": {
+      "reeds_root": 1,
+      "acacia_seeds": 1
+    }
+  },
+  {
+    "item": "potions:potion_detect_hide",
+    "recipe": {
+      "angelica_inflorescence": 3,
+      "tumbleweed_needle": 1
+    }
+  },
+  {
+    "item": "potions:potion_freedom",
+    "recipe": {
+      "mint_leaves": 3,
+      "saxaul_resin": 1
+    }
+  },
+  {
+    "item": "potions:potion_health_regeneration",
+    "recipe": {
+      "cicuta_root": 1,
+      "camelthorn_root": 1
+    }
+  },
+  {
+    "item": "potions:potion_mana_regeneration",
+    "recipe": {
+      "henbane_fruit": 3,
+      "stapelia_seeds": 1
+    }
   }
 ]

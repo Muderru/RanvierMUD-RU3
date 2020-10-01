@@ -1,8 +1,10 @@
 const { Broadcast, Logger, Config } = require('ranvier');
 const { Random } = require('rando-js');
 const EnhanceMob = require('../../../lib/lib/EnhanceMob');
+const MaterialsUtil = require('../../../crafting/lib/MaterialsUtil');
 
 const bossChance = 5; //шанс лоада босса
+const plantChance = 5; //шанс лоада растения
 
 /**
  * Behavior for having a constant respawn tick happening every [interval]
@@ -23,6 +25,15 @@ module.exports = {
         const upTime = Math.trunc(Date.now() / tickFrequency - serverStartTime);
         if (upTime % (respawnInterval * (1000 / tickFrequency)) === 0) {
           for (const [id, room] of this.rooms) {
+            //добавляем растения по зоне
+            for (const roomType of room.type) {
+              if (Random.inRange(0, 100) <= plantChance) {
+                const plant = room.spawnItem(state, MaterialsUtil.plant(roomType));
+                const delayBehavior = state.ItemBehaviorManager.get('decay');
+                delayBehavior.attach(plant, {duration: respawnInterval});
+                Logger.verbose(`PLANT added ${this.name}:${room.id}.`);
+              }
+            }
             room.emit('respawnTick', state);
           }
           this.npcs.forEach((npc) => {

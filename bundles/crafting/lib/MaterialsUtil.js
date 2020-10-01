@@ -78,3 +78,42 @@ exports.material = function (attr) {
       return 'эктоплазма';
   }
 };
+
+exports.plant = function (areaType) {
+  let plants = [];
+  switch(areaType) {
+    case 'луг':
+      plants = ['anise', 'valerian', 'verbena', 'carnation', 'tutsan', 'clover', 'lavender', 'flax']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'лес':
+      plants = ['mandrake', 'heather', 'honeysuckle', 'juniper', 'fern', 'thistle', 'hemlock', 'amanita']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'горы':
+      plants = ['hawthorn', 'barberry', 'gentian', 'fireweed', 'ginseng', 'edelweiss', 'rhododendron', 'azalea']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'мелководье':
+      plants = ['lotus', 'calamus', 'duckweed', 'waterlily', 'hornwort', 'calla', 'hyacinth', 'reeds']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'болото':
+      plants = ['angelica', 'mint', 'cicuta', 'henbane', 'cane', 'cranberry', 'iris', 'sundew']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'пещера':
+      plants = ['fleshylichen', 'cavemoss', 'schizosteg', 'albinofern', 'bloodylichen', 'sulphurousmushroom', 'goldensponge', 'brainmushroom']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'тундра':
+      plants = ['reindeermoss', 'bearberry', 'cloudberry', 'blueberry', 'arcticberry', 'crowberry', 'cottongrass', 'ledum']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'пустошь':
+      plants = ['sagebrush', 'adonis', 'mimosa', 'basil', 'vetiver', 'geranium', 'cumin', 'sage']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'степь':
+      plants = ['sagebrush', 'adonis', 'mimosa', 'basil', 'vetiver', 'geranium', 'cumin', 'sage']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    case 'пустыня':
+      plants = ['aloe', 'cactus', 'myrrh', 'acacia', 'tumbleweed', 'saxaul', 'camelthorn', 'stapelia']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+    default:
+      plants = ['anise', 'valerian', 'verbena', 'carnation', 'tutsan', 'clover', 'lavender', 'flax']
+      return `craft:${plants[Math.floor(Math.random() * plants.length)]}`;
+  }
+};

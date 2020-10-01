@@ -23,6 +23,7 @@
           min: 1
           max: 3
 - id: redrose
+  materials: ['лепесток розы', 'зеленый стебель']
   name: "красная роза"
   rname: "красной розы"
   dname: "красной розе"
@@ -154,3 +155,1733 @@
     пространстве-времени. Катализатор для трансмутации предметов.
   metadata:
     quality: artifact
+- id: anise
+  materials: ['семена аниса']
+  name: "анис"
+  rname: "аниса"
+  dname: "анису"
+  vname: "анис"
+  tname: "анисом"
+  pname: "анисе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Душистый анис растёт здесь."
+  keywords: ["анис"]
+  description: "Невысокое растение с тонким стеблем и с фигурными листьями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        anise_fruit:
+          min: 1
+          max: 3
+- id: valerian
+  materials: ['корень валерьяны']
+  name: "валериана"
+  rname: "валерианы"
+  dname: "валериане"
+  vname: "валериану"
+  tname: "валерианой"
+  pname: "валериане"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Благоухающая валериана растёт здесь."
+  keywords: ["валериана"]
+  description: "Высокая трава с толстым стеблем и множеством мелких душистых цветков."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        valerian_root:
+          min: 1
+          max: 3
+- id: verbena
+  materials: ['листья вербены']
+  name: "вербена"
+  rname: "вербены"
+  dname: "вербене"
+  vname: "вербену"
+  tname: "вербеной"
+  pname: "вербене"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Невысокая вербена тянет здесь к вам зубчатые листья."
+  keywords: ["вербена"]
+  description: "Невысокая трава с зубчатыми листьями и метельчатыми соцветиями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        verbena_leaves:
+          min: 1
+          max: 3
+- id: carnation
+  materials: ['соцветия гвоздики']
+  name: "гвоздика"
+  rname: "гвоздики"
+  dname: "гвоздике"
+  vname: "гвоздику"
+  tname: "гвоздикой"
+  pname: "гвоздике"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Ярко-красная гвоздика растёт тут."
+  keywords: ["гвоздика"]
+  description: "Душистый ярко-красный цветок, чьи полезные свойства ни у кого не вызывают сомнения."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        inflorescence_cloves:
+          min: 1
+          max: 3
+- id: tutsan
+  materials: ['цветок зверобоя']
+  name: "зверобой"
+  rname: "зверобоя"
+  dname: "зверобою"
+  vname: "зверобой"
+  tname: "зверобоем"
+  pname: "зверобое"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Золотистые цветки зверобоя торчат тут из травы."
+  keywords: ["зверобой"]
+  description: "Невысокая трава с множеством мелких золотистых цветков."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        tutsan_flower:
+          min: 1
+          max: 3
+- id: clover
+  materials: ['нектар клевера']
+  name: "клевер"
+  rname: "клевера"
+  dname: "клеверу"
+  vname: "клевер"
+  tname: "клевером"
+  pname: "клевере"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Клевер стелется тут по земле."
+  keywords: ["клевер"]
+  description: "Маленькая травка со множеством полезных свойств."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        clover_nectar:
+          min: 1
+          max: 3
+- id: lavender
+  materials: ['цветы лаванды']
+  name: "лаванда"
+  rname: "лаванды"
+  dname: "лаванде"
+  vname: "лаванду"
+  tname: "лавандой"
+  pname: "лаванде"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Изящные цветы лаванды выглядывают из под травы."
+  keywords: ["лаванда"]
+  description: "Полукустарник с фиолетовыми цветками, собранными в метёлки."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        lavender_flowers:
+          min: 1
+          max: 3
+- id: flax
+  materials: ['cемена льна']
+  name: "лён"
+  rname: "льна"
+  dname: "льну"
+  vname: "лён"
+  tname: "льном"
+  pname: "льне"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Побеги льна ветвятся тут."
+  keywords: ["лён"]
+  description: "Трава с прочным стеблем и небольшими бледными цветками."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        flax_seeds:
+          min: 1
+          max: 3
+- id: mandrake
+  materials: ['корень мандрагоры']
+  name: "мандрагора"
+  rname: "мандрагоры"
+  dname: "мандрагоре"
+  vname: "мандрагору"
+  tname: "мандрагорой"
+  pname: "мандрагоре"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Корень мандрагоры выглядывает тут из под земли."
+  keywords: ["мандрагора"]
+  description: "Мистическое растение, обожаемое алхимиками и магами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "с протяжным криком скрывается под землей."
+      materials:
+        mandrake_root:
+          min: 1
+          max: 2
+- id: heather
+  materials: ['цветок вереска']
+  name: "вереск"
+  rname: "вереска"
+  dname: "вереску"
+  vname: "вереск"
+  tname: "вереском"
+  pname: "вереске"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Лилово-розовые цветки вереска проглядывают здесь сквозь кусты."
+  keywords: ["вереск"]
+  description: "Вечнозелёный кустарничек с сильно ветвящимися стеблями и лилово-розовыми цветами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        heather_flower:
+          min: 1
+          max: 3
+- id: honeysuckle
+  materials: ['ягоды жимолости']
+  name: "жимолость"
+  rname: "жимолости"
+  dname: "жимолости"
+  vname: "жимолость"
+  tname: "жимолостью"
+  pname: "жимолости"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Побеги жимолости вьются тут среди деревьев."
+  keywords: ["жимолость"]
+  description: "Вьющийся кустарник с вкусными голубыми ягодами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        honeysuckle_berries:
+          min: 1
+          max: 3
+- id: juniper
+  materials: ['шишкоягода можжевельника']
+  name: "можжевельник"
+  rname: "можжевельника"
+  dname: "можжевельнику"
+  vname: "можжевельник"
+  tname: "можжевельником"
+  pname: "можжевельнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Можжевельник растёт здесь."
+  keywords: ["можжевельник"]
+  description: "Кустарник со многими полезными свойствами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        juniper_cone:
+          min: 1
+          max: 3
+- id: fern
+  materials: ['цветок папоротника']
+  name: "папоротник"
+  rname: "папоротника"
+  dname: "папоротнику"
+  vname: "папоротник"
+  tname: "папоротником"
+  pname: "папоротнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Пышные кусты папоротника растут тут на прогалине."
+  keywords: ["папоротник"]
+  description: "Растение экзотического вида с мощным корневищем."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        fern_flower:
+          min: 1
+          max: 2
+- id: thistle
+  materials: ['колючки чертополоха']
+  name: "чертополох"
+  rname: "чертополоха"
+  dname: "чертополоху"
+  vname: "чертополох"
+  tname: "чертополохом"
+  pname: "чертополохе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Чертополох ощетинился здесь во стороны своими колючками."
+  keywords: ["чертополох"]
+  description: "Многолетнее растение с длинными колючками, которое избегает нечистая сила."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        thistle_thorns:
+          min: 1
+          max: 3
+- id: hemlock
+  materials: ['листья болиголова']
+  name: "болиголов"
+  rname: "болиголова"
+  dname: "болиголову"
+  vname: "болиголов"
+  tname: "болиголовом"
+  pname: "болиголове"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Пышный куст ядовитого болиголова растёт здесь."
+  keywords: ["болиголов"]
+  description: "Дурно пахнущее растение с сильными ядовитыми свойствами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        hemlock_leaves:
+          min: 1
+          max: 3
+- id: amanita
+  materials: ['шляпка мухомора']
+  name: "мухомор"
+  rname: "мухомора"
+  dname: "мухомору"
+  vname: "мухомор"
+  tname: "мухомором"
+  pname: "мухоморе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Пятнистая красная шляпка мухомора торчит здесь из опавшей листвы."
+  keywords: ["мухомор"]
+  description: "Ядовитый гриб с красной пятнистой шляпкой."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        amanita_cap:
+          min: 1
+          max: 1
+- id: hawthorn
+  materials: ['ягоды боярышника']
+  name: "боярышник"
+  rname: "боярышника"
+  dname: "боярышнику"
+  vname: "боярышник"
+  tname: "боярышником"
+  pname: "боярышнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Боярышник цепляется тут за камни раскидистыми корнями."
+  keywords: ["боярышник"]
+  description: "Небольшое деревце с мощными корнями и мелкими красными ягодами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        hawthorn_berries:
+          min: 1
+          max: 3
+- id: barberry
+  materials: ['кора барбариса']
+  name: "барбарис"
+  rname: "барбариса"
+  dname: "барбарису"
+  vname: "барбарис"
+  tname: "барбарисом"
+  pname: "барбарисе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Среди камней растет куст барбариса."
+  keywords: ["барбарис"]
+  description: "Кустарник с плотными листьями и терпкими красными ягодами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        barberry_bark:
+          min: 1
+          max: 3
+- id: gentian
+  materials: ['корень горечавки']
+  name: "горечавка"
+  rname: "горечавки"
+  dname: "горечавке"
+  vname: "горечавку"
+  tname: "горечавкой"
+  pname: "горечавке"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Синий цветок горечавки торчит из каменистой почвы тут."
+  keywords: ["горечавка"]
+  description: "Синий цветок, напоминающий по форме колокольчик, с толстым горьким корнем."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        gentian_root:
+          min: 1
+          max: 1
+- id: fireweed
+  materials: ['листья кипрея']
+  name: "кипрей"
+  rname: "кипрея"
+  dname: "кипрею"
+  vname: "кипрей"
+  tname: "кипреем"
+  pname: "кипрее"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Крупные розовые цветки кипрея растут здесь."
+  keywords: ["кипрей"]
+  description: "Высокая трава с красивыми розовыми цветками."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        fireweed_leaves:
+          min: 1
+          max: 3
+- id: ginseng
+  materials: ['корень женьшеня']
+  name: "женьшень"
+  rname: "женьшеня"
+  dname: "женьшеню"
+  vname: "женьшень"
+  tname: "женьшенем"
+  pname: "женьшене"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Неприметный женьшень скромно выглядывает из под камней."
+  keywords: ["женьшень"]
+  description: "Горное растение с широко известными лечебными свойствами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        ginseng_root:
+          min: 1
+          max: 3
+- id: edelweiss
+  materials: ['цветок эдельвейса']
+  name: "эдельвейс"
+  rname: "эдельвейса"
+  dname: "эдельвейсу"
+  vname: "эдельвейс"
+  tname: "эдельвейсом"
+  pname: "эдельвейсе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Благородный белый цветок эдельвейса растёт тут."
+  keywords: ["эдельвейс"]
+  description: "Этот невысокий цветок своей формой напоминает львиную лапку."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        edelweiss_flower:
+          min: 1
+          max: 3
+- id: rhododendron
+  materials: ['кора рододендрона']
+  name: "рододендрон"
+  rname: "рододендрона"
+  dname: "рододендрону"
+  vname: "рододендрон"
+  tname: "рододендроном"
+  pname: "рододендроне"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Рододендрон растёт здесь."
+  keywords: ["рододендрон"]
+  description: "Кустарник с великолепными крупными цветками, немного похожими на розовые."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        rhododendron_bark:
+          min: 1
+          max: 3
+- id: azalea
+  materials: ['cемена азалии']
+  name: "азалия"
+  rname: "азалии"
+  dname: "азалии"
+  vname: "азалию"
+  tname: "азалией"
+  pname: "азалии"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Нежная азалия растёт здесь в тени скалы."
+  keywords: ["азалия"]
+  description: "Красивый и нежный цветок, встретить который большая удача."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        azalea_seeds:
+          min: 1
+          max: 3
+- id: lotus
+  materials: ['корень лотоса']
+  name: "лотос"
+  rname: "лотоса"
+  dname: "лотосу"
+  vname: "лотос"
+  tname: "лотосом"
+  pname: "лотосе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Белоснежный лотос качается здесь у берега."
+  keywords: ["лотос"]
+  description: "Огромный белый цветок окружен крупными листьями, которые поддерживают его, как спасательный круг."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        lotus_root:
+          min: 1
+          max: 1
+- id: calamus
+  materials: ['корневище аира']
+  name: "аир"
+  rname: "аира"
+  dname: "аиру"
+  vname: "аир"
+  tname: "аиром"
+  pname: "аире"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Стебли аира торчат тут из воды."
+  keywords: ["аир"]
+  description: "Многолетнее растение, обожающее мелкие заводи. Ценится алхимиками."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        calamus_root:
+          min: 1
+          max: 2
+- id: duckweed
+  materials: ['цветки ряски']
+  name: "ряска"
+  rname: "ряски"
+  dname: "ряске"
+  vname: "ряску"
+  tname: "ряской"
+  pname: "ряске"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Ряска застилает здесь водную гладь."
+  keywords: ["ряска"]
+  description: "Множество мелких листочков застилают водную гладь и испускают специфический запах."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        duckweed_flowers:
+          min: 1
+          max: 3
+- id: waterlily
+  materials: ['корневище кувшинки']
+  name: "кувшинка"
+  rname: "кувшинки"
+  dname: "кувшинке"
+  vname: "кувшинку"
+  tname: "кувшинкой"
+  pname: "кувшинке"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Розовая кувшинка качается тут на длинном стебле."
+  keywords: ["кувшинка"]
+  description: "Этот красивый цветок образует на дне мощные корневища, из которых можно извлечь полезные вещества."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        waterlily_root:
+          min: 1
+          max: 3
+- id: hornwort
+  materials: ['плоды роголистника']
+  name: "роголистник"
+  rname: "роголистника"
+  dname: "роголистнику"
+  vname: "роголистник"
+  tname: "роголистником"
+  pname: "роголистнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Стебли роголистника плавают тут у поверхности воды."
+  keywords: ["роголистник"]
+  description: "Бескорневое растение, напоминающее обычную водоросль с множеством полезных свойств."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        hornwort_fruit:
+          min: 1
+          max: 3
+- id: calla
+  materials: ['корень белокрыльника']
+  name: "белокрыльник"
+  rname: "белокрыльника"
+  dname: "белокрыльнику"
+  vname: "белокрыльник"
+  tname: "белокрыльником"
+  pname: "белокрыльнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Белые свечки белокрыльника торчат тут около берега."
+  keywords: ["белокрыльник"]
+  description: "Прибрежное растение с плотными сердцевидными листьями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        calla_root:
+          min: 1
+          max: 1
+- id: hyacinth
+  materials: ['лепестки гиацинта']
+  name: "гиацинт"
+  rname: "гиацинта"
+  dname: "гиацинту"
+  vname: "гиацинт"
+  tname: "гиацинтом"
+  pname: "гиацинте"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Гиацинт плавает тут, покачиваясь на волнах."
+  keywords: ["гиацинт"]
+  description: "Плавающее растение с красивым с голубым или фиолетовым цветком."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        hyacinth_petals:
+          min: 1
+          max: 3
+- id: reeds
+  materials: ['камышовый корень']
+  name: "камыш"
+  rname: "камыша"
+  dname: "камышу"
+  vname: "камыш"
+  tname: "камышом"
+  pname: "камыше"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Камышовые заросли закрывают тут берег."
+  keywords: ["камыш"]
+  description: "Многолетнее растение с высоким стеблем и пушистой метелкой на его конце."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        reeds_root:
+          min: 1
+          max: 1
+- id: angelica
+  materials: ['соцветие дягиля']
+  name: "дягиль"
+  rname: "дягиля"
+  dname: "дягилю"
+  vname: "дягиль"
+  tname: "дягилем"
+  pname: "дягиле"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Огромный зонтик дягиля растёт тут на кочке."
+  keywords: ["дягиль"]
+  description: "Водянистое растение с множеством мелких цветочков, собранных в зонтик."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        angelica_inflorescence:
+          min: 1
+          max: 3
+- id: mint
+  materials: ['листья мяты']
+  name: "мята"
+  rname: "мяты"
+  dname: "мяте"
+  vname: "мяту"
+  tname: "мятой"
+  pname: "мяте"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Благоухающая мята растёт здесь."
+  keywords: ["мята"]
+  description: "Это растение источает удивительный аромат, как-будто очищающий организм."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        mint_leaves:
+          min: 1
+          max: 3
+- id: cicuta
+  materials: ['корневище цикуты']
+  name: "цикута"
+  rname: "цикуты"
+  dname: "цикуте"
+  vname: "цикуту"
+  tname: "цикутой"
+  pname: "цикуте"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Смертельно ядовитая цикута тянет здесь к вам свои листья."
+  keywords: ["цикута"]
+  description: "Растение в половину человеческого роста с зубчатыми листьями и мелкими белыми цветками, собранными в зонтики."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cicuta_root:
+          min: 1
+          max: 1
+- id: henbane
+  materials: ['семена белены']
+  name: "белена"
+  rname: "белены"
+  dname: "белене"
+  vname: "белену"
+  tname: "беленой"
+  pname: "белене"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Грязно-жёлтые цветки белены выглядывают тут из травы."
+  keywords: ["белена"]
+  description: "Хотя это растение и чрезвычайно ядовито, оно очень ценится алхимиками."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        henbane_fruit:
+          min: 1
+          max: 3
+- id: cane
+  materials: ['листья тростника']
+  name: "тростник"
+  rname: "тростника"
+  dname: "тростнику"
+  vname: "тростник"
+  tname: "тростником"
+  pname: "тростнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Густые заросли тростника окружают тут вас со всех сторон."
+  keywords: ["тростник"]
+  description: "Высокие и прочные стебли этого растения ценятся как отличный строительный материал."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cane_leaves:
+          min: 1
+          max: 3
+- id: cranberry
+  materials: ['ягоды клюквы']
+  name: "клюква"
+  rname: "клюквы"
+  dname: "клюкве"
+  vname: "клюкву"
+  tname: "клюквой"
+  pname: "клюкве"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Крупные ягоды клюквы вы замечаете здесь среди мха."
+  keywords: ["клюква"]
+  description: "Вкусная и полезная ягода с терпким вкусом."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cranberries:
+          min: 1
+          max: 3
+- id: iris
+  materials: ['корневище ириса']
+  name: "ирис"
+  rname: "ириса"
+  dname: "ирису"
+  vname: "ирис"
+  tname: "ирисом"
+  pname: "ирисе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Жёлтые цветки ириса торчат тут из травы."
+  keywords: ["ирис"]
+  description: "Невысокое растение с толстым стеблем и крупным жёлтым цветком."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        iris_root:
+          min: 1
+          max: 1
+- id: sundew
+  materials: ['слизь росянки']
+  name: "росянка"
+  rname: "росянки"
+  dname: "росянке"
+  vname: "росянку"
+  tname: "росянкой"
+  pname: "росянке"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Хищная росянка тянет к вам свои листья."
+  keywords: ["росянка"]
+  description: "Маленькое, но агрессивное растение с волосатыми листьями, выделяющими парализующий яд."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        sundew_slime:
+          min: 1
+          max: 3
+- id: fleshylichen
+  materials: ['пористая субстанция']
+  name: "мясистый лишайник"
+  rname: "мясистого лишайника"
+  dname: "мясистому лишайнику"
+  vname: "мясистый лишайник"
+  tname: "мясистым лишайником"
+  pname: "мясистом лишайнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Пористый мясистый лишайник растёт тут на стене."
+  keywords: ["лишайник"]
+  description: "Лишайник напоминает собой кусок гнилого пористого мяса."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        porous_substance:
+          min: 1
+          max: 3
+- id: cavemoss
+  materials: ['экстракт мха']
+  name: "пещерный мох"
+  rname: "пещерного мха"
+  dname: "пещерному мху"
+  vname: "пещерный мох"
+  tname: "пещерным мхом"
+  pname: "пещерном мхе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Белёсый рыхлый мох свисает тут с потолка."
+  keywords: ["мох"]
+  description: "Этот лишённый пигментов мох напоминает клочья грязной рваной паутины."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        moss_extract:
+          min: 1
+          max: 3
+- id: schizosteg
+  materials: ['светящаяся субстанция']
+  name: "шизостег"
+  rname: "шизостега"
+  dname: "шизостегу"
+  vname: "шизостег"
+  tname: "шизостегом"
+  pname: "шизостеге"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Светящийся мох - шизостег покрывает тут камни."
+  keywords: ["мох", "шизостег"]
+  description: "Этот мох светится бледным потусторонним светом."
+  metadata:
+    level: 1
+    itemLevel: 1
+    light: 5
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        luminous_substance:
+          min: 1
+          max: 3
+- id: albinofern
+  materials: ['липкий лист']
+  name: "папоротник-альбинос"
+  rname: "папоротника-альбиноса"
+  dname: "папоротнику-альбиносу"
+  vname: "папоротник-альбинос"
+  tname: "папоротником-альбиносом"
+  pname: "папоротнике-альбиносе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Папоротник-альбинос растёт здесь."
+  keywords: ["альбинос"]
+  description: "Это растение полностью лишено хлорофилла, вместо этого его листья покрыты какой-то едкой слизью, растворяющей камни."
+  metadata:
+    level: 1
+    itemLevel: 1
+    light: 5
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        sticky_leaf:
+          min: 1
+          max: 3
+- id: bloodylichen
+  materials: ['ярко-красная слизь']
+  name: "кровавый лишайник"
+  rname: "кровавого лишайника"
+  dname: "кровавому лишайнику"
+  vname: "кровавый лишайник"
+  tname: "кровавым лишайником"
+  pname: "кровавом лишайнике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Стены здесь покрыты мерзким кровавым лишайником."
+  keywords: ["лишайник"]
+  description: "Этот лишайник напоминает загустевшую липкую кровь. К нему противно прикасаться, так как потом от него отмыть практически невозможно."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        bright_red_slime:
+          min: 1
+          max: 3
+- id: sulphurousmushroom
+  materials: ['органическая сера']
+  name: "сернистый гриб"
+  rname: "сернистого гриба"
+  dname: "сернистому грибу"
+  vname: "сернистый гриб"
+  tname: "сернистым грибом"
+  pname: "сернистом грибе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Здесь в углу растет вонючий сернистый гриб."
+  keywords: ["гриб"]
+  description: "Этот огромный гриб испускает ядовитый сернистый запах, от которого можно потерять сознание."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        organic_sulfur:
+          min: 1
+          max: 3
+- id: goldensponge
+  materials: ['ложное золото']
+  name: "золотистая губка"
+  rname: "золотистой губки"
+  dname: "золотистой губке"
+  vname: "золотистую губку"
+  tname: "золотистой губкой"
+  pname: "золотистой губке"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Острые грани золотистой губки выступают тут со стен."
+  keywords: ["губка"]
+  description: "Эта губка кажется металлической, об её острую поверхность можно содрать всю кожу. Но, тем не менее она жива."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        false_gold:
+          min: 1
+          max: 3
+- id: brainmushroom
+  materials: ['извивающийся мицелий']
+  name: "гриб-мозговик"
+  rname: "гриба-мозговика"
+  dname: "грибу-мозговику"
+  vname: "гриб-мозговик"
+  tname: "грибом-мозговиком"
+  pname: "грибе-мозговике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Огромный, похожий на мозг, гриб растёт здесь."
+  keywords: ["гриб"]
+  description: "Этот, похожий на огромный мозг, гриб тёплый на ощупь. Если долго рядом с ним находиться, то начинаются галлюцинации."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        wriggling_mycelium:
+          min: 1
+          max: 3
+- id: reindeermoss
+  materials: ['белый мох']
+  name: "ягель"
+  rname: "ягеля"
+  dname: "ягелю"
+  vname: "ягель"
+  tname: "ягелем"
+  pname: "ягеле"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Неприметный ягель стелется здесь под ногами."
+  keywords: ["ягель"]
+  description: "Это ползучее растение создает мягкий ковер под ногами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        white_moss:
+          min: 1
+          max: 3
+- id: bearberry
+  materials: ['листья толокнянки']
+  name: "толокнянка"
+  rname: "толокнянки"
+  dname: "толокнянке"
+  vname: "толокнянку"
+  tname: "толокнянкой"
+  pname: "толокнянке"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Толокнянка растёт здесь."
+  keywords: ["толокнянка"]
+  description: "Ягоды этого низкого кустарника с плотными овальными листьями обожают и люди и звери."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        bearberry_leaves:
+          min: 1
+          max: 3
+- id: cloudberry
+  materials: ['ягоды морошки']
+  name: "морошка"
+  rname: "морошки"
+  dname: "морошке"
+  vname: "морошку"
+  tname: "морошкой"
+  pname: "морошке"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Водянистые ягоды морошки растут здесь."
+  keywords: ["морошку", "водянистые"]
+  description: "Водянистые северные ягоды с терпким согревающим вкусом."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cloudberry_berries:
+          min: 1
+          max: 3
+- id: blueberry
+  materials: ['корень голубики']
+  name: "голубика"
+  rname: "голубики"
+  dname: "голубике"
+  vname: "голубику"
+  tname: "голубикой"
+  pname: "голубике"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Синие ягоды голубики растут тут среди мха."
+  keywords: ["голубику", "синие"]
+  description: "Невысокое растение с крупными синими ягодами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        blueberry_root:
+          min: 1
+          max: 1
+- id: arcticberry
+  materials: ['листья княженики']
+  name: "княженика"
+  rname: "княженики"
+  dname: "княженике"
+  vname: "княженику"
+  tname: "княженикой"
+  pname: "княженике"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Невысокая княженика растёт здесь."
+  keywords: ["княженику"]
+  description: "Низкий кустарник с мощными корневищами и целебными листьями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        arcticberry_leaves:
+          min: 1
+          max: 3
+- id: crowberry
+  materials: ['ягоды вороники']
+  name: "вороника"
+  rname: "вороники"
+  dname: "воронике"
+  vname: "воронику"
+  tname: "вороникой"
+  pname: "воронике"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Вечнозелёная вороника прячется тут среди северных трав."
+  keywords: ["княженику"]
+  description: "Вечнозеленый низкорослый кустарник с мелкими овальными листьями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        crowberry_berries:
+          min: 1
+          max: 3
+- id: cottongrass
+  materials: ['цветки пушицы']
+  name: "пушица"
+  rname: "пушицы"
+  dname: "пушице"
+  vname: "пушицу"
+  tname: "пушицой"
+  pname: "пушице"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Пушица образует здесь пышную кочку."
+  keywords: ["пушицу"]
+  description: "Многолетняя трава, образующая кочки на водяныстых почвах."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cottongrass_flowers:
+          min: 1
+          max: 3
+- id: ledum
+  materials: ['ростки багульника']
+  name: "багульник"
+  rname: "багульника"
+  dname: "багульнику"
+  vname: "багульник"
+  tname: "багульником"
+  pname: "багульник"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Багульник стелется здесь по земле."
+  keywords: ["багульник"]
+  description: "Вечнозелёный ядовитый кустраник с одурманивающим запахом."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        ledum_sprouts:
+          min: 1
+          max: 3
+- id: sagebrush
+  materials: ['листья полыни']
+  name: "полынь"
+  rname: "полыни"
+  dname: "полыни"
+  vname: "полынь"
+  tname: "полынью"
+  pname: "полыни"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Пышный куст полыни растёт здесь."
+  keywords: ["полынь"]
+  description: "Высокая трава с сильным пряным запахом и горьким вкусом."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        sagebrush_leaves:
+          min: 1
+          max: 3
+- id: adonis
+  materials: ['цветок адониса']
+  name: "адонис"
+  rname: "адониса"
+  dname: "адонису"
+  vname: "адонис"
+  tname: "адонисом"
+  pname: "адонисе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Жёлтый цветок адониса выглядывает тут из травы."
+  keywords: ["адонис"]
+  description: "Тонкий стебель адониса увенчен единственным лимонно-жёлтым цветком."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        adonis_flower:
+          min: 1
+          max: 1
+- id: mimosa
+  materials: ['листья мимозы']
+  name: "мимоза"
+  rname: "мимозы"
+  dname: "мимозе"
+  vname: "мимозу"
+  tname: "мимозой"
+  pname: "мимозе"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Раскидистая крона мимозы нависла над вашей головой."
+  keywords: ["мимозу"]
+  description: "Высокий и пышный кустарник с множеством жёлтых цветков. Её листья сворачиваются при прикосновении."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        mimosa_leaves:
+          min: 1
+          max: 3
+- id: basil
+  materials: ['листья базилика']
+  name: "базилик"
+  rname: "базилика"
+  dname: "базилику"
+  vname: "базилик"
+  tname: "базиликом"
+  pname: "базилике"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Душистый базилик растёт здесь."
+  keywords: ["базилик"]
+  description: "Полукустарник с душистым ароматом, часто используемый в кулинарии."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        basil_leaves:
+          min: 1
+          max: 3
+- id: vetiver
+  materials: ['корешок ветивера']
+  name: "ветивер"
+  rname: "ветивера"
+  dname: "ветиверу"
+  vname: "ветивер"
+  tname: "ветивером"
+  pname: "ветивере"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Узкие листья ветивера торчат тут во все стороны."
+  keywords: ["ветивер"]
+  description: "Многолетняя трава с узкими линейными листьями и длинными корнями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        vetiver_root:
+          min: 1
+          max: 2
+- id: geranium
+  materials: ['лепестки герани']
+  name: "герань"
+  rname: "герани"
+  dname: "герани"
+  vname: "герань"
+  tname: "геранью"
+  pname: "герани"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Пушистые листья герани можно разглядеть здесь среди травы."
+  keywords: ["герань"]
+  description: "Ароматный цветок с мясистыми волосатыми листьями."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        geranium_flowers:
+          min: 1
+          max: 3
+- id: cumin
+  materials: ['семена тмина']
+  name: "тмин"
+  rname: "тмина"
+  dname: "тмину"
+  vname: "тмин"
+  tname: "тмином"
+  pname: "тмин"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Белые зонтики тмина растут здесь среди травы."
+  keywords: ["тмин"]
+  description: "Высокий стебель этого растения увенчан несколькими зонтиками из мелких белых цветов."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cumin_seeds:
+          min: 1
+          max: 3
+- id: sage
+  materials: ['соцветие шалфея']
+  name: "шалфей"
+  rname: "шалфея"
+  dname: "шалфею"
+  vname: "шалфей"
+  tname: "шалфеем"
+  pname: "шалфее"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Лиловые метёлки шалфея проглядывают здесь среди травы."
+  keywords: ["шалфей"]
+  description: "Многолетнее растение, известное своими лечебными свойствами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        sage_flowers:
+          min: 1
+          max: 3
+- id: aloe
+  materials: ['листья алоэ']
+  name: "алоэ"
+  rname: "алоэ"
+  dname: "алоэ"
+  vname: "алоэ"
+  tname: "алоэ"
+  pname: "алоэ"
+  gender: "neuter"
+  type: RESOURCE
+  roomDesc: "Колючее мясистое алоэ растёт здесь."
+  keywords: ["алоэ", "алое"]
+  description: "Полезное растение пустынь, известное своими лечебными свойствами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        aloe_leaves:
+          min: 1
+          max: 3
+- id: cactus
+  materials: ['плод кактуса']
+  name: "кактус"
+  rname: "кактуса"
+  dname: "кактусу"
+  vname: "кактус"
+  tname: "кактусом"
+  pname: "кактусе"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Цветущий кактус вздымается тут из песка."
+  keywords: ["кактус"]
+  description: "Высокий мясистый ствол этого растения покрыт длинными колючками и изящными цветками."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        cactus_seed:
+          min: 1
+          max: 3
+- id: myrrh
+  materials: ['смола мирры']
+  name: "мирра"
+  rname: "мирры"
+  dname: "мирре"
+  vname: "мирру"
+  tname: "миррой"
+  pname: "мирре"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Небольшое деревце мирры растёт здесь."
+  keywords: ["мирра", "мирру"]
+  description: "Это редкое деревце выделяет ценную благоухающую смолу."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        myrrh_resin:
+          min: 1
+          max: 3
+- id: acacia
+  materials: ['плоды акации']
+  name: "акация"
+  rname: "акации"
+  dname: "акации"
+  vname: "акацию"
+  tname: "акацией"
+  pname: "акации"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Цветущая раскидистая акация растёт здесь."
+  keywords: ["акацию"]
+  description: "Благоухающее дерево пустынь с ценными плодами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        acacia_seeds:
+          min: 1
+          max: 3
+- id: tumbleweed
+  materials: ['колючка перекати-поля']
+  name: "перекати-поле"
+  rname: "перекати-поля"
+  dname: "перекати-полю"
+  vname: "перекати-поле"
+  tname: "перекати-полем"
+  pname: "перекати-поле"
+  gender: "neuter"
+  type: RESOURCE
+  roomDesc: "Колючий клубок перекати-поля катится здесь."
+  keywords: ["поле"]
+  description: "Клубок высохшей колючей травы, напоминающий огромного ежа."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        tumbleweed_needle:
+          min: 1
+          max: 3
+- id: saxaul
+  materials: ['смола саксаула']
+  name: "саксаул"
+  rname: "саксаула"
+  dname: "саксаулу"
+  vname: "саксаул"
+  tname: "саксаулом"
+  pname: "саксауле"
+  gender: "male"
+  type: RESOURCE
+  roomDesc: "Искривлённый саксаул растёт здесь."
+  keywords: ["саксаул"]
+  description: "Небольшое искривленное деревце, которое можно встретить в пустынях."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        saxaul_resin:
+          min: 1
+          max: 3
+- id: camelthorn
+  materials: ['корень верблюжьей колючки']
+  name: "верблюжья колючка"
+  rname: "верблюжьей колючки"
+  dname: "верблюжьей колючке"
+  vname: "верблюжью колючку"
+  tname: "верблюжьей колючкой"
+  pname: "верблюжьей колючке"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Верблюжья колючка цветёт здесь."
+  keywords: ["колючка", "колючку", "верблюжью"]
+  description: "Невысокий кустарник с мощными корнями и острыми шипами."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        camelthorn_root:
+          min: 1
+          max: 1
+- id: stapelia
+  materials: ['семена стапелии']
+  name: "стапелия"
+  rname: "стапелии"
+  dname: "стапелии"
+  vname: "стапелию"
+  tname: "стапелией"
+  pname: "стапелии"
+  gender: "female"
+  type: RESOURCE
+  roomDesc: "Изящная стапелия цветёт здесь."
+  keywords: ["стапелию"]
+  description: "Небольшое растение с мясистыми плотными листьями и изящными лиловыми цветками."
+  metadata:
+    level: 1
+    itemLevel: 1
+    quality: uncommon
+    noPickup: true
+    resource:
+      depletedMessage: "увядает и лишается полезных свойств."
+      materials:
+        stapelia_seeds:
+          min: 1
+          max: 3

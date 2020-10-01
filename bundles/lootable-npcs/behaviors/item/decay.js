@@ -45,7 +45,7 @@ module.exports = {
         }
       }
 
-      Logger.verbose(`${this.id} has decayed.`);
+//      Logger.verbose(`${this.id} has decayed.`);
       state.ItemManager.remove(this);
     },
   },

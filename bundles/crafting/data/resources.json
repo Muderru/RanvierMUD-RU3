@@ -1,10 +1,752 @@
 {
   "plant_material": {
-    "title": "Зеленый стебель",
+    "title": "зеленый стебель",
+    "rname": "зеленого стебля",
+    "dname": "зеленому стеблю",
+    "vname": "зеленый стебель",
+    "tname": "зеленым стеблем",
+    "pname": "зеленом стебле",
+    "gender": "male",
     "quality": "common"
   },
   "rose_petal": {
-    "title": "Лепесток розы",
+    "title": "лепесток розы",
+    "rname": "лепестка розы",
+    "dname": "лепестку розы",
+    "vname": "лепесток розы",
+    "tname": "лепестком розы",
+    "pname": "лепестке розы",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "anise_fruit": {
+    "title": "семена аниса",
+    "rname": "семян аниса",
+    "dname": "семенам аниса",
+    "vname": "семена аниса",
+    "tname": "семенами аниса",
+    "pname": "семенах аниса",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "valerian_root": {
+    "title": "корень валерьяны",
+    "rname": "корня валерьяны",
+    "dname": "корню валерьяны",
+    "vname": "корень валерьяны",
+    "tname": "корнем валерьяны",
+    "pname": "корне валерьяны",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "verbena_leaves": {
+    "title": "листья вербены",
+    "rname": "листьев вербены",
+    "dname": "листьям вербены",
+    "vname": "листья вербены",
+    "tname": "листьями вербены",
+    "pname": "листьях вербены",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "inflorescence_cloves": {
+    "title": "соцветия гвоздики",
+    "rname": "соцветиев гвоздики",
+    "dname": "соцветиям гвоздики",
+    "vname": "соцветия гвоздики",
+    "tname": "соцветиями гвоздики",
+    "pname": "соцветиях гвоздики",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "tutsan_flower": {
+    "title": "цветок зверобоя",
+    "rname": "цветка зверобоя",
+    "dname": "цветку зверобоя",
+    "vname": "цветок зверобоя",
+    "tname": "цветком зверобоя",
+    "pname": "цветке зверобоя",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "clover_nectar": {
+    "title": "нектар клевера",
+    "rname": "нектара клевера",
+    "dname": "нектару клевера",
+    "vname": "нектар клевера",
+    "tname": "нектаром клевера",
+    "pname": "нектаре клевера",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "lavender_flowers": {
+    "title": "цветы лаванды",
+    "rname": "цветов лаванды",
+    "dname": "цветам лаванды",
+    "vname": "цветы лаванды",
+    "tname": "цветами лаванды",
+    "pname": "цветах лаванды",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "flax_seeds": {
+    "title": "cемена льна",
+    "rname": "cемян льна",
+    "dname": "cеменам льна",
+    "vname": "cемена льна",
+    "tname": "cеменами льна",
+    "pname": "cеменах льна",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "mandrake_root": {
+    "title": "корень мандрагоры",
+    "rname": "корня мандрагоры",
+    "dname": "корню мандрагоры",
+    "vname": "корень мандрагоры",
+    "tname": "корнем мандрагоры",
+    "pname": "корне мандрагоры",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "heather_flower": {
+    "title": "цветок вереска",
+    "rname": "цветка вереска",
+    "dname": "цветку вереска",
+    "vname": "цветок вереска",
+    "tname": "цветком вереска",
+    "pname": "цветке вереска",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "honeysuckle_berries": {
+    "title": "ягоды жимолости",
+    "rname": "ягод жимолости",
+    "dname": "ягодам жимолости",
+    "vname": "ягоды жимолости",
+    "tname": "ягодами жимолости",
+    "pname": "ягодах жимолости",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "juniper_cone": {
+    "title": "шишкоягода можжевельника",
+    "rname": "шишкоягоды можжевельника",
+    "dname": "шишкоягоде можжевельника",
+    "vname": "шишкоягоду можжевельника",
+    "tname": "шишкоягодой можжевельника",
+    "pname": "шишкоягоде можжевельника",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "fern_flower": {
+    "title": "цветок папоротника",
+    "rname": "цветка папоротника",
+    "dname": "цветку папоротника",
+    "vname": "цветок папоротника",
+    "tname": "цветком папоротника",
+    "pname": "цветке папоротника",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "thistle_thorns": {
+    "title": "колючки чертополоха",
+    "rname": "колючек чертополоха",
+    "dname": "колючкам чертополоха",
+    "vname": "колючки чертополоха",
+    "tname": "колючками чертополоха",
+    "pname": "колючках чертополоха",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "hemlock_leaves": {
+    "title": "листья болиголова",
+    "rname": "листьев болиголова",
+    "dname": "листьям болиголова",
+    "vname": "листья болиголова",
+    "tname": "листьями болиголова",
+    "pname": "листьях болиголова",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "amanita_cap": {
+    "title": "шляпка мухомора",
+    "rname": "шляпки мухомора",
+    "dname": "шляпке мухомора",
+    "vname": "шляпку мухомора",
+    "tname": "шляпками мухомора",
+    "pname": "шляпке мухомора",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "hawthorn_berries": {
+    "title": "ягоды боярышника",
+    "rname": "ягод боярышника",
+    "dname": "ягодам боярышника",
+    "vname": "ягоды боярышника",
+    "tname": "ягодами боярышника",
+    "pname": "ягодах боярышника",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "barberry_bark": {
+    "title": "кора барбариса",
+    "rname": "коры барбариса",
+    "dname": "коре барбариса",
+    "vname": "кору барбариса",
+    "tname": "корой барбариса",
+    "pname": "коре барбариса",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "gentian_root": {
+    "title": "корень горечавки",
+    "rname": "корня горечавки",
+    "dname": "корню горечавки",
+    "vname": "корень горечавки",
+    "tname": "корнем горечавки",
+    "pname": "корне горечавки",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "fireweed_leaves": {
+    "title": "листья кипрея",
+    "rname": "листьев кипрея",
+    "dname": "листьям кипрея",
+    "vname": "листья кипрея",
+    "tname": "листьями кипрея",
+    "pname": "листьях кипрея",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "ginseng_root": {
+    "title": "корень женьшеня",
+    "rname": "корня женьшеня",
+    "dname": "корню женьшеня",
+    "vname": "корень женьшеня",
+    "tname": "корнем женьшеня",
+    "pname": "корне женьшеня",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "edelweiss_flower": {
+    "title": "цветок эдельвейса",
+    "rname": "цветка эдельвейса",
+    "dname": "цветку эдельвейса",
+    "vname": "цветок эдельвейса",
+    "tname": "цветком эдельвейса",
+    "pname": "цветке эдельвейса",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "rhododendron_bark": {
+    "title": "кора рододендрона",
+    "rname": "коры рододендрона",
+    "dname": "коре рододендрона",
+    "vname": "кору рододендрона",
+    "tname": "корой рододендрона",
+    "pname": "коре рододендрона",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "azalea_seeds": {
+    "title": "cемена азалии",
+    "rname": "cемян азалии",
+    "dname": "cеменам азалии",
+    "vname": "cемена азалии",
+    "tname": "cеменами азалии",
+    "pname": "cеменах азалии",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "lotus_root": {
+    "title": "корень лотоса",
+    "rname": "корня лотоса",
+    "dname": "корню лотоса",
+    "vname": "корень лотоса",
+    "tname": "корнем лотоса",
+    "pname": "корне лотоса",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "calamus_root": {
+    "title": "корневище аира",
+    "rname": "корневища аира",
+    "dname": "корневищу аира",
+    "vname": "корневище аира",
+    "tname": "корневищем аира",
+    "pname": "корневище аира",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "duckweed_flowers": {
+    "title": "цветки ряски",
+    "rname": "цветков ряски",
+    "dname": "цветкам ряски",
+    "vname": "цветки ряски",
+    "tname": "цветками ряски",
+    "pname": "цветках ряски",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "waterlily_root": {
+    "title": "корневище кувшинки",
+    "rname": "корневища кувшинки",
+    "dname": "корневищу кувшинки",
+    "vname": "корневище кувшинки",
+    "tname": "корневищем кувшинки",
+    "pname": "корневище кувшинки",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "hornwort_fruit": {
+    "title": "плоды роголистника",
+    "rname": "плодов роголистника",
+    "dname": "плодам роголистника",
+    "vname": "плоды роголистника",
+    "tname": "плодами роголистника",
+    "pname": "плодах роголистника",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "calla_root": {
+    "title": "корень белокрыльника",
+    "rname": "корня белокрыльника",
+    "dname": "корню белокрыльника",
+    "vname": "корень белокрыльника",
+    "tname": "корнем белокрыльника",
+    "pname": "корне белокрыльника",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "hyacinth_petals": {
+    "title": "лепестки гиацинта",
+    "rname": "лепестков гиацинта",
+    "dname": "лепесткам гиацинта",
+    "vname": "лепестки гиацинта",
+    "tname": "лепестками гиацинта",
+    "pname": "лепестках гиацинта",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "reeds_root": {
+    "title": "камышовый корень",
+    "rname": "камышового корня",
+    "dname": "камышовому корню",
+    "vname": "камышовый корень",
+    "tname": "камышовым корнем",
+    "pname": "камышовом корне",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "angelica_inflorescence": {
+    "title": "соцветие дягиля",
+    "rname": "соцветия дягиля",
+    "dname": "соцветию дягиля",
+    "vname": "соцветие дягиля",
+    "tname": "соцветием дягиля",
+    "pname": "соцветии дягиля",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "mint_leaves": {
+    "title": "листья мяты",
+    "rname": "листьев мяты",
+    "dname": "листьям мяты",
+    "vname": "листья мяты",
+    "tname": "листьями мяты",
+    "pname": "листьях мяты",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cicuta_root": {
+    "title": "корневище цикуты",
+    "rname": "корневища цикуты",
+    "dname": "корневищу цикуты",
+    "vname": "корневище цикуты",
+    "tname": "корневищем цикуты",
+    "pname": "корневище цикуты",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "henbane_fruit": {
+    "title": "семена белены",
+    "rname": "семян белены",
+    "dname": "семенам белены",
+    "vname": "семена белены",
+    "tname": "семенами белены",
+    "pname": "семенах белены",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cane_leaves": {
+    "title": "листья тростника",
+    "rname": "листьев тростника",
+    "dname": "листьям тростника",
+    "vname": "листья тростника",
+    "tname": "листьями тростника",
+    "pname": "листьях тростника",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cranberries": {
+    "title": "ягоды клюквы",
+    "rname": "ягод клюквы",
+    "dname": "ягодам клюквы",
+    "vname": "ягоды клюквы",
+    "tname": "ягодами клюквы",
+    "pname": "ягодах клюквы",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "iris_root": {
+    "title": "корневище ириса",
+    "rname": "корневища ириса",
+    "dname": "корневищу ириса",
+    "vname": "корневище ириса",
+    "tname": "корневищем ириса",
+    "pname": "корневище ириса",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "sundew_slime": {
+    "title": "слизь росянки",
+    "rname": "слизи росянки",
+    "dname": "слизи росянки",
+    "vname": "слизь росянки",
+    "tname": "слизью росянки",
+    "pname": "слизи росянки",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "porous_substance": {
+    "title": "пористая субстанция",
+    "rname": "пористой субстанции",
+    "dname": "пористой субстанции",
+    "vname": "пористую субстанцию",
+    "tname": "пористой субстанцией",
+    "pname": "пористой субстанции",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "moss_extract": {
+    "title": "экстракт мха",
+    "rname": "экстракта мха",
+    "dname": "экстракту мха",
+    "vname": "экстракт мха",
+    "tname": "экстрактом мха",
+    "pname": "экстракте мха",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "luminous_substance": {
+    "title": "светящаяся субстанция",
+    "rname": "светящейся субстанции",
+    "dname": "светящейся субстанции",
+    "vname": "светящуюся субстанцию",
+    "tname": "светящейся субстанцией",
+    "pname": "светящейся субстанции",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "sticky_leaf": {
+    "title": "липкий лист",
+    "rname": "липкого листа",
+    "dname": "липкому листу",
+    "vname": "липкий лист",
+    "tname": "липким листом",
+    "pname": "липком листе",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "bright_red_slime": {
+    "title": "ярко-красная слизь",
+    "rname": "ярко-красной слизи",
+    "dname": "ярко-красной слизи",
+    "vname": "ярко-красную слизь",
+    "tname": "ярко-красной слизью",
+    "pname": "ярко-красной слизи",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "organic_sulfur": {
+    "title": "органическая сера",
+    "rname": "органической серы",
+    "dname": "органической сере",
+    "vname": "органическую серу",
+    "tname": "органической серой",
+    "pname": "органической сере",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "false_gold": {
+    "title": "ложное золото",
+    "rname": "ложного золота",
+    "dname": "ложному золоту",
+    "vname": "ложное золото",
+    "tname": "ложным золотом",
+    "pname": "ложном золоте",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "wriggling_mycelium": {
+    "title": "извивающийся мицелий",
+    "rname": "извивающегося мицелия",
+    "dname": "извивающемуся мицелию",
+    "vname": "извивающийся мицелий",
+    "tname": "извивающимся мицелием",
+    "pname": "извивающимся мицелии",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "white_moss": {
+    "title": "белый мох",
+    "rname": "белого мха",
+    "dname": "белому мху",
+    "vname": "белый мох",
+    "tname": "белым мхом",
+    "pname": "белом мхе",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "bearberry_leaves": {
+    "title": "листья толокнянки",
+    "rname": "листьев толокнянки",
+    "dname": "листьям толокнянки",
+    "vname": "листья толокнянки",
+    "tname": "листьями толокнянки",
+    "pname": "листьях толокнянки",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cloudberry_berries": {
+    "title": "ягоды морошки",
+    "rname": "ягод морошки",
+    "dname": "ягодам морошки",
+    "vname": "ягоды морошки",
+    "tname": "ягодами морошки",
+    "pname": "ягодах морошки",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "blueberry_root": {
+    "title": "корень голубики",
+    "rname": "корня голубики",
+    "dname": "корню голубики",
+    "vname": "корень голубики",
+    "tname": "корнем голубики",
+    "pname": "корне голубики",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "arcticberry_leaves": {
+    "title": "листья княженики",
+    "rname": "листьев княженики",
+    "dname": "листьям княженики",
+    "vname": "листья княженики",
+    "tname": "листьями княженики",
+    "pname": "листьях княженики",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "crowberry_berries": {
+    "title": "ягоды вороники",
+    "rname": "ягод вороники",
+    "dname": "ягодам вороники",
+    "vname": "ягоды вороники",
+    "tname": "ягодами вороники",
+    "pname": "ягодах вороники",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cottongrass_flowers": {
+    "title": "цветки пушицы",
+    "rname": "цветков пушицы",
+    "dname": "цветкам пушицы",
+    "vname": "цветки пушицы",
+    "tname": "цветками пушицы",
+    "pname": "цветках пушицы",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "ledum_sprouts": {
+    "title": "ростки багульника",
+    "rname": "ростков багульника",
+    "dname": "росткам багульника",
+    "vname": "ростки багульника",
+    "tname": "ростками багульника",
+    "pname": "ростках багульника",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "sagebrush_leaves": {
+    "title": "листья полыни",
+    "rname": "листьев полыни",
+    "dname": "листьям полыни",
+    "vname": "листья полыни",
+    "tname": "листьями полыни",
+    "pname": "листьях полыни",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "adonis_leaves": {
+    "title": "листья полыни",
+    "rname": "листьев полыни",
+    "dname": "листьям полыни",
+    "vname": "листья полыни",
+    "tname": "листьями полыни",
+    "pname": "листьях полыни",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "adonis_flower": {
+    "title": "цветок адониса",
+    "rname": "цветка адониса",
+    "dname": "цветку адониса",
+    "vname": "цветок адониса",
+    "tname": "цветком адониса",
+    "pname": "цветке адониса",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "mimosa_leaves": {
+    "title": "листья мимозы",
+    "rname": "листьев мимозы",
+    "dname": "листьям мимозы",
+    "vname": "листья мимозы",
+    "tname": "листьями мимозы",
+    "pname": "листьях мимозы",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "basil_leaves": {
+    "title": "листья базилика",
+    "rname": "листьев базилика",
+    "dname": "листьям базилика",
+    "vname": "листья базилика",
+    "tname": "листьями базилика",
+    "pname": "листьях базилика",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "vetiver_root": {
+    "title": "корешок ветивера",
+    "rname": "корешка ветивера",
+    "dname": "корешку ветивера",
+    "vname": "корешок ветивера",
+    "tname": "корешком ветивера",
+    "pname": "корешке ветивера",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "geranium_flowers": {
+    "title": "лепестки герани",
+    "rname": "лепестков герани",
+    "dname": "лепесткам герани",
+    "vname": "лепестки герани",
+    "tname": "лепестками герани",
+    "pname": "лепестках герани",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cumin_seeds": {
+    "title": "семена тмина",
+    "rname": "семян тмина",
+    "dname": "семенам тмина",
+    "vname": "семена тмина",
+    "tname": "семенами тмина",
+    "pname": "семенах тмина",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "sage_flowers": {
+    "title": "соцветие шалфея",
+    "rname": "соцветия шалфея",
+    "dname": "соцветию шалфея",
+    "vname": "соцветие шалфея",
+    "tname": "соцветием шалфея",
+    "pname": "соцветии шалфея",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "aloe_leaves": {
+    "title": "листья алоэ",
+    "rname": "листьев алоэ",
+    "dname": "листьям алоэ",
+    "vname": "листья алоэ",
+    "tname": "листьями алоэ",
+    "pname": "листьях алоэ",
+    "gender": "plural",
+    "quality": "uncommon"
+  },
+  "cactus_seed": {
+    "title": "плод кактуса",
+    "rname": "плода кактуса",
+    "dname": "плоду кактуса",
+    "vname": "плод кактуса",
+    "tname": "плодом кактуса",
+    "pname": "плоде кактуса",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "myrrh_resin": {
+    "title": "смола мирры",
+    "rname": "смолы мирры",
+    "dname": "смоле мирры",
+    "vname": "смолу мирры",
+    "tname": "смолой мирры",
+    "pname": "смоле мирры",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "acacia_seeds": {
+    "title": "плоды акации",
+    "rname": "плодов акации",
+    "dname": "плодам акации",
+    "vname": "плоды акации",
+    "tname": "плодами акации",
+    "pname": "плодах акации",
+    "gender": "neuter",
+    "quality": "uncommon"
+  },
+  "tumbleweed_needle": {
+    "title": "колючка перекати-поля",
+    "rname": "колючки перекати-поля",
+    "dname": "колючке перекати-поля",
+    "vname": "колючку перекати-поля",
+    "tname": "колючкой перекати-поля",
+    "pname": "колючке перекати-поля",
+    "gender": "female",
+    "quality": "uncommon"
+  },
+  "saxaul_resin": {
+    "title": "смола саксаула",
+    "rname": "смолы саксаула",
+    "dname": "смоле саксаула",
+    "vname": "смолу саксаула",
+    "tname": "смолой саксаула",
+    "pname": "смоле саксаула",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "camelthorn_root": {
+    "title": "корень верблюжьей колючки",
+    "rname": "корня верблюжьей колючки",
+    "dname": "корню верблюжьей колючки",
+    "vname": "корень верблюжьей колючки",
+    "tname": "корнем верблюжьей колючки",
+    "pname": "корне верблюжьей колючки",
+    "gender": "male",
+    "quality": "uncommon"
+  },
+  "stapelia_seeds": {
+    "title": "семена стапелии",
+    "rname": "семян стапелии",
+    "dname": "семенам стапелии",
+    "vname": "семена стапелии",
+    "tname": "семенами стапелии",
+    "pname": "семенах стапелии",
+    "gender": "plural",
     "quality": "uncommon"
   }
 }

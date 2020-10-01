@@ -14,6 +14,12 @@ class Crafting {
     // create a temporary fake item for the resource for rendering purposes
     return new Item(null, {
       name: resourceDef.title,
+      rname: resourceDef.rname,
+      dname: resourceDef.dname,
+      vname: resourceDef.vname,
+      tname: resourceDef.tname,
+      pname: resourceDef.pname,
+      gender: resourceDef.gender,
       metadata: {
         quality: resourceDef.quality,
       },
