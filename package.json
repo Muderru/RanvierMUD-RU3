@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "commander": "^2.20.3",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "yargs": "^15.3.1",
     "ranvier": "^3.0.6",
     "ranvier-datasource-file": "^1.0.3",
