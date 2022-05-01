@@ -1,0 +1,1547 @@
+- id: 80104
+  name: "ключ атамана"
+  rname: "ключа атамана"
+  dname: "ключу атамана"
+  vname: "ключ атамана"
+  tname: "ключом атамана"
+  pname: "ключе атамана"
+  gender: "male"  
+  keywords: ["ключ", "маленький", "ржавый"]
+  roomDesc: "Маленький ржавый ключ лежит тут."
+  description: >-
+    Ключ, на котором подписано: "Отомана".
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80105
+  name: "стойка бара"
+  rname: "стойки бара"
+  dname: "стойке бара"
+  vname: "стойку бара"
+  tname: "стойкой бара"
+  pname: "стойке бара"
+  gender: "female"
+  roomDesc: "Заваленная грязной посудой стойка бара стоит тут."
+  description: >-
+    Стойка бара завалена грязной посудой, по которой время от времени пробегают толстые тараканы.
+  keywords: [ "стойка", "бар" ]
+  metadata:
+    noPickup: true
+- id: 80106
+  name: "огромная кровать"
+  rname: "огромной кровати"
+  dname: "огромной кровати"
+  vname: "огромную кровать"
+  tname: "огромной кроватью"
+  pname: "огромной кровати"
+  gender: "female"
+  roomDesc: "Огромная пыльная кровать стоит тут."
+  description: >-
+    Эта огромная дубовая кровать изготовлена в старомодном стиле, характерном для северян.
+    Несомненно, что эта вещь очень дорогая и, возможно, подарена таверне каким-нибудь
+    проезжающим аристократом.
+  keywords: [ "огромная", "кровать" ]
+  metadata:
+    noPickup: true
+- id: 80107
+  name: "заточка"
+  rname: "заточки"
+  dname: "заточке"
+  vname: "заточку"
+  tname: "заточкой"
+  pname: "заточке"
+  gender: "female"
+  damageVerb: "пырнула"
+  roomDesc: "Остро заточенное лезвие с самодельной рукоятью лежит тут."
+  description: >-
+    Вы видите длинный, остро заточенный кусок металла, на котором видны пятна засохшей крови.
+  keywords: [ "заточка", "лезвие" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 22
+    maxDamage: 82
+    speed: 2.4
+    stats:
+      agility: 2
+      piercing_damage: 3
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'daggers' ]
+- id: 80108
+  name: "разбойничий кинжал"
+  rname: "разбойничьего кинжала"
+  dname: "разбойничьему кинжалу"
+  vname: "разбойничий кинжал"
+  tname: "разбойничьим кинжалом"
+  pname: "разбойничьем кинжале"
+  gender: "male"
+  damageVerb: "уколол"
+  roomDesc: "Добротный кинжал лежит тут."
+  description: >-
+    Судя по всему, о этом кинжале не особо хорошо заботились: на лезвии видны пятна ржавчины и
+    следы крови. Но, не смотря на это он по прежнему остер и прочен, и он положит конец жизням еще
+    множества людей.
+  keywords: [ "кинжал", "разбойничий" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.6
+    stats:
+      strength: 1
+      piercing_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'daggers' ]
+- id: 80109
+  name: "лифчик"
+  rname: "лифчика"
+  dname: "лифчику"
+  vname: "лифчик"
+  tname: "лифчиком"
+  pname: "лифчике"
+  gender: "male"
+  type: CONTAINER
+  roomDesc: "Изящный дамский лифчик лежит тут."
+  keywords: [ "лифчик", "изящный", "дамский" ]
+  description: >-
+    Судя по размерам этим лифчиком обладала раньше дама с очень пышными формами. В нем с
+    легкостью уместится целая корзина грибов или ягод, или еще чего-нибудь не очень крупного.
+  maxItems: 3
+  metadata:
+    quality: common
+    slot: "грудь"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 80110
+  name: "дешевое ожерелье"
+  rname: "дешевого ожерелья"
+  dname: "дешевому ожерелью"
+  vname: "дешевое ожерелье"
+  tname: "дешевым ожерельем"
+  pname: "дешевом ожерелье"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Дешевое на вид ожерелье лежит тут."
+  keywords: [ "дешевое", "ожерелье" ]
+  description: >-
+    Ожерелье изготовлено из простых разноцветных стекляшек, нанизанных на тонкую
+    веревочку. Его может позволить себе одеть даже самая бедная женщина.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 15
+    itemLevel: 15
+    stats:
+      mana: 20
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+- id: 80111
+  name: "кожаные мокасины"
+  rname: "кожаных мокасин"
+  dname: "кожаным мокасинам"
+  vname: "кожаные мокасины"
+  tname: "кожаными мокасинами"
+  pname: "кожаных мокасинах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Кожаные мокасины лежат тут."
+  keywords: [ "кожаные", "мокасины" ]
+  description: >-
+    Такие штаны распространены, обычно, среди охотников и следопытов Севера. Дешевые и
+    прочные, они идеально подходят для путешествий в дикой местности. Кроме того, их просто
+    изготовить даже своими силами.
+  metadata:
+    quality: common
+    slot: "ноги"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 5
+      crushing_resistance: 2
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'medium_armor' ]
+- id: 80112
+  name: "остроконечная шляпа мага"
+  rname: "остроконечной шляпы мага"
+  dname: "остроконечной шляпе мага"
+  vname: "остроконечную шляпу мага"
+  tname: "остроконечной шляпой мага"
+  pname: "остроконечной шляпе мага"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Остроконечная шляпа мага лежит тут."
+  keywords: [ "шляпа", "остроконечная" ]
+  description: >-
+    Такой необычный головной убор может позволить себе одеть, только самый сильный
+    маг. Любой другой, появившийся на людях в этой шляпе, будет просто осмеян, в любое
+    приличное заведение его не пустят, а некоторые могут даже закидать тухлыми яйцами.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      fire_damage: 2
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'light_armor' ]
+- id: 80113
+  name: "дубовый сук"
+  rname: "дубового сука"
+  dname: "дубовому суку"
+  vname: "дубовый сук"
+  tname: "дубовым суком"
+  pname: "дубовом суке"
+  gender: "male"
+  damageVerb: "огрел"
+  roomDesc: "Самый обычный дубовый сук лежит тут."
+  description: >-
+    Вы видите самый обычный дубовый сук, у которого даже не потрудились обстругать кору
+    и занозы.
+  keywords: [ "дубовый", "сук" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.6
+    stats:
+      intellect: 1
+      earth_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'maces' ]
+- id: 80114
+  name: "крыло серого вампира"
+  rname: "крыла серого вампира"
+  dname: "крылу серого вампира"
+  vname: "крыло серого вампира"
+  tname: "крылом серого вампира"
+  pname: "крыле серого вампира"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Крыло огромной летучей мыши лежит тут."
+  keywords: [ "крыло" ]
+  description: >-
+    Два крыла огромной летучей мыши скреплены так, чтобы их было легко повесить за спиной.
+    Никакой особой защиты эти крылья не дадут, но могут, разве что, устрашить противника до шока.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      lightning_damage: 2
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'light_armor' ]
+- id: 80115
+  name: "плащ из крысиной шкуры"
+  rname: "плаща из крысиной шкуры"
+  dname: "плащу из крысиной шкуры"
+  vname: "плащ из крысиной шкуры"
+  tname: "плащом из крысиной шкуры"
+  pname: "плаще из крысиной шкуры"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Плащ из множества шкурок лежит тут."
+  keywords: [ "плащ" ]
+  description: >-
+    Похоже, что это плащ сшит из множества небольших крысиных шкурок. Фу, ну и мерзость.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 5
+      cold_resistance: 2
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'medium_armor' ]
+- id: 80116
+  name: "медвежий череп"
+  rname: "медвежьего черепа"
+  dname: "медвежьему черепу"
+  vname: "медвежий череп"
+  tname: "медвежьим черепом"
+  pname: "медвежьем черепе"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Массивный медвежий череп лежит тут."
+  keywords: [ "череп", "медвежий" ]
+  description: >-
+    Этот отполированный до блеска череп можно надеть на  голову. Вид он вам придаст устрашающий,
+    но и защитой тоже будет отличной из-за толстых медвежьих костей.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 10
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'heavy_armor' ]
+- id: 80117
+  name: "широкое золотое кольцо"
+  rname: "широкого золотого кольца"
+  dname: "широкому золотому кольцу"
+  vname: "широкое золотое кольцо"
+  tname: "широким золотым кольцом"
+  pname: "широком золотом кольце"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Широкое золотое кольцо лежит тут."
+  keywords: [ "широкое", "золотое", "кольцо" ]
+  description: >-
+    Это кольцо широковато для указательного пальца среднестатистического человека,
+    но вот на большой палец налезет превосходно.
+  metadata:
+    quality: common
+    slot: "большой палец"
+    level: 15
+    itemLevel: 15
+    stats:
+      fire_damage: 1
+      cold_damage: 1
+      lightning_damage: 1
+      earth_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+- id: 80118
+  name: "куртка на заклёпках"
+  rname: "куртки на заклёпках"
+  dname: "куртке на заклёпках"
+  vname: "куртку на заклёпках"
+  tname: "курткой на заклёпках"
+  pname: "куртке на заклёпках"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Потрепанная куртка на заклепках лежит тут."
+  keywords: [ "куртка" ]
+  description: >-
+    Превосходная куртка из оленьей шкуры, с блестящими медными заклёпками.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 6
+      crushing_resistance: 1
+      cutting_resistance: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'medium_armor' ]
+- id: 80119
+  name: "потертые кожаные щитки"
+  rname: "потертых кожаных щитков"
+  dname: "потертым кожаным щиткам"
+  vname: "потертые кожаные щитки"
+  tname: "потертыми кожаными щитками"
+  pname: "потертых кожаных щитках"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Потертые кожаные щитки лежат тут."
+  keywords: [ "щитки", "потертые", "кожаные" ]
+  description: >-
+    Неплохая защита для рук из прочной оленьей кожи.
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 5
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'medium_armor' ]
+- id: 80120
+  name: "деревянный молоток"
+  rname: "деревянного молотка"
+  dname: "деревянному молотку"
+  vname: "деревянный молоток"
+  tname: "деревянным молотком"
+  pname: "деревянном молотке"
+  gender: "male"
+  damageVerb: "огрел"
+  roomDesc: "Небольшой деревянный молоток лежит тут."
+  description: >-
+    Такими молотками обычно отбивают сырое мясо, чтобы оно стало помягче. Но если, этим
+    молотком стукнуть кого-нибудь по темечку или в висок, то тому мало не покажется.
+  keywords: [ "деревянный", "молоток" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.6
+    stats:
+      strength: 1
+      crushing_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'maces' ]
+- id: 80121
+  name: "иноземная секира"
+  rname: "иноземной секиры"
+  dname: "иноземной секире"
+  vname: "иноземную секиру"
+  tname: "иноземной секирой"
+  pname: "иноземной секире"
+  gender: "female"
+  damageVerb: "рубанула"
+  roomDesc: "Диковинная иноземная секира лежит тут."
+  description: >-
+    По всей видимости, это оружие было привезено далёкой восточной страны.
+    Форма и отделка оружия отличается от всего, что вам приходилось видеть раньше, несомненно,
+    только то, что при должном навыке секира является смертоносным оружием.
+  keywords: [ "иноземная", "секира" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.5
+    stats:
+      strength: 1
+      cutting_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'axes' ]
+- id: 80122
+  name: "купеческий пояс"
+  rname: "купеческого пояса"
+  dname: "купеческому поясу"
+  vname: "купеческий пояс"
+  tname: "купеческим поясом"
+  pname: "купеческом поясе"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Изящный купеческий пояс лежит тут."
+  keywords: [ "купеческий", "пояс" ]
+  description: >-
+    Из-за множество крючков на которые удобно вешать мешочки с монетами такие
+    пояса любят носить богатые и успешные купцы.
+  metadata:
+    quality: common
+    slot: "пояс"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      agility: 2
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'light_armor' ]
+- id: 80123
+  name: "человеческий скелет"
+  rname: "человеческого скелета"
+  dname: "человеческому скелету"
+  vname: "человеческий скелет"
+  tname: "человеческим скелетом"
+  pname: "человеческом скелете"
+  gender: "male"
+  roomDesc: "Пожелтевший от времени человеческий скелет стоит тут."
+  description: >-
+    Вы видите старый пыльный человеческий скелет, правая рука которого протянута вперед как-будто для
+    рукопожатия.
+  keywords: [ "человеческий", "скелет" ]
+  metadata:
+    noPickup: true
+- id: 80124
+  name: "человеческий скелет"
+  rname: "человеческого скелета"
+  dname: "человеческому скелету"
+  vname: "человеческий скелет"
+  tname: "человеческим скелетом"
+  pname: "человеческом скелете"
+  gender: "male"
+  roomDesc: "Пожелтевший от времени человеческий скелет стоит тут."
+  description: >-
+    Вы видите старый пыльный человеческий скелет, правая рука которого протянута вперед как-будто для
+    рукопожатия.
+  keywords: [ "человеческий", "скелет" ]
+  metadata:
+    noPickup: true
+- id: 80125
+  type: CONTAINER
+  name: "железный сундук"
+  rname: "железного сундука"
+  dname: "железному сундуку"
+  vname: "железный сундук"
+  tname: "железным сундуком"
+  pname: "железном сундуке"
+  gender: "male"
+  roomDesc: "Массивный железный сундук стоит тут."
+  description: >-
+    Толстые дубовые доски сундука обиты для крепости железными пластинами, взломать
+    его не получится.
+  keywords: [ "железный", "сундук" ]
+  items: [ "fortavern:80138", "fortavern:80134", "fortavern:80131" ]
+  closed: true
+  locked: true
+  lockedBy: "fortavern:80128"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 80126
+  type: CONTAINER
+  name: "дубовый ящик"
+  rname: "дубового ящика"
+  dname: "дубовому ящику"
+  vname: "дубовый ящик"
+  tname: "дубовым ящиком"
+  pname: "дубовом ящике"
+  gender: "male"
+  roomDesc: "Крепкий дубовый ящик с навесным замком лежит тут."
+  description: >-
+    Толстые дубовые доски ящика обиты для крепости железными пластинами, взломать
+    его не получится.
+  keywords: [ "дубовый", "ящик" ]
+  items: [ "fortavern:80139", "fortavern:80134" ]
+  closed: true
+  locked: true
+  lockedBy: "fortavern:80129"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 80127
+  type: CONTAINER
+  name: "серебряный ларец"
+  rname: "серебряного ларца"
+  dname: "серебряному ларцу"
+  vname: "серебряный ларец"
+  tname: "серебряным ларцом"
+  pname: "серебряном ларце"
+  gender: "male"
+  roomDesc: "Небольшой серебряный ларец лежит тут на полке."
+  description: >-
+    Небольшой и потемневший от времени ларец несомненно хранит какие-то богатства.
+  keywords: [ "серебряный", "ларец" ]
+  items: [ "fortavern:80140", "fortavern:80133", "fortavern:80135" ]
+  closed: true
+  locked: true
+  lockedBy: "fortavern:80130"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 80128
+  name: "массивный ключ"
+  rname: "массивного ключа"
+  dname: "массивному ключу"
+  vname: "массивный ключ"
+  tname: "массивным ключом"
+  pname: "массивном ключе"
+  gender: "male"
+  keywords: ["ключ", "массивный", "железный"]
+  roomDesc: "Массивный железный ключ лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80129
+  name: "длинный ключ"
+  rname: "длинного ключа"
+  dname: "длинному ключу"
+  vname: "длинный ключ"
+  tname: "длинным ключом"
+  pname: "длинном ключе"
+  gender: "male"
+  keywords: ["ключ", "длинный", "железный"]
+  roomDesc: "Длинный железный ключ лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80130
+  name: "серебряный ключик"
+  rname: "серебряного ключика"
+  dname: "серебряному ключику"
+  vname: "серебряный ключик"
+  tname: "серебряным ключиком"
+  pname: "серебряном ключике"
+  gender: "male"
+  keywords: ["ключ", "серебряный", "ключик"]
+  roomDesc: "Маленький серебряный ключик лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80131
+  name: "золотой кубок"
+  rname: "золотого кубка"
+  dname: "золотому кубку"
+  vname: "золотой кубок"
+  tname: "золотым кубком"
+  pname: "золотом кубке"
+  gender: "male"
+  damageVerb: "огрел"
+  roomDesc: "Красивый золотой кубок лежит тут."
+  description: >-
+    Вы видите красивый золотой кубок на длинной ножке, за которую удобно держаться рукой.
+  keywords: [ "золотой", "кубок" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.2
+    stats:
+      strength: 1
+      agility: 1
+      intellect: 1
+    sellable:
+      value: 350
+      currency: золото
+    requirements:
+      skills: [ 'various_weapons' ]
+- id: 80132
+  name: "грязный ключ"
+  rname: "грязного ключа"
+  dname: "грязному ключу"
+  vname: "грязный ключ"
+  tname: "грязным ключом"
+  pname: "грязном ключе"
+  gender: "male"  
+  keywords: ["ключ", "грязный", "железный"]
+  roomDesc: "Грязный железный ключ лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80133
+  name: "куча монет"
+  rname: "кучи монет"
+  dname: "куче монет"
+  vname: "кучу монет"
+  tname: "кучей монет"
+  pname: "куче монет"
+  gender: "female"
+  keywords: ["куча", "монеты", "большая"]
+  roomDesc: "Большая куча монет лежит тут."
+  behaviors:
+    money:
+      min: 150
+      max: 250
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80134
+  name: "небольшая кучка монет"
+  rname: "небольшой кучки монет"
+  dname: "небольшой кучке монет"
+  vname: "небольшую кучку монет"
+  tname: "небольшой кучкой монет"
+  pname: "небольшой кучке монет"
+  gender: "female"
+  keywords: ["кучка", "монеты", "небольшая"]
+  roomDesc: "Небольшая кучка монет лежит тут."
+  behaviors:
+    money:
+      min: 50
+      max: 150
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80135
+  name: "толстая серебряная цепь"
+  rname: "толстой серебряной цепи"
+  dname: "толстой серебряной цепи"
+  vname: "толстую серебряную цепь"
+  tname: "толстой серебряной цепью"
+  pname: "толстой серебряной цепи"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Толстая серебряная цепь лежит тут."
+  keywords: [ "толстая", "серебряная", "цепь" ]
+  description: >-
+    Эта цепь сплетена из толстых серебряных звеньев, не каждая шея выдержит такую.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 1
+      stamina: 1
+      health_regeneration: 10
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+- id: 80136
+  name: "грязный фартук"
+  rname: "грязного фартука"
+  dname: "грязному фартуку"
+  vname: "грязный фартук"
+  tname: "грязным фартуком"
+  pname: "грязном фартуке"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Грязный мятый фартук валяется здесь."
+  keywords: [ "грязный", "фартук" ]
+  description: >-
+    Вы видите на фартуке свежие пятна крови, вероятно его владелец недавно разделывал мясо.
+  metadata:
+    quality: common
+    slot: "пояс"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      cutting_resistance: 1
+      cutting_damage: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'light_armor' ]
+- id: 80137
+  name: "маска наемника"
+  rname: "маски наемника"
+  dname: "маске наемника"
+  vname: "маску наемника"
+  tname: "маской наемника"
+  pname: "маске наемника"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Черная маска наемника лежит тут."
+  keywords: [ "маска" ]
+  description: >-
+    Черная холщовая маска почти полностью скрывает лицо, оставляя свободными лишь глаза.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      strength: 1
+      agility: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'light_armor' ]
+- id: 80138
+  name: "шелковые рукава"
+  rname: "шелковых рукавов"
+  dname: "шелковым рукавам"
+  vname: "шелковые рукава"
+  tname: "шелковыми рукавами"
+  pname: "шелковых рукавах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Самые обычные шелковые рукава лежат тут."
+  keywords: [ "шелковые", "рукава" ]
+  description: >-
+    Эта вещь кажется на первый взгляд абсолютно бесполезной, так как не дает ничего
+    своему владельцу. Но если присмотреться к ней повнимательнее, то можно заметить
+    следы от отсутствующих декоративных элементов: звезды и полумесяца. Возможно
+    не все так с ней просто? И их можно на этих рукавах закрепить?
+  script: 'craft'
+  metadata:
+    commands: [ 'закрепить' ]
+    quality: common
+    slot: "руки"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      fire_damage: 1
+      cold_damage: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: [ 'light_armor' ]
+- id: 80139
+  name: "эмблема полумесяца"
+  rname: "эмблемы полумесяца"
+  dname: "эмблеме полумесяца"
+  vname: "эмблему полумесяца"
+  tname: "эмблемой полумесяца"
+  pname: "эмблеме полумесяца"
+  gender: "female"
+  keywords: ["эмблема", "полумесяца", "серебряная"]
+  roomDesc: "Серебряная эмблема полумесяца лежит тут."
+  metadata:
+    quality: common
+- id: 80140
+  name: "золотая звезда"
+  rname: "золотой звезды"
+  dname: "золотой звезде"
+  vname: "золотую звезду"
+  tname: "золотой звездой"
+  pname: "золотой звезде"
+  gender: "female"
+  keywords: ["золотая", "звезда", "сверкающая"]
+  roomDesc: "Сверкающая золотая звезда лежит тут."
+  metadata:
+    quality: common
+- id: 80141
+  name: "шелковые рукава мага"
+  rname: "шелковых рукавов мага"
+  dname: "шелковым рукавам мага"
+  vname: "шелковые рукава мага"
+  tname: "шелковыми рукавами мага"
+  pname: "шелковых рукавах мага"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Шелковые рукава с эмблемами звезды и полумесяца лежат тут."
+  keywords: [ "шелковые", "рукава" ]
+  description: >-
+    Шелковые рукава мага расшиты разноцветными таинственными символами, с помощью
+    двух застежек: в виде звезды и полумесяца рукава можно прикрепить к мантии или любой
+    другой одежде.
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      fire_damage: 1
+      cold_damage: 1
+      lightning_damage: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'light_armor' ]
+- id: 80142
+  name: "жареная крыса"
+  rname: "жареной крысы"
+  dname: "жареной крысе"
+  vname: "жареную крысу"
+  tname: "жареной крысой"
+  pname: "жареной крысе"
+  gender: "female"  
+  roomDesc: "Аппетитно поджаренная крыса лежит тут."
+  description: >-
+    Крыса очень крупная, вероятно ее специально откармливали перед тем как убить и зажарить.
+    Источает неповторимый аромат...
+  keywords: [ "жареная", "крыса" ]
+  type: POTION
+  metadata:
+    level: 15
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает свободу движений на <b>10</b> в течении <b>60</b> секунд."
+        duration: 60000
+      state:
+        magnitude: 10
+        stat: "freedom"
+    sellable:
+      value: 25
+      currency: золото
+- id: 80143
+  name: "тяжелый кастет"
+  rname: "тяжелого кастета"
+  dname: "тяжелому кастету"
+  vname: "тяжелый кастет"
+  tname: "тяжелым кастетом"
+  pname: "тяжелом кастете"
+  gender: "male"
+  damageVerb: "ударил"
+  roomDesc: "Тяжелый ржавый кастет лежит тут."
+  description: >-
+    Если получить таким по челюсти, то будет очень больно.
+  keywords: [ "тяжелый", "кастет" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.6
+    stats:
+      strength: 2
+      crushing_damage: 3
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      skills: [ 'various_weapons' ]
+- id: 80144
+  name: "шляпа из перьев"
+  rname: "шляпы из перьев"
+  dname: "шляпе из перьев"
+  vname: "шляпу из перьев"
+  tname: "шляпой из перьев"
+  pname: "шляпе из перьев"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Пестрая шляпа из перьев лежит тут."
+  keywords: [ "шляпа", "пестрая" ]
+  description: >-
+    Довольно оригинальный головной убор, сделанный из множества разноцветных перьев.
+    Выглядит дикарским и устрашающим.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      detect_hide: 1
+      detect_invisibility: 1
+      mana_regeneration: 5
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'light_armor' ]
+- id: 80145
+  name: "ключ от подвала"
+  rname: "ключа от подвала"
+  dname: "ключу от подвала"
+  vname: "ключ от подвала"
+  tname: "ключом от подвала"
+  pname: "ключе от подвала"
+  gender: "male"
+  keywords: ["ключ",]
+  roomDesc: "Треснувший ключ от подвала лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80146
+  name: "магический артефакт"
+  rname: "магического артефакта"
+  dname: "магическому артефакту"
+  vname: "магический артефакт"
+  tname: "магическим артефактом"
+  pname: "магическом артефакте"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Таинственный магический артефакт лежит тут."
+  keywords: [ "магический", "артефакт" ]
+  description: >-
+    Причудливый артефакт из прошлого, принадлежавший забытому волшебнику.
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 20
+    itemLevel: 20
+    stats:
+      invisibility: 1
+      mana_regeneration: 10
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      intellect: 250
+- id: 80147
+  name: "амулет с пятиконечной звездой"
+  rname: "амулета с пятиконечной звездой"
+  dname: "амулету с пятиконечной звездой"
+  vname: "амулет с пятиконечной звездой"
+  tname: "амулетом с пятиконечной звездой"
+  pname: "амулете с пятиконечной звездой"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Амулет с пятиконечной звездой лежит тут."
+  keywords: [ "амулет" ]
+  description: >-
+    На тонкой серебряной цепочке висит перевернутая кроваво-красная пятиконечная звезда.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 20
+    itemLevel: 20
+    stats:
+      chaos_damage: 1
+      intellect: 1
+      mana_regeneration: 10
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 30
+- id: 80148
+  name: "грубый каменный ключ"
+  rname: "грубого каменного ключа"
+  dname: "грубому каменному ключу"
+  vname: "грубый каменный ключ"
+  tname: "грубым каменным ключом"
+  pname: "грубом каменном ключе"
+  gender: "male"
+  keywords: ["ключ", "грубый", "каменный"]
+  roomDesc: "Грубый каменный ключ лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 80149
+  name: "статуя тролля"
+  rname: "статуи тролля"
+  dname: "статуе тролля"
+  vname: "статую тролля"
+  tname: "статуей тролля"
+  pname: "статуе тролля"
+  gender: "female"
+  roomDesc: "Статуя безобразного тролля, нагнувшегося над чем-то стоит тут."
+  description: >-
+    Статуя изготовлена настолько реалистично, что кажется она может ожить в любую минуту.
+  keywords: [ "статуя" ]
+  metadata:
+    noPickup: true
+- id: 80150
+  name: "статуя тролля"
+  rname: "статуи тролля"
+  dname: "статуе тролля"
+  vname: "статую тролля"
+  tname: "статуей тролля"
+  pname: "статуе тролля"
+  gender: "female"
+  roomDesc: "Статуя высокого тролля с огромной бородавкой на носу стоит тут."
+  description: >-
+    Статуя изготовлена настолько реалистично, что кажется она может ожить в любую минуту.
+  keywords: [ "статуя" ]
+  metadata:
+    noPickup: true
+- id: 80151
+  name: "статуя тролля"
+  rname: "статуи тролля"
+  dname: "статуе тролля"
+  vname: "статую тролля"
+  tname: "статуей тролля"
+  pname: "статуе тролля"
+  gender: "female"
+  roomDesc: "Статуя сидящего тролля с ножом в правой руке и мешком в левой руке стоит тут."
+  description: >-
+    Статуя изготовлена настолько реалистично, что кажется она может ожить в любую минуту.
+  keywords: [ "статуя" ]
+  metadata:
+    noPickup: true
+- id: 80152
+  name: "дубина огра"
+  rname: "дубины огра"
+  dname: "дубине огра"
+  vname: "дубину огра"
+  tname: "дубиной огра"
+  pname: "дубине огра"
+  gender: "male"
+  damageVerb: "сокрушила"
+  roomDesc: "Огромная дубина огра лежит тут."
+  description: >-
+    Дубиной это оружие можно назвать лишь с большой натяжкой, по сути это огромный кусок дерева,
+    не уступающего по крепости железу. Из-за веса дубины, ее сможет воспользоваться далеко не
+    каждый, но если уж кому-то удалось поднять эту дубину, то он с легкостью сможет ей пробить
+    даже череп дракону.
+  keywords: [ "дубина", "огромная" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 40
+    maxDamage: 130
+    speed: 3.0
+    stats:
+      health: 50
+      health_regeneration: 10
+      crushing_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 30
+      skills: [ 'maces' ]
+- id: 80153
+  name: "накидка из шкуры"
+  rname: "накидки из шкуры"
+  dname: "накидке из шкуры"
+  vname: "накидку из шкуры"
+  tname: "накидкой из шкуры"
+  pname: "накидке из шкуры"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Накидка из вонючей шкуры лежит тут."
+  keywords: [ "накидка" ]
+  description: >-
+    Такое одеяние, являющееся по сути куском толстой вонючей шкуры животного, скрепленного
+    его же жилами, носят только разве лишь тролли да особо крупные орки. Вряд ли кто другой
+    способен вынести вонь этой накидки, или покрасоваться в ней в большом городе.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 8
+      cutting_damage: 1
+      crushing_damage: 1
+      piercing_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'medium_armor' ]
+- id: 80154
+  name: "сандалии из корней"
+  rname: "сандалий из корней"
+  dname: "сандалиям из корней"
+  vname: "сандалии из корней"
+  tname: "сандалиями из корней"
+  pname: "сандалиях из корней"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Грубые сандалии сделанные из корней лежат тут."
+  keywords: [ "сандалии" ]
+  description: >-
+    Кто-то сплел тонкие корешки разных растений так, чтобы их можно было одеть на ноги.
+    Хотя такая обувь и не слишком то удобна, она дает своему владельцу более прочную
+    связь с природой, усиливая его магические способности.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      earth_damage: 2
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'light_armor' ]
+- id: 80155
+  name: "высохшая ветвь"
+  rname: "высохшей ветви"
+  dname: "высохшей ветви"
+  vname: "высохшую ветвь"
+  tname: "высохшей ветвью"
+  pname: "высохшей ветви"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Высохшая ветвь какого-то дерева лежит тут."
+  keywords: [ "высохшая", "ветвь" ]
+  description: >-
+    Сухая ветка омелы. Друиды говорят, что это волшебное дерево.
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 1
+      health_regeneration: 10
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      agility: 25
+- id: 80156
+  name: "куртка лесного разбойника"
+  rname: "куртки лесного разбойника"
+  dname: "куртке лесного разбойника"
+  vname: "куртку лесного разбойника"
+  tname: "курткой лесного разбойника"
+  pname: "куртке лесного разбойника"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Куртка лесного разбойника лежит тут."
+  keywords: [ "куртка" ]
+  description: >-
+    Старая суконная куртка зеленого цвета, в которые так любят наряжаться лесные
+    разбойники.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 8
+      agility: 2
+      health_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'medium_armor' ]
+- id: 80157
+  name: "волчий ошейник"
+  rname: "волчьего ошейника"
+  dname: "волчьему ошейнику"
+  vname: "волчий ошейник"
+  tname: "волчьим ошейником"
+  pname: "волчьем ошейнике"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Вонючий ошейник валяется тут."
+  keywords: [ "волчий", "ошейник" ]
+  description: >-
+    Похож на самый обычный собачий ошейник, только вот запах от него не собаки.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 20
+    itemLevel: 20
+    stats:
+      cutting_damage: 1
+      crushing_damage: 1
+      piercing_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 30
+- id: 80158
+  name: "клубок тумана"
+  rname: "клубка тумана"
+  dname: "клубку тумана"
+  vname: "клубок тумана"
+  tname: "клубком тумана"
+  pname: "клубке тумана"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Клубок тумана парит тут у земли."
+  keywords: [ "клубок", "туман" ]
+  description: >-
+    Тонкая струя тёмного тумана переливается кольцом, напоминая диковинный браслет.
+  metadata:
+    quality: common
+    slot: "левое запястье"
+    level: 20
+    itemLevel: 20
+    stats:
+      intellect: 1
+      lightning_damage: 1
+      cold_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 30
+- id: 80159
+  name: "доспех изгнанника"
+  rname: "доспеха изгнанника"
+  dname: "доспеху изгнанника"
+  vname: "доспех изгнанника"
+  tname: "доспехом изгнанника"
+  pname: "доспехе изгнанника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Мерцающий магическим светом кожаный доспех лежит тут."
+  keywords: [ "доспех", "мерцающий" ]
+  description: >-
+    Тонкая, полупрозрачная кожа, из которой изготовлен доспех, напоминает человеческую. Только
+    вот по крепости она намного превосходит сталь и может сравниться с мифрилом. Непонятно, то ли
+    она изначально обладала такими свойствами или, может, приобрела их в результате магической
+    обработки, но доспех из этой кожи будет превосходной защитой для любого.
+  script: 'magicitem'
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 12
+      health: 100
+      health_regeneration: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'heavy_armor' ]
+- id: 80160
+  name: "шлем изгнанника"
+  rname: "шлема изгнанника"
+  dname: "шлему изгнанника"
+  vname: "шлем изгнанника"
+  tname: "шлемом изгнанника"
+  pname: "шлеме изгнанника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Мерцающий магическим светом костяной шлем лежит тут."
+  keywords: [ "шлем", "мерцающий" ]
+  description: >-
+    Такое впечатление, что этот шлем изготовлен из самого настоящего человеческого черепа.
+    Только вот по крепости кости он намного превосходит сталь или цветной металл, не иначе
+    тут не обошлось без вмешательства богов.
+  script: 'magicitem'
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 10
+      mana: 100
+      health_regeneration: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'heavy_armor' ]
+- id: 80161
+  name: "плащ изгнанника"
+  rname: "плаща изгнанника"
+  dname: "плащу изгнанника"
+  vname: "плащ изгнанника"
+  tname: "плащом изгнанника"
+  pname: "плаще изгнанника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Мерцающий магическим светом плащ лежит тут."
+  keywords: [ "плащ", "мерцающий" ]
+  description: >-
+    Этот плащ изготовлен из ткани, сплетенной из длинных русых волос, напоминающих
+    человеческие, только вот по крепости они не уступают металлической проволоке.
+  script: 'magicitem'
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 10
+      agility: 1
+      health_regeneration: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'heavy_armor' ]
+- id: 80162
+  name: "наручи изгнанника"
+  rname: "наруч изгнанника"
+  dname: "наручам изгнанника"
+  vname: "наручи изгнанника"
+  tname: "наручами изгнанника"
+  pname: "наручах изгнанника"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Мерцающие магическим светом костяные наручи лежат тут."
+  keywords: [ "наручи", "мерцающие" ]
+  description: >-
+    Такое впечатление, что эти наручи изготовлены из человеческих костей.
+    Только вот по крепости они намного превосходит сталь или цветной металл, не иначе
+    тут не обошлось без вмешательства богов.
+  script: 'magicitem'
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 10
+      strength: 1
+      health_regeneration: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'heavy_armor' ]
+- id: 80163
+  name: "поножи изгнанника"
+  rname: "понож изгнанника"
+  dname: "поножам изгнанника"
+  vname: "поножи изгнанника"
+  tname: "поножами изгнанника"
+  pname: "поножах изгнанника"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Мерцающие магическим светом костяные поножи лежат тут."
+  keywords: [ "поножи", "мерцающие" ]
+  description: >-
+    Такое впечатление, что эти поножи изготовлены из человеческих костей.
+    Только вот по крепости они намного превосходит сталь или цветной металл, не иначе
+    тут не обошлось без вмешательства богов.
+  script: 'magicitem'
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 10
+      freedom: 1
+      health_regeneration: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: [ 'heavy_armor' ]
+- id: 80164
+  name: "оружие изгнанника"
+  rname: "оружия изгнанника"
+  dname: "оружию изгнанника"
+  vname: "оружие изгнанника"
+  tname: "оружием изгнанника"
+  pname: "оружии изгнанника"
+  gender: "neuter"
+  damageVerb: "травмировало"
+  roomDesc: "Мерцающее магическим светом диковинное оружие валяется здесь."
+  description: >-
+    Это оружие не похоже ни на что видимое вами раньше. Оно постоянно меняет форму и
+    очертания, за какой его конец браться тоже не понятно. В общем это оружие настоящий
+    сюрприз, и неизвестно чего от него ожидать как владельцу, так и противнику.
+  keywords: [ "оружие", "диковинное" ]
+  type: WEAPON
+  script: 'magicitem'
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 125
+    speed: 2.5
+    stats:
+      strength: 2
+      agility: 2
+      critical: 3
+    sellable:
+      value: 250
+      currency: золото
+    requirements:
+      skills: [ 'various_weapons' ]
+- id: 80165
+  name: "крысиная лапка на веревочке"
+  rname: "крысиной лапки на веревочке"
+  dname: "крысиной лапке на веревочке"
+  vname: "крысиную лапку на веревочке"
+  tname: "крысиной лапкой на веревочке"
+  pname: "крысиной лапке на веревочке"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Крысиная лапка на веревочке лежит тут."
+  keywords: [ "крысиная", "лапка" ]
+  description: >-
+    Кто-то подвесил высушенную крысиную лапку на кожаном ремешке. Мерзкая вещь,
+    на самом деле.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 20
+    itemLevel: 20
+    stats:
+      critical: 3
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 30

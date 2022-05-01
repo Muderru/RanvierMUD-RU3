@@ -1,0 +1,930 @@
+- id: 66800
+  keywords: [ "варг", "крупный" ]
+  level: 12
+  name: "варг"
+  rname: "варга"
+  dname: "варгу"
+  vname: "варга"
+  tname: "варгом"
+  pname: "варге"
+  gender: "male"
+  min_damage: 20
+  max_damage: 65
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Крупный варг пристально следит за вами голодными глазами.
+  attributes:
+    health: 500
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 2
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "oldroad:66800": 10
+- id: 66801
+  keywords: [ "варг", "дикий" ]
+  level: 13
+  name: "дикий варг"
+  rname: "дикого варга"
+  dname: "дикому варгу"
+  vname: "дикого варга"
+  tname: "диким варгом"
+  pname: "диком варге"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Дикий варг рыщет тут в поисках добычи.
+  attributes:
+    health: 550
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 2
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "oldroad:66806": 10
+- id: 66802
+  keywords: [ "гоблин", "крадущийся" ]
+  level: 14
+  name: "крадущийся гоблин"
+  rname: "крадущегося гоблина"
+  dname: "крадущемуся гоблину"
+  vname: "крадущегося гоблина"
+  tname: "крадущимся гоблином"
+  pname: "крадущемся гоблине"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'пырнул'
+  travelVerbIn: "подкрался"
+  travelVerbOut: "ушёл"
+  description: >-
+    Небольшой гоблин осторожно крадется тут.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+    hide: 2
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66805": 15
+- id: 66803
+  keywords: [ "гоблин", "разведчик" ]
+  level: 14
+  name: "гоблин-разведчик"
+  rname: "гоблина-разведчика"
+  dname: "гоблину-разведчику"
+  vname: "гоблина-разведчика"
+  tname: "гоблином-разведчиком"
+  pname: "гоблине-разведчике"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Гоблин в грубых, кожаных доспехах бродит тут в поисках жертв.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 3
+    hide: 1
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 47
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66803": 15
+        - "oldroad:66804": 15
+- id: 66804
+  keywords: [ "гоблин", "наездник" ]
+  level: 14
+  name: "гоблин-наездник"
+  rname: "гоблина-наездника"
+  dname: "гоблину-наезднику"
+  vname: "гоблина-наездника"
+  tname: "гоблином-наездником"
+  pname: "гоблине-наезднике"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'уколол'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Гоблин верхом на варге патрулирует окрестности.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 38
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'judge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66801": 15
+- id: 66805
+  keywords: [ "лесной", "тролль" ]
+  level: 15
+  name: "лесной тролль"
+  rname: "лесного тролля"
+  dname: "лесному троллю"
+  vname: "лесного тролля"
+  tname: "лесным троллем"
+  pname: "лесном тролле"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Огромный лесной тролль неспеша бредет тут куда-то.
+  script: 'troll'
+  attributes:
+    health: 650
+    mana: 400
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    crushing_damage: 5
+    crushing_resistance: 5
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 77
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'judge', 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66802": 25
+- id: 66806
+  keywords: [ "разбойник", "дозорный" ]
+  level: 14
+  name: "разбойник-дозорный"
+  rname: "разбойника-дозорного"
+  dname: "разбойнику-дозорному"
+  vname: "разбойника-дозорного"
+  tname: "разбойником-дозорным"
+  pname: "разбойнике-дозорном"
+  gender: "male"
+  min_damage: 20
+  max_damage: 70
+  damageVerb: 'подстрелил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Грязный разбойник стоит тут, наблюдая за окрестностями.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+    hide: 1
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66808": 20
+- id: 66807
+  keywords: [ "белка", "рыжая" ]
+  level: 5
+  name: "рыжая белка"
+  rname: "рыжей белки"
+  dname: "рыжей белке"
+  vname: "рыжую белку"
+  tname: "рыжей белкой"
+  pname: "рыжей белке"
+  gender: "female"
+  min_damage: 10
+  max_damage: 35
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Рыжая белка с пушистым хвостиком сидит тут на дереве.
+  attributes:
+    health: 250
+    mana: 10
+    strength: 20
+    agility: 20
+    intellect: 20
+    stamina: 20
+    cold_resistance: 2
+    earth_damage: 2
+    armor: 1
+  behaviors:
+    allattributes: 0
+    combat: true
+    wander:
+      interval: 25
+      areaRestricted: true
+    lootable:
+      pools:
+        - "oldroad:66807": 25
+- id: 66808
+  keywords: [ "серый", "заяц" ]
+  level: 5
+  name: "серый заяц"
+  rname: "серого зайца"
+  dname: "серому зайцу"
+  vname: "серого зайца"
+  tname: "серым зайцем"
+  pname: "сером зайце"
+  gender: "male"
+  min_damage: 10
+  max_damage: 35
+  damageVerb: 'оцарапал'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Маленький серый зайчик бегает тут.
+  attributes:
+    health: 250
+    mana: 10
+    strength: 20
+    agility: 20
+    intellect: 20
+    stamina: 20
+    cold_resistance: 2
+    earth_damage: 2
+    armor: 1
+  behaviors:
+    allattributes: 0
+    wander:
+      interval: 33
+      areaRestricted: true
+    combat: true
+- id: 66809
+  keywords: [ "вожак", "варг" ]
+  level: 14
+  name: "вожак варгов"
+  rname: "вожака варгов"
+  dname: "вожаку варгов"
+  vname: "вожака варгов"
+  tname: "вожаком варгов"
+  pname: "вожаке варгов"
+  gender: "male"
+  min_damage: 20
+  max_damage: 70
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Огромный черный варг стоит тут.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    leader:
+      followers: [ 'oldroad:66810' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66812": 25
+- id: 66810
+  keywords: [ "белая", "волчица" ]
+  level: 14
+  name: "белая волчица"
+  rname: "белой волчицы"
+  dname: "белой волчице"
+  vname: "белую волчицу"
+  tname: "белой волчицей"
+  pname: "белой волчице"
+  gender: "female"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Белая волчица трусливо семенит вокруг вожака варгов.
+  attributes:
+    health: 550
+    mana: 550
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    capable:
+      skills: [  ]
+      spells: [ 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66810": 25
+- id: 66811
+  keywords: [ "атаман", "разбойник" ]
+  level: 15
+  name: "атаман разбойников"
+  rname: "атамана разбойников"
+  dname: "атаману разбойников"
+  vname: "атамана разбойников"
+  tname: "атаманом разбойников"
+  pname: "атамане разбойников"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Видимо атаманом может только стать только самый сильный разбойник, иначе его приказов
+    просто никто не станет исполнять.
+  attributes:
+    health: 650
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    capable:
+      skills: [ 'rend', 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 25
+          max: 65
+      pools:
+        - "oldroad:66815": 100
+        - "oldroad:66809": 25
+        - "oldroad:66819": 25
+        - "oldroad:66820": 25
+  metadata:
+    block:
+      exits: [ 'юг' ]
+- id: 66812
+  keywords: [ "разбойник", "правая" ]
+  level: 14
+  name: "правая рука атамана"
+  rname: "правой руки атамана"
+  dname: "правой руке атамана"
+  vname: "правую руку атамана"
+  tname: "правой рукой атамана"
+  pname: "правой руке атамана"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    По всей видимости, это либо родственник атамана, либо его друг детства. Как бы то ни было, атаман 
+    доверяет своему помощнику безоговорочно, и тот отвечает ему тем же.
+  attributes:
+    health: 550
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    assist: true
+    capable:
+      skills: [ 'lunge', 'judge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+- id: 66813
+  keywords: [ "разбойник", "старый" ]
+  level: 14
+  name: "старый разбойник"
+  rname: "старого разбойника"
+  dname: "старому разбойнику"
+  vname: "старого разбойника"
+  tname: "старым разбойником"
+  pname: "старом разбойнике"
+  gender: "male"
+  min_damage: 20
+  max_damage: 60
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите дряхлого, полуслепого старикашку, который того и гляди откинет копыта. Странно даже, что 
+    атаман не отпускает далеко от себя этого старика.
+  attributes:
+    health: 500
+    mana: 650
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    earth_damage: 4
+    earth_resistance: 4
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    assist: true
+    capable:
+      skills: [  ]
+      spells: [ 'silence', 'paralysis' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+- id: 66814
+  keywords: [ "разбойник" ]
+  level: 14
+  name: "разбойник"
+  rname: "разбойника"
+  dname: "разбойнику"
+  vname: "разбойника"
+  tname: "разбойником"
+  pname: "разбойнике"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Как это не удивительно, этот человек похож на самого обычного разбойника с большой дороги.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66821": 15
+- id: 66815
+  keywords: [ "разбойница" ]
+  level: 14
+  name: "разбойница"
+  rname: "разбойницы"
+  dname: "разбойнице"
+  vname: "разбойницу"
+  tname: "разбойницей"
+  pname: "разбойнице"
+  gender: "female"
+  min_damage: 20
+  max_damage: 70
+  damageVerb: 'пырнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Высокая и мускулистая, эта разбойница не даст в обиду ни себя, ни своего избранника.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    capable:
+      skills: [  ]
+      spells: [ 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66821": 15
+- id: 66816
+  keywords: [ "разбойник", "окосевший" ]
+  level: 14
+  name: "окосевший разбойник"
+  rname: "окосевшего разбойника"
+  dname: "окосевшему разбойнику"
+  vname: "окосевшего разбойника"
+  tname: "окосевшим разбойником"
+  pname: "окосевшем разбойнике"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот разбойник покрыт застарелыми шрамами от многочисленных драк, в которых ему довелось побывать. 
+    Также ему кто-то выбил правый глаз.
+  attributes:
+    health: 600
+    mana: 650
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    earth_damage: 4
+    earth_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wander:
+      interval: 44
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66821": 15
+- id: 66817
+  keywords: [ "разбойник", "смотритель" ]
+  level: 14
+  name: "смотритель загона"
+  rname: "смотрителя загона"
+  dname: "смотрителю загона"
+  vname: "смотрителя загона"
+  tname: "смотрителем загона"
+  pname: "смотрителе загона"
+  gender: "male"
+  min_damage: 20
+  max_damage: 70
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Смотритель загона производит впечатление обычного мошенника, что, впрочем, и не удивительно для 
+    лесного разбойника.
+  script: 'watcher'
+  attributes:
+    health: 1000
+    mana: 650
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    earth_damage: 4
+    earth_resistance: 4
+    armor: 20
+    hide: 0
+    invisibility: 0
+  behaviors:
+    allattributes: 3
+  metadata:
+    accepts: [ 'oldroad:66811', 'oldroad:66836' ]
+    trainer:
+      skill: 'various_weapons'
+      cost: 3
+      requirements: []
+- id: 66818
+  keywords: [ "взбесившийся", "варг" ]
+  level: 14
+  name: "взбесившийся варг"
+  rname: "взбесившегося варга"
+  dname: "взбесившемуся варгу"
+  vname: "взбесившегося варга"
+  tname: "взбесившимся варгом"
+  pname: "взбесившемся варге"
+  gender: "male"
+  min_damage: 20
+  max_damage: 60
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Взбесившийся варг с капающей изо рта слюной стоит тут.
+  attributes:
+    health: 550
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    area_decay: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+- id: 66819
+  keywords: [ "мимик" ]
+  level: 14
+  name: "мимик"
+  rname: "мимика"
+  dname: "мимику"
+  vname: "мимика"
+  tname: "мимиком"
+  pname: "мимике"
+  gender: "male"
+  min_damage: 20
+  max_damage: 70
+  damageVerb: 'уколол'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Это странное человекоподобное существо с неопределенной, постоянно меняющейся формой.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    cutting_damage: 4
+    cutting_resistance: 4
+    armor: 2
+  behaviors:
+    allattributes: 1
+    area_decay: true
+    combat: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite' ]
+      spells: [ 'paralysis' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+- id: 66820
+  keywords: [ "гоблин", "наездник" ]
+  level: 14
+  name: "гоблин-наездник"
+  rname: "гоблина-наездника"
+  dname: "гоблину-наезднику"
+  vname: "гоблина-наездника"
+  tname: "гоблином-наездником"
+  pname: "гоблине-наезднике"
+  gender: "male"
+  min_damage: 20
+  max_damage: 70
+  damageVerb: 'уколол'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Гоблин верхом на варге патрулирует окрестности.
+  attributes:
+    health: 600
+    mana: 350
+    strength: 30
+    agility: 30
+    intellect: 15
+    stamina: 30
+    piercing_damage: 4
+    piercing_resistance: 4
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    area_decay: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 45
+      pools:
+        - "oldroad:66811": 100

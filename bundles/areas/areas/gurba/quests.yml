@@ -1,0 +1,23 @@
+---
+- id: killspider
+  title: Арахнофобия
+  level: 4
+  requires: [ 'boothill:killkobolds' ]
+  autoComplete: true
+  description: |-
+    Шахтеры отказываются выходить на работу в шахту из-за огромного паука,
+    поселившегося там. А мы не можем остановить сейчас добычу руды из-за войны.
+    Очисти от заразы шахту около Шахтерского поселения и я щедро награжу тебя.
+  completionMessage: |-
+    Вы выполнили задание Гильдмастера, теперь он может вам более серьезное задание. 
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить паука в шахте
+        npc: 'boothill:spider'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 10
+        leveledTo: QUEST

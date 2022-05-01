@@ -1,0 +1,8 @@
+title: "Укролье"
+metadata:
+  author: "Туор"
+  minlevel: 5
+  maxlevel: 10
+behaviors:
+  progressive-respawn:
+    interval: 900

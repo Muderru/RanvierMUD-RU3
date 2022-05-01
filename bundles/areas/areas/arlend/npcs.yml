@@ -1,0 +1,1555 @@
+- id: citizen
+  keywords: ["горожанин"]
+  level: 20
+  name: "горожанин"
+  rname: "горожанина"
+  dname: "горожанину"
+  vname: "горожанина"
+  tname: "горожанином"
+  pname: "горожанине"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Горожанин неспешно прогуливается по городу. Он одет в свободные светлые одежды.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: woman1
+  keywords: ["горожанка", "молодая"]
+  level: 20
+  name: "молодая горожанка"
+  rname: "молодой горожанки"
+  dname: "молодой горожанке"
+  vname: "молодую горожанку"
+  tname: "молодой горожанкой"
+  pname: "молодой горожанке"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Вы видите молодую женщину, одетую в простые белые одежды. Похоже она
+    сильно спешит куда-то, так как совсем не обращает на вас внимания.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    randomspell: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: boy1
+  keywords: ["маленький", "мальчик"]
+  level: 20
+  name: "маленький мальчик"
+  rname: "маленького мальчика"
+  dname: "маленькому мальчику"
+  vname: "маленького мальчика"
+  tname: "маленьким мальчиком"
+  pname: "маленьком мальчике"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Лицо этого мальчика очень чумазое, и ему уже давно пора умыться. Странно,
+    что родители оставили мальчика надолго одного, без присмотра.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    wander:
+      interval: 35
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+- id: trader1
+  keywords: ["бакалейщик"]
+  level: 20
+  name: "бакалейщик"
+  rname: "бакалейщика"
+  dname: "бакалейщику"
+  vname: "бакалейщика"
+  tname: "бакалейщиком"
+  pname: "бакалейщике"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Кожу этого человека покрывает насыщенный коричневый загар, выдавая его
+    южное происхождение. Он азартно, громкими криками рекламирует свой товар,
+    подзывая покупателей.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+  metadata:
+    vendor:
+      items:
+        "arlend:arlend_cake":
+          cost: 250
+          currency: золото
+      enterMessage: "Покупайте вкусные пироги!"
+      leaveMessage: "Давай, до свидания!"
+- id: smith1
+  keywords: ["кузнец"]
+  level: 20
+  name: "кузнец"
+  rname: "кузнеца"
+  dname: "кузнецу"
+  vname: "кузнеца"
+  tname: "кузнецом"
+  pname: "кузнеце"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Руки этого человека покрыты толстыми буграми мышц. Он способен часами
+    без устали махать тяжелым кузнечным молотов, выковывая меч или железный
+    нагрудник.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+  metadata:
+    vendor:
+      items:
+        "arlend:chainmail":
+          cost: 500
+          currency: золото
+        "arlend:axe":
+          cost: 500
+          currency: золото
+      enterMessage: "Посмотрите мои товары!"
+      leaveMessage: "Возвращайтесь скорее!"
+- id: illusionist1
+  keywords: ["фокусник"]
+  level: 20
+  name: "фокусник"
+  rname: "фокусника"
+  dname: "фокуснику"
+  vname: "фокусника"
+  tname: "фокусником"
+  pname: "фокуснике"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот фокусник приехал в город недавно, но уже успел прославиться на всю
+    округу своими необычными представлениями. Некоторые даже утверждают, что
+    он самый настоящий волшебник.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['ice_peak']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - "arlend:illusionist_cape": 25
+        - "arlend:illusionist_hat": 25
+- id: illusionist2
+  keywords: ["помощница"]
+  level: 20
+  name: "помощница фокусника"
+  rname: "помощницы фокусника"
+  dname: "помощнице фокусника"
+  vname: "помощницу фокусника"
+  tname: "помощницей фокусника"
+  pname: "помощнице фокусника"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Похоже, что фокусник подобрал эту девушку в одной из близлежащих деревень,
+    так как ее молодые ручки покрыты свежими мозолями, а под ногтями виднеется
+    земля.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['silence']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - "arlend:illusionist_cape": 25
+        - "arlend:illusionist_hat": 25
+- id: clerk1
+  keywords: ["клерк"]
+  level: 20
+  name: "клерк"
+  rname: "клерка"
+  dname: "клерку"
+  vname: "клерка"
+  tname: "клерком"
+  pname: "клерке"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Руки этого человека покрыты пятнами синих чернил, а судя по тому,
+    как он неумело держит перо, писать он научился совсем недавно.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - "arlend:glasses": 25
+- id: ratushaguard1
+  keywords: ["охранник"]
+  level: 25
+  name: "охранник ратуши"
+  rname: "охранника ратуши"
+  dname: "охраннику ратуши"
+  vname: "охранника ратуши"
+  tname: "охранником ратуши"
+  pname: "охраннике ратуши"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Взгляд у этого охранника придурковатый и неадекватный, и видно, что от него
+    можно ожидать чего угодно. На груди у охранника блестит ярко начищенный орден.
+  script: 'guard'
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['bash', 'rescue']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:armor': 5
+        - 'arlend:boots2': 5
+        - 'arlend:helmet': 5
+        - 'arlend:cape': 5
+        - 'arlend:sword': 5
+        - 'arlend:polearm': 5
+- id: burgomistr
+  keywords: ["бургомистр"]
+  level: 25
+  name: "бургомистр"
+  rname: "бургомистра"
+  dname: "бургомистру"
+  vname: "бургомистра"
+  tname: "бургомистром"
+  pname: "бургомистре"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Судя по его самодовольному виду, бургомистр не привык отказывать себе ни в чем.
+    Получив недавно этот пост (все его конкуренты бесследно исчезли), он окружил
+    себя роскошью и шиком, а на проблемы города обращает совсем немного внимания.
+  quests: ['arlend:werewolf']
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: bankir1
+  keywords: ["банкир"]
+  level: 25
+  name: "банкир"
+  rname: "банкира"
+  dname: "банкиру"
+  vname: "банкира"
+  tname: "банкиром"
+  pname: "банкире"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'уколол'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Самое важное в жизни банкира это его сейф, он ни на минуту не отходит от
+    него далеко, даже если нужно отлучиться по нужде.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: cityguard
+  keywords: ["городской", "стражник"]
+  level: 25
+  name: "городской стражник"
+  rname: "городского стражника"
+  dname: "городскому стражнику"
+  vname: "городского стражника"
+  tname: "городским стражником"
+  pname: "городском стражнике"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Городских стражников долго и упорно тренируют для борьбы с преступностью.
+    Так что, если ваша совесть не чиста, лучше вам со стражей не связываться.
+  script: 'guard'
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: ['bash', 'rescue']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:armor': 5
+        - 'arlend:boots2': 5
+        - 'arlend:helmet': 5
+        - 'arlend:cape': 5
+        - 'arlend:sword': 5
+        - 'arlend:polearm': 5
+- id: innkeeper
+  keywords: ["трактирщик"]
+  level: 25
+  name: "трактирщик Мо"
+  rname: "трактирщика Мо"
+  dname: "трактирщику Мо"
+  vname: "трактирщика Мо"
+  tname: "трактирщиком Мо"
+  pname: "трактирщике Мо"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Если бы кто-нибудь когда-нибудь проведет конкурс уродцев, то трактирщик Мо
+    займет там одно из призовых мест. От одного его вида начинает тошнить и к
+    горлу подступает комок, и это не учитывая отвратительность подаваемой тут
+    еды и пищи.
+  metadata:
+    innkeeper:
+      cost: 1000
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+- id: drinker
+  keywords: ["пьянчуга"]
+  level: 25
+  name: "пьянчуга"
+  rname: "пьянчуги"
+  dname: "пьянчуге"
+  vname: "пьянчугу"
+  tname: "пьянчугой"
+  pname: "пьянчуге"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите самого обычного бедняка, пришедшего сюда забыть о своих проблемах
+    и пропить свои последние гроши.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: false
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: ['hide']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: rich1
+  keywords: ["пожилой", "аристократ"]
+  level: 25
+  name: "пожилой аристократ"
+  rname: "пожилого аристократа"
+  dname: "пожилому аристократу"
+  vname: "пожилого аристократа"
+  tname: "пожилым аристократом"
+  pname: "пожилом аристократе"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Несмотря на свои годы этот человек все также крепок и силен как и в
+    молодости, во время своей службы. Нет сомнений, что он не утратил и
+    своих боевых качеств.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['hide']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:ring': 25
+- id: maid
+  keywords: ["горничная"]
+  level: 20
+  name: "горничная"
+  rname: "горничной"
+  dname: "горничной"
+  vname: "горничную"
+  tname: "горничной"
+  pname: "горничной"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта кокетливая горничная едва достигла совершеннолетия, она украдкой
+    бросает на вас томные взгляды, девушка явно хочет, чтобы ее увели из
+    этого места.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: []
+      spells: ['heal']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'maid_outfit': 25
+- id: boy2
+  keywords: ["молодой", "парень"]
+  level: 20
+  name: "молодой парень"
+  rname: "молодого парня"
+  dname: "молодому парню"
+  vname: "молодого парня"
+  tname: "молодым парнем"
+  pname: "молодом парне"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этому парню на вид не дашь больше двадцати, и он кажется по юношески наивным и мечтательным.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: ['smite']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: girl1
+  keywords: ["юная", "девушка"]
+  level: 20
+  name: "юная девушка"
+  rname: "юной девушки"
+  dname: "юной девушке"
+  vname: "юную девушку"
+  tname: "юной девушкой"
+  pname: "юной девушке"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Не смотря на свой юный возраст эта девушка одета по самой последней моде,
+    губы и ресницы ее ярко накрашены, по всему видно, что она хочет быть в
+    центре внимания.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['acid']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: bridgeguard
+  keywords: ["страж"]
+  level: 25
+  name: "страж ворот"
+  rname: "стража ворот"
+  dname: "стражу ворот"
+  vname: "стража ворот"
+  tname: "стражем ворот"
+  pname: "страже ворот"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Охрана моста довольно ответственное поручение, поэтому стражу ворот отдали
+    самые лучшие доспехи, какие только смогли найти на складах замка.
+  script: 'guard'
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['bash', 'rescue']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:armor': 5
+        - 'arlend:boots2': 5
+        - 'arlend:helmet': 5
+        - 'arlend:cape': 5
+        - 'arlend:sword': 5
+        - 'arlend:polearm': 5
+- id: guard
+  keywords: ["гвардеец"]
+  level: 25
+  name: "гвардеец"
+  rname: "гвардейца"
+  dname: "гвардейцу"
+  vname: "гвардейца"
+  tname: "гвардейцем"
+  pname: "гвардейце"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите опытного профессионального вояку, способного в одиночку справить
+    почти с любым противником.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: ['bash', 'rescue']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:armor': 5
+        - 'arlend:boots2': 5
+        - 'arlend:helmet': 5
+        - 'arlend:cape': 5
+        - 'arlend:sword': 5
+        - 'arlend:polearm': 5
+- id: magetrader
+  keywords: ["маг", "торговец"]
+  level: 20
+  name: "маг-торговец"
+  rname: "мага-торговца"
+  dname: "магу-торговцу"
+  vname: "мага-торговца"
+  tname: "магом-торговцем"
+  pname: "маге-торговце"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот волшебник-недоучка не слишком то преуспел в искусстве магии, поэтому
+    теперь ему приходится зарабатывать на жизнь продажей различных магических
+    свитков, ингредиентов и эликсиров.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+  metadata:
+    vendor:
+      items:
+        "arlend:potion1":
+          cost: 250
+          currency: золото
+        "arlend:potion2":
+          cost: 250
+          currency: золото
+        "arlend:potion3":
+          cost: 250
+          currency: золото
+      enterMessage: "Посмотрите мои товары!"
+      leaveMessage: "Возвращайтесь скорее!"
+- id: moneylender
+  keywords: ["ростовщик"]
+  level: 25
+  name: "ростовщик"
+  rname: "ростовщика"
+  dname: "ростовщику"
+  vname: "ростовщика"
+  tname: "ростовщиком"
+  pname: "ростовщике"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'пнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    У этого старика хитрые бегающие глаза, он явно замышляет что-то недоброе.
+    К нему обращаются лишь в случае крайней нужды.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:knife': 5
+        - 'arlend:jacket': 5
+        - 'arlend:jacket2': 5
+        - 'arlend:boots': 5
+        - 'arlend:belt': 5
+        - 'arlend:club': 5
+- id: cook
+  keywords: ["повар"]
+  level: 25
+  name: "повар"
+  rname: "повара"
+  dname: "повару"
+  vname: "повара"
+  tname: "поваром"
+  pname: "поваре"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот толстый потный повар занимает своей тушей почти половину кухни, и
+    больше ни на кого тут места не остается.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['rend']
+      spells: ['fireball']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:cook_hat': 25
+        - 'arlend:cook_knife': 25
+- id: trader2
+  keywords: ["заморский", "торговец"]
+  level: 20
+  name: "заморский торговец"
+  rname: "заморского торговца"
+  dname: "заморскому торговцу"
+  vname: "заморского торговца"
+  tname: "заморским торговцем"
+  pname: "заморском торговце"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Смуглая кожа выдает в этом человеке южанина, приплывшего сюда в поисках
+    богатства. Он предлагает купить у себя различные экзотические вещи,
+    большинству из которых вы вряд ли найдете применение.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+  metadata:
+    vendor:
+      items:
+        "arlend:bow":
+          cost: 500
+          currency: золото
+        "arlend:mace":
+          cost: 500
+          currency: золото
+      enterMessage: "Посмотрите мои товары!"
+      leaveMessage: "Возвращайтесь скорее!"
+- id: greystock
+  keywords: ["лорд", "грейсток"]
+  level: 25
+  name: "лорд Грейсток"
+  rname: "лорда Грейстока"
+  dname: "лорду Грейстоку"
+  vname: "лорда Грейстока"
+  tname: "лордом Грейстоком"
+  pname: "лорде Грейстоке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите могучего мужчину средних лет прославившегося не только своим
+    знатным происхождением, но и непревзойденным боевым мастерством.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    combat: false
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+      pools:
+        - 'arlend:armor': 5
+        - 'arlend:boots2': 5
+        - 'arlend:helmet': 5
+        - 'arlend:cape': 5
+        - 'arlend:sword': 5
+        - 'arlend:polearm': 5
+- id: druid
+  keywords: ["друид"]
+  level: 99
+  name: "друид"
+  rname: "друида"
+  dname: "друиду"
+  vname: "друида"
+  tname: "друидом"
+  pname: "друиде"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Одетый в шкуры друид расхаживает тут, безумно вращая глазами.
+  metadata:
+    trainer:
+      spell: 'ice_peak'
+      cost: 2
+      requirements: []
+- id: paladin
+  keywords: ["паладин"]
+  level: 99
+  name: "паладин"
+  rname: "паладина"
+  dname: "паладину"
+  vname: "паладина"
+  tname: "паладином"
+  pname: "паладине"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Святой паладин преклонил здесь колени в молитве.
+  metadata:
+    trainer:
+      skill: 'polearms'
+      cost: 3
+      requirements: []
+- id: pathfinder
+  keywords: ["следопыт"]
+  level: 99
+  name: "следопыт"
+  rname: "следопыта"
+  dname: "следопыту"
+  vname: "следопыта"
+  tname: "следопытом"
+  pname: "следопыте"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Загадочный следопыт наблюдает за вами мрачным взглядом.
+  metadata:
+    trainer:
+      skill: 'maces'
+      cost: 3
+      requirements: []
+- id: archer
+  keywords: ["снайпер"]
+  level: 99
+  name: "снайпер"
+  rname: "снайпера"
+  dname: "снайперу"
+  vname: "снайпера"
+  tname: "снайпером"
+  pname: "снайпере"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Знаменитый снайпер показывает тут всем желающим свои многочисленные награды.
+  metadata:
+    trainer:
+      spell: 'silence'
+      cost: 4
+      requirements: []
+- id: thief
+  keywords: ["главарь"]
+  level: 99
+  name: "главарь группировки"
+  rname: "главаря группировки"
+  dname: "главарю группировки"
+  vname: "главаря группировки"
+  tname: "главарем группировки"
+  pname: "главаре группировки"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Главарь местной преступной группировки руководит отсюда всеми махинациями.
+  metadata:
+    trainer:
+      spell: 'poison'
+      cost: 2
+      requirements: []
+- id: mergel
+  keywords: ["конюх", "мергел"]
+  level: 25
+  name: "конюх Мергел"
+  rname: "конюха Мергела"
+  dname: "конюху Мергелу"
+  vname: "конюха Мергела"
+  tname: "конюхом Мергелом"
+  pname: "конюхе Мергеле"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'хлестнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    У входа стоит старый, одноглазый конюх Мергел, крепко сжимающий в своей правой руке 
+    кожаный хлыст, и всегда готовый пустить его на какую-нибудь норовистую кобылу.
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['smite']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+- id: stoneeater
+  keywords: ["зеленый", "камнеед"]
+  level: 20
+  name: "зеленый камнеед"
+  rname: "зеленого камнееда"
+  dname: "зеленому камнееду"
+  vname: "зеленого камнееда"
+  tname: "зеленым камнеедом"
+  pname: "зеленом камнееде"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'укусил'
+  travelVerbIn: "прикатился"
+  travelVerbOut: "укатился"
+  description: >-
+    Камнееды - загадочные животные, почти везде исчезнувшие после недавних катаклизмов. Так что, 
+    повстречать его - большая удача.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 3
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    wander:
+      interval: 65
+      areaRestricted: true
+    capable:
+      skills: ['rend']
+      spells: ['heal']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+- id: strange
+  keywords: ["загадочный", "странник"]
+  level: 25
+  name: "загадочный странник"
+  rname: "загадочного странника"
+  dname: "загадочному страннику"
+  vname: "загадочного странника"
+  tname: "загадочным странником"
+  pname: "загадочном страннике"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Загадочный странник, в полностью скрывающим фигуру сером балахоне, проходит тут.
+  attributes:
+    health: 900
+    mana: 800
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    earth_damage: 4
+    health_regeneration: 20
+    mana_regeneration: 20
+  metadata:
+    trainer:
+      spell: 'transmutation'
+      cost: 4
+      requirements: []
+    vendor:
+      items:
+        "craft:doriat_cube":
+          cost: 1000
+          currency: золото
+      enterMessage: "Обучаю трансмутации и продаю снаряжение для нее. Покупайте скорее!"
+      leaveMessage: "Поброжу по округе, если надумаешь вернуться."
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    memory: true
+    randomspell: true
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: ['paralysis']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80
+- id: werewolf
+  keywords: ["оборотень"]
+  level: 25
+  name: "оборотень"
+  rname: "оборотня"
+  dname: "оборотню"
+  vname: "оборотня"
+  tname: "оборотнем"
+  pname: "оборотне"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ободрал'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите уродливую человекоподобную фигуру с волчьей головой. Из его
+    зловонной пасти капает слюна вперемежку с белой пеной.
+  attributes:
+    health: 800
+    mana: 600
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 4
+    health_regeneration: 50
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 3
+    randomskill: true
+    combat: true
+    assist: true
+    memory: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: ['rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 80

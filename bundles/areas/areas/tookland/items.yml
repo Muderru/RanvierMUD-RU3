@@ -1,0 +1,403 @@
+- id: 34700
+  name: "каменный идол"
+  rname: "каменного идола"
+  dname: "каменному идолу"
+  vname: "каменного идола"
+  tname: "каменным идолом"
+  pname: "каменном идоле"
+  gender: "male"
+  roomDesc: "Грубый каменный идол со стершимися от времени чертами лица стоит тут."
+  description: >-
+    Возможно, когда-то этому идолу приносили богатые преподношения, но теперь те народы давно исчезли, а 
+    идол, может быть, до сих пор ждет какого-нибудь пожертвования. Вам припоминается, в древности таким
+    идолам жертвовали оружие.
+  keywords: ["каменный", "идол"]
+  metadata:
+    noPickup: true
+- id: 34701
+  type: RESOURCE
+  materials: ['шерсть']
+  name: "рыжий волос"
+  rname: "рыжего волоса"
+  dname: "рыжему волосу"
+  vname: "рыжий волос"
+  tname: "рыжим волосом"
+  pname: "рыжем волосе"
+  gender: "male"
+  roomDesc: "Рыжий волос лежит тут."
+  keywords: ["рыжий", "волос"]
+  description: >-
+    Вы видите длинный, тонкий волос рыжего цвета, судя по всему, принадлежавшего какому-то животному.
+  metadata:
+    sellable:
+      value: 5
+      currency: золото
+- id: 34702
+  type: RESOURCE
+  materials: ['кожа']
+  name: "кусочек грубой шкуры"
+  rname: "кусочка грубой шкуры"
+  dname: "кусочку грубой шкуры"
+  vname: "кусочек грубой шкуры"
+  tname: "кусочком грубой шкуры"
+  pname: "кусочке грубой шкуры"
+  gender: "male"
+  roomDesc: "Кусочек грубой шкуры лежит тут."
+  keywords: ["кусочек", "шкура"]
+  description: >-
+    Вы видите оторванный кусочек от угольно-черной шкуры какого-то животного.
+  metadata:
+    sellable:
+      value: 5
+      currency: золото
+- id: 34703
+  name: "шляпа мельника"
+  rname: "шляпы мельника"
+  dname: "шляпе мельника"
+  vname: "шляпу мельника"
+  tname: "шляпой мельника"
+  pname: "шляпе мельника"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Широкополая шляпа мельника лежит тут."
+  keywords: ["шляпа"]
+  description: >-
+    Вы видите широкополую, соломенную шляпу, поля, которой, слегка присыпаны мукой.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 2
+      mana: 15
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: ['light_armor']
+- id: 34704
+  name: "рваная куртка"
+  rname: "рваной куртки"
+  dname: "рваной куртке"
+  vname: "рваную куртку"
+  tname: "рваной курткой"
+  pname: "рваной куртке"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Рваная куртка лежит тут."
+  keywords: ["куртка", "рваная"]
+  description: >-
+    Эта куртка изодрана в клочья чьими-то острыми когтями, так что вряд ли она защитит вас от оружия врагов 
+    или даже непогоды. В добавок, в ней вы будете выглядеть очень непривлекательно.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 3
+      mana: 15
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: ['light_armor']
+- id: 34705
+  type: RESOURCE
+  materials: ['шипы']
+  name: "орлиное перо"
+  rname: "орлиного пера"
+  dname: "орлиному перу"
+  vname: "орлиное перо"
+  tname: "орлиным пером"
+  pname: "орлином пере"
+  gender: "neuter"
+  roomDesc: "Вырванное орлиное перо лежит тут."
+  keywords: ["орлиное", "перо"]
+  description: >-
+    Вы видите великолепное орлиное перо, голубоватого оттенка.
+  metadata:
+    sellable:
+      value: 10
+      currency: золото
+- id: 34706
+  name: "куча хлама"
+  rname: "кучи хлама"
+  dname: "куче хлама"
+  vname: "кучу хлама"
+  tname: "кучей хлама"
+  pname: "куче хлама"
+  gender: "female"
+  roomDesc: "Куча бесполезного хлама лежит на полу."
+  description: >-
+    В эту кучу навалено, кажется, все, что только можно было найти, если в ней хорошенько порыться, 
+    то может, и удастся найти в нем что-нибудь полезное.
+  keywords: ["куча", "хлам"]
+  metadata:
+    noPickup: true
+- id: 34707
+  name: "древнее копье"
+  rname: "древнего копья"
+  dname: "древнему копью"
+  vname: "древнее копье"
+  tname: "древним копьем"
+  pname: "древнем копье"
+  gender: "neuter"
+  roomDesc: "Древнее копье лежит тут."
+  damageVerb: "укололо"
+  description: >-
+    Несмотря на то, что это копье прекрасно сохранилось оно выглядит очень древним.
+  keywords: ["древнее", "копье"]
+  type: WEAPON
+  behaviors:
+    decay:
+      duration: 600
+    decay_on_drop: true
+  metadata:
+    level: 5
+    slot: 'оружие'
+    itemLevel: 5
+    quality: common
+    minDamage: 10
+    maxDamage: 30
+    speed: 2.6
+    stats:
+      piercing_damage: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 20
+      skills: ['polearms']
+- id: 34708
+  name: "древний амулет"
+  rname: "древнего амулета"
+  dname: "древнему амулету"
+  vname: "древний амулет"
+  tname: "древним амулетом"
+  pname: "древнем амулете"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Древний амулет лежит тут."
+  keywords: ["амулет", "древний"]
+  description: >-
+    На поверхности этого древнего амулета нанесено несколько странных символов и, вероятно, должен 
+    отгонять нечистую силу.
+  behaviors:
+    decay:
+      duration: 600
+    decay_on_drop: true
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 5
+    itemLevel: 5
+    stats:
+      mana: 15
+- id: 34709
+  name: "небольшая кучка монет"
+  rname: "небольшой кучки монет"
+  dname: "небольшой кучке монет"
+  vname: "небольшую кучку монет"
+  tname: "небольшой кучкой монет"
+  pname: "небольшой кучке монет"
+  gender: "female"
+  keywords: ["кучка", "монеты", "небольшая"]
+  roomDesc: "Небольшая кучка монет лежит тут."
+  behaviors:
+    money:
+      min: 80
+      max: 120
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 34710
+  name: "хомут"
+  rname: "хомута"
+  dname: "хомуту"
+  vname: "хомут"
+  tname: "хомутом"
+  pname: "хомуте"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Сплетенный из нескольких бичёвок хомут лежит тут."
+  keywords: ["хомут"]
+  description: >-
+    Этот хомут можно нацепить на какой-нибудь механизм.
+  behaviors:
+    decay:
+      duration: 600
+    decay_on_drop: true
+  metadata:
+    quality: common
+- id: 34711
+  name: "длинный тонкий шест"
+  rname: "длинного тонкого шеста"
+  dname: "длинному тонкому шесту"
+  vname: "длинный тонкий шест"
+  tname: "длинным тонким шестом"
+  pname: "длинном тонком шесте"
+  gender: "male"
+  roomDesc: "Длинный тонкий шест лежит тут."
+  damageVerb: "огрел"
+  description: >-
+    Это обычная длинная, крепкая палка, на одном из концов которой видны остатки ила.
+  keywords: ["шест", "длинный", "тонкий"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.5
+    stats:
+      crushing_damage: 2
+      earth_damage: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 20
+      skills: ['staves']
+- id: 34712
+  type: RESOURCE
+  materials: ['шерсть']
+  name: "кусочек гривы"
+  rname: "кусочка гривы"
+  dname: "кусочку гривы"
+  vname: "кусочек гривы"
+  tname: "кусочком гривы"
+  pname: "кусочке гривы"
+  gender: "male"
+  roomDesc: "Кусочек гривы лежит тут."
+  keywords: ["кусочек", "грива"]
+  description: >-
+    Вы видите клок белых волос из гривы дикой лошади.
+  metadata:
+    sellable:
+      value: 10
+      currency: золото
+- id: 34713
+  name: "старые жернова"
+  rname: "старых жерновов"
+  dname: "старым жерновам"
+  vname: "старые жернова"
+  tname: "старыми жерновами"
+  pname: "старых жерновах"
+  gender: "plural"
+  roomDesc: "Большие, старые жернова лежат тут."
+  description: >-
+    Старые жернова выглядят очень тяжелыми, но при желании их можно сдвинуть с места.
+  keywords: ["старые", "жернова"]
+  metadata:
+    noPickup: true
+- id: 34714
+  name: "старые жернова"
+  rname: "старых жерновов"
+  dname: "старым жерновам"
+  vname: "старые жернова"
+  tname: "старыми жерновами"
+  pname: "старых жерновах"
+  gender: "plural"
+  roomDesc: "Большие, старые жернова лежат тут."
+  description: >-
+    Старые жернова выглядят очень тяжелыми, но при желании их можно сдвинуть с места.
+  keywords: ["старые", "жернова"]
+  metadata:
+    noPickup: true
+- id: 34715
+  name: "куча хлама"
+  rname: "кучи хлама"
+  dname: "куче хлама"
+  vname: "кучу хлама"
+  tname: "кучей хлама"
+  pname: "куче хлама"
+  gender: "female"
+  roomDesc: "Куча бесполезного хлама лежит на полу."
+  description: >-
+    В эту кучу навалено, кажется, все, что только можно было найти, если в ней хорошенько порыться, 
+    то может, и удастся найти в нем что-нибудь полезное.
+  keywords: ["куча", "хлам"]
+  metadata:
+    noPickup: true
+- id: 34716
+  name: "каменный идол"
+  rname: "каменного идола"
+  dname: "каменному идолу"
+  vname: "каменного идола"
+  tname: "каменным идолом"
+  pname: "каменном идоле"
+  gender: "male"
+  roomDesc: "Грубый каменный идол со стершимися от времени чертами лица стоит тут."
+  description: >-
+    Возможно, когда-то этому идолу приносили богатые преподношения, но теперь те народы давно исчезли, а 
+    идол, может быть, до сих пор ждет какого-нибудь пожертвования.
+  keywords: ["каменный", "идол"]
+  metadata:
+    noPickup: true
+- id: 34717
+  type: RESOURCE
+  materials: ['шерсть']
+  name: "мешок муки"
+  rname: "мешка муки"
+  dname: "мешку муки"
+  vname: "мешок муки"
+  tname: "мешком муки"
+  pname: "мешке муки"
+  gender: "male"
+  roomDesc: "Небольшой мешок с мукой лежит здесь."
+  keywords: ["мешок", "мука"]
+  description: >-
+    В этом мешке полным-полно недавно перемолотой муки.
+  metadata:
+    sellable:
+      value: 10
+      currency: золото
+- id: 34718
+  name: "бараньи рога"
+  rname: "бараньих рогов"
+  dname: "бараньим рогам"
+  vname: "бараньи рога"
+  tname: "бараньими рогами"
+  pname: "бараньих рогах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Крупные рога барана лежат тут."
+  keywords: ["шляпа"]
+  description: >-
+    Это оригинальный головной убор, украшенный великолепными бараньими рогами.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 3
+      crushing_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: ['medium_armor']
+- id: 34719
+  name: "водяное колесо"
+  rname: "водяного колеса"
+  dname: "водяному колесу"
+  vname: "водяное колесо"
+  tname: "водяным колесом"
+  pname: "водяном колесе"
+  gender: "neuter"
+  roomDesc: "Из воды наполовину торчит колесо механизма мельницы."
+  description: >-
+    Водяное колесо сколочено из толстых дубовых досок. Оно должно вращаться протекающей
+    водой, но что-то ему мешает.
+  keywords: ["водяное", "колесо"]
+  metadata:
+    noPickup: true

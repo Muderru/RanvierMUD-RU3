@@ -1,0 +1,1059 @@
+- id: 70500
+  name: "колодец"
+  rname: "колодца"
+  dname: "колодцу"
+  vname: "колодец"
+  tname: "колодцем"
+  pname: "колодце"
+  gender: "male"
+  roomDesc: "Старый засохший колодец стоит посреди площади."
+  description: >-
+    Вы видите перед собой простой деревенский колодец, обложенный изнутри деревянными брусьями. Похоже,
+    этот колодец давно засох и им сейчас никто не пользуется. Странно, что ведро по-прежнему привязано к
+    верхней перекладине колодца.
+  keywords: ["колодец"]
+  metadata:
+    noPickup: true
+- id: 70501
+  name: "клюка ведьмы"
+  rname: "клюки ведьмы"
+  dname: "клюке ведьмы"
+  vname: "клюку ведьмы"
+  tname: "клюкой ведьмы"
+  pname: "клюке ведьмы"
+  gender: "female"
+  damageVerb: "огрела"
+  roomDesc: "Деревянная клюка валяется тут."
+  description: >-
+    Вы видите перед собой просто толстую изогнутую ветку какого-то дерева. На первый взгляд клюка не
+    представляет из себя ничего особенного, такие часто используют старые и немощные люди, но стоит только
+    прикоснутся к ней, как начинаешь сразу ощущать непонятную вибрацию внутри клюки.
+  keywords: ["клюка"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.4
+    stats:
+      acid_damage: 2
+      mana_regeneration: 5
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      intellect: 20
+      skills: ['staves']
+- id: 70502
+  name: "монокль"
+  rname: "монокля"
+  dname: "моноклю"
+  vname: "монокль"
+  tname: "моноклем"
+  pname: "монокле"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Блестящий кусочек стекла валяется тут."
+  keywords: ["монокль", "блестящий", "кусочек"]
+  description: >-
+    С помощью этого небольшого округлого стеклышка можно значительно увеличить остроту зрения, так что
+    начинаешь замечать самые незначительные изменения. К сожалению, более крупные объекты становятся при
+    этом менее заметными.
+  metadata:
+    quality: common
+    slot: "левый глаз"
+    level: 10
+    itemLevel: 10
+    stats:
+      detect_invisibility: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70503
+  name: "скакалка"
+  rname: "скакалки"
+  dname: "скакалке"
+  vname: "скакалку"
+  tname: "скакалкой"
+  pname: "скакалке"
+  gender: "female"
+  roomDesc: "Скакалка лежит тут."
+  damageVerb: "хлестнула"
+  description: >-
+    По всей видимости какой-то негодяй отобрал эту игрушку у какого-то ребенка, который, несомненно, сейчас
+    из-за этого сильно переживает. Эта скалка годится только на то, чтобы взять ее и отхлестать наглеца
+    издевающегося над детьми.
+  keywords: ["скакалка"]
+  type: WEAPON
+  metadata:
+    level: 8
+    slot: 'оружие'
+    itemLevel: 8
+    quality: common
+    minDamage: 12
+    maxDamage: 44
+    speed: 2.4
+    stats:
+      agility: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70504
+  name: "дубинка ополченца"
+  rname: "дубинки ополченца"
+  dname: "дубинке ополченца"
+  vname: "дубинку ополченца"
+  tname: "дубинкой ополченца"
+  pname: "дубинке ополченца"
+  gender: "female"
+  damageVerb: "огрела"
+  roomDesc: "Грубая деревянная дубинка валяется тут."
+  description: >-
+    Дубинки - наиболее распространенное оружие хранителей правопорядка в сельских
+    областях. Дракона ей конечно не убьешь, но вот подвыпившего хулигана можно
+    заставить успокоиться.
+  keywords: ["дубинка"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 16
+    maxDamage: 56
+    speed: 2.5
+    stats:
+      crushing_damage: 3
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      strength: 20
+      skills: ['maces']
+- id: 70505
+  name: "лук кожевенника"
+  rname: "лука кожевенника"
+  dname: "луку кожевенника"
+  vname: "лук кожевенника"
+  tname: "луком кожевенника"
+  pname: "луке кожевенника"
+  gender: "male"
+  damageVerb: "подстрелил"
+  roomDesc: "Старый потертый лук лежит тут."
+  description: >-
+    Этот лук годится только для охоты на каких-нибудь небольших животных, и
+    будет самоубийством пытаться использовать его для чего-то другого.
+  keywords: ["лук"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 5
+    maxDamage: 65
+    speed: 2.0
+    stats:
+      piercing_damage: 3
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      agility: 20
+      skills: ['bows']
+- id: 70506
+  name: "оберег из пучка перьев"
+  rname: "оберега из пучка перьев"
+  dname: "оберегу из пучка перьев"
+  vname: "оберег из пучка перьев"
+  tname: "оберегом из пучка перьев"
+  pname: "обереге из пучка перьев"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Пучок перьев лежит тут."
+  keywords: ["оберег", "пучок"]
+  description: >-
+    Кто-то аккуратно собрал несколько разноцветных голубиных перьев, связал их вместе и подвесил на тонкой
+    веревочке. Тот, кто изготовил этот оберег, наверно полагался на его магическую силу, но, видимо, оберег ему
+    не помог.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 1
+      agility: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70507
+  name: "куртка из грубой кожи"
+  rname: "куртки из грубой кожи"
+  dname: "куртке из грубой кожи"
+  vname: "куртку из грубой кожи"
+  tname: "курткой из грубой кожи"
+  pname: "куртке из грубой кожи"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Куртка из грубой кожи лежит тут."
+  keywords: ["куртка"]
+  description: >-
+    Такие обычно носят охотники.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 4
+      agility: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      agility: 20
+      skills: ['medium_armor']
+- id: 70508
+  name: "куртка из сырой кожи"
+  rname: "куртки из сырой кожи"
+  dname: "куртке из сырой кожи"
+  vname: "куртку из сырой кожи"
+  tname: "курткой из сырой кожи"
+  pname: "куртке из сырой кожи"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Куртка из сырой кожи лежит тут."
+  keywords: ["куртка"]
+  description: >-
+    Такие обычно носят охотники.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 4
+      fire_resistance: 5
+      cold_resistance: -2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      agility: 20
+      skills: ['medium_armor']
+- id: 70509
+  name: "тупой нож"
+  rname: "тупого ножа"
+  dname: "тупому ножу"
+  vname: "тупой нож"
+  tname: "тупым ножом"
+  pname: "тупом ноже"
+  gender: "male"
+  roomDesc: "Тупой нож лежит тут."
+  damageVerb: "резанул"
+  description: >-
+    Его надо-бы подточить.
+  keywords: ["нож", "тупой"]
+  type: WEAPON
+  metadata:
+    level: 8
+    slot: 'оружие'
+    itemLevel: 8
+    quality: common
+    minDamage: 12
+    maxDamage: 44
+    speed: 2.4
+    stats:
+      cutting_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70510
+  name: "тупой меч"
+  rname: "тупого меча"
+  dname: "тупому мечу"
+  vname: "тупой меч"
+  tname: "тупым мечом"
+  pname: "тупом мече"
+  gender: "male"
+  roomDesc: "Тупой меч лежит тут."
+  damageVerb: "рубанул"
+  description: >-
+    Его надо-бы подточить.
+  keywords: ["меч", "тупой"]
+  type: WEAPON
+  metadata:
+    level: 8
+    slot: 'оружие'
+    itemLevel: 8
+    quality: common
+    minDamage: 15
+    maxDamage: 45
+    speed: 2.4
+    stats:
+      cutting_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 20
+      skills: ['swords']
+- id: 70511
+  name: "приворотное зелье"
+  rname: "приворотного зелья"
+  dname: "приворотному зелью"
+  vname: "приворотное зелье"
+  tname: "приворотным зельем"
+  pname: "приворотном зелье"
+  gender: "neuter"
+  roomDesc: "Бутылочка со странной жидкостью лежит тут."
+  description: >-
+    Наверное это какая-то гадость, сваренная из лягушек и летучих мышей.
+  keywords: ["зелье", "приворотное"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает крит. рейтинг на <b>10</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 10
+        stat: "critical"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70512
+  name: "бутылка самогона"
+  rname: "бутылки самогона"
+  dname: "бутылке самогона"
+  vname: "бутылку самогона"
+  tname: "бутылкой самогона"
+  pname: "бутылке самогона"
+  gender: "female"  
+  roomDesc: "Бутылка самогона стоит тут."
+  description: >-
+    Мерзко воняющее пойло.
+  keywords: ["бутылка", "самогон"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает броню на <b>10</b> в течении <b>30</b> секунд."
+        duration: 30000
+      state:
+        magnitude: 10
+        stat: "armor"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70513
+  name: "чесночный пирог"
+  rname: "чесночного пирога"
+  dname: "чесночному пирогу"
+  vname: "чесночный пирог"
+  tname: "чесночным пирогом"
+  pname: "чесночном пироге"
+  gender: "male"
+  roomDesc: "Чесночный пирог лежит тут."
+  description: >-
+    Мерзко воняющее блюдо.
+  keywords: ["чесночный", "пирог"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает выносливость на <b>10</b> в течении <b>60</b> секунд."
+        duration: 60000
+      state:
+        magnitude: 10
+        stat: "stamina"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70514
+  name: "старый сюртук"
+  rname: "старого сюртука"
+  dname: "старому сюртуку"
+  vname: "старый сюртук"
+  tname: "старым сюртуком"
+  pname: "старом сюртуке"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Старый сюртук лежит тут."
+  keywords: ["сюртук", "старый"]
+  description: >-
+    Поношенный, но еще добротный.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 2
+      intellect: 2
+      earth_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: ['light_armor']
+- id: 70515
+  name: "защитные перчатки"
+  rname: "защитных перчаток"
+  dname: "защитным перчаткам"
+  vname: "защитные перчатки"
+  tname: "защитными перчатками"
+  pname: "защитных перчатках"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Длинные перчатки из толстой кожи лежат тут."
+  keywords: ["защитные", "перчатки"]
+  description: >-
+    Будут полезны, если вы решите поработать с кислотой.
+  metadata:
+    quality: common
+    slot: "перчатки"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 2
+      acid_damage: 1
+      acid_resistance: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 20
+      skills: ['light_armor']
+- id: 70516
+  type: RESOURCE
+  materials: ['ртуть', 'флогистон']
+  name: "философский камень"
+  rname: "философского камня"
+  dname: "философскому камню"
+  vname: "философский камень"
+  tname: "философским камнем"
+  pname: "философском камне"
+  gender: "male"
+  roomDesc: "Сияющий фиолетовым светом камень лежит тут."
+  keywords: ["философский", "камень"]
+  description: >-
+    Необходимый ингредиент для превращения свинца в золото.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 70517
+  name: "широкий пояс с отсеками"
+  rname: "широкого пояса с отсеками"
+  dname: "широкому поясу с отсеками"
+  vname: "широкий пояс с отсеками"
+  tname: "широким поясом с отсеками"
+  pname: "широком поясе с отсеками"
+  gender: "male"
+  type: CONTAINER
+  roomDesc: "Широкий пояс с отсеками лежит тут."
+  keywords: ["широкий", "пояс"]
+  description: >-
+    Широкий пояс из прочной кожи, на которую наклепками прикреплены несколько отсеков.
+  maxItems: 5
+  metadata:
+    quality: common
+    slot: "пояс"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70518
+  name: "шапка лесоруба"
+  rname: "шапки лесоруба"
+  dname: "шапке лесоруба"
+  vname: "шапку лесоруба"
+  tname: "шапкой лесоруба"
+  pname: "шапке лесоруба"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Шапка лесоруба лежит тут."
+  keywords: ["шапка"]
+  description: >-
+    Вы видите грубую шапку из дубленной кожи. В бою она конечно шлема не
+    заменит, но от удара свалившейся сверху ветки защитит превосходно.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 8
+    itemLevel: 8
+    stats:
+      armor: 2
+      health: 10
+    sellable:
+      value: 50
+      currency: золото
+- id: 70519
+  name: "бронзовый колокольчик"
+  rname: "бронзового колокольчика"
+  dname: "бронзовому колокольчику"
+  vname: "бронзовый колокольчик"
+  tname: "бронзовым колокольчиком"
+  pname: "бронзовом колокольчике"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Бронзовый колокольчик на веревочке лежит тут."
+  keywords: ["бронзовый", "колокольчик"]
+  description: >-
+    Вы видите ничем не примечательный бронзовый колокольчик, такой что
+    обычно привязывают к домашним животным.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 6
+    itemLevel: 6
+    stats:
+      mana_regeneration: 10
+      hide: -2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70520
+  name: "кольцо-змейка"
+  rname: "кольца-змейки"
+  dname: "кольцу-змейке"
+  vname: "кольцо-змейку"
+  tname: "кольцом-змейкой"
+  pname: "кольце-змейке"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Маленькое зеленоватое кольцо лежит тут."
+  keywords: ["кольцо", "змейка"]
+  description: >-
+    Вы видите маленькое зеленоватое колечко, в виде кусающей за свой
+    хвост змеи. Кольцо кажется всегда теплым на ощупь, так что вполне
+    вероятно оно обладает магическими свойствами.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 10
+    itemLevel: 10
+    stats:
+      mana_regeneration: 10
+      health_regeneration: 10
+    sellable:
+      value: 150
+      currency: золото
+- id: 70521
+  name: "значок бригадира"
+  rname: "значка бригадира"
+  dname: "значку бригадира"
+  vname: "значок бригадира"
+  tname: "значком бригадира"
+  pname: "значке бригадира"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Значок бригадира лежит тут."
+  keywords: ["значок"]
+  description: >-
+    Вы видите небольшой бронзовый жетон, который принадлежал когда-то
+    бригадиру лесорубов. По периметру значка нанесены странные символы.
+  metadata:
+    quality: common
+    slot: "наколото на грудь"
+    level: 10
+    itemLevel: 10
+    stats:
+      light: 5
+      armor: 1
+    sellable:
+      value: 100
+      currency: золото
+- id: 70522
+  type: RESOURCE
+  name: "комок тины"
+  rname: "комка тины"
+  dname: "комку тины"
+  vname: "комок тины"
+  tname: "комком тины"
+  pname: "комке тины"
+  gender: "male"
+  roomDesc: "Скользкий комок тины лежит тут."
+  keywords: ["комок", "тина"]
+  description: >-
+    Склизкая противная тина. Впрочем, какому-нибудь орку или троллю -
+    наверное даже понравится ее держать в руке.
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 70523
+  name: "поилка для животных"
+  rname: "поилки для животных"
+  dname: "поилке для животных"
+  vname: "поилку для животных"
+  tname: "поилкой для животных"
+  pname: "поилке для животных"
+  gender: "female"  
+  roomDesc: "У стены стоит треснутая поилка для животных."
+  description: >-
+    Под поилку приспособлено обычное корыто, вкопанное в землю. Сюда хозяева дома
+    наливают воду, чтобы животные могли попить.
+  keywords: ["поилка"]
+  metadata:
+    noPickup: true
+- id: 70524
+  type: RESOURCE
+  name: "пузырек с ядом"
+  rname: "пузырька с ядом"
+  dname: "пузырьку с ядом"
+  vname: "пузырек с ядом"
+  tname: "пузырьком с ядом"
+  pname: "пузырьке с ядом"
+  gender: "male"  
+  roomDesc: "Странный пузырек лежит тут."
+  keywords: ["пузырек", "яд", "пузырёк"]
+  description: >-
+    Пузырек маленький, удобный, и имеет узкое короткое горлышко. Он словно
+    специально сделан, чтобы можно было быстро достать его, и, капнув в чью-нибудь
+    кружку яду, столь же быстро спрятать.
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 70525
+  name: "большое колесо"
+  rname: "большого колеса"
+  dname: "большому колесу"
+  vname: "большое колесо"
+  tname: "большим колесом"
+  pname: "большом колесе"
+  gender: "neuter"  
+  roomDesc: "Большое колесо приводит в движение механизм лесопилки."
+  description: >-
+    Большое колесо с удобными рычагами-ручками. По меньшей мере пять
+    человеческих ростов в диаметре! Его могут вращать и люди, но сейчас
+    на рычагах закреплены упряжные ремни, очевидно сюда запрягают мулов
+    или лошадей.
+  keywords: ["колесо", "большое"]
+  metadata:
+    noPickup: true
+- id: 70526
+  name: "колючий куст"
+  rname: "колючего куста"
+  dname: "колючему кусту"
+  vname: "колючий куст"
+  tname: "колючим кустом"
+  pname: "колючем кусте"
+  gender: "male"  
+  roomDesc: "Колючий куст растет тут у забора."
+  description: >-
+    Обыкновенный куст, разлапистый, со здоровенными колючками.
+  keywords: ["колючий", "куст"]
+  metadata:
+    noPickup: true
+- id: 70527
+  name: "собачья конура"
+  rname: "собачьей конуры"
+  dname: "собачьей конуре"
+  vname: "собачью конуру"
+  tname: "собачьей конурой"
+  pname: "собачьей конуре"
+  gender: "female"  
+  roomDesc: "Большая собачья конура расположилась в дальнем конце двора."
+  description: >-
+    Ничем не примечательная конура, судя по всему - вполне обжитая. Неудивительно,
+    если здесь живет сторожевой пес, принадлежащий хозяевам дома.
+  keywords: ["собачья", "конура"]
+  metadata:
+    noPickup: true
+- id: 70528
+  name: "древний талисман"
+  rname: "древнего талисмана"
+  dname: "древнему талисману"
+  vname: "древний талисман"
+  tname: "древним талисманом"
+  pname: "древнем талисмане"
+  gender: "male"  
+  roomDesc: "Древний талисман лежит здесь."
+  keywords: ["пузырек", "яд"]
+  description: >-
+    Древний каменный талисман. Впрочем, с виду - да и на ощупь, ничем не
+    отличается от обычного камешка с каким-то непонятным изображением.
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 70529
+  name: "пузырек с невидимостью"
+  rname: "пузырька с невидимостью"
+  dname: "пузырьку с невидимостью"
+  vname: "пузырек с невидимостью"
+  tname: "пузырком с невидимостью"
+  pname: "пузырке с невидимостью"
+  gender: "male"
+  roomDesc: "Странный пузырек лежит тут."
+  description: >-
+    Пузырек маленький, удобный, с крышкой, привязанной на веревочку.
+  keywords: ["пузырек"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает невидимость на <b>5</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 5
+        stat: "invisibility"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70530
+  name: "перегонный аппарат"
+  rname: "перегонного аппарата"
+  dname: "перегонному аппарату"
+  vname: "перегонный аппарат"
+  tname: "перегонным аппаратом"
+  pname: "перегонном аппарате"
+  gender: "male"  
+  roomDesc: "На одном из столов установлен перегонный аппарат."
+  description: >-
+    Вы видите перегонный аппарат довольно примитивной конструкции: к металлическому
+    чану приделан змеевик, ведущий к сосуду-приемнику. Металл перегонного аппарата
+    не стоек ни к кислотам, ни к щелочам, так что непонятно, для чего он понадобился
+    алхимику.
+  keywords: ["перегонный", "аппарат"]
+  metadata:
+    noPickup: true
+- id: 70531
+  name: "хлыст погонщика"
+  rname: "хлыста погонщика"
+  dname: "хлысту погонщика"
+  vname: "хлыст погонщика"
+  tname: "хлыстом погонщика"
+  pname: "хлысте погонщика"
+  gender: "male"
+  damageVerb: "хлестнул"
+  roomDesc: "Потертый хлыст погонщика лежит тут."
+  description: >-
+    С помощью этого хлыста можно заставить слушаться даже самую упрямую скотину.
+  keywords: ["хлыст"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.5
+    stats:
+      crushing_damage: 3
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['various_weapons']
+- id: 70532
+  name: "седые усы"
+  rname: "седых усов"
+  dname: "седым усам"
+  vname: "седые усы"
+  tname: "седыми усами"
+  pname: "седых усах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Седые усы лежат тут."
+  keywords: ["седые", "усы"]
+  description: >-
+    Это шикарные накладные усы, одев которые, вас даже мать родная не узнает.
+  metadata:
+    quality: common
+    slot: "под носом"
+    level: 6
+    itemLevel: 6
+    stats:
+      intellect: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70533
+  name: "связка отмычек"
+  rname: "связки отмычек"
+  dname: "связке отмычек"
+  vname: "связку отмычек"
+  tname: "связкой отмычек"
+  pname: "связке отмычек"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Связка отмычек лежит тут."
+  keywords: ["связка", "отмычек"]
+  description: >-
+    На большое металлическое кольцо нанизано около дюжины разнообразных отмычек.
+    Эта вещь, без сомнения, пригодится любому вору при взломе замков.
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 10
+    itemLevel: 10
+    stats:
+      detect_hide: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 70534
+  name: "заметки алхимика"
+  rname: "заметок алхимика"
+  dname: "заметкам алхимика"
+  vname: "заметки алхимика"
+  tname: "заметками алхимика"
+  pname: "заметках алхимика"
+  gender: "plural"
+  roomDesc: "Пергамент с заметками алхимика лежат тут."
+  keywords: ["заметки"]
+  description: >-
+    Вы рассматриваете пергамент с заметками о работах одного алхимика.
+    В основном там описывается всякая научная чушь, но есть заметка и
+    о самогоне, в которой говорится, что если заправить перегонный
+    аппарат самогоном, то можно получить волшебное зелье...
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 70535
+  type: CONTAINER
+  name: "буфет"
+  rname: "буфета"
+  dname: "буфету"
+  vname: "буфет"
+  tname: "буфетом"
+  pname: "буфете"
+  gender: "male"
+  roomDesc: "Напротив вас стоит массивный дубовый буфет."
+  description: >-
+    Буфет сделан из толстых дубовых панелей, так что едва ли кому удастся взломать его силой.
+  keywords: ["буфет"]
+  items: ["forvill:70536"]
+  closed: true
+  locked: true
+  lockedBy: "forvill:70537"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 70536
+  name: "серебряный сервиз"
+  rname: "серебряного сервиза"
+  dname: "серебряному сервизу"
+  vname: "серебряный сервиз"
+  tname: "серебряным сервизом"
+  pname: "серебряном сервизе"
+  gender: "male"  
+  roomDesc: "Серебряный сервиз стоит тут."
+  keywords: ["серебряный", "сервиз"]
+  description: >-
+    Продав этот сервиз какому-нибудь коллекционеру, можно заработать немало денег.
+  metadata:
+    sellable:
+      value: 500
+      currency: золото
+- id: 70537
+  name: "маленький золотой ключ"
+  rname: "маленького золотого ключа"
+  dname: "маленькому золотому ключу"
+  vname: "маленький золотой ключ"
+  tname: "маленьким золотым ключом"
+  pname: "маленьком золотом ключе"
+  gender: "male"
+  keywords: ["ключ", "маленький", "золотой"]
+  roomDesc: "Маленький золотой ключ лежит тут."
+  description: >-
+    Маленький золотой ключик, по всему видно - работа настоящего мастера.
+    Судя по замысловатости ключа, замок, им открываемый - едва ли кому-то
+    удастся взломать...
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 70538
+  name: "широкий письменный стол"
+  rname: "широкого письменного стола"
+  dname: "широкому письменному столу"
+  vname: "широкий письменный стол"
+  tname: "широким письменным столом"
+  pname: "широком письменном столе"
+  gender: "male"  
+  roomDesc: "Посреди комнаты стоит широкий письменный стол."
+  description: >-
+    Удобный, большой стол из красиво отделанного дерева. Пожалуй, такой
+    могут себе позволить только очень состоятельные люди.
+  keywords: ["широкий", "письменный", "стол"]
+  metadata:
+    noPickup: true
+- id: 70539
+  name: "пузырек с знанием"
+  rname: "пузырька с знанием"
+  dname: "пузырьку с знанием"
+  vname: "пузырек с знанием"
+  tname: "пузырьком с знанием"
+  pname: "пузырьке с знанием"
+  gender: "male"
+  roomDesc: "Странный пузырек лежит тут."
+  description: >-
+    Пузырек маленький, удобный, с крышкой, привязанной на веревочку.
+  keywords: ["пузырек"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает обнаружение спрятавшихся на <b>10</b> в течении <b>60</b> секунд."
+        duration: 60000
+      state:
+        magnitude: 10
+        stat: "detect_hide"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70540
+  name: "пузырек со свежестью"
+  rname: "пузырька со свежестью"
+  dname: "пузырьку со свежестью"
+  vname: "пузырек со свежестью"
+  tname: "пузырьком со свежестью"
+  pname: "пузырьке со свежестью"
+  gender: "male"
+  roomDesc: "Странный пузырек лежит тут."
+  description: >-
+    Пузырек маленький, удобный, с крышкой, привязанной на веревочку.
+  keywords: ["пузырек"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает восстановление манны на <b>25</b> в течении <b>60</b> секунд."
+        duration: 60000
+      state:
+        magnitude: 10
+        stat: "mana_regeneration"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70541
+  name: "зелье защиты от огня"
+  rname: "зелья защиты от огня"
+  dname: "зелью защиты от огня"
+  vname: "зелье защиты от огня"
+  tname: "зельем защиты от огня"
+  pname: "зелье защиты от огня"
+  gender: "neuter"
+  roomDesc: "Подозрительный пузырек лежит тут."
+  description: >-
+    Маленький пузырек со светящимся красным зельем.
+  keywords: ["зелье", "огня"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает защиту от огня на <b>20</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 20
+        stat: "fire_resistance"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70542
+  name: "зелье защиты от холода"
+  rname: "зелья защиты от холода"
+  dname: "зелью защиты от холода"
+  vname: "зелье защиты от холода"
+  tname: "зельем защиты от холода"
+  pname: "зелье защиты от холода"
+  gender: "neuter"
+  roomDesc: "Подозрительный пузырек лежит тут."
+  description: >-
+    Маленький пузырек со светящимся синим зельем.
+  keywords: ["зелье", "холода"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает защиту от холода на <b>20</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 20
+        stat: "cold_resistance"
+    sellable:
+      value: 25
+      currency: золото
+- id: 70543
+  name: "зелье защиты от молнии"
+  rname: "зелья защиты от молнии"
+  dname: "зелью защиты от молнии"
+  vname: "зелье защиты от молнии"
+  tname: "зельем защиты от молнии"
+  pname: "зелье защиты от молнии"
+  gender: "neuter"
+  roomDesc: "Подозрительный пузырек лежит тут."
+  description: >-
+    Маленький пузырек с искрящимся зельем.
+  keywords: ["зелье", "молнии"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает защиту от молнии на <b>20</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 20
+        stat: "lightning_resistance"
+    sellable:
+      value: 25
+      currency: золото

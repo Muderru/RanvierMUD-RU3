@@ -1,0 +1,53 @@
+---
+- id: 34800
+  title: Праздничный пирог
+  level: 10
+  repeatable: true
+  description: >-
+    Бирюк рассказывает вам, что скоро у него День Рождения. По этому случаю
+    он хотел бы испечь праздничный пирог. Но, вот только у него нет муки. Если
+    вы найдете ему мешок муки, то он вам за нее щедро заплатит.
+  completionMessage: >-
+    Ура! Наконец, впервые за много лет, я могу отметить свой День Рождения!
+  goals:
+    - type: FetchGoal
+      config:
+        title: Найти мешок муки
+        count: 1
+        item: 'tookland:34717'
+        removeItem: true
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 10
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        amount: 20
+        currency: 'золото'
+- id: 34801
+  title: Весёлый гриб
+  level: 10
+  repeatable: true
+  description: >-
+    Бирюк поделился с вами по секрету, что в этих глухих местах совсем нет
+    развлечений. Единственное его развлечение - это сушить грибы. Если вы
+    найдете ему гриб, то он его засушит, а вас хорошенько отблагодарит.
+  completionMessage: >-
+    Так, я пошел сушить этот замечательный гриб. А ты, на вот, держи за труды.
+  goals:
+    - type: FetchGoal
+      config:
+        title: Найти гриб
+        count: 1
+        item: 'woodhall:34811'
+        removeItem: true
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 10
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        amount: 20
+        currency: 'золото'

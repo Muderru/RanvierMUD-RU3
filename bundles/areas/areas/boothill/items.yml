@@ -1,0 +1,346 @@
+- id: 10ghat
+  name: "потрепанная черная шляпа"
+  rname: "потрепанной черной шляпы"
+  dname: "потрепанной черной шляпе"
+  vname: "потрепанную черную шляпу"
+  tname: "потрепанной черной шляпой"
+  pname: "потрепанной черной шляпе"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Потрепанная черная шляпа"
+  keywords: ["шляпа", "черная", "потрепанная"]
+  description: >-
+    Эта шляпа видала и лучшие дни, она выглядит так, как будто ее кто-то жевал.
+    Но, за неимением лучшего, сойдет и она.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 3
+    itemLevel: 4
+    stats:
+      armor: 1
+      health: 5
+    sellable:
+      value: 15
+      currency: золото
+- id: bandana
+  name: "бандана"
+  rname: "банданы"
+  dname: "бандане"
+  vname: "бандану"
+  tname: "банданой"
+  pname: "бандане"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Мятая бандана"
+  keywords: ["мятая", "бандана"]
+  description: >-
+    Эта бандана, вроде выглядит очень стильно. А еще 
+    на ней висит маленькая этикетка.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 4
+    itemLevel: 4
+    stats:
+      armor: 1
+      agility: 1
+    sellable:
+      value: 25
+      currency: золото
+- id: bigrock
+  name: "огромный валун"
+  rname: "огромного валуна"
+  dname: "огромному валуну"
+  vname: "огромный валун"
+  tname: "огромным валуном"
+  pname: "огромном валуне"
+  gender: "male"  
+  roomDesc: "Огромный валун"
+  description: >-
+    Этот валун занимает половину пещеры. На идеально гладкой поверхности 
+    валуна не видно ни единой царапины, хотя все стены пещеры вокруг избиты 
+    ударами кирок. Чтобы сдвинуть этот валун понадобится слон, или лучше 
+    два.
+  keywords: [ "огромный", "валун" ]
+  type: OBJECT
+  metadata:
+    noPickup: true
+- id: hammer
+  name: "маленький молоток"
+  rname: "маленького молотка"
+  dname: "маленькому молотку"
+  vname: "маленький молоток"
+  tname: "маленьким молотком"
+  pname: "маленьком молотке"
+  gender: "male"
+  damageVerb: "огрел"
+  type: WEAPON
+  roomDesc: "Маленький молоток"
+  keywords: [ "молоток", "маленький" ]
+  description: >-
+    Самый обычный молоток. Он не годится для битвы, но с ним в 
+    в руках вы не будете выглядеть бестолковым лентяем.
+  metadata:
+    level: 1
+    slot: 'оружие'
+    itemLevel: 1
+    quality: common
+    minDamage: 5
+    maxDamage: 15
+    speed: 2.0
+    sellable:
+      value: 5
+      currency: золото
+- id: lovers_locket
+  name: "медальон верности"
+  rname: "медальона верности"
+  dname: "медальону верности"
+  vname: "медальон верности"
+  tname: "медальоном верности"
+  pname: "медальоне верности"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Медальон верности"
+  keywords: ["медальон"]
+  description: >-
+    Медальон в виде золотого сердца с подписью ЛЮБОВЬ! 
+    С обратной стороны медальона есть еще какая-то надпись.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 3
+    itemLevel: 4
+    stats:
+      health: 5
+    sellable:
+      value: 10
+      currency: золото
+- id: minehelm
+  name: "маленький ржавый шлем"
+  rname: "маленького ржавого шлема"
+  dname: "маленькому ржавому шлему"
+  vname: "маленький ржавый шлем"
+  tname: "маленьким ржавым шлемом"
+  pname: "маленьком ржавом шлеме"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Маленький ржавый шлем"
+  keywords: ["маленький", "ржавый", "шлем"]
+  description: >-
+    Похоже, что этот маленький ржавый шлем видал лучшие дни. 
+    Надеть эту вещь можно только от полного отчаяния.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 3
+    itemLevel: 3
+    stats:
+      armor: 1
+      crushing_resistance: 1
+    sellable:
+      value: 10
+      currency: золото
+- id: nails
+  name: "большой гвоздь"
+  rname: "большого гвоздя"
+  dname: "большому гвоздю"
+  vname: "большой гвоздь"
+  tname: "большим гвоздем"
+  pname: "большом гвозде"
+  gender: "male"
+  damageVerb: "уколол"
+  type: WEAPON
+  roomDesc: "Большой гвоздь"
+  keywords: [ "большой", "гвоздь" ]
+  description: >-
+    Это большой и толстый гвоздь, которым шахтеры приколачивают в
+    шахтах шпалы. На большее он, наверно, и не годится.
+  metadata:
+    level: 2
+    slot: 'оружие'
+    itemLevel: 2
+    quality: common
+    minDamage: 6
+    maxDamage: 18
+    speed: 2.5
+    stats:
+      piercing_damage: 1
+    sellable:
+      value: 5
+      currency: золото
+- id: piano
+  name: "неказистое пианино"
+  rname: "неказистого пианино"
+  dname: "неказистому пианино"
+  vname: "неказистое пианино"
+  tname: "неказистым пианино"
+  pname: "неказистом пианино"
+  gender: "neuter"  
+  roomDesc: "Неказистое пианино"
+  description: >-
+    Вы видите довольно дряхлый музыкальный инструмент. 
+    но издает писклявые звуки, но на нем все еще можно играть.
+  keywords: [ "неказистое", "пианино" ]
+  type: OBJECT
+  metadata:
+    noPickup: true
+- id: pickaxe
+  name: "ржавая кирка"
+  rname: "ржавой кирки"
+  dname: "ржавой кирке"
+  vname: "ржавую кирку"
+  tname: "ржавой киркой"
+  pname: "ржавой кирке"
+  gender: "female"
+  damageVerb: "долбанула"
+  type: WEAPON
+  roomDesc: "Ржавая кирка"
+  keywords: [ "ржавая", "кирка" ]
+  description: >-
+    Это очень старый инструмент. Его не помешало бы заточить и 
+    очистить от ржавчины и грязи.
+  metadata:
+    level: 3
+    slot: 'оружие'
+    itemLevel: 3
+    quality: common
+    minDamage: 7
+    maxDamage: 21
+    speed: 2.6
+    stats:
+      crushing_damage: 1
+      strength: 1
+    sellable:
+      value: 10
+      currency: золото
+- id: rubble
+  name: "груда щебня"
+  rname: "груды щебня"
+  dname: "груде щебня"
+  vname: "груду щебня"
+  tname: "грудой щебня"
+  pname: "груде щебня"
+  gender: "female"  
+  roomDesc: "Груда щебня"
+  description: >-
+    Большую часть комнаты занимает огромная груда щебня. Кажется, 
+    что чтобы ее от него очистить, понадобится много времени.
+  keywords: [ "груда", "щебень" ]
+  type: OBJECT
+  metadata:
+    noPickup: true
+- id: sweetroll
+  name: "сладкий рулет"
+  rname: "сладкого рулета"
+  dname: "сладкому рулету"
+  vname: "сладкий рулет"
+  tname: "сладким рулетом"
+  pname: "сладком рулете"
+  gender: "male"  
+  roomDesc: "Очень аппетитный и сладкий рулет"
+  description: >-
+    При виде на него у вас начинают течь слюнки.
+  keywords: [ "сладкий", "рулет", "аппетитный" ]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 5
+      options:
+        restores: 10
+        stat: "health"
+- id: tombstone
+  name: "могильное надгробие"
+  rname: "могильного надгробия"
+  dname: "могильному надгробию"
+  vname: "могильное надгробие"
+  tname: "могильным надгробием"
+  pname: "могильном надгробии"
+  gender: "neuter"  
+  roomDesc: "Надгробие"
+  description: >-
+    Вы видите надпись на надгробии у могилы:
+    Здесь лежит Джейк, он получил удар по голове граблями.
+  keywords: [ "могильное", "надгробие" ]
+  type: OBJECT
+  metadata:
+    noPickup: true
+- id: guardianarmor
+  name: "доспех стражника"
+  rname: "доспеха стражника"
+  dname: "доспеху стражника"
+  vname: "доспех стражника"
+  tname: "доспехом стражника"
+  pname: "доспехе стражника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Доспех стражника"
+  keywords: ["доспех"]
+  description: >-
+    Вы видите потертый нагрудник с гербом на груди. Такие обычно
+    носят стражники.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 5
+    itemLevel: 5
+    stats:
+      armor: 3
+      cutting_resistance: 1
+    sellable:
+      value: 20
+      currency: золото
+- id: guardianboots
+  name: "сапоги стражника"
+  rname: "сапог стражника"
+  dname: "сапогам стражника"
+  vname: "сапоги стражника"
+  tname: "сапогами стражника"
+  pname: "сапогах стражника"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Сапоги стражника"
+  keywords: ["сапоги"]
+  description: >-
+    Это потертые, но все еще крепкие сапоги из дубленой кожи.
+    Неплохая защита для ног.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 5
+    itemLevel: 5
+    stats:
+      armor: 1
+      earth_resistance: 1
+    sellable:
+      value: 20
+      currency: золото
+- id: guardiancloak
+  name: "плащ стражника"
+  rname: "плаща стражника"
+  dname: "плащу стражника"
+  vname: "плащ стражника"
+  tname: "плащом стражника"
+  pname: "плаще стражника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Плащ стражника"
+  keywords: ["плащ"]
+  description: >-
+    На этом пыльном плаще вы едва можете различить герб какого-то
+    города. Может быть раньше он принадлежал стражнику?
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 5
+    itemLevel: 5
+    stats:
+      armor: 1
+      cold_resistance: 1
+    sellable:
+      value: 20
+      currency: золото

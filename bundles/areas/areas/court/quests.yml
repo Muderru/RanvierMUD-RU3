@@ -1,0 +1,55 @@
+---
+- id: 40201
+  title: Отомстить капитану
+  level: 25
+  repeatable: true
+  description: >-
+    Мы с братом были зажиточными купцами, пока нас не оклеветал капитан стражи.
+    Нас схватили, заковали в кандалы, конфисковали все имущество. И вот теперь я здесь,
+    а капитан где-то радуется жизни. Больше всего на свете я жажду мести! Прошу, убей
+    негодяя. Ни один купец не хранит все свои деньги дома, так что не беспокойся, ты
+    получишь достойную награду, если сделаешь это!
+  completionMessage: >-
+    Поделом негодяю!
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить капитана стражи
+        npc: 'court:40209'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 50
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 300
+- id: 40202
+  title: Найти брата закованного в колодки человека
+  level: 25
+  repeatable: true
+  requires: ['court:40201']
+  description: >-
+    Когда нас схватили, меня отправили сюда, на всеобщее посмеяние, а брата
+    увели в тюрьму. Я сильно беспокоюсь о нем, пожалуйста, узнайте все ли с
+    ним в порядке.
+  completionMessage: >-
+    Так, значит он мертв... Ну что же, от судьбы не уйдешь.
+  goals:
+    - type: FetchGoal
+      config:
+        title: Принести свидетельство смерти брата
+        count: 1
+        item: 'court:40261'
+        removeItem: true
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 100
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 500

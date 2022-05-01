@@ -1,12 +1,13 @@
 - id: white
   title: "Белая комната"
   description: "Вы находитесь в ничем не примечательной комнате с белыми стенами. В восточной стене вы видите клубящуюся тьму в форме арки."
-  npcs: ["limbo:rat" ]
+  npcs: [ "limbo:rat" ]
   items:
     - id: "limbo:woodenchest"
       respawnChance: 20
       replaceOnRespawn: true # when this chest respawns completely replace it so its contents get refreshed
   script: "white"
+  light: 80
   exits:
     - roomId: "limbo:black"
       direction: восток
@@ -15,8 +16,10 @@
       direction: вниз
     - roomId: "limbo:wallys"
       direction: запад
-    - roomId: "mapped:start"
-      direction: север
+    - roomId: "limbo:wallys"
+      direction: запад
+    - roomId: "newbie:starting"
+      direction: юго-восток
 - id: black
   title: "Черная комната"
   description: >-
@@ -25,6 +28,7 @@
     тьмой аркой, через которую не проходит свет. А на востоке находится ярко освещенное
     помещение, у входа в которое висит табличка "Тренировочная площадь".
   script: "black"
+  light: 80
   items:
     - id: "limbo:sliceofcheese"
       respawnChance: 10
@@ -44,6 +48,7 @@
     элементов. За куполом вы видите голубое небо, тянущееся от горизонта до горизонта. Когда к куполу
     подлетают птицы, он начинает слабо светиться и птицы поворачивают назад. Внизу, под ногами, зеленеет
     мягкая невысокая трава.
+  light: 75
   npcs:
     - id: "limbo:trainingdummy"
       respawnChance: 25
@@ -107,6 +112,7 @@
     Купол в этой части поля ярко красный, а зеленая трава заменена на гладкую белую поверхность,
     напоминающую камень. Также на полу вы замечаете красные надписи: "Опасность". Тут царит
     тревожная тишина.
+  light: 80
   npcs:
     - id: "limbo:bossdummy"
       respawnChance: 50
@@ -133,6 +139,7 @@
     драгоценные камни и всевозможное боевое снаряжение. У палатки установлен деревянный знак с надписью
     "<b><yellow>Замечательные товары Вэлла</yellow></b> готовы предложить вам лучшее по умеренной цене!
     Доспехи, оружие, магические зелья - все это вы можете приобрести здесь!"
+  light: 80
   npcs:
     - id: "limbo:wallythewonderful"
       respawnChance: 0

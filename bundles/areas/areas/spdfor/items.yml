@@ -1,0 +1,1200 @@
+- id: 66700
+  name: "панцирь броненосца"
+  rname: "панциря броненосца"
+  dname: "панцирю броненосца"
+  vname: "панцирь броненосца"
+  tname: "панцирем броненосца"
+  pname: "панцире броненосца"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Панцирь гигантского броненосца лежит тут."
+  keywords: ["панцирь"]
+  description: >-
+    Этот панцирь был снят с какого-то очень крупного животного. Его, конечно,
+    можно использовать в качестве брони, по крепости он не уступает стали, но,
+    из-за своей неудобности, надетый на тело он будет стеснять движения.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 20
+      health: 250
+      mana: -50
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['heavy_armor']
+- id: 66701
+  name: "череп броненосца"
+  rname: "черепа броненосца"
+  dname: "черепу броненосца"
+  vname: "череп броненосца"
+  tname: "черепом броненосца"
+  pname: "черепе броненосца"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Череп гигантского броненосца лежит тут."
+  keywords: ["череп"]
+  description: >-
+    Этот череп принадлежал какому-то крупному животному. Благодаря своим толстым
+    костям, этот череп не так то просто проломить, даже тяжелой дубиной.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 18
+      health: 150
+      mana: -30
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['heavy_armor']
+- id: 66702
+  name: "корона королевы пауков"
+  rname: "короны королевы пауков"
+  dname: "короне королевы пауков"
+  vname: "корону королевы пауков"
+  tname: "короной королевы пауков"
+  pname: "короне королевы пауков"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Золотая корона с рубинами лежит тут."
+  keywords: ["корона", "золотая"]
+  description: >-
+    Вы видите золотую корону с искусной гравировкой из пауков и паутины,
+    инкрустированную несколькими крупными рубинами. 
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 8
+      intellect: 2
+      acid_damage: 1
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      intellect: 30
+      skills: ['light_armor']
+- id: 66703
+  name: "позеленевший перстень"
+  rname: "позеленевшего перстня"
+  dname: "позеленевшему перстню"
+  vname: "позеленевший перстень"
+  tname: "позеленевшим перстнем"
+  pname: "позеленевшем перстне"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Позеленевший перстень лежит тут."
+  keywords: ["позеленевший", "перстень"]
+  description: >-
+    Этот перстень был извлечен из брюха гигантской паучихи, где подвергался
+    действию ее желудочного сока. Благодаря этому он приобрел красивый зеленоватый
+    оттенок и магические свойства.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 30
+    itemLevel: 30
+    stats:
+      stamina: 1
+      freedom: 1
+      acid_resistance: 2
+    sellable:
+      value: 250
+      currency: золото
+- id: 66704
+  name: "позеленевший доспех"
+  rname: "позеленевшего доспеха"
+  dname: "позеленевшему доспеху"
+  vname: "позеленевший доспех"
+  tname: "позеленевшим доспехом"
+  pname: "позеленевшем доспехе"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Позеленевший доспех лежит тут."
+  keywords: ["позеленевший", "доспех"]
+  description: >-
+    Этот доспех был извлечен из брюха гигантской паучихи, где подвергался
+    действию ее желудочного сока. Благодаря этому он приобрел красивый
+    зеленоватый оттенок и магические свойства.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 14
+      acid_resistance: 2
+      critical: 2
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['medium_armor']
+- id: 66705
+  name: "позеленевшие поножи"
+  rname: "позеленевших поножей"
+  dname: "позеленевшим поножам"
+  vname: "позеленевшие поножи"
+  tname: "позеленевшими поножами"
+  pname: "позеленевших поножах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Позеленевшие поножи лежат тут."
+  keywords: ["позеленевшие", "поножи"]
+  description: >-
+    Эти поножи были извлечены из брюха гигантской паучихи, где подвергались
+    действию ее желудочного сока. Благодаря этому они приобрели красивый
+    зеленоватый оттенок и магические свойства.
+  metadata:
+    quality: common
+    slot: "ноги"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 12
+      acid_resistance: 2
+      mana_regeneration: 10
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['medium_armor']
+- id: 66706
+  name: "позеленевшие наручи"
+  rname: "позеленевших наручей"
+  dname: "позеленевшим наручам"
+  vname: "позеленевшие наручи"
+  tname: "позеленевшими наручами"
+  pname: "позеленевших наручах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Позеленевшие наручи лежат тут."
+  keywords: ["позеленевшие", "наручи"]
+  description: >-
+    Эти наручи были извлечены из брюха гигантской паучихи, где подвергались
+    действию ее желудочного сока. Благодаря этому они приобрели красивый
+    зеленоватый оттенок и магические свойства.
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 12
+      acid_resistance: 2
+      strength: 2
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['medium_armor']
+- id: 66707
+  name: "пояс из паутины"
+  rname: "пояса из паутины"
+  dname: "поясу из паутины"
+  vname: "пояс из паутины"
+  tname: "поясом из паутины"
+  pname: "поясе из паутины"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Пояс из паутины лежит тут."
+  keywords: ["пояс", "паутинный"]
+  description: >-
+    Этот пояс изготовлен из прекрасного материала - паутины. Изделия из нее
+    получаются очень легкими, но прочными. А, паутина пауков пустошей, обладает
+    еще, вдобавок, магическими свойствами.
+  metadata:
+    quality: common
+    slot: "пояс"
+    level: 25
+    itemLevel: 25
+    stats:
+      armor: 6
+      mana_regeneration: 5
+      intellect: 2
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: 66708
+  name: "позеленевший щит"
+  rname: "позеленевшего щита"
+  dname: "позеленевшему щиту"
+  vname: "позеленевший щит"
+  tname: "позеленевшим щитом"
+  pname: "позеленевшем щите"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Позеленевший щит лежит тут."
+  keywords: ["позеленевший", "щит"]
+  description: >-
+    Этот щит был извлечен из брюха гигантской паучихи, где подвергался
+    действию ее желудочного сока. Благодаря этому он приобрел красивый
+    зеленоватый оттенок и магические свойства.
+  metadata:
+    quality: common
+    slot: "щит"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 18
+      acid_resistance: 2
+      crushing_resistance: 2
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['heavy_armor']
+- id: 66709
+  name: "сапоги из паутины"
+  rname: "сапог из паутины"
+  dname: "сапогам из паутины"
+  vname: "сапоги из паутины"
+  tname: "сапогами из паутины"
+  pname: "сапогах из паутины"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Сапоги из паутины лежат тут."
+  keywords: ["сапоги", "паутинные"]
+  description: >-
+    Эти сапоги изготовлены из прекрасного материала - паутины. Изделия из нее
+    получаются очень легкими, но прочными. А, паутина пауков пустошей, обладает
+    еще, вдобавок, магическими свойствами.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 25
+    itemLevel: 25
+    stats:
+      armor: 6
+      mana_regeneration: 10
+      mana: 50
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: 66710
+  type: RESOURCE
+  materials: ['хитин', 'флегма']
+  name: "кусочек паутины"
+  rname: "кусочка паутины"
+  dname: "кусочку паутины"
+  vname: "кусочек паутины"
+  tname: "кусочком паутины"
+  pname: "кусочке паутины"
+  gender: "male"
+  roomDesc: "Кусочек паутины лежит тут."
+  keywords: ["кусочек"]
+  description: >-
+    Вы видите небольшой комок чистой, белой паутины.
+  metadata:
+    sellable:
+      value: 50
+      currency: золото
+- id: 66711
+  name: "позеленевший меч"
+  rname: "позеленевшего меча"
+  dname: "позеленевшему мечу"
+  vname: "позеленевший меч"
+  tname: "позеленевшим мечом"
+  pname: "позеленевшем мече"
+  gender: "male"
+  damageVerb: "рубанул"
+  roomDesc: "Превосходный, но слегка позеленевший меч лежит тут."
+  description: >-
+    Этот меч был извлечен из брюха гигантской паучихи, где подвергался действию
+    ее желудочного сока. Благодаря этому он приобрел красивый зеленоватый
+    оттенок и магические свойства.
+  keywords: ["позеленевший", "меч"]
+  type: WEAPON
+  metadata:
+    level: 30
+    slot: 'оружие'
+    itemLevel: 30
+    quality: common
+    minDamage: 65
+    maxDamage: 210
+    speed: 2.6
+    stats:
+      strength: 3
+      critical: 5
+      acid_damage: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['swords']
+- id: 66712
+  name: "позеленевший топор"
+  rname: "позеленевшего топора"
+  dname: "позеленевшему топору"
+  vname: "позеленевший топор"
+  tname: "позеленевшим топором"
+  pname: "позеленевшем топоре"
+  gender: "male"
+  damageVerb: "рубанул"
+  roomDesc: "Превосходный, но слегка позеленевший топор лежит тут."
+  description: >-
+    Этот топор был извлечен из брюха гигантской паучихи, где подвергался действию
+    ее желудочного сока. Благодаря этому он приобрел красивый зеленоватый
+    оттенок и магические свойства.
+  keywords: ["позеленевший", "топор"]
+  type: WEAPON
+  metadata:
+    level: 30
+    slot: 'оружие'
+    itemLevel: 30
+    quality: common
+    minDamage: 65
+    maxDamage: 210
+    speed: 2.6
+    stats:
+      strength: 3
+      critical: 5
+      acid_damage: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['axes']
+- id: 66713
+  name: "жало болотной твари"
+  rname: "жала болотной твари"
+  dname: "жалу болотной твари"
+  vname: "жало болотной твари"
+  tname: "жалом болотной твари"
+  pname: "жале болотной твари"
+  gender: "neuter"
+  damageVerb: "укололо"
+  roomDesc: "Чье-то длинное отвратительное жало лежит тут."
+  description: >-
+    Похоже, что это жало принадлежало раньше какому-то огромному насекомому.
+    Несмотря на отсутствие какой-либо обработки, оно очень твердое и удобно
+    ложится в руку, что позволяет использовать его в качестве оружия. 
+  keywords: ["жало"]
+  type: WEAPON
+  metadata:
+    level: 25
+    slot: 'оружие'
+    itemLevel: 25
+    quality: common
+    minDamage: 45
+    maxDamage: 165
+    speed: 2.6
+    stats:
+      critical: 8
+      acid_damage: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['various_weapons']
+- id: 66714
+  type: CONTAINER
+  name: "обитый железом сундук"
+  rname: "обитого железом сундука"
+  dname: "обитому железом сундуку"
+  vname: "обитый железом сундук"
+  tname: "обитым железом сундуком"
+  pname: "обитом железом сундуке"
+  gender: "male"
+  roomDesc: "Небольшой обитый железом сундук спрятан тут кем-то."
+  description: >-
+    Кажется очень прочным, без ключа не откроешь.
+  keywords: ["сундук"]
+  items: ["spdfor:66717", "spdfor:66740"]
+  closed: true
+  locked: true
+  lockedBy: "spdfor:66741"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 66715
+  name: "высохшее дерево"
+  rname: "высохшего дерева"
+  dname: "высохшему дереву"
+  vname: "высохшее дерево"
+  tname: "высохшим деревом"
+  pname: "высохшем дереве"
+  gender: "neuter"
+  roomDesc: "Огромное высохшее дерево стоит тут."
+  description: >-
+    Это огромное дерево кажется еще необъятнее из-за толстого слоя паутины,
+    что оплетает его. Странно, но она колышется даже в безветренную погоду.
+    Кора на дереве еле держится: кажется, ее очень просто сорвать.
+  keywords: ["дерево", "высохшее"]
+  metadata:
+    noPickup: true
+- id: 66716
+  type: RESOURCE
+  name: "кусок коры"
+  rname: "куска коры"
+  dname: "куску коры"
+  vname: "кусок коры"
+  tname: "куском коры"
+  pname: "куске коры"
+  gender: "male"
+  roomDesc: "Кусок коры лежит тут."
+  keywords: ["кусок", "кора"]
+  description: >-
+    Кора довольно крепкая, если усесться на нее, то можно откуда-нибудь скатиться.
+  behaviors:
+    decay:
+      duration: 300
+  metadata:
+    quality: common
+- id: 66717
+  name: "куча монет"
+  rname: "кучи монет"
+  dname: "куче монет"
+  vname: "кучу монет"
+  tname: "кучей монет"
+  pname: "куче монет"
+  gender: "female"
+  keywords: ["куча", "монеты"]
+  roomDesc: "Куча монет лежит тут."
+  behaviors:
+    money:
+      min: 50
+      max: 150
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66718
+  name: "перчатки из паутины"
+  rname: "перчаток из паутины"
+  dname: "перчаткам из паутины"
+  vname: "перчатки из паутины"
+  tname: "перчатками из паутины"
+  pname: "перчатках из паутины"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Перчатки из паутины лежат тут."
+  keywords: ["перчатки", "паутинные"]
+  description: >-
+    Эти перчатки изготовлены из прекрасного материала - паутины. Изделия из нее
+    получаются очень легкими, но прочными. А, паутина пауков пустошей, обладает
+    еще, вдобавок, магическими свойствами.
+  metadata:
+    quality: common
+    slot: "перчатки"
+    level: 25
+    itemLevel: 25
+    stats:
+      armor: 6
+      mana_regeneration: 10
+      health_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: 66719
+  name: "куртка из паутины"
+  rname: "куртки из паутины"
+  dname: "куртке из паутины"
+  vname: "куртку из паутины"
+  tname: "курткой из паутины"
+  pname: "куртке из паутины"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Элегантная куртка из паутины лежит тут."
+  keywords: ["куртка", "паутинная"]
+  description: >-
+    Эта куртка изготовлена из прекрасного материала - паутины. Изделия из нее
+    получаются очень легкими, но прочными. А, паутина пауков пустошей, обладает
+    еще, вдобавок, магическими свойствами.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 25
+    itemLevel: 25
+    stats:
+      armor: 9
+      stamina: 1
+      agility: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: 66720
+  name: "куча панцирей"
+  rname: "кучи панцирей"
+  dname: "куче панцирей"
+  vname: "кучу панцирей"
+  tname: "кучей панцирей"
+  pname: "куче панцирей"
+  gender: "female"
+  roomDesc: "На земле лежит куча из хитиновых панцирей пауков."
+  description: >-
+    Похоже, кто-то не в ладах с пауками! Вон сколько панцирей тут лежит...
+  keywords: ["куча"]
+  metadata:
+    noPickup: true
+- id: 66721
+  type: RESOURCE
+  name: "полупереваренная человеческая рука"
+  rname: "полупереваренной человеческой руки"
+  dname: "полупереваренной человеческой руке"
+  vname: "полупереваренную человеческую руку"
+  tname: "полупереваренной человеческой рукой"
+  pname: "полупереваренной человеческой руке"
+  gender: "female"
+  roomDesc: "Полупереваренная человечья рука лежит тут."
+  keywords: ["рука", "полупереваренная", "человеческая"]
+  description: >-
+    Вы видите полупереваренную человеческую руку, вероятно ее извлекли из желудка
+    какого-то монстра.
+  behaviors:
+    decay:
+      duration: 300
+  metadata:
+    quality: common
+- id: 66722
+  type: RESOURCE
+  name: "полупереваренная человеческая нога"
+  rname: "полупереваренной человеческой ноги"
+  dname: "полупереваренной человеческой ноге"
+  vname: "полупереваренную человеческую ногу"
+  tname: "полупереваренной человеческой ногой"
+  pname: "полупереваренной человеческой ноге"
+  gender: "female"
+  roomDesc: "Полупереваренная человечья нога лежит тут."
+  keywords: ["нога", "полупереваренная", "человеческая"]
+  description: >-
+    Вы видите полупереваренную человеческую ногу, вероятно ее извлекли из желудка
+    какого-то монстра.
+  behaviors:
+    decay:
+      duration: 300
+  metadata:
+    quality: common
+- id: 66723
+  name: "плётка из паутины"
+  rname: "плётки из паутины"
+  dname: "плётке из паутины"
+  vname: "плётку из паутины"
+  tname: "плёткой из паутины"
+  pname: "плётке из паутины"
+  gender: "female"
+  damageVerb: "хлестнула"
+  roomDesc: "Кто-то обронил тут плётку из паутины."
+  description: >-
+    Эта плетка изготовлена из легкого, но прочного материала - паутины. Кроме
+    того, что она обладает прекрасными боевыми характеристиками, плетка
+    поможет обездвижить почти любого противника.
+  keywords: ["плетка"]
+  type: WEAPON
+  metadata:
+    level: 25
+    slot: 'оружие'
+    itemLevel: 25
+    quality: common
+    minDamage: 40
+    maxDamage: 160
+    speed: 2.4
+    stats:
+      agility: 4
+      strength: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['various_weapons']
+- id: 66724
+  name: "кокон"
+  rname: "кокона"
+  dname: "кокону"
+  vname: "кокон"
+  tname: "коконом"
+  pname: "коконе"
+  gender: "male"
+  roomDesc: "Большой плотный кокон подвешен тут на дереве."
+  description: >-
+    Этот кокон так плотно набит чем-то, что кажется стоит только нанести
+    небольшой разрез, так он лопнет от внутреннего напряжения.
+  keywords: ["кокон", "плотный"]
+  metadata:
+    noPickup: true
+- id: 66725
+  name: "человеческий труп"
+  rname: "человеческого трупа"
+  dname: "человеческому трупу"
+  vname: "человеческий труп"
+  tname: "человеческим трупом"
+  pname: "человеческом трупе"
+  gender: "male"
+  roomDesc: "Почерневший человеческий труп лежит тут."
+  description: >-
+    Вы видите уже основательно подгнивший человеческий труп.
+  keywords: ["человеческий", "труп"]
+  behaviors:
+    decay:
+      duration: 600
+  metadata:
+    noPickup: true
+- id: 66726
+  name: "кучка монет"
+  rname: "кучки монет"
+  dname: "кучке монет"
+  vname: "кучку монет"
+  tname: "кучкой монет"
+  pname: "кучке монет"
+  gender: "female"
+  keywords: ["кучка", "монеты"]
+  roomDesc: "Кучка монет лежит тут."
+  behaviors:
+    money:
+      min: 100
+      max: 200
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66727
+  name: "кокон"
+  rname: "кокона"
+  dname: "кокону"
+  vname: "кокон"
+  tname: "коконом"
+  pname: "коконе"
+  gender: "male"
+  roomDesc: "Большой плотный кокон подвешен к потолку пещеры."
+  description: >-
+    Этот кокон так плотно набит чем-то, что кажется стоит только нанести
+    небольшой разрез, так он лопнет от внутреннего напряжения.
+  keywords: ["кокон", "плотный"]
+  metadata:
+    noPickup: true
+- id: 66728
+  name: "статуя Унголиант"
+  rname: "статуи Унголиант"
+  dname: "статуе Унголиант"
+  vname: "статую Унголиант"
+  tname: "статуей Унголиант"
+  pname: "статуе Унголиант"
+  gender: "female"
+  roomDesc: "Огромная золотая статуя Унголиант стоит тут."
+  description: >-
+    Статуя гигантского паука целиком вылита из золота с большой тщательностью
+    и передает в мельчайших подробностях всю анатомию этих насекомых. Статуя
+    кажется очень древней, но блеск ее по прежнему не утратил частоты. Видимо
+    за ней следят с тщательностью и усердием.
+  keywords: ["статуя", "унголиант"]
+  metadata:
+    noPickup: true
+- id: 66729
+  name: "зеленоватая жидкость"
+  rname: "зеленоватой жидкости"
+  dname: "зеленоватой жидкости"
+  vname: "зеленоватую жидкость"
+  tname: "зеленоватой жидкостью"
+  pname: "зеленоватой жидкости"
+  gender: "female"
+  roomDesc: "Пузырек с зеленоватой жидкостью лежит тут."
+  description: >-
+    Пузырек наполнен какой-то тягучей зеленоватой жидкостью, обладающей на редкость мерзостным запахом.
+  keywords: ["пузырек", "жидкость", "зеленоватая"]
+  type: POTION
+  metadata:
+    level: 25
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Уменьшает длительность периодического урона на <b>25%</b> в течении <b>60</b> секунд."
+        duration: 60000
+      state:
+        magnitude: 25
+        stat: "dot_duration_reduction_percent"
+    sellable:
+      value: 100
+      currency: золото
+- id: 66730
+  name: "алебарда темного стража"
+  rname: "алебарды темного стража"
+  dname: "алебарде темного стража"
+  vname: "алебарду темного стража"
+  tname: "алебардой темного стража"
+  pname: "алебарде темного стража"
+  gender: "female"
+  damageVerb: "рубанула"
+  roomDesc: "Алебарда из странного темного металла лежит тут."
+  description: >-
+    Эта алебарда целиком вылита из какого-то темного металла, что обеспечивает
+    ей, с одной стороны, великолепную прочность, а с другой, немалый вес. Она
+    наточена так, что может без труда разрезать падающий на нее волос.
+  keywords: ["алебарда"]
+  type: WEAPON
+  metadata:
+    level: 28
+    slot: 'оружие'
+    itemLevel: 28
+    quality: common
+    minDamage: 55
+    maxDamage: 190
+    speed: 2.6
+    stats:
+      critical: 8
+      cutting_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['polearms']
+- id: 66731
+  name: "посох послушницы"
+  rname: "посоха послушницы"
+  dname: "посоху послушницы"
+  vname: "посох послушницы"
+  tname: "посохом послушницы"
+  pname: "посохе послушницы"
+  gender: "male"
+  damageVerb: "огрел"
+  roomDesc: "Посох послушницы паучьего культа лежит тут."
+  description: >-
+    Этот посох принадлежал раньше послушнице какого-то темного культа. Он
+    изготовлен из прочного дерева и, для дополнительной прочности,
+    заговорен с помощью магии, что позволяет наносить им значительные
+    повреждения противнику.
+  keywords: ["посох"]
+  type: WEAPON
+  metadata:
+    level: 28
+    slot: 'оружие'
+    itemLevel: 28
+    quality: common
+    minDamage: 55
+    maxDamage: 190
+    speed: 2.6
+    stats:
+      acid_damage: 6
+      chaos_damage: 6
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 30
+      skills: ['staves']
+- id: 66732
+  name: "кожаные ремни"
+  rname: "кожаных ремней"
+  dname: "кожаным ремням"
+  vname: "кожаные ремни"
+  tname: "кожаными ремнями"
+  pname: "кожаных ремнях"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Куча кожаных ремней лежит тут."
+  keywords: ["кожаные", "ремни"]
+  description: >-
+    Вы видите несколько кожаных ремней скрепленных металлическими застежками.
+    Такая одежда совершенно не обеспечивает владельца защитой, но зато не
+    стесняет его движений и позволяет любоваться его оголенным торсом.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 28
+    itemLevel: 28
+    stats:
+      armor: 10
+      critical: 3
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['medium_armor']
+- id: 66733
+  name: "посох паучьего культа"
+  rname: "посоха паучьего культа"
+  dname: "посоху паучьего культа"
+  vname: "посох паучьего культа"
+  tname: "посохом паучьего культа"
+  pname: "посохе паучьего культа"
+  gender: "male"
+  damageVerb: "огрел"
+  roomDesc: "Посох из темного, крепкого дерева лежит тут."
+  description: >-
+    Этот посох является великолепным образцом магического искусства, вырезанный
+    из цельного куска редкого дерева, он покрыт письменами на забытом языке,
+    вероятно чтобы усилить его магические свойства. Если осмотреть посох в темноте,
+    то можно заметить искры, бегущие по его поверхности.
+  keywords: ["посох"]
+  type: WEAPON
+  metadata:
+    level: 30
+    slot: 'оружие'
+    itemLevel: 30
+    quality: common
+    minDamage: 60
+    maxDamage: 210
+    speed: 2.6
+    stats:
+      acid_damage: 6
+      chaos_damage: 6
+      intellect: 1
+    sellable:
+      value: 250
+      currency: золото
+    requirements:
+      intellect: 30
+      skills: ['staves']
+- id: 66734
+  name: "плетка госпожи"
+  rname: "плетки госпожи"
+  dname: "плетке госпожи"
+  vname: "плетку госпожи"
+  tname: "плеткой госпожи"
+  pname: "плетке госпожи"
+  gender: "female"
+  damageVerb: "хлестнула"
+  roomDesc: "Небольшая аккуратная плетка лежит тут."
+  description: >-
+    Эта плетка совершенно не годится для использования в качестве оружия, ей
+    можно разве что мух разгонять. Но изготовлена она с тщательностью, говорящей
+    о важности этой вещи.
+  keywords: ["плетка"]
+  type: WEAPON
+  metadata:
+    level: 30
+    slot: 'оружие'
+    itemLevel: 30
+    quality: common
+    minDamage: 60
+    maxDamage: 200
+    speed: 2.4
+    stats:
+      agility: 6
+      intellect: 6
+      mana_regeneration: 5
+    sellable:
+      value: 250
+      currency: золото
+    requirements:
+      intellect: 30
+      skills: ['various_weapons']
+- id: 66735
+  name: "сапожки госпожи"
+  rname: "сапожек госпожи"
+  dname: "сапожкам госпожи"
+  vname: "сапожки госпожи"
+  tname: "сапожками госпожи"
+  pname: "сапожках госпожи"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Высокие черные сапожки госпожи лежат тут."
+  keywords: ["кожаные", "сапожки"]
+  description: >-
+    Вы видите высокие сапоги из черной, мягкой кожи, достаточно удобные, чтобы
+    подойти любой женщине, но из-за их оригинального фасона, решится на это не
+    каждая. В добавок, каблук у них так тонок, что кажется им можно пронзить
+    даже самый прочный доспех и лишить достоинства любого мужчину.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 30
+    itemLevel: 30
+    stats:
+      armor: 12
+      agility: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['medium_armor']
+- id: 66736
+  name: "перстень с гравировкой"
+  rname: "перстня с гравировкой"
+  dname: "перстню с гравировкой"
+  vname: "перстень с гравировкой"
+  tname: "перстнем с гравировкой"
+  pname: "перстне с гравировкой"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Золотой перстень с гравировкой лежит тут."
+  keywords: ["золотой", "перстень"]
+  description: >-
+    На этом золотом перстне выгравировано довольно отвратительное изображение
+    паука. По всей видимости перстень магический, так как взяв его в руку, ее
+    пронзает мертвенный холод и его сразу хочется выкинуть подальше.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 30
+    itemLevel: 30
+    stats:
+      detect_hide: 2
+      detect_invisibility: 2
+    sellable:
+      value: 250
+      currency: золото
+- id: 66737
+  type: RESOURCE
+  materials: ['мифрил', 'адамантит']
+  name: "золотой осколок"
+  rname: "золотого осколка"
+  dname: "золотому осколку"
+  vname: "золотой осколок"
+  tname: "золотым осколком"
+  pname: "золотом осколке"
+  gender: "male"
+  roomDesc: "Массивный золотой осколок лежит тут."
+  keywords: ["золотой", "осколок"]
+  description: >-
+    Самый обычный золотой слиток, правда вам редко когда удавалось увидеть слитки таких размеров.
+  metadata:
+    sellable:
+      value: 500
+      currency: золото
+- id: 66738
+  name: "мантия из паутины"
+  rname: "мантии из паутины"
+  dname: "мантии из паутины"
+  vname: "мантию из паутины"
+  tname: "мантией из паутины"
+  pname: "мантии из паутины"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Элегантная мантия из паутины лежит тут."
+  keywords: ["мантия", "паутинная"]
+  description: >-
+    Эта мантия изготовлена из прекрасного материала - паутины. Изделия из нее
+    получаются очень легкими, но прочными. А, паутина пауков пустошей, обладает
+    еще, вдобавок, магическими свойствами.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 25
+    itemLevel: 25
+    stats:
+      armor: 8
+      stamina: 1
+      intellect: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: ['light_armor']
+- id: 66739
+  name: "ошейник с цепью"
+  rname: "ошейника с цепью"
+  dname: "ошейнику с цепью"
+  vname: "ошейник с цепью"
+  tname: "ошейником с цепью"
+  pname: "ошейнике с цепью"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Кожаный ошейник с цепью лежит тут."
+  keywords: ["кожаный", "ошейник"]
+  description: >-
+    Вы видите ошейник из очень мягкой кожи с прикрепленной тонкой серебряной
+    цепочкой. Такое украшение не только устрашает противника, но и несколько
+    стесняет движения владельца, так как он может быть в любой момент схвачен
+    за эту цепочку и остановлен.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 28
+    itemLevel: 28
+    stats:
+      armor: 4
+      strength: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 30
+      skills: ['medium_armor']
+- id: 66740
+  name: "роба послушницы паучьего культа"
+  rname: "робы послушницы паучьего культа"
+  dname: "робе послушницы паучьего культа"
+  vname: "робу послушницы паучьего культа"
+  tname: "робой послушницы паучьего культа"
+  pname: "робе послушницы паучьего культа"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Черная роба послушницы паучьего культа лежит тут."
+  keywords: ["роба"]
+  description: >-
+    Вы видите элегантную, женскую робу, на груди которой вышито белое изображение паука.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 25
+    itemLevel: 25
+    stats:
+      armor: 8
+      acid_resistance: 1
+      chaos_resistance: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: ['light_armor']
+- id: 66741
+  name: "массивный ключ"
+  rname: "массивного ключа"
+  dname: "массивному ключу"
+  vname: "массивный ключ"
+  tname: "массивным ключом"
+  pname: "массивном ключе"
+  gender: "male"
+  keywords: ["ключ", "массивный"]
+  roomDesc: "Массивный ключ лежит тут."
+  behaviors:
+    decay_on_drop: true
+    decay:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66742
+  name: "паутина"
+  rname: "паутины"
+  dname: "паутине"
+  vname: "паутину"
+  tname: "паутиной"
+  pname: "паутине"
+  gender: "female"
+  roomDesc: "Плотная завесь из паутины преграждает путь на юг."
+  description: >-
+    Прочная, да и к тому же липкая паутина. Впрочем, при ближайшем рассмотрении
+    видно, что она крепится к потолку и стенам лишь несколькими нитями, и ее
+    довольно просто сорвать.
+  keywords: ["паутина"]
+  metadata:
+    noPickup: true
+    block:
+      exits: ['юг']
+- id: 66743
+  name: "паутина"
+  rname: "паутины"
+  dname: "паутине"
+  vname: "паутину"
+  tname: "паутиной"
+  pname: "паутине"
+  gender: "female"
+  roomDesc: "Плотная завесь из паутины преграждает путь на юг."
+  description: >-
+    Прочная, да и к тому же липкая паутина. Впрочем, при ближайшем рассмотрении
+    видно, что она крепится к потолку и стенам лишь несколькими нитями, и ее
+    довольно просто сорвать.
+  keywords: ["паутина"]
+  metadata:
+    noPickup: true
+    block:
+      exits: ['юг']
+- id: 66744
+  name: "обрывки паутины"
+  rname: "обрывков паутины"
+  dname: "обрывкам паутины"
+  vname: "обрывки паутины"
+  tname: "обрывками паутины"
+  pname: "обрывках паутины"
+  gender: "plural"
+  roomDesc: "Обрывки паутины лежат на земле."
+  description: >-
+    Прочные липкие нити кем-то разорваны и разрублены.
+  keywords: ["паутина", "обрывки"]
+  behaviors:
+    decay:
+      duration: 600
+  metadata:
+    noPickup: true
+- id: 66745
+  name: "решетка"
+  rname: "решетки"
+  dname: "решетке"
+  vname: "решетку"
+  tname: "решеткой"
+  pname: "решетке"
+  gender: "female"
+  roomDesc: "Железная решетка преграждает путь на восток."
+  description: >-
+    Похоже, решетка настолько прочная, что ее никак не удастся преодолеть,
+    только если вам кто-нибудь ее не откроет изнутри...
+  keywords: ["решетка"]
+  metadata:
+    noPickup: true
+- id: 66746
+  name: "паутинные нити"
+  rname: "паутинных нитей"
+  dname: "паутинным нитям"
+  vname: "паутинные нити"
+  tname: "паутинными нитями"
+  pname: "паутинных нитях"
+  gender: "plural"
+  roomDesc: "Паутинные нити свисают с деревьев."
+  description: >-
+    Деревья здесь высокие, с раскидистыми кронами. Пожалуй, если не побояться
+    использовать в качестве опоры эти паутинные нити, можно попробовать
+    взобраться наверх, на одно из деревьев...
+  keywords: ["нити"]
+  metadata:
+    noPickup: true
+- id: 66747
+  type: SCROLL
+  name: "свиток с эмблемой паука"
+  rname: "свитка с эмблемой паука"
+  dname: "свитку с эмблемой паука"
+  vname: "свиток с эмблемой паука"
+  tname: "свитком с эмблемой паука"
+  pname: "свитке с эмблемой паука"
+  gender: "male"
+  roomDesc: "Странный свиток лежит здесь."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: ["свиток"]
+  metadata:
+    level: 25
+    spell: "defense_curse"
+- id: 66748
+  type: SCROLL
+  name: "свиток из паутины"
+  rname: "свитка из паутины"
+  dname: "свитку из паутины"
+  vname: "свиток из паутины"
+  tname: "свитком из паутины"
+  pname: "свитке из паутины"
+  gender: "male"
+  roomDesc: "Свиток, сотканный из паутины лежит здесь."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: ["свиток"]
+  metadata:
+    level: 25
+    spell: "defense"

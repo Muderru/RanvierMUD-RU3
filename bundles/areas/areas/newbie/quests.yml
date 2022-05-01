@@ -1,0 +1,47 @@
+---
+- id: treequest
+  title: "Нора под деревом"
+  level: 1
+  autoComplete: true
+  description: |-
+    Старое дерево шелестит: В норе под моими корнями тебя ждет награда.
+  completionMessage: |-
+    <b><cyan>Подсказка: Чтобы перемещаться по миру набирай любые направления перечисленные в <white>[Выходы: ...]</white>, когда вы используете команду '<white>смотреть</white>'.</cyan></b>
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить стража сокровища дерева
+        npc: 'newbie:bunny'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 5
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 10
+- id: startquest
+  title: "Найти учителя"
+  level: 1
+  autoComplete: true
+  description: |-
+    Чтобы выжить в этом жестоком мире, нужно найти наставника, способного обучить новым приемам и поделиться своей мудростью.
+  completionMessage: |-
+    <b><cyan>Подсказка: Чтобы узнать, чему может обучить НПС наберите '<white>учитель список</white>',
+    а чтобы выучить умение или заклинание '<white>учитель учить название</white>'.</cyan></b>
+  goals:
+    - type: BountyGoal
+      config:
+        title: Найти учителя
+        npc: 'limbo:wiseoldman'
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 5
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 5

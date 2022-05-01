@@ -1,0 +1,825 @@
+- id: monument
+  name: "монумент"
+  rname: "монумента"
+  dname: "монументу"
+  vname: "монумент"
+  tname: "монументом"
+  pname: "монументе"
+  gender: "male"
+  roomDesc: "Монумент изображающий Первооткрывателя высится в центре площади."
+  description: >-
+    Монумент изображает человека, который вопреки трудностям непоколебимо
+    идет к своей заветной цели - исследованию нового.
+  keywords: ["колодец"]
+  metadata:
+    noPickup: true
+- id: knife
+  name: "арлендский нож"
+  rname: "арлендского ножа"
+  dname: "арлендскому ножу"
+  vname: "арлендский нож"
+  tname: "арлендским ножом"
+  pname: "арлендском ноже"
+  gender: "male"
+  damageVerb: "пырнул"
+  roomDesc: "Отличный стальной нож валяется тут."
+  description: >-
+    На клинке этого отличного стального ножа выгравирован герб города Арленд.
+  keywords: ["нож", "арлендский", "стальной", "отличный"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 120
+    speed: 2.4
+    stats:
+      agility: 3
+      piercing_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: ['daggers']
+- id: jacket
+  name: "арлендский камзол"
+  rname: "арлендского камзола"
+  dname: "арлендскому камзолу"
+  vname: "арлендский камзол"
+  tname: "арлендским камзолом"
+  pname: "арлендском камзоле"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Белый камзол валяется здесь."
+  keywords: ["камзол", "арлендский", "белый"]
+  description: >-
+    Этот камзол сделан из добротной белой ткани и украшен гербами города Арленд.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 5
+      health_regeneration: 10
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: jacket2
+  name: "арлендская куртка"
+  rname: "арлендской куртки"
+  dname: "арлендской куртке"
+  vname: "арлендскую куртку"
+  tname: "арлендской курткой"
+  pname: "арлендской куртке"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Белая куртка валяется здесь."
+  keywords: ["куртка", "арлендская", "белая"]
+  description: >-
+    Эта куртка сделана из добротной белой кожи и украшена гербами города Арленд.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 8
+      strength: 1
+      agility: 1
+      stamina: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['medium_armor']
+- id: sandals
+  name: "арлендские сандалии"
+  rname: "арлендских сандалий"
+  dname: "арлендским сандалиям"
+  vname: "арлендские сандалии"
+  tname: "арлендскими сандалиями"
+  pname: "арлендских сандалиях"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Белые сандалии валяются здесь."
+  keywords: ["сандалии", "арлендские", "белые"]
+  description: >-
+    Эти легкие сандалии украшены гербами города Арленд.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      health_regeneration: 10
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: boots
+  name: "арлендские сапоги"
+  rname: "арлендских сапог"
+  dname: "арлендским сапогам"
+  vname: "арлендские сапоги"
+  tname: "арлендскими сапогами"
+  pname: "арлендских сапогах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Белые сапоги валяются здесь."
+  keywords: ["сапоги", "арлендские", "белые"]
+  description: >-
+    Эти сапоги из белой кожи украшены гербами города Арленд.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 6
+      strength: 1
+      agility: 1
+      stamina: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['medium_armor']
+- id: belt
+  name: "арлендский пояс"
+  rname: "арлендского пояса"
+  dname: "арлендскому поясу"
+  vname: "арлендский пояс"
+  tname: "арлендским поясом"
+  pname: "арлендском поясе"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Белый пояс валяется здесь."
+  keywords: ["пояс", "арлендский", "белый"]
+  description: >-
+    Этот пояс сделан из добротной белой ткани и украшен гербами города Арленд.
+  metadata:
+    quality: common
+    slot: "пояс"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      health_regeneration: 10
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: club
+  name: "арлендская дубинка"
+  rname: "арлендской дубинки"
+  dname: "арлендской дубинке"
+  vname: "арлендскую дубинку"
+  tname: "арлендской дубинкой"
+  pname: "арлендской дубинке"
+  gender: "female"
+  damageVerb: "огрела"
+  roomDesc: "Легкая дубинка валяется тут."
+  description: >-
+    На рукояти этой дубинки выгравирован герб города Арленд.
+  keywords: ["дубинка", "арлендская", "легкая"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 125
+    speed: 2.5
+    stats:
+      strength: 3
+      crushing_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'daggers' ]
+- id: armor
+  name: "доспех гвардейца"
+  rname: "доспеха гвардейца"
+  dname: "доспеху гвардейца"
+  vname: "доспех гвардейца"
+  tname: "доспехом гвардейца"
+  pname: "доспехе гвардейца"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Белый доспех валяется здесь."
+  keywords: ["доспех", "белый"]
+  description: >-
+    Этот доспех выкрашен в белый цвет, а на груди украшен золотым гербом города Арленд.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 11
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['heavy_armor']
+- id: boots2
+  name: "сапоги гвардейца"
+  rname: "сапог гвардейца"
+  dname: "сапогам гвардейца"
+  vname: "сапоги гвардейца"
+  tname: "сапогами гвардейца"
+  pname: "сапогах гвардейца"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Белые сапоги валяются здесь."
+  keywords: ["сапоги", "белые"]
+  description: >-
+    Эти сапоги выкрашены в белый цвет и украшены золотым гербом города Арленд.
+  metadata:
+    quality: common
+    slot: "ноги"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 9
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['heavy_armor']
+- id: helmet
+  name: "шлем гвардейца"
+  rname: "шлема гвардейца"
+  dname: "шлему гвардейца"
+  vname: "шлем гвардейца"
+  tname: "шлемом гвардейца"
+  pname: "шлеме гвардейца"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Белый шлем валяется здесь."
+  keywords: ["шлем", "белый"]
+  description: >-
+    Этот шлем выкрашен в белый цвет и украшен золотым гербом города Арленд.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 9
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['heavy_armor']
+- id: cape
+  name: "плащ гвардейца"
+  rname: "плаща гвардейца"
+  dname: "плащу гвардейца"
+  vname: "плащ гвардейца"
+  tname: "плащом гвардейца"
+  pname: "плаще гвардейца"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Белый плащ валяется здесь."
+  keywords: ["плащ", "белый"]
+  description: >-
+    Этот плащ выкрашен в белый цвет и украшен золотым гербом города Арленд.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 30
+      skills: ['light_armor']
+- id: sword
+  name: "меч гвардейца"
+  rname: "меча гвардейца"
+  dname: "мечу гвардейца"
+  vname: "меч гвардейца"
+  tname: "мечом гвардейца"
+  pname: "мече гвардейца"
+  gender: "male"
+  damageVerb: "рубанул"
+  roomDesc: "Отличный стальной меч валяется тут."
+  description: >-
+    Великолепное оружие стражников города Арленд.
+  keywords: ["меч", "стальной", "отличный"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 125
+    speed: 2.5
+    stats:
+      critical: 4
+      cutting_damage: 3
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['swords']
+- id: polearm
+  name: "алебарда гвардейца"
+  rname: "алебарды гвардейца"
+  dname: "алебарде гвардейца"
+  vname: "алебарду гвардейца"
+  tname: "алебардой гвардейца"
+  pname: "алебарде гвардейца"
+  gender: "female"
+  damageVerb: "рубанула"
+  roomDesc: "Отличная стальная алебарда валяется тут."
+  description: >-
+    Великолепное оружие стражников города Арленд.
+  keywords: ["алебарда", "стальная", "отличная"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 125
+    speed: 2.7
+    stats:
+      critical: 7
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['polearms']
+- id: illusionist_cape
+  name: "накидка фокусника"
+  rname: "накидки фокусника"
+  dname: "накидке фокусника"
+  vname: "накидку фокусника"
+  tname: "накидкой фокусника"
+  pname: "накидке фокусника"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Разноцветная накидка валяется здесь."
+  keywords: ["накидка", "разноцветная"]
+  description: >-
+    Накидка украшена разноцветными блестками и мистическими символами. Такие обычно
+    носят фокусники на представлениях, либо проходимцы, выдающие себя за магов.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      detect_invisibility: 1
+      detect_hide: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: illusionist_hat
+  name: "тюрбан фокусника"
+  rname: "тюрбана фокусника"
+  dname: "тюрбану фокусника"
+  vname: "тюрбан фокусника"
+  tname: "тюрбаном фокусника"
+  pname: "тюрбане фокусника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Разноцветный тюрбан валяется здесь."
+  keywords: ["тюрбан", "разноцветная"]
+  description: >-
+    Тюрбан украшен разноцветными блестками и мистическими символами. Такие обычно
+    носят фокусники на представлениях, либо проходимцы, выдающие себя за магов.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      detect_invisibility: 2
+      detect_hide: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: arlend_cake
+  name: "арлендский пирог"
+  rname: "арлендского пирога"
+  dname: "арлендскому пирогу"
+  vname: "арлендский пирог"
+  tname: "арлендским пирогом"
+  pname: "арлендском пироге"
+  gender: "male"  
+  roomDesc: "Аппетитный пирог валяется тут."
+  description: >-
+    Мерзко воняющее блюдо.
+  keywords: ["арлендский", "пирог", "аппетитный"]
+  type: POTION
+  metadata:
+    level: 20
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает скорость атаки на <b>10%</b> в течении <b>60</b> секунд."
+        duration: 60000
+      state:
+        magnitude: 10
+        stat: "swift"
+    sellable:
+      value: 50
+      currency: золото
+- id: chainmail
+  name: "стальная кольчуга"
+  rname: "стальной кольчуги"
+  dname: "стальной кольчуге"
+  vname: "стальную кольчугу"
+  tname: "стальной кольчугой"
+  pname: "стальной кольчуге"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Стальная кольчуга валяется здесь."
+  keywords: ["стальная", "кольчуга"]
+  description: >-
+    Кольчуга сделана из тонких, но прочных стальных колец. Весьма достойная работа.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 11
+      health: 100
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['heavy_armor']
+- id: axe
+  name: "боевой топор"
+  rname: "боевого топора"
+  dname: "боевому топору"
+  vname: "боевой топор"
+  tname: "боевым топором"
+  pname: "боевом топоре"
+  gender: "male"
+  damageVerb: "рубанул"
+  roomDesc: "Боевой топор валяется тут."
+  description: >-
+    Этим топором рубят не деревья, а головы врагов..
+  keywords: ["топор", "боевой"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 125
+    speed: 2.5
+    stats:
+      cutting_damage: 6
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['axes']
+- id: glasses
+  name: "огромные очки"
+  rname: "огромных очков"
+  dname: "огромным очкам"
+  vname: "огромные очки"
+  tname: "огромными очками"
+  pname: "огромных очках"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Огромные очки с толстыми стеклами валяются тут."
+  keywords: ["огромные", "очки"]
+  description: >-
+    Эти огромные очки закрывают половину лица, вы будете выглядеть в них нелепо.
+    Но если зрение не очень, то деваться некуда.
+  metadata:
+    quality: common
+    slot: "глаза"
+    level: 20
+    itemLevel: 20
+    stats:
+      detect_invisibility: 2
+      detect_hide: 2
+    sellable:
+      value: 100
+      currency: золото
+- id: ring
+  name: "кольцо с рубином"
+  rname: "кольца с рубином"
+  dname: "кольцу с рубином"
+  vname: "кольцо с рубином"
+  tname: "кольцом с рубином"
+  pname: "кольце с рубином"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Золотое кольцо с рубином лежит тут."
+  keywords: ["кольцо", "золотое"]
+  description: >-
+    Это толстое золотое кольцо с огромным рубином принадлежало раньше
+    какому-то богачу.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 20
+    itemLevel: 20
+    stats:
+      mana_regeneration: 10
+      fire_damage: 2
+    sellable:
+      value: 150
+      currency: золото
+- id: maid_outfit
+  name: "наряд горничной"
+  rname: "наряда горничной"
+  dname: "наряду горничной"
+  vname: "наряд горничной"
+  tname: "нарядом горничной"
+  pname: "наряде горничной"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Наряд горничной валяется здесь."
+  keywords: ["наряд"]
+  description: >-
+    Такие наряды носят горничные в богатых домах. Короткая, пышная юбка и почти
+    полностью открытая грудь не оставят равнодушными никого.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      freedom: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      agility: 25
+- id: potion1
+  name: "зелье могущества"
+  rname: "зелья могущества"
+  dname: "зелью могущества"
+  vname: "зелье могущества"
+  tname: "зельем могущества"
+  pname: "зелье могущества"
+  gender: "neuter"
+  roomDesc: "Пузырек с каким-то зельем лежит тут."
+  description: >-
+    Маленький пузырек с переливающимся красным зельем.
+  keywords: ["зелье", "могущества"]
+  type: POTION
+  metadata:
+    level: 20
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает урон от заклинаний на <b>10%</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 20
+        stat: "spell_damage_percent"
+    sellable:
+      value: 50
+      currency: золото
+- id: potion2
+  name: "зелье милосердия"
+  rname: "зелья милосердия"
+  dname: "зелью милосердия"
+  vname: "зелье милосердия"
+  tname: "зельем милосердия"
+  pname: "зелье милосердия"
+  gender: "neuter"
+  roomDesc: "Пузырек с каким-то зельем лежит тут."
+  description: >-
+    Маленький пузырек с переливающимся бирюзовым зельем.
+  keywords: ["зелье", "милосердия"]
+  type: POTION
+  metadata:
+    level: 20
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает исходящее исцеление на <b>10%</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 20
+        stat: "out_heal_percent"
+    sellable:
+      value: 50
+      currency: золото
+- id: potion3
+  name: "зелье живучести"
+  rname: "зелья живучести"
+  dname: "зелью живучести"
+  vname: "зелье живучести"
+  tname: "зельем живучести"
+  pname: "зелье живучести"
+  gender: "neuter"
+  roomDesc: "Пузырек с каким-то зельем лежит тут."
+  description: >-
+    Маленький пузырек с переливающимся молочным зельем.
+  keywords: ["зелье", "живучести"]
+  type: POTION
+  metadata:
+    level: 20
+    usable:
+      effect: "potion.buff"
+      charges: 5
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает входящее исцеление на <b>10%</b> в течении <b>15</b> секунд."
+        duration: 15000
+      state:
+        magnitude: 20
+        stat: "in_heal_percent"
+    sellable:
+      value: 50
+      currency: золото
+- id: cook_hat
+  name: "поварской колпак"
+  rname: "поварского колпака"
+  dname: "поварскому колпаку"
+  vname: "поварской колпак"
+  tname: "поварским колпаком"
+  pname: "поварском колпаке"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Колпак повара валяется здесь."
+  keywords: ["поварской", "колпак"]
+  description: >-
+    Самый обычный белый поварской колпак.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      agility: 2
+      cutting_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: cook_knife
+  name: "зазубренный нож"
+  rname: "зазубренного ножа"
+  dname: "зазубренному ножу"
+  vname: "зазубренный нож"
+  tname: "зазубренным ножом"
+  pname: "зазубренном ноже"
+  gender: "male"
+  damageVerb: "резанул"
+  roomDesc: "Отличный стальной нож валяется тут."
+  description: >-
+    Лезвие этого ножа сделано со специальными зазубринами, для того
+    чтобы было удобнее резать мясо. Такой нож пригодится на любой кухне.
+  keywords: ["нож", "зазубренный", "стальной", "отличный"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 120
+    speed: 2.5
+    stats:
+      critical: 2
+      cutting_damage: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: ['daggers']
+- id: bow
+  name: "составной лук"
+  rname: "составного лука"
+  dname: "составному луку"
+  vname: "составной лук"
+  tname: "составным луком"
+  pname: "составном луке"
+  gender: "male"
+  damageVerb: "подстрелил"
+  roomDesc: "Составной лук валяется тут."
+  description: >-
+    Древко этого лука собрано из нескольких коротких частей, изготовленных
+    из различных материалов, каждый из которых усиливает убойную силу лука.
+  keywords: ["лук", "составной"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 120
+    speed: 2.4
+    stats:
+      critical: 5
+      piercing_damage: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: ['bows']
+- id: mace
+  name: "украшенная булава"
+  rname: "украшенной булавы"
+  dname: "украшенной булаве"
+  vname: "украшенную булаву"
+  tname: "украшенной булавой"
+  pname: "украшенной булаве"
+  gender: "female"
+  damageVerb: "сокрушила"
+  roomDesc: "Украшенная разноцветными узорами булава валяется тут."
+  description: >-
+    Эта булава украшена по всей длине разноцветными узорами. Несмотря
+    на пестроту, это отличное оружие.
+  keywords: ["украшенная", "булава"]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 20
+    quality: common
+    minDamage: 35
+    maxDamage: 120
+    speed: 3.0
+    stats:
+      crushing_damage: 7
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 30
+      skills: ['maces']

@@ -1,0 +1,867 @@
+- id: axe
+  name: "топорик"
+  rname: "топорика"
+  dname: "топорику"
+  vname: "топорик"
+  tname: "топориком"
+  pname: "топорике"
+  gender: "male"  
+  roomDesc: "Топорик"
+  description: >-
+    Ржавый топорик на потертой деревянной рукоятке.
+  keywords: [ "топорик" ]
+  type: WEAPON
+  metadata:
+    level: 12
+    slot: 'оружие'
+    itemLevel: 12
+    quality: common
+    minDamage: 19
+    maxDamage: 67
+    speed: 2.5
+    stats:
+      cutting_damage: 3
+      crushing_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+- id: bag
+  type: CONTAINER
+  name: "мешок"
+  rname: "мешка"
+  dname: "мешку"
+  vname: "мешок"
+  tname: "мешком"
+  pname: "мешке"
+  gender: "male"
+  roomDesc: "Большой мешок"
+  keywords: [ "большой", "мешок" ]
+  description: "Похож на мешок, в котором обычно хранят муку."
+  items: [  ]
+  closed: false
+  maxItems: 5
+  metadata:
+    noPickup: false
+- id: bankkey
+  name: "банковский ключ"
+  rname: "банковского ключа"
+  dname: "банковскому ключу"
+  vname: "банковский ключ"
+  tname: "банковским ключом"
+  pname: "банковском ключе"
+  gender: "male"  
+  keywords: ["ключ", "банковский"]
+  roomDesc: "Банковский ключ"
+  description: "Это массивный железный ключ. Таким и убить можно."
+  metadata:
+    quality: common
+- id: book
+  name: "книга"
+  rname: "книги"
+  dname: "книге"
+  vname: "книгу"
+  tname: "книгой"
+  pname: "книге"
+  gender: "female"  
+  keywords: ["книга"]
+  roomDesc: "Книга на иностранном языке"
+  description: "Эта книга подвешена железной цепью к стене. На обложке написано: ADVENTURING."
+  metadata:
+    quality: common
+    noPickup: true
+- id: chest
+  type: CONTAINER
+  name: "ящик"
+  rname: "ящика"
+  dname: "ящику"
+  vname: "ящик"
+  tname: "ящиком"
+  pname: "ящике"
+  gender: "male"
+  roomDesc: "Ящик"
+  keywords: [ "ящик" ]
+  description: "Этот большой ящик сколочен из толстых дубовых досок."
+  items: [  ]
+  closed: false
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: classbeer
+  name: "пиво"
+  rname: "пива"
+  dname: "пиву"
+  vname: "пиво"
+  tname: "пивом"
+  pname: "пиве"
+  gender: "neuter"  
+  roomDesc: "Первоклассное пиво"
+  keywords: [ "пиво", "первоклассное" ]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      effect: "potion.buff"
+      charges: 3
+      destroyOnDepleted: true
+      config:
+        description: "Увеличивает силу на <b>10</b> в течении <b>150</b> секунд."
+        duration: 150000
+      state:
+        magnitude: 10
+        stat: "strength"
+- id: com_meal
+  name: "простая еда"
+  rname: "простой еды"
+  dname: "простой еде"
+  vname: "простую еду"
+  tname: "простой едой"
+  pname: "простой еде"
+  gender: "female"  
+  roomDesc: "Простая еда"
+  keywords: [ "еда", "простая" ]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 30
+      options:
+        restores: 35
+        stat: "health"
+- id: crown
+  name: "маленькая железная корона"
+  rname: "маленькой железной короны"
+  dname: "маленькой железной короне"
+  vname: "маленькую железную корону"
+  tname: "маленькой железной короной"
+  pname: "маленькой железной короне"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Маленькая железная корона"
+  keywords: ["маленькая", "железная", "корона"]
+  description: >-
+    Вряд ли эта вещь представляет хоть какую-нибудь ценность,
+    она вся проржавела и кажется очень древней. Но может быть
+    у этой короны есть хоть какие-то магические свойства, для
+    древних артефактов это не редкость.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 3
+      acid_resistance: 1
+      acid_damage: 1
+    sellable:
+      value: 250
+      currency: золото
+- id: curved_knife
+  name: "изогнутый нож"
+  rname: "изогнутого ножа"
+  dname: "изогнутому ножу"
+  vname: "изогнутый нож"
+  tname: "изогнутым ножом"
+  pname: "изогнутом ноже"
+  gender: "male"
+  damageVerb: "резанул"
+  type: WEAPON
+  roomDesc: "Изогнутый нож"
+  keywords: [ "изогнутый", "нож" ]
+  description: >-
+    Вы видите грубо сделанный, но очень острый нож, не раз
+    побывавший в деле. Его изогнутая форма безошибочно выдает
+    работу орков, славящихся своей кровожадностью.
+  metadata:
+    level: 14
+    slot: 'оружие'
+    itemLevel: 14
+    quality: common
+    minDamage: 20
+    maxDamage: 70
+    speed: 1.8
+    stats:
+      cutting_damage: 4
+    sellable:
+      value: 250
+      currency: золото
+- id: fire_sword
+  name: "огненный меч"
+  rname: "огненного меча"
+  dname: "огненному мечу"
+  vname: "огненный меч"
+  tname: "огненным мечом"
+  pname: "огненном мече"
+  gender: "male"
+  damageVerb: "опалил"
+  type: WEAPON
+  roomDesc: "Огненный меч"
+  keywords: [ "огненный", "меч" ]
+  description: >-
+    Лезвие этого меча необъяснимым образом покрыто не потухающим
+    пламенем. На рукоятки меча вы замечаете таинственные руны,
+    но их значение остается загадкой.
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.5
+    stats:
+      fire_damage: 5
+    sellable:
+      value: 250
+      currency: золото
+- id: firebreath
+  name: "огненная вода"
+  rname: "огненной воды"
+  dname: "огненной воде"
+  vname: "огненную воду"
+  tname: "огненной водой"
+  pname: "огненной воде"
+  gender: "female"  
+  roomDesc: "Бутыль огненной воды"
+  description: >-
+    Крепкое пойло, от которого напрочь сносит голову.
+  keywords: [ "огненная", "вода", "бутыль" ]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 5
+      options:
+        restores: 50
+        stat: "health"
+- id: frost_sword
+  name: "ледяной меч"
+  rname: "ледяного меча"
+  dname: "ледяному мечу"
+  vname: "ледяной меч"
+  tname: "ледяным мечом"
+  pname: "ледяном мече"
+  gender: "male"
+  damageVerb: "обморозил"
+  type: WEAPON
+  roomDesc: "Ледяной меч"
+  keywords: [ "ледяной", "меч" ]
+  description: >-
+    Лезвие этого меча сделано из странного не тающего льда, заточенного
+    как бритва. На рукоятки меча вы замечаете таинственные руны,
+    но их значение остается загадкой.
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.5
+    stats:
+      cold_damage: 5
+    sellable:
+      value: 250
+      currency: золото
+- id: gem
+  name: "самоцвет"
+  rname: "самоцвета"
+  dname: "самоцвету"
+  vname: "самоцвет"
+  tname: "самоцветом"
+  pname: "самоцвете"
+  gender: "male"  
+  roomDesc: "Самоцвет"
+  description: >-
+    Это небольшой, переливающийся всеми цветами радуги
+    драгоценный камешек. Наверно стоит дорого.
+  keywords: [ "самоцвет" ]
+  type: OBJECT
+  metadata:
+    sellable:
+      value: 250
+      currency: золото
+- id: gold_staff
+  name: "золотой посох"
+  rname: "золотого посоха"
+  dname: "золотому посоху"
+  vname: "золотой посох"
+  tname: "золотым посохом"
+  pname: "золотом посохе"
+  gender: "male"
+  damageVerb: "огрел"
+  type: WEAPON
+  roomDesc: "Золотой посох"
+  keywords: [ "золотой", "посох" ]
+  description: >-
+    Несмотря на название этот посох изготовлен из какого-то крепкого
+    дерева и покрыт тонкой золотой фольгой. Однако проделано все это
+    настолько искусно, что отличить его от настоящего золота можно только
+    по весу.
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.5
+    stats:
+      intellect: 3
+      mana: 20
+    sellable:
+      value: 300
+      currency: золото
+- id: jacket
+  name: "куртка с изображением черепа"
+  rname: "куртки с изображением черепа"
+  dname: "куртке с изображением черепа"
+  vname: "куртку с изображением черепа"
+  tname: "курткой с изображением черепа"
+  pname: "куртке с изображением черепа"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Куртка с изображением черепа"
+  keywords: ["куртка"]
+  description: >-
+    На спине этой куртки из чёрной кожи изображен зловещий
+    белый череп. Похоже, что она принадлежала раньше очень
+    плохому парню.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 5
+    itemLevel: 5
+    stats:
+      armor: 3
+      agility: 1
+    sellable:
+      value: 25
+      currency: золото
+- id: knife
+  name: "нож с деревянной рукояткой"
+  rname: "ножа с деревянной рукояткой"
+  dname: "ножу с деревянной рукояткой"
+  vname: "нож с деревянной рукояткой"
+  tname: "ножом с деревянной рукояткой"
+  pname: "ноже с деревянной рукояткой"
+  gender: "male"
+  damageVerb: "резанул"
+  type: WEAPON
+  roomDesc: "Нож с деревянной рукояткой"
+  keywords: [ "нож" ]
+  description: >-
+    Это самый обычный кухонный ножик, которым удобно разделывать
+    мясо или рыбу. Это не самое удобное оружие для убийств крупных
+    монстров, но от волка им защититься удастся.
+  metadata:
+    level: 14
+    slot: 'оружие'
+    itemLevel: 14
+    quality: common
+    minDamage: 20
+    maxDamage: 75
+    speed: 2.2
+    stats:
+      agility: 2
+      piercing_damage: 3
+    sellable:
+      value: 200
+      currency: золото
+- id: leather
+  name: "кожаный доспех"
+  rname: "кожаного доспеха"
+  dname: "кожаному доспеху"
+  vname: "кожаный доспех"
+  tname: "кожаным доспехом"
+  pname: "кожаном доспехе"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Кожаный доспех"
+  keywords: ["кожаный", "доспех"]
+  description: >-
+    Это самый обычный потертый кожаный доспех, видавший лучшие
+    времена. Будет неплохим подспорьем для небогатого воина или
+    городского стражника.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 4
+      cutting_resistance: 2
+    sellable:
+      value: 30
+      currency: золото
+- id: mer_meal
+  name: "миска сытной похлёбки"
+  rname: "миски сытной похлёбки"
+  dname: "миске сытной похлёбки"
+  vname: "миску сытной похлёбки"
+  tname: "миской сытной похлёбки"
+  pname: "миске сытной похлёбки"
+  gender: "female"  
+  roomDesc: "Миска сытной похлёбки"
+  description: >-
+    Непонятно из чего это сделано, но пахнет аппетитно.
+  keywords: [ "миска" ]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 5
+      options:
+        restores: 50
+        stat: "mana"
+- id: mug
+  name: "бутылка пива"
+  rname: "бутылки пива"
+  dname: "бутылке пива"
+  vname: "бутылку пива"
+  tname: "бутылкой пива"
+  pname: "бутылке пива"
+  gender: "female"
+  roomDesc: "Бутылка пива"
+  description: >-
+    Бутылка дешевого и вонючего пива. А на вкус оно как моча.
+  keywords: [ "бутылка", "пиво"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 5
+      options:
+        restores: 50
+        stat: "mana"
+- id: orc_slayer
+  name: "меч с кровостоком"
+  rname: "меча с кровостоком"
+  dname: "мечу с кровостоком"
+  vname: "меч с кровостоком"
+  tname: "мечом с кровостоком"
+  pname: "мече с кровостоком"
+  gender: "male"
+  damageVerb: "рубанул"
+  type: WEAPON
+  roomDesc: "Меч с кровостоком"
+  keywords: [ "меч" ]
+  description: >-
+    Это небольшое, но удобное оружие для убийства орков. Для того, чтобы
+    кровь этих мерзких тварей не попала на рукоятку, в лезвии меча проходит
+    специальный желоб для ее стекания.
+  metadata:
+    level: 14
+    slot: 'оружие'
+    itemLevel: 14
+    quality: common
+    minDamage: 20
+    maxDamage: 75
+    speed: 2.2
+    stats:
+      cutting_damage: 2
+      piercing_damage: 3
+    sellable:
+      value: 250
+      currency: золото
+- id: ric_meal
+  name: "бутылка вина"
+  rname: "бутылки вина"
+  dname: "бутылке вина"
+  vname: "бутылку вина"
+  tname: "бутылкой вина"
+  pname: "бутылке вина"
+  gender: "female"
+  roomDesc: "Бутылка вина"
+  description: >-
+    Бутылка дешевого сладкого вина.
+  keywords: [ "бутылка", "вино"]
+  type: POTION
+  metadata:
+    level: 10
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 5
+      options:
+        restores: 50
+        stat: "health"
+- id: rope
+  name: "верёвка"
+  rname: "верёвки"
+  dname: "верёвке"
+  vname: "верёвку"
+  tname: "верёвкой"
+  pname: "верёвке"
+  gender: "female"  
+  roomDesc: "Верёвка"
+  description: >-
+    Это моток прочной веревки, будет полезна при карабканье
+    по скалам.
+  keywords: [ "верёвка", "веревка", "моток" ]
+  type: OBJECT
+- id: special
+  name: "бутылка дорогого вина"
+  rname: "бутылки дорогого вина"
+  dname: "бутылке дорогого вина"
+  vname: "бутылку дорогого вина"
+  tname: "бутылкой дорогого вина"
+  pname: "бутылке дорогого вина"
+  gender: "female"
+  roomDesc: "Бутылка дорогого вина"
+  description: >-
+    Бутылка дорогого заморского вина.
+  keywords: [ "бутылка", "вино"]
+  type: POTION
+  metadata:
+    level: 15
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 5
+      options:
+        restores: 100
+        stat: "health"
+- id: stone
+  name: "булыжник"
+  rname: "булыжника"
+  dname: "булыжнику"
+  vname: "булыжник"
+  tname: "булыжником"
+  pname: "булыжнике"
+  gender: "male"
+  damageVerb: "огрел"
+  type: WEAPON
+  roomDesc: "Булыжник"
+  keywords: [ "булыжник" ]
+  description: >-
+    Это самый обычный булыжник. Ничего особенного в нем нет.
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.5
+    stats:
+      crushing_damage: 3
+    sellable:
+      value: 25
+      currency: золото
+- id: stone_sword
+  name: "каменный меч"
+  rname: "каменного меча"
+  dname: "каменному мечу"
+  vname: "каменный меч"
+  tname: "каменным мечом"
+  pname: "каменном мече"
+  gender: "male"
+  damageVerb: "рубанул"
+  type: WEAPON
+  roomDesc: "Каменный меч"
+  keywords: [ "меч", "каменный" ]
+  description: >-
+    Это грубое, но смертоносное оружие выточено из цельного куска обсидиана.
+    Его острое лезвие способно распороть даже самую крепкую шкуру, но сам
+    меч особой прочностью не отличается.
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.4
+    stats:
+      cutting_damage: 2
+      earth_damage: 3
+    sellable:
+      value: 300
+      currency: золото
+- id: torch
+  name: "факел"
+  rname: "факела"
+  dname: "факелу"
+  vname: "факел"
+  tname: "факелом"
+  pname: "факеле"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Факел"
+  keywords: ["факел"]
+  description: >-
+    Это самый обычный факел - обычная палка, обмотанная на конце
+    промасленной тканью. Света дает достаточно, но и коптит очень
+    сильно.
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 1
+    itemLevel: 1
+    stats:
+      light: 20
+    sellable:
+      value: 5
+      currency: золото
+- id: bark_boots
+  name: "ботинки из коры"
+  rname: "ботинок из коры"
+  dname: "ботинкам из коры"
+  vname: "ботинки из коры"
+  tname: "ботинками из коры"
+  pname: "ботинках из коры"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Экзотические ботинки из коры"
+  keywords: ["экзотические", "ботинки"]
+  description: >-
+    Эти ботинки сделаны из какой-то гибкой и прочной коры.
+    Выглядят они интересно и отлично защищают кожу.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      mana_regeneration: 2
+    sellable:
+      value: 25
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: [ 'light_armor' ]
+- id: bark_armor
+  name: "доспех из коры"
+  rname: "доспеха из коры"
+  dname: "доспеху из коры"
+  vname: "доспех из коры"
+  tname: "доспехом из коры"
+  pname: "доспехе из коры"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Экзотический доспех из коры"
+  keywords: ["экзотический", "доспех"]
+  description: >-
+    Этот доспех сделан из какой-то гибкой и прочной коры.
+    Выглядит он интересно и отлично защищает кожу.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 4
+      mana_regeneration: 2
+    sellable:
+      value: 25
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: [ 'light_armor' ]
+- id: bark_cap
+  name: "шлем из коры"
+  rname: "шлема из коры"
+  dname: "шлему из коры"
+  vname: "шлем из коры"
+  tname: "шлемом из коры"
+  pname: "шлеме из коры"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Экзотический шлем из коры"
+  keywords: ["экзотический", "шлем"]
+  description: >-
+    Этот шлем сделан из какой-то гибкой и прочной коры.
+    Выглядит он интересно и отлично защищает голову.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 4
+      mana_regeneration: 2
+    sellable:
+      value: 25
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: [ 'light_armor' ]
+- id: moon_amulet
+  name: "амулет Лунного озера"
+  rname: "амулета Лунного озера"
+  dname: "амулету Лунного озера"
+  vname: "амулет Лунного озера"
+  tname: "амулетом Лунного озера"
+  pname: "амулете Лунного озера"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Амулет"
+  keywords: [ "амулет" ]
+  description: >-
+    Этот потертый амулет из какого-то цветного металла кажется
+    тёплым на ощупь.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 1
+      health_regeneration: 2
+    sellable:
+      value: 25
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ ]
+- id: moon_ring
+  name: "кольцо Лунного озера"
+  rname: "кольца Лунного озера"
+  dname: "кольцу Лунного озера"
+  vname: "кольцо Лунного озера"
+  tname: "кольцом Лунного озера"
+  pname: "кольце Лунного озера"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Кольцо"
+  keywords: [ "кольцо" ]
+  description: >-
+    Это потертое кольцо из какого-то цветного металла кажется
+    тёплым на ощупь.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 1
+      health_regeneration: 2
+    sellable:
+      value: 25
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ ]
+- id: rock_bird_cloak
+  name: "плащ из кожи скального наездника"
+  rname: "плаща из кожи скального наездника"
+  dname: "плащу из кожи скального наездника"
+  vname: "плащ из кожи скального наездника"
+  tname: "плащом из кожи скального наездника"
+  pname: "плаще из кожи скального наездника"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Кожаный плащ"
+  keywords: [ "плащ", "кожаный" ]
+  description: >-
+    Великолепный плащ, сделанный из прочной кожи скального наездника.
+    Несмотря на тонкость материала, плащ защитит и от зноя и от холода.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 4
+      cold_resistance: 1
+      fire_resistance: 1
+    sellable:
+      value: 35
+      currency: золото
+- id: grey_sword
+  name: "туманный меч"
+  rname: "туманного меча"
+  dname: "туманному мечу"
+  vname: "туманный меч"
+  tname: "туманным мечом"
+  pname: "туманном мече"
+  gender: "male"
+  damageVerb: "иссушил"
+  type: WEAPON
+  roomDesc: "Туманный меч"
+  keywords: [ "туманный", "меч" ]
+  description: >-
+    Струя тумана удивительным магическим образом приняла очертания
+    меча. Он источает холод и смерть.
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.5
+    stats:
+      agility: 5
+    requirements:
+      strength: 25
+      skills: [ 'swords' ]
+    sellable:
+      value: 50
+      currency: золото
+- id: grey_stave
+  name: "туманный посох"
+  rname: "туманного посоха"
+  dname: "туманному посоху"
+  vname: "туманный посох"
+  tname: "туманным посохом"
+  pname: "туманном посохе"
+  gender: "male"
+  damageVerb: "иссушил"
+  type: WEAPON
+  roomDesc: "Туманный посох"
+  keywords: [ "туманный", "посох" ]
+  description: >-
+    Струя тумана удивительным магическим образом приняла очертания
+    изогнутого посоха. Он источает холод и смерть.
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.5
+    stats:
+      intellect: 5
+    requirements:
+      strength: 25
+      skills: [ 'staves' ]
+    sellable:
+      value: 50
+      currency: золото
+- id: portable_box
+  name: "переносной ящик"
+  rname: "переносного ящика"
+  dname: "переносному ящику"
+  vname: "переносной ящик"
+  tname: "переносным ящиком"
+  pname: "переносном ящике"
+  gender: "male"
+  type: CONTAINER
+  roomDesc: "Переносной ящик лежит тут."
+  keywords: [ "переносной", "ящик" ]
+  description: >-
+    Это небольшой ящичек, который можно взять с собой и положить внутрь
+    несколько вещей.
+  maxItems: 5
+  metadata:
+    quality: common
+    sellable:
+      value: 5
+      currency: золото

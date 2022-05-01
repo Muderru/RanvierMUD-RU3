@@ -15,15 +15,15 @@
   },
   "dependencies": {
     "commander": "^2.20.3",
-    "minimist": "^1.2.5",
-    "yargs": "^15.3.1",
+    "minimist": "^1.2.6",
     "ranvier": "^3.0.6",
     "ranvier-datasource-file": "^1.0.3",
     "semver": "^5.7.1",
     "sprintf-js": "^1.0.3",
     "sty": "",
     "uuid": "^3.4.0",
-    "winston": "^2.4.4"
+    "winston": "^2.4.4",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "git-url-parse": "^11.1.2"

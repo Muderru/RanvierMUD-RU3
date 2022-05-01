@@ -1,0 +1,87 @@
+- id: bunny
+  keywords: [ "кролик", "саблезубый" ]
+  level: 2
+  name: "огромный саблезубый кролик"
+  rname: "огромного саблезубого кролика"
+  dname: "огромному саблезубому кролику"
+  vname: "огромного саблезубого кролика"
+  tname: "огромным саблезубым кроликом"
+  pname: "огромном саблезубом кролике"
+  gender: "male"
+  min_damage: 10
+  max_damage: 25
+  description: >-
+    Он выглядит нелепо, но опасно.
+  attributes:
+    health: 150
+    mana: 100
+    strength: 12
+  behaviors:
+    allattributes: 0
+    combat: true
+    area_decay: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+- id: adventurer
+  keywords: ["авантюрист"]
+  name: "авантюрист"
+  rname: "авантюриста"
+  dname: "авантюристу"
+  vname: "авантюриста"
+  tname: "авантюристом"
+  pname: "авантюристе"
+  gender: "male"
+  min_damage: 1500
+  max_damage: 3000
+  level: 99
+  description: "Подозрительный тип, наверно ищет здесь какие-то сокровища."
+  metadata:
+    trainer:
+      skill: "daggers"
+      cost: 2
+      requirements: []
+- id: rat
+  keywords: ['крыса']
+  name: "крыса"
+  rname: "крысы"
+  dname: "крысе"
+  vname: "крысу"
+  tname: "крысой"
+  pname: "крысе"
+  gender: "female"
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  NpcRace: "animal"
+  min_damage: 6
+  max_damage: 18
+  level: 2
+  description: "Глаза крысы горят зловещим красным огнем. С ее пасти капает пена, а огромные когти царапают пол."
+  attributes:
+    health: 160
+    mana: 120
+  behaviors:
+    allattributes: 0
+    combat: true
+    wander:
+      interval: 20
+      restrictTo: ['newbie:drinkme', 'newbie:entrance', 'newbie:equipment', 'newbie:fighting', 'newbie:quest']
+    wimpy: true
+    memory: true
+- id: captain
+  keywords: ["капитан", "прайд", "Прайд"]
+  name: "капитан Прайд"
+  rname: "капитана Прайда"
+  dname: "капитану Прайду"
+  vname: "капитана Прайда"
+  tname: "капитаном Прайдом"
+  pname: "капитане Прайде"
+  gender: "male"
+  min_damage: 1500
+  max_damage: 3000
+  level: 99
+  script: 'captain'
+  description: "Вы видите усталого недовольного вояку, оставленного здесь для распределения новобранцев."

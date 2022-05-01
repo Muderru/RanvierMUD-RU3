@@ -1,0 +1,8 @@
+title: "Старая южная дорога"
+metadata:
+  author: "Туор"
+  minlevel: 10
+  maxlevel: 15
+behaviors:
+  progressive-respawn:
+    interval: 900

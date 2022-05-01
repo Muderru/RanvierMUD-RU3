@@ -1,0 +1,8 @@
+title: "Окрестности города"
+metadata:
+  author: "Туор"
+  minlevel: 10
+  maxlevel: 20
+behaviors:
+  progressive-respawn:
+    interval: 666

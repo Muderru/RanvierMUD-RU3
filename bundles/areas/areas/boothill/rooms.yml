@@ -1,0 +1,363 @@
+- id: boothill
+  title: "Городское кладбище"
+  type: ['луг']
+  description: >-
+    Это кладбище переполнено, на некоторых надгробиях старые надписи
+    перечеркнуты и поверх них написаны новые. Все это выглядит довольно
+    странно. В центре кладбища вы замечаете свежевыкопанную яму, может
+    быть там хотят скоро кого-нибудь похоронить. Также тут между могилами
+    в восточном направлении ведет узкая тропинка.
+  items:
+    - id: "boothill:tombstone"
+      respawnChance: 100
+  exits:
+    - roomId: "boothill:infront_jail"
+      direction: юг
+    - roomId: "boothill:mntpath"
+      direction: восток
+    - roomId: "boothill:hole"
+      direction: вниз
+- id: cell
+  title: "Тюремная камера"
+  description: >-
+    Вы зачем-то зашли в небольшую камеру, пустующую сейчас. Стены и
+    пол камеры покрыты пятнами крови в мочи, от перевернутого помойного
+    ведра несет дерьмом.
+  npcs: ["boothill:slims2"]
+  exits:
+    - roomId: "boothill:jail"
+      direction: запад
+  doors:
+    "boothill:jail":
+      locked: false
+      closed: true      
+- id: entrance
+  title: "Перед городом"
+  description: >-
+    Узкая пыльная дорога заканчивается на севере у задворок небольшого
+    города. От него несет чесноком и навозом, но в целом он кажется
+    достаточно уютным.
+  npcs: ["boothill:guardian"]
+  exits:
+    - roomId: "boothill:welcome"
+      direction: север
+    - roomId: "boothill:outside_town"
+      direction: запад
+- id: general_store
+  title: "Магазин всякой всячины"
+  description: >-
+    Похоже, что это единственный магазин во всем городе и купить здесь
+    можно все самое необходимое для жизни. А, если вам понадобится
+    какая-нибудь экзотика, то здесь ее можно заказать в столице, правда
+    ждать посылку придется несколько месяцев. Единственный выход отсюда
+    ведет на восток на грязную улочку.
+  npcs: ["boothill:will"]
+  exits:
+    - roomId: "boothill:infront_store"
+      direction: восток
+- id: hole
+  title: "Свежевскопанная яма"
+  description: >-
+    Эту яму вырыли совсем недавно, из ее стенок торчат несколько
+    человеческих костей. Единственный выход отсюда ведет наверх.
+  npcs: ["boothill:gravedigger"]
+  exits:
+    - roomId: "boothill:boothill"
+      direction: вверх
+- id: infront_jail
+  title: "Около тюрьмы"
+  description: >-
+    Здесь, почти в самом центре города, расположено приземистое здание
+    местной тюрьмы. Вход в нее находится на востоке, а с севера на юг
+    тянется грязная улица.
+  exits:
+    - roomId: "boothill:boothill"
+      direction: север
+    - roomId: "boothill:infront_store"
+      direction: юг
+    - roomId: "boothill:jail"
+      direction: восток
+- id: infront_saloon
+  title: "Главная улица"
+  description: >-
+    Вы находитесь посреди главной улицы города, густо усеянной мусором и
+    чьими-то харчками. На востоке судя по вывеске располагается местный
+    паб, из которого доносится громкий шум.
+  npcs: ["boothill:slims"]
+  exits:
+    - roomId: "boothill:infront_store"
+      direction: север
+    - roomId: "boothill:welcome"
+      direction: юг
+    - roomId: "boothill:saloon"
+      direction: восток
+- id: infront_store
+  title: "У магазина всякой всячины"
+  description: >-
+    Вы остановились посреди главной улицы этого городка перед магазином
+    всякой всячины. Вход в него находится на западе. Улица же тянется
+    мимо неказистых зданий с севера на юг.
+  exits:
+    - roomId: "boothill:infront_jail"
+      direction: север
+    - roomId: "boothill:infront_saloon"
+      direction: юг
+    - roomId: "boothill:general_store"
+      direction: запад
+- id: jail
+  title: "Тюрьма"
+  description: >-
+    Вы зашли в небольшую тюрьму с единственной камерой на востоке,
+    перегороженной ржавой решеткой. Судя по рассказам, это самая
+    дружелюбная тюрьма в окрестностях. Заключенных здесь не пытают,
+    им просто сразу рубят головы.
+  npcs: ["boothill:guardian2"]
+  exits:
+    - roomId: "boothill:infront_jail"
+      direction: запад
+    - roomId: "boothill:cell"
+      direction: восток
+- id: mntpath
+  title: "Узкая тропа"
+  description: >-
+    Узкая тропа ведет через рощу кривых деревьев на восток, по
+    направлению к одинокой горе. На западе же находится городское
+    кладбище.
+  exits:
+    - roomId: "boothill:mountain"
+      direction: восток
+    - roomId: "boothill:boothill"
+      direction: запад
+- id: mountain
+  title: "Одинокая гора"
+  description: >-
+    Вы вышли на расчищенное место перед горой. Дальше на востоке
+    находится вход в заброшенную шахту, выглядящую очень не безопасной.
+    А на запад в город ведет узкая тропа.
+  exits:
+    - roomId: "boothill:mineent"
+      direction: восток
+    - roomId: "boothill:mntpath"
+      direction: запад
+- id: outside_town
+  title: "Прерия"
+  type: ['луг']
+  description: >-
+    Все пространство на западе до горизонта занимают обширные прерии, по
+    которым ветра разгоняют зеленые травяные волны. Чуть дальше на востоке
+    вы замечаете пыльную дорогу.
+  exits:
+    - roomId: "boothill:entrance"
+      direction: восток
+    - roomId: "newbie:starting"
+      direction: запад
+- id: saloon
+  title: "Старый паб"
+  description: >-
+    Всю дальнюю стену перегораживает деревянный бар, заставленный
+    бутылками с непонятным пойлом. Тут не так много посетителей, но
+    шума от них, как от огромной толпы народа. Они сидят за кривыми
+    стульями и покосившимися столами и что-то громко обсуждают.
+  npcs: ["boothill:pianist", "boothill:drunkminer"]
+  items:
+    - id: "boothill:piano"
+      respawnChance: 100   
+  exits:
+    - roomId: "boothill:infront_saloon"
+      direction: запад
+- id: welcome
+  title: "Городские врата"
+  description: >-
+    Над воротами висит грязная деревянная табличка, на которой с трудом
+    можно различить надпись: 'Добро пожаловать!'. На севере за табличкой
+    начинаются неказистые здания, а на юге вы видите узкую пыльную дорогу,
+    ведущую в прерии.
+  exits:
+    - roomId: "boothill:infront_saloon"
+      direction: север
+    - roomId: "boothill:entrance"
+      direction: юг
+- id: bigrock
+  title: "Огромная скала"
+  type: ['пещера']
+  description: >-
+    В центре этой пещеры находится огромная скала из какого-то очень
+    прочного камня. Шахтеры не стали продалбливать путь сквозь нее,
+    а просто обогнули вокруг. На западе вы видите полуобвалившуюся
+    пещеру, а на юге пересечение туннелей.
+  items:
+    - id: "boothill:bigrock"
+      respawnChance: 100
+  exits:
+    - roomId: "boothill:mineshaft"
+      direction: восток
+    - roomId: "boothill:passages"
+      direction: юг
+    - roomId: "boothill:cavein"
+      direction: запад
+- id: cavein
+  title: "Обрушившаяся пещера"
+  type: ['пещера']
+  description: >-
+    Отсыревшие опоры потолка пещеры обрушились и западная часть пещеры
+    оказалась полностью заваленной. Ее восточная часть также не выглядит
+    надежной, но пройти туда с осторожностью можно. Южная пещера
+    кажется вполне безопасной.
+  items:
+    - id: "boothill:rubble"
+      respawnChance: 100
+  exits:
+    - roomId: "boothill:bigrock"
+      direction: восток
+    - roomId: "boothill:station"
+      direction: юг
+- id: deadend
+  title: "Тупик"
+  type: ['пещера']
+  description: >-
+    Внезапно вы зашли в тупик. Видимо шахтеры разочаровались в этом
+    направлении из-за отсутствия породы и перестали рыть дальше.
+    Единственный выход ведет отсюда на запад, к пересечению туннелей.
+  npcs: ["boothill:spider"]
+  exits:
+    - roomId: "boothill:passages"
+      direction: запад
+- id: escape
+  title: "Выход"
+  script: 'rubble'
+  description: >-
+    После долгого блуждания по этим шахтам, вы нашли наконец из них
+    выход. Из огромного пролома в стене на востоке брызжет яркий
+    свет. К несчастью он завален огромными камнями, но можно попробовать
+    протиснуться сквозь них. Если же вы передумали выбираться отсюда, то
+    западный туннель приведет вас в недра горы.
+  metadata:
+    commands: [ 'протиснуться' ]
+  exits:
+    - roomId: "boothill:mineshaft"
+      direction: запад
+- id: large
+  title: "Южный туннель"
+  type: ['пещера']
+  description: >-
+    Чем дальше вы продвигается по южному коридору в глубь горы,
+    тем больше и шире он становится. Видимо здесь залегала главная жила
+    породы, которую шахтеры интенсивно вырубали своими кирками.
+  exits:
+    - roomId: "boothill:split"
+      direction: север
+    - roomId: "boothill:rough"
+      direction: восток
+- id: mineent
+  title: "Вход в шахту"
+  description: >-
+    Вход в шахту тут недавно обвалился, грохот камней до сих пор стоит в
+    ваших ушах. Лишь чудо спасло вас от гибели. Как бы то ни было, выйти
+    здесь обратно не получится. Возможно выход есть где-то еще в глубине
+    шахты.
+  exits:
+    - roomId: "boothill:split"
+      direction: восток
+- id: mineshaft
+  title: "Шахта"
+  type: ['пещера']
+  description: >-
+    Вы находитесь в самых недрах горы, так глубоко как только это тут
+    возможно. Западный туннель перегорожен тяжелой железной дверью,
+    сдвинуть которую будет не так то просто из-за ржавых петель.
+  exits:
+    - roomId: "boothill:escape"
+      direction: восток
+    - roomId: "boothill:bigrock"
+      direction: запад
+  doors:
+    "boothill:bigrock":
+      locked: false
+      closed: true
+- id: narrow
+  title: "Узкий проход"
+  type: ['пещера']
+  description: >-
+    В этом узком туннеле едва протиснется взрослый человек. Видимо
+    шахтеры не утруждались его разработкой из-за отсутствия полезных
+    минералов, а может туннель образовался естественным путем.
+  exits:
+    - roomId: "boothill:rough"
+      direction: юг
+    - roomId: "boothill:bigrock"
+      direction: запад
+- id: passages
+  title: "Пересечение туннелей"
+  type: ['пещера']
+  description: >-
+    Здесь пересекаются несколько совершенно одинаковых туннелей,
+    и определить какой вам нужен, не так то просто.
+  exits:
+    - roomId: "boothill:bigrock"
+      direction: север
+    - roomId: "boothill:station"
+      direction: запад
+    - roomId: "boothill:deadend"
+      direction: восток
+- id: rough
+  title: "Большая пещера"
+  type: ['пещера']
+  description: >-
+    Стены этой пещеры испещрены глубокими расщелинами и царапинами от
+    шахтерских кирок. Сложно сказать, что тут добывалось, если тут и
+    было что-то ценное, то сейчас от этого не осталось и следа. Из
+    пещеры ведет несколько выходов: узкий северный туннель, широкий
+    западный и низкий восточный.
+  npcs: ["boothill:kobold"]    
+  exits:
+    - roomId: "boothill:narrow"
+      direction: север
+    - roomId: "boothill:large"
+      direction: запад
+    - roomId: "boothill:squeeze"
+      direction: восток
+- id: split
+  title: "Разветвление"
+  type: ['пещера']
+  description: >-
+    Шахта здесь разветвляется на два абсолютно одинаковых коридора.
+    Один ведет на восток, а второй на юг. На западе находится пещера,
+    образовавшаяся после обрушения входа.
+  exits:
+    - roomId: "boothill:large"
+      direction: юг
+    - roomId: "boothill:mineent"
+      direction: запад
+    - roomId: "boothill:narrow"
+      direction: восток
+- id: squeeze
+  title: "Сжатие туннеля"
+  type: ['пещера']
+  description: >-
+    Шахта очень сильно сужается в этом месте, продвинуться дальше тут
+    можно лишь на корточках. К счастью, это сужение туннеля не тянется
+    сильно далеко, на западе и востоке вы видите просторные пещеры.
+  npcs: ["boothill:kobold"]
+  exits:
+    - roomId: "boothill:rough"
+      direction: запад
+    - roomId: "boothill:station"
+      direction: восток
+- id: station
+  title: "Станция"
+  description: >-
+    Эта пещера была приспособлена в качестве вспомогательного помещения
+    для шахтеров. Повсюду вы видите перевернутые тележки и разбросанные
+    инструменты. Вряд ли столько добра могли забыть случайно, вероятно
+    шахтеры планировали вернуться сюда позже.
+  npcs: ["boothill:kobold"]    
+  items:
+    - id: "boothill:pickaxe"
+      respawnChance: 10
+  exits:
+    - roomId: "boothill:squeeze"
+      direction: запад
+    - roomId: "boothill:passages"
+      direction: восток
+    - roomId: "boothill:cavein"
+      direction: север

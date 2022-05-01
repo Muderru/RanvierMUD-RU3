@@ -1,5 +1,3 @@
-'use strict';
-
 const { Random } = require('rando-js');
 
 const { Broadcast, Heal } = require('ranvier');
@@ -9,7 +7,7 @@ const { Broadcast, Heal } = require('ranvier');
  */
 module.exports = {
   listeners: {
-    hit: state => function (damage, target, finalAmount) {
+    hit: (state) => function (damage, target, finalAmount) {
       if (!damage.attacker || damage.attacker.isNpc) {
         return;
       }
@@ -20,15 +18,15 @@ module.exports = {
       // its script
 
       if (Random.probability(50)) {
-        const amount = damage.metadata.critical ?
-          damage.attacker.getMaxAttribute('health') :
-          Math.floor(finalAmount / 4);
+        const amount = damage.metadata.critical
+          ? damage.attacker.getMaxAttribute('health')
+          : Math.floor(finalAmount / 4);
 
         const heal = new Heal('health', amount, damage.attacker, this);
 
         Broadcast.sayAt(damage.attacker, `<b><white>Клинок Туора вспыхнул ярким белым светом и в него перетекла часть души ${target.rname}.</white></b>`, 80);
         heal.commit(damage.attacker);
       }
-    }
-  }
+    },
+  },
 };

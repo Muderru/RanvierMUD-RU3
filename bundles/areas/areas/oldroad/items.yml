@@ -1,0 +1,916 @@
+- id: 66800
+  name: "череп варга"
+  rname: "черепа варга"
+  dname: "черепу варга"
+  vname: "череп варга"
+  tname: "черепом варга"
+  pname: "черепе варга"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Выбеленный временем череп большого волка лежит тут."
+  keywords: [ "череп" ]
+  description: >-
+    Вы видите белый, отполированный до блеска, череп варга, в пустых глазницах которого, как кажется, по 
+    прежнему пылает злой красный огонь.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 4
+      detect_hide: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'heavy_armor' ]
+- id: 66801
+  name: "каменный топор"
+  rname: "каменного топора"
+  dname: "каменному топору"
+  vname: "каменный топор"
+  tname: "каменным топором"
+  pname: "каменном топоре"
+  gender: "male"
+  damageVerb: "рубанул"
+  roomDesc: "Грубый каменный топор лежит тут."
+  description: >-
+    Вы видите небольшой, каменный топор, по грубому исполнению которого можно безошибочно определить 
+    работу гоблинов.
+  keywords: [ "топор", "каменный" ]
+  type: WEAPON
+  metadata:
+    level: 12
+    slot: 'оружие'
+    itemLevel: 12
+    quality: common
+    minDamage: 20
+    maxDamage: 65
+    speed: 2.5
+    stats:
+      cutting_damage: 3
+      crushing_damage: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'axes' ]
+- id: 66802
+  name: "вырванное деревце"
+  rname: "вырванного деревца"
+  dname: "вырванному деревцу"
+  vname: "вырванное деревце"
+  tname: "вырванным деревцем"
+  pname: "вырванном деревце"
+  gender: "neuter"
+  damageVerb: "огрело"
+  roomDesc: "Вырванное с корнями деревце лежит тут."
+  description: >-
+    Вы видите вырванное с корнями средних размеров деревце с отломанными ветвями. Для того, чтобы 
+    вооружиться этим не самым удобным оружием, требуется нечеловеческая сила.
+  keywords: [ "вырванное", "деревце" ]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.7
+    stats:
+      crushing_damage: 5
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'maces' ]
+- id: 66803
+  name: "шипованные кожаные наручи"
+  rname: "шипованных кожаных наруч"
+  dname: "шипованным кожаным наручам"
+  vname: "шипованные кожаные наручи"
+  tname: "шипованными кожаными наручами"
+  pname: "шипованных кожаных наручах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Шипованные кожаные наручи лежат тут."
+  keywords: [ "наручи", "шипованные", "кожаные" ]
+  description: >-
+    Эти наручи изготовлены из плохо обработанной кожи, к которой прикреплено несколько костяных шипов для 
+    устрашения противников. Наручи сделаны очень грубо, видно, что не мастерами.
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 4
+      health_regeneration: 5
+      cutting_damage: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'medium_armor' ]
+- id: 66804
+  name: "шипованные кожаные поножи"
+  rname: "шипованных кожаных понож"
+  dname: "шипованным кожаным поножам"
+  vname: "шипованные кожаные поножи"
+  tname: "шипованными кожаными поножами"
+  pname: "шипованных кожаных поножах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Шипованные кожаные поножи лежат тут."
+  keywords: [ "поножи", "шипованные", "кожаные" ]
+  description: >-
+    Эти поножи изготовлены из плохо обработанной кожи, к которой прикреплено несколько костяных шипов для 
+    устрашения противников. Поножи сделаны очень грубо, видно, что не мастерами.
+  metadata:
+    quality: common
+    slot: "ноги"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 4
+      health_regeneration: 5
+      cutting_resistance: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'medium_armor' ]
+- id: 66805
+  name: "каменный кинжал"
+  rname: "каменного кинжала"
+  dname: "каменному кинжалу"
+  vname: "каменный кинжал"
+  tname: "каменным кинжалом"
+  pname: "каменном кинжале"
+  gender: "male"
+  damageVerb: "уколол"
+  roomDesc: "Каменный кинжал лежит тут."
+  description: >-
+    Этот кинжал представляет собой всего лишь заостренный клином камень, одна сторона которого обтянута 
+    кожаными ремешками, позволяющими удобнее держать его. Кинжал, по видимому, гоблинской работы.
+  keywords: [ "кинжал", "каменный" ]
+  type: WEAPON
+  metadata:
+    level: 12
+    slot: 'оружие'
+    itemLevel: 12
+    quality: common
+    minDamage: 20
+    maxDamage: 65
+    speed: 2.4
+    stats:
+      piercing_damage: 3
+      agility: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'daggers' ]
+- id: 66806
+  name: "шкура варга"
+  rname: "шкуры варга"
+  dname: "шкуре варга"
+  vname: "шкуру варга"
+  tname: "шкурой варга"
+  pname: "шкуре варга"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Потрепанная шкура варга лежит тут."
+  keywords: [ "шкура" ]
+  description: >-
+    Широкая волчья шкура, в которую без труда можно закутаться как в плащ. Благодаря превосходной 
+    обработке эта шкура практически не стесняет движений.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 4
+      cutting_resistance: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'light_armor' ]
+- id: 66807
+  type: RESOURCE
+  materials: ['шерсть']
+  name: "хвост белки"
+  rname: "хвоста белки"
+  dname: "хвосту белки"
+  vname: "хвост белки"
+  tname: "хвостом белки"
+  pname: "хвосте белки"
+  gender: "male"
+  roomDesc: "Рыжий, пушистый хвостик белки лежит тут."
+  keywords: [ "хвост" ]
+  description: >-
+    Вы видите самый обычный хвост белки: рыжий и пушистый. Видимо какой-то охотник отрезал его для 
+    продажи.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 66808
+  name: "лук из кости варга"
+  rname: "лука из кости варга"
+  dname: "луку из кости варга"
+  vname: "лук из кости варга"
+  tname: "луком из кости варга"
+  pname: "луке из кости варга"
+  gender: "male"
+  damageVerb: "подстрелил"
+  roomDesc: "Резной лук из кости варга лежит тут."
+  description: >-
+    Древко этого лука изготовлено из прочных костей варгов, а тетива, по-видимому, из их жил. Хотя этот лук не 
+    сравнится с изделиями эльфийских мастеров, но такой выбор материалов, наделяет его достаточно большой 
+    поражающей способностью.
+  keywords: [ "лук" ]
+  type: WEAPON
+  metadata:
+    level: 12
+    slot: 'оружие'
+    itemLevel: 12
+    quality: common
+    minDamage: 20
+    maxDamage: 65
+    speed: 2.6
+    stats:
+      piercing_damage: 3
+      critical: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'bows' ]
+- id: 66809
+  type: RESOURCE
+  materials: ['кость', 'амальгама']
+  name: "золотой зуб"
+  rname: "золотого зуба"
+  dname: "золотому зубу"
+  vname: "золотой зуб"
+  tname: "золотым зубом"
+  pname: "золотом зубе"
+  gender: "male"
+  roomDesc: "Рыжий, пушистый хвостик белки лежит тут."
+  keywords: [ "золотой", "зуб" ]
+  description: >-
+    Такие протезы обычно вставляют вместо утерянных, естественных зубов богатые люди.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 66810
+  name: "шкура белой волчицы"
+  rname: "шкуры белой волчицы"
+  dname: "шкуре белой волчицы"
+  vname: "шкуру белой волчицы"
+  tname: "шкурой белой волчицы"
+  pname: "шкуре белой волчицы"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Белая, волчья шкура лежит тут."
+  keywords: [ "шкура" ]
+  description: >-
+    По всей видимости, это волчья шкура, необычно, правда, что она редкого белого цвета. Шкура прекрасно 
+    выделана и с легкостью защитит от любой непогоды.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 4
+      intellect: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'light_armor' ]
+- id: 66811
+  type: RESOURCE
+  name: "гоблинское зелье"
+  rname: "гоблинского зелья"
+  dname: "гоблинскому зелью"
+  vname: "гоблинское зелье"
+  tname: "гоблинским зельем"
+  pname: "гоблинском зелье"
+  gender: "neuter"
+  roomDesc: "Грубый глиняный пузырек лежит тут."
+  keywords: [ "гоблинское", "зелье" ]
+  description: >-
+    Вы видите небольшой сосуд из высушенной на солнце глины, наполненный темной, дурно пахнущей 
+    жидкостью.
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66812
+  name: "сапоги из шкуры варга"
+  rname: "сапог из шкуры варга"
+  dname: "сапогам из шкуры варга"
+  vname: "сапоги из шкуры варга"
+  tname: "сапогами из шкуры варга"
+  pname: "сапогах из шкуры варга"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Черные, меховые сапоги лежат тут."
+  keywords: [ "сапоги" ]
+  description: >-
+    Вы видите черные, меховые сапоги, сделанные из шкуры варга, а у этих северных хищников, как известно, 
+    очень крепкая шкура. Эти сапоги прекрасно защитят и от холода, и от случайных ударов по ногам.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 4
+      crushing_resistance: 1
+      mana_regeneration: 5
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'light_armor' ]
+- id: 66813
+  name: "старая разбитая телега"
+  rname: "старой разбитой телеги"
+  dname: "старой разбитой телеге"
+  vname: "старую разбитую телегу"
+  tname: "старой разбитой телегой"
+  pname: "старой разбитой телеге"
+  gender: "female"  
+  roomDesc: "Старая разбитая телега лежит тут у края дороги."
+  description: >-
+    Видимо, эта телега лежит тут уже не один год. Ее древесина уже изрядно подгнила, а немногие железные 
+    детали проржавели настолько, что неспособны уже ничего скреплять. Телега, несомненно, восстановлению не 
+    подлежит.
+  keywords: [ "телега", "старая", "разбитая" ]
+  metadata:
+    noPickup: true
+- id: 66814
+  type: CONTAINER
+  name: "обитый железом сундук"
+  rname: "обитого железом сундука"
+  dname: "обитому железом сундуку"
+  vname: "обитый железом сундук"
+  tname: "обитым железом сундуком"
+  pname: "обитом железом сундуке"
+  gender: "male"
+  roomDesc: "Обитый железом сундук стоит тут."
+  description: >-
+    На сундуке вы видите несколько свежих кровавых пятен, что немного подозрительно.
+  keywords: [ "сундук" ]
+  items: [ "oldroad:66838", "oldroad:66816", "oldroad:66817", "oldroad:66818" ]
+  closed: true
+  locked: true
+  lockedBy: "oldroad:66815"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 66815
+  name: "железный ключ"
+  rname: "железного ключа"
+  dname: "железному ключу"
+  vname: "железный ключ"
+  tname: "железным ключом"
+  pname: "железном ключе"
+  gender: "male"
+  keywords: ["ключ", "железный"]
+  roomDesc: "Железный ключ лежит тут."
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66816
+  name: "куча монет"
+  rname: "кучи монет"
+  dname: "куче монет"
+  vname: "кучу монет"
+  tname: "кучей монет"
+  pname: "куче монет"
+  gender: "female"
+  keywords: ["куча", "монеты"]
+  roomDesc: "Куча монет лежит тут."
+  behaviors:
+    money:
+      min: 100
+      max: 250
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66817
+  name: "длинный серебряный меч"
+  rname: "длинного серебряного меча"
+  dname: "длинному серебряному мечу"
+  vname: "длинный серебряный меч"
+  tname: "длинным серебряным мечом"
+  pname: "длинном серебряном мече"
+  gender: "male"
+  roomDesc: "Длинный серебряный меч лежит тут."
+  damageVerb: "рубанул"
+  description: >-
+    Вы видите прекрасно сохранившийся серебряный длинный меч. Изготовленный мастерами еще помнившими 
+    древние секреты, этот меч мало в чем уступит изделиям эльфов или гномов.
+  keywords: [ "меч", "длинный", "серебряный" ]
+  type: WEAPON
+  metadata:
+    level: 14
+    slot: 'оружие'
+    itemLevel: 14
+    quality: common
+    minDamage: 25
+    maxDamage: 75
+    speed: 2.5
+    stats:
+      cutting_damage: 4
+      chaos_resistance: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'swords' ]
+- id: 66818
+  name: "короткий серебряный меч"
+  rname: "короткого серебряного меча"
+  dname: "короткому серебряному мечу"
+  vname: "короткий серебряный меч"
+  tname: "коротким серебряным мечом"
+  pname: "коротком серебряном мече"
+  gender: "male"
+  roomDesc: "Короткий серебряный меч лежит тут."
+  damageVerb: "резанул"
+  description: >-
+    Вы видите прекрасно сохранившийся серебряный короткий меч. Изготовленный мастерами еще помнившими 
+    древние секреты, этот меч мало в чем уступит изделиям эльфов или гномов.
+  keywords: [ "меч", "короткий", "серебряный" ]
+  type: WEAPON
+  metadata:
+    level: 14
+    slot: 'оружие'
+    itemLevel: 14
+    quality: common
+    minDamage: 20
+    maxDamage: 80
+    speed: 2.4
+    stats:
+      cutting_damage: 4
+      freedom: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'swords' ]
+- id: 66819
+  name: "кольцо насыщения"
+  rname: "кольца насыщения"
+  dname: "кольцу насыщения"
+  vname: "кольцо насыщения"
+  tname: "кольцом насыщения"
+  pname: "кольце насыщения"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Простое серебряное кольцо лежит тут."
+  keywords: [ "кольцо" ]
+  description: >-
+    На это, внешне ничем не примечательное, кольцо одним рассеянным магом, постоянно пропускавшим свой 
+    обед и ужин, наложены мощные чары, позволяющие его владельцу никогда не испытывать голод.
+  metadata:
+    quality: common
+    slot: "мизинец"
+    level: 15
+    itemLevel: 15
+    stats:
+      health_regeneration: 15
+    sellable:
+      value: 150
+      currency: золото
+- id: 66820
+  name: "бехтерец"
+  rname: "бехтерца"
+  dname: "бехтерцу"
+  vname: "бехтерец"
+  tname: "бехтерцом"
+  pname: "бехтерце"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Потрепанный бехтерец лежит тут."
+  keywords: [ "бехтерец" ]
+  description: >-
+    Вы видите кольчугу с вплетенными металлическими пластинами. Такая конструкция позволяет бехтерцу 
+    сочетать в себе гибкость кольчуги и прочность пластинчатого  доспеха.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 6
+      crushing_resistance: 1
+      cutting_resistance: 1
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'medium_armor' ]
+- id: 66821
+  name: "дирк"
+  rname: "дирка"
+  dname: "дирку"
+  vname: "дирк"
+  tname: "дирком"
+  pname: "дирке"
+  gender: "male"
+  damageVerb: "пырнул"
+  roomDesc: "Отличный стальной кинжал лежит тут."
+  description: >-
+    У этого превосходного ножа лезвие плавно переходит в рукоятку, что позволяет незаметно спрятать его в 
+    сапог или потайной карман, а потом нанести коварный удар врагу.
+  keywords: [ "кинжал", "дирк" ]
+  type: WEAPON
+  metadata:
+    level: 14
+    slot: 'оружие'
+    itemLevel: 14
+    quality: common
+    minDamage: 20
+    maxDamage: 80
+    speed: 2.4
+    stats:
+      piercing_damage: 3
+      critical: 1
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'daggers' ]
+- id: 66822
+  type: CONTAINER
+  name: "труп искателя приключений"
+  rname: "трупа искателя приключений"
+  dname: "трупу искателя приключений"
+  vname: "труп искателя приключений"
+  tname: "трупом искателя приключений"
+  pname: "трупе искателя приключений"
+  gender: "male"
+  roomDesc: "Истерзанный труп искателя приключений лежит тут."
+  description: >-
+    Тело этого человека истерзано так сильно, что невозможно установить кем он был
+    при жизни. Может быть это был разбойник, может лесоруб, а может просто путешественник.
+  keywords: [ "труп" ]
+  items: [ "oldroad:66824" ]
+  closed: false
+  locked: false
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 66823
+  type: CONTAINER
+  name: "обитый железом сундук"
+  rname: "обитого железом сундука"
+  dname: "обитому железом сундуку"
+  vname: "обитый железом сундук"
+  tname: "обитым железом сундуком"
+  pname: "обитом железом сундуке"
+  gender: "male"
+  roomDesc: "Обитый железом сундук стоит тут."
+  description: >-
+    На сундуке вы видите несколько свежих кровавых пятен, что немного подозрительно.
+  keywords: [ "сундук" ]
+  items: [ "oldroad:66828", "oldroad:66829", "oldroad:66830", "oldroad:66831" ]
+  closed: true
+  locked: true
+  lockedBy: "oldroad:66824"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 66824
+  name: "тяжелый железный ключ"
+  rname: "тяжелого железного ключа"
+  dname: "тяжелому железному ключу"
+  vname: "тяжелый железный ключ"
+  tname: "тяжелым железным ключом"
+  pname: "тяжелом железном ключе"
+  gender: "male"
+  keywords: ["ключ", "железный", "тяжелый"]
+  roomDesc: "Железный ключ лежит тут."
+  script: 'mimic'
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66825
+  name: "груда сокровищ"
+  rname: "груды сокровищ"
+  dname: "груде сокровищ"
+  vname: "груду сокровищ"
+  tname: "грудой сокровищ"
+  pname: "груде сокровищ"
+  gender: "female"
+  keywords: ["груда", "сокровища"]
+  roomDesc: "Большая сверкающая груда сокровищ лежит тут."
+  metadata:
+    quality: common
+    noPickup: true
+- id: 66826
+  name: "столб с трупом"
+  rname: "столба с трупом"
+  dname: "столбу с трупом"
+  vname: "столб с трупом"
+  tname: "столбом с трупом"
+  pname: "столбе с трупом"
+  gender: "male"
+  keywords: ["столб", "труп"]
+  roomDesc: "Деревянный столб с подвешенным за ноги человеческим трупом стоит тут."
+  description: >-
+    Вы видите высохший, человеческий труп. Непонятно, кто способен на такую жестокость, но орки
+    или гоблины труп бы, скорее всего, съели, а другие народы к погибшим относятся уважительно. 
+  script: 'corpse'
+  metadata:
+    quality: common
+    noPickup: true
+- id: 66827
+  name: "ручей"
+  rname: "ручья"
+  dname: "ручью"
+  vname: "ручей"
+  tname: "ручьем"
+  pname: "ручье"
+  gender: "male"
+  keywords: [ "ручей" ]
+  roomDesc: "Ручей с кристально-чистой водой бьет из под земли тут."
+  description: >-
+    Около этого ручья вы ощущаете покой и умиротворение.
+  metadata:
+    quality: common
+    noPickup: true
+- id: 66828
+  name: "небольшая кучка монет"
+  rname: "небольшой кучки монет"
+  dname: "небольшой кучке монет"
+  vname: "небольшую кучку монет"
+  tname: "небольшой кучкой монет"
+  pname: "небольшой кучке монет"
+  gender: "female"
+  keywords: ["кучка", "монеты", "небольшая"]
+  roomDesc: "Небольшая кучка монет лежит тут."
+  behaviors:
+    money:
+      min: 50
+      max: 100
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66829
+  type: RESOURCE
+  materials: ['кристалл', 'орихалк']
+  name: "необработанный топаз"
+  rname: "необработанного топаза"
+  dname: "необработанному топазу"
+  vname: "необработанный топаз"
+  tname: "необработанным топазом"
+  pname: "необработанном топазе"
+  gender: "male"
+  roomDesc: "Необработанный топаз лежит тут."
+  keywords: [ "необработанный", "топаз" ]
+  description: >-
+    Лишь слабый желтоватый оттенок выдает в этом неприметном камешке дорогой топаз.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 66830
+  type: RESOURCE
+  materials: ['кристалл', 'порфир']
+  name: "необработанный рубин"
+  rname: "необработанного рубина"
+  dname: "необработанному рубину"
+  vname: "необработанный рубин"
+  tname: "необработанным рубином"
+  pname: "необработанном рубине"
+  gender: "male"
+  roomDesc: "Необработанный рубин лежит тут."
+  keywords: [ "необработанный", "рубин" ]
+  description: >-
+    Лишь слабый красноватый оттенок выдает в этом неприметном камешке дорогой рубин.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 66831
+  type: RESOURCE
+  materials: ['кристалл', 'квасцы']
+  name: "необработанный изумруд"
+  rname: "необработанного изумруда"
+  dname: "необработанному изумруду"
+  vname: "необработанный изумруд"
+  tname: "необработанным изумрудом"
+  pname: "необработанном изумруде"
+  gender: "male"
+  roomDesc: "Необработанный изумруд лежит тут."
+  keywords: [ "необработанный", "изумруд" ]
+  description: >-
+    Лишь слабый зеленоватый оттенок выдает в этом неприметном камешке дорогой изумруд.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 66832
+  name: "ступка с пестиком"
+  rname: "ступки с пестиком"
+  dname: "ступке с пестиком"
+  vname: "ступку с пестиком"
+  tname: "ступкой с пестиком"
+  pname: "ступке с пестиком"
+  gender: "female"
+  keywords: [ "ступка" ]
+  roomDesc: "Ступка с пестиком лежит тут."
+  description: >-
+    С помощью этого примитивного устройства можно приготовить зелье
+    из гоблинской ягоды.
+  script: 'alchemy'
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    commands: [ 'приготовить' ]
+    quality: common
+- id: 66833
+  name: "гоблинская ягода"
+  rname: "гоблинской ягоды"
+  dname: "гоблинской ягоде"
+  vname: "гоблинскую ягоду"
+  tname: "гоблинской ягодой"
+  pname: "гоблинской ягоде"
+  gender: "female"
+  keywords: [ "ягода", "гоблинская" ]
+  roomDesc: "Неприметный кустик с маленькими черными ягодами растет здесь."
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66834
+  type: RESOURCE
+  materials: ['воск', 'танин']
+  name: "ветхий свиток"
+  rname: "ветхого свитка"
+  dname: "ветхому свитку"
+  vname: "ветхий свиток"
+  tname: "ветхим свитком"
+  pname: "ветхом свитке"
+  gender: "male"
+  roomDesc: "Ветхий свиток из пергамента лежит тут."
+  keywords: [ "ветхий", "свиток" ]
+  description: >-
+    На этом ветхом от старости пергаментном свитке нанесены странные письмена.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото
+- id: 66835
+  name: "хвост варга"
+  rname: "хвоста варга"
+  dname: "хвосту варга"
+  vname: "хвост варга"
+  tname: "хвостом варга"
+  pname: "хвосте варга"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Отрубленный хвост варга лежит тут."
+  keywords: [ "хвост" ]
+  description: >-
+    Непонятно кто, а главное зачем, отрубил этот облезлый хвост варга. Им можно, разве что, пугать 
+    впечатлительных дам да детей, но вряд ли кто похвалит за такие шутки.
+  metadata:
+    quality: common
+    slot: "сзади"
+    level: 12
+    itemLevel: 12
+    stats:
+      health: 20
+      detect_hide: 1
+    sellable:
+      value: 50
+      currency: золото
+- id: 66836
+  name: "самодельное гоблинское зелье"
+  rname: "самодельного гоблинского зелья"
+  dname: "самодельному гоблинскому зелью"
+  vname: "самодельное гоблинское зелье"
+  tname: "самодельным гоблинским зельем"
+  pname: "самодельном гоблинском зелье"
+  gender: "neuter"
+  keywords: [ "зелье", "гоблинское" ]
+  roomDesc: "Грубый глиняный пузырек лежит тут."
+  description: >-
+    Вы видите небольшой сосуд из высушенной на солнце глины, наполненный темной, дурно пахнущей 
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66837
+  name: "тяжелый железный ключ"
+  rname: "тяжелого железного ключа"
+  dname: "тяжелому железному ключу"
+  vname: "тяжелый железный ключ"
+  tname: "тяжелым железным ключом"
+  pname: "тяжелом железном ключе"
+  gender: "male"
+  keywords: ["ключ", "железный", "тяжелый"]
+  roomDesc: "Железный ключ лежит тут."
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 66838
+  name: "кристалл кварца на золотой цепочке"
+  rname: "кристалла кварца на золотой цепочке"
+  dname: "кристаллу кварца на золотой цепочке"
+  vname: "кристалл кварца на золотой цепочке"
+  tname: "кристаллом кварца на золотой цепочке"
+  pname: "кристалле кварца на золотой цепочке"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Небольшой кристалл кварца на золотой цепочке лежит тут."
+  keywords: [ "кристалл" ]
+  description: >-
+    Этот кристалл кварца всегда, в любую жару кажется холодным на ощупь, и это, судя по утверждениям 
+    мудрецов, не единственное из его удивительных свойств. Он также может обнаруживать невидимое, и 
+    определять характер любого существа.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 12
+    itemLevel: 12
+    stats:
+      mana: 20
+      cold_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+- id: 66839
+  name: "гоблинский кинжал"
+  rname: "гоблинского кинжала"
+  dname: "гоблинскому кинжалу"
+  vname: "гоблинский кинжал"
+  tname: "гоблинским кинжалом"
+  pname: "гоблинском кинжале"
+  gender: "male"
+  damageVerb: "пырнул"
+  roomDesc: "Кривой гоблинский кинжал лежит тут."
+  description: >-
+    Судя по примитивной работе и зловещему виду, этот кинжал раньше принадлежал
+    какому-то гоблину.
+  keywords: [ "кинжал", "гоблинский" ]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.4
+    stats:
+      piercing_damage: 2
+      agility: 1
+    sellable:
+      value: 75
+      currency: золото
+    requirements:
+      agility: 20
+      skills: [ 'daggers' ]

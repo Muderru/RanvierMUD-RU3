@@ -1,0 +1,2088 @@
+- id: 47700
+  keywords: [ "скучающий", "билетер" ]
+  level: 22
+  name: "скучающий билетер"
+  rname: "скучающего билетера"
+  dname: "скучающему билетеру"
+  vname: "скучающего билетера"
+  tname: "скучающим билетером"
+  pname: "скучающем билетере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите неприметного, серого человека, смертельно уставшего от своей работы. Каждый день через
+    кассу проходят сотни людей, которые стали для него не более чем надоедливыми паразитами. Здесь его 
+    удерживают лишь больная жена дома, да дюжина голодных детишек, которые пропадут, если он перестанет 
+    приносить те жалкие крохи, что ему платят за эту работу.
+  script: 'ticketer'
+  attributes:
+    health: 950
+    mana: 800
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 2
+    cutting_resistance: 3
+    crushing_resistance: 3
+    piercing_resistance: 3
+    crushing_damage: 6
+    detect_hide: 4
+    freedom: 2
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'judge', 'shieldblock']
+      spells: [ 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47719": 25
+- id: 47701
+  keywords: [ "человек" ]
+  level: 22
+  name: "человек из очереди"
+  rname: "человека из очереди"
+  dname: "человеку из очереди"
+  vname: "человека из очереди"
+  tname: "человеком из очереди"
+  pname: "человеке из очереди"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот человек стоит в очереди уже давно, не продвинувшись сколько-нибудь ощутимо вперед. То и дело
+    кто-то пытается встать впереди него, мотивируя это тем, что для него занимали. Он не пропустит никого
+    вперед себя, если только тут не было занято.
+  attributes:
+    health: 950
+    mana: 800
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 2
+    cutting_resistance: 3
+    crushing_resistance: 3
+    piercing_resistance: 3
+    crushing_damage: 6
+    detect_hide: 4
+    freedom: 2
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ 'fireball', 'lightning' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47702
+  keywords: [ "щуплый", "контролер", "контролёр" ]
+  level: 25
+  name: "щуплый контролер"
+  rname: "щуплого контролера"
+  dname: "щуплому контролеру"
+  vname: "щуплого контролера"
+  tname: "щуплым контролером"
+  pname: "щуплом контролере"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Удивительно, как для проверки билетов поставили самого щуплого человека в театре. Когда смотришь
+    на него, кажется, что контролера вот-вот унесет ветром. К тому же, своим болезненным видом он может 
+    отпугнуть посетителей.
+  script: "ticket"
+  attributes:
+    health: 1000
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 6
+    critical: 2
+    cutting_resistance: 3
+    crushing_resistance: 3
+    piercing_resistance: 3
+    crushing_damage: 6
+    detect_hide: 4
+    freedom: 2
+    health_regeneration: 10
+    mana_regeneration: 10
+  metadata:
+    accepts: [ 'theater:47735' ]
+    block:
+      exits: [ 'восток' ]
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ 'rend', 'smite', 'shieldblock' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47703
+  keywords: [ "уборщик" ]
+  level: 22
+  name: "уборщик"
+  rname: "уборщика"
+  dname: "уборщику"
+  vname: "уборщика"
+  tname: "уборщиком"
+  pname: "уборщике"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот человек уже давно забыл свои молодые годы, все, что остается ему теперь, это покрепче сжимать
+    свою мокрую швабру и усиленно натирать ею пол, пока в нем не станут отчетливо видны отражения.
+  attributes:
+    health: 900
+    mana: 500
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 2
+    cutting_resistance: 3
+    crushing_resistance: 3
+    piercing_resistance: 3
+    crushing_damage: 6
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [ 'paralysis', 'plea' ]
+    wander:
+      interval: 20
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47708": 25
+- id: 47704
+  keywords: [ "парень", "влюбленный" ]
+  level: 22
+  name: "влюбленный парень"
+  rname: "влюбленного парня"
+  dname: "влюбленному парню"
+  vname: "влюбленного парня"
+  tname: "влюбленным парнем"
+  pname: "влюбленном парне"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите симпатичного молодого человека, глаза которого так и светятся от счастья. В будущем 
+    он может осчастливить какую-нибудь девушку и подарить ей пару замечательных детишек.
+  attributes:
+    health: 950
+    mana: 500
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rescue', 'judge' ]
+      spells: [ 'silence' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47705
+  keywords: [ "девушка", "молодая" ]
+  level: 22
+  name: "молодая девушка"
+  rname: "молодой девушки"
+  dname: "молодой девушке"
+  vname: "молодую девушку"
+  tname: "молодой девушкой"
+  pname: "молодой девушке"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта молодая девушка так и цветет от счастья, она так приветливо улыбается окружающим, что даже
+    у самого черствого сухаря размягчается сердце, и он невольно начинает улыбаться в ответ.
+  attributes:
+    health: 900
+    mana: 800
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ ]
+      spells: [ 'heal', 'ice_peak', 'plea' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47701": 25
+- id: 47706
+  keywords: [ "дама", "пожилая" ]
+  level: 22
+  name: "пожилая дама"
+  rname: "пожилой дамы"
+  dname: "пожилой даме"
+  vname: "пожилую даму"
+  tname: "пожилой дамой"
+  pname: "пожилой даме"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Хотя многочисленные морщинки избороздили ее лицо, и одета она в несколько устаревшее платье, дама 
+    держится с достоинством и даже некоторым величием. Глядя в ее по-прежнему кристально-голубые глаза, 
+    можно легко представить, что в молодости она вскружила головы многим парням. Те годы давно прошли, и 
+    теперь ее сопровождает лишь маленькая собачонка.
+  attributes:
+    health: 900
+    mana: 800
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    wander:
+      interval: 20
+      restrictTo: ['theater:47706', 'theater:47707', 'theater:47708', 'theater:47709', 'theater:47710',
+                   'theater:47711', 'theater:47712', 'theater:47713', 'theater:47714', 'theater:47715']
+    capable:
+      skills: [ ]
+      spells: [ 'fireball', 'paralysis', 'lightning' ]
+    leader:
+      followers: [ 'theater:47707' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47702": 25
+- id: 47707
+  keywords: [ "собачка", "маленькая" ]
+  level: 22
+  name: "маленькая собачка"
+  rname: "маленькой собачки"
+  dname: "маленькой собачке"
+  vname: "маленькую собачку"
+  tname: "маленькой собачкой"
+  pname: "маленькой собачке"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Вы видите одну из тех мерзких собачонок, что так любят держать у себя одинокие старухи.
+  attributes:
+    health: 900
+    mana: 700
+    strength: 20
+    agility: 35
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    cutting_damage: 6
+    detect_hide: 4
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rescue', 'rend', 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47708
+  keywords: [ "ценитель" ]
+  level: 22
+  name: "ценитель искусства"
+  rname: "ценителя искусства"
+  dname: "ценителю искусства"
+  vname: "ценителя искусства"
+  tname: "ценителем искусства"
+  pname: "ценителе искусства"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот человек с нетерпением всматривается на сцену, ожидая начала представления. Он одет в потертый 
+    камзол и длинные башмаки с медной пряжкой.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'shieldblock' ]
+      spells: [ 'lightning', 'heal']
+    wander:
+      interval: 30
+      restrictTo: ['theater:47706', 'theater:47707', 'theater:47708', 'theater:47709', 'theater:47710',
+                   'theater:47711', 'theater:47712', 'theater:47713', 'theater:47714', 'theater:47715']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47709
+  keywords: [ "суфлер" ]
+  level: 22
+  name: "суфлер"
+  rname: "суфлера"
+  dname: "суфлеру"
+  vname: "суфлера"
+  tname: "суфлером"
+  pname: "суфлере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Приготовившийся подсказывать слова актерам суфлер стоит тут со сценарием.
+  attributes:
+    health: 900
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'smite', 'judge' ]
+      spells: [ 'paralysis' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47746": 25
+- id: 47710
+  keywords: [ "актер" ]
+  level: 22
+  name: "актер"
+  rname: "актера"
+  dname: "актеру"
+  vname: "актера"
+  tname: "актером"
+  pname: "актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Репетирующий свою роль перед началом представления актер расхаживает по сцене.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    wander:
+      interval: 60
+      restrictTo: ['theater:47718', 'theater:47719', 'theater:47720']
+    capable:
+      skills: [ 'rend', 'shieldblock' ]
+      spells: [ 'invisibility' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47711
+  keywords: [ "дирижер" ]
+  level: 22
+  name: "дирижер оркестра"
+  rname: "дирижера оркестра"
+  dname: "дирижеру оркестра"
+  vname: "дирижера оркестра"
+  tname: "дирижером оркестра"
+  pname: "дирижере оркестра"
+  gender: "male"
+  min_damage: 35
+  max_damage: 90
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Руки у дирижера сильные и мускулистые,  такими руками надо мешки таскать, а не палочкой махать 
+    перед оркестром. Но, несмотря на хорошую физическую форму, взгляд у дирижера осмысленный и 
+    светится интеллектом.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'smite' ]
+      spells: [ 'silence', 'invisibility' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47703": 25
+        - "theater:47709": 25
+- id: 47712
+  keywords: [ "скрипач", "невысокий" ]
+  level: 22
+  name: "невысокий скрипач"
+  rname: "невысокого скрипача"
+  dname: "невысокому скрипачу"
+  vname: "невысокого скрипача"
+  tname: "невысоким скрипачем"
+  pname: "невысоком скрипаче"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Невысокий скрипач проверяет свой инструмент перед игрой.
+  attributes:
+    health: 900
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'lunge', 'judge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47707": 25
+- id: 47713
+  keywords: [ "виолончелистка", "полная" ]
+  level: 22
+  name: "полная виолончелистка"
+  rname: "полной виолончелистки"
+  dname: "полной виолончелистке"
+  vname: "полную виолончелистку"
+  tname: "полной виолончелисткой"
+  pname: "полной виолончелистке"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ткнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    После встречи с этой крикливо одетой барышней еще долго остаешься в легком шоке.
+  attributes:
+    health: 900
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ ]
+      spells: [ 'silence', 'lightning', 'invisibility' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47712": 25
+- id: 47714
+  keywords: [ "кукловод" ]
+  level: 22
+  name: "кукловод"
+  rname: "кукловода"
+  dname: "кукловоду"
+  vname: "кукловода"
+  tname: "кукловодом"
+  pname: "кукловоде"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите человека средних лет с задумчивыми глазами и умелыми руками. За свою долгую 
+    сценическую жизнь он повидал немало, и уже ничто не застанет его врасплох.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ ]
+      spells: [ 'paralysis', 'silence', 'invisibility' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47706": 25
+- id: 47715
+  keywords: [ "марионетка" ]
+  level: 22
+  name: "марионетка"
+  rname: "марионетки"
+  dname: "марионетке"
+  vname: "марионетку"
+  tname: "марионеткой"
+  pname: "марионетке"
+  gender: "female"
+  min_damage: 15
+  max_damage: 30
+  damageVerb: 'сокрушила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта неказистая кукла лишь отдаленно напоминает человека; у нее грубое лицо и неуклюжие конечности, 
+    управляемые за нити кукловодом.
+  attributes:
+    health: 800
+    mana: 800
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 100
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'lunge', 'smite' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47747": 70
+- id: 47716
+  keywords: [ "прима" ]
+  level: 22
+  name: "прима театра"
+  rname: "примы театра"
+  dname: "приме театра"
+  vname: "приму театра"
+  tname: "примой театра"
+  pname: "приме театра"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта уже не молодая дама одета в дорогие наряды, а ее шея и запястья искрятся от бриллиантов. 
+    По ее высокомерному взгляду видно, что прима не часто встречает равных себе по положению. 
+    Большинство ее посетителей готовы на все, лишь бы заполучить ее автограф. Также, по ее 
+    одутловатой фигуре, можно предположить, что прима не равнодушна к сладостям.
+  script: 'sweets'
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  metadata:
+    accepts: [ 'theater:47725' ]
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ ]
+      spells: [ 'fireball', 'lightning', 'ice_peak' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47728": 25
+- id: 47717
+  keywords: [ "зритель", "прогуливающийся" ]
+  level: 22
+  name: "прогуливающийся зритель"
+  rname: "прогуливающегося зрителя"
+  dname: "прогуливающемуся зрителю"
+  vname: "прогуливающегося зрителя"
+  tname: "прогуливающимся зрителем"
+  pname: "прогуливающемся зрителе"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Судя по спешке, этот человек решил посетить во время антракта буфет, он надеется прийти туда, 
+    пока очередь не станет слишком длинной.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'rescue', 'shieldblock' ]
+      spells: [ ]
+    wander:
+      interval: 20
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47700": 25
+- id: 47718
+  keywords: [ "актер", "загримированный" ]
+  level: 22
+  name: "загримированный актер"
+  rname: "загримированного актера"
+  dname: "загримированному актеру"
+  vname: "загримированного актера"
+  tname: "загримированным актером"
+  pname: "загримированном актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Загримированный под злодея актер задумчиво смотрит в потолок.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [ 'lightning', 'fireball' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47710": 25
+- id: 47719
+  keywords: [ "актриса", "молоденькая" ]
+  level: 22
+  name: "молоденькая актриса"
+  rname: "молоденькой актрисы"
+  dname: "молоденькой актрисе"
+  vname: "молоденькую актрису"
+  tname: "молоденькой актрисой"
+  pname: "молоденькой актрисе"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Молоденькая актриса около столика игриво подмигивает окружающим.
+  attributes:
+    health: 900
+    mana: 800
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [ 'heal', 'plea' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47711": 25
+- id: 47720
+  keywords: [ "секретарша", "строгая" ]
+  level: 22
+  name: "строгая секретарша"
+  rname: "строгой секретарши"
+  dname: "строгой секретарше"
+  vname: "строгую секретаршу"
+  tname: "строгой секретаршей"
+  pname: "строгой секретарше"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Взглянув на недовольное злое лицо секретарши, которая к тому же надела огромные очки, вы 
+    понимаете, что видели ее уже раньше, в своих кошмарах. Наяву она также довела до горячки не 
+    один десяток людей. Даже если вы пришли к директору <bold>по делу</bold>, она ни за что не пропустит
+    вас к нему.
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ ]
+      spells: [ 'paralysis', 'silence', 'lightning' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47704": 25
+  metadata:
+    block:
+      exits: [ 'север' ]
+- id: 47721
+  keywords: [ "посетитель", "рассерженный" ]
+  level: 22
+  name: "рассерженный посетитель"
+  rname: "рассерженного посетителя"
+  dname: "рассерженному посетителю"
+  vname: "рассерженного посетителя"
+  tname: "рассерженным посетителем"
+  pname: "рассерженном посетителе"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот посетитель пришел по какому-то очень важному делу к директору театра, но его вот уже
+    который час туда не пропускает злая секретарша. Еще чуть-чуть, и они ввяжутся в потасовку.
+  script: 'killsecret'
+  attributes:
+    health: 900
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ 'rend', 'smite' ]
+      spells: [ 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47722
+  keywords: [ "директор" ]
+  level: 22
+  name: "директор театра"
+  rname: "директора театра"
+  dname: "директору театра"
+  vname: "директора театра"
+  tname: "директором театра"
+  pname: "директоре театра"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Взбешенный прерванным отдыхом директор театра нервно разгуливает по своему кабинету.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'shieldblock' ]
+      spells: [ 'paralysis', 'acid' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47717": 25
+- id: 47723
+  keywords: [ "призрак" ]
+  level: 24
+  name: "призрак погибшего актера"
+  rname: "призрака погибшего актера"
+  dname: "призраку погибшего актера"
+  vname: "призрака погибшего актера"
+  tname: "призраком погибшего актера"
+  pname: "призраке погибшего актера"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'иссушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Призрак погибшего прямо на сцене актера слабо флуоресцирует тут.
+  attributes:
+    health: 950
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 8
+    critical: 4
+    cutting_resistance: 4
+    crushing_resistance: 4
+    piercing_resistance: 4
+    ether_damage: 4
+    invisibility: 5
+    freedom: 5
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ ]
+      spells: [ 'paralysis', 'silence', 'lightning' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47715": 25
+- id: 47724
+  keywords: [ "аристократ", "влиятельный" ]
+  level: 22
+  name: "влиятельный аристократ"
+  rname: "влиятельного аристократа"
+  dname: "влиятельному аристократу"
+  vname: "влиятельного аристократа"
+  tname: "влиятельным аристократом"
+  pname: "влиятельном аристократе"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Как бы вы ни пытались привлечь внимание этого человека, он продолжает старательно не замечать
+    вас. Вероятно, чернь для него и вовсе не существует. Вид аристократа выражает спесь и высокомерие.
+  attributes:
+    health: 900
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'judge', 'smite' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47716": 25
+- id: 47725
+  keywords: [ "баронесса", "овдовевшая" ]
+  level: 22
+  name: "овдовевшая баронесса"
+  rname: "овдовевшей баронессы"
+  dname: "овдовевшей баронессе"
+  vname: "овдовевшую баронессу"
+  tname: "овдовевшей баронессой"
+  pname: "овдовевшей баронессе"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'оцарапала'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Овдовевшая баронесса лениво помахивает здесь своим веером.
+  attributes:
+    health: 900
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ ]
+      spells: [ 'heal', 'silence', 'plea']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47705": 25
+        - "theater:47714": 25
+        - "theater:47713": 25
+- id: 47726
+  keywords: [ "телохранитель", "хмурый" ]
+  level: 22
+  name: "хмурый телохранитель"
+  rname: "хмурого телохранителя"
+  dname: "хмурому телохранителю"
+  vname: "хмурого телохранителя"
+  tname: "хмурым телохранителем"
+  pname: "хмуром телохранителе"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Здоровый хмурый телохранитель с угрозой поглядывает на проходящих мимо.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'smite', 'rescue', 'shieldblock' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47718": 25
+- id: 47727
+  keywords: [ "фанат", "преданный" ]
+  level: 22
+  name: "преданный фанат"
+  rname: "преданного фаната"
+  dname: "преданному фанату"
+  vname: "преданного фаната"
+  tname: "преданным фанатом"
+  pname: "преданном фанате"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Преданный фанат примы театра с нетерпением наблюдает тут за сценой.
+  script: 'card'
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  metadata:
+    accepts: [ 'theater:47736' ]
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'lunge' ]
+      spells: [ 'acid' ]
+    wander:
+      interval: 20
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47728
+  keywords: [ "режиссер", "главный", "режиссёр" ]
+  level: 22
+  name: "главный режиссер"
+  rname: "главного режиссера"
+  dname: "главному режиссеру"
+  vname: "главного режиссера"
+  tname: "главным режиссером"
+  pname: "главном режиссере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите пожилого полного человека, чем-то сильно расстроенного. Из-за своего невысокого роста
+    он смотрит на вас снизу вверх, и от этого становится как-то не по себе.
+  script: 'quest1'
+  quests: [ 'theater:47701' ]
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'judge', 'smite' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47729
+  keywords: [ "продавщица", "симпатичная" ]
+  level: 22
+  name: "симпатичная продавщица"
+  rname: "симпатичной продавщицы"
+  dname: "симпатичной продавщице"
+  vname: "симпатичную продавщицу"
+  tname: "симпатичной продавщицей"
+  pname: "симпатичной продавщице"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Симпатичная продавщица с улыбкой предлагает вам свой товар.
+  metadata:
+    vendor:
+      items:
+        "theater:47725":
+          cost: 50
+          currency: золото
+      enterMessage: "Купить чего-нибудь не желаете?"
+      leaveMessage: "Приходите снова!"
+- id: 47730
+  keywords: [ "призрак" ]
+  level: 25
+  name: "призрак оперы"
+  rname: "призрака оперы"
+  dname: "призраку оперы"
+  vname: "призрака оперы"
+  tname: "призраком оперы"
+  pname: "призраке оперы"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Зловещий призрак оперы отдыхает здесь после своих злодеяний.
+  attributes:
+    health: 1000
+    mana: 900
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 30
+    armor: 6
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'shieldblock', 'judge' ]
+      spells: [ 'acid', 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47740": 90
+        - "theater:47721": 25
+        - "theater:47720": 25
+- id: 47740
+  keywords: [ "зритель", "разъяренный" ]
+  level: 22
+  name: "разъяренный зритель"
+  rname: "разъяренного зрителя"
+  dname: "разъяренному зрителю"
+  vname: "разъяренного зрителя"
+  tname: "разъяренным зрителем"
+  pname: "разъяренном зрителе"
+  gender: "male"
+  min_damage: 40
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Пунцово-красный от негодования, разъяренный зритель ищет, на ком бы сорвать свою злость.
+  script: 'haltura'
+  attributes:
+    health: 900
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    capable:
+      skills: [ 'lunge', 'smite', 'judge' ]
+      spells: [ ]
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47741
+  keywords: [ "продавец" ]
+  level: 22
+  name: "продавец семечек"
+  rname: "продавца семечек"
+  dname: "продавцу семечек"
+  vname: "продавца семечек"
+  tname: "продавцом семечек"
+  pname: "продавце семечек"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот полный человек с трудом протискивается мимо скамей по узким проходам. При этом его продвижение 
+    сопровождается проклятиями и руганью, на которые он, впрочем, не обращает никакого внимания.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ 'acid', 'ice_peak' ]
+    wander:
+      interval: 20
+      restrictTo: ['theater:47706', 'theater:47707', 'theater:47708', 'theater:47709', 'theater:47710',
+                   'theater:47711', 'theater:47712', 'theater:47713', 'theater:47714', 'theater:47715']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47734
+  keywords: [ "актер", "главный" ]
+  level: 22
+  name: "главный актер"
+  rname: "главного актера"
+  dname: "главному актеру"
+  vname: "главного актера"
+  tname: "главным актером"
+  pname: "главном актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот актер загримировался и уже полностью готов к началу представления, единственное, что ему мешает 
+    начать, это отсутствие напарника.
+  script: 'role1'
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    capable:
+      skills: [ 'rend', 'judge', 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47731
+  keywords: [ "человек" ]
+  level: 22
+  name: "человек из очереди"
+  rname: "человека из очереди"
+  dname: "человеку из очереди"
+  vname: "человека из очереди"
+  tname: "человеком из очереди"
+  pname: "человеке из очереди"
+  gender: "male"
+  min_damage: 35
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот человек стоит в очереди уже давно, не продвинувшись сколько-нибудь ощутимо вперед. То и дело
+    кто-то пытается встать впереди него, мотивируя это тем, что для него занимали.
+  attributes:
+    health: 900
+    mana: 800
+    strength: 30
+    agility: 25
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 2
+    cutting_resistance: 3
+    crushing_resistance: 3
+    piercing_resistance: 3
+    crushing_damage: 6
+    detect_hide: 4
+    freedom: 2
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ 'fireball', 'lightning' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47732
+  keywords: [ "прима" ]
+  level: 22
+  name: "прима театра"
+  rname: "примы театра"
+  dname: "приме театра"
+  vname: "приму театра"
+  tname: "примой театра"
+  pname: "приме театра"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта уже не молодая дама одета в дорогие наряды, а ее шея и запястья искрятся от бриллиантов. 
+    По ее высокомерному взгляду видно, что прима не часто встречает равных себе по положению. 
+    Большинство ее посетителей готовы на все, лишь бы заполучить ее автограф. Также, по ее 
+    одутловатой фигуре, можно предположить, что прима не равнодушна к сладостям.
+  attributes:
+    health: 900
+    mana: 800
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 4
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ ]
+      spells: [ 'fireball', 'lightning', 'ice_peak' ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "theater:47728": 25
+- id: 47733
+  keywords: [ "фанат", "преданный" ]
+  level: 22
+  name: "преданный фанат"
+  rname: "преданного фаната"
+  dname: "преданному фанату"
+  vname: "преданного фаната"
+  tname: "преданным фанатом"
+  pname: "преданном фанате"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Преданный фанат примы театра с нетерпением наблюдает тут за сценой.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ 'rend', 'lunge' ]
+      spells: [ 'acid' ]
+    wander:
+      interval: 20
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47735
+  keywords: [ "актер", "главный" ]
+  level: 22
+  name: "главный актер"
+  rname: "главного актера"
+  dname: "главному актеру"
+  vname: "главного актера"
+  tname: "главным актером"
+  pname: "главном актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот актер загримировался и уже полностью готов к началу представления, единственное, что ему мешает 
+    начать, это отсутствие напарника.
+  script: 'role2'
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ 'rend', 'judge', 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47736
+  keywords: [ "актер", "главный" ]
+  level: 22
+  name: "главный актер"
+  rname: "главного актера"
+  dname: "главному актеру"
+  vname: "главного актера"
+  tname: "главным актером"
+  pname: "главном актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот актер загримировался и уже полностью готов к началу представления, единственное, что ему мешает 
+    начать, это отсутствие напарника.
+  script: 'role3'
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ 'rend', 'judge', 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47737
+  keywords: [ "актер", "главный" ]
+  level: 22
+  name: "главный актер"
+  rname: "главного актера"
+  dname: "главному актеру"
+  vname: "главного актера"
+  tname: "главным актером"
+  pname: "главном актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот актер загримировался и уже полностью готов к началу представления, единственное, что ему мешает 
+    начать, это отсутствие напарника.
+  script: 'role4'
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ 'rend', 'judge', 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+- id: 47738
+  keywords: [ "актер", "главный" ]
+  level: 22
+  name: "главный актер"
+  rname: "главного актера"
+  dname: "главному актеру"
+  vname: "главного актера"
+  tname: "главным актером"
+  pname: "главном актере"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот актер загримировался и уже полностью готов к началу представления, единственное, что ему мешает 
+    начать, это отсутствие напарника.
+  attributes:
+    health: 950
+    mana: 700
+    strength: 30
+    agility: 30
+    intellect: 25
+    stamina: 25
+    armor: 5
+    critical: 4
+    cutting_resistance: 2
+    crushing_resistance: 2
+    piercing_resistance: 2
+    crushing_damage: 4
+    detect_hide: 1
+    freedom: 1
+    health_regeneration: 10
+    mana_regeneration: 10
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    area_decay: true
+    capable:
+      skills: [ 'rend', 'judge', 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100

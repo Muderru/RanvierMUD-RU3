@@ -1,0 +1,526 @@
+- id: 34800
+  name: "легкий серебристый шлем"
+  rname: "легкого серебристого шлема"
+  dname: "легкому серебристому шлему"
+  vname: "легкий серебристый шлем"
+  tname: "легким серебристым шлемом"
+  pname: "легком серебристом шлеме"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Легкий серебристый шлем выбросил тут кто-то."
+  keywords: ["легкий", "серебристый", "шлем"]
+  description: >-
+    Этот шлем необычайно легок, но в тоже время и очень крепок. Не иначе тут не обошлось без эльфийской
+    магии. К тому же, если хорошенько присмотреться к внутренней стороне, можно различить руны
+    перворожденных. 
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 5
+      mana: 15
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: 34801
+  name: "зачарованный эльфийский лук"
+  rname: "зачарованного эльфийского лука"
+  dname: "зачарованному эльфийскому луку"
+  vname: "зачарованный эльфийский лук"
+  tname: "зачарованным эльфийским луком"
+  pname: "зачарованном эльфийском луке"
+  gender: "male"
+  roomDesc: "Зачарованный эльфийский лук лежит тут."
+  damageVerb: "подстрелил"
+  description: >-
+    На легком, тонком древке из какого-то гибкого металла натянута серебристая тетива. Время от времени по
+    луку пробегают разноцветные искры, показывающие, что на этот лук наложена мощная магия.
+  keywords: ["зачарованный", "эльфийский", "лук"]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.4
+    stats:
+      piercing_damage: 2
+      critical: 3
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 25
+      skills: ['bows']
+- id: 34802
+  name: "мерцающий рунами меч"
+  rname: "мерцающего рунами меча"
+  dname: "мерцающему рунами мечу"
+  vname: "мерцающий рунами меч"
+  tname: "мерцающим рунами мечом"
+  pname: "мерцающем рунами мече"
+  gender: "male"
+  roomDesc: "Мерцающий рунами меч лежит тут."
+  damageVerb: "рубанул"
+  description: >-
+    На широком лезвии этого длинного меча нанесено множество светящихся эльфийских рун. Помимо этого,
+    меч прекрасно сбалансирован, а рукоятка удобна, так что даже новичок в боевом искусстве, вооруженный этим
+    мечом, будет представлять серьезную угрозу для противника.
+  keywords: ["мерцающий", "меч"]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 25
+    maxDamage: 85
+    speed: 2.6
+    stats:
+      cutting_damage: 3
+      strength: 3
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 25
+      skills: ['swords']
+- id: 34803
+  name: "медвежья шапка"
+  rname: "медвежьей шапки"
+  dname: "медвежьей шапке"
+  vname: "медвежью шапку"
+  tname: "медвежьей шапкой"
+  pname: "медвежьей шапке"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Медвежья шапка лежит тут."
+  keywords: ["медвежья", "шапка"]
+  description: >-
+    Вы видите удобную шапку из медвежьей шкуры, одев которую, вы избавитесь и от опасности получить
+    солнечный удар, и от случайного удара по голове.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 10
+    itemLevel: 10
+    stats:
+      armor: 4
+      crushing_resistance: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['medium_armor']
+- id: 34804
+  name: "собачий намордник"
+  rname: "собачьего намордника"
+  dname: "собачьему наморднику"
+  vname: "собачий намордник"
+  tname: "собачьим намордником"
+  pname: "собачьем наморднике"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Собачий намордник лежит тут."
+  keywords: ["собачий", "намордник"]
+  description: >-
+    Этот намордник принадлежал очень крупной собаке, а судя по остаткам слюны на нем, собака была, к тому
+    же, очень злобной, может даже бешеной. В любом случае, надев это украшение на лицо, можно одним только
+    своим видом запугать врага до смерти, правда, внятно разговаривать в нем, вряд ли получится.
+  metadata:
+    quality: common
+    slot: "лицо"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 2
+      cutting_damage: 2
+    sellable:
+      value: 100
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['medium_armor']
+- id: 34805
+  name: "куртка Бирюка"
+  rname: "куртки Бирюка"
+  dname: "куртке Бирюка"
+  vname: "куртку Бирюка"
+  tname: "курткой Бирюка"
+  pname: "куртке Бирюка"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Старая, поношенная куртка лежит тут."
+  keywords: ["куртка"]
+  description: >-
+    Вы видите удобную куртку из прочной, дубленой кожи, на внутренней стороне которой пришита маленькая
+    бирка с надписью на всеобщем: Бирюк, который и является, по всей видимости, ее владельцем.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 6
+      cutting_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['medium_armor']
+- id: 34806
+  name: "легкая эльфийская чешуя"
+  rname: "легкой эльфийской чешуи"
+  dname: "легкой эльфийской чешуе"
+  vname: "легкую эльфийскую чешую"
+  tname: "легкой эльфийской чешуей"
+  pname: "легкой эльфийской чешуе"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Легкая эльфийская чешуя лежит тут."
+  keywords: ["легкая", "эльфийская", "чешуя"]
+  description: >-
+    Вы видите великолепную кольчугу сделанную из широких, металлических чешуек. Судя по ее изяществу, эта
+    кольчуга была изготовлена эльфами, что говорит о ее феноменальном качестве.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 5
+      acid_resistance: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['light_armor']
+- id: 34807
+  name: "маскировочный плащ"
+  rname: "маскировочного плаща"
+  dname: "маскировочному плащу"
+  vname: "маскировочный плащ"
+  tname: "маскировочным плащом"
+  pname: "маскировочном плаще"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Плащ неопределенного цвета лежит тут."
+  keywords: ["маскировочный", "плащ"]
+  description: >-
+    Этот плащ настолько хорошо сливается с окружающей обстановкой, что его самого нелегко заметить. Нет
+    сомнений, что одевший этот плащ, будет оставаться незамеченным столько, сколько он сам захочет.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 4
+      hide: 1
+      detect_hide: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: ['medium_armor']
+- id: 34808
+  name: "великолепный охотничий нож"
+  rname: "великолепного охотничьего ножа"
+  dname: "великолепному охотничьему ножу"
+  vname: "великолепный охотничий нож"
+  tname: "великолепным охотничьим ножом"
+  pname: "великолепном охотничьем ноже"
+  gender: "male"
+  roomDesc: "Великолепный охотничий нож лежит тут."
+  damageVerb: "резанул"
+  description: >-
+    Этот охотничий нож сделан из великолепной стали, на поверхности которой не видно ни одного изъяна. Кроме
+    того, нож заточен настолько хорошо, что с легкостью отрежет вам случайно палец или два. Но, первостепенная
+    задача этого ножа освежевывать животных.
+  keywords: ["великолепный", "охотничий", "нож"]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 22
+    maxDamage: 82
+    speed: 2.4
+    stats:
+      cutting_damage: 3
+      piercing_damage: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 25
+      skills: ['daggers']
+- id: 34809
+  name: "эльфийская мантия"
+  rname: "эльфийской мантии"
+  dname: "эльфийской мантии"
+  vname: "эльфийскую мантию"
+  tname: "эльфийской мантией"
+  pname: "эльфийской мантии"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Мерцающая эльфийская мантия лежит тут."
+  keywords: ["эльфийская", "мантия"]
+  description: >-
+    Эта мантия сделана из какой-то легкой, переливающейся всеми оттенками зеленого цвета ткани. В такой
+    одежде не стыдно будет прийти на какой-нибудь королевский прием, к тому же, она, вероятно, еще и
+    магическая.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 4
+      mana: 20
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: ['light_armor']
+- id: 34810
+  name: "звериный клык"
+  rname: "звериного клыка"
+  dname: "звериному клыку"
+  vname: "звериный клык"
+  tname: "звериным клыком"
+  pname: "зверином клыке"
+  gender: "male"
+  roomDesc: "Вырванный звериный клык лежит тут."
+  damageVerb: "вонзился"
+  description: >-
+     Самый обычный клык какого-то крупного зверя.
+  keywords: ["звериный", "клык"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.5
+    stats:
+      cutting_damage: 1
+      agility: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 20
+      skills: ['various_weapons']
+- id: 34811
+  type: RESOURCE
+  materials: ['мескалин', 'куркумин']
+  name: "белый гриб"
+  rname: "белого гриба"
+  dname: "белому грибу"
+  vname: "белый гриб"
+  tname: "белым грибом"
+  pname: "белом грибе"
+  gender: "male"
+  roomDesc: "Аппетитный белый гриб растет тут."
+  keywords: ["белый", "гриб"]
+  description: >-
+    У этого огромного гриба в нескольких местах шапка подъедена насекомыми.
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+    decay_on_drop: true
+- id: 34812
+  name: "расшитые бисером наручи"
+  rname: "расшитых бисером наруч"
+  dname: "расшитым бисером наручам"
+  vname: "расшитые бисером наручи"
+  tname: "расшитыми бисером наручами"
+  pname: "расшитых бисером наручах"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Расшитые бисером наручи лежат тут."
+  keywords: ["расшитые", "наручи"]
+  description: >-
+    На этих наручах разноцветным бисером вышиты различные сцены из жизни лесных животных. Сделано это
+    так искусно, что, кажется, звери вот-вот оживут и выпрыгнут на волю. К сожалению, эти наручи никакой другой
+    ценности, кроме как эстетической, не представляют.
+  metadata:
+    quality: common
+    slot: "руки"
+    level: 15
+    itemLevel: 15
+    stats:
+      armor: 3
+      detect_invisibility: 1
+      earth_damage: 1
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: ['light_armor']
+- id: 34813
+  name: "мокрая палка"
+  rname: "мокрой палки"
+  dname: "мокрой палке"
+  vname: "мокрую палку"
+  tname: "мокрой палкой"
+  pname: "мокрой палке"
+  gender: "female"
+  roomDesc: "Мокрая, покрытая тиной палка лежит тут."
+  damageVerb: "огрела"
+  description: >-
+    Вы продолговатый кусок дерева, выглядящий так, словно его только что вынули из болотной жижи. Хотя
+    из-за покрывающей ее тины, схватить удобно палку вряд ли получится, ей все равно можно кого-нибудь больно
+    огреть.
+  keywords: ["звериный", "клык"]
+  type: WEAPON
+  metadata:
+    level: 10
+    slot: 'оружие'
+    itemLevel: 10
+    quality: common
+    minDamage: 15
+    maxDamage: 55
+    speed: 2.4
+    stats:
+      cold_damage: 1
+      crushing_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+    requirements:
+      strength: 20
+      skills: ['maces']
+- id: 34814
+  type: RESOURCE
+  materials: ['ихор', 'шипы']
+  name: "рыбья чешуйка"
+  rname: "рыбьей чешуйки"
+  dname: "рыбьей чешуйке"
+  vname: "рыбью чешуйку"
+  tname: "рыбьей чешуйкой"
+  pname: "рыбьей чешуйке"
+  gender: "female"
+  roomDesc: "Маленькая рыбья чешуйка лежит тут."
+  keywords: ["рыбья", "чешуйка"]
+  description: >-
+    Вы видите крупную и прочную чешуйку какой-то хищной рыбы.
+  metadata:
+    sellable:
+      value: 25
+      currency: золото
+- id: 34815
+  type: SCROLL
+  name: "эльфийская рукопись"
+  rname: "эльфийской рукописи"
+  dname: "эльфийской рукописи"
+  vname: "эльфийскую рукопись"
+  tname: "эльфийской рукописью"
+  pname: "эльфийской рукописи"
+  gender: "female"
+  roomDesc: "Покрытая древними письменами эльфийская рукопись лежит тут."
+  description: >-
+    В этой древней рукописи сохранены магические знания эльфов.
+  keywords: ["эльфийская", "рукопись"]
+  metadata:
+    level: 10
+    spell: "poison"
+- id: 34816
+  type: SCROLL
+  name: "эльфийская рукопись"
+  rname: "эльфийской рукописи"
+  dname: "эльфийской рукописи"
+  vname: "эльфийскую рукопись"
+  tname: "эльфийской рукописью"
+  pname: "эльфийской рукописи"
+  gender: "female"
+  roomDesc: "Покрытая древними письменами эльфийская рукопись лежит тут."
+  description: >-
+    В этой древней рукописи сохранены магические знания эльфов.
+  keywords: ["эльфийская", "рукопись"]
+  metadata:
+    level: 10
+    spell: "ice_peak"
+- id: 34817
+  type: SCROLL
+  name: "эльфийская рукопись"
+  rname: "эльфийской рукописи"
+  dname: "эльфийской рукописи"
+  vname: "эльфийскую рукопись"
+  tname: "эльфийской рукописью"
+  pname: "эльфийской рукописи"
+  gender: "female"
+  roomDesc: "Покрытая древними письменами эльфийская рукопись лежит тут."
+  description: >-
+    В этой древней рукописи сохранены магические знания эльфов.
+  keywords: [ "эльфийская", "рукопись" ]
+  metadata:
+    level: 10
+    spell: "petty_demon"
+- id: 34818
+  type: SCROLL
+  name: "эльфийская рукопись"
+  rname: "эльфийской рукописи"
+  dname: "эльфийской рукописи"
+  vname: "эльфийскую рукопись"
+  tname: "эльфийской рукописью"
+  pname: "эльфийской рукописи"
+  gender: "female"
+  roomDesc: "Покрытая древними письменами эльфийская рукопись лежит тут."
+  description: >-
+    В этой древней рукописи сохранены магические знания эльфов.
+  keywords: ["эльфийская", "рукопись"]
+  metadata:
+    level: 10
+    spell: "plea"
+- id: 34821
+  name: "эльфийский двуручный меч"
+  rname: "эльфийского двуручного меча"
+  dname: "эльфийскому двуручному мечу"
+  vname: "эльфийский двуручный меч"
+  tname: "эльфийским двуручным мечом"
+  pname: "эльфийском двуручном мече"
+  gender: "male"
+  roomDesc: "Покрытый эльфийскими рунами двуручный меч лежит тут."
+  damageVerb: "рубанул"
+  description: >-
+    Вы видите большой двуручный меч, который не смотря на свои размеры на удивление легок. Это объясняется
+    с одной стороны тем, что он изготовлен из очень легкого металла - мифрила, а с другой стороны тем, что меч
+    зачарован мощной эльфийской магией.
+  keywords: ["эльфийский", "двуручный", "меч"]
+  type: WEAPON
+  metadata:
+    level: 15
+    slot: 'оружие'
+    itemLevel: 15
+    quality: common
+    minDamage: 30
+    maxDamage: 90
+    speed: 2.7
+    stats:
+      cutting_damage: 4
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      strength: 25
+      skills: ['swords']

@@ -1,0 +1,29 @@
+---
+- id: 70500
+  title: Древний талисман
+  level: 10
+  repeatable: true
+  description: >-
+    Ведьма пожаловалась вам, что хозяин деревни уже давно в открытую смеется над ней.
+    Называет шарлатанкой. Но, она не может на него порчу наслать, есть у него древний
+    талисман, который его от магии бережёт. Принесите ей этот талисман, не для таких
+    он дураков существует.
+  completionMessage: >-
+    Поделом дураку заносчивому. Будет знать, как старых обижать.
+  goals:
+    - type: FetchGoal
+      config:
+        title: Найти древний талисман
+        count: 1
+        item: 'forvill:70528'
+        removeItem: true
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 100
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        amount: 200
+        currency: 'золото'
+

@@ -1,0 +1,729 @@
+- id: boots
+  name: "отличные ботинки"
+  rname: "отличных ботинок"
+  dname: "отличным ботинкам"
+  vname: "отличные ботинки"
+  tname: "отличными ботинками"
+  pname: "отличных ботинках"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Пара отличных ботинок"
+  keywords: ["отличные", "ботинки"]
+  description: >-
+    Похоже, что эти ботинки сделаны из отличной крокодильей кожи.
+    Они прочные и удобные.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 1
+      health: 20
+    sellable:
+      value: 25
+      currency: золото
+- id: buckler
+  name: "маленький круглый щит"
+  rname: "маленького круглого щита"
+  dname: "маленькому круглому щиту"
+  vname: "маленький круглый щит"
+  tname: "маленьким круглым щитом"
+  pname: "маленьком круглом щите"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Маленький круглый щит"
+  keywords: ["маленький", "круглый", "щит"]
+  description: >-
+    Самый обычный маленький круглый щит, называемый баклером.
+    Не самая надежная защита, но от неуклюжих ударов защитит.
+  metadata:
+    quality: common
+    slot: "щит"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 3
+      crushing_resistance: 1
+    sellable:
+      value: 30
+      currency: золото
+- id: gloves
+  name: "кожаные перчатки"
+  rname: "кожаных перчаток"
+  dname: "кожаным перчаткам"
+  vname: "кожаных перчатках"
+  tname: "кожаными перчатками"
+  pname: "кожаных перчатках"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Пара кожаных перчаток"
+  keywords: ["кожаные", "перчатки"]
+  description: >-
+    Это самые обычные кожаные перчатки, выкрашенные в красный цвет.
+  metadata:
+    quality: common
+    slot: "перчатки"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 1
+      agility: 1
+    sellable:
+      value: 30
+      currency: золото
+- id: hat
+  name: "огромная шапка"
+  rname: "огромной шапки"
+  dname: "огромной шапке"
+  vname: "огромную шапку"
+  tname: "огромной шапкой"
+  pname: "огромной шапке"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Огромная шапка"
+  keywords: ["огромная", "шапка"]
+  description: >-
+    Она на несколько размеров больше, чем вам нужно. И еще она съезжает на глаза.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 1
+      cutting_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 35
+      currency: золото
+- id: jacket
+  name: "кожаная куртка"
+  rname: "кожаной куртки"
+  dname: "кожаной куртке"
+  vname: "кожаную куртку"
+  tname: "кожаной курткой"
+  pname: "кожаной куртке"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Кожаная куртка"
+  keywords: ["кожаная", "куртка"]
+  description: >-
+    Такие куртки обычно носят плохие парни.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 3
+      strength: 1
+    sellable:
+      value: 35
+      currency: золото
+- id: rock
+  name: "валун"
+  rname: "валуна"
+  dname: "валуну"
+  vname: "валун"
+  tname: "валуном"
+  pname: "валуне"
+  gender: "male"  
+  roomDesc: "Валун"
+  damageVerb: "огрел"
+  description: >-
+    Самый обычный серый камень.
+  keywords: [ "валун" ]
+  type: WEAPON
+  metadata:
+    level: 6
+    slot: 'оружие'
+    itemLevel: 6
+    quality: common
+    minDamage: 10
+    maxDamage: 34
+    speed: 3.0
+    stats:
+      crushing_damage: 3
+    sellable:
+      value: 50
+      currency: золото
+- id: roses
+  name: "букет роз"
+  rname: "букета роз"
+  dname: "букету роз"
+  vname: "букет роз"
+  tname: "букетом роз"
+  pname: "букете роз"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Букет роз"
+  keywords: ["букет", "розы"]
+  description: >-
+    Прекрасный букет алых роз.
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 6
+    itemLevel: 6
+    stats:
+      fire_resistance: 1
+      cold_resistance: 1
+    sellable:
+      value: 50
+      currency: золото
+- id: shield
+  name: "круглый щит"
+  rname: "круглого щита"
+  dname: "круглому щиту"
+  vname: "круглый щит"
+  tname: "круглым щитом"
+  pname: "круглом щите"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Круглый щит"
+  keywords: ["щит", "круглый"]
+  description: "Круглый щит, вроде ничего необычного."
+  metadata:
+    quality: common
+    slot: "щит"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 2
+      cutting_resistance: 1
+      crushing_resistance: 1
+    sellable:
+      value: 35
+      currency: золото
+- id: sword
+  name: "короткий меч"
+  rname: "короткого меча"
+  dname: "короткому мечу"
+  vname: "короткий меч"
+  tname: "коротким мечом"
+  pname: "коротком мече"
+  gender: "male"
+  type: WEAPON
+  damageVerb: "рубанул"
+  roomDesc: "Короткий меч"
+  keywords: [ "меч", "короткий" ]
+  description: "Самый обычный короткий меч, да еще и ржавый."
+  metadata:
+    level: 6
+    slot: 'оружие'
+    itemLevel: 6
+    quality: common
+    minDamage: 10
+    maxDamage: 34
+    speed: 2.6
+    stats:
+      cutting_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: tshirt
+  name: "цветная рубаха"
+  rname: "цветной рубахи"
+  dname: "цветной рубахе"
+  vname: "цветную рубаху"
+  tname: "цветной рубахой"
+  pname: "цветной рубахе"
+  gender: "female"  
+  type: ARMOR
+  roomDesc: "Цветная рубаха"
+  keywords: ["цветная", "рубаха"]
+  description: "Самая обычная цветная рубаха. Очень безвкусная и простая."
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 1
+      fire_resistance: 1
+      cold_resistance: 1
+    sellable:
+      value: 30
+      currency: золото
+- id: dress
+  name: "узорчатый халат"
+  rname: "узорчатого халата"
+  dname: "узорчатому халату"
+  vname: "узорчатый халат"
+  tname: "узорчатым халатом"
+  pname: "узорчатом халате"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Узорчатый халат"
+  keywords: ["узорчатый", "халат"]
+  description: "Этот халат сделан из тонкого заморского шелка, на котором изображены причудливые восточные узоры."
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 1
+      earth_damage: 1
+      acid_damage: 1
+    sellable:
+      value: 35
+      currency: золото
+- id: pants
+  name: "шерстяные штаны"
+  rname: "шерстяных штанов"
+  dname: "шерстяным штанам"
+  vname: "шерстяные штаны"
+  tname: "шерстяными штанами"
+  pname: "шерстяных штанах"
+  gender: "plural"  
+  type: ARMOR
+  roomDesc: "Шерстяные штаны"
+  keywords: ["шерстяные", "штаны"]
+  description: >-
+    Это теплые штаны, сделанные из шерсти горных козлов. И хотя козлиный 
+    запах не исчезает из них даже после сотой стирки, штаны надежно 
+    защищают ноги.
+  metadata:
+    quality: common
+    slot: "ноги"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 2
+    sellable:
+      value: 45
+      currency: золото
+- id: curveddagger
+  name: "изогнутый кинжал"
+  rname: "изогнутого кинжала"
+  dname: "изогнутому кинжалу"
+  vname: "изогнутый кинжал"
+  tname: "изогнутым кинжалом"
+  pname: "изогнутом кинжале"
+  gender: "male"  
+  roomDesc: "Изогнутый кинжал"
+  damageVerb: "резанул"
+  description: >-
+    Самый обычный серый камень.
+  keywords: [ "изогнутый", "кинжал" ]
+  type: WEAPON
+  metadata:
+    level: 6
+    slot: 'оружие'
+    itemLevel: 6
+    quality: common
+    minDamage: 7
+    maxDamage: 27
+    speed: 2.0
+    stats:
+      piercing_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: ring
+  name: "жестяное кольцо"
+  rname: "жестяного кольца"
+  dname: "жестяному кольцу"
+  vname: "жестяное кольцо"
+  tname: "жестяным кольцом"
+  pname: "жестяном кольце"
+  gender: "neuter"  
+  type: ARMOR
+  roomDesc: "Жестяное кольцо"
+  keywords: ["жестяное", "кольцо"]
+  description: >-
+    На первый взгляд может показаться, что это серебряное кольцо, 
+    настолько оно тщательно отполировано. Но на самом деле оно
+    сделано из дешевой жести.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 6
+    itemLevel: 6
+    stats:
+      lightning_resistance: 2
+    sellable:
+      value: 55
+      currency: золото
+- id: rags
+  name: "лохмотья"
+  rname: "лохмотьев"
+  dname: "лохмотьям"
+  vname: "лохмотья"
+  tname: "лохмотьями"
+  pname: "лохмотьях"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Груда лохмотьев"
+  keywords: ["груда", "лохмотья"]
+  description: >-
+    Теперь уже сложно сказать, что это было за одеяние. Оно непонятного
+    цвета и на нем полным полно дырок всевозможных размеров.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 4
+    itemLevel: 4
+    stats:
+      armor: 1
+      cold_resistance: 1
+      lightning_resistance: 1
+- id: sentinelarmor
+  name: "доспех часового"
+  rname: "доспеха часового"
+  dname: "доспеху часового"
+  vname: "доспех часового"
+  tname: "доспехом часового"
+  pname: "доспехе часового"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Доспех часового"
+  keywords: ["доспех"]
+  description: >-
+    Хороший доспех из прочного металла, в отполированном металле
+    отражается ваша перекореженная физиономия.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 8
+    itemLevel: 8
+    stats:
+      armor: 4
+      cutting_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 100
+      currency: золото
+- id: sentinelcloak
+  name: "плащ часового"
+  rname: "плаща часового"
+  dname: "плащу часового"
+  vname: "плащ часового"
+  tname: "плащом часового"
+  pname: "плаще часового"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Плащ часового"
+  keywords: ["плащ"]
+  description: >-
+    Этот добротный плащ сделан из прочной ткани, защищающей и в
+    дождь и в стужу.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 8
+    itemLevel: 8
+    stats:
+      armor: 1
+      cutting_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 100
+      currency: золото
+- id: sentinelsword
+  name: "меч часового"
+  rname: "меча часового"
+  dname: "мечу часового"
+  vname: "меч часового"
+  tname: "мечом часового"
+  pname: "мече часового"
+  gender: "male"
+  type: WEAPON
+  roomDesc: "Меч часового"
+  damageVerb: "рубанул"
+  keywords: [ "меч" ]
+  description: "Это неплохой меч одного из стражников Гурбы."
+  metadata:
+    level: 8
+    slot: 'оружие'
+    itemLevel: 8
+    quality: common
+    minDamage: 12
+    maxDamage: 44
+    speed: 2.5
+    stats:
+      cutting_damage: 2
+    sellable:
+      value: 100
+      currency: золото
+- id: suspenderspants
+  name: "штаны с подтяжками"
+  rname: "штанов с подтяжками"
+  dname: "штанам с подтяжками"
+  vname: "штаны с подтяжками"
+  tname: "штанами с подтяжками"
+  pname: "штанах с подтяжками"
+  gender: "plural"  
+  type: ARMOR
+  roomDesc: "Штаны с подтяжками"
+  keywords: ["штаны"]
+  description: >-
+    Вы видите теплые меховые штаны из козлиной шерсти с кожаными
+    подтяжками. Они вас будут несколько полнить, но зато в них
+    у вас ничего не замерзнет.
+  metadata:
+    quality: uncommon
+    slot: "ноги"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 2
+      cold_resistance: 1
+    sellable:
+      value: 65
+      currency: золото
+- id: spursboots
+  name: "ботинки со шпорами"
+  rname: "ботинок со шпорами"
+  dname: "ботинкам со шпорами"
+  vname: "ботинки со шпорами"
+  tname: "ботинками со шпорами"
+  pname: "ботинках со шпорами"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Ботинки со шпорами"
+  keywords: ["ботинки"]
+  description: >-
+    Похоже, что эти ботинки сделаны из отличной крокодильей кожи.
+    Они прочные и удобные. Кроме того, к ним приделаны острые шпоры. 
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 6
+    itemLevel: 6
+    stats:
+      armor: 1
+      health: 20
+      piercing_damage: 1
+    sellable:
+      value: 55
+      currency: золото
+- id: guardiansword
+  name: "меч стражника"
+  rname: "меча стражника"
+  dname: "мечу стражника"
+  vname: "меч стражника"
+  tname: "мечом стражника"
+  pname: "мече стражника"
+  gender: "male"
+  type: WEAPON
+  damageVerb: "рубанул"
+  roomDesc: "Меч стражника"
+  keywords: [ "меч" ]
+  description: "Это неплохой меч одного из стражников Гурбы."
+  metadata:
+    level: 8
+    slot: 'оружие'
+    itemLevel: 8
+    quality: common
+    minDamage: 12
+    maxDamage: 44
+    speed: 2.5
+    stats:
+      cutting_damage: 1
+      crushing_damage: 1
+    sellable:
+      value: 100
+      currency: золото
+- id: sparklingbelt
+  name: "сверкающий пояс"
+  rname: "сверкающего пояса"
+  dname: "сверкающему поясу"
+  vname: "сверкающий пояс"
+  tname: "сверкающим поясом"
+  pname: "сверкающем поясе"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Сверкающий пояс"
+  keywords: ["пояс", "сверкающий"]
+  description: >-
+    Этот великолепный пояс обделан сверкающим перламутром, отбрасывающим
+    разноцветные блики во все стороны.
+  metadata:
+    quality: common
+    slot: "талия"
+    level: 8
+    itemLevel: 8
+    stats:
+      armor: 1
+      fire_resistance: 1
+      earth_resistance: 1
+    sellable:
+      value: 100
+      currency: золото
+- id: captainarmor
+  name: "доспех капитана стражи"
+  rname: "доспеха капитана стражи"
+  dname: "доспеху капитана стражи"
+  vname: "доспех капитана стражи"
+  tname: "доспехом капитана стражи"
+  pname: "доспехе капитана стражи"
+  gender: "male"  
+  type: ARMOR
+  roomDesc: "Доспех капитана стражи"
+  keywords: ["доспех"]
+  description: >-
+    Хороший доспех из прочного металла, украшенный витиеватыми
+    узорами. Он отполирован до блеска.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 12
+    itemLevel: 12
+    stats:
+      armor: 6
+      cutting_resistance: 1
+      piercing_resistance: 1
+      light: 5
+    sellable:
+      value: 250
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'medium_armor' ]
+- id: scroll_recall
+  type: SCROLL
+  name: "свиток возврата"
+  rname: "свитка возврата"
+  dname: "свитку возврата"
+  vname: "свиток возврата"
+  tname: "свитком возврата"
+  pname: "свитке возврата"
+  gender: "male"
+  roomDesc: "Свиток возврата валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "возврата", "возврат" ]
+  metadata:
+    level: 1
+    spell: "recall"
+- id: scroll_fireball
+  type: SCROLL
+  name: "свиток огня"
+  rname: "свитка огня"
+  dname: "свитку огня"
+  vname: "свиток огня"
+  tname: "свитком огня"
+  pname: "свитке огня"
+  gender: "male"
+  roomDesc: "Свиток огня валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "огня" ]
+  metadata:
+    level: 1
+    spell: "fireball"
+- id: scroll_acid
+  type: SCROLL
+  name: "свиток кислоты"
+  rname: "свитка кислоты"
+  dname: "свитку кислоты"
+  vname: "свиток кислоты"
+  tname: "свитком кислоты"
+  pname: "свитке кислоты"
+  gender: "male"
+  roomDesc: "Свиток кислоты валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "кислоты" ]
+  metadata:
+    level: 5
+    spell: "acid"
+- id: scroll_invisibility
+  type: SCROLL
+  name: "свиток невидимости"
+  rname: "свитка невидимости"
+  dname: "свитку невидимости"
+  vname: "свиток невидимости"
+  tname: "свитком невидимости"
+  pname: "свитке невидимости"
+  gender: "male"
+  roomDesc: "Свиток невидимости валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "невидимости" ]
+  metadata:
+    level: 5
+    spell: "invisibility"
+- id: scroll_light
+  type: SCROLL
+  name: "свиток света"
+  rname: "свитка света"
+  dname: "свитку света"
+  vname: "свиток света"
+  tname: "свитком света"
+  pname: "свитке света"
+  gender: "male"
+  roomDesc: "Свиток света валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "света" ]
+  metadata:
+    level: 5
+    spell: "light"
+- id: scroll_lightning
+  type: SCROLL
+  name: "свиток молнии"
+  rname: "свитка молнии"
+  dname: "свитку молнии"
+  vname: "свиток молнии"
+  tname: "свитком молнии"
+  pname: "свитке молнии"
+  gender: "male"
+  roomDesc: "Свиток молнии валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "молнии" ]
+  metadata:
+    level: 5
+    spell: "lightning"
+- id: scroll_paralysis
+  type: SCROLL
+  name: "свиток паралича"
+  rname: "свитка паралича"
+  dname: "свитку паралича"
+  vname: "свиток паралича"
+  tname: "свитком паралича"
+  pname: "свитке паралича"
+  gender: "male"
+  roomDesc: "Свиток паралича валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "паралича" ]
+  metadata:
+    level: 5
+    spell: "paralysis"
+- id: scroll_silence
+  type: SCROLL
+  name: "свиток молчания"
+  rname: "свитка молчания"
+  dname: "свитку молчания"
+  vname: "свиток молчания"
+  tname: "свитком молчания"
+  pname: "свитке молчания"
+  gender: "male"
+  roomDesc: "Свиток молчания валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "молчания" ]
+  metadata:
+    level: 5
+    spell: "silence"
+- id: scroll_courage
+  type: SCROLL
+  name: "свиток бодрости"
+  rname: "свитка бодрости"
+  dname: "свитку бодрости"
+  vname: "свиток бодрости"
+  tname: "свитком бодрости"
+  pname: "свитке бодрости"
+  gender: "male"
+  roomDesc: "Свиток бодрости валяется тут."
+  description: >-
+    На этом свитке записано магическое заклинание. Он исчезнет после прочтения.
+  keywords: [ "свиток", "бодрости" ]
+  metadata:
+    level: 1
+    spell: "courage"

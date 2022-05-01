@@ -1,0 +1,1425 @@
+- id: 80100
+  keywords: [ "потный", "трактирщик" ]
+  level: 16
+  name: "потный трактирщик"
+  rname: "потного трактирщика"
+  dname: "потному трактирщику"
+  vname: "потного трактирщика"
+  tname: "потным трактирщиком"
+  pname: "потном трактирщике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите высокого, полного мужчину в грязном кожаном переднике, на котором можно при желании
+    рассмотреть остатки всего меню этого заведения. Но, судя по небритой поддергивающей щеке трактирщика,
+    лучше его не спрашивать об этом.
+  script: 'barkeeper'
+  quests: [ 'fortavern:80100' ]
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  metadata:
+    trainer:
+      skill: 'axes'
+      cost: 3
+      requirements: [ ]
+  behaviors:
+    allattributes: 2
+    memory: true
+    assist: true
+    combat: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    randomskill: true
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80120": 20
+- id: 80101
+  keywords: [ "косой", "разбойник" ]
+  level: 16
+  name: "косой разбойник"
+  rname: "косого разбойника"
+  dname: "косому разбойнику"
+  vname: "косого разбойника"
+  tname: "косым разбойником"
+  pname: "косом разбойнике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    По всей видимости, этот разбойник в одной из драк получил сильный удар в левый глаз, и хотя глаз с тех и
+    пор и зажил, теперь когда он смотрит на вас, взгляд его направлен немного в сторону, отчего становится
+    немного не по себе.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80102
+  keywords: [ "пьяный", "разбойник" ]
+  level: 16
+  name: "пьяный разбойник"
+  rname: "пьяного разбойника"
+  dname: "пьяному разбойнику"
+  vname: "пьяного разбойника"
+  tname: "пьяным разбойником"
+  pname: "пьяном разбойнике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Хотя этот разбойник и еле стоит на ногах, видно, что удар у него крепкий, любого уложит в нокаут. А, когда он
+    пытается добраться до бара, за новой порцией выпивки, то сносит все предметы интерьера со своего пути.
+    Мда, недаром говорят, что талант не пропьешь.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80103
+  keywords: [ "гигантская", "крыса" ]
+  level: 15
+  name: "гигантская крыса"
+  rname: "гигантской крысы"
+  dname: "гигантской крысе"
+  vname: "гигантскую крысу"
+  tname: "гигантской крысой"
+  pname: "гигантской крысе"
+  gender: "female"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Если раньше вам не приходилось видеть крысу размером с теленка, то вот теперь вы устранили этот пробел
+    в знаниях. Так как такие трансформации противоестественны, очевидно, что дело тут не обошлось без магии.
+  attributes:
+    health: 650
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    aggro:
+      delay: 3
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80104
+  keywords: [ "двухголовая", "крыса" ]
+  level: 18
+  name: "двухголовая крыса"
+  rname: "двухголовой крысы"
+  dname: "двухголовой крысе"
+  vname: "двухголовую крысу"
+  tname: "двухголовой крысой"
+  pname: "двухголовой крысе"
+  gender: "female"
+  min_damage: 40
+  max_damage: 75
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Хотя подобные мутации и крайне редки в природе, двухголовые крысы все-таки иногда появляются на свет.
+    И, хотя они и страдают, некоторой дезориентацией в пространстве, так как каждая из голов, не может решить,
+    кто же из них главнее и какое направление считать приоритетным, благодаря своей свирепости и
+    устрашающему виду, двухголовые особи всегда занимают самые высокие посты в иерархии крыс.
+  attributes:
+    health: 800
+    mana: 350
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 100
+      pools:
+        - "fortavern:80115": 20
+        - "fortavern:80165": 20
+- id: 80105
+  keywords: [ "молодой", "крысёныш" ]
+  level: 15
+  name: "молодой крысёныш"
+  rname: "молодого крысёныша"
+  dname: "молодому крысёнышу"
+  vname: "молодого крысёныша"
+  tname: "молодым крысёнышем"
+  pname: "молодом крысёныше"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Этот совсем молодой крысеныш гигантской крысы уже имеет размеры средней собаки, страшно
+    представить, что из него получится, когда крысеныш достигнет взрослого возраста.
+  attributes:
+    health: 600
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80106
+  keywords: [ "лесной", "отшельник" ]
+  level: 16
+  name: "лесной отшельник"
+  rname: "лесного отшельника"
+  dname: "лесному отшельнику"
+  vname: "лесного отшельника"
+  tname: "лесным отшельником"
+  pname: "лесном отшельнике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Странно видеть этого благообразного старца в таком месте, в окружении распутных девиц. Видимо, от долгих
+    размышлений о возвышенном в глуши и общении с дикими животными, он окончательно спятил. А, раз так, то
+    от него можно ожидать любого, самого странного поступка.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomspell: true
+    capable:
+      skills: [ 'acid' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 60
+      pools:
+        - "fortavern:80111": 15
+        - "fortavern:80144": 15
+- id: 80107
+  keywords: [ "распутная", "девица" ]
+  level: 16
+  name: "распутная девица"
+  rname: "распутной девицы"
+  dname: "распутной девице"
+  vname: "распутную девицу"
+  tname: "распутной девицей"
+  pname: "распутной девице"
+  gender: "female"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Распутная девица не обладает и намеком на красоту, но этот недостаток с лихвой компенсируется тем, что
+    за относительно скромную плату, она готова удовлетворить любое желание своего клиента, из-за чего у нее
+    немало почитателей.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 120
+      areaRestricted: true
+    capable:
+      skills: [  ]
+      spells: [ 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80110": 15
+        - "fortavern:80109": 15
+- id: 80108
+  keywords: [ "подозрительный", "тип" ]
+  level: 16
+  name: "подозрительный тип"
+  rname: "подозрительного типа"
+  dname: "подозрительному типу"
+  vname: "подозрительного типа"
+  tname: "подозрительным типом"
+  pname: "подозрительном типе"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите высокого человека, который полностью укутался в черный плащ и надвинул капюшон так низко,
+    что из всего лица виден только небритый подбородок. Очевидно, что подозрительный тип от кого-то скрывается
+    и не хочет быть узнанным.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 60
+      areaRestricted: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 60
+      pools:
+        - "fortavern:80107": 10
+- id: 80109
+  keywords: [ "полная", "официантка" ]
+  level: 16
+  name: "полная официантка"
+  rname: "полной официантки"
+  dname: "полной официантке"
+  vname: "полную официантку"
+  tname: "полной официанткой"
+  pname: "полной официантке"
+  gender: "female"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'пнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Этот немолодой женщине из-за своей полноты не так то просто работать официанткой, каждый раз выполняя
+    какой-нибудь заказ клиента, ей приходится проявлять изобретательность, придумывая маневры, которые
+    позволили бы ей на своем пути не опрокидывать столики и стулья. Такое мастерство заслуживает щедрых
+    чаевых.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomspell: true
+    wander:
+      interval: 60
+      areaRestricted: true
+    capable:
+      skills: [  ]
+      spells: [ 'plea' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80136": 20
+  metadata:
+    vendor:
+      items:
+        "fortavern:80142":
+          cost: 100
+          currency: золото
+      enterMessage: "Покупайте свежее, сочное мяско! С хрустящей корочкой!"
+      leaveMessage: "Ты куда, дорогуша?"
+- id: 80110
+  keywords: [ "одноглазый", "разбойник" ]
+  level: 16
+  name: "одноглазый разбойник"
+  rname: "одноглазого разбойника"
+  dname: "одноглазому разбойнику"
+  vname: "одноглазого разбойника"
+  tname: "одноглазым разбойником"
+  pname: "одноглазом разбойнике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'уколол'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    На правом глазу этого разбойника красуется не просвечивающая, черная повязка, из под которой он, время
+    от времени, хитро поглядывает на окружающих совершенно здоровым глазом. Да, уж ну и хитрец...
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 60
+      areaRestricted: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 60
+- id: 80111
+  keywords: [ "серый", "паучок" ]
+  level: 15
+  name: "серый паучок"
+  rname: "серого паучка"
+  dname: "серому паучку"
+  vname: "серого паучка"
+  tname: "серым паучком"
+  pname: "сером паучке"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал по паутине"
+  travelVerbOut: "убежал по паутине"
+  description: >-
+    Небольшой серый паучок перебегает тут с паутины на паутину.
+  attributes:
+    health: 600
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    capable:
+      skills: [  ]
+      spells: [ 'acid' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80112
+  keywords: [ "мохнатый", "паучок" ]
+  level: 15
+  name: "мохнатый паучок"
+  rname: "мохнатого паучка"
+  dname: "мохнатому паучку"
+  vname: "мохнатого паучка"
+  tname: "мохнатым паучком"
+  pname: "мохнатом паучке"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал по паутине"
+  travelVerbOut: "убежал по паутине"
+  description: >-
+    Маленький мохнатый паучок притаился тут среди паутины.
+  attributes:
+    health: 600
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    wander:
+      interval: 25
+      areaRestricted: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80113
+  keywords: [ "полосатый", "паучок" ]
+  level: 15
+  name: "полосатый паучок"
+  rname: "полосатого паучка"
+  dname: "полосатому паучку"
+  vname: "полосатого паучка"
+  tname: "полосатым паучком"
+  pname: "полосатом паучке"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал по паутине"
+  travelVerbOut: "убежал по паутине"
+  description: >-
+    Необычный полосатый паучок деловито перебегает тут с места на место.
+  attributes:
+    health: 600
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wander:
+      interval: 35
+      areaRestricted: true
+    capable:
+      skills: [  ]
+      spells: [ 'paralysis' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80114
+  keywords: [ "серый", "вампир" ]
+  level: 16
+  name: "серый вампир"
+  rname: "серого вампира"
+  dname: "серому вампиру"
+  vname: "серого вампира"
+  tname: "серым вампиром"
+  pname: "сером вампире"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'присосался'
+  travelVerbIn: "прилетел"
+  travelVerbOut: "улетел"
+  description: >-
+    Эта летучая мышь, как и большинство животных этого мира, выросло до невероятных размеров, видимо
+    воздух тут особый, способствующий физическому развитию. Серый вампир может в одиночку утащить быка с
+    пастбища и высосать из него всю кровь, так что лучше на него не таращиться как на питомца зверинца, а
+    убираться отсюда подобру, поздорову.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [  ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80114": 10
+- id: 80115
+  keywords: [ "странствующий", "маг" ]
+  level: 20
+  name: "странствующий маг"
+  rname: "странствующего мага"
+  dname: "странствующему магу"
+  vname: "странствующего мага"
+  tname: "странствующим магом"
+  pname: "странствующем маге"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'укусил'
+  travelVerbIn: "пришёл, опираясь на посох"
+  travelVerbOut: "заковылял"
+  description: >-
+    Этот чудаковатый старик, что-то постоянно бормочет себе под нос, про какие-то украденные реликвии,
+    разбойниках и прочую ерунду. Вывод напрашивается только один, либо это умалишенный, либо маг, что,
+    впрочем, одно и тоже.
+  quests: [ 'fortavern:80101' ]
+  attributes:
+    health: 900
+    mana: 500
+    armor: 4
+  metadata:
+    trainer:
+      spell: 'recall'
+      cost: 4
+      requirements: [ ]
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    randomspell: true
+    wander:
+      interval: 60
+      restrictTo: ['fortavern:80101', 'fortavern:80102', 'fortavern:80103', 'fortavern:80104', 'fortavern:80105' ]
+    capable:
+      skills: [  ]
+      spells: [ 'ice_peak', 'paralysis' ]
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 80
+      pools:
+        - "fortavern:80112": 25
+        - "fortavern:80113": 25
+- id: 80116
+  keywords: [ "атаман", "разбойник" ]
+  level: 19
+  name: "атаман разбойников"
+  rname: "атамана разбойников"
+  dname: "атаману разбойников"
+  vname: "атамана разбойников"
+  tname: "атаманом разбойников"
+  pname: "атамане разбойников"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'сокрушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Несмотря на то, что поручные атамана называют его могучим, могучая у него, разве что рыжая борода,
+    телосложение у него хилое, в добавок атаман еще и заикается, а пост свой он унаследовал от отца, который
+    был всем разбойникам разбойник.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80128": 50
+        - "fortavern:80118": 20
+        - "fortavern:80108": 20
+        - "fortavern:80146": 100
+- id: 80117
+  keywords: [ "подручный", "разбойник" ]
+  level: 18
+  name: "подручный атамана"
+  rname: "подручного атамана"
+  dname: "подручному атамана"
+  vname: "подручного атамана"
+  tname: "подручным атамана"
+  pname: "подручном атамана"
+  gender: "male"
+  min_damage: 40
+  max_damage: 75
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Разбойник - подручный атамана стоит тут.
+  attributes:
+    health: 800
+    mana: 400
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'bash' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80143": 20
+        - "fortavern:80129": 50
+- id: 80118
+  keywords: [ "горбатый", "разбойник" ]
+  level: 18
+  name: "горбатый разбойник"
+  rname: "горбатого разбойника"
+  dname: "горбатому разбойнику"
+  vname: "горбатого разбойника"
+  tname: "горбатым разбойником"
+  pname: "горбатом разбойнике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 75
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Горбатый разбойник задумчиво разглядывает здесь что-то у себя под ногами.
+  attributes:
+    health: 400
+    mana: 800
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomspell: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [  ]
+      spells: [ 'silence' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80130": 50
+        - "fortavern:80117": 20
+- id: 80119
+  keywords: [ "старый", "разбойник" ]
+  level: 18
+  name: "старый разбойник"
+  rname: "старого разбойника"
+  dname: "старому разбойнику"
+  vname: "старого разбойника"
+  tname: "старым разбойником"
+  pname: "старом разбойнике"
+  gender: "male"
+  min_damage: 40
+  max_damage: 75
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Старый, но все еще достаточно крепкий разбойник отдыхает тут в своей комнате.
+  attributes:
+    health: 800
+    mana: 400
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'judge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 80
+- id: 80120
+  keywords: [ "подруга" ]
+  level: 16
+  name: "подруга разбойника"
+  rname: "подруги разбойника"
+  dname: "подруге разбойника"
+  vname: "подругу разбойника"
+  tname: "подругой разбойника"
+  pname: "подруге разбойника"
+  gender: "female"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Довольно миловидная подруга разбойника стоит тут.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomspell: true
+    capable:
+      skills: [  ]
+      spells: [ 'ice_peak' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 60
+- id: 80121
+  keywords: [ "бродячий", "торговец" ]
+  level: 16
+  name: "бродячий торговец"
+  rname: "бродячего торговца"
+  dname: "бродячему торговцу"
+  vname: "бродячего торговца"
+  tname: "бродячим торговцем"
+  pname: "бродячем торговце"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Смуглый бродячий торговец отдыхает здесь.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    leader:
+      followers: [ 'fortavern:80122' ]
+    wander:
+      interval: 60
+      areaRestricted: true
+    capable:
+      skills: [  ]
+      spells: [ 'silence' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80122": 20
+- id: 80122
+  keywords: [ "телохранитель" ]
+  level: 16
+  name: "телохранитель торговца"
+  rname: "телохранителя торговца"
+  dname: "телохранителю торговца"
+  vname: "телохранителя торговца"
+  tname: "телохранителем торговца"
+  pname: "телохранителе торговца"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Массивный телохранитель торговца насторожено поглядывает тут по сторонам.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80121": 20
+- id: 80123
+  keywords: [ "огромная", "медведица" ]
+  level: 19
+  name: "огромная медведица"
+  rname: "огромной медведицы"
+  dname: "огромной медведице"
+  vname: "огромную медведицу"
+  tname: "огромной медведицей"
+  pname: "огромной медведице"
+  gender: "female"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'оцарапала'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Огромная медведица готова напасть тут на любого приблизившегося к ее детенышам.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+         - "fortavern:80116": 50
+- id: 80124
+  keywords: [ "крупный", "медвежонок" ]
+  level: 18
+  name: "крупный медвежонок"
+  rname: "крупного медвежонка"
+  dname: "крупному медвежонку"
+  vname: "крупного медвежонка"
+  tname: "крупным медвежонком"
+  pname: "крупном медвежонке"
+  gender: "male"
+  min_damage: 40
+  max_damage: 75
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Достаточно крупный медвежонок играет тут с обглоданной костью.
+  attributes:
+    health: 800
+    mana: 400
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80125
+  keywords: [ "старый", "лось" ]
+  level: 16
+  name: "старый лось"
+  rname: "старого лося"
+  dname: "старому лосю"
+  vname: "старого лося"
+  tname: "старым лосем"
+  pname: "старом лосе"
+  gender: "male"
+  min_damage: 40
+  max_damage: 70
+  damageVerb: 'боднул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Старый лось с огромными рогами бродит тут среди лесных зарослей.
+  attributes:
+    health: 700
+    mana: 350
+    armor: 3
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wander:
+      interval: 60
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80126
+  keywords: [ "наемный", "убийца" ]
+  level: 19
+  name: "наемный убийца"
+  rname: "наемного убийцы"
+  dname: "наемному убийце"
+  vname: "наемного убийцу"
+  tname: "наемным убийцей"
+  pname: "наемном убийце"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Скрывающийся от правосудия наемный убийца отдыхает тут.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomspell: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite', 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80137": 20
+- id: 80127
+  keywords: [ "медведь", "шатун" ]
+  level: 19
+  name: "медведь-шатун"
+  rname: "медведя-шатуна"
+  dname: "медведю-шатуну"
+  vname: "медведя-шатуна"
+  tname: "медведем-шатуном"
+  pname: "медведе-шатуне"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'ободрал'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Огромный, голодный после спячки медведь бродит тут в поисках добычи.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    wander:
+      interval: 60
+      restrictTo: [ 'fortavern:80147', 'fortavern:80148', 'fortavern:80149', 'fortavern:80150', 'fortavern:80151', 
+                    'fortavern:80152', 'fortavern:80153', 'fortavern:80154', 'fortavern:80155', 'fortavern:80156', 
+                    'fortavern:80157', 'fortavern:80158', 'fortavern:80159', 'fortavern:80160', 'fortavern:80161', 
+                    'fortavern:80162', 'fortavern:80163', 'fortavern:80164', 'fortavern:80165', 'fortavern:80166' ]
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+- id: 80128
+  keywords: [ "лесной", "разбойник" ]
+  level: 19
+  name: "лесной разбойник"
+  rname: "лесного разбойника"
+  dname: "лесному разбойнику"
+  vname: "лесного разбойника"
+  tname: "лесным разбойником"
+  pname: "лесном разбойнике"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Промышляющий разбоем лесной разбойник поджидает тут свою жертву.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    leader:
+      followers: [ 'fortavern:80129' ]
+    wander:
+      interval: 60
+      restrictTo: [ 'fortavern:80147', 'fortavern:80148', 'fortavern:80149', 'fortavern:80150', 'fortavern:80151', 
+                    'fortavern:80152', 'fortavern:80153', 'fortavern:80154', 'fortavern:80155', 'fortavern:80156', 
+                    'fortavern:80157', 'fortavern:80158', 'fortavern:80159', 'fortavern:80160', 'fortavern:80161', 
+                    'fortavern:80162', 'fortavern:80163', 'fortavern:80164', 'fortavern:80165', 'fortavern:80166' ]
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'bash' ]
+      spells: [ 'heal' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80156": 20
+- id: 80129
+  keywords: [ "прирученный", "волк" ]
+  level: 19
+  name: "прирученный волк"
+  rname: "прирученного волка"
+  dname: "прирученному волку"
+  vname: "прирученного волка"
+  tname: "прирученным волком"
+  pname: "прирученном волке"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'укусил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Черный как ночь волк с ошейником на шее семенит тут куда-то.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'hide' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80157": 20
+- id: 80130
+  keywords: [ "пузатый", "тролль" ]
+  level: 19
+  name: "пузатый тролль"
+  rname: "пузатого тролля"
+  dname: "пузатому троллю"
+  vname: "пузатого тролля"
+  tname: "пузатым троллем"
+  pname: "пузатом тролле"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'сокрушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Огромный пузатый тролль идет тут, снося деревья на своем пути.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomskill: true
+    leader:
+      followers: [ 'fortavern:80131', 'fortavern:80132' ]
+    wander:
+      interval: 65
+      restrictTo: [ 'fortavern:80147', 'fortavern:80148', 'fortavern:80149', 'fortavern:80150', 'fortavern:80151', 
+                    'fortavern:80152', 'fortavern:80153', 'fortavern:80154', 'fortavern:80155', 'fortavern:80156', 
+                    'fortavern:80157', 'fortavern:80158', 'fortavern:80159', 'fortavern:80160', 'fortavern:80161', 
+                    'fortavern:80162', 'fortavern:80163', 'fortavern:80164', 'fortavern:80165', 'fortavern:80166' ]
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'bash', 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 80
+- id: 80131
+  keywords: [ "высокий", "тролль" ]
+  level: 19
+  name: "высокий тролль"
+  rname: "высокого тролля"
+  dname: "высокому троллю"
+  vname: "высокого тролля"
+  tname: "высоким троллем"
+  pname: "высоком тролле"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Тролль превосходящий высотой самые огромные деревья проходит тут.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomspell: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'judge', 'lunge' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 80
+- id: 80132
+  keywords: [ "пупырчатый", "тролль" ]
+  level: 19
+  name: "пупырчатый тролль"
+  rname: "пупырчатого тролля"
+  dname: "пупырчатому троллю"
+  vname: "пупырчатого тролля"
+  tname: "пупырчатым троллем"
+  pname: "пупырчатом тролле"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'пнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Сплошь покрытый бородавками тролль стоит тут.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomspell: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [  ]
+      spells: [ 'ice_peak', 'fireball' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 100
+      pools:
+        - "fortavern:80152": 20
+        - "fortavern:80153": 20
+        - "fortavern:80148": 100
+- id: 80133
+  keywords: [ "подгнивший", "хуорн" ]
+  level: 19
+  name: "подгнивший хуорн"
+  rname: "подгнившего хуорна"
+  dname: "подгнившему хуорну"
+  vname: "подгнившего хуорна"
+  tname: "подгнившим хуорном"
+  pname: "подгнившем хуорне"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'хлестнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Подгнивший хуорн тяжко поскрипывает тут на ветру.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomspell: true
+    leader:
+      followers: [ 'fortavern:80134' ]
+    wander:
+      interval: 60
+      restrictTo: [ 'fortavern:80147', 'fortavern:80148', 'fortavern:80149', 'fortavern:80150', 'fortavern:80151', 
+                    'fortavern:80152', 'fortavern:80153', 'fortavern:80154', 'fortavern:80155', 'fortavern:80156', 
+                    'fortavern:80157', 'fortavern:80158', 'fortavern:80159', 'fortavern:80160', 'fortavern:80161', 
+                    'fortavern:80162', 'fortavern:80163', 'fortavern:80164', 'fortavern:80165', 'fortavern:80166' ]
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [  ]
+      spells: [ 'acid', 'silence' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80154": 20
+        - "fortavern:80155": 20
+- id: 80134
+  keywords: [ "лесной", "фантом" ]
+  level: 19
+  name: "лесной фантом"
+  rname: "лесного фантома"
+  dname: "лесному фантому"
+  vname: "лесного фантома"
+  tname: "лесным фантомом"
+  pname: "лесном фантоме"
+  gender: "male"
+  min_damage: 45
+  max_damage: 80
+  damageVerb: 'иссушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Полупрозрачная фигура лесного фантома парит тут среди ветвей деревьев.
+  attributes:
+    health: 850
+    mana: 450
+    armor: 4
+    invisibility: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    randomspell: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [  ]
+      spells: [ 'fireball', 'paralysis' ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 40
+      pools:
+        - "fortavern:80158": 20

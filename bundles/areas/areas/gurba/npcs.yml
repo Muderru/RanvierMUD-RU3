@@ -1,0 +1,652 @@
+- id: bogus
+  keywords: ["торговец", "богус", "владелец"]
+  name: "Богус"
+  rname: "Богуса"
+  dname: "Богусу"
+  vname: "Богуса"
+  tname: "Богусом"
+  pname: "Богусе"
+  gender: "male"  
+  description: >-
+    Он страдает ожирением, а также алчностью.
+  level: 99
+  metadata:
+    vendor:
+      items:
+        "gurba:rock":
+          cost: 200
+          currency: золото
+        "gurba:boots":
+          cost: 250
+          currency: золото
+        "gurba:gloves":
+          cost: 150
+          currency: золото
+        "gurba:hat":
+          cost: 150
+          currency: золото
+        "gurba:jacket":
+          cost: 300
+          currency: золото
+        "gurba:tshirt":
+          cost: 250
+          currency: золото
+        "gurba:sword":
+          cost: 300
+          currency: золото
+      enterMessage: "Подходите! Покупайте великолепные товары!"
+      leaveMessage: "Возвращайтесь обратно!"
+- id: frida
+  keywords: ["торговец", "фрида", "владелец"]
+  name: "Фрида"
+  rname: "Фриды"
+  dname: "Фриде"
+  vname: "Фриду"
+  tname: "Фридой"
+  pname: "Фриде"
+  gender: "female"
+  description: >-
+    Вы видите красивую девушку с длинной черной косой и ромашкой за ухом.
+  level: 99
+  metadata:
+    vendor:
+      items:
+        "gurba:roses":
+          cost: 300
+          currency: золото
+      enterMessage: "Подходите! Покупайте великолепные товары!"
+      leaveMessage: "Возвращайтесь обратно!"
+- id: grim
+  keywords: ["торговец", "грэм", "владелец"]
+  name: "Грэм"
+  rname: "Грэма"
+  dname: "Грэму"
+  vname: "Грэма"
+  tname: "Грэмом"
+  pname: "Грэме"
+  gender: "male"  
+  description: >-
+    Вы видите коренастого мускулистого гнома, черного от копоти. Он много 
+    времени провел у кузнечного горна.
+  level: 99
+  metadata:
+    vendor:
+      items:
+        "gurba:sword":
+          cost: 300
+          currency: золото
+        "gurba:curveddagger":
+          cost: 350
+          currency: золото
+      enterMessage: "Подходите! Покупайте великолепные товары!"
+      leaveMessage: "Возвращайтесь обратно!"
+- id: traveller
+  keywords: [ "странствующий", "путешественник" ]
+  level: 10
+  name: "путешественник"
+  rname: "путешественника"
+  dname: "путешественнику"
+  vname: "путешественника"
+  tname: "путешественником"
+  pname: "путешественнике"
+  gender: "male"
+  min_damage: 15
+  max_damage: 55
+  damageVerb: 'пнул'
+  travelVerbIn: "устало пришёл"
+  travelVerbOut: "ушёл устало"
+  description: >-
+    Никто не знает, кто он и откуда. И кажется он и сам 
+    об этом не вспомнит.
+  attributes:
+    health: 400
+    mana: 200
+    strength: 28
+    agility: 28
+    crushing_damage: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [  ]
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 15
+          max: 30
+      pools:
+        - "boothill:10ghat": 10
+        - "gurba:stuff"
+- id: man
+  keywords: [ "горожанин" ]
+  level: 10
+  name: "горожанин"
+  rname: "горожанина"
+  dname: "горожанину"
+  vname: "горожанина"
+  tname: "горожанином"
+  pname: "горожанине"
+  gender: "male"
+  min_damage: 15
+  max_damage: 55
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл по делам"
+  description: >-
+    Это мужчина лет тридцати, самый типичный представитель среднего класса.
+    На нем надет добротный, но потрепанный костюм. В руках у него толстая 
+    трость.
+  attributes:
+    health: 450
+    strength: 28
+    agility: 28
+    crushing_damage: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 15
+          max: 30
+      pools:
+        - "gurba:pants": 10
+        - "gurba:stuff"
+- id: woman
+  keywords: [ "горожанка" ]
+  level: 10
+  name: "горожанка"
+  rname: "горожанки"
+  dname: "горожанке"
+  vname: "горожанку"
+  tname: "горожанкой"
+  pname: "горожанке"
+  gender: "female"
+  min_damage: 15
+  max_damage: 55
+  damageVerb: 'пырнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Вы видите немолодую женщину в разноцветных одеяниях. Ее 
+    жизненный опыт научил ее скрывать в просторных одеяниях 
+    острый нож, которым она воспользуется при необходимости.
+  attributes:
+    health: 400
+    strength: 28
+    agility: 28
+    piercing_damage: 2
+  behaviors:
+    allattributes: 0
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 15
+          max: 30
+      pools:
+        - "gurba:dress": 10
+        - "gurba:stuff"
+- id: gurbavendor
+  keywords: [ "разорившийся", "торговец" ]
+  level: 10
+  name: "разорившийся торговец"
+  rname: "разорившегося торговца"
+  dname: "разорившемуся торговцу"
+  vname: "разорившегося торговца"
+  tname: "разорившимся торговцем"
+  pname: "разорившемся торговце"
+  gender: "male"
+  min_damage: 15
+  max_damage: 55
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "поплелся"
+  description: >-
+    Нынешние тяжелые времена тяжело сказались на этом несчастном человеке.
+    Местные люди сильно обнищали, а вместе с ними разорился и этот торговец.
+  attributes:
+    health: 400
+    mana: 250
+    strength: 28
+    agility: 28
+    earth_damage: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    capable:
+      skills: [  ]
+      spells: [ 'heal' ]
+    wander:
+      interval: 20
+      restrictTo: ['gurba:market1', 'gurba:market2', 'gurba:market3', 'gurba:market4']    
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35
+      pools:
+        - "gurba:ring": 10
+        - "gurba:stuff"
+- id: beggar
+  keywords: [ "нищий" ]
+  level: 8
+  name: "нищий"
+  rname: "нищего"
+  dname: "нищему"
+  vname: "нищего"
+  tname: "нищим"
+  pname: "нищем"
+  gender: "male"
+  min_damage: 12
+  max_damage: 44
+  damageVerb: 'ударил'
+  travelVerbIn: "приковылял"
+  travelVerbOut: "заковылял"
+  script: 'beggar'
+  description: >-
+    Жизнь не пощадила этого беднягу: старик остался без родных и средств
+    к существованию. Он побирается на улицах города, надеясь на милость
+    случайных прохожих.
+  attributes:
+    health: 350
+    strength: 20
+    agility: 20
+    cutting_damage: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 10
+      pools:
+        - "gurba:rags": 10
+- id: sentinel
+  keywords: [ "часовой" ]
+  level: 12
+  name: "часовой"
+  rname: "часового"
+  dname: "часовому"
+  vname: "часового"
+  tname: "часовым"
+  pname: "часовом"
+  gender: "male"
+  min_damage: 25
+  max_damage: 55
+  damageVerb: 'рубанул'
+  description: >-
+    Мускулистый мужчина закован с ног до головы в металлические доспехи.
+    Он пристально следит за прохожими и пресекает проникновению
+    преступных элементов.
+  attributes:
+    health: 500
+    mana: 250
+    strength: 30
+    agility: 30
+    cutting_resistance: 2
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ 'judge', 'smite' ]
+      spells: [  ]
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "gurba:sentinelarmor": 10
+        - "gurba:sentinelcloak": 10
+        - "gurba:sentinelsword": 10
+        - "gurba:stuff"
+- id: guardian
+  keywords: [ "стражник" ]
+  level: 12
+  name: "стражник Гурбы"
+  rname: "стражника Гурбы"
+  dname: "стражнику Гурбы"
+  vname: "стражника Гурбы"
+  tname: "стражником Гурбы"
+  pname: "стражнике Гурбы"
+  gender: "male"
+  min_damage: 25
+  max_damage: 55
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Мускулистый мужчина закован с ног до головы в металлические доспехи.
+    Он пристально следит за прохожими и пресекает проникновению
+    преступных элементов.
+  attributes:
+    health: 500
+    mana: 200
+    strength: 30
+    agility: 30
+    cutting_damage: 1
+    crushing_damage: 1
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['rescue', 'lunge']
+      spells: []
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "gurba:guardiansword": 10
+        - "gurba:stuff"
+- id: gildmaster
+  keywords: ["гильдмастер"]
+  name: "Гильдмастер"
+  rname: "Гильдмастера"
+  dname: "Гильдмастеру"
+  vname: "Гильдмастера"
+  tname: "Гильдмастером"
+  pname: "Гильдмастере"
+  gender: "male"
+  quests: ['gurba:killspider']  
+  description: >-
+    Вот уже много лет он управляет Гильдией бойцов Гурбы.
+    Несмотря на возраст, это все еще крепкий мужчина и умелый боец.
+  level: 99
+  metadata:
+    trainer:
+      skill: "judge"
+      cost: 2
+      requirements: []
+- id: wandering_mage
+  keywords: [ 'маг', 'странствующий' ]
+  level: 12
+  name: "странствующий маг"
+  rname: "странствующего мага"
+  dname: "странствующему магу"
+  vname: "странствующего мага"
+  tname: "странствующим магом"
+  pname: "странствующем маге"
+  gender: "male"
+  min_damage: 25
+  max_damage: 55
+  damageVerb: 'испепелил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите седого старика, укутанного в бесформенную хламиду.
+    На голове его широкополая шляпа, а в руке он сжимает сучковатый
+    посох.
+  attributes:
+    health: 400
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 30
+    fire_damage: 2
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ ]
+      spells: [ 'heal', 'fireball', 'silence' ]
+    wander:
+      interval: 30
+      areaRestricted: true
+  metadata:
+    trainer:
+      spell: "fireball"
+      cost: 1
+      requirements: []
+- id: drunk_doctor
+  keywords: [ 'пьяный', 'лекарь' ]
+  level: 12
+  name: "пьяный лекарь"
+  rname: "пьяного лекаря"
+  dname: "пьяному лекарю"
+  vname: "пьяного лекаря"
+  tname: "пьяным лекарем"
+  pname: "пьяном лекаре"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Пьяный лысый мужчина что-то бормочет себе под нос.
+    Дрожащими руками он осушает одну рюмку за другой.
+  attributes:
+    health: 400
+    mana: 600
+    strength: 30
+    agility: 30
+    intellect: 30
+    earth_damage: 2
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ ]
+      spells: [ 'heal', 'plea' ]
+  metadata:
+    trainer:
+      spell: "heal"
+      cost: 1
+      requirements: []
+- id: prisoner
+  keywords: ["человек"]
+  name: "человек в колодках"
+  rname: "человека в колодках"
+  dname: "человеку в колодках"
+  vname: "человека в колодках"
+  tname: "человеком в колодках"
+  pname: "человеке в колодках"
+  gender: "male"
+  description: >-
+    Неизвестно за что был осужден этот человек, да это уже и не
+    важно, даже ошибочные приговоры суда никогда не отменяются.
+  level: 99
+  metadata:
+    trainer:
+      spell: "plea"
+      cost: 2
+      requirements: []
+- id: guild_trainer
+  keywords: ["тренер"]
+  name: "тренер гильдии бойцов"
+  rname: "тренера гильдии бойцов"
+  dname: "тренеру гильдии бойцов"
+  vname: "тренера гильдии бойцов"
+  tname: "тренером гильдии бойцов"
+  pname: "тренере гильдии бойцов"
+  gender: "male"
+  description: >-
+    Этот человек обучает новичков различным приемам обращения
+    мечом и щитом. Поймав на себе его неодобрительный взгляд, вы
+    ловите себя на мысли, что вам здесь не рады.
+  level: 99
+  metadata:
+    trainer:
+      skill: 'shieldblock'
+      cost: 3
+      requirements: [ 'skill_judge' ]
+- id: swineherd
+  keywords: ["свинопас"]
+  name: "свинопас"
+  rname: "свинопаса"
+  dname: "свинопасу"
+  vname: "свинопаса"
+  tname: "свинопасом"
+  pname: "свинопасе"
+  gender: "male"
+  description: >-
+    Щербатый чудаковатый фермер смотрит на вас придурковатым взглядом,
+    от которого вам становится не по себе. За несколько монет он готов
+    предоставить вам ночлежку среди своих свиней.
+  script: 'swineherd'
+  level: 99
+  metadata:
+    innkeeper:
+      cost: 100
+- id: guard_captain
+  keywords: [ "стражник" ]
+  level: 12
+  name: "капитан стражи"
+  rname: "капитана стражи"
+  dname: "капитану стражи"
+  vname: "капитана стражи"
+  tname: "капитаном стражи"
+  pname: "капитане стражи"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот опытный вояка руководит всеми местными стражниками.
+    При одном его приближении все преступники города пытаются
+    где-нибудь скрыться.
+  attributes:
+    health: 500
+    mana: 400
+    strength: 30
+    agility: 30
+    cutting_damage: 1
+    crushing_damage: 1
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['rend', 'rescue']
+      spells: ['heal']
+    leader:
+      followers: [ 'gurba:guardian2', 'gurba:guardian2' ]
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "gurba:guardiansword": 10
+        - "gurba:captainarmor": 50
+        - "gurba:stuff"
+- id: guardian2
+  keywords: [ "стражник" ]
+  level: 12
+  name: "стражник Гурбы"
+  rname: "стражника Гурбы"
+  dname: "стражнику Гурбы"
+  vname: "стражника Гурбы"
+  tname: "стражником Гурбы"
+  pname: "стражнике Гурбы"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Мускулистый мужчина закован с ног до головы в металлические доспехи.
+    Он пристально следит за прохожими и пресекает проникновению
+    преступных элементов.
+  attributes:
+    health: 450
+    mana: 300
+    strength: 30
+    agility: 30
+    cutting_damage: 1
+    crushing_damage: 1
+  behaviors:
+    allattributes: 2
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['lunge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "gurba:guardiansword": 10
+        - "gurba:stuff"
+- id: scrolltrader
+  keywords: ["торговец", "богус", "владелец"]
+  name: "Игнасиус"
+  rname: "Игнасиуса"
+  dname: "Игнасиусу"
+  vname: "Игнасиуса"
+  tname: "Игнасиусом"
+  pname: "Игнасиусе"
+  gender: "male"  
+  description: >-
+    Вы видите высокого худого старика с немного безумным взглядом.
+  level: 99
+  metadata:
+    vendor:
+      items:
+        "gurba:scroll_recall":
+          cost: 100
+          currency: золото
+        "gurba:scroll_fireball":
+          cost: 50
+          currency: золото
+        "gurba:scroll_acid":
+          cost: 100
+          currency: золото
+        "gurba:scroll_invisibility":
+          cost: 100
+          currency: золото
+        "gurba:scroll_light":
+          cost: 50
+          currency: золото
+        "gurba:scroll_lightning":
+          cost: 50
+          currency: золото
+        "gurba:scroll_paralysis":
+          cost: 250
+          currency: золото
+        "gurba:scroll_silence":
+          cost: 150
+          currency: золото
+        "gurba:scroll_courage":
+          cost: 250
+          currency: золото
+      enterMessage: "Подходите! Покупайте великолепные товары!"
+      leaveMessage: "Возвращайтесь обратно!"

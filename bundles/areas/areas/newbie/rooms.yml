@@ -1,0 +1,119 @@
+- id: drinkme
+  title: "Зал ожидания"
+  type: ['пещера']
+  description: >-
+    Вы в небольшой грязной пещере с обложенными кирпичами стенами.
+    Она почему-то напоминает зал ожидания. Из другой пещеры на севере
+    вы слышите громкие звуки.
+  light: 80
+  items:
+    - id: "newbie:table"
+      respawnChance: 25
+      replaceOnRespawn: true
+  exits:
+    - roomId: "newbie:fighting"
+      direction: север
+    - roomId: "newbie:quest"
+      direction: юг
+- id: entrance
+  title: "В туннеле"
+  type: ['пещера']
+  description: >-
+    Вы внутри узкого земляного туннеля. Ползти вперед тут не так-то
+    просто из-за торчащих со всех сторон камней и корней. Туннель
+    тянется дальше на юг.
+  npcs: ["newbie:rat"]
+  exits:
+    - roomId: "newbie:equipment"
+      direction: юг
+- id: equipment
+  title: "Узкий проход"
+  type: ['пещера']
+  description: >-
+    Вы находитесь внутри узкого туннеля. Из земляных стен торчат камни
+    и корни, мешающие дальнейшему продвижению. Туннель продолжается
+    дальше на север и юг.
+  exits:
+    - roomId: "newbie:entrance"
+      direction: север
+    - roomId: "newbie:fighting"
+      direction: юг
+- id: fighting
+  title: "Арена новичков"
+  type: ['пещера']
+  description: >-
+    Вы в небольшой земляной пещере, пол которой покрыт множеством следов.
+    С потолка свисают огромные цепкие корни. А в центре зала растет большой
+    цветок.
+  light: 80
+  items:
+    - id: "newbie:flower"
+      respawnChance: 100  
+  exits:
+    - roomId: "newbie:equipment"
+      direction: север
+    - roomId: "newbie:drinkme"
+      direction: юг
+- id: quest
+  title: "Конец туннеля"
+  type: ['пещера']
+  script: 'push'
+  description: >-
+    Вы находитесь у конца темного туннеля, в глаза вам брызжет яркий свет.
+    В центре комнаты установлена огромная красная кнопка, освещенная
+    разноцветными прожекторами.
+  npcs: ["newbie:rat", "newbie:adventurer"]
+  metadata:
+      commands: [ 'нажать' ]
+  items:
+    - id: "newbie:button"
+      respawnChance: 100  
+  exits:
+    - roomId: "newbie:drinkme"
+      direction: север
+    - roomId: "newbie:tree"
+      direction: выход
+  doors:
+    "newbie:tree":
+      lockedBy: "newbie:test_key"
+      locked: true
+      closed: true
+- id: tree
+  title: "Северная часть поля"
+  type: ['луг']
+  description: >-
+    Вы остановились у старого мертвого дерева в центре большого поля.
+    Чуть дальше на юге вы замечаете дорогу, ведущую к городу. Также
+    тут привлекает внимание странная нора в холме на востоке.
+  script: 'tree'
+  items:
+    - id: "newbie:tree"
+      respawnChance: 100
+    - id: "newbie:sign"
+      respawnChance: 100
+  exits:
+    - roomId: "newbie:starting"
+      direction: юг
+    - roomId: "newbie:entrance"
+      direction: восток
+- id: starting
+  title: "Огромное поле"
+  type: ['луг']
+  description: >-
+    Вы стоите в центре огромного поля. На севере вы видите высокое
+    мертвое дерево с каким-то знаком. Все пространство на востоке
+    занимают бескрайние прерии. На западе вы замечаете небольшой
+    городок Гурба. На юге же раскинулся темный лес.
+  light: 80
+  npcs: [ "newbie:captain" ]
+  exits:
+    - roomId: "newbie:tree"
+      direction: север
+    - roomId: "boothill:outside_town"
+      direction: восток
+    - roomId: "gurba:gate_east"
+      direction: запад
+    - roomId: "2.4.5:forest1"
+      direction: юг
+    - roomId: "limbo:white"
+      direction: северо-запад

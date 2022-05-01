@@ -1,0 +1,1068 @@
+- id: 47700
+  name: "трость с железным набалдашником"
+  rname: "трости с железным набалдашником"
+  dname: "трости с железным набалдашником"
+  vname: "трость с железным набалдашником"
+  tname: "тростью с железным набалдашником"
+  pname: "трости с железным набалдашником"
+  gender: "female"
+  damageVerb: "огрела"
+  roomDesc: "Трость с железным набалдашником лежит здесь."
+  description: >-
+    Вы видите толстую трость из крепкого дерева, рукоять которой сделана в виде массивного железного 
+    набалдашника. Хотя трость и не самое удобное оружие, удар ею может быть очень болезненным.
+  keywords: [ "трость" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 35
+    maxDamage: 135
+    speed: 2.6
+    stats:
+      intellect: 2
+      critical: 2
+      crushing_damage: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'maces' ]
+- id: 47701
+  name: "браслет из луговых трав"
+  rname: "браслета из луговых трав"
+  dname: "браслету из луговых трав"
+  vname: "браслет из луговых трав"
+  tname: "браслетом из луговых трав"
+  pname: "браслете из луговых трав"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Браслет из свежих луговых трав лежит тут."
+  keywords: ["браслет"]
+  description: >-
+    Самые обычные луговые травы переплетены в узенькую косичку, связанную на концах. Травинки в браслете 
+    выглядят очень свежими, как будто их сорвали совсем недавно.
+  metadata:
+    quality: common
+    slot: "запястье"
+    level: 20
+    itemLevel: 22
+    stats:
+      acid_resistance: 2
+      acid_damage: 2
+    sellable:
+      value: 250
+      currency: золото
+- id: 47702
+  name: "тугой корсет"
+  rname: "тугого корсета"
+  dname: "тугому корсету"
+  vname: "тугой корсет"
+  tname: "тугим корсетом"
+  pname: "тугом корсете"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Тугой корсет из хрящей какого-то животного лежит тут."
+  keywords: [ "корсет", "тугой" ]
+  description: >-
+    Такими корсетами обычно пользуются довольно тучные люди. Он крепко и незаметно, благодаря особому 
+    покрою, обхватывает их животы, не давая им вывалиться наружу.
+  metadata:
+    quality: common
+    slot: "талия"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 4
+      cutting_resistance: 1
+      stamina: 3
+    sellable:
+      value: 180
+      currency: золото
+- id: 47703
+  name: "дирижерская палочка"
+  rname: "дирижерской палочки"
+  dname: "дирижерской палочке"
+  vname: "дирижерскую палочку"
+  tname: "дирижерской палочкой"
+  pname: "дирижерской палочке"
+  gender: "female"
+  damageVerb: "ударила"
+  roomDesc: "Оброненная дирижерская палочка лежит в пыли под ногами."
+  description: >-
+    Вы видите небольшую черную палочку, какую обычно используют дирижеры. В качестве оружия она не 
+    годится, максимум, что можно ею сделать, это ткнуть кому-нибудь в глаз. Но, и то, скорее всего, вы этим всего 
+    лишь разозлите противника.
+  keywords: [ "дирижерская", "палочка" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 30
+    maxDamage: 125
+    speed: 2.4
+    stats:
+      intellect: 2
+      critical: 2
+      crushing_damage: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: [ ]
+- id: 47704
+  name: "изящное золотое пенсне"
+  rname: "изящного золотого пенсне"
+  dname: "изящному золотому пенсне"
+  vname: "изящное золотое пенсне"
+  tname: "изящным золотым пенсне"
+  pname: "изящном золотом пенсне"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Изящное золотое пенсне лежит тут."
+  keywords: [ "изящное", "золотое", "пенсне" ]
+  description: >-
+    Вы видите изящные очки в тонкой золотой оправе. С их помощью можно разглядеть даже самые 
+    мельчайшие детали, ничего не опуская из внимания.
+  metadata:
+    quality: common
+    slot: "глаза"
+    level: 20
+    itemLevel: 22
+    stats:
+      detect_invisibility: 1
+      detect_hide: 1
+    sellable:
+      value: 200
+      currency: золото
+- id: 47705
+  name: "черный веер"
+  rname: "черного веера"
+  dname: "черному вееру"
+  vname: "черный веер"
+  tname: "черным веером"
+  pname: "черном веере"
+  gender: "male"
+  type: ARMOR
+  roomDesc: Черный веер из редкого шелка лежит тут.
+  keywords: [ "веер", "черный" ]
+  description: >-
+    Такими дорогими веерами обычно пользуются только очень знатные люди. Он изготовлен из редкого черного 
+    шелка, привезенного откуда-то из-за Кханда. Веером можно не только обмахиваться в жару, но и прикрыть, 
+    например, внезапный зевок, тем самым избавив себя от насмешек в высшем обществе.
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 20
+    itemLevel: 22
+    stats:
+      piercing_damage: 2
+      health_regeneration: 5
+    sellable:
+      value: 160
+      currency: золото
+- id: 47706
+  name: "перчатки кукловода"
+  rname: "перчаток кукловода"
+  dname: "перчаткам кукловода"
+  vname: "перчатки кукловода"
+  tname: "перчатками кукловода"
+  pname: "перчатках кукловода"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: Черные кожаные перчатки лежат тут.
+  keywords: [ "перчатки" ]
+  description: >-
+    Эти перчатки изготовлены из тонкой черной кожи. Они удобно обхватывают кисти рук, не стесняя их 
+    движений, а кроме того предохраняя пальцы кукловода от порезов о тонкие нити марионетки.
+  metadata:
+    quality: common
+    slot: "перчатки"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 4
+      freedom: 2
+      mana_regeneration: 5
+    sellable:
+      value: 160
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: [ 'light_armor' ]
+- id: 47707
+  name: "смычок"
+  rname: "смычка"
+  dname: "смычку"
+  vname: "смычок"
+  tname: "смычком"
+  pname: "смычке"
+  gender: "male"
+  damageVerb: "уколол"
+  roomDesc: "Потерянный смычок от скрипки лежит тут."
+  description: >-
+    Тонкий и острый смычок от скрипки, только вот струна на нем порвалась, а на конце виднеются пятна крови.
+  keywords: [ "смычок" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 35
+    maxDamage: 135
+    speed: 2.5
+    stats:
+      agility: 2
+      critical: 2
+      piercing_damage: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'various_weapons' ]
+- id: 47708
+  name: "мокрая швабра"
+  rname: "мокрой швабры"
+  dname: "мокрой швабре"
+  vname: "мокрую швабру"
+  tname: "мокрой шваброй"
+  pname: "мокрой швабре"
+  gender: "male"
+  damageVerb: "огрела"
+  roomDesc: "Грязная мокрая швабра лежит тут."
+  description: >-
+    При взгляде на эту швабру складывается впечатление, что ею только что мыли полы. В остальном же швабра 
+    точно такая же, как и все другие швабры.
+  keywords: [ "швабра", "мокрая" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 40
+    maxDamage: 150
+    speed: 2.6
+    stats:
+      critical: 4
+      crushing_damage: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'polearms' ]
+- id: 47709
+  name: "строгий фрак"
+  rname: "строгого фрака"
+  dname: "строгому фраку"
+  vname: "строгий фрак"
+  tname: "строгим фраком"
+  pname: "строгом фраке"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Превосходный фрак из темной материи лежит тут."
+  keywords: [ "фрак", "строгий" ]
+  description: >-
+    Это недорогой, но безупречный фрак - идеальный выбор для небогатых музыкантов или швейцаров при 
+    обслуживании, например, званых ужинов. Кроме того, фрак обладает удивительной способностью 
+    мобилизовывать  духовные силы и помогает проявлять находчивость в самых сложных ситуациях.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 6
+      intellect: 2
+      mana_regeneration: 5
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      intellect: 25
+      skills: [ 'light_armor' ]
+- id: 47710
+  name: "комическая маска"
+  rname: "комической маски"
+  dname: "комической маске"
+  vname: "комическую маску"
+  tname: "комической маской"
+  pname: "комической маске"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Ухмыляющаяся комическая маска лежит тут."
+  keywords: [ "комическая", "маска" ]
+  description: >-
+    Маска из белой керамики в виде ухмыляющейся рожи.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 6
+      cutting_resistance: 2
+      crushing_resistance: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'medium_armor' ]
+- id: 47711
+  name: "трагическая маска"
+  rname: "трагической маски"
+  dname: "трагической маске"
+  vname: "трагическую маску"
+  tname: "трагической маской"
+  pname: "трагической маске"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Печальная трагическая маска лежит тут."
+  keywords: [ "трагическая", "маска" ]
+  description: >-
+    Маска из черной керамики в виде рыдающей рожи.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 6
+      cutting_damage: 2
+      crushing_damage: 2
+    sellable:
+      value: 150
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'medium_armor' ]
+- id: 47712
+  name: "серьги с жемчугом"
+  rname: "серег с жемчугом"
+  dname: "серьгам с жемчугом"
+  vname: "серьги с жемчугом"
+  tname: "серьгами с жемчугом"
+  pname: "серьгах с жемчугом"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Прелестные серьги с жемчугом лежат тут."
+  keywords: [ "серьги" ]
+  description: >-
+    Изящные серьги из крупных жемчужин редкой черной окраски в тонкой серебряной оправе. Они станут 
+    настоящим украшением для любой дамы.
+  metadata:
+    quality: common
+    slot: "уши"
+    level: 20
+    itemLevel: 22
+    stats:
+      fire_resistance: 1
+      cold_resistance: 1
+      lightning_resistance: 1
+    sellable:
+      value: 175
+      currency: золото
+- id: 47713
+  name: "колье с бриллиантами"
+  rname: "колье с бриллиантами"
+  dname: "колье с бриллиантами"
+  vname: "колье с бриллиантами"
+  tname: "колье с бриллиантами"
+  pname: "колье с бриллиантами"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Великолепное колье с бриллиантами лежит тут."
+  keywords: [ "колье" ]
+  description: >-
+    Это великолепное колье из крупных, сверкающих всеми цветами радуги, бриллиантов украсит даже 
+    настоящую королеву. Да и стоимость его такова, что на деньги, вырученные от его продажи, можно купить 
+    небольшое королевство.
+  metadata:
+    quality: common
+    slot: "шея"
+    level: 20
+    itemLevel: 22
+    stats:
+      strength: 1
+      agility: 1
+      intellect: 1
+    sellable:
+      value: 175
+      currency: золото
+- id: 47714
+  name: "потайной стилет"
+  rname: "потайного стилета"
+  dname: "потайному стилету"
+  vname: "потайной стилет"
+  tname: "потайным стилетом"
+  pname: "потайном стилете"
+  gender: "male"
+  damageVerb: "уколол"
+  roomDesc: "Небольшой, но очень острый стилет лежит тут."
+  description: >-
+    Этот небольшой стилет легко спрятать в руке или потайном кармане, так чтобы потом быстро вынуть его и 
+    нанести единственный смертоносный удар. Правда, в открытом бою он практически бесполезен - им не 
+    отразить удары ни меча, ни топора.
+  keywords: [ "стилет", "потайной" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 35
+    maxDamage: 135
+    speed: 2.6
+    stats:
+      intellect: 2
+      critical: 2
+      crushing_damage: 4
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'daggers' ]
+- id: 47715
+  name: "эфирный плащ"
+  rname: "эфирного плаща"
+  dname: "эфирному плащу"
+  vname: "эфирный плащ"
+  tname: "эфирным плащом"
+  pname: "эфирном плаще"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Едва заметный плащ лежит тут."
+  keywords: [ "эфирный", "плащ" ]
+  description: >-
+    Этот плащ изготовлен из прозрачной, невесомой субстанции, которую многие не признают материальной. Как 
+    бы то ни было, материал придает плащу необычные магические свойства, если только его владелец сможет 
+    совладать с этой магией.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 4
+      invisibility: 1
+    sellable:
+      value: 275
+      currency: золото
+- id: 47716
+  name: "золотой щит с розой"
+  rname: "золотого щита с розой"
+  dname: "золотому щиту с розой"
+  vname: "золотой щит с розой"
+  tname: "золотым щитом с розой"
+  pname: "золотом щите с розой"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Круглый золотой щит с розой лежит тут."
+  keywords: [ "золотой", "щит" ]
+  description: >-
+    Редко когда воинское вооружение изготовляется с таким изяществом; щит сделан из позолоченной стали, а 
+    в центре его выгравирована большая красная роза. Но, несмотря на всю его красоту, щит прекрасно 
+    выполняет свою обязанность защищать владельца от ударов.
+  metadata:
+    quality: common
+    slot: "щит"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 10
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 250
+      currency: золото
+- id: 47717
+  name: "мифриловое кольцо"
+  rname: "мифрилового кольца"
+  dname: "мифриловому кольцу"
+  vname: "мифриловое кольцо"
+  tname: "мифриловым кольцом"
+  pname: "мифриловом кольце"
+  gender: "neuter"
+  type: ARMOR
+  roomDesc: "Маленькое мифриловое кольцо лежит тут."
+  keywords: [ "мифриловое", "кольцо" ]
+  description: >-
+    Кольцо представляет собой просто скрученную полоску мифрила, известного своей редкостью и 
+    дороговизной. Так что даже самый богатый человек не побрезгует поносить его на своем пальце.
+  metadata:
+    quality: common
+    slot: "указательный палец"
+    level: 20
+    itemLevel: 22
+    stats:
+      health_regeneration: 10
+      mana_regeneration: 10
+      health: 50
+    sellable:
+      value: 250
+      currency: золото
+- id: 47718
+  name: "закаленный в крови тролля меч"
+  rname: "закаленного в крови тролля меча"
+  dname: "закаленному в крови тролля мечу"
+  vname: "закаленный в крови тролля меч"
+  tname: "закаленным в крови тролля мечом"
+  pname: "закаленном в крови тролля мече"
+  gender: "male"
+  damageVerb: "рубанул"
+  roomDesc: "Смертоносный, закаленный в крови тролля меч лежит тут."
+  description: >-
+    Лезвие этого меча покрыто темными разводами, появившимися после закалки, благодаря которой оно 
+    остро и смертоносно. Кроме того, кровь тролля придала мечу и магические свойства и помогает наносить 
+    более мощные, сокрушительные удары, сбивающие противника с ног.
+  keywords: [ "закаленный", "меч" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 40
+    maxDamage: 145
+    speed: 2.5
+    stats:
+      cutting_damage: 6
+      critical: 2
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      strength: 25
+      skills: [ 'swords' ]
+- id: 47719
+  name: "кепка с козырьком"
+  rname: "кепки с козырьком"
+  dname: "кепке с козырьком"
+  vname: "кепку с козырьком"
+  tname: "кепкой с козырьком"
+  pname: "кепке с козырьком"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Грязная кепка с козырьком лежит тут."
+  keywords: [ "кепка" ]
+  description: >-
+    Этот неказистый головной убор способен разве что лишь защитить от прямых солнечных лучей.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      crushing_resistance: 1
+    sellable:
+      value: 100
+      currency: золото
+- id: 47720
+  name: "глухой кованый шлем"
+  rname: "глухого кованого шлема"
+  dname: "глухому кованому шлему"
+  vname: "глухой кованый шлем"
+  tname: "глухим кованым шлемом"
+  pname: "глухом кованом шлеме"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Глухой кованый шлем лежит тут."
+  keywords: [ "глухой", "кованый", "шлем" ]
+  description: >-
+    Этот шлем полностью защищает голову владельца, так как в его поверхности не видно ни одной щели, ни 
+    одного просвета, куда бы могло проникнуть лезвие клинка противника. Но эта особенность создает и 
+    дополнительные трудности: надев шлем, в нем ровным счетом ничего не видно.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 10
+      cutting_resistance: 1
+      crushing_resistance: 1
+      piercing_resistance: 1
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      stamina: 25
+      skills: [ 'heavy_armor' ]
+- id: 47721
+  name: "просторный черный плащ"
+  rname: "просторного черного плаща"
+  dname: "просторному черному плащу"
+  vname: "просторный черный плащ"
+  tname: "просторным черным плащом"
+  pname: "просторном черном плаще"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Просторный черный плащ лежит тут."
+  keywords: [ "просторный", "черный", "плащ" ]
+  description: >-
+    Плащ изготовлен из великолепной черной материи, привезенной, по всей видимости, откуда-то с далекого 
+    востока. Какая бы погода ни была на улице, можете смело надеть этот плащ, он защитит и от стужи, и от жары, 
+    и от дождя. Кроме того, личность, надевшая черный плащ, кажется более загадочной и интригующей.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 5
+      fire_resistance: 1
+      cold_resistance: 1
+      lightning_resistance: 1
+    sellable:
+      value: 200
+      currency: золото
+- id: 47722
+  name: "простой железный ключ"
+  rname: "простого железного ключа"
+  dname: "простому железному ключу"
+  vname: "простой железный ключ"
+  tname: "простым железным ключом"
+  pname: "простом железном ключе"
+  gender: "male"  
+  keywords: ["ключ", "простой", "железный"]
+  roomDesc: "Простой железный ключ лежит тут."
+  description: "Этот ключ кажется очень сложным с многочисленными канавками."
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 47723
+  name: "маленький золотой ключ"
+  rname: "маленького золотого ключа"
+  dname: "маленькому золотому ключу"
+  vname: "маленький золотой ключ"
+  tname: "маленьким золотым ключом"
+  pname: "маленьком золотом ключе"
+  gender: "male"  
+  keywords: ["ключ", "маленький", "золотой"]
+  roomDesc: "Маленький золотой ключ лежит тут."
+  description: "Этот ключ кажется очень сложным с многочисленными канавками."
+  behaviors:
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 47724
+  type: CONTAINER
+  name: "массивный дубовый стол"
+  rname: "массивного дубового стола"
+  dname: "массивному дубовому столу"
+  vname: "массивный дубовый стол"
+  tname: "массивным дубовым столом"
+  pname: "массивном дубовом столе"
+  gender: "male"  
+  roomDesc: "Массивный дубовый стол стоит в центре комнаты."
+  keywords: [ "массивный", "дубовый", "стол" ]
+  items: [ "theater:47722" ]
+  closed: true
+  locked: false
+  lockedBy: ""
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 47725
+  name: "коробка конфет"
+  rname: "коробки конфет"
+  dname: "коробке конфет"
+  vname: "коробку конфет"
+  tname: "коробкой конфет"
+  pname: "коробке конфет"
+  gender: "female"  
+  roomDesc: "Небольшая, изящная коробка с конфетами лежит тут."
+  keywords: [ "коробка", "конфеты" ]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      spell: "potion"
+      charges: 1
+      destroyOnDepleted: true
+      cooldown: 30
+      options:
+        restores: 50
+        stat: "health"
+- id: 47726
+  name: "накладная грудь"
+  rname: "накладной груди"
+  dname: "накладной груди"
+  vname: "накладную грудь"
+  tname: "накладной грудью"
+  pname: "накладной груди"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Накладная грудь из двух кусков скомканной ткани лежит тут."
+  keywords: [ "накладная", "грудь" ]
+  description: >-
+    Очень полезная вещь, если хочешь понравиться лицам мужского пола.
+  metadata:
+    quality: common
+    slot: "грудь"
+    level: 1
+    itemLevel: 1
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+- id: 47727
+  name: "парик"
+  rname: "парика"
+  dname: "парику"
+  vname: "парик"
+  tname: "париком"
+  pname: "парике"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Парик из конских волос лежит тут."
+  keywords: [ "парик" ]
+  description: >-
+    Аккуратный парик из конских волос.
+  metadata:
+    quality: common
+    slot: "голова"
+    level: 1
+    itemLevel: 1
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+- id: 47728
+  name: "дамские перчатки"
+  rname: "дамских перчаток"
+  dname: "дамским перчаткам"
+  vname: "дамские перчатки"
+  tname: "дамскими перчатками"
+  pname: "дамских перчатках"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Изящные дамские перчатки лежат тут."
+  keywords: [ "просторный", "черный", "плащ" ]
+  description: >-
+    Вы видите изящные дамские перчатки из тонкой белой материи. Любая женщина была бы рада заполучить 
+    такую вещь, но вот мужчине они вряд ли будут к лицу.
+  metadata:
+    quality: common
+    slot: "перчатки"
+    level: 20
+    itemLevel: 20
+    stats:
+      armor: 4
+      health_regeneration: 5
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+- id: 47729
+  type: CONTAINER
+  name: "сундук с реквизитом"
+  rname: "сундука с реквизитом"
+  dname: "сундуку с реквизитом"
+  vname: "сундук с реквизитом"
+  tname: "сундуком с реквизитом"
+  pname: "сундуке с реквизитом"
+  gender: "male"  
+  roomDesc: "Старый, потертый сундук с реквизитом стоит тут."
+  keywords: [ "сундук" ]
+  items: [ "theater:47726", "theater:47727" ]
+  closed: true
+  locked: true
+  lockedBy: "theater:47734"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 47730
+  type: CONTAINER
+  name: "гримерный столик"
+  rname: "гримерного столика"
+  dname: "гримерному столику"
+  vname: "гримерный столик"
+  tname: "гримерным столиком"
+  pname: "гримерном столике"
+  gender: "male"  
+  roomDesc: "Гримерный столик с большим круглым зеркалом стоит у стены."
+  keywords: [ "столик", "гримерный" ]
+  items: [ "theater:47731", "theater:47732", "theater:47733" ]
+  closed: false
+  locked: false
+  lockedBy: ""
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 47731
+  type: RESOURCE
+  materials: ['хромофор']
+  name: "белая пудра"
+  rname: "белой пудры"
+  dname: "белой пудре"
+  vname: "белую пудру"
+  tname: "белой пудрой"
+  pname: "белой пудре"
+  gender: "female"  
+  quality: poor
+  roomDesc: "Флакончик с белой пудрой лежит тут."
+  keywords: [ "белая", "пудра" ]
+  description: "Вы видите флакончик, наполненный тонко измельченной белой пудрой."
+  metadata:
+    sellable:
+      value: 5
+      currency: золото
+- id: 47732
+  type: RESOURCE
+  materials: ['пурпур']
+  name: "красная пудра"
+  rname: "красной пудры"
+  dname: "красной пудре"
+  vname: "красную пудру"
+  tname: "красной пудрой"
+  pname: "красной пудре"
+  gender: "female"  
+  quality: poor
+  roomDesc: "Флакончик с красной пудрой лежит тут."
+  keywords: [ "красная", "пудра" ]
+  description: "Вы видите флакончик, наполненный тонко измельченной красной пудрой."
+  metadata:
+    sellable:
+      value: 5
+      currency: золото
+- id: 47733
+  type: RESOURCE
+  materials: ['индиго']
+  name: "голубая пудра"
+  rname: "голубой пудры"
+  dname: "голубой пудре"
+  vname: "голубую пудру"
+  tname: "голубой пудрой"
+  pname: "голубой пудре"
+  gender: "female"  
+  quality: poor
+  roomDesc: "Флакончик с голубой пудрой лежит тут."
+  keywords: [ "голубая", "пудра" ]
+  description: "Вы видите флакончик, наполненный тонко измельченной голубой пудрой."
+  metadata:
+    sellable:
+      value: 5
+      currency: золото
+- id: 47734
+  name: "ключ режиссера"
+  rname: "ключа режиссера"
+  dname: "ключу режиссера"
+  vname: "ключ режиссера"
+  tname: "ключом режиссера"
+  pname: "ключе режиссера"
+  gender: "male"  
+  keywords: ["ключ"]
+  roomDesc: "Массивный ключ режиссера лежит тут."
+  description: "Этот ключ кажется очень сложным с многочисленными канавками."
+  metadata:
+    quality: common
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+- id: 47735
+  name: "билет в театр"
+  rname: "билета в театр"
+  dname: "билету в театр"
+  vname: "билет в театр"
+  tname: "билетом в театр"
+  pname: "билете в театр"
+  gender: "male"  
+  quality: poor
+  roomDesc: "Потрепанный билет валяется на земле."
+  keywords: [ "билет" ]
+  description: "На нем указан ваш ряд и место."
+  behaviors:
+    decay_on_drop: true
+- id: 47736
+  name: "карточка с автографом"
+  rname: "карточки с автографом"
+  dname: "карточке с автографом"
+  vname: "карточку с автографом"
+  tname: "карточкой с автографом"
+  pname: "карточке с автографом"
+  gender: "female"  
+  quality: poor
+  roomDesc: "Карточка с неразборчивыми каракулями валяется на земле."
+  keywords: [ "карточка" ]
+  description: "Карточка, на которой расписалась прима театра."
+  behaviors:
+    decay_on_drop: true
+- id: 47737
+  name: "старый боевой лук"
+  rname: "старого боевого лука"
+  dname: "старому боевому луку"
+  vname: "старый боевой лук"
+  tname: "старым боевом луком"
+  pname: "старом боевом луке"
+  gender: "male"
+  damageVerb: "подстрелил"
+  roomDesc: "Старый боевой лук из кости животного лежит тут."
+  description: >-
+    Этому луку уже не один десяток лет, но он все так же надежен, и им по-прежнему можно разить врагов без 
+    промаха. Правда, в бой с множеством противников, его лучше не брать, в любую минуту у него может либо 
+    сломаться древко, либо порваться тетива.
+  keywords: [ "старый", "боевой", "лук" ]
+  type: WEAPON
+  metadata:
+    level: 20
+    slot: 'оружие'
+    itemLevel: 22
+    quality: common
+    minDamage: 50
+    maxDamage: 150
+    speed: 2.5
+    stats:
+      critical: 2
+      piercing_damage: 6
+    sellable:
+      value: 200
+      currency: золото
+    requirements:
+      agility: 25
+      skills: [ 'bows' ]
+- id: 47738
+  name: "сценарий"
+  rname: "сценария"
+  dname: "сценарию"
+  vname: "сценарий"
+  tname: "сценарием"
+  pname: "сценарии"
+  gender: "male"  
+  quality: poor
+  roomDesc: "Толстая тетрадь со сценарием лежит тут."
+  keywords: [ "сценарий" ]
+  description: |-
+    На помятом листе написаны слова вашей роли.
+    Актер:
+    На легких крыльях страсти через эту
+    Я стену перенесся... Удержать ли
+    Любовь преградам каменным?.. Она
+    Что может сделать, то и смеет сделать;
+    И нет мне нужды до твоих родных!
+    Актриса:
+    Тебя убьют они, коли увидят.
+    Актер:
+    Увы! Опасней мне твои глаза,
+    Чем двадцать их мечей... Лишь ласково взгляни ты,
+    И закален я против их вражды.
+    Актриса:
+    Дай бог, чтобы тебя не увидали.
+    Актер:
+    От взоров их я скрыт покровом ночи.
+    А если ты меня не любишь, - мне все
+    Равно тогда, хотя б и увидали!
+    Конца своей я жизни от вражды их
+    Желаю лучше, чем отсрочки смерти
+    Холодностью твоею...
+    Актриса:
+    Кто сюда дорогу указал тебе?
+    Актер:
+    Любовь,
+    Которая искать ее велела...
+    Она совет дала мне, я - глаза ей -
+    Я не моряк, но будь ты далеко,
+    Как твердая земля за дальним морем,
+    Пустился б за таким товаром я.
+    Актриса:
+    Ты знаешь, маска тьмы теперь скрывает лицо мое, а то бы на щеках ты девичьего стыда увидел краску.
+  behaviors:
+    decay_on_drop: true
+- id: 47739
+  type: CONTAINER
+  name: "старый сундук"
+  rname: "старого сундука"
+  dname: "старому сундуку"
+  vname: "старый сундук"
+  tname: "старым сундуком"
+  pname: "старом сундуке"
+  gender: "male"  
+  roomDesc: "Наполовину вросший в землю старый сундук стоит у дальней стены."
+  keywords: [ "сундук", "старый" ]
+  items: [ ]
+  closed: true
+  locked: true
+  lockedBy: "theater:47740"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 47740
+  name: "старый ключ"
+  rname: "старого ключа"
+  dname: "старому ключу"
+  vname: "старый ключ"
+  tname: "старым ключом"
+  pname: "старом ключе"
+  gender: "male"  
+  keywords: ["ключ", "старый"]
+  roomDesc: "Старый ключ лежит тут."
+  description: "Этот ключ кажется очень сложным с многочисленными канавками."
+  metadata:
+    quality: common
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+- id: 47746
+  name: "мягкие тапочки"
+  rname: "мягких тапочек"
+  dname: "мягким тапочкам"
+  vname: "мягкие тапочки"
+  tname: "мягкими тапочками"
+  pname: "мягких тапочках"
+  gender: "plural"
+  type: ARMOR
+  roomDesc: "Кто-то аккуратно поставил здесь мягкие домашние тапочки."
+  keywords: [ "мягкие", "тапочки" ]
+  description: >-
+    От этих белых мягких тапочек веет домашней теплотой и уютом. Хотя защиты от них никакой, ногам в 
+    тапочках очень комфортно.
+  metadata:
+    quality: common
+    slot: "обувь"
+    level: 20
+    itemLevel: 22
+    stats:
+      armor: 4
+      health_regeneration: 5
+      mana_regeneration: 5
+    sellable:
+      value: 150
+      currency: золото
+- id: 47747
+  type: RESOURCE
+  materials: ['воск', 'древесина']
+  name: "древесная щепка"
+  rname: "древесной щепки"
+  dname: "древесной щепке"
+  vname: "древесную щепку"
+  tname: "древесной щепкой"
+  pname: "древесной щепке"
+  gender: "female"  
+  quality: common
+  roomDesc: "Маленькая древесная щепка лежит тут."
+  keywords: [ "древесная", "щепка" ]
+  description: >-
+    Самый обычный кусочек дерева. И вроде бы нет в нем ничего особенного, разве что только на удивление 
+    сильный запах смолы, исходящий от щепки.
+  metadata:
+    sellable:
+      value: 20
+      currency: золото

@@ -1,0 +1,8 @@
+title: "Деревня лесорубов"
+metadata:
+  author: "Туор, Омлин"
+  minlevel: 5
+  maxlevel: 10
+behaviors:
+  progressive-respawn:
+    interval: 900

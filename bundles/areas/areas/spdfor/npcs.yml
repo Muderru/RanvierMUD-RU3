@@ -1,0 +1,1074 @@
+- id: 66700
+  keywords: ["лесной", "паук"]
+  level: 25
+  name: "лесной паук"
+  rname: "лесного паука"
+  dname: "лесному пауку"
+  vname: "лесного паука"
+  tname: "лесным пауком"
+  pname: "лесном пауке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Большой, примерно в половину человеческого роста, паук. С его огромных
+    жвал медленно стекают струйки ядовитой слюны.
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66718": 30
+        - "spdfor:66710": 10
+- id: 66701
+  keywords: ["крестовик", "паук"]
+  level: 25
+  name: "паук-крестовик"
+  rname: "паука-крестовика"
+  dname: "пауку-крестовику"
+  vname: "паука-крестовика"
+  tname: "пауком-крестовиком"
+  pname: "пауке-крестовике"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Вы видите огромного серого паука с белым крестом на спине.
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66710": 10
+        - "spdfor:66721": 10
+- id: 66702
+  keywords: ["тарантул", "паук"]
+  level: 25
+  name: "тарантул"
+  rname: "тарантула"
+  dname: "тарантулу"
+  vname: "тарантула"
+  tname: "тарантулом"
+  pname: "тарантуле"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Это один из самых больших пауков которых только вам приходилось видеть.
+    Покрытый мелкими волосками по всему телу, он способен вызвать отвращение
+    даже в самых стойких женских серцах.
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66709": 30
+        - "spdfor:66710": 10
+- id: 66703
+  keywords: ["черная", "паук", "вдова"]
+  level: 25
+  name: "черная вдова"
+  rname: "черной вдовы"
+  dname: "черной вдове"
+  vname: "черную вдову"
+  tname: "черной вдовой"
+  pname: "черной вдове"
+  gender: "female"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Этих пауков называют черными вдовами. Не за то ли, что они оставляют жен
+    героев без своих мужей?!
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66707": 30
+        - "spdfor:66710": 10
+- id: 66704
+  keywords: ["броненосец"]
+  level: 29
+  name: "броненосец"
+  rname: "броненосца"
+  dname: "броненосецу"
+  vname: "броненосца"
+  tname: "броненосцем"
+  pname: "броненосце"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'ударил'
+  travelVerbIn: "прикатился"
+  travelVerbOut: "укатился"
+  description: >-
+    Этому совершенно бронированному животному не страшны пауки, поэтому броненосец
+    может обитать даже в паучьем лесу, где другой живности почти не осталось...
+    Впрочем, и мечи разных героев ему, по всей видимости, тоже не слишком страшны...
+  attributes:
+    health: 800
+    mana: 600
+    armor: 50
+  behaviors:
+    allattributes: 3
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['rescue']
+      spells: ['defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "spdfor:66700": 35
+        - "spdfor:66701": 35
+- id: 66705
+  keywords: ["болотная", "тварь"]
+  level: 29
+  name: "болотная тварь"
+  rname: "болотной твари"
+  dname: "болотной твари"
+  vname: "болотную тварь"
+  tname: "болотной тварью"
+  pname: "болотной твари"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'отравила'
+  travelVerbIn: "приковыляла"
+  travelVerbOut: "уковыляла"
+  description: >-
+    Контуры тела твари скрыты болотной жижей, однако иногда проглядывает
+    противная, вся в бородавках, кожа... Пожалуй, эти бородавки могут быть ядовиты!
+  script: 'swamp'
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['acid', 'poison']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "spdfor:66713": 35
+        - "spdfor:66729": 10
+        - "spdfor:66741": 100
+- id: 66706
+  keywords: ["подземный", "паук"]
+  level: 28
+  name: "подземный паук"
+  rname: "подземного паука"
+  dname: "подземному пауку"
+  vname: "подземного паука"
+  tname: "подземным пауком"
+  pname: "подземном пауке"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "спустился по паутине"
+  travelVerbOut: "убежал по паутине"
+  description: >-
+    Премерзкое существо, весьма внушительных размеров. Пожалуй, лучше бы обойти
+    его стороной, ведь восемь его красных глазок говорят: ваше мясо уже
+    запланировано на его на ужин...
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+    piercing_resistance: 20
+  behaviors:
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    area_decay: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rend', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+- id: 66707
+  keywords: ["паучья", "королева"]
+  level: 30
+  name: "паучья королева"
+  rname: "паучьей королевы"
+  dname: "паучьей королеве"
+  vname: "паучью королеву"
+  tname: "паучьей королевой"
+  pname: "паучьей королеве"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    На редкость разъевшаяся паучиха. Пожалуй, она скоро совершенно потеряет
+    способности к передвижению, если будет продолжать поедать все подряд!
+    Размеры ее - поистине гигантские...
+  script: 'queen'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+    detect_invisibility: 10
+    detect_hide: 10
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'poison', 'silence']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "spdfor:66702": 25
+        - "spdfor:66703": 25
+        - "spdfor:66704": 25
+        - "spdfor:66705": 25
+        - "spdfor:66706": 25
+        - "spdfor:66708": 25
+        - "spdfor:66711": 25
+        - "spdfor:66712": 25
+- id: 66708
+  keywords: ["гигантский", "паук"]
+  level: 29
+  name: "гигантский паук"
+  rname: "гигантского паука"
+  dname: "гигантскому пауку"
+  vname: "гигантского паука"
+  tname: "гигантским пауком"
+  pname: "гигантском пауке"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'укусил'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Невероятно огромный паук! Может быть, он и знаменитая Унголиат - имеют
+    общих родственников? Или же, его тоже отлично кормят...
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['bash', 'rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "spdfor:66710": 10
+- id: 66709
+  keywords: ["мерцающий", "паук"]
+  level: 25
+  name: "мерцающий паук"
+  rname: "мерцающего паука"
+  dname: "мерцающему пауку"
+  vname: "мерцающего паука"
+  tname: "мерцающим пауком"
+  pname: "мерцающем пауке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Странно мерцающий панцирь этого паука наводит на мысли о том, что здесь
+    не обошлось без магии... Интересно, кому понадобилось заколдовывать паука?
+    Он итак набросится на любого, в этом лесу другой еды - кроме всяких героев
+    - не найдешь...
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['lightning', 'fireball']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66718": 30
+        - "spdfor:66710": 10
+        - "spdfor:66729": 30
+- id: 66710
+  keywords: ["прыгун", "паук"]
+  level: 25
+  name: "паук-прыгун"
+  rname: "паука-прыгуна"
+  dname: "пауку-прыгуну"
+  vname: "паука-прыгуна"
+  tname: "пауком-прыгуном"
+  pname: "пауке-прыгуне"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Вы видите огромного серого паука с белым крестом на спине.
+  script: 'catch'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 50
+      restrictTo: ['spdfor:66742', 'spdfor:66743', 'spdfor:66744', 'spdfor:66745']
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66710": 10
+- id: 66711
+  keywords: ["охотник", "паук"]
+  level: 28
+  name: "паук-охотник"
+  rname: "паука-охотника"
+  dname: "пауку-охотнику"
+  vname: "паука-охотника"
+  tname: "пауком-охотником"
+  pname: "пауке-охотнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Вы видите огромного серого паука с белым крестом на спине.
+  script: 'catch'
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 35
+      restrictTo: ['spdfor:66742', 'spdfor:66743', 'spdfor:66744', 'spdfor:66745']
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['hide', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66719": 30
+- id: 66712
+  keywords: ["каракурт", "паук"]
+  level: 28
+  name: "каракурт"
+  rname: "каракурта"
+  dname: "каракурту"
+  vname: "каракурта"
+  tname: "каракуртом"
+  pname: "каракурте"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Каракурт притаился тут, ожидая жертву.
+  script: 'cowardice'
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+    piercing_resistance: 20
+  behaviors:
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rend', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "spdfor:66712": 10
+        - "spdfor:66722": 10
+        - "spdfor:66721": 10
+- id: 66713
+  keywords: ["мохнатый", "паук"]
+  level: 25
+  name: "мохнатый паук"
+  rname: "мохнатого паука"
+  dname: "мохнатому пауку"
+  vname: "мохнатого паука"
+  tname: "мохнатым пауком"
+  pname: "мохнатом пауке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Большой мохнатый паук пробегает тут.
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66721": 10
+        - "spdfor:66723": 20
+- id: 66714
+  keywords: ["кокон"]
+  level: 25
+  name: "кокон с яйцами"
+  rname: "кокона с яйцами"
+  dname: "кокону с яйцами"
+  vname: "кокон с яйцами"
+  tname: "коконом с яйцами"
+  pname: "коконе с яйцами"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'хлестнул'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Этот кокон, похоже, и сам живой!
+  attributes:
+    health: 500
+    mana: 500
+    armor: 25
+    freedom: -10
+  behaviors:
+    combat: true
+- id: 66715
+  keywords: ["неприметный", "паук"]
+  level: 25
+  name: "неприметный паук"
+  rname: "неприметного паука"
+  dname: "неприметному пауку"
+  vname: "неприметного паука"
+  tname: "неприметным пауком"
+  pname: "неприметном пауке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "спустился по паутине"
+  travelVerbOut: "убежал по паутине"
+  description: >-
+    Неприметный пятнистый паук притаился тут.
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+    hide: 4
+  behaviors:
+    allattributes: 2
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66723": 20
+- id: 66716
+  keywords: ["альбинос", "паук"]
+  level: 25
+  name: "паук-альбинос"
+  rname: "паука-альбиноса"
+  dname: "пауку-альбиносу"
+  vname: "паука-альбиноса"
+  tname: "пауком-альбиносом"
+  pname: "пауке-альбиносе"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Большой белесый паук торопливо пробегает тут куда-то.
+  script: 'cowardice'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 65
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66722": 20
+- id: 66717
+  keywords: ["маленький", "паук"]
+  level: 25
+  name: "маленький паук"
+  rname: "маленького паука"
+  dname: "маленькому пауку"
+  vname: "маленького паука"
+  tname: "маленьким пауком"
+  pname: "маленьком пауке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Маленький паук бегает тут вокруг разорванного кокона.
+  attributes:
+    health: 800
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    area_decay: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 66718
+  keywords: ["древесный", "паук"]
+  level: 28
+  name: "древесный паук"
+  rname: "древесного паука"
+  dname: "древесному пауку"
+  vname: "древесного паука"
+  tname: "древесным пауком"
+  pname: "древесном пауке"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Ловко перебирающийся с ветки на ветку древесный паук висит тут.
+  script: 'cowardice'
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 30
+      restrictTo: ['spdfor:66742', 'spdfor:66743', 'spdfor:66744', 'spdfor:66745']
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['hide', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66738": 25
+        - "spdfor:66729": 10
+- id: 66719
+  keywords: ["странный", "грибник"]
+  level: 28
+  name: "странный грибник"
+  rname: "странного грибника"
+  dname: "странному грибнику"
+  vname: "странного грибника"
+  tname: "странным грибником"
+  pname: "странном грибнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Изможденный человек в одежде грибника стоит тут.
+  script: 'mushroomer2'
+  metadata:
+    trainer:
+      spell: 'defense_curse'
+      cost: 4
+      requirements: []
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    randomspell: true
+    area_decay: true
+    capable:
+      skills: ['hide', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 66720
+  keywords: ["послушница"]
+  level: 28
+  name: "послушница паучьего культа"
+  rname: "послушницы паучьего культа"
+  dname: "послушнице паучьего культа"
+  vname: "послушницу паучьего культа"
+  tname: "послушницей паучьего культа"
+  pname: "послушнице паучьего культа"
+  gender: "female"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'огрела'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Послушница паучьего культа проходит тут.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['hide', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66731": 35
+- id: 66721
+  keywords: ["верховная", "жрица"]
+  level: 30
+  name: "верховная жрица"
+  rname: "верховной жрицы"
+  dname: "верховной жрице"
+  vname: "верховную жрицу"
+  tname: "верховной жрицей"
+  pname: "верховной жрице"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Верховная жрица паучьего культа стоит за алтарем.
+  script: 'priestess'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'poison', 'silence']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "spdfor:66733": 25
+        - "spdfor:66734": 25
+        - "spdfor:66735": 25
+        - "spdfor:66736": 25
+        - "spdfor:66747": 25
+        - "spdfor:66748": 25
+        - "spdfor:66737": 25
+- id: 66722
+  keywords: ["обнаженный", "раб"]
+  level: 28
+  name: "обнаженный раб"
+  rname: "обнаженного раба"
+  dname: "обнаженному рабу"
+  vname: "обнаженного раба"
+  tname: "обнаженным рабом"
+  pname: "обнаженном рабе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Обнаженный раб с цепью на ошейнике стоит на коленях перед верховной жрицей.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    assist: true
+    randomspell: true
+    capable:
+      skills: ['rescue', 'bash']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "spdfor:66732": 25
+        - "spdfor:66739": 25
+- id: 66723
+  keywords: ["статуя", "унголиант"]
+  level: 30
+  name: "статуя Унголиант"
+  rname: "статуи Унголиант"
+  dname: "статуе Унголиант"
+  vname: "статую Унголиант"
+  tname: "статуей Унголиант"
+  pname: "статуе Унголиант"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'сокрушила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Огромная золотая статуя Унголиант стоит тут.
+  attributes:
+    health: 800
+    mana: 800
+    armor: 45
+    detect_invisibility: 50
+    detect_hide: 50
+  behaviors:
+    allattributes: 4
+    area_decay: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'poison', 'silence']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+- id: 66724
+  keywords: ["страж", "мрачный"]
+  level: 29
+  name: "страж святилища"
+  rname: "стража святилища"
+  dname: "стражу святилища"
+  vname: "стража святилища"
+  tname: "стражем святилища"
+  pname: "страже святилища"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Выглядит страж зловещим и мрачным, однако если присмотреться, можно
+    различить пушок на его подбородке. Ведь это совсем еще юноша!
+  script: 'guardian'
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rescue']
+      spells: ['defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "spdfor:66730": 45

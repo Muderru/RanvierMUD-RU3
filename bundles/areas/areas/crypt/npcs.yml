@@ -1,0 +1,1328 @@
+- id: 850003
+  keywords: ["владыка", "сеттра"]
+  level: 30
+  name: "Владыка гробницы Сеттра"
+  rname: "Владыки гробницы Сеттры"
+  dname: "Владыке гробницы Сеттре"
+  vname: "Владыку гробницы Сеттру"
+  tname: "Владыкой гробницы Сеттрой"
+  pname: "Владыке гробницы Сеттре"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'сокрушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот полувысохший труп все еще не растерял своего былого величия, когда
+    враги начинали дрожать только от одного упоминания его имени. Именно они
+    похоронили Сеттру в этой тайной гробнице, но они не учли того, что иногда
+    даже смерть отступает перед королями.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'poison', 'silence']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850001": 40
+- id: 850004
+  keywords: ["лорд", "генрих"]
+  level: 30
+  name: "Лорд смерти Генрих"
+  rname: "Лорда смерти Генриха"
+  dname: "Лорду смерти Генриху"
+  vname: "Лорда смерти Генриха"
+  tname: "Лордом смерти Генрихом"
+  pname: "Лорде смерти Генрихе"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Жестокость графа Генриха надолго осталась в памяти жителей окрестных мест.
+    Даже при его жизни, про него ходили слухи как о могущественном вампире.
+    После его смерти, местные хотели вбить в тело Генриха осиновый кол, но
+    родственники графа этого не позволили.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['parry']
+      spells: ['heal', 'ice_peak']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850010": 30
+        - "crypt:850007": 30
+        - "crypt:850003": 30
+- id: 850014
+  keywords: ["некромант"]
+  level: 30
+  name: "Некромант"
+  rname: "Некроманта"
+  dname: "Некроманту"
+  vname: "Некроманта"
+  tname: "Некромантом"
+  pname: "Некроманте"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'иссушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вероятно, этот некромант поселился в этом склепе, почувствовав обитающую в
+    этих стенах какую-то темную силу. Пытаясь подчинить ее своей воле с помощью
+    темных ритуалов, некромант лишь еще сильнее растревожил местных мертвецов.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'paralysis']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850013": 100
+- id: 850019
+  keywords: ["авантюрист"]
+  level: 26
+  name: "авантюрист"
+  rname: "авантюриста"
+  dname: "авантюристу"
+  vname: "авантюриста"
+  tname: "авантюристом"
+  pname: "авантюристе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Как известно, в гробах мертвецов можно найти немало ценного, вот и этот
+    пройдоха решил, что его тут ждет легкая нажива. Но местные мертвецы оказались
+    не такими уж беспомощными, и так просто своего не упустят.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 6
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    wimpy: true
+    randomskill: true
+    wander:
+      interval: 60
+      areaRestricted: true
+    capable:
+      skills: ['lunge', 'bash']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 60
+      pools:
+        - "crypt:850015": 25
+- id: 850015
+  keywords: ["большой", "аист"]
+  level: 26
+  name: "большой аист"
+  rname: "большого аиста"
+  dname: "большому аисту"
+  vname: "большого аиста"
+  tname: "большим аистом"
+  pname: "большом аисте"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'клюнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите большую белую птицу с длинным острым клювом. Видимо, звонарь
+    подкармливал аиста долгие годы, поэтому эта птица совершенно не боится
+    людей и готова при необходимости постоять за себя.
+  script: 'stork'
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 6
+  behaviors:
+    allattributes: 2
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['lunge', 'rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 60
+      pools:
+        - "crypt:850011": 100
+- id: 850001
+  keywords: ["викарий"]
+  level: 27
+  name: "викарий"
+  rname: "викария"
+  dname: "викарию"
+  vname: "викария"
+  tname: "викарием"
+  pname: "викарии"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите невысокого краснощекого человека, на лице которого застыла
+    добродушная улыбка. Он, вероятно, считает, что уже обеспечил себе место в
+    раю, и какие бы злоключения не выпали на его жизнь, Бог наградит его за
+    все сполна.
+  script: 'vicar'
+  quests: ['crypt:850001', 'crypt:850002', 'crypt:850003', 'crypt:850004']
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  metadata:
+    trainer:
+      skill: 'parry'
+      cost: 3
+      requirements: []
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['parry']
+      spells: ['heal', 'lightning']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "crypt:850002": 15
+        - "crypt:850012": 15
+        - "crypt:850036": 100
+- id: 850016
+  keywords: ["гуль"]
+  level: 28
+  name: "гуль"
+  rname: "гуля"
+  dname: "гулю"
+  vname: "гуля"
+  tname: "гулем"
+  pname: "гуле"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ободрал'
+  travelVerbIn: "приковылял"
+  travelVerbOut: "уковылял"
+  description: >-
+    Говорят, что люди умершие от чумы, никогда не умирают полностью. Спустя
+    некоторое время, они, обезображенные и обезумевшие, вылезают из своих могил
+    в поисках человеческого мяса, причем предпочитают исключительно свежее, с
+    не свернувшейся кровью.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['bash']
+      spells: ['poison']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "crypt:850014": 20
+- id: 850027
+  keywords: ["демон", "призыватель"]
+  level: 29
+  name: "демон-призыватель"
+  rname: "демона-призывателя"
+  dname: "демону-призывателю"
+  vname: "демона-призывателя"
+  tname: "демоном-призывателем"
+  pname: "демоне-призывателе"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'боднул'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Демон похож на столб черного дыма с двумя красными, как огонь глазами.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'paralysis']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "crypt:850049": 25
+        - "crypt:850052": 25
+- id: 850013
+  keywords: ["звонарь"]
+  level: 27
+  name: "звонарь"
+  rname: "звонаря"
+  dname: "звонарю"
+  vname: "звонаря"
+  tname: "звонарем"
+  pname: "звонаре"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'больно ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот пожилой человек от долгой работы звонарем абсолютно оглох. И
+    единственная оставшаяся радость в его жизни, это ощущать телом вибрацию
+    церковного колокола. Несмотря на потерю слуха, игра звонаря великолепна,
+    и поэтому ему прощают многие его недостатки.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['heal', 'silence']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "crypt:850004": 25
+- id: 850024
+  keywords: ["зеленая", "слизь"]
+  level: 29
+  name: "зеленая слизь"
+  rname: "зеленой слизи"
+  dname: "зеленой слизи"
+  vname: "зеленую слизь"
+  tname: "зеленой слизью"
+  pname: "зеленой слизи"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'обожгла'
+  travelVerbIn: "приползла"
+  travelVerbOut: "уползла"
+  description: >-
+    Это существо похоже на огромный кусок зеленого желе. Оно испытывает лишь
+    одну потребность - голод, и без промедления постарается поглотить вас.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['poison', 'defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 45
+          max: 95
+      pools:
+        - "crypt:850053": 15
+- id: 850007
+  keywords: ["зомби"]
+  level: 28
+  name: "зомби"
+  rname: "зомби"
+  dname: "зомби"
+  vname: "зомби"
+  tname: "зомби"
+  pname: "зомби"
+  gender: "neuter"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'оцарапал'
+  travelVerbIn: "приковылял"
+  travelVerbOut: "уковылял"
+  description: >-
+    Восставшие из мертвых одержимы лишь одной мыслью - заполнить пустоту в
+    своей проклятой душе и голове. Возможно, поэтому их так привлекают
+    человеческие мозги.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['bash', 'smite']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "crypt:850008": 20
+- id: 850017
+  keywords: ["зомби", "дракон"]
+  level: 30
+  name: "зомби-дракон"
+  rname: "зомби-дракона"
+  dname: "зомби-дракону"
+  vname: "зомби-дракона"
+  tname: "зомби-драконом"
+  pname: "зомби-драконе"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'сокрушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот мертвый дракон был возвращен к жизни с помощью какой-то ужасной темной
+    магии, из-за чего он стал еще свирепее и злее. Не чувствуя ни боли, ни
+    сожалений он станет опасным противником для любого.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['bash', 'smite']
+      spells: ['defense']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850056": 60
+- id: 850008
+  keywords: ["летучая", "мышь"]
+  level: 28
+  name: "летучая мышь"
+  rname: "летучей мыши"
+  dname: "летучей мыши"
+  vname: "летучую мышь"
+  tname: "летучей мышью"
+  pname: "летучей мыши"
+  gender: "female"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'хлестнула'
+  travelVerbIn: "прилетела"
+  travelVerbOut: "улетела"
+  description: >-
+    Огромная отвратительная тварь, любящая лакомиться свежей кровью. Не обладая
+    особыми бойцовскими качествами, она стремится действовать исподтишка,
+    внезапно налетая из темноты на беспечного путника.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rend', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+- id: 850022
+  keywords: ["мать", "настоятельница"]
+  level: 30
+  name: "мать-настоятельница"
+  rname: "матери-настоятельницы"
+  dname: "матери-настоятельнице"
+  vname: "мать-настоятельницу"
+  tname: "матерью-настоятельницей"
+  pname: "матери-настоятельнице"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта женщина, бывшая некогда влиятельной аристократкой, настолько ненавидела
+    мужчин, что решила навсегда запереть себя в женском монастыре. И она нашла
+    здесь успокоение, в обществе всех этих милых монашек.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  metadata:
+    trainer:
+      spell: 'defense'
+      cost: 2
+      requirements: ['spell_heal']
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense', 'paralysis', 'heal']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850037": 30
+        - "crypt:850041": 30
+        - "crypt:850040": 30
+- id: 850028
+  keywords: ["мелкий", "бес"]
+  level: 29
+  name: "мелкий бес"
+  rname: "мелкого беса"
+  dname: "мелкому бесу"
+  vname: "мелкого беса"
+  tname: "мелким бесом"
+  pname: "мелком бесе"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'укусил'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Вы видите маленькое, но чрезвычайно мерзкое существо, вызывающее отвращение
+    как дюжина грязных крыс.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['lightning', 'fireball']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "crypt:850051": 25
+- id: 850030
+  keywords: ["многоглазое", "чудовище"]
+  level: 30
+  name: "многоглазое чудовище"
+  rname: "многоглазого чудовища"
+  dname: "многоглазому чудовищу"
+  vname: "многоглазое чудовище"
+  tname: "многоглазым чудовищем"
+  pname: "многоглазом чудовище"
+  gender: "neuter"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'хлестнуло'
+  travelVerbIn: "приползло"
+  travelVerbOut: "уползло"
+  description: >-
+    Вы видите огромную бесформенную массу плоти, в которую как будто случайным
+    образом натыкано множество глаз.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['parry']
+      spells: ['defense', 'poison']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850045": 40
+        - "crypt:850046": 40
+        - "crypt:850059": 100
+- id: 850009
+  keywords: ["могильная", "змея"]
+  level: 28
+  name: "могильная змея"
+  rname: "могильной змеи"
+  dname: "могильной змее"
+  vname: "могильную змею"
+  tname: "могильной змеей"
+  pname: "могильной змее"
+  gender: "female"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'укусила'
+  travelVerbIn: "приползла"
+  travelVerbOut: "уползла"
+  description: >-
+    Мертвечина привлекает множество разнообразных гадов. А, после того как они
+    отведают вкус человеческой плоти, их голод впоследствии уже ничем иным не
+    утолить.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 2
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['hide']
+      spells: ['poison']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+- id: 850010
+  keywords: ["могильный", "скорпион"]
+  level: 28
+  name: "могильный скорпион"
+  rname: "могильного скорпиона"
+  dname: "могильному скорпиону"
+  vname: "могильного скорпиона"
+  tname: "могильным скорпионом"
+  pname: "могильном скорпионе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ужалил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Мертвечина привлекает множество разнообразных гадов. А, после того как они
+    отведают вкус человеческой плоти, их голод впоследствии уже ничем иным не
+    утолить.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    aggro:
+      delay: 2
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rescue']
+      spells: ['poison']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+- id: 850021
+  keywords: ["молчаливая", "монахиня"]
+  level: 27
+  name: "молчаливая монахиня"
+  rname: "молчаливой монахини"
+  dname: "молчаливой монахине"
+  vname: "молчаливую монахиню"
+  tname: "молчаливой монахиней"
+  pname: "молчаливой монахине"
+  gender: "female"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'пнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Непорочная дева, давшая обет безбрачия.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['heal', 'defense']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "crypt:850038": 15
+- id: 850002
+  keywords: ["монашка"]
+  level: 25
+  name: "монашка"
+  rname: "монашки"
+  dname: "монашке"
+  vname: "монашку"
+  tname: "монашкой"
+  pname: "монашке"
+  gender: "female"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударила'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Вы видите милую, симпатичную девушку, подарившую свою душу и плоть Богу.
+    От ее кроткой улыбки на сердце становится теплее, только лишь настоящее
+    чудовище способно обагрить свои руки ее кровью.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomspell: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: ['heal', 'plea']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "crypt:850005": 20
+- id: 850006
+  keywords: ["мумия"]
+  level: 29
+  name: "мумия"
+  rname: "мумии"
+  dname: "мумии"
+  vname: "мумию"
+  tname: "мумией"
+  pname: "мумии"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'огрела'
+  travelVerbIn: "приковыляла"
+  travelVerbOut: "уковыляла"
+  description: >-
+    В древние времена знатных вельмож было принято мумифицировать, чтобы бы их
+    благородное тело не разложилось от времени. Поэтому неудивительно, что мумии
+    намного сильнее обычных оживших мертвецов и скелетов.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rescue']
+      spells: ['defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "crypt:850009": 25
+- id: 850012
+  keywords: ["призрак"]
+  level: 29
+  name: "призрак"
+  rname: "призрака"
+  dname: "призраку"
+  vname: "призрака"
+  tname: "призраком"
+  pname: "призраке"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'заморозил'
+  travelVerbIn: "прилетел"
+  travelVerbOut: "улетел"
+  description: >-
+    Человеческая душа, отягощенная страшным преступлением, не способна после
+    смерти отправиться на небеса. Поэтому такие души обречены страдать до
+    окончания времен, пока не наступит Последний суд, на котором ничего не
+    изменится, если они совершат еще несколько преступлений.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+    invisibility: 5
+  behaviors:
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['invisibility', 'lightning']
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+- id: 850018
+  keywords: ["прихожанин"]
+  level: 25
+  name: "прихожанин"
+  rname: "прихожанина"
+  dname: "прихожанину"
+  vname: "прихожанина"
+  tname: "прихожанином"
+  pname: "прихожанине"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот набожный человек пришел сюда помолиться и очистить свою душу от
+    сомнений, появившихся из-за множества испытаний, насланных на него Богом.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['judge', 'shieldblock']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 850025
+  keywords: ["пятнистая", "слизь"]
+  level: 29
+  name: "пятнистая слизь"
+  rname: "пятнистой слизи"
+  dname: "пятнистой слизи"
+  vname: "пятнистую слизь"
+  tname: "пятнистой слизью"
+  pname: "пятнистой слизи"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'растворила'
+  travelVerbIn: "приползла"
+  travelVerbOut: "уползла"
+  description: >-
+    Это существо похоже на огромный кусок зеленого желе с синими прожилками.
+    Оно испытывает лишь одну потребность - голод, и без промедления постарается
+    поглотить вас.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'defense']
+    lootable:
+      currencies:
+        золото:
+          min: 45
+          max: 95
+      pools:
+        - "crypt:850054": 20
+- id: 850026
+  keywords: ["рогатый", "демон"]
+  level: 29
+  name: "рогатый демон"
+  rname: "рогатого демона"
+  dname: "рогатому демону"
+  vname: "рогатого демона"
+  tname: "рогатым демоном"
+  pname: "рогатом демоне"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'оцарапал'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Уродливая тварь из бездны ада, увенчанная несколькими острыми рогами.
+    Демон готов разорвать в мелкие клочья любого встреченного на своем пути.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    leader:
+      followers: ['crypt:850027', 'crypt:850028']
+    wander:
+      interval: 50
+      areaRestricted: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rescue', 'shieldblock']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 45
+          max: 155
+      pools:
+        - "crypt:850050": 25
+- id: 850020
+  keywords: ["садовник"]
+  level: 25
+  name: "садовник"
+  rname: "садовника"
+  dname: "садовнику"
+  vname: "садовника"
+  tname: "садовником"
+  pname: "садовнике"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Местный садовник известный пьяница и дебошир. Но, несмотря на все свои
+    недостатки, никто в этих местах не способен вырастить более красивых цветов,
+    торговля которыми приносит существенный доход церкви. Видимо из-за этого
+    его и терпят в этом святом месте.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "crypt:850016": 20
+- id: 850005
+  keywords: ["скелет"]
+  level: 28
+  name: "скелет"
+  rname: "скелета"
+  dname: "скелету"
+  vname: "скелета"
+  tname: "скелетом"
+  pname: "скелете"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'резанул'
+  travelVerbIn: "приковылял"
+  travelVerbOut: "уковылял"
+  description: >-
+    Вы видите перед собой древние кости, на которых от древности не осталось
+    ни одного кусочка плоти. Но, несмотря на весь свой несуразный вид, скелет
+    является довольно опасным противником, так как практически неуязвим для
+    любого колющего оружия.
+  attributes:
+    health: 1200
+    mana: 600
+    armor: 7
+    piercing_resistance: 20
+  behaviors:
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: ['rend', 'parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 40
+          max: 90
+      pools:
+        - "crypt:850006": 20
+- id: 850031
+  keywords: ["суккуб", "лилит"]
+  level: 30
+  name: "суккуб Лилит"
+  rname: "суккуба Лилит"
+  dname: "суккубу Лилит"
+  vname: "суккуба Лилит"
+  tname: "суккубом Лилит"
+  pname: "суккубе Лилит"
+  gender: "female"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Обворожительная и ужасная, сексуальная и отвратительная - все это можно
+    сказать про эту демонесу. За ее спиной огненные крылья, а в когтистых руках -
+    окровавленный хлыст.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['fireball', 'acid', 'defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850044": 40
+        - "crypt:850043": 40
+        - "crypt:850057": 100
+- id: 850029
+  keywords: ["червь"]
+  level: 30
+  name: "червь из бездны"
+  rname: "червя из бездны"
+  dname: "червю из бездны"
+  vname: "червя из бездны"
+  tname: "червем из бездны"
+  pname: "черве из бездны"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'укусил'
+  travelVerbIn: "приполз"
+  travelVerbOut: "уполз"
+  description: >-
+    Этот огромный змей покрыт толстой чешуей, отливающей металлическим блеском.
+    С его огромных клыков на землю капают тяжелые капли яда, а ударом хвоста
+    он запросто обрушит стену.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['bash']
+      spells: ['acid', 'poison']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "crypt:850047": 40
+        - "crypt:850048": 35
+        - "crypt:850058": 100
+- id: 850011
+  keywords: ["чумная", "крыса"]
+  level: 25
+  name: "чумная крыса"
+  rname: "чумной крысы"
+  dname: "чумной крысе"
+  vname: "чумную крысу"
+  tname: "чумной крысой"
+  pname: "чумной крысе"
+  gender: "female"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    В отличие от большинства других тварей крысы при болезни становятся намного
+    сильнее и опаснее своих здоровых особей. Почему так случается, вам никто
+    точно не скажет, возможно, так проявляется какое-то древнее проклятие.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    aggro:
+      delay: 2
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['poison', 'acid']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 850023
+  keywords: ["ядовитая", "слизь"]
+  level: 25
+  name: "ядовитая слизь"
+  rname: "ядовитой слизи"
+  dname: "ядовитой слизи"
+  vname: "ядовитую слизь"
+  tname: "ядовитой слизью"
+  pname: "ядовитой слизи"
+  gender: "female"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'отравила'
+  travelVerbIn: "приползла"
+  travelVerbOut: "уползла"
+  description: >-
+    Это существо похоже на огромный кусок зеленого желе. Оно испытывает лишь
+    одну потребность - голод, и без промедления постарается поглотить вас.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+    acid_damage: 10
+  behaviors:
+    combat: true
+    wander:
+      interval: 35
+      areaRestricted: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['acid', 'poison']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "crypt:850055": 20

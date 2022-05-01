@@ -1,0 +1,669 @@
+- id: 34700
+  keywords: [ "хитрый", "лис" ]
+  level: 8
+  name: "хитрый лис"
+  rname: "хитрого лиса"
+  dname: "хитрому лису"
+  vname: "хитрого лиса"
+  tname: "хитрым лисом"
+  pname: "хитром лисе"
+  gender: "male"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Хитрый лис выискивает тут что-то среди высокой травы.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    piercing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "tookland:34701": 15
+- id: 34701
+  keywords: [ "удивленный", "суслик" ]
+  level: 6
+  name: "суслик"
+  rname: "суслика"
+  dname: "суслику"
+  vname: "суслика"
+  tname: "сусликом"
+  pname: "суслике"
+  gender: "male"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Удивленный суслик стоит на задних лапках наблюдая за вами.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 35
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34702
+  keywords: [ "степной", "волк" ]
+  level: 9
+  name: "степной волк"
+  rname: "степного волка"
+  dname: "степному волку"
+  vname: "степного волка"
+  tname: "степным волком"
+  pname: "степном волке"
+  gender: "male"
+  min_damage: 20
+  max_damage: 45
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Степной волк выискивает здесь легкую добычу.
+  attributes:
+    health: 370
+    mana: 250
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 20
+- id: 34703
+  keywords: [ "большой", "полоз" ]
+  level: 6
+  name: "большой полоз"
+  rname: "большого полоза"
+  dname: "большому полозу"
+  vname: "большого полоза"
+  tname: "большим полозом"
+  pname: "большом полозе"
+  gender: "male"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'укусил'
+  travelVerbIn: "приполз"
+  travelVerbOut: "уполз"
+  description: >-
+    Большой полоз греется тут на теплом камне.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    acid_damage: 2
+    acid_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 35
+      areaRestricted: true
+    capable:
+      skills: [  ]
+      spells: [ 'poison' ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34704
+  keywords: [ "дикая", "лошадь" ]
+  level: 8
+  name: "дикая лошадь"
+  rname: "дикой лошади"
+  dname: "дикой лошади"
+  vname: "дикую лошадь"
+  tname: "дикой лошадью"
+  pname: "дикой лошади"
+  gender: "female"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'лягнула'
+  travelVerbIn: "прискакала"
+  travelVerbOut: "ускакала"
+  description: >-
+    Дикая лошадь с развивающейся гривой скачет наперегонки с ветром.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    crushing_damage: 2
+    crushing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: [ 'smite' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "tookland:34712": 15
+- id: 34705
+  keywords: [ "серый", "заяц" ]
+  level: 6
+  name: "серый заяц"
+  rname: "серого зайца"
+  dname: "серому зайцу"
+  vname: "серого зайца"
+  tname: "серым зайцем"
+  pname: "сером зайце"
+  gender: "male"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'лягнул'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Серый заяц с надорванным ушком осторожно жует здесь луговую траву.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34706
+  keywords: [ "гордый", "орел" ]
+  level: 8
+  name: "гордый орел"
+  rname: "гордого орла"
+  dname: "гордому орлу"
+  vname: "гордого орла"
+  tname: "гордым орлом"
+  pname: "гордом орле"
+  gender: "male"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'клюнул'
+  travelVerbIn: "прилетел"
+  travelVerbOut: "улетел"
+  description: >-
+    Гордый орел парит высоко в небе, высматривая беззащитные жертвы.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    piercing_damage: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "tookland:34705": 15
+- id: 34707
+  keywords: [ "высокий", "паромщик" ]
+  level: 10
+  name: "высокий паромщик"
+  rname: "высокого паромщика"
+  dname: "высокому паромщику"
+  vname: "высокого паромщика"
+  tname: "высоким паромщиком"
+  pname: "высоком паромщике"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Высокий паромщик стоит на переправе к другому берегу.
+  script: 'ferryman'
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    crushing_damage: 2
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    capable:
+      skills: []
+      spells: ['heal']
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35
+      pools:
+        - "tookland:34711": 45
+- id: 34708
+  keywords: [ "маленькая", "мышка" ]
+  level: 5
+  name: "маленькая мышка"
+  rname: "маленькой мышки"
+  dname: "маленькой мышке"
+  vname: "маленькую мышку"
+  tname: "маленькой мышкой"
+  pname: "маленькой мышке"
+  gender: "female"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Маленькая мышка спешит поскорее убежать отсюда.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+  behaviors:
+    combat: true
+    wimpy: true
+    wander:
+      interval: 20
+      areaRestricted: true
+    area_decay: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 1
+          max: 5
+- id: 34709
+  keywords: [ "старый", "мельник" ]
+  level: 10
+  name: "старый мельник"
+  rname: "старого мельника"
+  dname: "старому мельнику"
+  vname: "старого мельника"
+  tname: "старым мельником"
+  pname: "старом мельнике"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Старый мельник сидит тут на мешке с мукой.
+  script: 'miller'
+  quests: ['tookland:34700', 'tookland:34701']
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    crushing_damage: 2
+    armor: 2
+  metadata:
+    trainer:
+      spell: 'light'
+      cost: 1
+      requirements: []
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    capable:
+      skills: []
+      spells: ['plea']
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35
+- id: 34710
+  keywords: [ "хобборотень" ]
+  level: 10
+  name: "хобборотень"
+  rname: "хобборотня"
+  dname: "хобборотню"
+  vname: "хобборотня"
+  tname: "хобборотнем"
+  pname: "хобборотне"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'оцарапал'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Уродливый хобборотень затаился тут в своей норе.
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_damage: 2
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: [ 'smite' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35
+      pools:
+        - "tookland:34704": 25
+        - "tookland:34702": 25
+        - "tookland:34707": 100
+- id: 34711
+  keywords: [ "речной", "дух" ]
+  level: 10
+  name: "речной дух"
+  rname: "речного духа"
+  dname: "речному духу"
+  vname: "речного духа"
+  tname: "речным духом"
+  pname: "речном духе"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'иссушил'
+  travelVerbIn: "прилетел"
+  travelVerbOut: "улетел"
+  description: >-
+    Разъяренный речной дух парит тут.
+  script: 'riverspirit'
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    cold_damage: 2
+    lightning_damage: 2
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    area_decay: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: []
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35
+- id: 34712
+  keywords: [ "худой", "пастух" ]
+  level: 9
+  name: "худой пастух"
+  rname: "худого пастуха"
+  dname: "худому пастуху"
+  vname: "худого пастуха"
+  tname: "худым пастухом"
+  pname: "худом пастухе"
+  gender: "male"
+  min_damage: 20
+  max_damage: 45
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Высокий, худой пастух идет присматривая за отарой овец.
+  attributes:
+    health: 370
+    mana: 250
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    assist: true
+    leader:
+      followers: [ 'tookland:34713', 'tookland:34714', 'tookland:34715' ]
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 20
+- id: 34713
+  keywords: [ "упрямый", "баран" ]
+  level: 8
+  name: "упрямый баран"
+  rname: "упрямого барана"
+  dname: "упрямому барану"
+  vname: "упрямого барана"
+  tname: "упрямым бараном"
+  pname: "упрямом баране"
+  gender: "male"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'боднул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Крупный баран зло посматривает по сторонам, защищая отару.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    piercing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "tookland:34718": 25
+- id: 34714
+  keywords: [ "белая", "овца" ]
+  level: 6
+  name: "белая овца"
+  rname: "белой овцы"
+  dname: "белой овце"
+  vname: "белую овцу"
+  tname: "белой овцой"
+  pname: "белой овце"
+  gender: "female"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'лягнула'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Белая овца с чудесной мягкой шерстью пасется тут.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    cutting_resistance: 2
+    crushing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34715
+  keywords: [ "черная", "овца", "чёрная" ]
+  level: 6
+  name: "чёрная овца"
+  rname: "чёрной овцы"
+  dname: "чёрной овце"
+  vname: "чёрную овцу"
+  tname: "чёрной овцой"
+  pname: "чёрной овце"
+  gender: "female"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'лягнула'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Черная овца с чудесной мягкой шерстью пасется тут.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    piercing_resistance: 2
+    crushing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15

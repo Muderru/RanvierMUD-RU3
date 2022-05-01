@@ -1,0 +1,8 @@
+title: "Город Гурба"
+metadata:
+  author: "Туор"
+  minlevel: 5
+  maxlevel: 15
+behaviors:
+  progressive-respawn:
+    interval: 620

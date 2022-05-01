@@ -1,0 +1,145 @@
+- id: potionhealth1
+  name: "маленькое красное зелье"
+  rname: "маленького красного зелья"
+  dname: "маленькому красному зелью"
+  vname: "маленькое красное зелье"
+  tname: "маленьким красным зельем"
+  pname: "маленьком красном зелье"
+  gender: "neuter"  
+  roomDesc: "Маленькое красное зелье"
+  description: >-
+    Вы видите маленькую изящную бутылочку, заполненную мерцающей красной
+    жидкостью. На этикетке написано, что это зелье лечения.
+  keywords: [ "зелье", "маленькое", "красное" ]
+  type: POTION
+  metadata:
+    level: 1
+    usable:
+      spell: "potion"
+      charges: 5
+      destroyOnDepleted: true
+      cooldown: 30
+      options:
+        restores: 30
+        stat: "health"
+- id: sign
+  name: "знак"
+  rname: "знака"
+  dname: "знаку"
+  vname: "знак"
+  tname: "знаком"
+  pname: "знаке"
+  gender: "male"  
+  roomDesc: "Деревянный знак"
+  description: >-
+    На прибитом к дереву ржавыми гвоздями знаке написано:
+    Добро пожаловать в зону для новичков. Если вы один из них, 
+    то лезьте внутрь норы, не прогадаете.
+  keywords: [ "знак", "деревянный" ]
+  type: OBJECT
+  metadata:
+    noPickup: true  
+- id: "stick"
+  name: "ветка"
+  rname: "ветки"
+  dname: "ветке"
+  vname: "ветку"
+  tname: "веткой"
+  pname: "ветке"
+  gender: "female"
+  damageVerb: "хлестнула"
+  type: WEAPON
+  roomDesc: "Ветка"
+  keywords: [ "ветка" ]
+  description: "Неказистая ветка с дерева."
+  metadata:
+    level: 1
+    slot: 'оружие'
+    itemLevel: 1
+    quality: common
+    minDamage: 8
+    maxDamage: 15
+    speed: 2.8
+    stats:
+      crushing_damage: 1
+- id: "table"
+  type: CONTAINER
+  name: "стол"
+  rname: "стола"
+  dname: "столу"
+  vname: "стол"
+  tname: "столом"
+  pname: "столе"
+  gender: "male"
+  roomDesc: "Маленький стол стоит в центре пещеры."
+  keywords: [ "маленький", "стол" ]
+  description: "Это небольшой деревянный стол с изогнутыми ножками."
+  items: [ "newbie:potionhealth1" ]
+  closed: false
+  maxItems: 1
+  metadata:
+    noPickup: true
+- id: tree
+  name: "дерево"
+  rname: "дерева"
+  dname: "дереву"
+  vname: "дерево"
+  tname: "деревом"
+  pname: "дереве"
+  gender: "neuter"  
+  roomDesc: "Большое мертвое дерево грозит рухнуть в любую минуту."
+  description: >-
+    Это большое, но мертвое дерево. Оно выглядит очень древним.
+    Вы можете сломать одну из его веток и использовать ее в 
+    качестве оружия.
+  keywords: [ "дерево", "большое", "мертвое" ]
+  type: CONTAINER
+  items: [ "newbie:stick" ]
+  closed: false
+  maxItems: 1
+  metadata:
+    noPickup: true
+- id: flower
+  name: "цветок"
+  rname: "цветка"
+  dname: "цветку"
+  vname: "цветок"
+  tname: "цветком"
+  pname: "цветке"
+  gender: "male"  
+  roomDesc: "Красный цветок источает тут пряный запах."
+  description: >-
+    Цветок напоминает розу, но как она оказалась здесь?
+    Кто ее посадил? И как она выжила среди камней?
+  keywords: [ "цветок", "красный" ]
+  type: OBJECT
+  script: "flower"
+- id: button
+  name: "кнопка"
+  rname: "кнопки"
+  dname: "кнопке"
+  vname: "кнопку"
+  tname: "кнопкой"
+  pname: "кнопке"
+  gender: "female"  
+  roomDesc: "Большая красная кнопка торчит из одной из стен."
+  description: >-
+    Эта кнопка размером с ладонь и ее удобно нажать.
+    Но что случится, если это сделать?
+  keywords: [ "кнопка", "красная", "большая" ]
+  type: OBJECT
+  metadata:
+    noPickup: true
+- id: test_key
+  name: "странный ключ"
+  rname: "странного ключа"
+  dname: "странному ключу"
+  vname: "странный ключ"
+  tname: "странным ключом"
+  pname: "странном ключе"
+  gender: "male"  
+  keywords: ["ключ", "странный"]
+  roomDesc: "Странно выглядящий ключ"
+  description: "Этот ключ кажется очень сложным с многочисленными канавками."
+  metadata:
+    quality: common

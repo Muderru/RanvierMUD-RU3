@@ -1,0 +1,300 @@
+- id: kobold
+  keywords: [ "грязный", "маленький", "кобольд" ]
+  level: 2
+  name: "грязный маленький кобольд"
+  rname: "грязного маленького кобольда"
+  dname: "грязному маленькому кобольду"
+  vname: "грязного маленького кобольда"
+  tname: "грязным маленьким кобольдом"
+  pname: "грязном маленьком кобольде"
+  gender: "male"
+  min_damage: 10
+  max_damage: 25
+  description: >-
+    Этот маленький грязный монстр явно к вам не дружелюбен. Он смотрит 
+    на вас злобно и кажется выжидает удобного момента для нападения.
+  attributes:
+    health: 110
+    strength: 12
+    mana: 100
+  behaviors:
+    allattributes: 0
+    combat: true
+    aggro:
+      delay: 2
+      towards:
+        players: true
+        npcs: false
+    wander:
+      interval: 30
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 10
+      pools:
+        - "limbo:potions"
+        - "boothill:minehelm": 10
+- id: slims
+  keywords: [ "худой", "пьяница" ]
+  level: 4
+  name: "худой пьяница"
+  rname: "худого пьяницы"
+  dname: "худому пьянице"
+  vname: "худого пьяницу"
+  tname: "худым пьяницей"
+  pname: "худом пьянице"
+  gender: "male"
+  min_damage: 10
+  max_damage: 35
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл шатаясь"
+  travelVerbOut: "ушёл шатаясь"
+  description: >-
+    Это несчастное существо почти не похоже на человека. А, может 
+    он и не человек вовсе. У него налитые кровью глаза и трясущиеся руки.
+  attributes:
+    health: 200
+    strength: 18
+    mana: 150
+  behaviors:
+    allattributes: 0
+    combat: true
+    wander:
+      interval: 20
+      restrictTo: ['boothill:infront_jail', 'boothill:infront_saloon', 'boothill:infront_store']
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 10
+      pools:
+        - "boothill:10ghat": 10
+- id: spider
+  keywords: [ "пещерный", "паук" ]
+  level: 4
+  name: "пещерный паук"
+  rname: "пещерного паука"
+  dname: "пещерному пауку"
+  vname: "пещерного паука"
+  tname: "пещерным пауком"
+  pname: "пещерном пауке"
+  gender: "male"
+  min_damage: 10
+  max_damage: 30
+  damageVerb: 'укусил'
+  description: >-
+    Даже его самые маленькие собратья внушают многим людям страх, ну а эта метровая 
+    тварь с полуметровыми хелицерами одним своим видом способна напугать до смерти.
+  attributes:
+    health: 220
+    strength: 14
+    acid_damage: 2
+    mana: 150
+  behaviors:
+    allattributes: 0
+    combat: true
+    aggro:
+      delay: 2
+      towards:
+        players: true
+        npcs: false
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 15
+      pools:
+        - "limbo:potions"
+        - "limbo:junk"
+- id: will
+  keywords: ["торговец", "вилл", "владелец"]
+  name: "торговец Вилл"
+  rname: "торговца Вилла"
+  dname: "торговцу Виллу"
+  vname: "торговца Вилла"
+  tname: "торговцем Виллом"
+  pname: "торговце Вилле"
+  gender: "male"  
+  description: >-
+    Вилл - это уже не молодой мужчина с сединой в волосах. Видно, что 
+    он повидал не мало на своем веку, а также что с ним надо держать ухо востро.
+  level: 99
+  metadata:
+    vendor:
+      items:
+        "boothill:sweetroll":
+          cost: 20
+          currency: золото
+        "boothill:nails":
+          cost: 25
+          currency: золото
+        "boothill:hammer":
+          cost: 15
+          currency: золото
+        "boothill:lovers_locket":
+          cost: 20
+          currency: золото
+        "limbo:potionhealth1":
+          cost: 100
+          currency: золото
+      enterMessage: "Подходите! Покупайте великолепные товары!"
+      leaveMessage: "Возвращайтесь обратно!"
+- id: slims2
+  keywords: [ "пьяный", "дебошир" ]
+  level: 4
+  name: "пьяный дебошир"
+  rname: "пьяного дебошира"
+  dname: "пьяному дебоширу"
+  vname: "пьяного дебошира"
+  tname: "пьяным дебоширом"
+  pname: "пьяном дебошире"
+  gender: "male"
+  min_damage: 10
+  max_damage: 35
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Это несчастное существо почти не похоже на человека. А, может 
+    он и не человек вовсе. У него налитые кровью глаза и трясущиеся руки.
+  attributes:
+    health: 200
+    strength: 18
+    mana: 150
+  behaviors:
+    allattributes: 0
+    combat: true
+    aggro:
+      delay: 2
+      towards:
+        players: true
+        npcs: true
+    wander:
+      interval: 20
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 10
+      pools:
+        - "boothill:bandana": 10
+- id: guardian
+  keywords: [ "старый", "стражник" ]
+  level: 5
+  name: "старый стражник"
+  rname: "старого стражника"
+  dname: "старому стражнику"
+  vname: "старого стражника"
+  tname: "старым стражником"
+  pname: "старом стражнике"
+  gender: "male"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'рубанул'
+  description: >-
+    Этот преклонного вида старец закален в многочисленных боях. Хотя он
+    уже не так силен, как в молодости, недооценивать его точно не стоит.
+  attributes:
+    health: 250
+    strength: 25
+    armor: 1
+    mana: 150
+  behaviors:
+    allattributes: 0
+    combat: true
+    assist: true
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 20
+      pools:
+        - "boothill:guardianarmor": 10
+        - "boothill:guardianboots": 10
+        - "boothill:guardiancloak": 10
+- id: guardian2
+  keywords: [ "тюремщик", "стражник" ]
+  level: 5
+  name: "стражник-тюремщик"
+  rname: "стражника-тюремщика"
+  dname: "стражнику-тюремщику"
+  vname: "стражника-тюремщика"
+  tname: "стражником-тюремщиком"
+  pname: "стражнике-тюремщике"
+  gender: "male"
+  min_damage: 15
+  max_damage: 35
+  damageVerb: 'рубанул'
+  description: >-
+    Вы видите немолодого мужчину, с тяжелым взглядом. Он хорошо
+    вооружен и способен постоять за себя. Других охранять тюрьму не берут.
+  attributes:
+    health: 300
+    strength: 25
+    armor: 1
+    mana: 150
+  behaviors:
+    allattributes: 0
+    combat: true
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 20
+      pools:
+        - "boothill:guardianarmor": 10
+        - "boothill:guardianboots": 10
+        - "boothill:guardiancloak": 10
+  metadata:
+    block:
+      exits: [ 'восток' ]
+- id: pianist
+  keywords: ["пианистка"]
+  name: "пианистка"
+  rname: "пианистки"
+  dname: "пианистке"
+  vname: "пианистку"
+  tname: "пианисткой"
+  pname: "пианистку"
+  gender: "female"
+  min_damage: 1500
+  max_damage: 3000
+  level: 99
+  script: 'pianist'
+  description: "Вы видите женщину лет тридцати, сильно накрашенную и очень фигуристую."
+- id: drunkminer
+  keywords: ["мудрый", "старик", "старый"]
+  name: "пьяный шахтер"
+  rname: "пьяного шахтера"
+  dname: "пьяному шахтеру"
+  vname: "пьяного шахтера"
+  tname: "пьяным шахтером"
+  pname: "пьяном шахтере"
+  gender: "male"
+  min_damage: 1500
+  max_damage: 3000
+  level: 99
+  quests: ['boothill:killkobolds']
+  description: "Этот шахтер сильно пьян и едва способен шевелить языком. Видно, что он чем-то сильно расстроен."
+- id: gravedigger
+  keywords: ["могильщик", "старик", "старый"]
+  name: "старый могильщик"
+  rname: "старого могильщика"
+  dname: "старому могильщику"
+  vname: "старого могильщика"
+  tname: "старым могильщиком"
+  pname: "старом могильщике"
+  gender: "male"
+  min_damage: 1500
+  max_damage: 3000
+  level: 99
+  description: "Судя по шрамам на лице, этот старик прошёл не через одну войну."
+  metadata:
+    trainer:
+      skill: "lunge"
+      cost: 1
+      requirements: []
+

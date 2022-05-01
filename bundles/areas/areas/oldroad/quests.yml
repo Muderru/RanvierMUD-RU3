@@ -1,0 +1,22 @@
+---
+- id: 66800
+  title: Убить разъяренного варга
+  level: 20
+  repeatable: true
+  requires: [ ]
+  autoComplete: true
+  description: >-
+    Варг сошел с ума от вашего зелья и его теперь надо убить.
+  completionMessage: |-
+    Теперь он не представляет для вас угрозы.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить разъяренного зрителя
+        npc: 'oldroad:66818'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 200
+        leveledTo: QUEST

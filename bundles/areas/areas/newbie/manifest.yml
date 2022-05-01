@@ -1,0 +1,8 @@
+title: "Нора под деревом"
+metadata:
+  author: "Туор"
+  minlevel: 1
+  maxlevel: 5
+behaviors:
+  progressive-respawn:
+    interval: 300

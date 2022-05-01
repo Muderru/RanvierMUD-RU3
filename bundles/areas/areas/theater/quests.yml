@@ -1,0 +1,45 @@
+---
+- id: 47700
+  title: Убить разъяренного зрителя
+  level: 20
+  repeatable: true
+  requires: [ ]
+  autoComplete: true
+  description: >-
+    Разъяренный зритель в бешенстве и его нужно упокоить, для его же безопасности.
+  completionMessage: |-
+    Теперь он не представляет для вас угрозы.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить разъяренного зрителя
+        npc: 'theater:47740'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 500
+        leveledTo: QUEST
+- id: 47701
+  title: Убить призрака оперы
+  level: 20
+  repeatable: true
+  requires: [ 'theater:47700' ]
+  autoComplete: true
+  description: >-
+    Призрак оперы уже давно терроризирует этот театр: сбрасывает на актеров реквизит и
+    подглядывает за актрисами в раздевалке. Здесь никто не чувствует себя в безопасности.
+    Это необходимо прекратить.
+  completionMessage: |-
+    Теперь он не представляет для театра угрозы.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить призрака оперы
+        npc: 'theater:47730'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 1000
+        leveledTo: QUEST

@@ -1,0 +1,127 @@
+---
+- id: 850001
+  title: Наказать воришку
+  level: 25
+  repeatable: true
+  description: >-
+    Полоумный звонарь выходил и приютил на колокольне аиста. Эта птица совершенно
+    не боится людей и нападает на детей прихожан. Ещё аист любит всё блестящее и
+    ворует подаяния из церкви. Избавься от беспокойной птицы и я награжу тебя.
+  completionMessage: >-
+    Спасибо тебе. Теперь аист не представляет угрозы ни для детей, ни для подаяний
+    церкви.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить большого аиста
+        npc: 'crypt:850015'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 50
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100
+- id: 850002
+  title: Беспокойный склеп
+  level: 25
+  repeatable: true
+  requires: ['crypt:850001']
+  description: >-
+    Под церковью находится старый склеп, в котором с давних пор хоронили местную
+    знать. В последнее время мертвецы начали вылазить из своих могил и нападать
+    на живых. Выясни, что за зло поселилось там и избавь нас от этой угрозы.
+  completionMessage: >-
+    Отлично. Теперь мертвецы должны успокоиться и вернуться в свои могилы.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить некроманта
+        npc: 'crypt:850014'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 50
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100
+- id: 850003
+  title: Очищение склепа
+  level: 25
+  repeatable: true
+  requires: ['crypt:850002']
+  description: >-
+    Убитый тобой некромант появился здесь не просто так, его привлекла сюда
+    тёмная сила, скрывающаяся в глубинах склепа. И пока не уничтожить её источник,
+    зло будет прибывать в склеп. Тебе нужно уничтожить предводителей нежити.
+  completionMessage: >-
+    Спасибо, твоя помощь неоценима.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить лорда смерти Генриха
+        npc: 'crypt:850004'
+        count: 1
+    - type: KillGoal
+      config:
+        title: Убить владыку гробницы Сеттру
+        npc: 'crypt:850003'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 100
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100
+    - type: ItemReward
+      config:
+        items: ['crypt:850042']
+        quality: 'uncommon'
+- id: 850004
+  title: Запоздалая месть
+  level: 25
+  repeatable: true
+  requires: ['crypt:850003']
+  description: >-
+    В глубинах катакомб пропал брат Брандон. Пожалуйста выясни, что с ним
+    случилось и если он мёртв, отомсти его убийцам.
+  completionMessage: >-
+    Спасибо, о твоих подвигах будут слагать легенды.
+  goals:
+    - type: FetchGoal
+      config:
+        title: Найти часть тела Брандона
+        count: 1
+        item: 'crypt:850057'
+    - type: FetchGoal
+      config:
+        title: Найти часть тела Брандона
+        count: 1
+        item: 'crypt:850058'
+    - type: FetchGoal
+      config:
+        title: Найти часть тела Брандона
+        count: 1
+        item: 'crypt:850059'
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 100
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100
+    - type: ItemReward
+      config:
+        items: ['crypt:850060']
+        quality: 'uncommon'

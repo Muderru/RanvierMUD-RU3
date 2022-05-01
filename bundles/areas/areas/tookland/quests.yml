@@ -1,0 +1,60 @@
+---
+- id: 34700
+  title: Избавить мельника от мышей
+  level: 3
+  repeatable: true
+  description: >-
+    Мельник недавно видел мышь на своей мельнице. Он боится, что она попортит
+    его зерно и просит вас избавить его от нее, пока их не стало слишком много.
+  completionMessage: |-
+    - Молодец!
+    - Помоги мне ещё в одном деле. Видишь, моя мельница не работает.
+    - И сколько я не пытался починить её, всё бестолку.
+    - Боюсь, что здесь не обошлось без нечистой силы. 
+    - Если это так, то тебе понадобится какая-то защита от нее.
+    - Поброди по округе, может найдешь что-нибудь полезное.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить мышь
+        npc: 'tookland:34708'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 50
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100
+- id: 34701
+  title: Избавить мельника от нечистой силы
+  level: 3
+  repeatable: true
+  requires: ['tookland:34700']
+  description: >-
+    На мельнице завелась нечистая сила, которая мешает её работе. Вам нужно
+    найти какой-нибудь защитный амулет и победить злого духа.
+  completionMessage: |-
+    - Спасибо тебе!
+    - Теперь мельница будет работать и дела мои пойдут в гору.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить злого духа
+        npc: 'tookland:34711'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 150
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 150
+    - type: ItemReward
+      config:
+        items: ['tookland:34703']
+        quality: 'uncommon'

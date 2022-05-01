@@ -1,0 +1,1456 @@
+- id: 40200
+  keywords: ["грязный", "нищий"]
+  level: 25
+  name: "грязный нищий"
+  rname: "грязного нищего"
+  dname: "грязному нищему"
+  vname: "грязного нищего"
+  tname: "грязным нищий"
+  pname: "грязном нищем"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите грязного, оборванного нищего покрытого толстым слоем грязи и
+    источающего неповторимый аромат.
+  script: 'beggar'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  metadata:
+    block:
+      exits: ['юг']
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['parry', 'lunge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "court:40262": 100
+        - "court:40200": 30
+- id: 40201
+  keywords: ["помощник", "палач"]
+  level: 25
+  name: "помощник палача"
+  rname: "помощника палача"
+  dname: "помощнику палача"
+  vname: "помощника палача"
+  tname: "помощником палача"
+  pname: "помощнике палача"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите полного мужчину средних лет в черных одеяниях - форменной
+    одежде палача. Судя по его бегающему взгляду, устроился он на эту работу
+    совсем недавно, а до этого был, скорее всего, мясником.
+  script: 'combathelp'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['judge', 'shieldblock']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "court:40201": 30
+- id: 40202
+  keywords: ["праздный", "зевака"]
+  level: 25
+  name: "праздный зевака"
+  rname: "праздного зеваки"
+  dname: "праздному зеваке"
+  vname: "праздного зеваку"
+  tname: "праздным зевакой"
+  pname: "праздном зеваке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите скучающего представителя среднего класса, пришедшего сюда в
+    поисках острых ощущений. Он с нетерпением поглядывает в сторону плахи,
+    так сильно хочет увидеть воочию процесс обезглавливания.
+  script: 'combathelp'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry']
+      spells: ['acid']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "court:40201": 30
+- id: 40203
+  keywords: ["подозрительный", "тип"]
+  level: 27
+  name: "подозрительный тип"
+  rname: "подозрительного типа"
+  dname: "подозрительному типу"
+  vname: "подозрительного типа"
+  tname: "подозрительным типом"
+  pname: "подозрительном типе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Что заставило прийти сюда этого человека, сказать сложно, его бегающий
+    взгляд как будто выискивает что-то, хотя может он просто ищет знакомых в толпе.
+  script: 'combathelp'
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+    critical: 5
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: ['hide', 'stab']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40262": 100
+        - "court:40203": 30
+- id: 40204
+  keywords: ["городской", "глашатый"]
+  level: 27
+  name: "городской глашатый"
+  rname: "городскго глашатого"
+  dname: "городскому глашатому"
+  vname: "городского глашатого"
+  tname: "городским глашатым"
+  pname: "городском глашатом"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот толстый важный чиновник в пестрых одеждах громко выкрикивает имена
+    провинившихся и преступления, в которых они признаны виновными. Видно, что
+    он очень горд своей работой и до всего остального ему нет дела.
+  script: 'combathelp'
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['defense_curse', 'blind']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40204": 25
+- id: 40205
+  keywords: ["охранник"]
+  level: 27
+  name: "охранник площади"
+  rname: "охранника площади"
+  dname: "охраннику площади"
+  vname: "охранника площади"
+  tname: "охранником площади"
+  pname: "охраннике площади"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл, гремя доспехами,"
+  travelVerbOut: "ушёл, гремя доспехами,"
+  description: >-
+    Вы видите перед собой немолодого вояку, повидавшему на своем веку немало
+    сражений. Несомненно, что он способен дать отпор любому решившемуся
+    нарушить порядок на площади, и сурово наказать его.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: ['rescue', 'smite']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40205": 25
+- id: 40206
+  keywords: ["горожанка"]
+  level: 25
+  name: "горожанка"
+  rname: "горожанки"
+  dname: "горожанке"
+  vname: "горожанку"
+  tname: "горожанкой"
+  pname: "горожанке"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'хлестнула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта красивая южанка в разноцветных одеждах с лукавством поглядывает на вас,
+    как будто оценивая, стоит ли с вами познакомиться поближе. До всего
+    остального, происходящего на площади, ей как будто нет дела.
+  script: 'flirt'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomspell: true
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: ['paralysis', 'lightning']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "court:40206": 30
+- id: 40207
+  keywords: ["стражник"]
+  level: 27
+  name: "стражник"
+  rname: "стражника"
+  dname: "стражнику"
+  vname: "стражника"
+  tname: "стражником"
+  pname: "стражнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл, гремя доспехами,"
+  travelVerbOut: "ушёл, гремя доспехами,"
+  description: >-
+    Вы видите перед собой толстого, потного стражника, которого поставили тут
+    охранять вход в здание суда. Не способный ни за кем угнаться, он, тем не
+    менее, превосходно прикрывает собой дверь суда, не позволяя войти туда
+    непрошенным посетителям.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  metadata:
+    block:
+      exits: ['восток']
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['rescue', 'rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40207": 25
+- id: 40208
+  keywords: ["штатный", "писец"]
+  level: 27
+  name: "штатный писец"
+  rname: "штатного писца"
+  dname: "штатному писцу"
+  vname: "штатного писца"
+  tname: "штатным писцом"
+  pname: "штатном писце"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ударил чернильницей'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите перед собой тщедушного чиновника-бюрократа, руки которого
+    измазаны пятнами чернил. Смысл жизни этого человека состоит в перекладывании
+    бумажек с места на место, и без официального документа к нему лучше не подходить.
+    К сожалению, дел на него навесили так много, что он едва справляется.
+  script: 'scribe'
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['heal', 'plea']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40208": 35
+- id: 40209
+  keywords: ["капитан", "страж"]
+  level: 30
+  name: "капитан стражи"
+  rname: "капитана стражи"
+  dname: "капитану стражи"
+  vname: "капитана стражи"
+  tname: "капитаном стражи"
+  pname: "капитане стражи"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот человек поучаствовал на своем веку во многих сражениях, благодаря
+    чему его характер стал несгибаемым. Капитан стражи - известный борец с
+    несправедливостью и преступностью, он готов убить за малейшее прегрешение.
+  script: 'combathelp'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['parry', 'bash']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40209": 30
+        - "court:40210": 30
+- id: 40210
+  keywords: ["пожилой", "судья"]
+  level: 30
+  name: "пожилой судья"
+  rname: "пожилого судьи"
+  dname: "пожилому судье"
+  vname: "пожилого судью"
+  tname: "пожилым судьей"
+  pname: "пожилом судье"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите перед собой старого ссохшегося человека в белом парике и с
+    напудренном лицом. Всю жизнь он изучал многочисленные противоречивые
+    законы, из-за чего его характер стал вздорным и несдержанным. Однако,
+    когда дело кажется запутанным его решения мудры и продуманны.
+  script: 'judge'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['silence', 'ice_peak']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40211": 30
+        - "court:40212": 30
+- id: 40211
+  keywords: ["скучающий", "присяжный"]
+  level: 25
+  name: "скучающий присяжный"
+  rname: "скучающего присяжного"
+  dname: "скучающему присяжному"
+  vname: "скучающего присяжного"
+  tname: "скучающим присяжным"
+  pname: "скучающем присяжном"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Судя по его хитроватому виду, этот человек решил, что лучше уж сидеть тут,
+    чем дальше в зале, на скамье подсудимых. Суждения его так же спорны, но,
+    что поделаешь, порядочного человека сюда даже силой не загонишь.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "court:40213": 20
+        - "court:40214": 20
+- id: 40212
+  keywords: ["пойманный", "разбойник"]
+  level: 27
+  name: "пойманный разбойник"
+  rname: "пойманного разбойника"
+  dname: "пойманному разбойнику"
+  vname: "пойманного разбойника"
+  tname: "пойманным разбойником"
+  pname: "пойманном разбойнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Едва взглянув на испещренное шрамами лицо этого человека, сразу понимаешь,
+    что он виновен во всем: в грабежах на большой дороге, в убийствах и
+    конокрадстве.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    randomskill: true
+    capable:
+      skills: ['lunge', 'rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40215": 30
+- id: 40213
+  keywords: ["высокий", "стражник"]
+  level: 27
+  name: "высокий стражник"
+  rname: "высокого стражника"
+  dname: "высокому стражнику"
+  vname: "высокого стражника"
+  tname: "высоким стражником"
+  pname: "высоком стражнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    На этого стражника, стоящего со скучающим видом, возложена важная миссия
+    по защите обычных граждан, пришедших посмотреть на судебный процесс, от
+    обвиняемых, некоторые, из которых, весьма буйные.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['rescue', 'bash']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40216": 30
+- id: 40214
+  keywords: ["отдыхающий", "стражник"]
+  level: 27
+  name: "отдыхающий стражник"
+  rname: "отдыхающего стражника"
+  dname: "отдыхающему стражнику"
+  vname: "отдыхающего стражника"
+  tname: "отдыхающим стражником"
+  pname: "отдыхающем стражнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите отдыхающего после недавнего дежурства стражника. Кажется,
+    он совсем выбился из сил, так как патрулирование в полном обмундировании
+    не такая уж легкая работа.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: ['lunge']
+      spells: ['heal']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40217": 30
+- id: 40215
+  keywords: ["голодный", "присяжный"]
+  level: 27
+  name: "голодный присяжный"
+  rname: "голодного присяжного"
+  dname: "голодному присяжному"
+  vname: "голодного присяжного"
+  tname: "голодным присяжным"
+  pname: "голодном присяжном"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите высокого толстяка, который смотрит на вас голодными
+    глазами. Похоже, он ОЧЕНЬ сильно проголодался.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['blind', 'defense']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40218": 30
+- id: 40216
+  keywords: ["голодный", "стражник"]
+  level: 27
+  name: "голодный стражник"
+  rname: "голодного стражника"
+  dname: "голодному стражнику"
+  vname: "голодного стражника"
+  tname: "голодным стражником"
+  pname: "голодном стражнике"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот стражник просидел несколько дней на гауптвахте без еды за получение
+    взятки от арестованного. Поэтому неудивительно, что он сейчас пребывает не
+    в самом лучшем настроении.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+    critical: 5
+  behaviors:
+    allattributes: 1
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    capable:
+      skills: ['smite']
+      spells: ['weakness']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40219": 30
+- id: 40217
+  keywords: ["толстый", "повар"]
+  level: 27
+  name: "толстый повар"
+  rname: "толстого повара"
+  dname: "толстому повару"
+  vname: "толстого повара"
+  tname: "толстым поваром"
+  pname: "толстом поваре"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Кулинарные пристрастия этого повара довольно сомнительны и широко известны
+    своей необычностью далеко за пределами своего города. Однако он готов
+    работать за гроши на чистом энтузиазме, что компенсирует его тягу к
+    экстремальным экспериментам.
+  script: 'combathelp'
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: ['paralysis', 'poison']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40220": 30
+- id: 40218
+  keywords: ["ленивый", "уборщик"]
+  level: 25
+  name: "ленивый уборщик"
+  rname: "ленивого уборщика"
+  dname: "ленивому уборщику"
+  vname: "ленивого уборщика"
+  tname: "ленивым уборщиком"
+  pname: "ленивом уборщике"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите самого обычного представителя не самой престижной профессии.
+  script: 'combathelp'
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['smite', 'judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+      pools:
+        - "court:40221": 30
+- id: 40219
+  keywords: ["размокший", "труп"]
+  level: 27
+  name: "размокший труп"
+  rname: "размокшего трупа"
+  dname: "размокшему трупу"
+  vname: "размокший труп"
+  tname: "размокшим трупом"
+  pname: "размокшем трупе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ободрал'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите обезображенный, раздувшийся труп утопленника скалящегося
+    на вас острыми гнилыми зубами.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+    detect_invisibility: 10
+    detect_hide: 10
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['weakness', 'defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40222": 30
+        - "court:40223": 30
+- id: 40220
+  keywords: ["истощенный", "заключенный"]
+  level: 25
+  name: "истощенный заключенный"
+  rname: "истощенного заключенного"
+  dname: "истощенному заключенному"
+  vname: "истощенного заключенного"
+  tname: "истощенным заключенным"
+  pname: "истощенном заключенном"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот исхудавший человек много месяцев провел в тюремной камере, и от
+    темноты и одиночества окончательно обезумел.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: ['fireball', 'silence']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 40221
+  keywords: ["истощенный", "заключенный"]
+  level: 25
+  name: "истощенный заключенный"
+  rname: "истощенного заключенного"
+  dname: "истощенному заключенному"
+  vname: "истощенного заключенного"
+  tname: "истощенным заключенным"
+  pname: "истощенном заключенном"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот исхудавший человек много месяцев провел в тюремной камере, и от
+    темноты и одиночества окончательно обезумел.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['parry', 'rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 40222
+  keywords: ["истощенный", "заключенный"]
+  level: 25
+  name: "истощенный заключенный"
+  rname: "истощенного заключенного"
+  dname: "истощенному заключенному"
+  vname: "истощенного заключенного"
+  tname: "истощенным заключенным"
+  pname: "истощенном заключенном"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот исхудавший человек много месяцев провел в тюремной камере, и от
+    темноты и одиночества окончательно обезумел.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['bash']
+      spells: ['bless']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60
+- id: 40223
+  keywords: ["закованный", "человек"]
+  level: 27
+  name: "закованный в колодки человек"
+  rname: "закованного в колодки человека"
+  dname: "закованному в колодки человеку"
+  vname: "закованного в колодки человека"
+  tname: "закованным в колодки человеком"
+  pname: "закованном в колодки человеке"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Одежда этого человека, хоть и покрыта толстым слоем нечистот, все еще
+    хранит остатки своей роскоши. Видимо ее обладатель занимал раньше довольно
+    высокое положение в обществе, хотя сейчас любой желающий может запустить в
+    него гнилым помидором.
+  quests: ['court:40201', 'court:40202']
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: false
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['heal', 'defense']
+  metadata:
+    trainer:
+      skill: "bash"
+      cost: 4
+      requirements: ['skill_heavy_armor']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+- id: 40224
+  keywords: ["главный", "палач"]
+  level: 30
+  name: "главный палач"
+  rname: "главного палача"
+  dname: "главному палачу"
+  vname: "главного палача"
+  tname: "главным палачом"
+  pname: "главном палаче"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот палач настоящий мастер своего дела, одним ловким ударом он обезглавит
+    любого, поэтому неудивительно, что его привлекают только в самых важных
+    случаях, для казни опасных преступников.
+  script: 'executioner'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['rend', 'smite']
+      spells: ['silence']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40224": 30
+        - "court:40225": 30
+        - "court:40226": 30
+- id: 40225
+  keywords: ["верховный", "инквизитор"]
+  level: 30
+  name: "верховный инквизитор"
+  rname: "верховного инквизитора"
+  dname: "верховному инквизитору"
+  vname: "верховного инквизитора"
+  tname: "верховным инквизитором"
+  pname: "верховном инквизиторе"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Всю свою жизнь этот человек посвятил молитвам и борьбе с темной магией,
+    поэтому он с легкостью даст отпор любому исчадию зла.
+  script: 'inquisitor'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['parry']
+      spells: ['paralysis', 'bless']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40227": 30
+        - "court:40228": 30
+        - "court:40243": 30
+- id: 40226
+  keywords: ["охранник"]
+  level: 27
+  name: "охранник суда"
+  rname: "охранника суда"
+  dname: "охраннику суда"
+  vname: "охранника суда"
+  tname: "охранником суда"
+  pname: "охраннике суда"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл, гремя доспехами,"
+  travelVerbOut: "ушёл, гремя доспехами,"
+  description: >-
+    Вы видите перед собой немолодого вояку, повидавшему на своем веку немало
+    сражений. Несомненно, что он способен дать отпор любому решившемуся
+    нарушить порядок на площади, и сурово наказать его.
+  script: 'guard'
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: ['rescue']
+      spells: ['defense']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40229": 30
+- id: 40227
+  keywords: ["элитный", "стражник"]
+  level: 30
+  name: "элитный стражник"
+  rname: "элитного стражника"
+  dname: "элитному стражнику"
+  vname: "элитного стражника"
+  tname: "элитным стражником"
+  pname: "элитном стражнике"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот стражник прошел особую подготовку в военном лагере, так чтобы он
+    мог дать отпор любому противнику. В рукопашном бою с ним мало может сравниться.
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  metadata:
+    block:
+      exits: ['север']
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['shieldblock', 'rescue']
+      spells: ['heal']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40230": 30
+- id: 40228
+  keywords: ["верховный", "судья"]
+  level: 30
+  name: "верховный судья"
+  rname: "верховного судьи"
+  dname: "верховному судье"
+  vname: "верховного судью"
+  tname: "верховным судьей"
+  pname: "верховном судье"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот человек занял должность верховного судьи города всего несколько
+    месяцев назад, но уже успел прославиться по всей округе своей жадностью
+    и коррумпированностью. По слухам он накопил в своей сокровищнице несметные
+    богатства.
+  script: 'mainjudge'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['parry', 'judge']
+      spells: ['defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40231": 30
+        - "court:40232": 30
+        - "court:40233": 30
+- id: 40229
+  keywords: ["загадочный", "посетитель"]
+  level: 30
+  name: "загадочный посетитель"
+  rname: "загадочного посетителя"
+  dname: "загадочному посетителю"
+  vname: "загадочного посетителя"
+  tname: "загадочным посетителем"
+  pname: "загадочном посетителе"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите человека в темных одеяниях с лицом скрытым капюшоном, он явно
+    желает, чтобы его личность осталась в тайне, как, впрочем, и цель его
+    визита к верховному судье.
+  script: 'golem'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    combat: true
+    randomspell: true
+    capable:
+      skills: ['shieldblock']
+      spells: ['plea', 'fireball']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40234": 30
+        - "court:40255": 30
+- id: 40230
+  keywords: ["голем"]
+  level: 30
+  name: "голем из хлама"
+  rname: "голема из хлама"
+  dname: "голему из хлама"
+  vname: "голема из хлама"
+  tname: "големом из хлама"
+  pname: "големе из хлама"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'сокрушил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Это существо было создано посредством магии из различного хлама: стульев,
+    канделябров, книг, подушек и прочего мусора, который валялся поблизости.
+  attributes:
+    health: 750
+    mana: 600
+    armor: 60
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    area_decay: true
+    capable:
+      skills: ['rescue', 'smite']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+- id: 40231
+  keywords: ["смотритель"]
+  level: 30
+  name: "смотритель архива"
+  rname: "смотрителя архива"
+  dname: "смотрителю архива"
+  vname: "смотрителя архива"
+  tname: "смотрителем архива"
+  pname: "смотрителе архива"
+  gender: "male"
+  min_damage: 55
+  max_damage: 90
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Этот дряхлый старец всю свою жизнь присматривал за судебным архивом, и
+    через его руки прошли сотни папок с самими страшными преступлениями,
+    которые многие желали бы уничтожить навсегда. Поэтому неудивительно, что
+    смотритель зорко присматривает за своими стеллажами и сундуками.
+  script: 'combathelp'
+  attributes:
+    health: 1200
+    mana: 800
+    armor: 8
+  behaviors:
+    allattributes: 4
+    memory: true
+    assist: true
+    combat: true
+    randomspell: true
+    capable:
+      skills: []
+      spells: ['heal', 'fireball', 'paralysis']
+  metadata:
+    trainer:
+      spell: "bash"
+      cost: 3
+      requirements: ['spell_defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 100
+          max: 200
+      pools:
+        - "court:40246": 30
+- id: 40232
+  keywords: ["инквизитор"]
+  level: 27
+  name: "инквизитор"
+  rname: "инквизитора"
+  dname: "инквизитору"
+  vname: "инквизитора"
+  tname: "инквизитором"
+  pname: "инквизиторе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'рубанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите представителя таинственного ордена, который стремится уничтожить
+    зло во всех уголках этого мира.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    assist: true
+    randomskill: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: ['rescue', 'lunge']
+      spells: ['defense_curse']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40252": 30
+- id: 40233
+  keywords: ["размокший", "труп"]
+  level: 27
+  name: "размокший труп"
+  rname: "размокшего трупа"
+  dname: "размокшему трупу"
+  vname: "размокший труп"
+  tname: "размокшим трупом"
+  pname: "размокшем трупе"
+  gender: "male"
+  min_damage: 51
+  max_damage: 85
+  damageVerb: 'ободрал'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите обезображенный, раздувшийся труп утопленника скалящегося
+    на вас острыми гнилыми зубами.
+  attributes:
+    health: 1100
+    mana: 550
+    armor: 7
+  behaviors:
+    allattributes: 3
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    randomskill: true
+    capable:
+      skills: []
+      spells: ['acid', 'poison']
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 70
+      pools:
+        - "court:40222": 30
+- id: 40234
+  keywords: ["жирный", "ворон"]
+  level: 25
+  name: "жирный ворон"
+  rname: "жирного ворона"
+  dname: "жирному ворону"
+  vname: "жирного ворона"
+  tname: "жирным вороном"
+  pname: "жирном вороне"
+  gender: "male"
+  min_damage: 50
+  max_damage: 85
+  damageVerb: 'клюнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Жирный, наглый ворон. Судя по отсутствию других птиц, этот ворон
+    усердно охраняет свой источник пищи от любых соперников.
+  attributes:
+    health: 1000
+    mana: 500
+    armor: 6
+  behaviors:
+    allattributes: 3
+    combat: true
+    memory: true
+    randomskill: true
+    capable:
+      skills: ['lunge', 'rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 30
+          max: 60

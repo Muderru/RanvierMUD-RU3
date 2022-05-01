@@ -1,0 +1,8 @@
+title: "Лесная таверна"
+metadata:
+  author: "Туор"
+  minlevel: 15
+  maxlevel: 20
+behaviors:
+  progressive-respawn:
+    interval: 1200

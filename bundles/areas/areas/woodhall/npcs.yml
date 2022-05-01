@@ -1,0 +1,1173 @@
+- id: 34802
+  keywords: ["матерый", "кабан"]
+  level: 11
+  name: "матерый кабан"
+  rname: "матерого кабана"
+  dname: "матерому кабану"
+  vname: "матерого кабана"
+  tname: "матерым кабаном"
+  pname: "матером кабане"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'ободрал'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Вы видите крупного, матерого кабана, побывавшего, судя по шрамам, во множестве драк, и
+    способного дать отпор любому зверю. Шкура кабана покрыта толстой, жесткой щетиной,
+    защищающей от клыков хищников.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    critical: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 5
+- id: 34803
+  keywords: ["серый", "волк"]
+  level: 11
+  name: "серый волк"
+  rname: "серого волка"
+  dname: "серому волку"
+  vname: "серого волка"
+  tname: "серым волком"
+  pname: "сером волке"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Вы видите крупного, серого волка, побывавшего, судя по шрамам, во множестве драк, и способного
+    задрать любого зверя.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 5
+- id: 34804
+  keywords: ["старый", "лось"]
+  level: 11
+  name: "старый лось"
+  rname: "старого лося"
+  dname: "старому лосю"
+  vname: "старого лося"
+  tname: "старым лосем"
+  pname: "старом лосе"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'боднул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Похоже, что с возрастом этот лось стал лишь крупнее и тяжелее. Ударом своего копыта он с
+    легкостью проломит череп даже быку, а массивные рога способны защитить от любого хищника.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    crushing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34805
+  keywords: ["бурый", "медведь"]
+  level: 13
+  name: "бурый медведь"
+  rname: "бурого медведя"
+  dname: "бурому медведю"
+  vname: "бурого медведя"
+  tname: "бурым медведем"
+  pname: "буром медведе"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'ободрал'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Хотя медведь кажется медлительным животным, он даст фору любому спринтеру, если
+    рассвирепеет. А, сила его такова, что он может расправиться даже с полностью экипированным
+    воином.
+  attributes:
+    health: 550
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 65
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 5
+- id: 34806
+  keywords: ["зубр"]
+  level: 13
+  name: "зубр"
+  rname: "зубра"
+  dname: "зубру"
+  vname: "зубра"
+  tname: "зубром"
+  pname: "зубре"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'боднул'
+  travelVerbIn: "прискакал"
+  travelVerbOut: "ускакал"
+  description: >-
+    Несомненно, что это величественное животное не боится никого в здешнем лесу. Ударом своего
+    копыта он с легкостью проломит череп даже быку, а массивные рога способны защитить от любого
+    хищника.
+  attributes:
+    health: 550
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    crushing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34808
+  keywords: ["лесная", "рысь"]
+  level: 13
+  name: "лесная рысь"
+  rname: "лесной рыси"
+  dname: "лесной рыси"
+  vname: "лесную рысь"
+  tname: "лесной рысью"
+  pname: "лесной рыси"
+  gender: "female"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'оцарапала'
+  travelVerbIn: "подкралась"
+  travelVerbOut: "убежала"
+  description: >-
+    Застать врасплох это скрытное животное почти невозможно, и если вы все-таки встретились
+    с рысью, значит, она намеренно показалась вам, изучая вашу реакцию, а, может и, собираясь,
+    напасть на вас.
+  attributes:
+    health: 550
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    critical: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 5
+- id: 34809
+  keywords: ["крупный", "аист"]
+  level: 11
+  name: "крупный аист"
+  rname: "крупного аиста"
+  dname: "крупному аисту"
+  vname: "крупного аиста"
+  tname: "крупным аистом"
+  pname: "крупном аисте"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'клюнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Крупный аист важно перешагивает тут с кочки на кочку.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    piercing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    wander:
+      interval: 55
+      restrictTo: ['woodhall:34804', 'woodhall:34805', 'woodhall:34806', 'woodhall:34807', 'woodhall:34808',
+                   'woodhall:34809', 'woodhall:34810', 'woodhall:34811', 'woodhall:34812', 'woodhall:34815',
+                   'woodhall:34820', 'woodhall:34821', 'woodhall:34822', 'woodhall:34823', 'woodhall:34826']
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34810
+  keywords: ["рыжая", "лиса"]
+  level: 11
+  name: "рыжая лиса"
+  rname: "рыжей лисы"
+  dname: "рыжей лисе"
+  vname: "рыжую лису"
+  tname: "рыжей лисой"
+  pname: "рыжей лисе"
+  gender: "female"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Лисы недаром прославились своей хитростью, и пусть они не так сильны, как другие животные,
+    их ум заставляет считать их опасными противниками, способными выкинуть какую-нибудь
+    неожиданность.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: [ 'hide' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 5
+- id: 34811
+  keywords: ["упитанный", "барсук"]
+  level: 11
+  name: "упитанный барсук"
+  rname: "упитанного барсука"
+  dname: "упитанному барсуку"
+  vname: "упитанного барсука"
+  tname: "упитанным барсуком"
+  pname: "упитанном барсуке"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Хотя барсук больше предпочитает лакомиться орехами и кореньями, его острые когти могут
+    доставить неприятности любому хищнику. Да, и охотник должен быть осторожен с этим зверем.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34812
+  keywords: ["лесной", "тетерев"]
+  level: 11
+  name: "лесной тетерев"
+  rname: "лесного тетерева"
+  dname: "лесного тетерева"
+  vname: "лесному тетереву"
+  tname: "лесного тетерева"
+  pname: "лесным тетеревом"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'клюнул'
+  travelVerbIn: "прилетел"
+  travelVerbOut: "улетел"
+  description: >-
+    Лесной тетерев тяжело перелетает от одного куста к другому.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    piercing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 35
+      areaRestricted: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34813
+  keywords: ["медведица"]
+  level: 13
+  name: "медведица"
+  rname: "медведицы"
+  dname: "медведице"
+  vname: "медведицу"
+  tname: "медведицей"
+  pname: "медведице"
+  gender: "female"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'ободрала'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эта медведица готова разорвать любого, посмевшего угрожать ее детенышам, в мелкие клочья.
+  attributes:
+    health: 550
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    leader:
+      followers: ['woodhall:34814', 'woodhall:34814']
+    assist: true
+    wander:
+      interval: 65
+      areaRestricted: true
+    capable:
+      skills: [ 'bash' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 75
+        - "woodhall:34803": 45
+- id: 34814
+  keywords: ["медвежонок"]
+  level: 11
+  name: "медвежонок"
+  rname: "медвежонка"
+  dname: "медвежонку"
+  vname: "медвежонка"
+  tname: "медвежонком"
+  pname: "медвежонке"
+  gender: "male"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'оцарапал'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Милый и пушистый, он просто не может быть опасным.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34815
+  keywords: ["хищная", "рыба"]
+  level: 11
+  name: "хищная рыба"
+  rname: "хищной рыбы"
+  dname: "хищной рыбе"
+  vname: "хищную рыбу"
+  tname: "хищной рыбой"
+  pname: "хищной рыбе"
+  gender: "female"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'укусила'
+  travelVerbIn: "приплыла"
+  travelVerbOut: "уплыла"
+  description: >-
+    Хищная рыба лениво плескается у берега пруда.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    wander:
+      interval: 50
+      restrictTo: ['woodhall:34821', 'woodhall:34822', 'woodhall:34826', 'woodhall:34827']
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34814": 35
+- id: 34816
+  keywords: ["жаба", "бык"]
+  level: 11
+  name: "жаба-бык"
+  rname: "жабы-быка"
+  dname: "жабе-быку"
+  vname: "жабу-быка"
+  tname: "жабой-быком"
+  pname: "жабе-быке"
+  gender: "female"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'хлестнула'
+  travelVerbIn: "припрыгала"
+  travelVerbOut: "упрыгала"
+  description: >-
+    Жаба-бык раздувает свой пузырь сидя на листе кувшинки.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 55
+      restrictTo: ['woodhall:34804', 'woodhall:34805', 'woodhall:34806', 'woodhall:34807', 'woodhall:34808',
+                   'woodhall:34809', 'woodhall:34810', 'woodhall:34811', 'woodhall:34812', 'woodhall:34815',
+                   'woodhall:34820', 'woodhall:34821', 'woodhall:34822', 'woodhall:34823', 'woodhall:34826']
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34817
+  keywords: ["болотник"]
+  level: 13
+  name: "болотник"
+  rname: "болотника"
+  dname: "болотнику"
+  vname: "болотника"
+  tname: "болотником"
+  pname: "болотнике"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'огрел'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Это странное существо отдаленно напоминает человека, покрытого толстым слоем мокрой тины.
+  attributes:
+    health: 550
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    crushing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 50
+      restrictTo: ['woodhall:34804', 'woodhall:34805', 'woodhall:34806', 'woodhall:34807', 'woodhall:34808',
+                   'woodhall:34809', 'woodhall:34810', 'woodhall:34811', 'woodhall:34812', 'woodhall:34815',
+                   'woodhall:34820', 'woodhall:34821', 'woodhall:34822', 'woodhall:34823', 'woodhall:34826']
+    capable:
+      skills: [ 'smite' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34813": 25
+- id: 34818
+  keywords: ["бирюк"]
+  level: 15
+  name: "Бирюк"
+  rname: "Бирюка"
+  dname: "Бирюку"
+  vname: "Бирюка"
+  tname: "Бирюком"
+  pname: "Бирюке"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Вы видите высокого, располневшего отшельника. Давно поселившись вдали от всех
+    поселений, он привык полагаться только на свои силы, да на помощь верных собак. Глаза Бирюка
+    светятся мудростью, а по выпирающему брюшку, можно предположить, что он неравнодушен к выпечке.
+  script: 'biriuk'
+  quests: ['woodhall:34800', 'woodhall:34801']
+  metadata:
+    trainer:
+      skill: 'rescue'
+      cost: 3
+      requirements: ['skill_heavy_armor']
+  attributes:
+    health: 650
+    mana: 350
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    crushing_damage: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "woodhall:34805": 35
+        - "woodhall:34808": 35
+- id: 34819
+  keywords: ["пес", "пёс", "хват"]
+  level: 14
+  name: "пёс по кличке Хват"
+  rname: "пса по кличке Хват"
+  dname: "псу по кличке Хват"
+  vname: "пса по кличке Хват"
+  tname: "псом по кличке Хват"
+  pname: "псе по кличке Хват"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Таких крупных псов не часто увидишь.
+  attributes:
+    health: 600
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    lootable:
+      pools:
+        - "woodhall:34804": 20
+- id: 34820
+  keywords: ["пес", "пёс", "клык"]
+  level: 14
+  name: "пёс по кличке Клык"
+  rname: "пса по кличке Клык"
+  dname: "псу по кличке Клык"
+  vname: "пса по кличке Клык"
+  tname: "псом по кличке Клык"
+  pname: "псе по кличке Клык"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Таких крупных псов не часто увидишь.
+  attributes:
+    health: 600
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    critical: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    lootable:
+      pools:
+        - "woodhall:34804": 20
+- id: 34821
+  keywords: ["пес", "пёс", "волк"]
+  level: 14
+  name: "пёс по кличке Волк"
+  rname: "пса по кличке Волк"
+  dname: "псу по кличке Волк"
+  vname: "пса по кличке Волк"
+  tname: "псом по кличке Волк"
+  pname: "псе по кличке Волк"
+  gender: "male"
+  min_damage: 30
+  max_damage: 60
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Таких крупных псов не часто увидишь.
+  attributes:
+    health: 600
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    crushing_damage: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    lootable:
+      pools:
+        - "woodhall:34804": 20
+- id: 34822
+  keywords: ["рассерженная", "гадюка"]
+  level: 11
+  name: "рассерженная гадюка"
+  rname: "рассерженной гадюки"
+  dname: "рассерженной гадюке"
+  vname: "рассерженную гадюку"
+  tname: "рассерженной гадюкой"
+  pname: "рассерженной гадюке"
+  gender: "female"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'укусила'
+  travelVerbIn: "приползла"
+  travelVerbOut: "уползла"
+  description: >-
+    Потревоженная гадюка рассерженно шипит на вас.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    acid_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    aggro:
+      delay: 0
+      towards:
+        players: true
+        npcs: false
+    wander:
+      interval: 50
+      areaRestricted: true
+    capable:
+      skills: []
+      spells: ['poison']
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34823
+  keywords: ["юркая", "белка"]
+  level: 10
+  name: "юркая белка"
+  rname: "юркой белки"
+  dname: "юркой белке"
+  vname: "юркую белку"
+  tname: "юркой белкой"
+  pname: "юркой белке"
+  gender: "female"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Юркая белка дразнит вас перепрыгивая с ветки на ветку.
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 2
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 55
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "tookland:34701": 15
+- id: 34824
+  keywords: ["эльфийская", "воительница"]
+  level: 15
+  name: "эльфийская воительница"
+  rname: "эльфийской воительницы"
+  dname: "эльфийской воительнице"
+  vname: "эльфийскую воительницу"
+  tname: "эльфийской воительницей"
+  pname: "эльфийской воительнице"
+  gender: "female"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'рубанула'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Прекрасная эльфийская воительница сидит мечтая о чем-то.
+  attributes:
+    health: 650
+    mana: 350
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    critical: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: [ 'judge' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "woodhall:34821": 25
+        - "woodhall:34800": 25
+- id: 34825
+  keywords: ["эльф", "мечник"]
+  level: 15
+  name: "эльф-мечник"
+  rname: "эльфа-мечника"
+  dname: "эльфу-мечнику"
+  vname: "эльфа-мечника"
+  tname: "эльфом-мечником"
+  pname: "эльфе-мечнике"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Грозный эльф-мечник сидит тут, поигрывая своим оружием.
+  attributes:
+    health: 650
+    mana: 350
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    cutting_damage: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['lunge']
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "woodhall:34802": 25
+- id: 34826
+  keywords: ["эльф", "лучник"]
+  level: 15
+  name: "эльф-лучник"
+  rname: "эльфа-лучника"
+  dname: "эльфу-лучнику"
+  vname: "эльфа-лучника"
+  tname: "эльфом-лучником"
+  pname: "эльфе-лучнике"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'подстрелил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Меткий эльф-лучник сидит тут, держа наготове стрелы и лук.
+  attributes:
+    health: 600
+    mana: 400
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    piercing_damage: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: ['hide']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "woodhall:34807": 25
+        - "woodhall:34801": 25
+- id: 34827
+  keywords: ["эльф", "менестрель"]
+  level: 15
+  name: "эльф-менестрель"
+  rname: "эльфа-менестреля"
+  dname: "эльфу-менестрелю"
+  vname: "эльфа-менестреля"
+  tname: "эльфом-менестрелем"
+  pname: "эльфе-менестреле"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'пырнул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Эльф-менестрель сидит тут, влюбленно глядя на эльфийскую воительницу.
+  attributes:
+    health: 550
+    mana: 450
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    earth_damage: 3
+    armor: 3
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: ['heal', 'plea']
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "woodhall:34806": 25
+- id: 34828
+  keywords: ["эльф", "старейшина"]
+  level: 15
+  name: "старейшина эльфов"
+  rname: "старейшины эльфов"
+  dname: "старейшине эльфов"
+  vname: "старейшину эльфов"
+  tname: "старейшиной эльфов"
+  pname: "старейшине эльфов"
+  gender: "male"
+  min_damage: 35
+  max_damage: 65
+  damageVerb: 'ударил'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Величественный старейшина эльфов беспокойно прохаживается по поляне.
+  attributes:
+    health: 500
+    mana: 500
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    ether_damage: 3
+    armor: 3
+  metadata:
+    trainer:
+      spell: 'lightning'
+      cost: 2
+      requirements: []
+  behaviors:
+    allattributes: 1
+    combat: true
+    assist: true
+    memory: true
+    capable:
+      skills: []
+      spells: ['lightning', 'invisibility']
+    lootable:
+      currencies:
+        золото:
+          min: 50
+          max: 100
+      pools:
+        - "woodhall:34812": 25
+        - "woodhall:34809": 25
+        - "woodhall:34815": 25
+        - "woodhall:34816": 25
+        - "woodhall:34817": 25
+        - "woodhall:34818": 25
+- id: 34829
+  keywords: ["белая", "цапля"]
+  level: 11
+  name: "белая цапля"
+  rname: "белой цапли"
+  dname: "белой цапле"
+  vname: "белую цаплю"
+  tname: "белой цаплей"
+  pname: "белой цапле"
+  gender: "female"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'клюнула'
+  travelVerbIn: "прилетела"
+  travelVerbOut: "улетела"
+  description: >-
+    Грациозная белая цапля выискивает среди высокой травы лягушек.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    piercing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 55
+      restrictTo: ['woodhall:34804', 'woodhall:34805', 'woodhall:34806', 'woodhall:34807', 'woodhall:34808',
+                   'woodhall:34809', 'woodhall:34810', 'woodhall:34811', 'woodhall:34812', 'woodhall:34815',
+                   'woodhall:34820', 'woodhall:34821', 'woodhall:34822', 'woodhall:34823', 'woodhall:34826']
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 34830
+  keywords: ["лесная", "свинья"]
+  level: 11
+  name: "лесная свинья"
+  rname: "лесной свиньи"
+  dname: "лесной свинье"
+  vname: "лесную свинью"
+  tname: "лесной свиньей"
+  pname: "лесной свинье"
+  gender: "female"
+  min_damage: 25
+  max_damage: 50
+  damageVerb: 'ободрала'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Лесная свинья роется тут среди земли.
+  attributes:
+    health: 450
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 25
+    piercing_damage: 3
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: [ 'rend' ]
+      spells: [ ]
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "woodhall:34810": 5

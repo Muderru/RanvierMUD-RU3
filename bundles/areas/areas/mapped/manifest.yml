@@ -1,5 +1,8 @@
 ---
 title: Коридор
+metadata:
+  author: "Туор"
+  hidden: true
 info:
   respawnInterval: 60
   instanced: player

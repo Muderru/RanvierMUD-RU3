@@ -19,18 +19,17 @@
   items: ['limbo:sliceofcheese']
   quests: ['limbo:onecheeseplease']
   behaviors:
+    allattributes: 0
     combat: true
     wander:
       interval: 20
       restrictTo: ['limbo:white', 'limbo:black', 'limbo:training1']
     wimpy: true
     memory: true
-    # всё, что не прописано в attributes выставляем в 0, чтобы работали 
-    # всякие эффекты от умений и т.д.
-    allattributes: 0
   attributes:
     health: 100
     mana: 100
+    invisibility: 0
 - id: wiseoldman
   keywords: ["мудрый", "старик", "старый"]
   name: "мудрый старик"
@@ -47,9 +46,9 @@
   description: "На земле со скрещенными ногами сидит седой старик. В глазах его светится мудрость."
   metadata:
     trainer:
-      spell: "fireball"
-      cost: 1
-      requirements: []
+      spell: 'bless'
+      cost: 4
+      requirements: ['spell_plea']
 - id: puppy
   keywords: ["щенок", "собака", "милый", "большеглазый"]
   name: "щенок"
@@ -77,16 +76,14 @@
   max_damage: 20
   attributes:
     health: 100
-    intellect: 20
-    cutting_resistance: 1
     mana: 200
+    intellect: 20
+    agility: 20
+    cutting_resistance: 2
+    invisibility: 0
   behaviors:
+    allattributes: 0
     combat: true
-    capable:
-      skills: [ 'lunge' ]
-      spells: [ 'heal' ]
-    block:
-      exits: [ 'запад' ]
     lootable:
       # currencies is a list of currencies this npc can possibly drop and the amount range
       # the currency key is arbitrary so if you want a new currency just add a new key
@@ -123,14 +120,20 @@
     испускающим струи горячего пара. Там где у остальных манекенов висит цель, у этого знак в виде черепа с перекрещенными костями.
   attributes:
     health: 200
+    mana: 200
     strength: 15
+    armor: 1
   behaviors:
+    allattributes: 0
     combat: true
+    capable:
+      skills: [ 'lunge' ]
+      spells: [ ]
     lootable:
       currencies:
         золото:
-          min: 50
-          max: 100
+          min: 20
+          max: 50
       pools:
         - "limbo:potions"
         - "limbo:trainingsword": 100
@@ -188,6 +191,7 @@
     health: 120
     strength: 12
   behaviors:
+    allattributes: 0
     combat: true
     aggro:
       delay: 5
@@ -209,6 +213,7 @@
     health: 100
     strength: 15
   behaviors:
+    allattributes: 0
     combat: true
     aggro:
       delay: 5

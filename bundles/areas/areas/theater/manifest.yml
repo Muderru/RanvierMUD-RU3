@@ -1,0 +1,8 @@
+title: "Театр"
+metadata:
+  author: "Туор"
+  minlevel: 20
+  maxlevel: 25
+behaviors:
+  progressive-respawn:
+    interval: 1200

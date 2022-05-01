@@ -1,0 +1,27 @@
+---
+- id: werewolf
+  title: Оборотень в городе
+  level: 20
+  repeatable: true
+  autoComplete: true
+  description: >-
+    Бургомистр рассказывает вам, что в округе поселился оборотень и он убил уже
+    нескольких горожан. Местные жители в ужасе, чтобы успокоить их надо убить
+    это чудовище.
+  completionMessage: |-
+    Теперь оборотень не представляет угрозы для города.
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить оборотня
+        npc: 'arlend:werewolf'
+        count: 1
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 50
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100

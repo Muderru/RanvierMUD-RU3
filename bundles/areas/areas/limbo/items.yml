@@ -11,6 +11,8 @@
   roomDesc: "Ржавый меч"
   keywords: [ "меч", "ржавый", "металлический", "древний" ]
   description: "Вы видите древний ржавый меч длиной в человеческую руку. Кожаные ремешки на рукояти едва держатся. Это не самое надежное оружие."
+  behaviors:
+    decay_on_drop: true
   metadata:
     level: 1
     slot: 'оружие'
@@ -82,8 +84,10 @@
   roomDesc: "Тренировочный меч"
   keywords: ["меч", "тренировочный", "железный"]
   description: "Здоровенный железный меч, лезвие его затуплено и годится он только для тренировок."
+  behaviors:
+    decay_on_drop: true
   metadata:
-    quality: rare
+    quality: common
     slot: "оружие"
     itemLevel: 10
     level: 5
@@ -109,6 +113,8 @@
   roomDesc: "Кожаный жилет"
   keywords: ["кожаный", "жилет"]
   description: "Вы видите дырявый кожаный жилет. Он практически не защитит ваше тело."
+  behaviors:
+    decay_on_drop: true
   metadata:
     quality: common
     slot: "тело"
@@ -192,7 +198,7 @@
     level: 10
     minDamage: 13
     maxDamage: 26
-    speed: 2.8
+    speed: 2.2
     specialEffects:
       - "Эффект при ударе: исцеляет на 25% от нанесенного урона."
     stats:
@@ -211,6 +217,8 @@
   roomDesc: "Деревянный щит"
   keywords: ["щит", "деревянный"]
   description: "Это самый обычный деревянный щит. Его металлические части сильно проржавели, а кожаные ручки едва держатся."
+  behaviors:
+    decay_on_drop: true
   metadata:
     quality: common
     slot: "щит"

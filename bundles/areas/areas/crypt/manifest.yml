@@ -1,0 +1,8 @@
+title: "Крипта"
+metadata:
+  author: "Туор"
+  minlevel: 25
+  maxlevel: 30
+behaviors:
+  progressive-respawn:
+    interval: 1800

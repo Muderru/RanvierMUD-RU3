@@ -1,0 +1,245 @@
+- id: 10900
+  name: "козья шкура"
+  rname: "козьей шкуры"
+  dname: "козьей шкуре"
+  vname: "козью шкуру"
+  tname: "козьей шкурой"
+  pname: "козьей шкуре"
+  gender: "female"
+  type: ARMOR
+  roomDesc: "Изъеденная молью козья шкура лежит тут."
+  keywords: ["шкура", "козья"]
+  description: >-
+    Вы видите изъеденную молью козью шкуру, какие обычно одевают пастухи при
+    выпасе скота. В городе эту шкуру лучше не одевать, если не хотите чтоб вас
+    приняли за деревенщину.
+  metadata:
+    quality: common
+    slot: "тело"
+    level: 5
+    itemLevel: 5
+    stats:
+      armor: 2
+      health: 25
+    sellable:
+      value: 50
+      currency: золото
+- id: 10901
+  name: "коготь росомахи"
+  rname: "когтя росомахи"
+  dname: "когтю росомахи"
+  vname: "коготь росомахи"
+  tname: "когтем росомахи"
+  pname: "когте росомахи"
+  gender: "male"
+  roomDesc: "Черный острый коготь росомахи лежит тут."
+  damageVerb: "огрел"
+  description: >-
+    Это обычная длинная, крепкая палка, на одном из концов которой видны остатки ила.
+  keywords: ["коготь"]
+  type: WEAPON
+  metadata:
+    level: 5
+    slot: 'оружие'
+    itemLevel: 5
+    quality: common
+    minDamage: 10
+    maxDamage: 31
+    speed: 2.6
+    stats:
+      cutting_damage: 1
+    sellable:
+      value: 50
+      currency: золото
+- id: 10902
+  name: "рваный грязный плащ"
+  rname: "рваного грязного плаща"
+  dname: "рваному грязному плащу"
+  vname: "рваный грязный плащ"
+  tname: "рваным грязным плащом"
+  pname: "рваном грязном плаще"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Рваный грязный плащ лежит тут."
+  keywords: ["рваный", "грязный", "плащ"]
+  description: >-
+    От этого изодранного в клочья плаща воняет так, что любое цивилизованное
+    существо убежит от него за многие мили. По всей видимости, этот плащ
+    использовало в качестве подстилки какое-то животное.
+  metadata:
+    quality: common
+    slot: "плечи"
+    level: 5
+    itemLevel: 5
+    stats:
+      armor: 2
+      mana: 15
+    sellable:
+      value: 50
+      currency: золото
+- id: 10903
+  name: "статуя имперского воина"
+  rname: "статуи имперского воина"
+  dname: "статуе имперского воина"
+  vname: "статую имперского воина"
+  tname: "статуей имперского воина"
+  pname: "статуе имперского воина"
+  gender: "male"
+  roomDesc: "Статуя имперского воина стоит здесь."
+  description: >-
+    Немного оббитая статуя имперского воина стоит посреди площади. Может быть,
+    она вызвала у орков меньше ярости, чем остальные статуи, или же просто
+    оказалась прочнее - однако выглядит она довольно хорошо. Воин стоит, с мечом
+    в руке, сияя глазами, готовый броситься в атаку. На секунду, вам показалось,
+    что в том, как его рука держит меч, есть что-то странное... Хотя нет, вроде
+    бы, показалось...
+  keywords: ["статуя"]
+  metadata:
+    noPickup: true
+- id: 10909
+  type: CONTAINER
+  name: "полуразложившийся труп"
+  rname: "полуразложившегося трупа"
+  dname: "полуразложившемуся трупу"
+  vname: "полуразложившийся труп"
+  tname: "полуразложившимся трупом"
+  pname: "полуразложившемся трупе"
+  gender: "male"
+  roomDesc: "Полуразложившийся труп лежит тут."
+  description: >-
+    Этому бедняге кто-то проломил череп и его труп уже частично обгладали крысы.
+  keywords: ["полуразложившийся", "труп"]
+  items: ["eastroad:10910"]
+  closed: false
+  locked: false
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 10910
+  name: "старый перстень"
+  rname: "старого перстня"
+  dname: "старому перстню"
+  vname: "старый перстень"
+  tname: "старым перстнем"
+  pname: "старом перстне"
+  gender: "male"  
+  roomDesc: "Старый перстень валяется тут."
+  keywords: ["старый", "перстень"]
+  description: >-
+    Этот старый перстень так сильно погнулся, что его уже не надеть на палец.
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 10904
+  type: CONTAINER
+  name: "старый сундук"
+  rname: "старого сундука"
+  dname: "старому сундуку"
+  vname: "старый сундук"
+  tname: "старым сундуком"
+  pname: "старом сундуке"
+  gender: "male"
+  roomDesc: "В дальнем углу стоит старый сундук."
+  description: >-
+    Сложно сказать насколько этот сундук старый, может быть сто или двести лет,
+    но замок его по-прежнему надёжен и прочен.
+  keywords: ["старый", "сундук"]
+  items: ["eastroad:10906", "spdfor:66717"]
+  closed: true
+  locked: true
+  lockedBy: "eastroad:10905"
+  maxItems: 5
+  metadata:
+    noPickup: true
+- id: 10905
+  name: "маленький ключ"
+  rname: "маленького ключа"
+  dname: "маленькому ключу"
+  vname: "маленький ключ"
+  tname: "маленьким ключом"
+  pname: "маленьком ключе"
+  gender: "male"
+  keywords: ["ключ", "маленький"]
+  roomDesc: "Маленький ключ лежит тут."
+  description: >-
+    Маленький стальной ключик, по всему видно - работа настоящего мастера.
+    Судя по замысловатости ключа, замок, им открываемый - едва ли кому-то
+    удастся взломать...
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 10911
+  name: "труп младенца"
+  rname: "трупа младенца"
+  dname: "трупу младенца"
+  vname: "труп младенца"
+  tname: "трупом младенца"
+  pname: "трупе младенца"
+  gender: "male"
+  keywords: ["труп"]
+  roomDesc: "Труп младенца лежит тут."
+  description: >-
+    Младенец умер совсем недавно, вам не хватило пары часов, чтобы спасти его.
+  behaviors:
+    decay_on_drop: true
+    decay_in_inventory:
+      duration: 600
+  metadata:
+    quality: common
+- id: 10906
+  name: "затупившийся нож"
+  rname: "затупившегося ножа"
+  dname: "затупившемуся ножу"
+  vname: "затупившийся нож"
+  tname: "затупившимся ножом"
+  pname: "затупившемся ноже"
+  gender: "male"
+  roomDesc: "Затупившийся нож лежит тут."
+  damageVerb: "резанул"
+  description: >-
+    Его надо-бы подточить.
+  keywords: ["нож", "затупившийся"]
+  type: WEAPON
+  metadata:
+    level: 7
+    slot: 'оружие'
+    itemLevel: 7
+    quality: common
+    minDamage: 10
+    maxDamage: 40
+    speed: 2.4
+    stats:
+      cutting_damage: 2
+    sellable:
+      value: 50
+      currency: золото
+- id: 10907
+  name: "учебник анатомии"
+  rname: "учебника анатомии"
+  dname: "учебнику анатомии"
+  vname: "учебник анатомии"
+  tname: "учебником анатомии"
+  pname: "учебнике анатомии"
+  gender: "male"
+  type: ARMOR
+  roomDesc: "Учебник анатомии лежит тут."
+  keywords: ["учебник", "книга"]
+  description: >-
+    В этом учебнике детально разобрано внутреннее строение человека, с
+    красочными картинками.
+  metadata:
+    quality: common
+    slot: "левая рука"
+    level: 5
+    itemLevel: 5
+    stats:
+      intellect: 2
+    sellable:
+      value: 100
+      currency: золото

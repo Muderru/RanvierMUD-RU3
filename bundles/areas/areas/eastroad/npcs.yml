@@ -1,0 +1,448 @@
+- id: 10900
+  keywords: ["дикая", "коза"]
+  level: 8
+  name: "дикая коза"
+  rname: "дикой козы"
+  dname: "дикой козе"
+  vname: "дикую козу"
+  tname: "дикой козой"
+  pname: "дикой козе"
+  gender: "female"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'боднула'
+  travelVerbIn: "прискакала"
+  travelVerbOut: "ускакала"
+  description: >-
+    Вы видите дикую козу с красивой мягкой шерстью, она нежно смотрит вам в ответ, как будто чего-то ожидая.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    piercing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: ['bash']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "eastroad:10900": 15
+- id: 10901
+  keywords: ["руинная", "крыса"]
+  level: 6
+  name: "руинная крыса"
+  rname: "руинной крысы"
+  dname: "руинной крысе"
+  vname: "руинную крысу"
+  tname: "руинной крысой"
+  pname: "руинной крысе"
+  gender: "female"
+  min_damage: 15
+  max_damage: 40
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Редко когда встретишь такую крупную особь, несомненно, что крыса способна
+    постоять за себя в бою. Осознавая это она зло смотрит на вас маленькими
+    красными глазками.
+  attributes:
+    health: 250
+    mana: 150
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 35
+      areaRestricted: true
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 10902
+  keywords: ["одичавшая", "собака"]
+  level: 9
+  name: "одичавшая собака"
+  rname: "одичавшей собаки"
+  dname: "одичавшей собаке"
+  vname: "одичавшую собаку"
+  tname: "одичавшей собакой"
+  pname: "одичавшей собаке"
+  gender: "female"
+  min_damage: 20
+  max_damage: 45
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Вы видите самую обыкновенную дворняжку с торчащими из под шкуры ребрами,
+    каких много в любом городе. Здесь, среди руин она питается по-видимому в
+    основном мелкими грызунами, что и позволяет ей не подохнуть с голоду.
+  attributes:
+    health: 370
+    mana: 250
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['bash']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 20
+- id: 10903
+  keywords: ["крупная", "ласка"]
+  level: 8
+  name: "крупная ласка"
+  rname: "крупной ласки"
+  dname: "крупной ласке"
+  vname: "крупную ласку"
+  tname: "крупной лаской"
+  pname: "крупной ласке"
+  gender: "female"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'оцарапала'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Эта ласка благодаря своей гибкости и ловкости будет опасным противником
+    для любого кто неопытен в обращении с оружием. Несомненно, что ласка умелая
+    охотница, которая всегда без проблем найдет себе добычу.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    crushing_damage: 2
+    crushing_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: ['smite']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 10904
+  keywords: ["свирепая", "росомаха"]
+  level: 8
+  name: "свирепая росомаха"
+  rname: "свирепой росомахи"
+  dname: "свирепой росомахе"
+  vname: "свирепую росомаху"
+  tname: "свирепой росомахой"
+  pname: "свирепой росомахе"
+  gender: "female"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'ободрала'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Эти животные славятся своей свирепостью, из-за чего росомах побаиваются
+    даже намного более крупные животные. А, у этой, вдобавок, еще и острые,
+    отточенные когти.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    piercing_damage: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: ['parry']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+      pools:
+        - "eastroad:10901": 15
+- id: 10905
+  keywords: ["слепая", "бабка", "повитуха"]
+  level: 10
+  name: "слепая бабка-повитуха"
+  rname: "слепой бабки-повитухи"
+  dname: "слепой бабке-повитухе"
+  vname: "слепую бабку-повитуху"
+  tname: "слепой бабкой-повитухой"
+  pname: "слепой бабке-повитухе"
+  gender: "female"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'огрела'
+  travelVerbIn: "пришла"
+  travelVerbOut: "ушла"
+  description: >-
+    Наверно эта бабка многое повидала на своем веку, по крайней мере, выглядит
+    она лет на двести, и наверно уже никому неизвестно, как давно она помешалась.
+    Бабка щурится на вас слепыми глазами и пытается что-то сказать беззубым ртом.
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    crushing_damage: 2
+    armor: 2
+  script: "crazy"
+  metadata:
+    accepts: ['eastroad:10911']
+    trainer:
+      spell: 'blind'
+      cost: 4
+      requirements: []
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    capable:
+      skills: []
+      spells: ['heal']
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 50
+- id: 10906
+  keywords: ["хромая", "крыса"]
+  level: 10
+  name: "хромая крыса"
+  rname: "хромой крысы"
+  dname: "хромой крысе"
+  vname: "хромую крысу"
+  tname: "хромой крысой"
+  pname: "хромой крысе"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'укусила'
+  travelVerbIn: "прибежала"
+  travelVerbOut: "убежала"
+  description: >-
+    Возможно, это самая большая и опасная крыса из всех, которых вам приходилось видеть.
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    cold_damage: 2
+    lightning_damage: 2
+    armor: 2
+  behaviors:
+    allattributes: 1
+    combat: true
+    aggro:
+      delay: 1
+      towards:
+        players: true
+        npcs: false
+    capable:
+      skills: []
+      spells: ['poison']
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35
+      pools:
+        - "eastroad:10911": 100
+        - "eastroad:10902": 50
+- id: 10907
+  keywords: ["черный", "гриф"]
+  level: 8
+  name: "черный гриф"
+  rname: "черного грифа"
+  dname: "черному грифу"
+  vname: "черного грифа"
+  tname: "черным грифом"
+  pname: "черном грифе"
+  gender: "male"
+  min_damage: 15
+  max_damage: 45
+  damageVerb: 'клюнул'
+  travelVerbIn: "прилетел"
+  travelVerbOut: "улетел"
+  description: >-
+    Вы видите крупную уродливую птицу любящую полакомиться мертвечиной. Но, при
+    возможности, гриф может напасть и на живую добычу, ослабленную, например,
+    болезнью.
+  attributes:
+    health: 330
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    piercing_damage: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wimpy: true
+    wander:
+      interval: 40
+      areaRestricted: true
+    capable:
+      skills: ['lunge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 5
+          max: 15
+- id: 10908
+  keywords: ["серый", "волк"]
+  level: 9
+  name: "серый волк"
+  rname: "серого волка"
+  dname: "серому волку"
+  vname: "серого волка"
+  tname: "серым волком"
+  pname: "сером волке"
+  gender: "male"
+  min_damage: 20
+  max_damage: 45
+  damageVerb: 'укусил'
+  travelVerbIn: "прибежал"
+  travelVerbOut: "убежал"
+  description: >-
+    Вы видите самого обычного волка, каких много в мире Среднеземья.
+  attributes:
+    health: 370
+    mana: 250
+    strength: 20
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    cutting_resistance: 2
+    armor: 1
+  behaviors:
+    allattributes: 1
+    combat: true
+    wander:
+      interval: 45
+      areaRestricted: true
+    capable:
+      skills: ['rend']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 10
+          max: 20
+- id: 10909
+  keywords: ["орк", "мародер"]
+  level: 10
+  name: "орк-мародер"
+  rname: "орка-мародера"
+  dname: "орку-мародеру"
+  vname: "орка-мародера"
+  tname: "орком-мародером"
+  pname: "орке-мародере"
+  gender: "male"
+  min_damage: 25
+  max_damage: 45
+  damageVerb: 'резанул'
+  travelVerbIn: "пришёл"
+  travelVerbOut: "ушёл"
+  description: >-
+    Орки никогда не славились красотой, а этот даже среди своих собратьев
+    будет считаться уродом. Это однако не калека, и орк без труда сможет
+    постоять за себя.
+  attributes:
+    health: 400
+    mana: 250
+    strength: 25
+    agility: 25
+    intellect: 10
+    stamina: 20
+    critical: 2
+    crushing_damage: 2
+    armor: 2
+  script: "ring"
+  metadata:
+    accepts: ['eastroad:10910']
+    trainer:
+      skill: 'stab'
+      cost: 3
+      requirements: ['skill_daggers']
+  behaviors:
+    allattributes: 1
+    combat: true
+    memory: true
+    wander:
+      interval: 160
+      areaRestricted: true
+    capable:
+      skills: ['judge']
+      spells: []
+    lootable:
+      currencies:
+        золото:
+          min: 20
+          max: 35

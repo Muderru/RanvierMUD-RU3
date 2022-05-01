@@ -1,0 +1,1626 @@
+- id: 34700
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Чуть севернее проходит Великий Западный тракт, ведущий сначала от Гурбы до
+    Гвендоленского моста, а потом пересекающий все Среднеземье. С запада и юга поле
+    огибает дорога к Арлендскому парому.
+  light: 50
+  exits:
+    - roomId: "tookland:34756"
+      direction: запад
+    - roomId: "tookland:34702"
+      direction: восток
+    - roomId: "tookland:34758"
+      direction: юг
+- id: 34701
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите на краю обширной холмистой равнины - Укролья, которую с запада и
+    севера огибает Великий Западный тракт, выйдя на который, можно достичь более
+    обжитых земель.
+  light: 50
+  exits:
+    - roomId: "tookland:34797"
+      direction: север
+    - roomId: "tookland:34704"
+      direction: восток
+    - roomId: "tookland:34702"
+      direction: юг
+- id: 34702
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Со всех сторон вас обступает необычно высокая луговая трава, рост которой
+    обусловлен превосходной, плодородной почвой и теплым, мягким климатом, чем с
+    успехом пользуются немногочисленные местные фермеры.
+  light: 50
+  exits:
+    - roomId: "tookland:34701"
+      direction: север
+    - roomId: "tookland:34700"
+      direction: запад
+    - roomId: "tookland:34705"
+      direction: восток
+    - roomId: "tookland:34703"
+      direction: юг
+- id: 34703
+  title: "Зеленые холмы"
+  type: ['луг']
+  description: >-
+    Вы поднялись на невысокий пологий холм, на вершине которого растет
+    искривленная одинокая сосна. Повсюду на севере и востоке, насколько может охватить
+    ваш взгляд лежит плодородная холмистая равнина.
+  light: 50
+  npcs: ["tookland:34700"]
+  exits:
+    - roomId: "tookland:34702"
+      direction: север
+    - roomId: "tookland:34758"
+      direction: запад
+    - roomId: "tookland:34706"
+      direction: восток
+    - roomId: "tookland:34760"
+      direction: юг
+- id: 34704
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите на краю зеленого моря луговых трав, ограниченного на севере Великим
+    Западным трактом, по которому время от времени проходят торговые караваны.
+  light: 50
+  npcs: ["tookland:34704"]
+  exits:
+    - roomId: "tookland:34796"
+      direction: север
+    - roomId: "tookland:34701"
+      direction: запад
+    - roomId: "tookland:34707"
+      direction: восток
+    - roomId: "tookland:34705"
+      direction: юг
+- id: 34705
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Во все стороны от вас расходится обширная холмистая равнина - Укролье. Вдыхаемый
+    аромат полевых трав и трескотня насекомых, как будто просят, чтобы вы остались здесь
+    подольше.
+  light: 50
+  npcs: ["tookland:34705"]
+  exits:
+    - roomId: "tookland:34704"
+      direction: север
+    - roomId: "tookland:34702"
+      direction: запад
+    - roomId: "tookland:34708"
+      direction: восток
+    - roomId: "tookland:34706"
+      direction: юг
+- id: 34706
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Все, что вы можете приметить тут из достопримечательностей, это пологий холм на
+    западе с одиноко растущей искривленной сосной, да проходящая на юге дорога к
+    Арлендскому парому.
+  light: 50
+  npcs: ["tookland:34702"]
+  exits:
+    - roomId: "tookland:34705"
+      direction: север
+    - roomId: "tookland:34703"
+      direction: запад
+    - roomId: "tookland:34709"
+      direction: восток
+    - roomId: "tookland:34761"
+      direction: юг
+- id: 34707
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы находитесь к югу от основной торговой артерии в этом регионе - Великого
+    Западного тракта, по которому то и дело проходят богатые караваны. Все остальное
+    пространство, насколько вы можете заметить, занимает обширная холмистая равнина.
+  light: 50
+  exits:
+    - roomId: "tookland:34795"
+      direction: север
+    - roomId: "tookland:34704"
+      direction: запад
+    - roomId: "tookland:34712"
+      direction: восток
+    - roomId: "tookland:34708"
+      direction: юг
+- id: 34708
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Со всех сторон вас закрывает высокая луговая трава, в которой может спрятаться
+    не только небольшое безобидное животное, но и, пожалуй, даже небольшой передовой
+    отряд орков, хотя, конечно, шанс встретить их ничтожно мал.
+  light: 50
+  exits:
+    - roomId: "tookland:34707"
+      direction: север
+    - roomId: "tookland:34705"
+      direction: запад
+    - roomId: "tookland:34713"
+      direction: восток
+    - roomId: "tookland:34709"
+      direction: юг
+- id: 34709
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    На этой равнине компанию вам составляют, в основном, лишь многочисленные кролики
+    да забавные суслики, крайне удивленные вашим присутствием здесь. Не часто их
+    посещают столь знатные гости.
+  light: 50
+  npcs: ["tookland:34703"]
+  exits:
+    - roomId: "tookland:34708"
+      direction: север
+    - roomId: "tookland:34706"
+      direction: запад
+    - roomId: "tookland:34714"
+      direction: восток
+    - roomId: "tookland:34710"
+      direction: юг
+- id: 34710
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Среди множества самых разнообразных трав, состоящих в основном из представителей
+    семейства злаковых, встречается множество и других видов. Так что, при желании, тут
+    можно найти практически любой цветок, поговаривают даже, что тут растет и
+    королевская душица.
+  light: 50
+  exits:
+    - roomId: "tookland:34709"
+      direction: север
+    - roomId: "tookland:34761"
+      direction: запад
+    - roomId: "tookland:34715"
+      direction: восток
+    - roomId: "tookland:34711"
+      direction: юг
+- id: 34711
+  title: "Зеленые холмы"
+  type: ['луг']
+  description: >-
+    Не без труда вы добрались до вершины этого холма, но усилия ваши не прошли
+    даром, вам открылась удивительная по красоте картина петляющей на юге среди холмов
+    дороги до парома через Гвендолен, как его называют в этих местах.
+  light: 50
+  npcs: ["tookland:34706"]
+  exits:
+    - roomId: "tookland:34710"
+      direction: север
+    - roomId: "tookland:34762"
+      direction: запад
+    - roomId: "tookland:34716"
+      direction: восток
+    - roomId: "tookland:34764"
+      direction: юг
+- id: 34712
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите на краю, занимающей ощутимую часть Среднеземья, равнины, прозванной
+    проживающими тут фермерами Укрольем. На севере проходит Великий Западный тракт.
+  light: 50
+  exits:
+    - roomId: "tookland:34794"
+      direction: север
+    - roomId: "tookland:34707"
+      direction: запад
+    - roomId: "tookland:34717"
+      direction: восток
+    - roomId: "tookland:34713"
+      direction: юг
+- id: 34713
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Отсюда, во все стороны расходится обширная холмистая равнина, прибежище
+    сотен видов животных и птиц, старающихся торопливо скрыться с ваших глаз, едва
+    приметив, что вы подошли достаточно близко.
+  light: 50
+  npcs: ["tookland:34701"]
+  exits:
+    - roomId: "tookland:34712"
+      direction: север
+    - roomId: "tookland:34708"
+      direction: запад
+    - roomId: "tookland:34718"
+      direction: восток
+    - roomId: "tookland:34714"
+      direction: юг
+- id: 34714
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите рядом с большим валуном, на котором явственно видны следы его
+    обработки. Присмотревшись внимательнее можно заметить грубое изображение лица.
+    Однако, время, дожди и ветер не пощадили этот древний памятник, и теперь уже
+    невозможно определить, что эта статуя изображала и какому народу принадлежала.
+  light: 50
+  items:
+    - id: "tookland:34700"
+      respawnChance: 100
+      replaceOnRespawn: true
+  script: 'idol'
+  metadata:
+    commands: [ 'пожертвовать' ]
+  exits:
+    - roomId: "tookland:34713"
+      direction: север
+    - roomId: "tookland:34709"
+      direction: запад
+    - roomId: "tookland:34719"
+      direction: восток
+    - roomId: "tookland:34715"
+      direction: юг
+- id: 34715
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Плодородная почва и мягкий климат этих мест, обеспечивают особую сочность
+    полевым травам, идущим в пищу множествам грызунов и травоядным, которые сами, в
+    свою очередь, служат пищей нескольким видам хищников. Южнее равнина сменяется
+    постепенно рощицей лиственных деревьев.
+  light: 50
+  exits:
+    - roomId: "tookland:34714"
+      direction: север
+    - roomId: "tookland:34710"
+      direction: запад
+    - roomId: "tookland:34720"
+      direction: восток
+    - roomId: "tookland:34716"
+      direction: юг
+- id: 34716
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите среди отдельных рощиц деревьев. На севере расположено Укролье, а на
+    юге проходит грунтовая дорога. Восточнее рощицы деревьев расположены так близко
+    друг к другу, что практически сливаются в единый редкий лес.
+  light: 50
+  exits:
+    - roomId: "tookland:34715"
+      direction: север
+    - roomId: "tookland:34711"
+      direction: запад
+    - roomId: "tookland:34721"
+      direction: восток
+    - roomId: "tookland:34765"
+      direction: юг
+- id: 34717
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Севернее вас проходит Великий Западный тракт, выйдя на который можно попасть в
+    Гурбу или, перейдя Гвендоленский мост, в другие города Среднеземья.
+  light: 50
+  exits:
+    - roomId: "tookland:34793"
+      direction: север
+    - roomId: "tookland:34712"
+      direction: запад
+    - roomId: "tookland:34722"
+      direction: восток
+    - roomId: "tookland:34718"
+      direction: юг
+- id: 34718
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Со всех сторон вас обступает высокая, выше человеческого роста, трава, которую,
+    вероятно, никто и никогда не косил, а это говорит о том, что поблизости нет никаких
+    поселений.
+  light: 50
+  exits:
+    - roomId: "tookland:34717"
+      direction: север
+    - roomId: "tookland:34713"
+      direction: запад
+    - roomId: "tookland:34723"
+      direction: восток
+    - roomId: "tookland:34719"
+      direction: юг
+- id: 34719
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите посреди обширной холмистой равнины - Укролья. На западе, если
+    раздвинуть высокую луговую траву, можно заметить большой валун странной формы.
+  light: 50
+  npcs: ["tookland:34702"]
+  exits:
+    - roomId: "tookland:34718"
+      direction: север
+    - roomId: "tookland:34714"
+      direction: запад
+    - roomId: "tookland:34724"
+      direction: восток
+    - roomId: "tookland:34720"
+      direction: юг
+- id: 34720
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы находите на краю обширной равнины - Укролья, на юге она постепенно сменяется
+    редким смешанным лесом, а на востоке местность начинает заболачиваться.
+  light: 50
+  npcs: ["tookland:34712"]
+  exits:
+    - roomId: "tookland:34719"
+      direction: север
+    - roomId: "tookland:34715"
+      direction: запад
+    - roomId: "tookland:34725"
+      direction: восток
+    - roomId: "tookland:34721"
+      direction: юг
+- id: 34721
+  title: "Редкий лес"
+  type: ['лес']
+  description: >-
+    Отдельные рощицы деревьев здесь начинают располагаться так близко друг к другу,
+    что практически сливаются в единый смешанный лес. Восточнее проходит дорога к
+    Арлендскому парому, а на юге находится дорожная развилка, называемая Лесным углом.
+  light: 50
+  npcs: ["tookland:34704"]
+  exits:
+    - roomId: "tookland:34720"
+      direction: север
+    - roomId: "tookland:34716"
+      direction: запад
+    - roomId: "tookland:34768"
+      direction: восток
+    - roomId: "tookland:34766"
+      direction: юг
+- id: 34722
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите южнее Великого Западного тракта, на краю Укролья. В нескольких местах
+    вокруг видны проплешины скошенной травы, видимо недалеко деревня или ферма.
+  light: 50
+  exits:
+    - roomId: "tookland:34792"
+      direction: север
+    - roomId: "tookland:34717"
+      direction: запад
+    - roomId: "tookland:34726"
+      direction: восток
+    - roomId: "tookland:34723"
+      direction: юг
+- id: 34723
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Тут, из под холма, бьет ручей с кристально-чистой, холодной водой, из которого
+    можно без опаски утолить жажду и наполнить свою флягу. По вытоптанной вокруг траве,
+    вероятно, сюда, на водопой, часто приходит множество животных.
+  light: 50
+  npcs: ["tookland:34706"]
+  exits:
+    - roomId: "tookland:34722"
+      direction: север
+    - roomId: "tookland:34718"
+      direction: запад
+    - roomId: "tookland:34727"
+      direction: восток
+    - roomId: "tookland:34724"
+      direction: юг
+- id: 34724
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите на южном краю Укролья, дальше находится заболоченная земля с редкими
+    зарослями кустарника среди хвоща и осоки.
+  light: 50
+  exits:
+    - roomId: "tookland:34723"
+      direction: север
+    - roomId: "tookland:34719"
+      direction: запад
+    - roomId: "tookland:34728"
+      direction: восток
+    - roomId: "tookland:34725"
+      direction: юг
+- id: 34725
+  title: "Болотище"
+  type: ['болото']
+  description: >-
+    Болотистая почва под ногами громко чавкает при каждом вашем шаге, а следы быстро
+    заполняются мутной водой. К счастью, южнее более сухо из-за насыпной почвы и
+    гравия, там проходит дорога к Арлендскому парому.
+  light: 50
+  npcs: ["tookland:34700"]
+  exits:
+    - roomId: "tookland:34724"
+      direction: север
+    - roomId: "tookland:34720"
+      direction: запад
+    - roomId: "tookland:34729"
+      direction: восток
+    - roomId: "tookland:34768"
+      direction: юг
+- id: 34726
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    На запад, юг и восток уходит бескрайняя холмистая равнина, населенная множеством
+    видов животных и птиц. Севернее же проходит Великий Западный тракт.
+  light: 50
+  exits:
+    - roomId: "tookland:34791"
+      direction: север
+    - roomId: "tookland:34722"
+      direction: запад
+    - roomId: "tookland:34731"
+      direction: восток
+    - roomId: "tookland:34727"
+      direction: юг
+- id: 34727
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    До сих пор, среди высокой травы, вам попадались на глаза лишь вездесущие
+    насекомые, всякие там кузнечики, цикады. Но, в таких зарослях легко могут
+    скрываться существа покрупнее и намного более опасные.
+  light: 50
+  exits:
+    - roomId: "tookland:34726"
+      direction: север
+    - roomId: "tookland:34723"
+      direction: запад
+    - roomId: "tookland:34732"
+      direction: восток
+    - roomId: "tookland:34728"
+      direction: юг
+- id: 34728
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    С юга постоянно тянет влажностью, там расположено болото, заросшее осокой и
+    камышами. На севере, востоке и западе лежит большая холмистая равнина - Укролье.
+  light: 50
+  npcs: ["tookland:34705"]
+  exits:
+    - roomId: "tookland:34727"
+      direction: север
+    - roomId: "tookland:34724"
+      direction: запад
+    - roomId: "tookland:34733"
+      direction: восток
+    - roomId: "tookland:34729"
+      direction: юг
+- id: 34729
+  title: "Болотище"
+  type: ['болото']
+  description: >-
+    Вы стоите на кочке среди камышей и редких чахлых деревьев. С юга и востока эту
+    часть болота огибает насыпная дорога, а на севере до самого горизонта лежит
+    Укролье.
+  light: 50
+  npcs: ["tookland:34703"]
+  exits:
+    - roomId: "tookland:34728"
+      direction: север
+    - roomId: "tookland:34725"
+      direction: запад
+    - roomId: "tookland:34771"
+      direction: восток
+    - roomId: "tookland:34769"
+      direction: юг
+- id: 34730
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы стоите на луге с сочной, высокой травой, которую так любит крупный и мелкий
+    рогатый скот. С запада и севера луг огибает Великий Западный тракт.
+  light: 50
+  exits:
+    - roomId: "tookland:34789"
+      direction: север
+    - roomId: "tookland:34791"
+      direction: запад
+    - roomId: "tookland:34734"
+      direction: восток
+    - roomId: "tookland:34731"
+      direction: юг
+- id: 34731
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите на одном из поросших высокой травой холмов, типичных для этого
+    региона. На востоке находится единственное дерево в округе, хотя и оно, похоже, уже
+    на половину высохло.
+  light: 50
+  exits:
+    - roomId: "tookland:34730"
+      direction: север
+    - roomId: "tookland:34726"
+      direction: запад
+    - roomId: "tookland:34735"
+      direction: восток
+    - roomId: "tookland:34732"
+      direction: юг
+- id: 34732
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Хотя обитателей равнины не так то просто обнаружить, они, тем не менее, каким-то
+    образом создают ужасный шум. Постоянно слышится трескотня кузнечиков, скрипы цикад,
+    свист сусликов. Похоже жизнь тут бьет ключом.
+  light: 50
+  npcs: ["tookland:34701"]
+  exits:
+    - roomId: "tookland:34731"
+      direction: север
+    - roomId: "tookland:34727"
+      direction: запад
+    - roomId: "tookland:34736"
+      direction: восток
+    - roomId: "tookland:34733"
+      direction: юг
+- id: 34733
+  title: "Укролье"
+  type: ['луг']
+  description: >-
+    Вы стоите на вершине одинокого пологого холма, нависшего над грунтовой дорогой,
+    огибающей его с востока и юга. На севере лежит обширная равнина - Укролье.
+  light: 50
+  exits:
+    - roomId: "tookland:34732"
+      direction: север
+    - roomId: "tookland:34728"
+      direction: запад
+    - roomId: "tookland:34773"
+      direction: восток
+    - roomId: "tookland:34771"
+      direction: юг
+- id: 34734
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы находитесь посреди луга с сочной, высокой травой, на котором, судя по
+    многочисленным следам, пастухи часто пасут свой скот. Луга занимают тут почти всю
+    территорию, лишь севернее проходит Великий Западный тракт.
+  light: 50
+  exits:
+    - roomId: "tookland:34788"
+      direction: север
+    - roomId: "tookland:34730"
+      direction: запад
+    - roomId: "tookland:34737"
+      direction: восток
+    - roomId: "tookland:34735"
+      direction: юг
+- id: 34735
+  title: "Около старого дерева"
+  type: ['луг']
+  description: >-
+    Над вашей головой нависли высохшие ветви старого, бугристого дерева, хотя внутри
+    у него, похоже, все еще достаточно крепкая сердцевина, а корни его цепко вцепились
+    в землю. Среди корней вы замечаете большую нору.
+  light: 50
+  script: 'hole'
+  metadata:
+    commands: ['залезть']
+  exits:
+    - roomId: "tookland:34734"
+      direction: север
+    - roomId: "tookland:34731"
+      direction: запад
+    - roomId: "tookland:34738"
+      direction: восток
+    - roomId: "tookland:34736"
+      direction: юг
+- id: 34736
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы стоите севернее пересекающей эти луга дороги к Арлендскому парому, который
+    расположен на несколько миль восточнее. С юга почему-то тянет сыростью и запахом
+    тины, вероятно где-то там находится озеро или болото.
+  light: 50
+  exits:
+    - roomId: "tookland:34735"
+      direction: север
+    - roomId: "tookland:34732"
+      direction: запад
+    - roomId: "tookland:34739"
+      direction: восток
+    - roomId: "tookland:34773"
+      direction: юг
+- id: 34737
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Сочная, зеленая трава на этом поле может быть пищей не только для домашнего
+    скота, но и для многих диких животных. Так что не удивляйтесь, если встретите
+    какое-нибудь диковинное существо.
+  light: 50
+  exits:
+    - roomId: "tookland:34787"
+      direction: север
+    - roomId: "tookland:34734"
+      direction: запад
+    - roomId: "tookland:34740"
+      direction: восток
+    - roomId: "tookland:34738"
+      direction: юг
+- id: 34738
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы стоите посреди зеленого, дающего приют сотням существ, луга. Поблизости,
+    насколько хватает вашего взгляда, нет ни одного признака поселения, лишь на западе
+    возвышается одинокое старое дерево.
+  light: 50
+  npcs: ["tookland:34703"]
+  exits:
+    - roomId: "tookland:34737"
+      direction: север
+    - roomId: "tookland:34735"
+      direction: запад
+    - roomId: "tookland:34741"
+      direction: восток
+    - roomId: "tookland:34739"
+      direction: юг
+- id: 34739
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вокруг вас раскинулись плодородные луга, тянущиеся до самой реки Гвендолен с
+    сочной, высокой травой, служащей пищей для самых разнообразных животных. Чуть южнее
+    проходит грунтовая дорога.
+  light: 50
+  npcs: ["tookland:34700"]
+  exits:
+    - roomId: "tookland:34738"
+      direction: север
+    - roomId: "tookland:34736"
+      direction: запад
+    - roomId: "tookland:34742"
+      direction: восток
+    - roomId: "tookland:34774"
+      direction: юг
+- id: 34740
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы находитесь южнее широкой, проторенной дороги известной как Великий Западный
+    тракт. Все же остальное пространство занимают, как кажется, бескрайние, плодородные
+    луга.
+  light: 50
+  npcs: ["tookland:34705"]
+  exits:
+    - roomId: "tookland:34786"
+      direction: север
+    - roomId: "tookland:34737"
+      direction: запад
+    - roomId: "tookland:34743"
+      direction: восток
+    - roomId: "tookland:34741"
+      direction: юг
+- id: 34741
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Среди всех множества животных часто пасущихся на этих лугах можно встретить как
+    домашних, таких как коровы и овцы, так и диких, таких как не прирученные лошади и
+    зубры, которые знают, что пищи тут с легкостью хватит для всех.
+  light: 50
+  exits:
+    - roomId: "tookland:34740"
+      direction: север
+    - roomId: "tookland:34738"
+      direction: запад
+    - roomId: "tookland:34744"
+      direction: восток
+    - roomId: "tookland:34742"
+      direction: юг
+- id: 34742
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Эти луга, благодаря мягкому климату и плодородной почве, способны приносить
+    урожай по два раза в год, но из-за малой населенности этих мест, лишь их малая
+    часть обрабатывается.
+  light: 50
+  npcs: ["tookland:34706"]
+  exits:
+    - roomId: "tookland:34741"
+      direction: север
+    - roomId: "tookland:34739"
+      direction: запад
+    - roomId: "tookland:34745"
+      direction: восток
+    - roomId: "tookland:34775"
+      direction: юг
+- id: 34743
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    По мере приближения к реке Гвендолен, трава становится все сочнее, и начинают
+    появляться влаголюбивые виды, характерные для берегов рек и озер. О близости реки,
+    также, говорит и прохладный восточный ветерок с неповторимым запахом. На севере
+    же проходит великий Западный тракт.
+  light: 50
+  exits:
+    - roomId: "tookland:34785"
+      direction: север
+    - roomId: "tookland:34740"
+      direction: запад
+    - roomId: "tookland:34746"
+      direction: восток
+    - roomId: "tookland:34744"
+      direction: юг
+- id: 34744
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    На востоке лежит пшеничное поле, признак того, что кто-то решил воспользоваться
+    плодородием этих мест. Они возможно, также, проявят гостеприимство и предложат вам
+    трапезу и ночлег.
+  light: 50
+  npcs: ["tookland:34704"]
+  exits:
+    - roomId: "tookland:34743"
+      direction: север
+    - roomId: "tookland:34741"
+      direction: запад
+    - roomId: "tookland:34747"
+      direction: восток
+    - roomId: "tookland:34745"
+      direction: юг
+- id: 34745
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы находитесь севернее дороги ведущей к Арлендскому парому. На востоке
+    расположено прекрасно обработанное, пшеничное поле. На западе же и севере лежат
+    бескрайние луга.
+  light: 50
+  npcs: ["tookland:34701"]
+  exits:
+    - roomId: "tookland:34744"
+      direction: север
+    - roomId: "tookland:34742"
+      direction: запад
+    - roomId: "tookland:34748"
+      direction: восток
+    - roomId: "tookland:34776"
+      direction: юг
+- id: 34746
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Вы находитесь на узком отрезке луга, зажатом с севера Великим Западным трактом,
+    а с юга пшеничным полем. Вдалеке на востоке виднеется желтоватая поверхность
+    реки Гвендолен.
+  light: 50
+  exits:
+    - roomId: "tookland:34784"
+      direction: север
+    - roomId: "tookland:34743"
+      direction: запад
+    - roomId: "tookland:34750"
+      direction: восток
+    - roomId: "tookland:34747"
+      direction: юг
+- id: 34747
+  title: "Пшеничное поле"
+  description: >-
+    Здесь, с севера и запада поле граничит с тучными лугами, а поскольку невысокая
+    изгородь не является надежной защитой от диких травоядных, хозяин поля, вероятно,
+    часто несет убытки от их набегов, чему он вряд ли рад.
+  light: 50
+  npcs: ["tookland:34702"]
+  exits:
+    - roomId: "tookland:34746"
+      direction: север
+    - roomId: "tookland:34744"
+      direction: запад
+    - roomId: "tookland:34751"
+      direction: восток
+    - roomId: "tookland:34748"
+      direction: юг
+- id: 34748
+  title: "Пшеничное поле"
+  description: >-
+    Вы находитесь посреди обширного поля с пшеницей, в центре которого, на востоке,
+    стоит старая водяная мельница. Похоже дела у мельника идут не очень хорошо, так как
+    колесо мельницы почему-то не вращается.
+  light: 50
+  exits:
+    - roomId: "tookland:34747"
+      direction: север
+    - roomId: "tookland:34745"
+      direction: запад
+    - roomId: "tookland:34752"
+      direction: восток
+    - roomId: "tookland:34749"
+      direction: юг
+- id: 34749
+  title: "Пшеничное поле"
+  description: >-
+    Здесь поле с запада и юга прерывается делающей поворот грунтовой дорогой. Во все
+    остальные стороны тянутся одинаковые ряды желтых колосьев, склонившихся к земле под
+    тяжестью созревшего зерна.
+  light: 50
+  exits:
+    - roomId: "tookland:34748"
+      direction: север
+    - roomId: "tookland:34776"
+      direction: запад
+    - roomId: "tookland:34753"
+      direction: восток
+    - roomId: "tookland:34778"
+      direction: юг
+- id: 34750
+  title: "Тучные луга"
+  type: ['луг']
+  description: >-
+    Тут, на берегу Гвендолен, берущего начало далеко на севере в горном озере и
+    текущего до самого моря, расположены самые плодородные, пойменные луга, созданные
+    ежегодными разливами реки. Чтобы перебраться через реку Гвендолен, лучше всего
+    воспользоваться мостом, построенного чуть севернее.
+  light: 50
+  exits:
+    - roomId: "tookland:34783"
+      direction: север
+    - roomId: "tookland:34746"
+      direction: запад
+    - roomId: "tookland:34751"
+      direction: юг
+- id: 34751
+  title: "Пшеничное поле"
+  description: >-
+    Вы находитесь вблизи северного окончания поля, дальше оно переходит в
+    не обрабатываемый луг. С востока поле ограничено берегом Гвендолен, чуть ниже по
+    течению которого стоит старая водяная мельница.
+  light: 50
+  exits:
+    - roomId: "tookland:34750"
+      direction: север
+    - roomId: "tookland:34747"
+      direction: запад
+- id: 34752
+  title: "Мельница"
+  description: >-
+    Во дворе этой обычной для этих мест мельницы скопилось приличное количество
+    не перемолотого зерна. Похоже мельница не работает уже давно, так как зерно отсырело
+    и уже начало в кое-каких местах подгнивать. По приставленной деревянной лестнице
+    можно залезть на чердак мельницы, а еще спуститься в ее подвал.
+  light: 50
+  npcs: ["tookland:34709"]
+  items:
+    - id: "tookland:34713"
+      respawnChance: 100
+      replaceOnRespawn: true
+  script: 'millstone'
+  metadata:
+    commands: [ 'двигать' ]
+    nomob: true
+  exits:
+    - roomId: "tookland:34755"
+      direction: вверх
+    - roomId: "tookland:34782"
+      direction: вниз
+    - roomId: "tookland:34748"
+      direction: запад
+- id: 34753
+  title: "Пшеничное поле"
+  description: >-
+    На востоке вы видите как величественная река Гвендолен, неторопливо перекатывает свои
+    воды куда-то на, где, как говорят он впадает в море. Если бы не эта река, питающая
+    и удобряющая своим илом берега, окрестные земли не изобиловали бы так жизнью. Эту
+    прекрасную картину лишь немного портит старая водяная мельница, с прохудившейся в
+    нескольких местах крышей.
+  light: 50
+  exits:
+    - roomId: "tookland:34749"
+      direction: запад
+    - roomId: "tookland:34754"
+      direction: юг
+- id: 34754
+  title: "Берег реки"
+  type: ['мелководье']
+  description: >-
+    Вы находитесь на пологом берегу реки Гвендолен севернее парома к Арленду. Все
+    пространство на севере занимает пшеничное поле, которое уже практически готово к
+    сбору урожая.
+  light: 50
+  exits:
+    - roomId: "tookland:34753"
+      direction: север
+    - roomId: "tookland:34778"
+      direction: запад
+    - roomId: "tookland:34780"
+      direction: юг
+- id: 34755
+  title: "Чердак мельницы"
+  description: >-
+    Через несколько дыр в крыше проходит достаточно света, чтобы можно было
+    увидеть, что чердак очень сильно захламлен всякими ненужными вещами, которые
+    называют в этих местах просто хламом. Отсюда можно спуститься в основное помещение по
+    ветхой деревянной лестнице вниз.
+  light: 50
+  items:
+    - id: "tookland:34706"
+      respawnChance: 100
+      replaceOnRespawn: true
+  script: 'trash'
+  metadata:
+    commands: [ 'порыться' ]
+  exits:
+    - roomId: "tookland:34752"
+      direction: вниз
+- id: 34756
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Вы вышли на петляющую среди холмов дорогу, ведущую к парому через крупнейшую в
+    этих местах реку Гвендолен. На севере дорога выводит к Великому Западному тракту.
+    На востоке расположено Укролье, на западе - Ручьевая долина.
+  light: 50
+  exits:
+    - roomId: "tookland:34700"
+      direction: восток
+    - roomId: "tookland:34757"
+      direction: юг
+- id: 34757
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Эта петляющая между зеленых холмов дорога находится в хорошем состоянии, хотя
+    видно, что ею не часто пользуются. Вероятно, за состоянием дороги тщательно следят
+    обитающие в окрестностях фермеры.
+  light: 50
+  exits:
+    - roomId: "tookland:34756"
+      direction: север
+    - roomId: "tookland:34758"
+      direction: восток
+- id: 34758
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Тут дорога в очередной раз делает резкий поворот с запада на юг, огибая высокий,
+    некстати появившийся высокий холм.
+  light: 50
+  exits:
+    - roomId: "tookland:34700"
+      direction: север
+    - roomId: "tookland:34757"
+      direction: запад
+    - roomId: "tookland:34703"
+      direction: восток
+    - roomId: "tookland:34759"
+      direction: юг
+- id: 34759
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Эта дорога ведет из Гурбы, расположенного где-то на северо-западе, к парому
+    через реку Гвендолен. Этой дорогой пользуются не очень часто, и лишь изредка тут
+    можно увидеть случайного путника.
+  light: 50
+  exits:
+    - roomId: "tookland:34758"
+      direction: север
+    - roomId: "tookland:34760"
+      direction: восток
+- id: 34760
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Изредка, с севера, где раскинулось Укролье, на дорогу выбегает какой-нибудь
+    луговой зверь или птица, но увидев вас, они, как правило, спешат как можно скорее
+    скрыться.
+  light: 50
+  exits:
+    - roomId: "tookland:34703"
+      direction: север
+    - roomId: "tookland:34759"
+      direction: запад
+    - roomId: "tookland:34761"
+      direction: восток
+- id: 34761
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    При каждом шаге по дороге, поднимается облако невесомой пыли, которая
+    моментально набивается в глаза, нос, под одежду так, что хочется как можно скорее
+    окунуться в реку, до которой идти еще очень долго.
+  light: 50
+  exits:
+    - roomId: "tookland:34706"
+      direction: север
+    - roomId: "tookland:34760"
+      direction: запад
+    - roomId: "tookland:34710"
+      direction: восток
+    - roomId: "tookland:34762"
+      direction: юг
+- id: 34762
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    С северных, бескрайних равнин ветер часто приносит запахи прелой травы и луговых
+    трав, заставляющие вспомнить о детстве и чувствовать себя моложе. Дорога
+    продолжается тут с севера на юг.
+  light: 50
+  exits:
+    - roomId: "tookland:34761"
+      direction: север
+    - roomId: "tookland:34711"
+      direction: восток
+    - roomId: "tookland:34763"
+      direction: юг
+- id: 34763
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Тут дорога в очередной раз поворачивает, с севера на восток. На западе находится
+    холмистая равнина, а на юге ваш взор преграждает поросшая сосняком гора.
+  light: 50
+  exits:
+    - roomId: "tookland:34762"
+      direction: север
+    - roomId: "tookland:34764"
+      direction: восток
+- id: 34764
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Вы находитесь на относительно прямом участке петляющей среди холмов дороги,
+    ведущей с северо-запада от Великого Западного тракта на восток к Лесному чертогу и
+    парому к Арленду.
+  light: 50
+  exits:
+    - roomId: "tookland:34711"
+      direction: север
+    - roomId: "tookland:34763"
+      direction: запад
+    - roomId: "tookland:34765"
+      direction: восток
+- id: 34765
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    На севере и юге редкие рощицы деревьев постепенно сливаются в густой лес. На
+    западе дорога ведет через зеленые холмы и Укролье к Великому Западному тракту, на
+    востоке находится развилка - Лесной угол.
+  light: 50
+  exits:
+    - roomId: "tookland:34716"
+      direction: север
+    - roomId: "tookland:34764"
+      direction: запад
+    - roomId: "tookland:34766"
+      direction: восток
+    - roomId: "woodhall:34800"
+      direction: юг
+- id: 34766
+  title: "Лесной угол"
+  type: ['лес']
+  description: >-
+    Тут, от основной дороги, ведущей к Арлендскому парому, ответвляется еле
+    заметная тропинка ведущая куда-то на юг, в глубь Лесного чертога.
+  light: 50
+  exits:
+    - roomId: "tookland:34721"
+      direction: север
+    - roomId: "tookland:34765"
+      direction: запад
+    - roomId: "tookland:34767"
+      direction: восток
+    - roomId: "woodhall:34801"
+      direction: юг
+- id: 34767
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    В этом месте дорога поворачивает с запада на север, огибая расположенные на
+    востоке болота, а на юге густой лес.
+  light: 50
+  exits:
+    - roomId: "tookland:34768"
+      direction: север
+    - roomId: "tookland:34766"
+      direction: запад
+    - roomId: "woodhall:34804"
+      direction: восток
+    - roomId: "woodhall:34802"
+      direction: юг
+- id: 34768
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Для того, чтобы ноги путников оставались в сухими, эта часть дороги из-за
+    близости болот проходит по земляной насыпи, по которой дорога поворачивает дальше с
+    юга на восток.
+  light: 50
+  exits:
+    - roomId: "tookland:34725"
+      direction: север
+    - roomId: "tookland:34721"
+      direction: запад
+    - roomId: "tookland:34769"
+      direction: восток
+    - roomId: "tookland:34767"
+      direction: юг
+- id: 34769
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Земляная насыпь, по которой проходит дорога, тянется с запада на восток,
+    пересекая северную часть болота, откуда часто налетают тучи голодных до крови
+    комаров и мошкары.
+  light: 50
+  exits:
+    - roomId: "tookland:34729"
+      direction: север
+    - roomId: "tookland:34768"
+      direction: запад
+    - roomId: "tookland:34770"
+      direction: восток
+    - roomId: "woodhall:34804"
+      direction: юг
+- id: 34770
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Вы находитесь на узкой полоске земли среди болота, в воздухе явственно
+    чувствуется запах тины, а над вашей головой висит туча комаров. Пытаясь выбраться
+    из неприятного окружения болота, дорога поворачивает здесь с запада на север.
+  light: 50
+  exits:
+    - roomId: "tookland:34771"
+      direction: север
+    - roomId: "tookland:34769"
+      direction: запад
+    - roomId: "woodhall:34807"
+      direction: восток
+    - roomId: "woodhall:34805"
+      direction: юг
+- id: 34771
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Здесь дорога, зажатая Укрольем с севера и Болотищем с запада, в некоторых местах
+    размыта, что не мешало бы подремонтировать, но, похоже, сделать это некому, по
+    близости нет никаких признаков поселений.
+  light: 50
+  exits:
+    - roomId: "tookland:34733"
+      direction: север
+    - roomId: "tookland:34729"
+      direction: запад
+    - roomId: "tookland:34772"
+      direction: восток
+    - roomId: "tookland:34770"
+      direction: юг
+- id: 34772
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Узкая петляющая дорога проходит здесь по самому краю болот, расположенных на юге
+    и востоке. В воздухе стоит непрерывный писк комариного воинства, который лишь
+    изредка прерывается криком болотной птицы.
+  light: 50
+  exits:
+    - roomId: "tookland:34773"
+      direction: север
+    - roomId: "tookland:34771"
+      direction: запад
+    - roomId: "woodhall:34811"
+      direction: восток
+    - roomId: "woodhall:34807"
+      direction: юг
+- id: 34773
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    По мере путешествия по дороге, ведущей к парому к Арленду, можно заметить
+    луга, расположенные на северо-востоке, постепенно сменяются холмистой равниной.
+    Дорога же поворачивает тут с юга на восток.
+  light: 50
+  exits:
+    - roomId: "tookland:34736"
+      direction: север
+    - roomId: "tookland:34733"
+      direction: запад
+    - roomId: "tookland:34774"
+      direction: восток
+    - roomId: "tookland:34772"
+      direction: юг
+- id: 34774
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Вы находитесь на узкой дороге, являющейся искусственной границей между Укрольем
+    на севере и Болотищем на юге.
+  light: 50
+  exits:
+    - roomId: "tookland:34739"
+      direction: север
+    - roomId: "tookland:34773"
+      direction: запад
+    - roomId: "tookland:34775"
+      direction: восток
+    - roomId: "woodhall:34811"
+      direction: юг
+- id: 34775
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    К северу от вас расположено поле, которое, судя по всему, раньше возделывалось,
+    но сейчас там растут лишь сорные луговые травы. На юге вы видите безрадостную
+    картину из болотных кочек, да искривленных деревьев.
+  light: 50
+  exits:
+    - roomId: "tookland:34742"
+      direction: север
+    - roomId: "tookland:34774"
+      direction: запад
+    - roomId: "tookland:34776"
+      direction: восток
+    - roomId: "woodhall:34812"
+      direction: юг
+- id: 34776
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    В этом месте дорога делает очередной поворот. На севере от сюда до самого
+    горизонта лежат дикие луга, на востоке виднее возделываемое поле.
+  light: 50
+  exits:
+    - roomId: "tookland:34745"
+      direction: север
+    - roomId: "tookland:34775"
+      direction: запад
+    - roomId: "tookland:34749"
+      direction: восток
+    - roomId: "tookland:34777"
+      direction: юг
+- id: 34777
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Дорога тут огибает болота лежащие на западе и юге. На юге трясина выглядит очень
+    опасной, и взглянув на нее вам приходит мысль, что ни в коем случае не стоит
+    попадать в нее.
+  light: 50
+  exits:
+    - roomId: "tookland:34776"
+      direction: север
+    - roomId: "woodhall:34812"
+      direction: запад
+    - roomId: "tookland:34778"
+      direction: восток
+    - roomId: "woodhall:34810"
+      direction: юг
+- id: 34778
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    На севере расположено засеянное пшеницей поле, а на востоке заливные, низинные
+    луга на берегу Гвендолена. Отсюда уже можно увидеть и саму реку, крупнейшую в этих
+    местах. Похоже, что и до парома к Арленду уже не так далеко.
+  light: 50
+  exits:
+    - roomId: "tookland:34749"
+      direction: север
+    - roomId: "tookland:34777"
+      direction: запад
+    - roomId: "tookland:34754"
+      direction: восток
+    - roomId: "tookland:34779"
+      direction: юг
+- id: 34779
+  title: "Дорога к Арлендскому парому"
+  description: >-
+    Вы находитесь на развилке дороги, где один путь уходит на восток к парому через
+    Гвендолен, второй на юг к плотине на реке Плавенка. На западе лежит гибельная
+    трясина, из которой мало кто сумел выбраться.
+  light: 50
+  exits:
+    - roomId: "tookland:34778"
+      direction: север
+    - roomId: "woodhall:34810"
+      direction: запад
+    - roomId: "tookland:34780"
+      direction: восток
+    - roomId: "woodhall:34815"
+      direction: юг
+- id: 34780
+  title: "Паром"
+  description: >-
+    Здесь на пологом западном берегу Гвендолена среди зарослей камышей и осоки
+    построена крепко сколоченная пристань, от которой ежедневно отходит паром к
+    Арленду. За состоянием всего этого следит один паромщик, который за символическую
+    плату готов любого переправить на восточный берег Гвендолена.
+  light: 50
+  npcs: ["tookland:34707"]
+  metadata:
+    commands:  ['переправиться']
+  script: 'ferry'
+  exits:
+    - roomId: "tookland:34754"
+      direction: север
+    - roomId: "tookland:34779"
+      direction: запад
+- id: 34781
+  title: "Темная нора"
+  description: >-
+    Вы залезли в чью-то мерзкую нору под корнями дерева, куда не попадает ни единого
+    лучика света, и где неприятно воняет полусгнившим мясом. Вероятно живущее здесь
+    существо не отличается чистоплотностью и готово, при необходимости, питаться
+    падалью, но может и от вашего свежего мяса оно не откажется.
+  light: 50
+  npcs: ["tookland:34710"]
+  exits:
+    - roomId: "tookland:34735"
+      direction: вверх
+- id: 34782
+  title: "Подвал мельницы"
+  description: >-
+    Вы спустились в подвал мельницы, где находится основная часть механизма
+    перемалывающих зерно жерновов посредством вращаемого рекой колеса с лопастями.
+    Из-за близости реки в подвале очень сыро, поэтому деревянные детали здесь выглядят
+    подгнившими, а железные проржавевшими. Единственный выход ведет отсюда наверх, по
+    ненадежной лестнице, во двор мельницы.
+  light: 50
+  items:
+    - id: "tookland:34719"
+      respawnChance: 100
+      replaceOnRespawn: true
+  script: 'spirit'
+  metadata:
+    commands: [ 'нацепить' ]
+  exits:
+    - roomId: "tookland:34752"
+      direction: вверх
+- id: 34783
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34784"
+      direction: запад
+    - roomId: "eastroad:10900"
+      direction: восток
+    - roomId: "tookland:34750"
+      direction: юг
+- id: 34784
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга 
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34785"
+      direction: запад
+    - roomId: "tookland:34783"
+      direction: восток
+    - roomId: "tookland:34746"
+      direction: юг
+- id: 34785
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34786"
+      direction: запад
+    - roomId: "tookland:34784"
+      direction: восток
+    - roomId: "tookland:34743"
+      direction: юг
+- id: 34786
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34787"
+      direction: запад
+    - roomId: "tookland:34785"
+      direction: восток
+    - roomId: "tookland:34740"
+      direction: юг
+- id: 34787
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34788"
+      direction: запад
+    - roomId: "tookland:34786"
+      direction: восток
+    - roomId: "tookland:34737"
+      direction: юг
+- id: 34788
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34789"
+      direction: запад
+    - roomId: "tookland:34787"
+      direction: восток
+    - roomId: "tookland:34734"
+      direction: юг
+- id: 34789
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34790"
+      direction: запад
+    - roomId: "tookland:34788"
+      direction: восток
+    - roomId: "tookland:34730"
+      direction: юг
+- id: 34790
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34789"
+      direction: восток
+    - roomId: "tookland:34791"
+      direction: юг
+- id: 34791
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34790"
+      direction: север
+    - roomId: "tookland:34792"
+      direction: запад
+    - roomId: "tookland:34730"
+      direction: восток
+    - roomId: "tookland:34726"
+      direction: юг
+- id: 34792
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34793"
+      direction: запад
+    - roomId: "tookland:34791"
+      direction: восток
+    - roomId: "tookland:34722"
+      direction: юг
+- id: 34793
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34794"
+      direction: запад
+    - roomId: "tookland:34792"
+      direction: восток
+    - roomId: "tookland:34717"
+      direction: юг
+- id: 34794
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34795"
+      direction: запад
+    - roomId: "tookland:34793"
+      direction: восток
+    - roomId: "tookland:34712"
+      direction: юг
+- id: 34795
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34796"
+      direction: запад
+    - roomId: "tookland:34794"
+      direction: восток
+    - roomId: "tookland:34707"
+      direction: юг
+- id: 34796
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34797"
+      direction: запад
+    - roomId: "tookland:34795"
+      direction: восток
+    - roomId: "tookland:34704"
+      direction: юг
+- id: 34797
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге раскинулись некошеные луга
+    бескрайней зелени, называемые Укрольем.
+  light: 50
+  exits:
+    - roomId: "tookland:34798"
+      direction: запад
+    - roomId: "tookland:34796"
+      direction: восток
+    - roomId: "tookland:34701"
+      direction: юг
+- id: 34798
+  title: "Западный тракт"
+  description: >-
+    Вы идете по широкой дороге, соединяющей эти места и Пустоши. Местные жители давно
+    окрестили ее Западным Трактом, и это название устоялось. Был еще Южный Тракт, но со
+    временем его забросили и теперь почти не используют. Тракт очень широк, несколько
+    телег могут пройти по нему одновременно. На юге лежит крупный город, над
+    его домами поднимаются многочисленные хвосты едкого черного дыма.
+  light: 50
+  exits:
+    - roomId: "tookland:34797"
+      direction: восток
+    - roomId: "gurba:north_gate"
+      direction: юг

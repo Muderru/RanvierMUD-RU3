@@ -1,0 +1,58 @@
+---
+- id: 80100
+  title: Очистить лесную таверну от крыс
+  level: 15
+  repeatable: true
+  description: >-
+    Трактирщик из лесной таверны попросил вас полностью
+    очистить его заведение от крыс, хозяйничающих в подвале.
+  completionMessage: |-
+    - Спасибо тебе, %player%!
+    - Теперь мне не придется объяснять, почему мое пиво похоже на крысиную мочу.
+    - Мне не понятно, откуда появились эти крысы. Походи по округе, может узнаешь что.
+    - Около таверны бродит подозрительный тип, похожий на мага. Может спросишь его?
+  goals:
+    - type: KillGoal
+      config:
+        title: Убить крыс
+        npc: 'fortavern:80103'
+        count: 5
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 50
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 100
+- id: 80101
+  title: Украденная реликвия
+  level: 15
+  repeatable: true
+  requires: ['fortavern:80100']
+  description: >-
+    Странствующий маг рассказал вам, что это он наслал крысиное проклятие
+    на таверну. Укрывающиеся в ней разбойники украли у него магический артефакт,
+    обладающий огромной магической силой. Странствующий маг просит вас вернуть
+    его реликвию, но предупреждает, что сделать это будет не просто в одиночку,
+    у главаря разбойников множество помощников.
+  completionMessage: |-
+    - Спасибо тебе, %player%!
+    - Эта вещь была бы слишком опасна в некомпетентных руках.
+  goals:
+    - type: FetchGoal
+      config:
+        title: Найти магическую реликвию мага
+        count: 1
+        item: 'fortavern:80146'
+        removeItem: true
+  rewards:
+    - type: ExperienceReward
+      config:
+        amount: 150
+        leveledTo: QUEST
+    - type: CurrencyReward
+      config:
+        currency: золото
+        amount: 300
