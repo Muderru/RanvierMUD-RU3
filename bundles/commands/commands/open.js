@@ -55,7 +55,7 @@ module.exports = {
       return handleItem(player, item, action);
     }
 
-    return B.sayAt(player, `Кажется здесь нет ${args}.`);
+    return B.sayAt(player, `Кажется, здесь нет ${args}.`);
   },
 };
 

@@ -17,7 +17,7 @@ module.exports = {
     }
 
     if (!arg.length) {
-      return say(player, 'Надеть что?');
+      return say(player, 'Что вы хотите надеть?');
     }
 
     const item = ArgParser.parseDot(arg, player.inventory);
@@ -81,7 +81,7 @@ module.exports = {
     }
 
     if (item.metadata.level > player.level) {
-      return say(player, `Вы пока не можете использовать ${ItemUtil.display(item, 'vname')}.`);
+      return say(player, `Вы пока не можете использовать ${ItemUtil.display(item, 'vname')}, поднаберитесь опыта.`);
     }
 
     try {

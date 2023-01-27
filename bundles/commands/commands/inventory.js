@@ -6,7 +6,7 @@ module.exports = {
   aliases: ['инвентарь'],
   command: (state) => (args, player) => {
     if (!player.inventory || !player.inventory.size) {
-      return Broadcast.sayAt(player, 'У вас нет ничего.');
+      return Broadcast.sayAt(player, 'У вас ничего нет.');
     }
 
     Broadcast.at(player, 'Вы несете');

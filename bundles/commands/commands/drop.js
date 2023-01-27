@@ -9,7 +9,7 @@ module.exports = {
     args = args.trim();
 
     if (!args.length) {
-      return Broadcast.sayAt(player, 'Бросить что?');
+      return Broadcast.sayAt(player, 'Что вы хотите бросить??');
     }
 
     if (!player.room) {

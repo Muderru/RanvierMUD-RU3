@@ -11,7 +11,7 @@ module.exports = {
     args = args.trim();
 
     if (!args.length) {
-      return B.sayAt(player, 'Что куда положить?');
+      return B.sayAt(player, 'Что и куда вы хотите положить?');
     }
 
     // put 3.foo in bar -> put 3.foo bar -> put 3.foo into bar
@@ -34,7 +34,7 @@ module.exports = {
     }
 
     if (!toContainer) {
-      return B.sayAt(player, 'Вы не находите здесь ничего подходящего.');
+      return B.sayAt(player, 'Здесь этого нет.');
     }
 
     if (toContainer.type !== ItemType.CONTAINER) {

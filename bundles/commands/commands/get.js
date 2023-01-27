@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['взять', 'взятьвсе'],
   command: (state) => (args, player, arg0) => {
     if (!args.length) {
-      return Broadcast.sayAt(player, 'Взять что?');
+      return Broadcast.sayAt(player, 'Что вы хотите взять?');
     }
 
     if (!player.room) {
@@ -15,7 +15,7 @@ module.exports = {
     }
 
     if (player.isInventoryFull()) {
-      return Broadcast.sayAt(player, 'Вы не можете больше ничего взять.');
+      return Broadcast.sayAt(player, 'У вас заняты руки.');
     }
 
     // 'loot' is an alias for 'get all'

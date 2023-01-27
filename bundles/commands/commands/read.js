@@ -40,7 +40,7 @@ module.exports = {
     }
 
     if (item.getMeta('level') && player.level < item.getMeta('level')) {
-      return say('Вы пока не можете прочитать заклинание на этом свитке.');
+      return say('Вы пока не можете прочитать заклинание на этом свитке, поднаберитесь опыта.');
     }
 
     const spell = state.SpellManager.find(item.getMeta('spell'));

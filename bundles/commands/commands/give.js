@@ -9,7 +9,7 @@ module.exports = {
   aliases: ['дать', 'отдать'],
   command: (state) => (args, player) => {
     if (!args || !args.length) {
-      return B.sayAt(player, 'Что кому дать?');
+      return B.sayAt(player, 'Что и кому вы хотите дать?');
     }
 
     let [targetItem, targetRecip] = args.split(' ');
@@ -38,13 +38,13 @@ module.exports = {
     }
 
     if (!target) {
-      return B.sayAt(player, 'Кому?');
+      return B.sayAt(player, 'Вы не видите цели.');
     }
 
     if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > player.getAttribute('detect_invisibility')) {
-      return B.sayAt(player, 'Кому?');
+      return B.sayAt(player, 'Вы не видите цели.');
     } if (target.hasAttribute('hide') && target.getAttribute('hide') > player.getAttribute('detect_hide')) {
-      return B.sayAt(player, 'Кому?');
+      return B.sayAt(player, 'Вы не видите цели.');
     }
 
     if (target === player) {
