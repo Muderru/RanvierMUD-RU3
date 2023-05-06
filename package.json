@@ -26,6 +26,6 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "git-url-parse": "^11.1.2"
+    "git-url-parse": "^13.1.0"
   }
 }
