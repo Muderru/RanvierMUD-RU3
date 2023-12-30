@@ -7,8 +7,7 @@ module.exports = {
   command: (state) => (args, p) => {
     const say = (message) => B.sayAt(p, message);
 
-    say(`<b>${B.center(70, `${p.name}, уровень ${p.level} ${p.playerClass.config.name}`, 'green')}`);
-    say(`<b>${B.line(70, '-', 'green')}`);
+    say(`Вы ${p.name}, ${p.playerClass.config.name} ${p.level} уровня.`);
 
     const stats = {
       strength: 0,
@@ -55,39 +54,19 @@ module.exports = {
         max: p.getMaxAttribute(stat) || 0,
       };
     }
-
-    B.at(p, sprintf(' %-9s: %12s', 'Здоровье', `${stats.health.current}/${stats.health.max}`));
-    say(`<b><green>${sprintf(
-      '%36s',
-      'Оружие ',
-    )}`);
-
-    // class resource
-    const mana = {
+    stats["mana"] = {
       current: p.getAttribute('mana'),
       max: p.getMaxAttribute('mana'),
     };
-    B.at(p, sprintf(' %-9s: %12s', 'Мана', `${mana.current}/${mana.max}`));
 
-    say(`${sprintf('%35s', `.${B.line(22)}`)}.`);
+    say(`Здоровье: ${stats.health.current}/${stats.health.max}, мана: ${stats.mana.current}/${stats.mana.max}.`);
 
-    B.at(p, sprintf('%37s', '|'));
     const weaponDamage = Combat.getWeaponDamage(p);
     const min = Combat.normalizeWeaponDamage(p, weaponDamage.min);
     const max = Combat.normalizeWeaponDamage(p, weaponDamage.max);
-    say(sprintf(' %6s:<b>%5s</b> - <b>%-5s</b> |', 'Урон', min, max));
-    B.at(p, sprintf('%37s', '|'));
-    say(sprintf(' %6s: <b>%12s</b> |', 'Скор.', B.center(12, `${Combat.getWeaponSpeed(p)} сек`)));
+    say(`Урон: ${min}-${max}, скорость: ${Combat.getWeaponSpeed(p)} сек.`);
 
-    say(sprintf('%60s', `'${B.line(22)}'`));
-
-    say(`<b><green>${sprintf(
-      '%-24s',
-      ' Характеристики',
-    )}</green></b>`);
-    say(`.${B.line(33)}.`);
-
-    const printStat = (stat, newline = true) => {
+    function getStatString (stat) {
       const val = stats[stat];
       const statColor = (val.current > val.base ? 'green' : 'white');
       let ruStat = '';
@@ -108,67 +87,67 @@ module.exports = {
           ruStat = 'Броня';
           break;
         case 'critical':
-          ruStat = 'Крит.шанс';
+          ruStat = 'шанс крит.удара';
           break;
         case 'cutting_resistance':
-          ruStat = 'Режущее';
+          ruStat = 'Режущего';
           break;
         case 'crushing_resistance':
-          ruStat = 'Дробящее';
+          ruStat = 'Дробящего';
           break;
         case 'piercing_resistance':
-          ruStat = 'Колющее';
+          ruStat = 'Колющего';
           break;
         case 'fire_resistance':
-          ruStat = 'Огонь';
+          ruStat = 'Огня';
           break;
         case 'cold_resistance':
-          ruStat = 'Холод';
+          ruStat = 'Холода';
           break;
         case 'lightning_resistance':
-          ruStat = 'Молния';
+          ruStat = 'Молний';
           break;
         case 'earth_resistance':
-          ruStat = 'Земля';
+          ruStat = 'Земли';
           break;
         case 'acid_resistance':
-          ruStat = 'Кислота';
+          ruStat = 'Кислоты';
           break;
         case 'chaos_resistance':
-          ruStat = 'Хаос';
+          ruStat = 'Хаоса';
           break;
         case 'ether_resistance':
-          ruStat = 'Эфир';
+          ruStat = 'Эфира';
           break;
         case 'cutting_damage':
-          ruStat = 'Режущий';
+          ruStat = 'Режущим';
           break;
         case 'crushing_damage':
-          ruStat = 'Дробящий';
+          ruStat = 'Дробящим';
           break;
         case 'piercing_damage':
-          ruStat = 'Колющий';
+          ruStat = 'Колющим';
           break;
         case 'fire_damage':
-          ruStat = 'Огонь';
+          ruStat = 'Огнем';
           break;
         case 'cold_damage':
-          ruStat = 'Холод';
+          ruStat = 'Холодом';
           break;
         case 'lightning_damage':
-          ruStat = 'Молния';
+          ruStat = 'Молниями';
           break;
         case 'earth_damage':
-          ruStat = 'Земля';
+          ruStat = 'Землей';
           break;
         case 'acid_damage':
-          ruStat = 'Кислота';
+          ruStat = 'Кислотой';
           break;
         case 'chaos_damage':
-          ruStat = 'Хаос';
+          ruStat = 'Хаосом';
           break;
         case 'ether_damage':
-          ruStat = 'Эфир';
+          ruStat = 'Эфиром';
           break;
         case 'invisibility':
           ruStat = 'Невидимость';
@@ -196,68 +175,57 @@ module.exports = {
           break;
       }
       const str = sprintf(
-        `| %-20s : <b><${statColor}>%8s</${statColor}></b> |`,
-        ruStat,
-        val.current,
+        `%s: <b><${statColor}>%s</${statColor}></b>`,
+        ruStat, val.current,
       );
 
-      if (newline) {
-        say(str);
-      } else {
-        B.at(p, str);
-      }
+      return str;
     };
 
-    printStat('strength', false); // left
-    say(`<b><green>${sprintf('%33s', 'Золото ')}`); // right
-    printStat('agility', false); // left
-    say(sprintf('%33s', `.${B.line(12)}.`)); // right
-    printStat('intellect', false); // left
-    say(sprintf('%19s| <b>%10s</b> |', '', p.getMeta('currencies.золото') || 0)); // right
-    printStat('stamina', false); // left
-    say(sprintf('%33s', `'${B.line(12)}'`)); // right
+    say("Основные характеристики:");
+    say(`${getStatString("strength")}, ${getStatString("agility")}, ${getStatString("stamina")}, ${getStatString("intellect")}.`);;
+    say(`${getStatString('armor')}, ${getStatString('critical')}%.`);
 
-    say(`:${B.line(33)}:`);
-    printStat('armor');
-    printStat('critical');
-    say(`'${B.line(33)}'`);
-    say(`<b><green>${sprintf(
-      '%-24s',
-      ' Доп. урон                           Сопротивления',
-    )}</green></b>`);
-    say(`.${B.line(68)}.`);
-    printStat('cutting_damage', false);
-    printStat('cutting_resistance');
-    printStat('crushing_damage', false);
-    printStat('crushing_resistance');
-    printStat('piercing_damage', false);
-    printStat('piercing_resistance');
-    printStat('fire_damage', false);
-    printStat('fire_resistance');
-    printStat('cold_damage', false);
-    printStat('cold_resistance');
-    printStat('lightning_damage', false);
-    printStat('lightning_resistance');
-    printStat('earth_damage', false);
-    printStat('earth_resistance');
-    printStat('acid_damage', false);
-    printStat('acid_resistance');
-    printStat('chaos_damage', false);
-    printStat('chaos_resistance');
-    printStat('ether_damage', false);
-    printStat('ether_resistance');
-    printStat('invisibility', false);
-    printStat('detect_invisibility');
-    printStat('hide', false);
-    printStat('detect_hide');
-    printStat('health_regeneration', false);
-    printStat('mana_regeneration');
-    printStat('light', false);
-    printStat('freedom');
-    say(`.${B.line(68)}.`);
+    say("Бонус к урону:");
+    say(`${getStatString('cutting_damage')}, ${getStatString('crushing_damage')}, ${getStatString('piercing_damage')}, ${getStatString('fire_damage')}, ${getStatString('cold_damage')}, ${getStatString('lightning_damage')}, ${getStatString('earth_damage')}, ${getStatString('acid_damage')}, ${getStatString('chaos_damage')}, ${getStatString('ether_damage')}.`);
+    say("Бонус к защите от:");
+    say(`${getStatString('cutting_resistance')}, ${getStatString('crushing_resistance')}, ${getStatString('piercing_resistance')}, ${getStatString('fire_resistance')}, ${getStatString('cold_resistance')}, ${getStatString('lightning_resistance')}, ${getStatString('earth_resistance')}, ${getStatString('acid_resistance')}, ${getStatString('chaos_resistance')}, ${getStatString('ether_resistance')}.`);
 
-    B.at(p, sprintf(' %-9s: %2s', '<b><green>Очки характеристик', `</green></b>${p.getMeta('attributePoints')}`));
-    B.at(p, sprintf(' %-9s: %2s', '<b><green>    Очки магии', `</green></b>${p.getMeta('magicPoints')}`));
-    B.at(p, sprintf(' %-9s: %2s', '<b><green>    Очки умений', `</green></b>${p.getMeta('skillPoints')}`));
+    say("Дополнительные атрибуты:");
+    say(`${getStatString('invisibility')}, ${getStatString('detect_invisibility')}.`);
+    say(`${getStatString('hide')}, ${getStatString('detect_hide')}.`);
+    say(`${getStatString('health_regeneration')}, ${getStatString('mana_regeneration')}.`);
+    say(`${getStatString('light')}, ${getStatString('freedom')}.`);
+
+    function getPointString (pointType) {
+      const val = p.getMeta(pointType);
+      let ruType;
+      if (pointType == "attributePoints") 
+        ruType = "характеристик";
+      else if (pointType == "magicPoints")
+        ruType = "заклинаний";
+      else if (pointType == "skillPoints")
+        ruType = "умений";
+      let buf = `${val} `;
+      const str = `${val}`;
+      let num;
+      if (str.length > 2)
+        num = +`${str[-1]}${str[-2]}`;
+      else
+        num = +str;
+      if (num != 11 && num % 10 == 1)
+        buf += "очко";
+      else if (num > 10 && num < 20)
+        buf += "очков";
+      else if (num % 10 == 0 || num % 10 >= 5)
+        buf += "очков";
+      else if (num % 10 <= 4)
+        buf += "очка";
+      return (buf + ` ${ruType}`);
+    }
+    say(`Вы можете распределить ${getPointString('attributePoints')}, ${getPointString('magicPoints')} и ${getPointString('skillPoints')}.`);
+    const gold = p.getMeta('currencies.золото');
+    if (gold > 0)
+      say(`У вас имеется ${gold} золота.`);
   },
 };
