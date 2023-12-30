@@ -13,14 +13,12 @@ module.exports = {
     const write = EventUtil.genWrite(socket);
     const pm = state.PlayerManager;
 
+    say(`Добро пожаловать, ${account.username}! Сделайте ваш выбор.`);
     /*
     Player selection menu:
     * Can select existing player
     * Can create new (if less than 3 living chars)
     */
-    say("\r\n------------------------------");
-    say("|      Выберите:");
-    say("------------------------------");
 
     // This just gets their names.
     const characters = account.characters.filter(currChar => currChar.deleted === false);
@@ -56,7 +54,7 @@ module.exports = {
             let existed = false;
             if (currentPlayer) {
               // kill old connection
-              Broadcast.at(currentPlayer, 'Соединение перехвачено с другого клиента. Пока!');
+              Broadcast.at(currentPlayer, 'Обнаружена попытка входа, выполняется переподключение...');
               currentPlayer.socket.end();
 
               // link new socket
@@ -76,7 +74,6 @@ module.exports = {
       });
     }
 
-    options.push({ display: "" });
 
     if (characters.length) {
       options.push({
@@ -97,25 +94,25 @@ module.exports = {
             confirmation = confirmation.toString().trim().toLowerCase();
 
             if (!/[дн]/.test(confirmation)) {
-              say('<b>Недопустимая опция</b>');
+              say('<b>Необходимо напечатать д для подтверждения или н для отмены.</b>');
               return socket.emit('choose-character', socket, args);
             }
 
             if (confirmation === 'н') {
-              say('Никого не надо удалять...');
+              say('Удаление отменено.');
               return socket.emit('choose-character', socket, args);
             }
 
-            say(`Удаление аккаунта <b>${account.username}</b>`);
+            say(`Удаление аккаунта <b>${account.username}...</b>`);
             account.deleteAccount();
-            say('Аккаунт удален, спасибо за игру.');
+            say('Аккаунт успешно удален, спасибо за игру.');
             socket.end();
           });
       },
     });
 
     options.push({
-      display: 'Выход',
+      display: 'Выйти',
       onSelect: () => socket.end(),
     });
 
@@ -125,13 +122,13 @@ module.exports = {
     options.forEach((opt) => {
       if (opt.onSelect) {
         optionI++;
-        say(`| <cyan>[${optionI}]</cyan> ${opt.display}`);
+        say(`<cyan>[${optionI}]</cyan> ${opt.display}`);
       } else {
-        say(`| <bold>${opt.display}</bold>`);
+        say(`<bold>${opt.display}</bold>`);
       }
     });
 
-    socket.write('|\r\n`-> ');
+    socket.write('`-> ');
 
     socket.once('data', choice => {
       choice = choice.toString().trim();

@@ -17,6 +17,7 @@ module.exports = {
       data = data.toString().trim();
 
       if (!data.length) {
+        B.prompt(player);
         return loop();
       }
 
@@ -88,7 +89,7 @@ module.exports = {
                   B.sayAt(player, "Кому вы хотите отправить сообщение?");
                   break;
                 case error instanceof NoMessageError:
-                  B.sayAt(player, `\r\nКанал: ${channel.name}`);
+                  B.sayAt(player, `Канал: ${channel.name}`);
                   B.sayAt(player, 'Синтаксис: ' + channel.getUsage());
                   if (channel.description) {
                     B.sayAt(player, channel.description);

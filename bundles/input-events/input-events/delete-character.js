@@ -11,33 +11,31 @@ module.exports = {
     const say = EventUtil.genSay(socket);
     const write = EventUtil.genWrite(socket);
 
-    say("\r\n------------------------------");
-    say("|      Удалить персонажа");
-    say("------------------------------");
+    say("Выберите персонажа, которого вы желаете удалить.");
 
     const characters = account.characters.filter(currChar => currChar.deleted === false);
 
     let options = [];
     characters.forEach(char => {
       options.push({
-        display: `Удалить <b>${char.username}</b>`,
+        display: `<b>${char.username}</b>`,
         onSelect: () => {
           write(`<bold>Вы уверены, что хотите удалить <b>${char.username}</b>?</bold> <cyan>[д/н]</cyan> `);
           socket.once('data', confirmation => {
-            say('');
             confirmation = confirmation.toString().trim().toLowerCase();
 
             if (!/[дн]/.test(confirmation)) {
-              say('<b>Недопустимая опция</b>');
+              say('<b>Необходимо напечатать д для подтверждения или н для отмены.</b>');
               return socket.emit('choose-character', socket, args);
             }
 
             if (confirmation === 'н') {
-              say('Никто не удален...');
+              say('Удаление отменено.');
+              console.log(char);
               return socket.emit('choose-character', socket, args);
             }
 
-            say(`Удаление ${char.username}`);
+            say(`Удаление персонажа ${char.username}`);
             account.deleteCharacter(char.username);
             say('Персонаж удален.');
             return socket.emit('choose-character', socket, args);
@@ -45,8 +43,6 @@ module.exports = {
         },
       });
     });
-
-    options.push({ display: "" });
 
     options.push({
       display: 'Возврат в главное меню',
@@ -59,13 +55,13 @@ module.exports = {
     options.forEach((opt) => {
       if (opt.onSelect) {
         optionI++;
-        say(`| <cyan>[${optionI}]</cyan> ${opt.display}`);
+        say(`<cyan>[${optionI}]</cyan> ${opt.display}`);
       } else {
-        say(`| <bold>${opt.display}</bold>`);
+        say(`<bold>${opt.display}</bold>`);
       }
     });
 
-    socket.write('|\r\n`-> ');
+    socket.write('`-> ');
 
     socket.once('data', choice => {
       choice = choice.toString().trim();

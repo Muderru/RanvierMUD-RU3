@@ -11,7 +11,7 @@ module.exports = {
     const say    = EventUtil.genSay(socket);
     const write  = EventUtil.genWrite(socket);
 
-    write("<bold>Какое имя вы желаете для вашего персонажа?</bold> ");
+    write("<bold>Придумайте имя для вашего персонажа.</bold> ");
     socket.once('data', name => {
       say('');
       name = name.toString().trim();
