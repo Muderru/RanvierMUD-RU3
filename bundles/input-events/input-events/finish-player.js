@@ -33,12 +33,12 @@ module.exports = {
       const defaultAttributes = {
         health: 100,
         mana: 100,
-        strength: 20,
-        agility: 20,
+        strength: 18,
+        agility: 18,
         intellect: 20,
         stamina: 20,
         armor: 0,
-        critical: 0,
+        critical: 5,
         cutting_resistance: 0,
         crushing_resistance: 0,
         piercing_resistance: 0,
@@ -65,8 +65,8 @@ module.exports = {
         hide: 0,
         detect_hide: 0,
         freedom: 0,
-        health_regeneration: 1,
-        mana_regeneration: 1,
+        health_regeneration: 5,
+        mana_regeneration: 5,
         health_percent: 0,
         mana_percent: 0,
         armor_percent: 0,
@@ -93,13 +93,13 @@ module.exports = {
       args.account.save();
 
       player.setMeta('class', args.playerClass);
-      player.setMeta('attributePoints', 0);
-      player.setMeta('magicPoints', 1);
-      player.setMeta('skillPoints', 1);
+      player.setMeta('attributePoints', 4);
+      player.setMeta('magicPoints', 3);
+      player.setMeta('skillPoints', 3);
       player.setMeta('skill_flee', 1);
       player.setMeta('skill_retreat', 1);
       player.setMeta('currencies', {});
-      player.setMeta('currencies.золото', 0);
+      player.setMeta('currencies.золото', 50);
 
       const room = state.RoomManager.getRoom(startingRoomRef);
       player.room = room;
