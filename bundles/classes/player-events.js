@@ -32,17 +32,33 @@ module.exports = {
           }
         } else {
           try {
+            if (args.toLowerCase() == "я" || args.toLowerCase() == this.name.toLowerCase()) {
+              throw new CombatErrors.CombatSelfError('Вы не можете применить на себя эту способность.');
+            }
             const targetSearch = args.split(' ').pop();
             target = dot(targetSearch, this.room.players);
             if (!target) {
               target = dot(targetSearch, this.room.npcs);
             }
-            if (target && target.hasAttribute('invisibility') && target.getAttribute('invisibility') > this.getAttribute('detect_invisibility')) {
+            if (target) {
+            if (target.hasAttribute('invisibility') && target.getAttribute('invisibility') > this.getAttribute('detect_invisibility')) {
               return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
             }
-            if (target && target.hasAttribute('hide') && target.getAttribute('hide') > this.getAttribute('detect_hide')) {
+            if (target.hasAttribute('hide') && target.getAttribute('hide') > this.getAttribute('detect_hide')) {
               return B.sayAt(this, `Использовать способность ${ability.name} на ком?`);
             }
+            if (target.isNpc && !target.hasBehavior('combat')) {
+              throw new CombatErrors.CombatPacifistError(`${target.Name} - пацифист и не будет сражаться с вами.`, target);
+            }
+
+            if (!target.hasAttribute('health')) {
+              throw new CombatErrors.CombatInvalidTargetError('Вы не можете атаковать эту цель.');
+            }
+
+            if (!target.isNpc && !target.getMeta('pvp')) {
+              throw new CombatErrors.CombatNonPvpError(`${target.name} не в режиме ПвП.`, target);
+            }
+          }
           } catch (e) {
             if (
               e instanceof CombatErrors.CombatSelfError
