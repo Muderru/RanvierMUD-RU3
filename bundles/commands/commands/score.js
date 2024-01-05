@@ -209,8 +209,13 @@ module.exports = {
       let buf = `${val} `;
       const str = `${val}`;
       let num;
-      if (str.length > 2)
-        num = +`${str[-1]}${str[-2]}`;
+      if (str.length > 2) {
+        let tmp = `${str[(str.length - 2)]}${str[(str.length - 1)]}`;
+        if (tmp[0] == '0')
+          num = +tmp[1];
+        else
+          num = +tmp;
+      }
       else
         num = +str;
       if (num != 11 && num % 10 == 1)
