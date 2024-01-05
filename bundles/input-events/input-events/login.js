@@ -6,7 +6,7 @@ const CommonFunctions = require('../lib/CommonFunctions');
 module.exports = {
   event: state => (socket, args) => {
     if (!args || !args.dontwelcome) {
-      socket.write('Привет, а какой ваш аккаунт? ');
+      socket.write('Введите имя вашего аккаунта.');
     }
 
     socket.once('data', async name => {

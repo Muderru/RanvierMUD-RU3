@@ -14,7 +14,7 @@ module.exports = {
       const { roomExit } = movementCommand;
 
       if (!roomExit) {
-        return B.sayAt(this, "Вы не можете идти туда!");
+        return B.sayAt(this, "В этом направлении невозможно двигаться!");
       }
 
       if (this.isInCombat()) {
@@ -270,7 +270,7 @@ module.exports = {
 
       // level up, currently wraps experience if they gain more than needed for multiple levels
       if (this.experience + amount > totalTnl) {
-        B.sayAt(this, '                                   <bold><blue>!Новый уровень!</blue></bold>');
+        B.sayAt(this, '                                   <bold><blue>!Вы получили новый уровень!</blue></bold>');
         B.sayAt(this, B.progress(80, 100, "blue"));
 
         let nextTnl = totalTnl;
