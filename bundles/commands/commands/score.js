@@ -1,6 +1,7 @@
 const { sprintf } = require('sprintf-js');
 const { Broadcast: B } = require('ranvier');
 const Combat = require('../../combat/lib/Combat');
+const LevelUtil = require('../../lib/lib/LevelUtil');
 
 module.exports = {
   aliases: ['очки', 'характеристики', 'счет', 'счёт'],
@@ -8,6 +9,10 @@ module.exports = {
     const say = (message) => B.sayAt(p, message);
 
     say(`Вы ${p.name}, ${p.playerClass.config.name} ${p.level} уровня.`);
+    const totalTnl = LevelUtil.expToLevel(p.level + 1);
+    const currentPerc = p.experience ? Math.floor((p.experience / totalTnl) * 100) : 0;
+    const currentTnl = totalTnl - p.experience;
+    say(`Вы набрали ${p.experience}/${totalTnl} опыта (${currentPerc}%), осталось ${currentTnl} до следующего уровня.`);
 
     const stats = {
       strength: 0,
